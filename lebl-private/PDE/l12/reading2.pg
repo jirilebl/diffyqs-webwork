@@ -1,0 +1,46 @@
+##DESCRIPTION
+##  Reading question string
+##ENDDESCRIPTION
+
+
+## DBsubject()
+## DBchapter()
+## DBsection()
+## Date()
+## Institution()
+## Author(Jiri Lebl)
+## Level()
+## TitleText1('')
+## AuthorText1('')
+## EditionText1('')
+## Section1('')
+## Problem1('')
+## KEYWORDS('', '', '')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+"PG.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl"
+);
+ 
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+
+BEGIN_TEXT
+Reading question for Lesson 12
+$PAR
+An IVP problem is also called a 
+\{ ans_rule(20) \} problem.
+END_TEXT
+
+ANS( str_cmp("Cauchy") );
+
+
+ENDDOCUMENT();        

@@ -1,0 +1,136 @@
+##DESCRIPTION
+##  FIXME  This is similar to lesson 9 problem 5
+##ENDDESCRIPTION
+
+
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection()
+## Date()
+## Institution()
+## Author(Jiri Lebl)
+## Level()
+## TitleText1('')
+## AuthorText1('')
+## EditionText1('')
+## Section1('')
+## Problem1('')
+## KEYWORDS('partial', 'differential', 'equation')
+
+########################################################################
+
+###########################
+##  Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+#  Setup
+
+Context("Numeric");
+
+$a = non_zero_random(2,9,1);
+
+#Context()->variables->add(x => "Real");
+Context()->variables->add(t => "Real");
+Context()->variables->add(n => ['Real', limits=>[1,20], resolution=>1]);
+Context()->variables->add(s => "Real");
+
+
+#$ic = Compute("x")->reduce;
+
+$answer1 = Compute("$a x sin($a t)")->reduce;
+
+$answer2 = Compute("0")->reduce;
+
+$answer3 = Compute("sin(n pi x)")->reduce;
+
+$answer4 = Compute("2*$a*sin($a t)*((-1)^(n+1))/(pi*n)")->reduce;
+
+$answer5 = Compute("e^(-(t-s)*(n*pi)^2)*2*$a*sin($a s)*((-1)^(n+1))/(pi*n)")->reduce;
+
+############################
+##  Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Consider the problem \( u_t = u_{xx} \), \( 0 < x < 1 \), \( t > 0 \),
+with boundary condition \( u(0,t) = 0 , u(1,t) =  \cos($a t) \), and initial condition \( u(x,0) = x \).
+$PAR
+Solve in two steps.  First transform the problem into a problem with homogeneous BC, but
+inhomogeneous PDE, and then solve.
+Writing \( u = S + U \), where \( S \) is (affine) linear in \(x\) as in Lesson 6, then
+the IBVP for \( U \) becomes
+$BR
+PDE: \( U_t = U_{xx} + {} \)
+\{ ans_rule(40) \}
+$BR
+BC: \( U(0,t) = 0, U(1,t) = 0 \)
+$BR
+IC: \( U(x,0) = {} \) \{ ans_rule(40) \}
+$PAR
+Now solve for \(U\).
+$PAR
+The eigenfunctions to use are
+$BR
+\( X_n(x) = {} \) \{ ans_rule(40) \}
+$BR
+First decompose the inhomogeneity in the PDE as
+$BR
+\( \displaystyle f(x,t) = \sum_{j=1}^n f_n(t) X_n(x) \) ,
+$BR
+where
+\( f_n(t) = {} \) \{ ans_rule(40) \}
+$BR
+You find that 
+$BR
+\( \displaystyle U(x,t) = \sum_{j=1}^\infty T_n(t) X_n(x) \) ,
+$BR
+where
+$BR
+\( T_n = {} \)
+\( \displaystyle \int_0^t \)
+\{ ans_rule(60) \} \( ds \)
+$BR
+(Using \(s\) instead of \(\tau\) )
+$PAR
+Then \( u(x,t) = S(x,t) + U(x,t) \)
+$PAR
+\{ AnswerFormatHelp("formulas") \}
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+##  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+ANS( $answer2->cmp() );
+ANS( $answer3->cmp() );
+ANS( $answer4->cmp() );
+ANS( $answer5->cmp() );
+
+
+#####################
+# Solution
+
+#Context()->texStrings;
+#BEGIN_SOLUTION
+#${PAR}SOLUTION:$PAR
+#END_SOLUTION
+#Context()->normalStrings;
+
+;
+
+ENDDOCUMENT();

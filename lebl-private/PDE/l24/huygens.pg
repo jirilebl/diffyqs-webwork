@@ -1,0 +1,125 @@
+##DESCRIPTION
+##  FIXME 
+##ENDDESCRIPTION
+
+
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection()
+## Date()
+## Institution()
+## Author(Jiri Lebl)
+## Level()
+## TitleText1('')
+## AuthorText1('')
+## EditionText1('')
+## Section1('')
+## Problem1('')
+## KEYWORDS('partial', 'differential', 'equation')
+
+########################################################################
+
+###########################
+##  Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+"parserFunction.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+#  Setup
+
+Context("Numeric");
+
+
+$a = random(2,9,1);
+$asq=$a*$a;
+do { $b = random(2,9,1); } until ($b != $a);
+do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
+$ctimesb = $c*$b;
+#do { $d = random(2,9,1); } until (($d != $a) and ($d != $b) and ($d != $c));
+
+#Context()->variables->add(x => "Real");
+#Context()->variables->add(y => "Real");
+#Context()->variables->add(z => "Real");
+#Context()->variables->add(t => ["Real", limits=>[0.1,4]]);
+#Context()->variables->add(u => ["Real"]);
+#Context()->variables->add(n => ['Real', limits=>[1,20], resolution=>1]);
+#Context()->variables->add(xi => ["Real", TeX=>"\xi"]);
+#Context()->variables->add(eta => ["Real", TeX=>"\eta"]);
+#Context()->variables->add(uxi => ["Real", TeX=>"u_\xi"]);
+#Context()->variables->add(ueta => ["Real", TeX=>"u_\eta"]);
+#
+# This should be good enough for testing if the formula is correct
+#parserFunction("A(xi)" => "exp(xi)");
+#parserFunction("B(eta)" => "exp(-1.337*eta)");
+#
+Context()->flags->set(
+     reduceConstants => 0,
+     reduceConstantFunctions => 0,
+);
+
+$answer1 = Compute("($ctimesb-$b)/$a");
+
+############################
+##  Main text
+#
+
+Context()->texStrings;
+BEGIN_TEXT
+Suppose we have the 3D wave equation
+$BR
+\( u_{tt} = $asq (u_{xx} + u_{yy} + u_{zz})  \)
+$BR
+\(-\infty < x,y,z < \infty\) and \(t > 0\).
+$BR
+Suppose that
+$BR
+\(u(x,y,z,0) = f(x,y,z)\)
+$BR
+\(u_t(x,y,z,0) = g(x,y,z)\)
+$PAR
+Where \(f(x,y,z)\) and \(g(x,y,z)\) are zero outside the sphere of radius $b,
+and nonzero inside the sphere.
+At what time will an observer at position \(($ctimesb,0,0)\) notice the
+disturbance, that is, what is the first time that \(u(x,y,z,t)\) will be
+nonzero.
+$BR
+\(t = {}\) \{ ans_rule(20) \}
+$BR
+\{ AnswerFormatHelp("numbers") \}
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+##  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+
+
+#####################
+# Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+${PAR}SOLUTION:$PAR
+$BR
+The wave travels at speed $a.  Therefore the time when the disturbance is felt is when \($ctimesb - $a t = $b\), or in other words
+\( t = \frac{$ctimesb-$b}{$a} \).
+END_SOLUTION
+Context()->normalStrings;
+
+;
+
+ENDDOCUMENT();

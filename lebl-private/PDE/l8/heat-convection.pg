@@ -1,0 +1,91 @@
+##DESCRIPTION
+##  FIXME
+##ENDDESCRIPTION
+
+
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection()
+## Date()
+## Institution()
+## Author(Jiri Lebl)
+## Level()
+## TitleText1('')
+## AuthorText1('')
+## EditionText1('')
+## Section1('')
+## Problem1('')
+## KEYWORDS('partial', 'differential', 'equation')
+
+########################################################################
+
+###########################
+##  Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+#  Setup
+
+Context("Numeric");
+
+$a = non_zero_random(2,9,1);
+$a1 = non_zero_random(2,9,1);
+$a2 = non_zero_random(2,9,1);
+$a3 = non_zero_random(2,9,1);
+
+#Context()->variables->add(x => "Real");
+Context()->variables->add(t => "Real");
+
+
+$ic = Compute("$a1 sin(pi x) + $a2 sin(2 pi x) + $a3 sin(3 pi x)")->reduce;
+
+$answer = Compute("e^($a(x-$a t / 2)/2 ) ( $a1 e^(-(pi)^2 t) sin(pi x) + $a2 e^(-(2 pi)^2 t) sin(2 pi x) + $a3 e^(-(3 pi)^2 t) sin(3 pi x) )")->reduce;
+
+############################
+##  Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Consider the equation \( u_t = u_{xx} - $a u_x \), \( 0 < x < 1 \), \( t > 0 \),
+with boundary condition \( u(0,t) = 0 , u(1,t) = 0 \), and initial condition \( u(x,0) = $ic \).
+Solve.
+$BR
+\( u(x,t) = {} \)
+\{ ans_rule(80) \}
+$PAR
+\{ AnswerFormatHelp("formulas") \}
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+##  Answer evaluation
+
+#$showPartialCorrectAnswers = 1;
+
+ANS( $answer->cmp() );
+
+#
+#####################
+# Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+${PAR}SOLUTION:$PAR
+The final solution is \(u(x,t) = $answer \).
+END_SOLUTION
+Context()->normalStrings;
+
+;
+
+ENDDOCUMENT();

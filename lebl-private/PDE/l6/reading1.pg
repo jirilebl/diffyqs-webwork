@@ -1,0 +1,47 @@
+##DESCRIPTION
+##  Reading question string
+##ENDDESCRIPTION
+
+
+## DBsubject()
+## DBchapter()
+## DBsection()
+## Date()
+## Institution()
+## Author(Jiri Lebl)
+## Level()
+## TitleText1('')
+## AuthorText1('')
+## EditionText1('')
+## Section1('')
+## Problem1('')
+## KEYWORDS('', '', '')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+"PG.pl",
+"PGbasicmacros.pl",
+"PGchoicemacros.pl",
+"PGanswermacros.pl"
+);
+ 
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+
+BEGIN_TEXT
+Reading question for Lesson 6
+$PAR
+Transient part of the solution is the "Part of the solution that depends on the IC
+(and will go to \{ ans_rule(20) \})"
+END_TEXT
+
+
+ANS( str_cmp("zero") );
+
+
+ENDDOCUMENT();        

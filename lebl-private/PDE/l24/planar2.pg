@@ -1,0 +1,123 @@
+##DESCRIPTION
+##  FIXME 
+##ENDDESCRIPTION
+
+
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection()
+## Date()
+## Institution()
+## Author(Jiri Lebl)
+## Level()
+## TitleText1('')
+## AuthorText1('')
+## EditionText1('')
+## Section1('')
+## Problem1('')
+## KEYWORDS('partial', 'differential', 'equation')
+
+########################################################################
+
+###########################
+##  Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+"parserFunction.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+#  Setup
+
+Context("Numeric");
+
+
+$a = random(2,9,1);
+$asq=$a*$a;
+do { $b = random(2,9,1); } until ($b != $a);
+#do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
+#do { $d = random(2,9,1); } until (($d != $a) and ($d != $b) and ($d != $c));
+
+#Context()->variables->add(x => "Real");
+Context()->variables->add(y => "Real");
+Context()->variables->add(z => "Real");
+Context()->variables->add(t => ["Real", limits=>[0.1,4]]);
+#Context()->variables->add(u => ["Real"]);
+#Context()->variables->add(n => ['Real', limits=>[1,20], resolution=>1]);
+#Context()->variables->add(xi => ["Real", TeX=>"\xi"]);
+#Context()->variables->add(eta => ["Real", TeX=>"\eta"]);
+#Context()->variables->add(uxi => ["Real", TeX=>"u_\xi"]);
+#Context()->variables->add(ueta => ["Real", TeX=>"u_\eta"]);
+#
+# This should be good enough for testing if the formula is correct
+#parserFunction("A(xi)" => "exp(xi)");
+#parserFunction("B(eta)" => "exp(-1.337*eta)");
+
+Context()->flags->set(
+     reduceConstants => 0,
+     reduceConstantFunctions => 0,
+);
+
+
+$answer1 = Compute("($b sin(x+y+z-$a sqrt(3) t) + $b sin(x+y+z+$a sqrt(3) t))/2");
+
+############################
+##  Main text
+#
+
+Context()->texStrings;
+BEGIN_TEXT
+Suppose we have the 3D wave equation
+$BR
+\( u_{tt} = $asq (u_{xx} + u_{yy} + u_{zz})  \)
+$BR
+\(-\infty < x,y,z < \infty\) and \(t > 0\).
+$BR
+Suppose that
+$BR
+\(u(x,y,z,0) = $b \sin(x+y+z)\)
+$BR
+\(u_t(x,y,z,0) = 0\)
+$PAR
+Find
+\(u(x,y,z,t) = {} \) \{ ans_rule(40) \}
+$BR
+Hint: It is a planar wave.  Make sure to test your proposed
+solution, the
+constants may be somewhat different that you first think.
+$PAR
+\{ AnswerFormatHelp("formulas") \}
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+##  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+
+
+#####################
+# Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+${PAR}SOLUTION:$PAR
+$BR
+\( u(x,y,z,t) = $answer1 \)
+END_SOLUTION
+Context()->normalStrings;
+
+;
+
+ENDDOCUMENT();

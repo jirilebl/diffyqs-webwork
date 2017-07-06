@@ -1,0 +1,104 @@
+##DESCRIPTION
+##  FIXME
+##ENDDESCRIPTION
+
+
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection()
+## Date()
+## Institution()
+## Author(Jiri Lebl)
+## Level()
+## TitleText1('')
+## AuthorText1('')
+## EditionText1('')
+## Section1('')
+## Problem1('')
+## KEYWORDS('partial', 'differential', 'equation')
+
+########################################################################
+
+###########################
+##  Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+#  Setup
+
+Context("Complex");
+
+$a = random(2,9,1);
+do { $b = random(2,9,1); } until ($b != $a);
+do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
+do { $d = random(2,9,1); } until (($d != $a) and ($d != $b) and ($d != $c));
+
+#Context()->variables->add(x => "Real");
+#Context()->variables->add(t => "Real");
+#Context()->variables->add(n => ['Real', limits=>[1,20], resolution=>1]);
+Context()->variables->add(xi => ["Real", TeX=>"\xi"]);
+
+
+#$ic = Compute("x")->reduce;
+
+$answer = Compute("$a*exp(-i*$b*xi)*sqrt(pi/2)*exp(-|xi|)+($c*$d/sqrt(2))*exp(-($d^2*xi^2) / 4)")->reduce;
+
+############################
+##  Main text
+#
+
+Context()->texStrings;
+BEGIN_TEXT
+Compute the Fourier transform of the following function.
+Use "xi" for the transformed variable name.  Use the tables
+in the back of the book.
+\[
+\mathcal{F}[f(x)] = \hat{f}(\xi) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty f(x) e^{-i\xi x} \, dx 
+\]
+$PAR
+\(\displaystyle 
+\mathcal{F}\left[\frac{$a}{1+(x-$b)^2} + $c e^{-(x/$d)^2}\right]
+= {}
+\)
+\{ ans_rule(60) \}
+$PAR
+\{ AnswerFormatHelp("formulas") \}
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+##  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer->cmp() );
+
+
+#####################
+# Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+${PAR}SOLUTION:$PAR
+\[
+\mathcal{F}\left[\frac{$a}{1+(x-$b)^2} + $c e^{-(x/$d)^2}\right]
+=
+$a \sqrt{\frac{\pi}{2}} e^{-i $b \xi -|\xi|}+\frac{$c \cdot $d}{\sqrt{2}} e^{-\frac{$d^2 \xi^2}{4}}
+\]
+END_SOLUTION
+Context()->normalStrings;
+
+;
+
+ENDDOCUMENT();

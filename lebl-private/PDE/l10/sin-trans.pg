@@ -1,0 +1,114 @@
+##DESCRIPTION
+##  FIXME
+##ENDDESCRIPTION
+
+
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection()
+## Date()
+## Institution()
+## Author(Jiri Lebl)
+## Level()
+## TitleText1('')
+## AuthorText1('')
+## EditionText1('')
+## Section1('')
+## Problem1('')
+## KEYWORDS('partial', 'differential', 'equation')
+
+########################################################################
+
+###########################
+##  Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+#  Setup
+
+Context("Numeric");
+
+$a = non_zero_random(2,9,1);
+
+#Context()->variables->add(x => "Real");
+#Context()->variables->add(t => "Real");
+#Context()->variables->add(n => ['Real', limits=>[1,20], resolution=>1]);
+Context()->variables->add(s => "Real");
+
+
+#$ic = Compute("x")->reduce;
+
+$answer1 = Compute("(2/pi)*(s/(s^2+$a^2))")->reduce;
+$answer2 = Compute("(2/pi)*(1-cos($a s))/s")->reduce;
+
+############################
+##  Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Compute the Fourier sine transform of the following.  Use "s" for the transformed variable name.  To
+remind you, the definition is
+\[
+\mathcal{F}_s [ f(x) ] = \frac{2}{\pi} \int_0^\infty f(x) \sin(sx) \, dx
+\]
+$PAR
+\(\displaystyle 
+\mathcal{F}_s [ e^{-$a x} ]
+= {}
+\)
+\{ ans_rule(40) \}
+$PAR
+\(\displaystyle 
+\mathcal{F}_s [ H($a-x) ]
+= {}
+\)
+\{ ans_rule(40) \}
+$PAR
+where \( H(x) \) is the Heaviside function, which is 0 for negative numbers and 1
+for positive numbers.
+$PAR
+\{ AnswerFormatHelp("formulas") \}
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+##  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+ANS( $answer2->cmp() );
+
+
+#####################
+# Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+${PAR}SOLUTION:$PAR
+\(\displaystyle 
+\mathcal{F}_s [ e^{-$a x} ]
+= $answer1
+\)
+$PAR
+\(\displaystyle 
+\mathcal{F}_s [ H($a-x) ]
+= $answer2
+\)
+END_SOLUTION
+Context()->normalStrings;
+
+;
+
+ENDDOCUMENT();

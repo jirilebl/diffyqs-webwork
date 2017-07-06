@@ -1,0 +1,105 @@
+##DESCRIPTION
+##  classify separable differential equations
+##ENDDESCRIPTION
+
+
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection()
+## Date()
+## Institution()
+## Author(Jiri Lebl)
+## Level()
+## TitleText1('')
+## AuthorText1('')
+## EditionText1('')
+## Section1('')
+## Problem1('')
+## KEYWORDS('partial', 'differential', 'equation')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+"PGstandard.pl",
+"PGbasicmacros.pl",
+"MathObjects.pl",
+"parserRadioButtons.pl",
+"AnswerFormatHelp.pl",
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+Context("Numeric");
+
+$unts0 = RadioButtons(
+  [["g / cm-sec",
+    "g / cm\({}^2\)",
+    "m / sec",
+    "g / cm\({}^3\)",
+    "cm\({}^2\) / sec",
+    "sec / m"]],
+    "g / cm-sec",
+);
+
+$unts1 = RadioButtons(
+  [["g / cm-sec",
+    "g / cm\({}^2\)",
+    "m / sec",
+    "g / cm\({}^3\)",
+    "cm\({}^2\) / sec",
+    "sec / m"]],
+    "m / sec",
+);
+
+$unts2 = RadioButtons(
+  [["g / cm-sec",
+    "g / cm\({}^2\)",
+    "m / sec",
+    "g / cm\({}^3\)",
+    "cm\({}^2\) / sec",
+    "sec / m"]],
+    "cm\({}^2\) / sec",
+);
+
+#####################
+# Main text
+
+
+Context()->texStrings;
+BEGIN_TEXT
+Suppose that
+\(u\) has units degrees g/cm.  And we have the equation \(u_t = \alpha^2 u_{xx} - \nu u_x\)
+$PAR
+What are the units of \(u_t\):
+$BR
+\{ $unts0->buttons() \}
+$PAR
+What are the units of \(\nu\):
+$BR
+\{ $unts1->buttons() \}
+$PAR
+What are the units of \(\alpha^2\)
+$BR
+\{ $unts2->buttons() \}
+END_TEXT
+Context()->normalStrings;
+
+
+#####################
+# Answer evaluation
+
+install_problem_grader(~~&std_problem_grader);
+
+$showPartialCorrectAnswers = 0;
+
+ANS( $unts0->cmp() );
+ANS( $unts1->cmp() );
+ANS( $unts2->cmp() );
+
+
+COMMENT('MathObject version.');
+
+ENDDOCUMENT();

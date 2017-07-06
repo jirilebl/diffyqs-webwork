@@ -1,0 +1,108 @@
+##DESCRIPTION
+##  FIXME
+##ENDDESCRIPTION
+
+
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection()
+## Date()
+## Institution()
+## Author(Jiri Lebl)
+## Level()
+## TitleText1('')
+## AuthorText1('')
+## EditionText1('')
+## Section1('')
+## Problem1('')
+## KEYWORDS('partial', 'differential', 'equation')
+
+########################################################################
+
+###########################
+##  Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+#  Setup
+
+Context("Complex");
+
+$a = random(2,9,1);
+do { $b = random(2,9,1); } until ($b != $a);
+#do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
+
+#Context()->variables->add(x => "Real");
+#Context()->variables->add(t => "Real");
+#Context()->variables->add(n => ['Real', limits=>[1,20], resolution=>1]);
+Context()->variables->add(xi => ["Real", TeX=>"\xi"]);
+
+
+#$ic = Compute("x")->reduce;
+
+$answer1 = Compute("$a*sqrt(2/pi)*(1/(xi^2+$a^2))")->reduce;
+$answer2 = Compute("-i*$a*(1-exp(-i*$b*xi))/(sqrt(2*pi)*xi)")->reduce;
+
+############################
+##  Main text
+#
+
+Context()->texStrings;
+BEGIN_TEXT
+Compute the Fourier transform of the following functions
+in the exponential form.  Use "xi" for the transformed variable name.
+That is, we wish to compute
+\[
+\mathcal{F}[f(x)] = \hat{f}(\xi) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty f(x) e^{-i\xi x} \, dx 
+\]
+$PAR
+\(\displaystyle 
+\mathcal{F}[e^{-$a|x|}]
+= {}
+\)
+\{ ans_rule(40) \}
+$PAR
+\(\displaystyle 
+\mathcal{F}[f(x)]
+= {}
+\)
+\{ ans_rule(40) \}
+$BR
+where \(f(x)\) is 0 for all \(x\) except \( 0 \leq x \leq $b \) where \(f(x) = $a \)
+$PAR
+\{ AnswerFormatHelp("formulas") \}
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+##  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+ANS( $answer2->cmp() );
+
+
+#####################
+# Solution
+
+#Context()->texStrings;
+#BEGIN_SOLUTION
+#${PAR}SOLUTION:$PAR
+#END_SOLUTION
+#Context()->normalStrings;
+
+;
+
+ENDDOCUMENT();

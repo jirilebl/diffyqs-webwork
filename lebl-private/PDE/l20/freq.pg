@@ -1,0 +1,109 @@
+##DESCRIPTION
+##  FIXME 
+##ENDDESCRIPTION
+
+
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection()
+## Date()
+## Institution()
+## Author(Jiri Lebl)
+## Level()
+## TitleText1('')
+## AuthorText1('')
+## EditionText1('')
+## Section1('')
+## Problem1('')
+## KEYWORDS('partial', 'differential', 'equation')
+
+########################################################################
+
+###########################
+##  Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+#  Setup
+
+Context("Numeric");
+
+
+$a = random(2,9,1);
+do { $b = random(2,9,1); } until ($b != $a);
+$bsq = $b*$b;
+#do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
+#do { $d = random(2,9,1); } until (($d != $a) and ($d != $b) and ($d != $c));
+
+#Context()->variables->add(x => "Real");
+#Context()->variables->add(t => ["Real", limits=>[0.1,4]]);
+#Context()->variables->add(n => ['Real', limits=>[1,20], resolution=>1]);
+#Context()->variables->add(xi => ["Real", TeX=>"\xi"]);
+#Context()->variables->add(tau => ["Real", TeX=>"\tau"]);
+
+
+$answer1 = Compute("1/$a")->reduce;
+$answer2 = Compute("$b")->reduce;
+
+############################
+##  Main text
+#
+
+Context()->texStrings;
+BEGIN_TEXT
+Take the vibrating string satisfying
+$BR
+PDE: \( \quad u_{tt} = \alpha^2 u_{xx}  , \qquad 0 < x < L , \quad t > 0 \)
+$BR
+BC: \( \quad u(0,t) = u(L,t)= 0 \) 
+$PAR
+Suppose the string vibrates at base frequency \(\omega\).
+$PAR
+a) If we lengthen the string to \( $a L \)
+the frequency \(\omega\) gets multiplied by
+\{ ans_rule(20) \}.
+$PAR
+b) If we increase tension by a factor of \( $bsq \)
+the frequency \(\omega\) gets multiplied by
+\{ ans_rule(20) \}.
+$PAR
+\{ AnswerFormatHelp("numbers") \}
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+##  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+ANS( $answer2->cmp() );
+
+
+#####################
+# Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+${PAR}SOLUTION:$PAR
+$BR
+The base frequency (angular) is \( \frac{\pi \alpha}{L} \) where \(\alpha^2 = \frac{T}{\rho} \)
+for tension \(T\) and linear density \(rho\).  Therefore increasing \(L\) by a factor of \($a\),
+divides the base frequency by \($a\).  Increasing tension by a factor of \($bsq\) multiplies the frequency by the square root, that is \($b\).
+END_SOLUTION
+Context()->normalStrings;
+
+;
+
+ENDDOCUMENT();

@@ -1,0 +1,112 @@
+##DESCRIPTION
+##  FIXME
+##ENDDESCRIPTION
+
+
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection()
+## Date()
+## Institution()
+## Author(Jiri Lebl)
+## Level()
+## TitleText1('')
+## AuthorText1('')
+## EditionText1('')
+## Section1('')
+## Problem1('')
+## KEYWORDS('partial', 'differential', 'equation')
+
+########################################################################
+
+###########################
+##  Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+#  Setup
+
+Context("Numeric");
+
+$a = random(2,9,1);
+do { $b = random(2,9,1); } until ($b != $a);
+#do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
+
+#Context()->variables->add(x => "Real");
+Context()->variables->add(t => ["Real", limits=>[0.1,4]]);
+#Context()->variables->add(n => ['Real', limits=>[1,20], resolution=>1]);
+Context()->variables->add(s => "Real");
+
+
+#$ic = Compute("x")->reduce;
+
+$answer = Compute("(1/(2*$a*sqrt(pi*t)))*exp(-$b|s|)*exp(-((x-s)^2)/(4*$a^2*t))")->reduce;
+
+############################
+##  Main text
+#
+
+Context()->texStrings;
+BEGIN_TEXT
+Solve the problem
+$BR
+PDE: \( \quad u_t = $a^2 u_{xx} , \qquad -\infty < x < \infty , \quad t > 0 \)
+$BR
+IC: \( \quad u(x,0) = e^{-$b |x|}\)
+$BR
+Writing the result as a convolution (the convolution should
+be written in the same way is in the book,
+that is, it is the integration against the Green's function):
+$PAR
+\(
+\displaystyle
+u(x,t) = 
+\int_{-\infty}^\infty \)
+\{ ans_rule(60) \}
+\(
+\, ds
+\)
+$PAR
+\{ AnswerFormatHelp("formulas") \}
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+##  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer->cmp() );
+
+
+#####################
+# Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+${PAR}SOLUTION:$PAR
+\(
+\displaystyle
+u(x,t)
+=
+\int_{-\infty}^\infty
+$answer
+\, ds
+\)
+END_SOLUTION
+Context()->normalStrings;
+
+;
+
+ENDDOCUMENT();

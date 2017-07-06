@@ -1,0 +1,123 @@
+##DESCRIPTION
+##  FIXME L25 #1
+##ENDDESCRIPTION
+
+
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection()
+## Date()
+## Institution()
+## Author(Jiri Lebl)
+## Level()
+## TitleText1('')
+## AuthorText1('')
+## EditionText1('')
+## Section1('')
+## Problem1('')
+## KEYWORDS('partial', 'differential', 'equation')
+
+########################################################################
+
+###########################
+##  Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+"parserFunction.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+#  Setup
+
+Context("Numeric");
+
+
+$a = random(2,9,1);
+$asq=$a*$a;
+do { $b = random(2,9,1); } until ($b != $a);
+do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
+do { $d = random(2,9,1); } until (($d != $a) and ($d != $b) and ($d != $c));
+
+#Context()->variables->add(x => "Real");
+#Context()->variables->add(y => "Real");
+#Context()->variables->add(z => "Real");
+Context()->variables->add(t => ["Real", limits=>[0.1,4]]);
+#Context()->variables->add(u => ["Real"]);
+#Context()->variables->add(n => ['Real', limits=>[1,20], resolution=>1]);
+#Context()->variables->add(xi => ["Real", TeX=>"\xi"]);
+#Context()->variables->add(eta => ["Real", TeX=>"\eta"]);
+#Context()->variables->add(uxi => ["Real", TeX=>"u_\xi"]);
+#Context()->variables->add(ueta => ["Real", TeX=>"u_\eta"]);
+#
+# This should be good enough for testing if the formula is correct
+#parserFunction("A(xi)" => "exp(xi)");
+#parserFunction("B(eta)" => "exp(-1.337*eta)");
+
+Context()->flags->set(
+     reduceConstants => 0,
+     reduceConstantFunctions => 0,
+);
+
+
+$answer1 = Compute("$b + $c e^(-($a pi)^2 t) cos(pi x) + $d e^(-($a 2 pi)^2 t) cos(2 pi x)");
+$answer2 = Compute("$b");
+
+############################
+##  Main text
+#
+
+Context()->texStrings;
+BEGIN_TEXT
+Using the cosine transform solve
+$BR
+PDE: \( \quad u_{t} = $asq u_{xx}, \quad 0 < x < 1\) and \(t > 0\).
+$BR
+BC: \(\quad u_x(0,t) = u_x(1,t) = 0 \)
+$BR
+IC: \(\quad u(x,0) = $b + $c \cos(\pi x) + $d \cos(2\pi x) \)
+$PAR
+Solve:
+\(u(x,t) = {} \) \{ ans_rule(40) \}
+$PAR
+Based on this solution what is the steady state, that is
+what is
+\(\lim_{t\to \infty} u(x,t) = {} \) \{ ans_rule(40) \}
+$PAR
+\{ AnswerFormatHelp("formulas") \}
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+##  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+ANS( $answer2->cmp() );
+
+
+#####################
+# Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+${PAR}SOLUTION:$PAR
+$BR
+\( u(x,t) = $answer1 \)
+$BR
+\( \lim_{t\to\infty} u(x,t) = $answer2 \)
+END_SOLUTION
+Context()->normalStrings;
+
+;
+
+ENDDOCUMENT();
