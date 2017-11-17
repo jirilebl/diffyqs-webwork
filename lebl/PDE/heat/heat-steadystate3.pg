@@ -1,21 +1,16 @@
 ##DESCRIPTION
-##  FIXME
+##  Finding steady state of a one dimensional heat equation
 ##ENDDESCRIPTION
 
 
 ## DBsubject(Differential equations)
 ## DBchapter(Partial differential equations)
-## DBsection()
-## Date()
-## Institution()
+## DBsection(Heat equation)
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
-## Problem1('')
-## KEYWORDS('partial', 'differential', 'equation')
+## Institution(Oklahoma State University)
+## Level(5)
+## Keywords('PDE', 'partial', 'differential', 'equation', 'heat equation')
+
 
 ########################################################################
 
@@ -28,6 +23,7 @@ loadMacros(
 "PGstandard.pl",
 "MathObjects.pl",
 "AnswerFormatHelp.pl",
+"PGcourse.pl",
 );
 
 TEXT(beginproblem());

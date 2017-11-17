@@ -1,32 +1,24 @@
 ##DESCRIPTION
-##  classify separable differential equations
+##  Classify second order constant coefficient linear PDE
 ##ENDDESCRIPTION
 
 
 ## DBsubject(Differential equations)
 ## DBchapter(Partial differential equations)
 ## DBsection(Classification)
-## Date()
-## Institution()
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
-## Problem1('')
-## KEYWORDS('partial', 'differential', 'equation', 'classify', 'homogeneous')
+## Institution(Oklahoma State University)
+## Level(2)
+## Keywords('PDE', 'partial', 'differential', 'equation', 'classify', 'homogeneous')
 
 ########################################################################
 
 DOCUMENT();      
 
 loadMacros(
-"PGauxiliaryFunctions.pl",#required for floor and ceil
+"PGstandard.pl",
 "MathObjects.pl",
-"PGbasicmacros.pl",
 "PGchoicemacros.pl",
-"PGanswermacros.pl",
 "PGcourse.pl",
 );
 
@@ -53,15 +45,17 @@ Context()->strings->add(hyperbolic=>{},parabolic=>{},elliptic=>{},homogeneous=>{
 
 $A = Compute(non_zero_random(-9,9));
 $B = Compute(non_zero_random(-9,9));
-$C = Compute(non_zero_random(-9,9));
 
+## Make the PDE elliptic
+$C = ceil(($B)**2/(4*$A))+1;
+if ($C == 0){$C++;};
 
 
 $D = Compute(non_zero_random(-9,9));
 $E = Compute(non_zero_random(-9,9));
 $F = Compute(non_zero_random(-9,9));
 $discriminant = Compute("($B)**2-4*$A*$C");
-$homogeneity = String("nonhomogeneous");
+$homogeneity = String("homogeneous");
 
 #############################################################
 ##
@@ -101,7 +95,7 @@ $cmc->makeLast("hyperbolic","parabolic","elliptic","homogeneous","nonhomogeneous
 
 
 BEGIN_TEXT
-For the partial differential equation \($A\frac{\partial^2 u}{\partial x^2}+$B\frac{\partial^2 u}{\partial x\partial y}+$C\frac{\partial^2 u}{\partial y^2}+$D\frac{\partial u}{\partial x}+$E\frac{\partial u}{\partial y}+$F u=\sin(x)\) the discriminant is \{$discriminant->ans_rule\}
+For the partial differential equation \($A\frac{\partial^2 u}{\partial x^2}+$B\frac{\partial^2 u}{\partial x\partial y}+$C\frac{\partial^2 u}{\partial y^2}+$D\frac{\partial u}{\partial x}+$E\frac{\partial u}{\partial y}+$F u=0\) the discriminant is \{$discriminant->ans_rule\}
 $BR
 The PDE is (check all that apply)
 $BR

@@ -1,21 +1,15 @@
 ##DESCRIPTION
-##  classify separable differential equations
+##  Setup of a heat IBVP
 ##ENDDESCRIPTION
 
 
 ## DBsubject(Differential equations)
 ## DBchapter(Partial differential equations)
-## DBsection()
-## Date()
-## Institution()
+## DBsection(Heat equation)
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
-## Problem1('')
-## KEYWORDS('partial', 'differential', 'equation')
+## Institution(Oklahoma State University)
+## Level(2)
+## Keywords('PDE', 'partial', 'differential', 'equation', 'heat equation')
 
 ########################################################################
 
@@ -23,10 +17,10 @@ DOCUMENT();
 
 loadMacros(
 "PGstandard.pl",
-"PGbasicmacros.pl",
 "MathObjects.pl",
 "parserRadioButtons.pl",
 "AnswerFormatHelp.pl",
+"PGcourse.pl",
 );
 
 # Print problem number and point value (weight) for the problem
@@ -60,21 +54,25 @@ starting with 0 at the left hand endpoint.  Suppose the left hand endpoint is ke
 temperature $left, the right hand endpoint is kept at temperature $right, and
 the initial temperature at time \(t=0\) is \( \sin(x) \).
 $BR
-Set up the IBVP.
-$BR
-$BR
+Set up the initial-boundary-value-problem (IBVP).
+$PAR
 The equation is:
 $BR
 \{ $eql->buttons() \}
+$PAR
+Range of idependent variables:
 $BR
 \(0 < x < {}\) \{ ans_rule(5) \},  \( t>0\),
-$BR
+$PAR
+Boundary and initial conditions:
 $BR
 \(u(0,t) = {} \) \{ ans_rule(5) \}  for \(t>0\),
 $BR
 \(u(\) \{ ans_rule(5) \} \(,t) = {} \) \{ ans_rule(5) \}  for \( t>0\),
 $BR
 \(u(x,0) = {} \) \{ ans_rule(5) \}
+$PAR
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
 

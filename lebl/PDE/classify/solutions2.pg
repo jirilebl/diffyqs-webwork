@@ -10,11 +10,6 @@
 ## Institution('Oklahoma State University')
 ## Level('2')
 ## Author('Jiri Lebl')
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
-## Problem1('')
 ## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'solution')
 
 ########################################################################
@@ -22,10 +17,8 @@
 DOCUMENT();      
 
 loadMacros(
-"MathObjects.pl",
-"PGbasicmacros.pl",
+"PGstandard.pl",
 "PGchoicemacros.pl",
-"PGanswermacros.pl",
 "PGcourse.pl",
 );
 

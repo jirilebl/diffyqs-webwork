@@ -1,21 +1,15 @@
 ##DESCRIPTION
-##  FIXME
+##  Finding steady state of a one dimensional heat equation with lateral heat loss
 ##ENDDESCRIPTION
 
 
 ## DBsubject(Differential equations)
 ## DBchapter(Partial differential equations)
-## DBsection()
-## Date()
-## Institution()
+## DBsection(Heat equation)
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
-## Problem1('')
-## KEYWORDS('partial', 'differential', 'equation')
+## Institution(Oklahoma State University)
+## Level(5)
+## Keywords('PDE', 'partial', 'differential', 'equation', 'heat equation')
 
 ########################################################################
 
@@ -28,6 +22,7 @@ loadMacros(
 "PGstandard.pl",
 "MathObjects.pl",
 "AnswerFormatHelp.pl",
+"PGcourse.pl",
 );
 
 TEXT(beginproblem());
@@ -38,20 +33,21 @@ TEXT(beginproblem());
 
 Context("Numeric");
 
-$a = 2*non_zero_random(2,5,1);
-$ahalf = $a/2;
-$b = non_zero_random(-9,9,1);
+$a = non_zero_random(2,5,1);
+$asq = $a*$a;
+$b = $a + non_zero_random(1,4,1);
 
-$answer = Compute("($b+$ahalf)x - ($a/2) x^2")->reduce();
+$answer = Compute("$b e^($a x) - $b e^(-$a x)")->reduce();
 
 ############################
 ##  Main text
 
 Context()->texStrings;
 BEGIN_TEXT
-Consider the equation \( u_t = u_{xx} + $a \), \( 0 < x < 1 \), \( t > 0 \),
-that is, there is uniform heat source.  Suppose further that
-ends are kept as \( u(0,t) = 0 , u(1,t) = $b \).  What is the 
+Consider the equation \( u_t = u_{xx} - $asq u \), \( 0 < x < 1 \), \( t > 0 \),
+that is, there is a lateral heat loss.  Suppose further that
+ends are kept as \( u(0,t) = 0 , u(1,t) = $b (e^{$a}-e^{-$a}) \).
+What is the 
 steady state solution \(U(x)\), if it exists?
 That is, a solution after a very long time.$BR
 Hint: a steady-state solution does not depend on time.
@@ -77,11 +73,13 @@ Context()->texStrings;
 BEGIN_SOLUTION
 
 Solution is to consider \( u_t = 0 \), therefore we have an equation
-for \(U(x)\) as \( 0 = U'' + $a \) with boundary conditions \(U(0)=0\)
-and \(U(1)=$b\).  The solution to the equation is
-\( U(x) = A + Bx - \frac{$a}{2} x^2 \).
-Plugging in the boundary conditions we find that \( A = 0 \)
-and \(B=$b\) so 
+for \(U(x)\) as \( 0 = U'' - $asq U \) with boundary conditions \(U(0)=0\)
+and \(U(1)=$b(e^{$a}-e^{-$a})\).  The general solution to the equation is
+\( U(x) = C_1 e^{$a x} + C_2 e^{-$a x} \).
+Plugging in the boundary condition \(U(0)=0\) we find that \( C_1 = -C_2 \),
+and plugging in the second boundary condition
+\(U(1)=$b(e^{$a}-e^{-$a})\), we find that \(C_1 = $b\).
+So 
 \( U(x) = $answer \).
 END_SOLUTION
 Context()->normalStrings;

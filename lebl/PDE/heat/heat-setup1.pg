@@ -1,21 +1,15 @@
 ##DESCRIPTION
-##  classify separable differential equations
+##  Heat equation setup
 ##ENDDESCRIPTION
 
 
 ## DBsubject(Differential equations)
 ## DBchapter(Partial differential equations)
-## DBsection()
-## Date()
-## Institution()
+## DBsection(Heat equation)
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
-## Problem1('')
-## KEYWORDS('partial', 'differential', 'equation')
+## Institution(Oklahoma State University)
+## Level(2)
+## Keywords('PDE', 'partial', 'differential', 'equation')
 
 ########################################################################
 
@@ -23,10 +17,8 @@ DOCUMENT();
 
 loadMacros(
 "PGstandard.pl",
-"PGbasicmacros.pl",
-"MathObjects.pl",
 "parserRadioButtons.pl",
-"AnswerFormatHelp.pl",
+"PGcourse.pl",
 );
 
 # Print problem number and point value (weight) for the problem
@@ -76,7 +68,7 @@ Which equation most likely governs this setup:
 $BR
 \{ $eql->buttons() \}
 $PAR
-Which BC (boundary conditions) are the correct ones:
+Which boundary conditions are the correct ones:
 $BR
 \{ $bc->buttons() \}
 END_TEXT
@@ -103,10 +95,8 @@ ${PAR}SOLUTION:$PAR
 
 The equation is \{ $eql->correct_ans() \}
 $BR
-The BC is \{ $bc->correct_ans() \}
+The boundary conditions are \{ $bc->correct_ans() \}
 END_SOLUTION
 Context()->normalStrings;
-
-COMMENT('MathObject version.');
 
 ENDDOCUMENT();

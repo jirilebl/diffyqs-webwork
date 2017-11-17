@@ -1,32 +1,24 @@
 ##DESCRIPTION
-##  classify separable differential equations
+##  Classify second order constant coefficient linear PDE
 ##ENDDESCRIPTION
 
 
 ## DBsubject(Differential equations)
 ## DBchapter(Partial differential equations)
 ## DBsection(Classification)
-## Date()
-## Institution()
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
-## Problem1('')
-## KEYWORDS('partial', 'differential', 'equation', 'classify', 'homogeneous')
+## Institution(Oklahoma State University)
+## Level(2)
+## Keywords('PDE', 'partial', 'differential', 'equation', 'classify', 'homogeneous')
 
 ########################################################################
 
 DOCUMENT();      
 
 loadMacros(
-"PGauxiliaryFunctions.pl",#required for floor and ceil
+"PGstandard.pl",
 "MathObjects.pl",
-"PGbasicmacros.pl",
 "PGchoicemacros.pl",
-"PGanswermacros.pl",
 "PGcourse.pl",
 );
 

@@ -1,21 +1,15 @@
 ##DESCRIPTION
-##  classify separable differential equations
+##  Heat equation setup
 ##ENDDESCRIPTION
 
 
 ## DBsubject(Differential equations)
 ## DBchapter(Partial differential equations)
-## DBsection()
-## Date()
-## Institution()
+## DBsection(Heat equation)
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
-## Problem1('')
-## KEYWORDS('partial', 'differential', 'equation')
+## Institution(Oklahoma State University)
+## Level(2)
+## Keywords('PDE', 'partial', 'differential', 'equation')
 
 ########################################################################
 
@@ -23,10 +17,8 @@ DOCUMENT();
 
 loadMacros(
 "PGstandard.pl",
-"PGbasicmacros.pl",
-"MathObjects.pl",
 "parserRadioButtons.pl",
-"AnswerFormatHelp.pl",
+"PGcourse.pl",
 );
 
 # Print problem number and point value (weight) for the problem
@@ -44,19 +36,17 @@ $eql = RadioButtons(
     "\(u_t=\alpha^2 u_{xx}-$beta u_x\)",
     "\(u_{tt}=\alpha^2 u_{xx}\)",
     "\(u_{tt}+u_{xx}=0\)"]],
-    "\(u_t=\alpha^2 u_{xx}-$beta x\)",
+    "\(u_t=\alpha^2 u_{xx}-$beta u_x\)",
 );
 
 $left = non_zero_random(-9,9,1);
 
 $bc = RadioButtons(
-  [["\(u(0,t) = 0, \quad u(1,t)=0\)",
-    "\(u(0,t) = 0, \quad u(1,t)=u_x(1,t)\)",
-    "\(u_x(0,t) = u(0,t), \quad u(1,t)=0\)",
-    "\(u_x(0,t) = u(0,t), \quad u_x(1,t)=0\)",
-    "\(u_x(0,t) = 0, \quad u_x(1,t)=0\)",
-    "\(u(0,t) = 0, \quad u_x(1,t)=0\)"]],
-    "\(u_x(0,t) = 0, \quad u_x(1,t)=0\)",
+  [["\(u(0,t) = $left\)",
+    "\(u(0,t) = 0\)",
+    "\(u_x(0,t) = $left\)",
+    "\(u_x(0,t) = 0\)"]],
+    "\(u(0,t) = $left\)",
 );
 
 #####################
@@ -65,18 +55,17 @@ $bc = RadioButtons(
 
 Context()->texStrings;
 BEGIN_TEXT
-Suppose we have a laterally insulated metal rod of length 1, parametrized by length,
-starting with 0 at the left hand endpoint.
-Suppose that there is heat removed from the rod (heat sink), independent of time,
-but depending on position.
-Both endpoints are insulated.
+Suppose we have substance moving in a stream with convection, the 
+stream is parametrized by distance from the source.
+Suppose at $x=0$, the substance has concentration $left.
+There is no boundary point at the right hand end point.
 $BR
 $BR
-Which of the following equations could govern this setup:
+Which equation most likely governs this setup:
 $BR
 \{ $eql->buttons() \}
 $PAR
-Which BC (boundary conditions) are the correct ones:
+Which boundary conditions would work:
 $BR
 \{ $bc->buttons() \}
 END_TEXT
@@ -103,10 +92,8 @@ ${PAR}SOLUTION:$PAR
 
 The equation is \{ $eql->correct_ans() \}
 $BR
-The BC is \{ $bc->correct_ans() \}
+The boundary conditions are \{ $bc->correct_ans() \}
 END_SOLUTION
 Context()->normalStrings;
-
-COMMENT('MathObject version.');
 
 ENDDOCUMENT();
