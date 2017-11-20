@@ -45,15 +45,17 @@ Context()->variables->add(n => ['Real', limits=>[1,20], resolution=>1]);
 Context()->variables->add(s => "Real");
 
 
-$answer1 = Compute("$a x sin($a t)")->reduce;
+$answer1 = Compute("x cos($a t)")->reduce;
 
-$answer2 = Compute("0")->reduce;
+$answer2 = Compute("$a x sin($a t)")->reduce;
 
-$answer3 = Compute("sin(n pi x)")->reduce;
+$answer3 = Compute("0")->reduce;
 
-$answer4 = Compute("2*$a*sin($a t)*((-1)^(n+1))/(pi*n)")->reduce;
+$answer4 = Compute("sin(n pi x)")->reduce;
 
-$answer5 = Compute("e^(-(t-s)*(n*pi)^2)*2*$a*sin($a s)*((-1)^(n+1))/(pi*n)")->reduce;
+$answer5 = Compute("2*$a*sin($a t)*((-1)^(n+1))/(pi*n)")->reduce;
+
+$answer6 = Compute("e^(-(t-s)*(n*pi)^2)*2*$a*sin($a s)*((-1)^(n+1))/(pi*n)")->reduce;
 
 ############################
 ##  Main text
@@ -65,10 +67,17 @@ with boundary condition \( u(0,t) = 0 , u(1,t) =  \cos($a t) \), and initial con
 $PAR
 Solve in two steps.  First transform the problem into a problem with homogeneous boundary conditions, but
 inhomogeneous PDE, and then solve.
-Writing \( u = S + U \), where \( S(x,t) = A(t) (1-x) + B(t) x \) is (affine) linear in \(x\), then
-the initial boundary value problem for \( U \) becomes
+Write \( u = S + U \), where \( S(x,t) = A(t) (1-x) + B(t) x \) is (affine) linear in \(x\),
+that is
 $BR
-PDE: \( U_t = U_{xx} + {} \)
+\( S(x,t) = {} \)
+\{ ans_rule(40) \}
+$PAR
+The initial boundary value problem for \( U \) becomes
+$BR
+PDE: \( U_t = U_{xx} + f(x,t) \)
+\$BR
+where \( f(x,t) = {} \)
 \{ ans_rule(40) \}
 $BR
 BC: \( U(0,t) = 0, U(1,t) = 0 \)
@@ -115,16 +124,49 @@ ANS( $answer2->cmp() );
 ANS( $answer3->cmp() );
 ANS( $answer4->cmp() );
 ANS( $answer5->cmp() );
+ANS( $answer6->cmp() );
 
 
 #####################
 # Solution
 
-#Context()->texStrings;
-#BEGIN_SOLUTION
-#${PAR}SOLUTION:$PAR
-#END_SOLUTION
-#Context()->normalStrings;
+Context()->texStrings;
+BEGIN_SOLUTION
+${PAR}SOLUTION:$PAR
+
+The \(S\) needs to make \(U\) into one with homogeneous
+boundary conditions, so \( S = $answer1 \) will work.
+$PAR
+Notice that \(S_{xx} = 0\), so \(u_{xx} = U_{xx}\).
+If \(u = U + S \) and \( u_t = u_{xx} \), then
+$BR
+\(U_{xx} = u_{xx} = u_t = U_t + S_t = U_t - $answer2 .  \)
+$BR
+Or in other words \(f(x,t) = $answer2 \).
+$PAR
+As \(U(x,t) = u(x,t)-S(x,t) = u(x,t) - $answer1 \).  Setting
+\(t=0\) we find
+\(U(x,0) = u(x,0)-x = 0 \).
+$PAR
+The eigenvalue problem we need to use is the one that comes up
+with the sine series as we have Dirichlet boundary conditions.
+Therefore \( X_n(x) = $answer4 \) .
+$PAR
+Computing the coefficient
+$BR
+\(\displaystyle
+f_n(t) = 2 \int_0^1 f(x,t) \sin(n \pi x) \, dx =
+$answer5 .
+\)
+Finally, by plugging the series into the equation and equating coefficients, we find that
+\(T_n\) satisfies \( T_n' + (n\pi)^2 T_n = f_n(t) \), and
+\(T_n(0) = 0 \).  Using
+integrating factor we find
+$BR
+\( T_n(t) = {} \)
+\( \displaystyle \int_0^t $answer6 \, ds \) .
+END_SOLUTION
+Context()->normalStrings;
 
 ;
 
