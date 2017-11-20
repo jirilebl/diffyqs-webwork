@@ -68,14 +68,12 @@ $pl->choose(7);
 ###########################
 #  Main text
 
-Context()->texStrings;
 BEGIN_TEXT
 Classify the equations in terms of order, linearity, homogeneity, and for second order
 equations classify as elliptic, hyperbolic, or parabolic.
 $BR
 \{ $pl -> print_q() \}
 END_TEXT
-Context()->normalStrings;
 
 ############################
 #  Answer evaluation
@@ -103,11 +101,9 @@ ANS( str_cmp( $pl->ra_correct_ans ) );
 ############################
 #  Solution
 #
-#Context()->texStrings;
 #BEGIN_SOLUTION
 #${PAR}SOLUTION:${PAR}
 #\{ $pl->print_a \}
 #END_SOLUTION
-#Context()->normalStrings;
 
 ENDDOCUMENT();
