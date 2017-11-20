@@ -1,21 +1,15 @@
 ##DESCRIPTION
-##  classify separable differential equations
+##  Recongize units of variaous quantities in the heat equation
 ##ENDDESCRIPTION
 
 
 ## DBsubject(Differential equations)
 ## DBchapter(Partial differential equations)
-## DBsection()
-## Date()
-## Institution()
+## DBsection(Heat equation)
+## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
-## Problem1('')
-## KEYWORDS('partial', 'differential', 'equation')
+## Level(2)
+## Keywords('PDE', 'partial', 'differential', 'equation', 'units', 'heat equation')
 
 ########################################################################
 
@@ -23,8 +17,6 @@ DOCUMENT();
 
 loadMacros(
 "PGstandard.pl",
-"PGbasicmacros.pl",
-"MathObjects.pl",
 "parserRadioButtons.pl",
 "AnswerFormatHelp.pl",
 );
@@ -32,46 +24,51 @@ loadMacros(
 # Print problem number and point value (weight) for the problem
 TEXT(beginproblem());
 
-Context("Numeric");
 
 $unts0 = RadioButtons(
-  [["g / cm-sec",
-    "g / cm\({}^2\)",
-    "m / sec",
+  [["\({}^\circ\)C / s",
+    "\({}^\circ\)C / cm\({}^2\)",
+    "cm / s",
+    "cm / s\({}^2\)",
+    "\({}^\circ\)C-s",
     "g / cm\({}^3\)",
-    "cm\({}^2\) / sec",
-    "sec / m"]],
-    "g / cm-sec",
+    "cm\({}^2\) / s",
+    "s / \({}^\circ\)C"]],
+    "\({}^\circ\)C / s"
 );
 
 $unts1 = RadioButtons(
-  [["g / cm-sec",
-    "g / cm\({}^2\)",
-    "m / sec",
+  [["\({}^\circ\)C / s",
+    "\({}^\circ\)C / cm\({}^2\)",
+    "cm / s",
+    "cm / s\({}^2\)",
+    "\({}^\circ\)C-s",
     "g / cm\({}^3\)",
-    "cm\({}^2\) / sec",
-    "sec / m"]],
-    "m / sec",
+    "cm\({}^2\) / s",
+    "s / \({}^\circ\)C"]],
+    "cm / s"
 );
 
 $unts2 = RadioButtons(
-  [["g / cm-sec",
-    "g / cm\({}^2\)",
-    "m / sec",
+  [["\({}^\circ\)C / s",
+    "\({}^\circ\)C / cm\({}^2\)",
+    "cm / s",
+    "cm / s\({}^2\)",
+    "\({}^\circ\)C-s",
     "g / cm\({}^3\)",
-    "cm\({}^2\) / sec",
-    "sec / m"]],
-    "cm\({}^2\) / sec",
+    "cm\({}^2\) / s",
+    "s / \({}^\circ\)C"]],
+    "cm\({}^2\) / s"
 );
 
 #####################
 # Main text
 
 
-Context()->texStrings;
 BEGIN_TEXT
-Suppose that
-\(u\) has units degrees g/cm.  And we have the equation \(u_t = \alpha^2 u_{xx} - \nu u_x\)
+Suppose 
+\(u\) has units degree Celsius (\({}^\circ\)C), time is in seconds (s), length is in centemeters (cm).
+We have the equation \(u_t = \alpha^2 u_{xx} - \nu u_x\)
 $PAR
 What are the units of \(u_t\):
 $BR
@@ -85,7 +82,6 @@ What are the units of \(\alpha^2\)
 $BR
 \{ $unts2->buttons() \}
 END_TEXT
-Context()->normalStrings;
 
 
 #####################
@@ -98,8 +94,5 @@ $showPartialCorrectAnswers = 0;
 ANS( $unts0->cmp() );
 ANS( $unts1->cmp() );
 ANS( $unts2->cmp() );
-
-
-COMMENT('MathObject version.');
 
 ENDDOCUMENT();

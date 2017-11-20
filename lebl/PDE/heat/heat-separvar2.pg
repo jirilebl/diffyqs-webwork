@@ -1,21 +1,15 @@
 ##DESCRIPTION
-##  FIXME
+##  Finding the maximum temperature in a heat equation
 ##ENDDESCRIPTION
 
 
 ## DBsubject(Differential equations)
 ## DBchapter(Partial differential equations)
-## DBsection()
-## Date()
-## Institution()
+## DBsection(Heat equation)
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
-## Problem1('')
-## KEYWORDS('partial', 'differential', 'equation')
+## Institution(Oklahoma State University)
+## Level(5)
+## Keywords('PDE', 'partial', 'differential', 'equation', 'heat equation')
 
 ########################################################################
 

@@ -1,32 +1,23 @@
 ##DESCRIPTION
-##  classify separable differential equations
+##  Intuition about the maximum of heat equation
 ##ENDDESCRIPTION
 
 
 ## DBsubject(Differential equations)
 ## DBchapter(Partial differential equations)
-## DBsection()
-## Date()
-## Institution()
+## DBsection(Heat equation)
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
-## Problem1('')
-## KEYWORDS('partial', 'differential', 'equation')
+## Institution(Oklahoma State University)
+## Level(2)
+## Keywords('PDE', 'partial', 'differential', 'equation', 'heat equation')
 
 ########################################################################
 
 DOCUMENT();      
 
 loadMacros(
-"PGauxiliaryFunctions.pl",#required for floor and ceil
-"MathObjects.pl",
-"PGbasicmacros.pl",
+"PGstandard.pl",
 "PGchoicemacros.pl",
-"PGanswermacros.pl",
 "PGcourse.pl",
 );
 
@@ -57,7 +48,6 @@ $mc -> makeLast("None of the above");
 #####################
 # Main text
 
-Context()->texStrings;
 BEGIN_TEXT
 Consider the equation \( u_t = u_{xx} \), \( 0 < x < 1 \), \( t > 0 \),
 with boundary conditions \( u(0,t) = 0 , u(1,t) = 0 \).
@@ -75,7 +65,6 @@ $BR
 $BR
 \{ $mc -> print_a() \}
 END_TEXT
-Context()->normalStrings;
 
 
 #####################
@@ -91,7 +80,6 @@ ANS( checkbox_cmp( $mc->correct_ans() ) );
 #####################
 # Solution
 
-Context()->texStrings;
 BEGIN_SOLUTION
 ${PAR}SOLUTION:$PAR
 The correct answer is \{ $mc->correct_ans() \}
@@ -101,8 +89,5 @@ The min and max of \( \sin \) is \(\pm 1\), so
 \( V(t) = 2 e^{-n^2\pi^2 t} \).  \(V(t)\) goes to zero, and
 as \(n\) grows \(V(t)\) goes to zero faster.
 END_SOLUTION
-Context()->normalStrings;
-
-COMMENT('MathObject version.');
 
 ENDDOCUMENT();

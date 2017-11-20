@@ -1,21 +1,15 @@
 ##DESCRIPTION
-##  FIXME
+##  Plugging in specific value into a solution of the heat equation
 ##ENDDESCRIPTION
 
 
 ## DBsubject(Differential equations)
 ## DBchapter(Partial differential equations)
-## DBsection()
-## Date()
-## Institution()
+## DBsection(Heat equation)
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
-## Problem1('')
-## KEYWORDS('partial', 'differential', 'equation')
+## Institution(Oklahoma State University)
+## Level(2)
+## Keywords('PDE', 'partial', 'differential', 'equation', 'heat equation')
 
 ########################################################################
 
