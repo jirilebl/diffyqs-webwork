@@ -51,13 +51,11 @@ $mc -> makeLast("None of the above");
 # Main text
 
 
-Context()->texStrings;
 BEGIN_TEXT
 \{ $mc -> print_q() \}
 $BR
 \{ $mc -> print_a() \}
 END_TEXT
-Context()->normalStrings;
 
 
 #####################
@@ -73,13 +71,9 @@ ANS( checkbox_cmp( $mc->correct_ans() ) );
 #####################
 # Solution
 
-Context()->texStrings;
 BEGIN_SOLUTION
 ${PAR}SOLUTION:$PAR
 The correct answer is \{ $mc->correct_ans() \}
 END_SOLUTION
-Context()->normalStrings;
-
-COMMENT('MathObject version.');
 
 ENDDOCUMENT();
