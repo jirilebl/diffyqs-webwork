@@ -1,5 +1,5 @@
 ##DESCRIPTION
-##  Heat equation setup
+##  Setup of a heat IBVP
 ##ENDDESCRIPTION
 
 
@@ -9,7 +9,12 @@
 ## Author(Jiri Lebl)
 ## Institution(Oklahoma State University)
 ## Level(2)
-## Keywords('PDE', 'partial', 'differential', 'equation')
+## TitleText1('Partial Differential Equations for Scientists and Engineers')
+## AuthorText1('Stanley J. Farlow')
+## EditionText1('Dover')
+## Section1('Lesson 2')
+## Problem1('')
+## Keywords('PDE', 'partial', 'differential', 'equation', 'heat equation')
 
 ########################################################################
 
@@ -17,7 +22,9 @@ DOCUMENT();
 
 loadMacros(
 "PGstandard.pl",
+"MathObjects.pl",
 "parserRadioButtons.pl",
+"AnswerFormatHelp.pl",
 "PGcourse.pl",
 );
 
@@ -26,30 +33,20 @@ TEXT(beginproblem());
 
 Context("Numeric");
 
-$beta = random(2,9,1);
 
 $eql = RadioButtons(
-  [["\(u_t=\alpha^2 u_{xx}-$beta u\)",
-    "\(u_t=\alpha^2 u_{xx}\)",
-    "\(u_t=\alpha^2 u_{xx}-$beta x\)",
-    "\(u_t=\alpha^2 u_{xx}-$beta t\)",
-    "\(u_t=\alpha^2 u_{xx}-$beta u_x\)",
-    "\(u_{tt}=\alpha^2 u_{xx}\)",
-    "\(u_{tt}+u_{xx}=0\)"]],
-    "\(u_t=\alpha^2 u_{xx}-$beta u\)",
+  [["\(u_t=\alpha^2 u_{xx}\)", "\(u_t=\alpha^2 u_{xx}+u\)", "\(u_{tt}=\alpha^2 u_{xx}\)", "\(u_{tt}+u_{xx}=0\)"]],
+  "\(u_t=\alpha^2 u_{xx}\)",
 );
 
 $left = non_zero_random(-9,9,1);
+do { $right = non_zero_random(-9,9,1); } until ( $left != $right );
+do { $length = random(2,9,1); } until ( $length != $right && $length != $left );
 
-$bc = RadioButtons(
-  [["\(u(0,t) = $left, \quad u(1,t)=0\)",
-    "\(u(0,t) = 0, \quad u(1,t)=$left\)",
-    "\(u_x(0,t) = $left, \quad u(1,t)=0\)",
-    "\(u_x(0,t) = $left, \quad u_x(1,t)=0\)",
-    "\(u_x(0,t) = $left, \quad u_x(1,t)=$left\)",
-    "\(u(0,t) = $left, \quad u_x(1,t)=0\)"]],
-    "\(u(0,t) = $left, \quad u_x(1,t)=0\)",
-);
+$aleft = Compute("$left");
+$aright = Compute("$right");
+$alength = Compute("$length");
+$ainit = Compute("sin(x)");
 
 #####################
 # Main text
@@ -57,20 +54,30 @@ $bc = RadioButtons(
 
 Context()->texStrings;
 BEGIN_TEXT
-Suppose we have a laterally insulated metal rod of length 1, parametrized by length,
-starting with 0 at the left hand endpoint.
-Suppose the insulation is not perfect and there is lateral heat loss.
-Suppose left hand endpoint is kept at temperature $left
-and right hand endpoint is perfectly insulated.
+Suppose we have a laterally insulated metal rod of length $length, parametrized by length,
+starting with 0 at the left hand endpoint.  Suppose the left hand endpoint is kept at
+temperature $left, the right hand endpoint is kept at temperature $right, and
+the initial temperature at time \(t=0\) is \( \sin(x) \).
 $BR
-$BR
-Which equation most likely governs this setup:
+Set up the initial-boundary-value-problem (IBVP).
+$PAR
+The equation is:
 $BR
 \{ $eql->buttons() \}
 $PAR
-Which boundary conditions are the correct ones:
+Range of idependent variables:
 $BR
-\{ $bc->buttons() \}
+\(0 < x < {}\) \{ ans_rule(5) \},  \( t>0\),
+$PAR
+Boundary and initial conditions:
+$BR
+\(u(0,t) = {} \) \{ ans_rule(5) \}  for \(t>0\),
+$BR
+\(u(\) \{ ans_rule(5) \} \(,t) = {} \) \{ ans_rule(5) \}  for \( t>0\),
+$BR
+\(u(x,0) = {} \) \{ ans_rule(5) \}
+$PAR
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
 
@@ -83,7 +90,11 @@ install_problem_grader(~~&std_problem_grader);
 $showPartialCorrectAnswers = 0;
 
 ANS( $eql->cmp() );
-ANS( $bc->cmp() );
+ANS( $alength->cmp() );
+ANS( $aleft->cmp() );
+ANS( $alength->cmp() );
+ANS( $aright->cmp() );
+ANS( $ainit->cmp() );
 
 
 #####################
@@ -95,7 +106,14 @@ ${PAR}SOLUTION:$PAR
 
 The equation is \{ $eql->correct_ans() \}
 $BR
-The boundary conditions are \{ $bc->correct_ans() \}
+\(0 < x < $length\) , \( t > 0 \),
+$BR
+$BR
+\(u(0,t) = $left \) for \( t > 0 \),
+$BR
+\(u( $length,t) = $right \) for \( t > 0 \),
+$BR
+\(u(x,0) = \sin(x) \)
 END_SOLUTION
 Context()->normalStrings;
 

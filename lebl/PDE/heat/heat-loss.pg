@@ -1,21 +1,20 @@
 ##DESCRIPTION
-##  FIXME
+##  Solve heat equation with heat loss
 ##ENDDESCRIPTION
 
 
 ## DBsubject(Differential equations)
 ## DBchapter(Partial differential equations)
-## DBsection()
-## Date()
-## Institution()
+## DBsection(Heat equation)
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
+## Institution(Oklahoma State University)
+## Level(5)
+## TitleText1('Partial Differential Equations for Scientists and Engineers')
+## AuthorText1('Stanley J. Farlow')
+## EditionText1('Dover')
+## Section1('Lesson 8')
 ## Problem1('')
-## KEYWORDS('partial', 'differential', 'equation')
+## Keywords('PDE', 'partial', 'differential', 'equation', 'heat equation')
 
 ########################################################################
 
@@ -39,7 +38,6 @@ TEXT(beginproblem());
 Context("Numeric");
 
 $a = non_zero_random(2,9,1);
-$asq = Compute("$a*$a")->reduce;
 $b = non_zero_random(2,9,1);
 $n = non_zero_random(2,4,1);
 $an = non_zero_random(2,9,1);
@@ -51,14 +49,14 @@ Context()->variables->add(t => "Real");
 $ic = Compute("$b sinh($a x) + $an sin($n pi x)")->reduce;
 
 $answer1 = Compute("$b sinh($a x)")->reduce;
-$answer2 = Compute("$b sinh($a x) + $an e^(-(($n*pi)^2+$asq) t) sin($n pi x)")->reduce;
+$answer2 = Compute("$b sinh($a x) + $an e^(-(($n*pi)^2+$a) t) sin($n pi x)")->reduce;
 
 ############################
 ##  Main text
 
 Context()->texStrings;
 BEGIN_TEXT
-Consider the equation \( u_t = u_{xx} - $asq u \), \( 0 < x < 1 \), \( t > 0 \),
+Consider the equation \( u_t = u_{xx} - $a u \), \( 0 < x < 1 \), \( t > 0 \),
 with boundary condition \( u(0,t) = 0 , u(1,t) = $b \operatorname{sinh}($a) \), and initial condition \( u(x,0) = $ic \).
 $PAR
 We wish to solve.  You have to do this in two steps, first make the boundary conditions

@@ -1,21 +1,20 @@
 ##DESCRIPTION
-##  FIXME  This is similar to lesson 9 problem 5
+##  Solve heat equation with inhomogeneous boundary condition
 ##ENDDESCRIPTION
 
 
 ## DBsubject(Differential equations)
 ## DBchapter(Partial differential equations)
-## DBsection()
-## Date()
-## Institution()
+## DBsection(Heat equation)
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
-## Problem1('')
-## KEYWORDS('partial', 'differential', 'equation')
+## Institution(Oklahoma State University)
+## Level(5)
+## TitleText1('Partial Differential Equations for Scientists and Engineers')
+## AuthorText1('Stanley J. Farlow')
+## EditionText1('Dover')
+## Section1('Lesson 9')
+## Problem1('5')
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'heat equation', 'inhomogeneous')
 
 ########################################################################
 
@@ -46,8 +45,6 @@ Context()->variables->add(n => ['Real', limits=>[1,20], resolution=>1]);
 Context()->variables->add(s => "Real");
 
 
-#$ic = Compute("x")->reduce;
-
 $answer1 = Compute("$a x sin($a t)")->reduce;
 
 $answer2 = Compute("0")->reduce;
@@ -66,10 +63,10 @@ BEGIN_TEXT
 Consider the problem \( u_t = u_{xx} \), \( 0 < x < 1 \), \( t > 0 \),
 with boundary condition \( u(0,t) = 0 , u(1,t) =  \cos($a t) \), and initial condition \( u(x,0) = x \).
 $PAR
-Solve in two steps.  First transform the problem into a problem with homogeneous BC, but
+Solve in two steps.  First transform the problem into a problem with homogeneous boundary conditions, but
 inhomogeneous PDE, and then solve.
-Writing \( u = S + U \), where \( S \) is (affine) linear in \(x\) as in Lesson 6, then
-the IBVP for \( U \) becomes
+Writing \( u = S + U \), where \( S(x,t) = A(t) (1-x) + B(t) x \) is (affine) linear in \(x\), then
+the initial boundary value problem for \( U \) becomes
 $BR
 PDE: \( U_t = U_{xx} + {} \)
 \{ ans_rule(40) \}
@@ -100,8 +97,6 @@ $BR
 \( T_n = {} \)
 \( \displaystyle \int_0^t \)
 \{ ans_rule(60) \} \( ds \)
-$BR
-(Using \(s\) instead of \(\tau\) )
 $PAR
 Then \( u(x,t) = S(x,t) + U(x,t) \)
 $PAR

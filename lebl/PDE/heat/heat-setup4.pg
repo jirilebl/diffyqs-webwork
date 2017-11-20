@@ -41,19 +41,19 @@ $eql = RadioButtons(
     "\(u_t=\alpha^2 u_{xx}-$beta u_x\)",
     "\(u_{tt}=\alpha^2 u_{xx}\)",
     "\(u_{tt}+u_{xx}=0\)"]],
-    "\(u_t=\alpha^2 u_{xx}-$beta u\)",
+    "\(u_t=\alpha^2 u_{xx}-$beta x\)",
 );
 
 $left = non_zero_random(-9,9,1);
 
 $bc = RadioButtons(
-  [["\(u(0,t) = $left, \quad u(1,t)=0\)",
-    "\(u(0,t) = 0, \quad u(1,t)=$left\)",
-    "\(u_x(0,t) = $left, \quad u(1,t)=0\)",
-    "\(u_x(0,t) = $left, \quad u_x(1,t)=0\)",
-    "\(u_x(0,t) = $left, \quad u_x(1,t)=$left\)",
-    "\(u(0,t) = $left, \quad u_x(1,t)=0\)"]],
-    "\(u(0,t) = $left, \quad u_x(1,t)=0\)",
+  [["\(u(0,t) = 0, \quad u(1,t)=0\)",
+    "\(u(0,t) = 0, \quad u(1,t)=u_x(1,t)\)",
+    "\(u_x(0,t) = u(0,t), \quad u(1,t)=0\)",
+    "\(u_x(0,t) = u(0,t), \quad u_x(1,t)=0\)",
+    "\(u_x(0,t) = 0, \quad u_x(1,t)=0\)",
+    "\(u(0,t) = 0, \quad u_x(1,t)=0\)"]],
+    "\(u_x(0,t) = 0, \quad u_x(1,t)=0\)",
 );
 
 #####################
@@ -64,12 +64,12 @@ Context()->texStrings;
 BEGIN_TEXT
 Suppose we have a laterally insulated metal rod of length 1, parametrized by length,
 starting with 0 at the left hand endpoint.
-Suppose the insulation is not perfect and there is lateral heat loss.
-Suppose left hand endpoint is kept at temperature $left
-and right hand endpoint is perfectly insulated.
+Suppose that there is heat removed from the rod (heat sink), independent of time,
+but depending on position.
+Both endpoints are insulated.
 $BR
 $BR
-Which equation most likely governs this setup:
+Which of the following equations could govern this setup:
 $BR
 \{ $eql->buttons() \}
 $PAR

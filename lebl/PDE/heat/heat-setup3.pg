@@ -9,6 +9,11 @@
 ## Author(Jiri Lebl)
 ## Institution(Oklahoma State University)
 ## Level(2)
+## TitleText1('Partial Differential Equations for Scientists and Engineers')
+## AuthorText1('Stanley J. Farlow')
+## EditionText1('Dover')
+## Section1('Lesson 3')
+## Problem1('')
 ## Keywords('PDE', 'partial', 'differential', 'equation')
 
 ########################################################################
@@ -36,19 +41,17 @@ $eql = RadioButtons(
     "\(u_t=\alpha^2 u_{xx}-$beta u_x\)",
     "\(u_{tt}=\alpha^2 u_{xx}\)",
     "\(u_{tt}+u_{xx}=0\)"]],
-    "\(u_t=\alpha^2 u_{xx}-$beta x\)",
+    "\(u_t=\alpha^2 u_{xx}-$beta u_x\)",
 );
 
 $left = non_zero_random(-9,9,1);
 
 $bc = RadioButtons(
-  [["\(u(0,t) = 0, \quad u(1,t)=0\)",
-    "\(u(0,t) = 0, \quad u(1,t)=u_x(1,t)\)",
-    "\(u_x(0,t) = u(0,t), \quad u(1,t)=0\)",
-    "\(u_x(0,t) = u(0,t), \quad u_x(1,t)=0\)",
-    "\(u_x(0,t) = 0, \quad u_x(1,t)=0\)",
-    "\(u(0,t) = 0, \quad u_x(1,t)=0\)"]],
-    "\(u_x(0,t) = 0, \quad u_x(1,t)=0\)",
+  [["\(u(0,t) = $left\)",
+    "\(u(0,t) = 0\)",
+    "\(u_x(0,t) = $left\)",
+    "\(u_x(0,t) = 0\)"]],
+    "\(u(0,t) = $left\)",
 );
 
 #####################
@@ -57,18 +60,17 @@ $bc = RadioButtons(
 
 Context()->texStrings;
 BEGIN_TEXT
-Suppose we have a laterally insulated metal rod of length 1, parametrized by length,
-starting with 0 at the left hand endpoint.
-Suppose that there is heat removed from the rod (heat sink), independent of time,
-but depending on position.
-Both endpoints are insulated.
+Suppose we have substance moving in a stream with convection, the 
+stream is parametrized by distance from the source.
+Suppose at $x=0$, the substance has concentration $left.
+There is no boundary point at the right hand end point.
 $BR
 $BR
-Which of the following equations could govern this setup:
+Which equation most likely governs this setup:
 $BR
 \{ $eql->buttons() \}
 $PAR
-Which boundary conditions are the correct ones:
+Which boundary conditions would work:
 $BR
 \{ $bc->buttons() \}
 END_TEXT
