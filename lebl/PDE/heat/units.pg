@@ -67,7 +67,7 @@ $unts2 = RadioButtons(
 
 BEGIN_TEXT
 Suppose 
-\(u\) has units degree Celsius (\({}^\circ\)C), time is in seconds (s), length is in centemeters (cm).
+\(u\) has units degree Celsius (\({}^\circ\)C), time \(t\) is in seconds (s), \(x\) is in centemeters (cm).
 We have the equation \(u_t = \alpha^2 u_{xx} - \nu u_x\)
 $PAR
 What are the units of \(u_t\):
