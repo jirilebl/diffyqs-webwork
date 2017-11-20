@@ -76,7 +76,7 @@ $PAR
 The initial boundary value problem for \( U \) becomes
 $BR
 PDE: \( U_t = U_{xx} + f(x,t) \)
-\$BR
+$BR
 where \( f(x,t) = {} \)
 \{ ans_rule(40) \}
 $BR
@@ -135,7 +135,7 @@ BEGIN_SOLUTION
 ${PAR}SOLUTION:$PAR
 
 The \(S\) needs to make \(U\) into one with homogeneous
-boundary conditions, so \( S = $answer1 \) will work.
+boundary conditions, so \( S(x,t) = $answer1 \) will work.
 $PAR
 Notice that \(S_{xx} = 0\), so \(u_{xx} = U_{xx}\).
 If \(u = U + S \) and \( u_t = u_{xx} \), then
@@ -158,7 +158,7 @@ $BR
 f_n(t) = 2 \int_0^1 f(x,t) \sin(n \pi x) \, dx =
 $answer5 .
 \)
-Finally, by plugging the series into the equation and equating coefficients, we find that
+Finally, by plugging the series into the equation for \(U\) and equating coefficients, we find that
 \(T_n\) satisfies \( T_n' + (n\pi)^2 T_n = f_n(t) \), and
 \(T_n(0) = 0 \).  Using
 integrating factor we find
