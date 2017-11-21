@@ -1,21 +1,20 @@
 ##DESCRIPTION
-##  FIXME
+##  Compute Fourier transform
 ##ENDDESCRIPTION
 
 
 ## DBsubject(Differential equations)
 ## DBchapter(Partial differential equations)
-## DBsection()
-## Date()
-## Institution()
+## DBsection(Integral transforms)
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
+## Institution(Oklahoma State University)
+## Level(4)
+## TitleText1('Partial Differential Equations for Scientists and Engineers')
+## AuthorText1('Stanley J. Farlow')
+## EditionText1('Dover')
+## Section1('Lesson 11')
 ## Problem1('')
-## KEYWORDS('partial', 'differential', 'equation')
+## KEYWORDS('Fourier', 'integral transform')
 
 ########################################################################
 
@@ -40,15 +39,8 @@ Context("Complex");
 
 $a = random(2,9,1);
 do { $b = random(2,9,1); } until ($b != $a);
-#do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
 
-#Context()->variables->add(x => "Real");
-#Context()->variables->add(t => "Real");
-#Context()->variables->add(n => ['Real', limits=>[1,20], resolution=>1]);
 Context()->variables->add(xi => ["Real", TeX=>"\xi"]);
-
-
-#$ic = Compute("x")->reduce;
 
 $answer1 = Compute("$a*sqrt(2/pi)*(1/(xi^2+$a^2))")->reduce;
 $answer2 = Compute("-i*$a*(1-exp(-i*$b*xi))/(sqrt(2*pi)*xi)")->reduce;
