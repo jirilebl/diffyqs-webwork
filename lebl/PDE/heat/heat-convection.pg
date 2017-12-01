@@ -41,11 +41,12 @@ $a = non_zero_random(2,9,1);
 $a1 = non_zero_random(2,9,1);
 $a2 = non_zero_random(2,9,1);
 $a3 = non_zero_random(2,9,1);
+$ahalf = Compute("$a/2")->reduce;
 
 Context()->variables->add(t => "Real");
 
 
-$ic = Compute("e^(($a1 x ) / 2)($a1 sin(pi x) + $a2 sin(2 pi x) + $a3 sin(3 pi x))")->reduce;
+$ic = Compute("e^($ahalf x )($a1 sin(pi x) + $a2 sin(2 pi x) + $a3 sin(3 pi x))")->reduce;
 
 $answer = Compute("e^($a(x-$a t / 2)/2 ) ( $a1 e^(-(pi)^2 t) sin(pi x) + $a2 e^(-(2 pi)^2 t) sin(2 pi x) + $a3 e^(-(3 pi)^2 t) sin(3 pi x) )")->reduce;
 
