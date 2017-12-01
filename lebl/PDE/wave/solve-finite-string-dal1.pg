@@ -1,21 +1,21 @@
 ##DESCRIPTION
-##  FIXME 
+##  Wave equation on a finite vibrating string, computing specific values
+##  using d'Alembert
 ##ENDDESCRIPTION
 
 
 ## DBsubject(Differential equations)
 ## DBchapter(Partial differential equations)
-## DBsection()
-## Date()
-## Institution()
+## DBsection(Wave equation)
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
+## Institution(Oklahoma State University)
+## Level(5)
+## TitleText1('Partial Differential Equations for Scientists and Engineers')
+## AuthorText1('Stanley J. Farlow')
+## EditionText1('Dover')
+## Section1('Lesson 20')
 ## Problem1('')
-## KEYWORDS('partial', 'differential', 'equation')
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'wave equation', 'dAlembert')
 
 ########################################################################
 
@@ -43,17 +43,6 @@ $a = random(2,9,1);
 $asq=$a*$a;
 do { $b = random(3,9,1); } until ($b != $a);
 $bhalf = $b/2;
-#do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
-#do { $d = random(2,9,1); } until (($d != $a) and ($d != $b) and ($d != $c));
-
-#Context()->variables->add(x => "Real");
-#Context()->variables->add(t => ["Real", limits=>[0.1,4]]);
-#Context()->variables->add(n => ['Real', limits=>[1,20], resolution=>1]);
-#Context()->variables->add(xi => ["Real", TeX=>"\xi"]);
-#Context()->variables->add(tau => ["Real", TeX=>"\tau"]);
-
-
-#$ic = Compute("x")->reduce;
 
 sub theF {
 	my $x = $_[0];
@@ -87,7 +76,8 @@ $BR
 BC: \( \quad u(0,t) = u($b,t)= 0 \) 
 $BR
 IC: \( \quad u(x,0) = x($b-x), \qquad u_t(x,0) = 0 \) 
-$PAR
+$BR
+$BR
 Use the D'Alembert solution (remember to make the function odd and periodic) to find
 $BR
 \(u(1,0.01) = {} \) \{ ans_rule(20) \}
@@ -97,7 +87,8 @@ $BR
 \(u(0.5,10) = {} \) \{ ans_rule(20) \}
 $BR
 \(u($bhalf,10) = {} \) \{ ans_rule(20) \}
-$PAR
+$BR
+$BR
 \{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;
@@ -130,7 +121,8 @@ and
 if \(\xi < 0\), then \(F(\xi) = -f(-\xi)\).
 The solution is \(u(x,t) = \frac{1}{2} \bigl( F(x-$a t) + F(x+$a t) \bigr)\).
 Therefore,
-$PAR
+$BR
+$BR
 \(u(1,0.01) = $answer1 \)
 $BR
 \(u(1,100) = $answer2 \)
