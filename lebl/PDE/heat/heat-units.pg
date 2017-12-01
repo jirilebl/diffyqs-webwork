@@ -14,7 +14,7 @@
 ## EditionText1('Dover')
 ## Section1('Lesson 4')
 ## Problem1('')
-## Keywords('PDE', 'partial', 'differential', 'equation', 'units', 'heat equation')
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'units', 'heat equation')
 
 ########################################################################
 
@@ -74,15 +74,18 @@ BEGIN_TEXT
 Suppose 
 \(u\) has units degree Celsius (\({}^\circ\)C), time \(t\) is in seconds (s), \(x\) is in centemeters (cm).
 We have the equation \(u_t = \alpha^2 u_{xx} - \nu u_x\)
-$PAR
+$BR
+$BR
 What are the units of \(u_t\):
 $BR
 \{ $unts0->buttons() \}
-$PAR
+$BR
+$BR
 What are the units of \(\nu\):
 $BR
 \{ $unts1->buttons() \}
-$PAR
+$BR
+$BR
 What are the units of \(\alpha^2\)
 $BR
 \{ $unts2->buttons() \}

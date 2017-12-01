@@ -14,7 +14,7 @@
 ## EditionText1('Dover')
 ## Section1('Lesson 5')
 ## Problem1('')
-## Keywords('PDE', 'partial', 'differential', 'equation', 'heat equation')
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'heat equation')
 
 ########################################################################
 
@@ -55,7 +55,8 @@ Suppose
 $BR
 \( u(x,0) =
 $a \sin($n \pi x) \)
-$PAR
+$BR
+$BR
 What is the maximum temperature in the rod at any particular time.  That is,
 $BR
 \( M(t) = {} \) \{ ans_rule(20) \}

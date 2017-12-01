@@ -62,15 +62,18 @@ $BR
 IC: \( \quad w(x,0) = $c \sin( $b x ) \) 
 $BR
 using the Laplace transform.
-$PAR
+$BR
+$BR
 First if we let \( W(x,s) = W(x) = \mathcal{L}[w] \) with Laplace transforming the time
 variable, then the equation becomes (use only \(W\) in your answer, not \(W(x)\))
 $BR
 \{ ans_rule(40) \} \( {} = {} \) \{ ans_rule(15) \} \( \frac{d^2W}{dx^2} \)
-$PAR
+$BR
+$BR
 The solution then is
 \( w(x,t) = {} \) \{ ans_rule(60) \} 
-$PAR
+$BR
+$BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
@@ -94,7 +97,8 @@ BEGIN_SOLUTION
 ${PAR}SOLUTION:$PAR
 $BR
 \( sW - $c \sin($b x)  = $a^2 \frac{d^2W}{dx^2} \)
-$PAR
+$BR
+$BR
 The solution then is
 \( w(x,t) = $c e^{-$a^2 \cdot $b^2 \cdot t} \sin($b x) \)
 END_SOLUTION

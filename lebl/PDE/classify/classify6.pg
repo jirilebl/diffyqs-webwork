@@ -14,7 +14,7 @@
 ## EditionText1('Dover')
 ## Section1('Lesson 1')
 ## Problem1('')
-## Keywords('PDE', 'partial', 'differential', 'equation', 'classify', 'homogeneous')
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'classify', 'homogeneous')
 
 ########################################################################
 
@@ -104,7 +104,8 @@ $BR
 The PDE is (check all that apply)
 $BR
 \{ $cmc -> print_q() \}
-$PAR
+$BR
+$BR
 \{ $cmc -> print_a() \}
 
 END_TEXT

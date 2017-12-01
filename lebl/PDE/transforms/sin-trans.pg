@@ -55,22 +55,26 @@ remind you, the definition is
 \[
 \mathcal{F}_s [ f(x) ] = \frac{2}{\pi} \int_0^\infty f(x) \sin(sx) \, dx
 \]
-$PAR
+$BR
+$BR
 \(\displaystyle 
 \mathcal{F}_s [ e^{-$a x} ]
 = {}
 \)
 \{ ans_rule(40) \}
-$PAR
+$BR
+$BR
 \(\displaystyle 
 \mathcal{F}_s [ H($a-x) ]
 = {}
 \)
 \{ ans_rule(40) \}
-$PAR
+$BR
+$BR
 where \( H(x) \) is the Heaviside function, which is 0 for negative numbers and 1
 for positive numbers.
-$PAR
+$BR
+$BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
@@ -95,7 +99,8 @@ ${PAR}SOLUTION:$PAR
 \mathcal{F}_s [ e^{-$a x} ]
 = $answer1
 \)
-$PAR
+$BR
+$BR
 \(\displaystyle 
 \mathcal{F}_s [ H($a-x) ]
 = $answer2

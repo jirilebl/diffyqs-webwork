@@ -14,7 +14,7 @@
 ## EditionText1('Dover')
 ## Section1('Lesson 5')
 ## Problem1('')
-## Keywords('PDE', 'partial', 'differential', 'equation', 'heat equation')
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'heat equation')
 
 ########################################################################
 
@@ -57,9 +57,11 @@ $BR
 \sum_{n=1}^\infty
 \frac{$a}{n^{$j}}
 \sin(n \pi x) . \)
-$PAR
+$BR
+$BR
 Then the solution is
-$PAR
+$BR
+$BR
 \( \displaystyle u(x,t) = \sum_{n=1}^\infty \) \{ ans_rule(20) \} \( e^{-(n\pi)^2t} \sin(n\pi x) \)
 $BR
 \{ AnswerFormatHelp("formulas") \}

@@ -64,7 +64,8 @@ Context()->texStrings;
 BEGIN_TEXT
 Consider the problem \( u_t = u_{xx} \), \( 0 < x < 1 \), \( t > 0 \),
 with boundary condition \( u(0,t) = 0 , u(1,t) =  \cos($a t) \), and initial condition \( u(x,0) = x \).
-$PAR
+$BR
+$BR
 Solve in two steps.  First transform the problem into a problem with homogeneous boundary conditions, but
 inhomogeneous PDE, and then solve.
 Write \( u = S + U \), where \( S(x,t) = A(t) (1-x) + B(t) x \) is (affine) linear in \(x\),
@@ -72,7 +73,8 @@ that is
 $BR
 \( S(x,t) = {} \)
 \{ ans_rule(40) \}
-$PAR
+$BR
+$BR
 The initial boundary value problem for \( U \) becomes
 $BR
 PDE: \( U_t = U_{xx} + f(x,t) \)
@@ -83,9 +85,11 @@ $BR
 BC: \( U(0,t) = 0, U(1,t) = 0 \)
 $BR
 IC: \( U(x,0) = {} \) \{ ans_rule(40) \}
-$PAR
+$BR
+$BR
 Now solve for \(U\).
-$PAR
+$BR
+$BR
 The eigenfunctions to use are
 $BR
 \( X_n(x) = {} \) \{ ans_rule(40) \}
@@ -106,9 +110,11 @@ $BR
 \( T_n = {} \)
 \( \displaystyle \int_0^t \)
 \{ ans_rule(60) \} \( ds \)
-$PAR
+$BR
+$BR
 Then \( u(x,t) = S(x,t) + U(x,t) \)
-$PAR
+$BR
+$BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
@@ -136,22 +142,26 @@ ${PAR}SOLUTION:$PAR
 
 The \(S\) needs to make \(U\) into one with homogeneous
 boundary conditions, so \( S(x,t) = $answer1 \) will work.
-$PAR
+$BR
+$BR
 Notice that \(S_{xx} = 0\), so \(u_{xx} = U_{xx}\).
 If \(u = U + S \) and \( u_t = u_{xx} \), then
 $BR
 \(U_{xx} = u_{xx} = u_t = U_t + S_t = U_t - $answer2 .  \)
 $BR
 Or in other words \(f(x,t) = $answer2 \).
-$PAR
+$BR
+$BR
 As \(U(x,t) = u(x,t)-S(x,t) = u(x,t) - $answer1 \).  Setting
 \(t=0\) we find
 \(U(x,0) = u(x,0)-x = 0 \).
-$PAR
+$BR
+$BR
 The eigenvalue problem we need to use is the one that comes up
 with the sine series as we have Dirichlet boundary conditions.
 Therefore \( X_n(x) = $answer4 \) .
-$PAR
+$BR
+$BR
 Computing the coefficient
 $BR
 \(\displaystyle

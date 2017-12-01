@@ -57,13 +57,15 @@ Context()->texStrings;
 BEGIN_TEXT
 Consider the equation \( u_t = u_{xx} \), \( 0 < x < 1 \), \( t > 0 \),
 with boundary condition \( u(0,t) = $a , u(1,t) = $b \), and initial condition \( u(x,0) = $ic \).
-$PAR
+$BR
+$BR
 Setup we wish to change the problem into homogeneous boundary conditions.
 What is the steady state solution:
 $BR
 \( u_{\text{steady state}}(x) = {} \)
 \{ ans_rule(40) \}
-$PAR
+$BR
+$BR
 Let \( U(x,t) \) denote the transitent solution.  That is, the solution
 of
 \( U_t = U_{xx} \), \( 0 < x < 1 \), \( t > 0 \),
@@ -76,7 +78,8 @@ $BR
 \( u(x,t) = u_{\text{steady state}}(x) + U(x,t) \)
 $BR
 solves the original problem above.
-$PAR
+$BR
+$BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;

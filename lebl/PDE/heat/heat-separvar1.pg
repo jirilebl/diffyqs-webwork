@@ -14,7 +14,7 @@
 ## EditionText1('Dover')
 ## Section1('Lesson 5')
 ## Problem1('')
-## Keywords('PDE', 'partial', 'differential', 'equation', 'heat equation')
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'heat equation')
 
 ########################################################################
 
@@ -61,9 +61,11 @@ $a1 \sin(\pi x) +
 $a2 \sin(2 \pi x) +
 $a3 \sin(3 \pi x) +
 $a4 \sin(4 \pi x) \)
-$PAR
+$BR
+$BR
 Fill in the constants in the solution:
-$PAR
+$BR
+$BR
 \( u(x,t) = {} \) \{ ans_rule(5) \} \( e^{-\pi^2t} \sin(\pi x) + {} \)
                   \{ ans_rule(5) \} \( e^{-(2\pi)^2t} \sin(2 \pi x) + {} \)
                   \{ ans_rule(5) \} \( e^{-(3\pi)^2t} \sin(3 \pi x) + {} \)

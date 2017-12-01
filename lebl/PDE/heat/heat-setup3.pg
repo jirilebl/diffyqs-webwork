@@ -14,7 +14,7 @@
 ## EditionText1('Dover')
 ## Section1('Lesson 3')
 ## Problem1('')
-## Keywords('PDE', 'partial', 'differential', 'equation')
+## KEYWORDS('PDE', 'partial', 'differential', 'equation')
 
 ########################################################################
 
@@ -69,7 +69,8 @@ $BR
 Which equation most likely governs this setup:
 $BR
 \{ $eql->buttons() \}
-$PAR
+$BR
+$BR
 Which boundary conditions would work:
 $BR
 \{ $bc->buttons() \}

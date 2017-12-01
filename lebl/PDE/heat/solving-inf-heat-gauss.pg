@@ -55,15 +55,18 @@ $BR
 PDE: \( \quad u_t = $a^2 u_{xx} , \qquad -\infty < x < \infty , \quad t > 0 \)
 $BR
 IC: \( \quad u(x,0) = $b e^{-x^2}\)
-$PAR
+$BR
+$BR
 Use the Fourier transform to find the solution in closed form.  Feel free to look at
 tables of transforms.
-$PAR
+$BR
+$BR
 \(
 \displaystyle
 u(x,t) = {} \)
 \{ ans_rule(60) \}
-$PAR
+$BR
+$BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;

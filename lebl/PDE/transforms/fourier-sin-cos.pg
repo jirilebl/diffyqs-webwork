@@ -55,19 +55,22 @@ That is, we wish to write
 \[
 f(x) = \int_0^\infty a(\xi) \cos(\xi x) d\xi + \int_0^\infty b(\xi) \sin(\xi x) d\xi
 \]
-$PAR
+$BR
+$BR
 \(\displaystyle 
 a(\xi)
 = {}
 \)
 \{ ans_rule(40) \}
-$PAR
+$BR
+$BR
 \(\displaystyle 
 b(\xi)
 = {}
 \)
 \{ ans_rule(40) \}
-$PAR
+$BR
+$BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;

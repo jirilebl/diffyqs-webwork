@@ -14,7 +14,7 @@
 ## EditionText1('Dover')
 ## Section1('Lesson 2')
 ## Problem1('')
-## Keywords('PDE', 'partial', 'differential', 'equation', 'heat equation')
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'heat equation')
 
 ########################################################################
 
@@ -60,15 +60,18 @@ temperature $left, the right hand endpoint is kept at temperature $right, and
 the initial temperature at time \(t=0\) is \( \sin(x) \).
 $BR
 Set up the initial-boundary-value-problem (IBVP).
-$PAR
+$BR
+$BR
 The equation is:
 $BR
 \{ $eql->buttons() \}
-$PAR
+$BR
+$BR
 Range of idependent variables:
 $BR
 \(0 < x < {}\) \{ ans_rule(5) \},  \( t>0\),
-$PAR
+$BR
+$BR
 Boundary and initial conditions:
 $BR
 \(u(0,t) = {} \) \{ ans_rule(5) \}  for \(t>0\),
@@ -76,7 +79,8 @@ $BR
 \(u(\) \{ ans_rule(5) \} \(,t) = {} \) \{ ans_rule(5) \}  for \( t>0\),
 $BR
 \(u(x,0) = {} \) \{ ans_rule(5) \}
-$PAR
+$BR
+$BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;

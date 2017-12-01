@@ -14,7 +14,7 @@
 ## EditionText1('Dover')
 ## Section1('Lesson 8')
 ## Problem1('')
-## Keywords('PDE', 'partial', 'differential', 'equation', 'heat equation')
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'heat equation')
 
 ########################################################################
 
@@ -58,19 +58,23 @@ Context()->texStrings;
 BEGIN_TEXT
 Consider the equation \( u_t = u_{xx} - $a u \), \( 0 < x < 1 \), \( t > 0 \),
 with boundary condition \( u(0,t) = 0 , u(1,t) = $b \operatorname{sinh}($a) \), and initial condition \( u(x,0) = $ic \).
-$PAR
+$BR
+$BR
 We wish to solve.  You have to do this in two steps, first make the boundary conditions
 homogeneous, then get rid of the heat loss term.  Perhaps useful is to first solve for the
 steady state
-$PAR
+$BR
+$BR
 \( u_{\text{steady state}}(x) = {} \)
 \{ ans_rule(40) \}
-$PAR
+$BR
+$BR
 Then the final solution is
 $BR
 \( u(x,t) = {} \)
 \{ ans_rule(40) \}
-$PAR
+$BR
+$BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
@@ -91,7 +95,8 @@ Context()->texStrings;
 BEGIN_SOLUTION
 ${PAR}SOLUTION:$PAR
 The steady state solution is \( u_{\text{steady state}}(x) = $answer1 \) .
-$PAR
+$BR
+$BR
 The final solution is \(u(x,t) = $answer2 \).
 END_SOLUTION
 Context()->normalStrings;

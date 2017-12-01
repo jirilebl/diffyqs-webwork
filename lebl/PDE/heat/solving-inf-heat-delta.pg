@@ -59,12 +59,14 @@ $BR
 IC: \(\quad u(x,0) = $a \delta(x) + $b \delta(x-$c) \)
 $BR
 where \( \delta \) is the delta function (impulse).
-$PAR
+$BR
+$BR
 \(
 \displaystyle
 u(x,t) = {} \)
 \{ ans_rule(60) \}
-$PAR
+$BR
+$BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
@@ -85,7 +87,8 @@ Context()->texStrings;
 BEGIN_SOLUTION
 ${PAR}SOLUTION:$PAR
 Use the convolution formula,
-$PAR
+$BR
+$BR
 \(\displaystyle
 u(x,t)
 \frac{1}{2 \sqrt{\pi t}}
@@ -93,10 +96,12 @@ u(x,t)
 u(s,0)
 \exp\left(\frac{-{(x-s)}^2}{4t}\right) \,ds ,
 \)
-$PAR
+$BR
+$BR
 evaluate at the points given
 by the delta functions to get
-$PAR
+$BR
+$BR
 \(
 \displaystyle
 u(x,t)

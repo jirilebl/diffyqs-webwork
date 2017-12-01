@@ -14,7 +14,7 @@
 ## EditionText1('Dover')
 ## Section1('Lesson 5')
 ## Problem1('')
-## Keywords('PDE', 'partial', 'differential', 'equation', 'heat equation')
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'heat equation')
 
 ########################################################################
 
@@ -60,7 +60,8 @@ Suppose
 $BR
 \( u(x,0) =
 \sin(n \pi x) \)
-$PAR
+$BR
+$BR
 That is, an input data of frequency \(n\).  Suppose \(V(t)\) denotes the maximum
 variation of temperature on the rod at time \(t\), that is, the maximum temperature
 minus the lowest temperature.  We are interested as to what happens as \(n\)
@@ -88,7 +89,8 @@ ANS( checkbox_cmp( $mc->correct_ans() ) );
 BEGIN_SOLUTION
 ${PAR}SOLUTION:$PAR
 The correct answer is \{ $mc->correct_ans() \}
-$PAR
+$BR
+$BR
 The solution will be \( e^{-n^2\pi^2 t} \sin(n\pi x) \).
 The min and max of \( \sin \) is \(\pm 1\), so 
 \( V(t) = 2 e^{-n^2\pi^2 t} \).  \(V(t)\) goes to zero, and

@@ -55,7 +55,8 @@ Context()->texStrings;
 BEGIN_TEXT
 Let \( \mathcal{F}[f(x)] = \hat{f}(\xi) \) denote the Fourier transform.
 Use "xi" for the transformed variable name.
-$PAR
+$BR
+$BR
 \(
 \displaystyle
 \mathcal{F}[f'''(x)] 
@@ -63,7 +64,8 @@ $PAR
 \)
 \{ ans_rule(40) \}
 \( \hat{f}(\xi) \)
-$PAR
+$BR
+$BR
 \(
 \displaystyle
 \mathcal{F}[f^{(4)}(x)] 
@@ -71,7 +73,8 @@ $PAR
 \)
 \{ ans_rule(40) \}
 \( \hat{f}(\xi) \)
-$PAR
+$BR
+$BR
 \(
 \displaystyle
 \mathcal{F}[$a f(x) + $b f'(x) + $c f''(x)] 
@@ -79,7 +82,8 @@ $PAR
 \)
 \{ ans_rule(40) \}
 \( ) \, \hat{f}(\xi) \)
-$PAR
+$BR
+$BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
@@ -102,19 +106,22 @@ Context()->texStrings;
 BEGIN_SOLUTION
 ${PAR}SOLUTION:$PAR
 Each derivative just adds a multiple of \( i\xi \).  So
-$PAR
+$BR
+$BR
 \(
 \displaystyle
 \mathcal{F}[f'''(x)] = 
 -i\xi^3
  \hat{f}(\xi) \)
-$PAR
+$BR
+$BR
 \(
 \displaystyle
 \mathcal{F}[f^{(4)}(x)] = 
 \xi^4
 \hat{f}(\xi) \)
-$PAR
+$BR
+$BR
 \(
 \displaystyle
 \mathcal{F}[$a f(x) + $b f'(x) + $c f''(x)]
