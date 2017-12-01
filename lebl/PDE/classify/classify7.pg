@@ -1,20 +1,25 @@
-## DESCRIPTION
-## Matching question template
-## ENDDESCRIPTION
+##DESCRIPTION
+##  Classify second order PDE and elliptic, parabolic, or hyperbolic
+##ENDDESCRIPTION
 
-## KEYWORDS('PDE', 'classification')
 
-## DBsubject('')
-## DBchapter('')
-## DBsection('')
-## Date('')
-## Author('Jiri Lebl')
-## Institution('Oklahoma State University')
-## TitleText1('')
-## EditionText1('')
-## AuthorText1('')
-## Section1('')
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection(Classification)
+## Author(Jiri Lebl)
+## Institution(Oklahoma State University)
+## Level(2)
+## TitleText1('Partial Differential Equations for Scientists and Engineers')
+## AuthorText1('Stanley J. Farlow')
+## EditionText1('Dover')
+## Section1('Lesson 23')
+## Problem1('1')
+## TitleText1('Partial Differential Equations for Scientists and Engineers')
+## AuthorText1('Stanley J. Farlow')
+## EditionText1('Dover')
+## Section1('Lesson 1')
 ## Problem1('')
+## KEYWORDS('PDE', 'partial', 'differential', 'equation')
 
 
 ###########################
@@ -26,8 +31,7 @@ loadMacros(
 "PGstandard.pl",
 "MathObjects.pl",
 "PGchoicemacros.pl",
-"PGgraders.pl",
-"unionTables.pl",
+"PGcourse.pl",
 );
 
 TEXT(beginproblem());

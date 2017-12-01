@@ -1,21 +1,21 @@
 ##DESCRIPTION
-##  FIXME 
+##  Transform hyperbolic equation into cannonical form (characteristic coordinates)
+##  and check solution.
 ##ENDDESCRIPTION
 
 
 ## DBsubject(Differential equations)
 ## DBchapter(Partial differential equations)
-## DBsection()
-## Date()
-## Institution()
+## DBsection(Classification)
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
-## Problem1('')
-## KEYWORDS('partial', 'differential', 'equation')
+## Institution(Oklahoma State University)
+## Level(4)
+## TitleText1('Partial Differential Equations for Scientists and Engineers')
+## AuthorText1('Stanley J. Farlow')
+## EditionText1('Dover')
+## Section1('Lesson 23')
+## Problem1('6')
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'hyperbolic equation', 'characteristic coordinates')
 
 ########################################################################
 
@@ -28,7 +28,8 @@ loadMacros(
 "PGstandard.pl",
 "MathObjects.pl",
 "AnswerFormatHelp.pl",
-#"parserFunction.pl",
+"parserFunction.pl",
+"PGcourse.pl",
 );
 
 TEXT(beginproblem());
@@ -41,32 +42,24 @@ Context("Numeric");
 
 
 $a = random(2,9,1);
-do { $b = random(2,9,1); } until ($b != $a);
-do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
-do { $d = random(2,9,1); } until (($d != $a) and ($d != $b) and ($d != $c));
-$e = random(2,9,1);
 
-$aplusb = $a+$b;
-$atimesb = $a*$b;
-
-#Context()->variables->add(x => "Real");
 Context()->variables->add(y => "Real");
-#Context()->variables->add(t => ["Real", limits=>[0.1,4]]);
 Context()->variables->add(u => ["Real"]);
-#Context()->variables->add(n => ['Real', limits=>[1,20], resolution=>1]);
 Context()->variables->add(xi => ["Real", TeX=>"\xi"]);
 Context()->variables->add(eta => ["Real", TeX=>"\eta"]);
 Context()->variables->add(uxi => ["Real", TeX=>"u_\xi"]);
 Context()->variables->add(ueta => ["Real", TeX=>"u_\eta"]);
 #
+#
 # This should be good enough for testing if the formula is correct
-#parserFunction("A(xi)" => "exp(xi)");
-#parserFunction("B(eta)" => "exp(-1.337*eta)");
+parserFunction("A(xi)" => "exp(xi)");
+parserFunction("B(eta)" => "exp(-1.337*eta)");
 
 
-$answer1 = Compute("y-$a x");
-$answer2 = Compute("y-$b x");
-$answer3 = Compute("((-$a*$c + $d)uxi+ (-$b*$c + $d) ueta + $e u)/(2*$a*$b-$a^2-$b^2)");
+$answer1 = Compute("y");
+$answer2 = Compute("y-$a x");
+$answer3 = Compute("0");
+$answer4 = Compute("A(y)+B(y-$a x)");
 
 ############################
 ##  Main text
@@ -76,23 +69,33 @@ Context()->texStrings;
 BEGIN_TEXT
 Transform the PDE
 $BR
-\( u_{xx} + $aplusb u_{xy} + $atimesb u_{yy} + $c u_x + $d u_y + $e u = 0  \)
+\( u_{xx} + $a u_{xy} = 0  \)
 $BR
 into canonical coordinates \(\xi, \eta\), that is the equation should become
-\( u_{\xi\eta} + \text{lower order terms} = 0 \). 
+\( u_{\xi\eta} + \text{lower order terms} = 0 \).
 $BR
 The change of
-coordinates should be linear of the form \( \xi = y+ \cdots \) and \(\eta = y+\cdots \) (There are two possibilities but only one is accepted):
+coordinates should be linear of the form \( \xi = y+ \cdots \) and \(\eta = y+\cdots \)
+$BR
+(There are two possibilities but only one is accepted):
 $BR
 \( \xi = {} \) \{ ans_rule(40) \}
 $BR
 \( \eta = {} \) \{ ans_rule(40) \}
-$PAR
+$BR
+$BR
 The equation becomes (use "uxi" for \(u_{\xi}\)
 "ueta" for \(u_{\eta}\), etc...):
 $BR
-\( u_{\xi\eta} + {} \) \{ ans_rule(40) \} \( {} = 0 \)
-$PAR
+\( u_{\xi\eta} + {} \) \{ ans_rule(40) \} \( {} = 0\)
+$BR
+$BR
+Check that \( u = A(\xi) + B(\eta) \) is a solution.
+Then write down this solution in terms of \(x,y\):
+$BR
+\( u(x,y) = {} \) \{ ans_rule(40) \}
+$BR
+$BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
@@ -106,6 +109,7 @@ $showPartialCorrectAnswers = 1;
 ANS( $answer1->cmp() );
 ANS( $answer2->cmp() );
 ANS( $answer3->cmp() );
+ANS( $answer4->cmp() );
 
 
 #####################
@@ -120,6 +124,9 @@ $BR
 \( \eta = $answer2 \)
 $BR
 \( u_{\xi\eta} + $answer3 = 0 \)
+$BR
+$BR
+\(u(x,y) = $answer4 \)
 END_SOLUTION
 Context()->normalStrings;
 

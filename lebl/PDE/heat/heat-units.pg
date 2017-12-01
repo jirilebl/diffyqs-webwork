@@ -24,6 +24,7 @@ loadMacros(
 "PGstandard.pl",
 "parserRadioButtons.pl",
 "AnswerFormatHelp.pl",
+"PGcourse.pl",
 );
 
 # Print problem number and point value (weight) for the problem
