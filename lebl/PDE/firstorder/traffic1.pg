@@ -1,21 +1,19 @@
 ##DESCRIPTION
-##  FIXME 
+##  Traffic flow equation (nonlinear first order PDE via method of characteristics)
 ##ENDDESCRIPTION
-
 
 ## DBsubject(Differential equations)
 ## DBchapter(Partial differential equations)
-## DBsection()
-## Date()
-## Institution()
+## DBsection(First order equations)
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
+## Institution(Oklahoma State University)
+## Level(5)
+## TitleText1('Partial Differential Equations for Scientists and Engineers')
+## AuthorText1('Stanley J. Farlow')
+## EditionText1('Dover')
+## Section1('Lesson 28')
 ## Problem1('')
-## KEYWORDS('partial', 'differential', 'equation')
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'traffic equation', 'characteristics')
 
 ########################################################################
 
@@ -28,7 +26,7 @@ loadMacros(
 "PGstandard.pl",
 "MathObjects.pl",
 "AnswerFormatHelp.pl",
-"parserFunction.pl",
+"PGcourse.pl",
 );
 
 TEXT(beginproblem());
@@ -41,28 +39,10 @@ Context("Numeric");
 
 
 $a = random(2,9,1);
-#$asq=$a*$a;
 do { $b = random(2,9,1); } until ($b != $a);
-#do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
-#do { $d = random(2,9,1); } until (($d != $a) and ($d != $b) and ($d != $c));
 
-#Context()->variables->add(x => "Real");
-#Context()->variables->add(y => "Real");
-#Context()->variables->add(z => "Real");
 Context()->variables->add(t => ["Real"]);
-#Context()->variables->add(t => ["Real", limits=>[0.1,4]]);
-#Context()->variables->add(u => ["Real"]);
-#Context()->variables->add(n => ['Real', limits=>[1,20], resolution=>1]);
 Context()->variables->add(x0 => ["Real", TeX=>"x_0"]);
-#Context()->variables->add(xi => ["Real", TeX=>"\xi"]);
-#Context()->variables->add(s => ["Real"]);
-#Context()->variables->add(eta => ["Real", TeX=>"\eta"]);
-#Context()->variables->add(uxi => ["Real", TeX=>"u_\xi"]);
-#Context()->variables->add(ueta => ["Real", TeX=>"u_\eta"]);
-#
-# This should be good enough for testing if the formula is correct
-#parserFunction("A(xi)" => "exp(xi)");
-#parserFunction("B(eta)" => "exp(-1.337*eta)");
 
 Context()->flags->set(
      reduceConstants => 0,
@@ -86,26 +66,31 @@ $BR
 PDE: \( \quad u_{t} + $a u u_{x} = 0, \quad -\infty < x < \infty \) and \(t > 0\).
 $BR
 IC: \(\quad u(x,0) = - $b x \)
-$PAR
+$BR
+$BR
 Suppose we are at \((x,t)\) and find the characteristic through this point,
 what is the equation relating \(x\), \(x_0\), and \(t\)
 where \((x_0,0)\) is the point on the x axis through which the characteristic goes:
 (type x0 for \(x_0\))
 $BR
 \( x = {} \) \{ ans_rule(40) \}
-$PAR
+$BR
+$BR
 Therefore
 $BR
 \( x_0 = {} \) \{ ans_rule(40) \}
-$PAR
+$BR
+$BR
 Therefore
 $BR
 \( u(x,t) = {} \) \{ ans_rule(40) \}
-$PAR
+$BR
+$BR
 At what time will a shock develop?
 $BR
 \( t = {} \) \{ ans_rule(40) \}
-$PAR
+$BR
+$BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
@@ -130,11 +115,14 @@ BEGIN_SOLUTION
 ${PAR}SOLUTION:$PAR
 $BR
 \( x = $answer1 \)
-$PAR
+$BR
+$BR
 \( x_0 = $answer2 \)
-$PAR
+$BR
+$BR
 \( u(x,t) = $answer3 \)
-$PAR
+$BR
+$BR
 \( t = $answer4 \).  Notice that 1) at this time the denominator disappears, also
 note that 2) all characteristics go through the point \( (0,$answer4)\).
 END_SOLUTION

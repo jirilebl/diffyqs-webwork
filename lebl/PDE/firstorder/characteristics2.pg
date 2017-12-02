@@ -1,21 +1,21 @@
 ##DESCRIPTION
-##  FIXME 
+##  Method of characteristics (change to characteristic coordinates)
+##  for a linear first order PDE
 ##ENDDESCRIPTION
-
 
 ## DBsubject(Differential equations)
 ## DBchapter(Partial differential equations)
-## DBsection()
-## Date()
-## Institution()
+## DBsection(First order equations)
+## MLT(FirstOrderPDE_characteristics)
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
+## Institution(Oklahoma State University)
+## Level(5)
+## TitleText1('Partial Differential Equations for Scientists and Engineers')
+## AuthorText1('Stanley J. Farlow')
+## EditionText1('Dover')
+## Section1('Lesson 27')
 ## Problem1('')
-## KEYWORDS('partial', 'differential', 'equation')
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'characteristics')
 
 ########################################################################
 
@@ -28,7 +28,7 @@ loadMacros(
 "PGstandard.pl",
 "MathObjects.pl",
 "AnswerFormatHelp.pl",
-"parserFunction.pl",
+"PGcourse.pl",
 );
 
 TEXT(beginproblem());
@@ -41,26 +41,13 @@ Context("Numeric");
 
 
 $a = random(2,9,1);
-#$asq=$a*$a;
 do { $b = random(2,9,1); } until ($b != $a);
-#do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
-#do { $d = random(2,9,1); } until (($d != $a) and ($d != $b) and ($d != $c));
+do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
 
-#Context()->variables->add(x => "Real");
-#Context()->variables->add(y => "Real");
-#Context()->variables->add(z => "Real");
 Context()->variables->add(t => ["Real", limits=>[0.1,4]]);
-#Context()->variables->add(u => ["Real"]);
-#Context()->variables->add(n => ['Real', limits=>[1,20], resolution=>1]);
+Context()->variables->add(u => ["Real"]);
 Context()->variables->add(xi => ["Real", TeX=>"\xi"]);
 Context()->variables->add(s => ["Real"]);
-#Context()->variables->add(eta => ["Real", TeX=>"\eta"]);
-#Context()->variables->add(uxi => ["Real", TeX=>"u_\xi"]);
-#Context()->variables->add(ueta => ["Real", TeX=>"u_\eta"]);
-#
-# This should be good enough for testing if the formula is correct
-#parserFunction("A(xi)" => "exp(xi)");
-#parserFunction("B(eta)" => "exp(-1.337*eta)");
 
 Context()->flags->set(
      reduceConstants => 0,
@@ -69,8 +56,9 @@ Context()->flags->set(
 
 
 $answer1 = Compute("x+$a t");
-$answer2 = Compute("$b cos(xi)");
-$answer3 = Compute("$b cos(x+$a t)");
+$answer2 = Compute("$b u");
+$answer3 = Compute("$c e^(-$b s) cos(xi)");
+$answer4 = Compute("$c e^(-$b t) cos(x+$a t)");
 
 ############################
 ##  Main text
@@ -80,25 +68,32 @@ Context()->texStrings;
 BEGIN_TEXT
 Solve the PDE
 $BR
-PDE: \( \quad u_{t} - $a u_{x} = 0, \quad -\infty < x < \infty \) and \(t > 0\).
+PDE: \( \quad u_{t} - $a u_{x} + $b u = 0, \quad -\infty < x < \infty \) and \(t > 0\).
 $BR
-IC: \(\quad u(x,0) = $b \cos(x) \)
-$PAR
+IC: \(\quad u(x,0) = $c \cos(x) \)
+$BR
+$BR
 First change to characteristic coordinates
 \((\xi,s)\) where \(s=t\) and
 $BR
 \(\xi = {} \) \{ ans_rule(40) \}
 $BR
-picked so that when \(s=t=0\) then \(\xi = x\), and that the equation becomes the ODE \(u_s = 0\).
-$PAR
-Solve and write \(u\) in terms of \((\xi,s)\):
+picked so that when \(s=t=0\) then \(\xi = x\), and that the equation becomes
+an ODE in \(s\):
+$BR
+\(u_s + {} \) \{ ans_rule(40) \} \( {} = 0 \)
+$BR
+$BR
+Now write \(u\) in terms of \((\xi,s)\):
 $BR
 \(u = {} \) \{ ans_rule(40) \}
-$PAR
+$BR
+$BR
 Finally write \(u\) in terms of \((x,t)\):
 $BR
 \(u = {} \) \{ ans_rule(40) \}
-$PAR
+$BR
+$BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
@@ -112,6 +107,7 @@ $showPartialCorrectAnswers = 1;
 ANS( $answer1->cmp() );
 ANS( $answer2->cmp() );
 ANS( $answer3->cmp() );
+ANS( $answer4->cmp() );
 
 
 #####################
@@ -124,17 +120,20 @@ $BR
 Characteristic coordinates are given by:
 $BR
 \( \xi = $answer1, s = t \)
-$PAR
+$BR
+$BR
 The equation becomes the ODE:
 $BR
-\( u_s = 0 \) with initial condition \( u|_{s=0} = $b \cos(\xi) \)
-$PAR
+\( u_s + $answer2 = 0 \) with initial condition \( u|_{s=0} = $b \cos(\xi) \)
+$BR
+$BR
 The solution therefore is
 $BR
-\( u = $answer2 \)
-$PAR
-Or
 \( u = $answer3 \)
+$BR
+$BR
+Or
+\( u = $answer4 \)
 END_SOLUTION
 Context()->normalStrings;
 

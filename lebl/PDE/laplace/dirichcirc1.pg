@@ -66,11 +66,13 @@ $BR
 PDE: \(\quad \nabla^2 u = u_{rr} + \frac{1}{r} u_r + \frac{1}{r^2} u_{\theta\theta} = 0 \) for \(0 < r < 1\).
 $BR
 BC: \(\quad u(1,\theta) = $a \cos ($b \theta ) + $c \sin ($d \theta) \)
-$PAR
+$BR
+$BR
 \( u(r,\theta) = {} \) \{ ans_rule(40) \}
 $BR
 (Write theta for \(\theta\))
-$PAR
+$BR
+$BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;

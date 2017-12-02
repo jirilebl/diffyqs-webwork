@@ -1,11 +1,12 @@
 ##DESCRIPTION
-##  Solving heat equation from forula for finite Fourier series
+##  Solving heat equation from formula for finite Fourier series
 ##ENDDESCRIPTION
 
 
 ## DBsubject(Differential equations)
 ## DBchapter(Partial differential equations)
 ## DBsection(Heat equation)
+## MLT(HeatEq_finite_usingformula)
 ## Author(Jiri Lebl)
 ## Institution(Oklahoma State University)
 ## Level(2)
