@@ -96,7 +96,7 @@ BEGIN_SOLUTION
 ${PAR}SOLUTION:$PAR
 $BR
 The base frequency (angular) is \( \frac{\pi \alpha}{L} \) where \(\alpha^2 = \frac{T}{\rho} \)
-for tension \(T\) and linear density \(rho\).
+for tension \(T\) and linear density \(\rho\).
 Therefore increasing \(L\) by a factor of \($a\),
 divides the base frequency by \($a\).
 Increasing tension by a factor of \($bsq\) multiplies the frequency by the square root, that is \($b\).

@@ -1,21 +1,20 @@
 ##DESCRIPTION
-##  FIXME 
+##  Solve Dirichlet problem (Laplace equation) in a circle
 ##ENDDESCRIPTION
 
 
 ## DBsubject(Differential equations)
 ## DBchapter(Partial differential equations)
-## DBsection()
-## Date()
-## Institution()
+## DBsection(Laplace's equation)
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
+## Institution(Oklahoma State University)
+## Level(3)
+## TitleText1('Partial Differential Equations for Scientists and Engineers')
+## AuthorText1('Stanley J. Farlow')
+## EditionText1('Dover')
+## Section1('Lesson 33')
 ## Problem1('')
-## KEYWORDS('partial', 'differential', 'equation')
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'Laplace equation')
 
 ########################################################################
 
@@ -28,7 +27,7 @@ loadMacros(
 "PGstandard.pl",
 "MathObjects.pl",
 "AnswerFormatHelp.pl",
-"parserFunction.pl",
+"PGcourse.pl",
 );
 
 TEXT(beginproblem());
@@ -41,30 +40,12 @@ Context("Numeric");
 
 
 $a = random(2,9,1);
-#$asq=$a*$a;
 do { $b = random(2,9,1); } until ($b != $a);
 do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
 do { $d = random(2,9,1); } until (($d != $a) and ($d != $b) and ($d != $c));
 
-#Context()->variables->add(x => "Real");
-#Context()->variables->add(y => "Real");
-#Context()->variables->add(z => "Real");
-#Context()->variables->add(t => ["Real"]);
-#Context()->variables->add(t => ["Real", limits=>[0.1,4]]);
-#Context()->variables->add(u => ["Real"]);
 Context()->variables->add(r => ["Real"]);
-#Context()->variables->add(n => ['Real', limits=>[1,20], resolution=>1]);
-#Context()->variables->add(x0 => ["Real", TeX=>"x_0"]);
-#Context()->variables->add(xi => ["Real", TeX=>"\xi"]);
 Context()->variables->add(theta => ["Real", TeX=>"\theta"]);
-#Context()->variables->add(s => ["Real"]);
-#Context()->variables->add(eta => ["Real", TeX=>"\eta"]);
-#Context()->variables->add(uxi => ["Real", TeX=>"u_\xi"]);
-#Context()->variables->add(ueta => ["Real", TeX=>"u_\eta"]);
-#
-# This should be good enough for testing if the formula is correct
-#parserFunction("A(xi)" => "exp(xi)");
-#parserFunction("B(eta)" => "exp(-1.337*eta)");
 
 Context()->flags->set(
      reduceConstants => 0,
@@ -72,7 +53,7 @@ Context()->flags->set(
 );
 
 
-$answer1 = Formula("(($b)/($a^$c)) r^$c sin ($c theta )");
+$answer1 = Formula("$a r^$b cos ($b theta ) + $c r^$d sin ($d theta)");
 
 ############################
 ##  Main text
@@ -80,11 +61,11 @@ $answer1 = Formula("(($b)/($a^$c)) r^$c sin ($c theta )");
 
 Context()->texStrings;
 BEGIN_TEXT
-Solve the Dirichlet problem in the circle of radius $a using polar coordinates:
+Solve the Dirichlet problem in the circle of radius 1 using polar coordinates:
 $BR
-PDE: \( \quad \nabla^2 u = u_{rr} + \frac{1}{r} u_r + \frac{1}{r^2} u_{\theta\theta} = 0 \) for \(0 < r < $a\).
+PDE: \(\quad \nabla^2 u = u_{rr} + \frac{1}{r} u_r + \frac{1}{r^2} u_{\theta\theta} = 0 \) for \(0 < r < 1\).
 $BR
-BC: \(\quad u($a,\theta) = $b \sin ($c \theta ) \)
+BC: \(\quad u(1,\theta) = $a \cos ($b \theta ) + $c \sin ($d \theta) \)
 $PAR
 \( u(r,\theta) = {} \) \{ ans_rule(40) \}
 $BR
