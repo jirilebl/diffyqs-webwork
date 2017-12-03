@@ -1,0 +1,42 @@
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"MatrixCheckers.pl",
+"PGcourse.pl",
+"niceTables.pl",
+);
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+Context("Matrix");
+
+#Context()->variables->add(t=>"Real");
+#Context()->variables->add(x=>"Real");
+#Context()->variables->add(y=>"Real");
+
+$a = random(2,10,1);
+$b = random(2,10,1);
+$c = random(2,10,1);
+
+$funcx = Compute("$a * e^(x*y) + $b * sin(x)");
+$funcy = Compute("cos($b*x)");
+
+$jac = Compute("[[$a*y*e^(x*y)+ $b * cos(x),$a*x*e^(x*y)],[-$b*sin($b*x),0]]");
+
+Context()->texStrings;
+BEGIN_TEXT
+Take the system \( x' = $funcx , \quad y' = $funcy \).
+$BR
+The Jacobian matrix is
+$BR
+\{
+$jac->ans_array(20);
+\}
+END_TEXT
+Context()->normalStrings;
+
+ANS($jac->cmp);
+
+ENDDOCUMENT();

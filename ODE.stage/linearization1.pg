@@ -1,0 +1,78 @@
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"MatrixCheckers.pl",
+"PGcourse.pl",
+"niceTables.pl",
+);
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+Context("Matrix");
+
+#Context()->variables->add(t=>"Real");
+#Context()->variables->add(x=>"Real");
+#Context()->variables->add(y=>"Real");
+
+$a = random(2,10,1);
+$b = random(2,10,1);
+
+$funcx = Formula("$a * x - x*y");
+$funcy = Formula("$b * y + x^2");
+
+$answer1 = Compute("1");
+
+$xcritcoord = Compute("0");
+$ycritcoord = Compute("0");
+
+$beh = "source";
+
+$lin = Matrix([$a,0],[0,$b]);
+
+Context()->texStrings;
+BEGIN_TEXT
+Take the system \( x' = $funcx , \quad y' = $funcy \).
+$BR
+$BR
+How many critical points are there? \{ ans_rule(5) \}.
+$BR
+$BR
+Take the critical point with the largest x-coordinate:
+( \{ ans_rule(5) \} , \{ ans_rule(5) \} ).
+$BR
+$BR
+The linearization at this point is
+\(
+\begin{bmatrix}
+u \\ v
+\end{bmatrix} '
+= A
+\begin{bmatrix}
+u \\ v
+\end{bmatrix}
+\)
+where \(A\) is
+$BR
+\(A = {}\) \{
+$lin->ans_array(5);
+\}
+$BR
+$BR
+The behavior is
+\{ ans_rule(15) \}
+$BR
+For behavior write one of saddle, source, sink, spiral sink, spiral source, center.
+END_TEXT
+Context()->normalStrings;
+
+ANS ($answer1->cmp);
+ANS ($xcritcoord->cmp);
+ANS ($ycritcoord->cmp);
+
+ANS($lin->cmp);
+
+ANS( str_cmp ($beh) );
+
+ENDDOCUMENT();

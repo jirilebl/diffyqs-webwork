@@ -1,0 +1,44 @@
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"MatrixCheckers.pl",
+"PGcourse.pl",
+"niceTables.pl",
+"contextFraction.pl"
+);
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+
+#Context()->variables->add(t=>"Real");
+#Context()->variables->add(a=>"Real");
+#Context()->variables->add(b=>"Real");
+#Context()->variables->add(x=>"Real");
+#Context()->variables->add(y=>"Real");
+#Context()->variables->add(T=>"Real");
+
+$a = random(2,10,1);
+$b = random(5,10,1);
+$c = random(2,10,1);
+$c = Compute("$c/100");
+
+$sol = Compute("$c*($b^2)*($a^2)/(pi^2)");
+
+
+Context()->texStrings;
+BEGIN_TEXT
+Suppose we have a whirling string (spinning around its axis) of length \( $a \) meters, and linear density
+\( $c \) kilograms per meter, with velocity \( $b \) radians per second.  Suppose it is popped out completely (it never crosses the axis, only at the endpoints).
+What is the
+tension on the string in Newtons?
+$BR
+\{ ans_rule(40); \}
+END_TEXT
+Context()->normalStrings;
+
+ANS($sol->cmp);
+
+ENDDOCUMENT();
