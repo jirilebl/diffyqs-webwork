@@ -15,12 +15,12 @@
 ## EditionText1('')
 ## Section1('')
 ## Problem1('')
-## KEYWORDS('partial', 'differential', 'equation')
+## KEYWORDS('PDE', 'partial', 'differential', 'equation')
 
 ########################################################################
 
 ###########################
-##  Initialization
+# Initialization
 
 DOCUMENT();
 
@@ -29,13 +29,13 @@ loadMacros(
 "MathObjects.pl",
 "AnswerFormatHelp.pl",
 "parserFunction.pl",
+"PGcourse.pl",
 );
 
 TEXT(beginproblem());
 
-
 ###########################
-#  Setup
+# Setup
 
 Context("Numeric");
 
@@ -76,8 +76,7 @@ $answer3 = Formula("-$b x/(1-$a $b t)");
 $answer4 = Formula("1/($a $b)");
 
 ############################
-##  Main text
-#
+# Main text
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -112,7 +111,7 @@ Context()->normalStrings;
 
 
 #############################
-##  Answer evaluation
+# Answer evaluation
 
 $showPartialCorrectAnswers = 1;
 

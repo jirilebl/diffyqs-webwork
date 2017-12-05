@@ -19,19 +19,25 @@
 
 ########################################################################
 
+###########################
+# Initialization
+
 DOCUMENT();      
 
 loadMacros(
-"PG.pl",
-"PGbasicmacros.pl",
+"PGstandard.pl",
 "PGchoicemacros.pl",
-"PGanswermacros.pl"
+"PGcourse.pl",
 );
  
-
-# Print problem number and point value (weight) for the problem
 TEXT(beginproblem());
 
+###########################
+# Setup
+
+
+###########################
+# Main text
 
 BEGIN_TEXT
 Reading question for Lesson 33
@@ -40,6 +46,9 @@ Farlow mentions certain mappings that "we will study", though of course we won't
 to study them, but what are their name?  They are the 
 "\{ ans_rule(20) \} mappings"
 END_TEXT
+
+###########################
+# Answer evaluation
 
 ANS( str_cmp("conformal") );
 
