@@ -1,0 +1,60 @@
+# --- Possibly heaviliy modified for Notes on Diffy Qs course --Jiri
+#
+## DESCRIPTION
+## Calculus
+## ENDDESCRIPTION
+
+## Tagged by tda2d
+
+## DBsubject(Differential equations)
+## DBchapter(Introductory concepts)
+## DBsection(Verification of solutions)
+## Date(6/3/2002)
+## Level(3)
+## TitleText1('Calculus: Early Transcendentals')
+## AuthorText1('Stewart')
+## EditionText1('6')
+## Section1('9.1')
+## Problem1('1 2')
+## KEYWORDS('initial value' 'differential equation','Initial value problem' )
+
+DOCUMENT();        # This should be the first executable line in the problem.
+
+loadMacros(
+  "PGstandard.pl",
+  "PGchoicemacros.pl",
+  "PGcourse.pl"
+);
+
+TEXT(beginproblem());
+
+
+
+$h = random(1,10,1);
+$k=  random(2,10,1);
+$l = $k + $h ;
+$c = random(2,10,1);
+$d = random(2,10,1);
+$m = (($c * $l) - $d )/$h ;
+$n = ($d - ($k * $c ))/$h ;
+
+BEGIN_TEXT
+
+The solution of a certain differential equation is of the form 
+\[ y(t) = A \exp($k t) + B \exp($l t), \] 
+where \(A\) and \(B\) are constants. 
+$PAR 
+The solution has initial conditions 
+\( y(0) = $c \) and \(  y'(0) = $d  .\)  
+$PAR
+Find the solution by using the initial 
+conditions to get linear equations for \(A\) and \(B\).
+$PAR
+\( y(t)= \) \{ans_rule(40); \} 
+
+END_TEXT
+
+$ans = "$m *(e^($k *t)) + $n *(e^($l *t))";
+ANS(fun_cmp($ans, vars=>"t"));
+
+ENDDOCUMENT();        # This should be the last executable line in the problem.
