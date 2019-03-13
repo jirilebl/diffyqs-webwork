@@ -90,8 +90,6 @@ ANS( $answer2->cmp() );
 
 Context()->texStrings;
 BEGIN_SOLUTION
-${PAR}SOLUTION:$PAR
-$BR
 As \( x'=y \), that is the first equation.
 $PAR
 For the second equation, substitute \( x'' = y' \) and \( x' = y\) into

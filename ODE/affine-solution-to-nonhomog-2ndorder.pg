@@ -90,7 +90,6 @@ ANS( $answer2->cmp() );
 
 Context()->texStrings;
 BEGIN_SOLUTION
-${PAR}SOLUTION:$PAR
 If \( y = ax + b \), then \(y''=0\).
 Therefore the equation gives \( $a y = $b x + $c \).  Solving for
 \(y\) we get \( $answer1 \).

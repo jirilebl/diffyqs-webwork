@@ -126,8 +126,6 @@ ANS( $answer4->cmp() );
 
 Context()->texStrings;
 BEGIN_SOLUTION
-${PAR}SOLUTION:$PAR
-$BR
 \( x = $answer1 \)
 $PAR
 \( x_0 = $answer2 \)
