@@ -14,7 +14,7 @@
 ## Level(3)
 ## MO(1)
 ## TitleText1('Notes on Diffy Qs')
-## AuthorText1('Edwards and Penney')
+## AuthorText1('Jiri Lebl')
 ## EditionText1('4')
 ## Section1('1.1')
 ## Problem1('1')
@@ -72,10 +72,9 @@ $answer[1] = Formula("-3*$k * $k^2*$x")->reduce;
 $answer[2] = Formula("3*$k^2 * $k*$x")->reduce;
 $answer[3] = Formula("-$k^3*$x")->reduce;
 
-$answer[4] = Formula("$expr");
-$answer[5] = Formula("0");
+$answer[4] = Formula("0");
 
-$answer[6] = PopUp(["Choose","Yes","No"],"No");
+$answer[5] = PopUp(["Choose","Yes","No"],"No");
 
 #############################
 #  Main text
@@ -111,7 +110,7 @@ $BR
 $PAR
 Is \( x = e^t \) a solution to your
 differential equation in the previous part?
-\{ $answer[6]->menu() \}  $BITALIC Be sure you can
+\{ $answer[5]->menu() \}  $BITALIC Be sure you can
 justify your answer. $EITALIC
 END_TEXT
 Context()->normalStrings;
@@ -142,9 +141,8 @@ ANS( $answer[3]->cmp()->withPostFilter(AnswerHints(
   "Check your signs and the coefficients in the D.E.",
 ))  
 );
-#ANS( $answer[4]->cmp() );
+ANS( $answer[4]->cmp() );
 ANS( $answer[5]->cmp() );
-ANS( $answer[6]->cmp() );
 
 ;
 
