@@ -1,21 +1,21 @@
 ##DESCRIPTION
-##  FIXME 
+##  Rewrite a second order equation as a system, without matrix notation
 ##ENDDESCRIPTION
 
 
 ## DBsubject(Differential equations)
 ## DBchapter(Systems of differential equations)
-## DBsection()
-## Date()
-## Institution()
+## DBsection(Reduction to first order systems)
+## Date(03/14/2019)
+## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('3.1')
 ## Problem1('')
-## KEYWORDS('systems', 'differential', 'equation')
+## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation')
 
 ########################################################################
 
@@ -104,8 +104,9 @@ As \( x'=y \), that is the first equation.
 $PAR
 For the second equation, substitute \( x'' = y' \) and \( x' = y\) into
 \( x'' + $a x' + $b x + $c = 0\) so 
-\( y' + $a y + $b x + $c = 0\).  Now solve for \(y'\):
-\( y' = - $a y - $b x - $c \).
+\( y' + $a y + $b x + $c = 0\).  Now solve for \(y'\),
+that is,
+\( y' = - $b x - $a y - $c \).
 END_SOLUTION
 Context()->normalStrings;
 

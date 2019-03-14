@@ -1,21 +1,22 @@
 ##DESCRIPTION
-##  FIXME 
+##  Guessing (solving for coefficients) an affine solution to an ODE.
+##  Could be a very easy problem in an undetermined coefficients section.
 ##ENDDESCRIPTION
 
 
 ## DBsubject(Differential equations)
-## DBchapter(Partial differential equations)
-## DBsection()
-## Date()
-## Institution()
+## DBchapter(Higher order differential equations)
+## DBsection(Undetermined coefficients)
+## Date(03/14/2019)
+## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
-## Level()
-## TitleText1('')
-## AuthorText1('')
-## EditionText1('')
-## Section1('')
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('2.1')
 ## Problem1('')
-## KEYWORDS('ODE', 'differential', 'equation')
+## KEYWORDS('ODE', 'second order', 'differential', 'equation', 'undetermined coefficients')
 
 ########################################################################
 
