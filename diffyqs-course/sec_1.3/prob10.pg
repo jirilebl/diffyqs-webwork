@@ -1,0 +1,85 @@
+# --- Possibly heavily modified for Notes on Diffy Qs course --Jiri
+#
+## DESCRIPTION
+## Calculus
+## ENDDESCRIPTION
+
+## Tagged by tda2d
+
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Applications - exponential growth & decay)
+## Institution(Dartmouth)
+## MLT(applications_exponential_bacteria_formula_findY_findT)
+## Level(5)
+## TitleText1('Calculus')
+## AuthorText1('Stewart')
+## EditionText1('5')
+## Section1('10.4')
+## Problem1('')
+## KEYWORDS('exponential growth' 'population')
+
+
+DOCUMENT();
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl"
+);
+ 
+
+## Do NOT show partial correct answers
+$showPartialCorrectAnswers = 0;
+
+Context("Numeric");
+Context()->variables->are(t=>"Real");
+
+$initial= random(300,900,100);
+$later = random(3000,10000,1000);
+$t1 = random(3,9);
+
+
+## Ok, we are ready to begin the problem...
+##
+TEXT(beginproblem());
+
+
+BEGIN_TEXT
+A bacteria culture starts with $initial bacteria and grows at a rate
+proportional to its size.  After $t1 hours, there are $later bacteria.
+$PAR
+
+Find an expression for the number of bacteria after \(t\) hours.
+$BR
+
+\{ans_rule(60)\}
+
+$PAR
+Find the number of bacteria after \{$t1 + 1\} hours.
+$BR
+
+\{ans_rule(30)\}
+
+$PAR
+Find the growth rate after \{$t1 + 1\} hours.
+$BR
+
+\{ans_rule(30)\}
+
+$PAR
+After how many hours will the population reach 30000?
+$BR
+
+\{ans_rule(30)\}
+END_TEXT
+
+$k = log($later/$initial)/$t1;
+$t11 = $t1+1;
+
+ANS(Formula("$initial*exp($k*t)")->cmp() );
+ANS(Compute("$initial*exp($k*$t11)")->cmp() );
+ANS(Compute("$initial*exp($k*$t11)*$k")->cmp() );
+ANS(Compute("ln(30000/$initial)/$k")->cmp() );
+
+ENDDOCUMENT();
