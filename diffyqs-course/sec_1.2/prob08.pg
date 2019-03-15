@@ -1,23 +1,10 @@
-# --- Possibly heavily modified for Notes on Diffy Qs course --Jiri
-#
 ##DESCRIPTION
-##   
 ##ENDDESCRIPTION
 
-
-## DBsubject(Differential equations)
-## DBchapter(First order differential equations)
-## DBsection(Existence and uniqueness)
-## Date(1/24/2010)
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
-## Level(2)
-## TitleText1('Differential Equations: with Boundary Value Problems')
-## AuthorText1('Zill')
-## EditionText1('6')
-## Section1('1.2')
-## Problem1('')
 ## KEYWORDS('differential' 'equation' 'theorem', 'existence', 'uniqueness')
+#
 ########################################################################
 
 DOCUMENT();      

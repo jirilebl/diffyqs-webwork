@@ -1,23 +1,9 @@
-# --- Possibly heavily modified for Notes on Diffy Qs course --Jiri
-#
 ##DESCRIPTION
-##  Separable Differential Equation
+##  Integrable/separable Differential Equation
 ##ENDDESCRIPTION
 
-## Shotwell cleaned
-
-## DBsubject(Differential equations)
-## DBchapter(First order differential equations)
-## DBsection(Separable)
-## Date(6/3/2002)
-## MLT(Separable_Initial_Condition)
-## Level(3)
-## TitleText1('Calculus: Early Transcendentals')
-## AuthorText1('Stewart')
-## EditionText1('6')
-## Section1('9.3')
-## Problem1('1')
-## KEYWORDS('Differential Equation', 'Separable')
+## Author(???)
+## KEYWORDS('differential equations', 'separable')
 
 DOCUMENT();        # This should be the first executable line in the problem.
 

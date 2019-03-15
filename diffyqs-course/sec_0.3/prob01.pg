@@ -1,23 +1,8 @@
-# --- Possibly heavily modified for Notes on Diffy Qs course --Jiri
-#
 ##DESCRIPTION
 ##ENDDESCRIPTION
 
-
-## DBsubject(Differential equations)
-## DBchapter(Introductory concepts)
-## DBsection(Classifications of differential equations)
-## Date(05/22/2012)
 ## Institution(Muohio, Hope College)
 ## Author(Anna Ghazaryan,Fuli Zhang, Paul Pearson)
-## MLT(classify_order_linear)
-## Level(2)
-## MO(1)
-## TitleText1('Differential equations An introduction to modern methods and applications')
-## AuthorText1('James R. Brannan, William E. Boyce')
-## EditionText1('')
-## Section1('1.4')
-## Problem1('3')
 ## KEYWORDS('differential equations')
 
 ########################################################################

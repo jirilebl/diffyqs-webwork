@@ -1,28 +1,9 @@
-# --- Possibly heavily modified for Notes on Diffy Qs course --Jiri
-#
 ## DESCRIPTION
 ## Introduction to differential equations
 ## ENDDESCRIPTION
 
-
-## DBsubject(Differential equations)
-## DBchapter(Introductory concepts)
-## DBsection(Verification of solutions)
-## Date(01/30/2011)
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
-## Level(1)
-## MO(1)
-## TitleText1('Notes on Diffy Qs')
-## AuthorText1('Jiri Lebl')
-## EditionText1('4')
-## Section1('1.1')
-## Problem1('1')
-## TitleText2('Differential Equations Computing and Modeling')
-## AuthorText2('')
-## EditionText2('')
-## Section2('.')
-## Problem2('')
 ## KEYWORDS('differential equations')
 
 
@@ -95,7 +76,6 @@ ANS( $answer->cmp(
       return 0;
     }
   } ) );
-
 
 ;
 

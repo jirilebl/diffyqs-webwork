@@ -1,18 +1,8 @@
-# --- Possibly heavily modified for Notes on Diffy Qs course --Jiri
-#
 ## DESCRIPTION
 ## First-Order Linear Differential Equations
 ## ENDDESCRIPTION
 
-## Tagged by cmd6a 3/10/06
-
-## DBsubject(Differential equations)
-## DBchapter(First order differential equations)
-## DBsection(Integrating factor)
 ## Institution(ASU)
-## MLT(integrating_factor_cancel)
-## MLTleader(1)
-## Level(3)
 
 DOCUMENT();        # This should be the first executable line in the problem.
 

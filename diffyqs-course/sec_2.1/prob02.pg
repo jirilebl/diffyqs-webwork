@@ -1,0 +1,101 @@
+##DESCRIPTION
+##  Superposition principle
+##ENDDESCRIPTION
+
+## Author(Darwyn Cook)
+## KEYWORDS('superposition')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "PGcourse.pl"
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+#
+#
+Context()->variables->{namePattern} = qr/[a-z][a-z0-9_]*'*/i;
+Context()->variables->add(A=>"Real",B=>"Real","y"=>"Real","y'"=>"Real","y''"=>"Real");
+Context()->variables->set(x=>{limits=>[-1,1]});
+$homogeneous = Formula("A*cos(x)+B*sin(x)");
+$non = Formula("xsin(x)+cos(x)*ln(cos(x))");
+$general = Compute($homogeneous+$non);
+$wronskian = Formula("1");
+
+################################################
+##
+## IVP setup
+##
+
+$y0 = Compute(random(2,9));
+$y1 = Compute(random(2,9));
+$a = Compute("$y0");
+$b = Compute("$y1");
+$ivp = $general->substitute(A=>$a,B=>$b,x=>x);
+
+Context("Interval");
+$domain=Compute("(-pi/2,pi/2)");
+##############################################################
+#
+#  Text
+#
+#
+
+Context()->texStrings;
+BEGIN_TEXT
+One of the following is a general solution of the homogeneous differential equation \(y^{\prime\prime}+y=0\)
+$BR
+\[
+\begin{aligned}
+y&=A e^{x}+B e^{-x} \\
+y&=A x+B \\
+y&=$homogeneous \\
+\end{aligned}
+\]
+and one of the following is a solution to the nonhomogeneous equation \(y^{\prime\prime}+y=\sec(x)\)
+\[
+\begin{aligned}
+y&= x\sin(x)\\
+y&=$non \\
+\end{aligned}
+\]
+By superposition, the general solution of the equation \(y^{\prime\prime}+y=\sec(x)\) is
+$BR
+\(y = \) \{$general->ans_rule\}
+$PAR
+Find the solution with
+$BR
+\[
+\begin{aligned}
+y(0)&=$y0 \\
+y(0)^\prime&=$y1 \\
+\end{aligned}
+\]
+\(y = \)\{$ivp->ans_rule\}
+END_TEXT
+
+Context()->normalStrings;
+
+##############################################################
+#
+#  Answers
+#
+#
+
+ANS($general->cmp);
+ANS($ivp->cmp);
+
+ENDDOCUMENT();        
+     

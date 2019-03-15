@@ -1,21 +1,7 @@
-# --- Possibly heavily modified for Notes on Diffy Qs course --Jiri
-#
 ## DESCRIPTION
-## Calculus
+##   Finding constants given initial conditions
 ## ENDDESCRIPTION
 
-## Tagged by tda2d
-
-## DBsubject(Differential equations)
-## DBchapter(Introductory concepts)
-## DBsection(Verification of solutions)
-## Date(6/3/2002)
-## Level(3)
-## TitleText1('Calculus: Early Transcendentals')
-## AuthorText1('Stewart')
-## EditionText1('6')
-## Section1('9.1')
-## Problem1('1 2')
 ## KEYWORDS('initial value' 'differential equation','Initial value problem' )
 
 DOCUMENT();        # This should be the first executable line in the problem.

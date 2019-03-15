@@ -1,29 +1,8 @@
-# --- Possibly heavily modified for Notes on Diffy Qs course --Jiri
-#
 ##DESCRIPTION
-#
-# File Created: 12/13/2009
-# Last Modified: 12/13/2009
-# Problem Author: Darwyn Cook
-# WeBWorK Entry: 
-# Location: Alfred University
-#
 ##ENDDESCRIPTION
 
-##
-
-## DBsubject(Differential equations)
-## DBchapter(Introductory concepts)
-## DBsection(Classifications of differential equations)
-## Date(12/13/2009)
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
-## Level(3)
-## TitleText1('Differential Equations: with Boundary Value Problems')
-## AuthorText1('Zill')
-## EditionText1('6')
-## Section1('.')
-## Problem1('')
 
 DOCUMENT();
 

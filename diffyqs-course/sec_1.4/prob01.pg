@@ -1,17 +1,9 @@
-# --- Possibly heavily modified for Notes on Diffy Qs course --Jiri
-#
-## DBsubject(Differential equations)
-## DBchapter(First order differential equations)
-## DBsection(Integrating factor)
+##DESCRIPTION
+## Integrating factor
+##ENDDESCRIPTION
+
 ## Institution(The College of Idaho)
 ## Author(LA Danielson)
-## Level(3)
-## MO(1)
-## TitleText1('Calculus: Early Transcendentals')
-## AuthorText1('Rogawski')
-## EditionText1('2')
-## Section1('9.5')
-## Problem1('5')
 ## KEYWORDS('calculus', 'differential equations', 'linear equation', 'first order')
 
 DOCUMENT();

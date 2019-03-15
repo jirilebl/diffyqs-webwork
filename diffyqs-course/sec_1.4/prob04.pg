@@ -1,17 +1,9 @@
-# --- Possibly heavily modified for Notes on Diffy Qs course --Jiri
+## DESCRIPTION
+## Integrating factor
+## ENDDESCRIPTION
 #
-## DBsubject(Differential equations)
-## DBchapter(First order differential equations)
-## DBsection(Integrating factor)
 ## Institution(W.H.Freeman)
 ## Author(Christopher Sira)
-## Level(4)
-## MO(1)
-## TitleText1('Calculus: Early Transcendentals')
-## AuthorText1('Rogawski')
-## EditionText1('2')
-## Section1('9.5')
-## Problem1('17')
 ## KEYWORDS('calculus', 'differential equations', 'linear equation', 'first order')
 
 DOCUMENT();

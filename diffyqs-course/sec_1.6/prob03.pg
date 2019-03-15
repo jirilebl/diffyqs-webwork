@@ -1,0 +1,49 @@
+##DESCRIPTION
+## Equilibrium points and phase lines
+##ENDDESCRIPTION
+
+## KEYWORDS('differential', 'equation', 'constant', 'solution')
+
+DOCUMENT();        # This should be the first executable line in the problem.
+
+loadMacros(
+  "PGstandard.pl",
+  "PGchoicemacros.pl",
+  "PGgraphmacros.pl",
+  "PGmatrixmacros.pl",
+  "PGnumericalmacros.pl",
+  "PGmorematrixmacros.pl",
+  "PGasu.pl",
+  "extraAnswerEvaluators.pl",
+  "PGcourse.pl"
+);
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+$neg = random(-9,-1,1);
+$pos = random(1,7,1);
+if (abs($pos + $neg) < 2) { $pos = 9; } 
+$a = - $pos - $neg;
+$b = $pos*$neg;
+
+BEGIN_TEXT
+
+A function \(x(t)\) satisfies the differential equation 
+\[ \frac{dx}{dt} = - x^4 - $a x^3 - $b x^2. \]
+$BR $BR 
+What are the constant solutions of this equation? $BR 
+$BITALIC Separate your answers by commas. $EITALIC
+$BR
+\{ ans_rule(50) \}. $BR $BR 
+For what values of \(x\) is \(x\) increasing? $BR 
+\{ans_rule(10)\} \( < x < \) \{ans_rule(10)\}.
+
+END_TEXT
+
+ANS(number_list_cmp("$neg, 0, $pos"));
+ANS(num_cmp($neg));
+ANS(num_cmp($pos));
+
+ENDDOCUMENT();       # This should be the last executable line in the problem.
+

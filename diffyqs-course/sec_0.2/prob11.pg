@@ -1,18 +1,10 @@
-# --- Possibly heavily modified for Notes on Diffy Qs course --Jiri
-#
-## DBsubject(Differential equations)
-## DBchapter(Introductory concepts)
-## DBsection(Verification of solutions)
+##DESCRIPTION
+## Guess a solution
+##ENDDESCRIPTION
+
 ## Institution(Univeristy of Utah)
 ## Author(Utah ww group)
-## Level(4)
-## Static(1)
-## TitleText1('Calculus')
-## AuthorText1('Dale Varberg, Edwin J. Purcell, and Steven E. Rigdon')
-## EditionText1('9')
-## Section1('.')
-## Problem1('')
-## KEYWORDS('calculus')
+## KEYWORDS('differential equations')
 
 
 DOCUMENT();        # This should be the first executable line in the problem.
@@ -26,8 +18,6 @@ loadMacros(
 TEXT(beginproblem());
 
 TEXT(EV2(<<EOT));
-
-
 Solve this problem by educated guessing.  
 
 $BR 
@@ -44,11 +34,5 @@ EOT
 
 $ans = "sin(x)";
 ANS(fun_cmp($ans, limits=>[[1,2]], vars=>["x"]));
-
-
-
-
-
-
 
 ENDDOCUMENT();        # This should be the last executable line in the problem.

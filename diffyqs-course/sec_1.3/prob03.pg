@@ -1,18 +1,8 @@
-# --- Possibly heavily modified for Notes on Diffy Qs course --Jiri
-#
-## DBsubject(Differential equations)
-## DBchapter(First order differential equations)
-## DBsection(Separable)
+##DESCRIPTION
+##ENDDESCRIPTION
+
 ## Institution(W.H.Freeman)
 ## Author(Christopher Sira)
-## MLT(Separable_Initial_Condition)
-## Level(3)
-## MO(1)
-## TitleText1('Calculus: Early Transcendentals')
-## AuthorText1('Rogawski')
-## EditionText1('2')
-## Section1('9.1')
-## Problem1('23')
 ## KEYWORDS('calculus', 'differential equations', 'separation of variables')
 
 DOCUMENT();

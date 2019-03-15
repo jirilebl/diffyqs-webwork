@@ -1,16 +1,8 @@
-# --- Possibly heavily modified for Notes on Diffy Qs course --Jiri
-#
 ## DESCRIPTION
-## Calculus
+##   Checking solutions
 ## ENDDESCRIPTION
 
-## Tagged by tda2d
-
-## DBsubject(Differential equations)
-## DBchapter(Introductory concepts)
-## DBsection(Verification of solutions)
 ## Institution(Rochester)
-## Level(2)
 ## KEYWORDS('differential equation' 'solution')
 
 DOCUMENT();        # This should be the first executable line in the problem.
@@ -79,4 +71,3 @@ END_TEXT
 ANS(checkbox_cmp($cmc->correct_ans));
 
 ENDDOCUMENT();       # This should be the last executable line in the problem.
-

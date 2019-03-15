@@ -1,22 +1,7 @@
-# --- Possibly heavily modified for Notes on Diffy Qs course --Jiri
-#
 ## DESCRIPTION
-## Calculus
 ## ENDDESCRIPTION
 
-## Tagged by tda2d
-
-## DBsubject(Differential equations)
-## DBchapter(First order differential equations)
-## DBsection(Separable)
 ## Institution(Rochester)
-## MLT(Separable_Initial_Condition)
-## Level(3)
-## TitleText1('Calculus: Early Transcendentals')
-## AuthorText1('Rogawski')
-## EditionText1('1')
-## Section1('9.1')
-## Problem1('17')
 ## KEYWORDS('differential equation' 'separable' 'initial')
 
 DOCUMENT();        # This should be the first executable line in the problem.

@@ -1,30 +1,10 @@
-# --- Possibly heavily modified for Notes on Diffy Qs course --Jiri
-#
-## tcao tagged and PAID on 3-22-2004
-
-## DBsubject(Differential equations)
-## DBchapter(First order differential equations)
-## DBsection(Integrating factor)
-## Date(6/3/2002)
-## Institution(Rochester)
-## Level(3)
-## TitleText1('Calculus: Early Transcendentals')
-## AuthorText1('Stewart')
-## EditionText1('6')
-## Section1('9.4')
-## Problem1('13')
-## TitleText2('Calculus: Early Transcendentals')
-## AuthorText2('Rogawski')
-## EditionText2('1')
-## Section2('9.5')
-## Problem2('13')
-## KEYWORDS('differential equation' 'linear')
 ## DESCRIPTION 
-##  ## differential equations
 ##  An easy differential equation, linear, of first order with an exponential right hand side.
-##   URL:http://webhost.math.rochester.edu/mth163lib/discuss/msgReader$465
-##  
 ## ENDDESCRIPTION 
+
+## Institution(Rochester)
+## KEYWORDS('differential equation' 'linear')
+
 DOCUMENT();      # This should be the first executable line in the problem.
 loadMacros(
   "PGstandard.pl",

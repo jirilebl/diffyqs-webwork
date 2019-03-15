@@ -1,24 +1,8 @@
-# --- Possibly heavily modified for Notes on Diffy Qs course --Jiri
-#
 ##DESCRIPTION
 ##ENDDESCRIPTION
 
-
-## Edition('7')
-## DBsubject(Differential equations)
-## DBchapter(Introductory concepts)
-## DBsection(Classifications of differential equations)
-## Date(05/22/2012)
 ## Institution(Miami Univ. Ohio and Hope College)
 ## Author(Anna Ghazaryan, Fuli Zhang, and Paul Pearson)
-## MLT(classify_order_linear_dot)
-## Level(2)
-## MO(1)
-## TitleText1('Differential equations with Boundary-value problem')
-## AuthorText1('Dennis G. Zill')
-## EditionText1('')
-## Section1('1.1')
-## Problem1('3')
 ## KEYWORDS('differential equations')
 
 ########################################################################

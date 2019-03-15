@@ -1,22 +1,9 @@
-# --- Possibly heavily modified for Notes on Diffy Qs course --Jiri
-#
 ##DESCRIPTION
-##  which equations are linear? 
+##  Which equations are linear? 
 ##ENDDESCRIPTION
 
-
-## DBsubject(Differential equations)
-## DBchapter(Introductory concepts)
-## DBsection(Classifications of differential equations)
-## Date(1/7/2010)
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
-## Level(2)
-## TitleText1('Differential Equations: with Boundary Value Problems')
-## AuthorText1('Zill')
-## EditionText1('6')
-## Section1('2.3')
-## Problem1('')
 ## KEYWORDS('linear' 'differential' 'equation')
 
 ########################################################################

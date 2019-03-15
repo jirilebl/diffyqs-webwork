@@ -1,24 +1,10 @@
-# --- Possibly heavily modified for Notes on Diffy Qs course --Jiri
-#
 ##DESCRIPTION
 ##  Give students a two parameter solution of a DE, ask them to solve the IVP
 ##ENDDESCRIPTION
 
-
-## DBsubject(Differential equations)
-## DBchapter(Introductory concepts)
-## DBsection(Verification of solutions)
-## Date(12/16/2009)
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
-## Level(2)
-## TitleText1('Differential Equations: with Boundary Value Problems')
-## AuthorText1('Zill')
-## EditionText1('6')
-## Section1('1.2')
-## Problem1('')
-## KEYWORDS('ivp' 'initial' 'value' 'problem')
-## MLT(parameter-family-order2)
+## KEYWORDS('ivp', 'initial', 'value', 'problem')
 
 ########################################################################
 

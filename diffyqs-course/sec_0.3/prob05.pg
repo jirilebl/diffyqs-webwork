@@ -1,23 +1,10 @@
-# --- Possibly heavily modified for Notes on Diffy Qs course --Jiri
-#
 ##DESCRIPTION
-##  classify separable differential equations
+##  classify differential equations
 ##ENDDESCRIPTION
 
-
-## DBsubject(Differential equations)
-## DBchapter(Introductory concepts)
-## DBsection(Classifications of differential equations)
-## Date(12/23/2009)
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
-## Level(2)
-## TitleText1('Differential Equations: with Boundary Value Problems')
-## AuthorText1('Zill')
-## EditionText1('6')
-## Section1('.')
-## Problem1('')
-## KEYWORDS('differential equation', 'classify', 'separable')
+## KEYWORDS('differential equation', 'classify')
 
 ########################################################################
 

@@ -1,23 +1,8 @@
-# --- Possibly heavily modified for Notes on Diffy Qs course --Jiri
-#
 ##DESCRIPTION
 ##  Separable Differential Equation
 ##ENDDESCRIPTION
 
-## tcao tagged and PAID on 3-22-2004
-
-## DBsubject(Differential equations)
-## DBchapter(First order differential equations)
-## DBsection(Separable)
-## Date(6/3/2002)
-## MLT(Separable_Initial_Condition)
-## Level(4)
-## TitleText1('Calculus: Early Transcendentals')
-## AuthorText1('Stewart')
-## EditionText1('6')
-## Section1('9.3')
-## Problem1('8')
-## KEYWORDS('Differential Equation', 'Separable')
+## KEYWORDS('differential equation', 'separable')
 
 DOCUMENT();        # This should be the first executable line in the problem.
 
