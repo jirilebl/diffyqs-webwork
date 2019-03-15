@@ -1,0 +1,75 @@
+##DESCRIPTION
+##  Classify singular points of a differential equation
+##ENDDESCRIPTION
+
+## Institution(Alfred University)
+## Author(Darwyn Cook)
+## KEYWORDS('differential equation', 'classify', 'singular', 'regular', 'Frobenius')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+  "PGstandard.pl",
+  "unionTables.pl",
+  "MathObjects.pl",
+  "PGcourse.pl"
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+#
+#
+Context("Numeric");
+Context()->variables->{namePattern} = qr/[a-z][a-z0-9_]*'*/i;
+Context()->variables->are("x"=>"Real","y"=>"Real","y'"=>"Real","y''"=>"Real");
+
+$a = random(2,9);
+$b = random(3,7);
+$diffeqn = Formula("(x^2-($a)^2)/x*y''+$b*y'+y")->reduce;
+
+$singular =List($a,-$a); 
+##############################################################
+#
+#  Text
+#
+#
+
+Context()->texStrings;
+BEGIN_TEXT
+Write the differential equation \($diffeqn=0\) in standard form:
+$BR
+$BCENTER
+\(y^{\prime\prime} +{}\)
+\{ ans_rule(20) \}
+\( y^{\prime} + {} \)
+\{ ans_rule(20) \}
+\( y = 0 \)
+$ECENTER
+$BR
+List the singular points of the differential equation:
+$BR
+\(x = \) \{$singular->ans_rule\}
+
+END_TEXT
+Context()->normalStrings;
+
+##############################################################
+#
+#  Answers
+#
+#
+ANS(Compute("($b*x)/(x^2-($a)^2)")->cmp);
+ANS(Compute("x/(x^2-($a)^2)")->cmp);
+ANS($singular->cmp());
+
+
+ENDDOCUMENT();        

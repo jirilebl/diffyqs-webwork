@@ -1,0 +1,67 @@
+## DESCRIPTION
+## Differential Equations: Laplace Transforms
+## ENDDESCRIPTION
+
+## Institution(ASU)
+
+DOCUMENT() ;        # This should be the first executable line in the problem.
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "parserFunction.pl",
+  "PGcourse.pl"
+);
+
+TEXT(beginproblem()) ;
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+
+Context()->variables->are(s => "Real",
+                          t => "Real");
+
+$r= random(2,4,1);
+$c = $r**2;
+$D = pi/(pi**2 - $c);
+
+# A random function for checking the expression
+parserFunction("u(t)" => "1.5 * cos(e*t) + 5*pi/3 + arctan(t)");
+
+$ans1= Formula("pi*(1+exp(-s))/((s^2+pi^2)*(s^2+$c))");
+$ans2= Formula("$D*(sin($r*t)/$r-sin(pi*t)/pi + u(t-1)*(sin($r*(t-1))/$r-sin(pi*(t-1))/pi))");
+$func = "\begin{cases}
+            \sin(\pi t), & 0 \leq t < 1 \cr
+            0, & 1 \leq t 
+             \end{cases}";
+
+BEGIN_TEXT
+
+Take the Laplace transform of the following initial value  and 
+solve for \(X(s) = \mathcal{L}$LBRACE x(t) $RBRACE \):
+
+\[ x''  + {$c} x= $func \hspace{0.5in} x(0)=0, \; x'(0)=0\]
+$PAR  
+\(X(s)= \) \{ans_rule(50) \}
+$BR
+$BITALIC Hint: First write the right hand side of the ODE in terms of the Heaviside function. $EITALIC
+$PAR
+Now find the inverse transform to find
+$BR
+\(x(t) = \) \{ans_rule(50) \}
+$BR
+$BITALIC (Use \(u\) for the Heaviside function.) $EITALIC
+$PAR
+Note: 
+\[\frac{\pi}{(s^2+\pi^2)(s^2+$c)} = 
+\frac{\pi}{\pi^2-$c}\left( \frac{1}{s^2+$c} - \frac{1}{s^2+\pi^2}\right)\]
+
+
+END_TEXT
+
+ANS($ans1->cmp()) ;
+ANS($ans2->cmp());
+
+ENDDOCUMENT() ;        # This should be the last executable line in the problem.
+

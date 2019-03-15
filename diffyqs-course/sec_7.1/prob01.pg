@@ -1,0 +1,42 @@
+## DESCRIPTION
+## Interval of convergence of a power series
+## ENDDESCRIPTION
+
+## Institution(Dartmouth)
+## KEYWORDS('power series', 'radius of convergence')
+
+DOCUMENT();
+loadMacros(
+  "PGstandard.pl",
+  "PGchoicemacros.pl",
+  "MathObjects.pl",
+  "Dartmouthmacros.pl",
+  "PGcourse.pl"
+);
+ 
+
+## Do NOT show partial correct answers
+$showPartialCorrectAnswers = 0;
+
+$scalar=random(2,20);
+
+## Ok, we are ready to begin the problem...
+##
+TEXT(beginproblem());
+
+
+BEGIN_TEXT
+    Find the radius of convergence of the power series 
+\[ \sum_{n=1}^\infty \frac{$scalar^n x^n}{n!} \]
+$BR
+Your answer should be a nonnegative real number 
+or ${BITALIC}infinity$EITALIC.
+ $BR
+ $BR
+Radius of convergence is \{ans_rule()\}
+END_TEXT
+
+Context('Numeric');
+ANS(Compute('infinity')->cmp);
+ENDDOCUMENT();
+

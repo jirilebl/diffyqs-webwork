@@ -1,19 +1,9 @@
 ##DESCRIPTION
+## Undetermined coefficients
 ##ENDDESCRIPTION
-## DBsubject(Differential equations)
-## DBchapter(Higher order differential equations)
-## DBsection(Undetermined coefficients)
+
 ## Institution(Univeristy of Utah)
 ## Author(Utah ww group)
-## MLT(undet_07)
-## Level(3)
-## Static(1)
-## TitleText1('Calculus')
-## AuthorText1('Dale Varberg, Edwin J. Purcell, and Steve E. Rigdon')
-## EditionText1('9')
-## Section1('.')
-## Problem1('')
-## KEYWORDS('calculus')
 
 DOCUMENT();        # This should be the first executable line in the problem.
 

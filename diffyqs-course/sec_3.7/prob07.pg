@@ -1,0 +1,66 @@
+## DESCRIPTION
+## Eigenvalues and systems of differential equations
+## Repeated eigenvalues
+## ENDDESCRIPTION
+
+## Institution(Fort Lewis College)
+## Author(Paul Pearson)
+
+
+##############################
+#  Initialization
+
+DOCUMENT(); 
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "parserVectorUtils.pl",
+  "PGcourse.pl"
+);
+
+TEXT(beginproblem());
+
+
+#############################
+#  Setup
+
+Context("Matrix");
+
+$k = random(2,6,1);
+
+$A = Matrix("[[$k/2,0],[-$k,$k/2]]");
+
+
+######################
+#  Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Consider the linear system  
+\( {\vec{x}^{\,\prime}} = A {\vec{x}} \),
+where \( A \) is a real \( 2 \times 2 \) constant matrix with
+repeated eigenvalues.  Use the given information to determine
+the matrix \( A \).
+$PAR
+Phase plane solution trajectories have horizontal tangents on 
+the line \( x_2 = 2 x_1 \) and vertical tangents on the line 
+\( x_1 = 0 \).  The matrix \( A \) has a nonzero repeated 
+eigenvalue and \( a_{21} = -$k \).
+$PAR
+\( A = {} \) \{ $A->ans_array() \}
+
+END_TEXT
+Context()->normalStrings;
+
+
+######################
+#  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $A->cmp() );
+
+;
+
+ENDDOCUMENT();

@@ -1,0 +1,53 @@
+#DESCRIPTION
+##  Algebra problem:  Algebra of Matrices
+##ENDDESCRIPTION
+
+## KEYWORDS('algebra', 'matrix operation', 'matrix')
+
+
+DOCUMENT();        # This should be the first executable line in the problem.
+
+loadMacros(
+  "PGstandard.pl",
+  "PGchoicemacros.pl",
+  "PGcourse.pl"
+);
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+$a11=random(-5,5,1);
+$a12=random(-5,5,1);
+$a13=random(-5,5,1);
+$a21=random(-5,5,1);
+$a22=random(-5,5,1);
+$a23=random(-5,5,1);
+$b11=random(-5,5,1);
+$b12=random(-5,5,1);
+$b13=random(-5,5,1);
+$b21=random(-5,5,1);
+$b22=random(-5,5,1);
+$b23=random(-5,5,1);
+
+BEGIN_TEXT
+Given the matrices
+\[
+B=\left[\begin{array}{rrr}
+        $a11 & $a12 & $a13\\
+        $a21 & $a22 & $a23\\
+\end{array}\right],\qquad
+C=\left[\begin{array}{rrr}
+        $b11 & $b12 & $b13\\
+        $b21 & $b22 & $b23\\
+\end{array}\right],
+\]
+$BR
+can the operation \(BC\) be performed?
+$BR
+Your answer is (input Yes or No) \{ans_rule(15) \}
+END_TEXT
+
+$ans = "No";
+ANS(str_cmp($ans));
+
+ENDDOCUMENT();        # This should be the last executable line in the problem.

@@ -1,20 +1,9 @@
 ## DESCRIPTION
-## Calculus
+## Variation of parameters
 ## ENDDESCRIPTION
 
-## DBsubject(Differential equations)
-## DBchapter(Higher order differential equations)
-## DBsection(Variation of parameters)
-## Date(11/23/2013)
 ## Institution(Berkeley)
 ## Author(Paul Vojta)
-## MLT(var_par_01)
-## Level(2)
-## TitleText1('Calculus: Early Transcendentals')
-## AuthorText1('Stewart')
-## EditionText1('7')
-## Section1('17.2')
-## Problem1('28')
 ## KEYWORDS('differential equation' 'second order' 'linear' 'nonhomogeneous' 'variation of parameters')
 
 DOCUMENT();

@@ -1,0 +1,69 @@
+## DESCRIPTION
+## Differential Equations: Laplace Transforms
+## ENDDESCRIPTION
+
+## Institution(ASU)
+
+DOCUMENT() ;        # This should be the first executable line in the problem.
+
+loadMacros(
+  "PGstandard.pl",
+  "PGchoicemacros.pl",
+  "PGgraphmacros.pl",
+  "PGasu.pl",
+  "PGcourse.pl"
+);
+
+TEXT(beginproblem()) ;
+$showPartialCorrectAnswers = 1;
+
+$r1 = random(-9,-6,1);
+$r2= random(1,5,1);
+$b = $r1 + $r2;
+$nb = -$b;
+$c = $r1*$r2;
+$nc=-$c;
+
+$ans5= FEQ("(1-exp(-s))/(s*(1-exp(-2*s))*(s^2-$nb*s-$nc))");
+$graph3 = init_graph(-1,-3,5,3, 'axes'=>[0,0],'grid'=>[6,6]);
+$f1 = "1 for x in <0,1> using color:blue and weight:3";
+$f2 = "0 for x in <1,2> using color:blue and weight:3";
+$f3 = "1 for x in <2,3> using color:blue and weight:3";
+$f4 = "0 for x in <3,4> using color:blue and weight:3";
+$f5 = "1 for x in <4,5> using color:blue and weight:3";
+plot_functions($graph3, $f1);
+plot_functions($graph3, $f2);
+plot_functions($graph3, $f3);
+plot_functions($graph3, $f4);
+plot_functions($graph3, $f5);
+$g = image(insertGraph($graph3),width=>200,height=>200,tex_size=>800);
+
+$func = "\begin{cases}
+            1, & 0 \leq t < 1 \cr
+            0, & 1 \leq t < 2
+             \end{cases}";
+
+BEGIN_TEXT
+
+Take the Laplace transform of the following initial value problem and 
+solve for \(X(s) = \mathcal{L}$LBRACE x(t) $RBRACE \):
+
+\[ x'' -{$nb} x' - {$nc} x= S(t) \hspace{0.5in} x(0)=0, \; x'(0)=0\]
+
+Where
+\[S(t) = $func ,\hspace{0.2in} S(t+2) = S(t) . \]
+
+$PAR
+\(X(s)= \) \{ans_rule(50) \}.
+$PAR
+The graph of  \( S(t) \) (a square wave function): 
+$PAR
+$BCENTER
+$g
+$ECENTER
+
+END_TEXT
+
+ANS(fun_cmp($ans5,vars=>["s"] )) ;
+ENDDOCUMENT() ;        # This should be the last executable line in the problem.
+

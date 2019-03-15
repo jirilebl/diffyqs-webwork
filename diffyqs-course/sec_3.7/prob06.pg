@@ -1,0 +1,62 @@
+## DESCRIPTION
+## Eigenvalues and systems of differential equations
+## Repeated eigenvalues
+## ENDDESCRIPTION
+
+## Institution(Fort Lewis College)
+## Author(Paul Pearson)
+
+
+##############################
+#  Initialization
+
+DOCUMENT(); 
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "parserVectorUtils.pl",
+  "PGcourse.pl"
+);
+
+TEXT(beginproblem());
+
+
+#############################
+#  Setup
+
+Context("Matrix");
+
+$A = Matrix("[[0,0],[0,0]]");
+
+
+######################
+#  Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Consider the linear system  
+\( {\vec{x}^{\,\prime}}(t) = A {\vec{x}}(t) \),
+where \( A \) is a real \( 2 \times 2 \) constant matrix with
+repeated eigenvalues.  Use the given information to determine
+the matrix \( A \).
+$PAR
+All phase plane solution points remain stationary as \( t \)
+increases.
+$PAR
+\( A = {}\) \{ $A->ans_array() \}
+
+END_TEXT
+Context()->normalStrings;
+
+
+######################
+#  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $A->cmp() );
+
+;
+
+ENDDOCUMENT();

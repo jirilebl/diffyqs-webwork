@@ -1,0 +1,95 @@
+## DESCRIPTION
+## Laplace transforms: convolution
+## ENDDESCRIPTION
+
+## Institution(Fort Lewis College)
+## KEYWORDS('Laplace transform')
+
+
+##############################
+#  Initialization
+
+DOCUMENT(); 
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGunion.pl",
+  "answerHints.pl",
+  "parserAssignment.pl",
+  "parserFunction.pl",
+  "PGcourse.pl"
+);
+
+TEXT(beginproblem());
+
+
+#############################
+#  Setup
+
+Context("Numeric");
+Context()->variables->are(
+s=>"Real",
+t=>"Real",
+w=>"Real"
+);
+
+# Redefine the Heaviside function so the answer checker will work on [-1,1].
+parserFunction("u(t)" => "1.5 * cos(e*t) + 5*pi/3 + arctan(t)");
+
+$int = Compute("u(t-w)*u(w)");
+$answera = Compute("t");
+$Fs = Compute("1/s");
+$Gs = Compute("1/s");
+$FsGs = $Fs*$Gs;
+$answerb = Compute("t");
+
+
+#############################
+#  Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+
+For the functions \( f(t) = u(t) \) and \( g(t) = u(t) \), defined on \( 0\leq t < \infty \), compute \( f \ast g \) in two different ways:
+
+\{ BeginList('UL') \}
+
+$ITEM By directly evaluating the integral in the definition of \( f \ast g \).
+$BR
+$BR
+\( \displaystyle (f \ast g)(t) = \int_0^t \) \{ ans_rule(20) \} \( dw \ = \ \) \{ ans_rule(40) \}
+
+$ITEMSEP
+$ITEM  By computing \( {\mathcal L}^{-1} \left\lbrace F(s)G(s) \right\rbrace \) where \( F(s) = {\mathcal L} \left\lbrace f(t) \right\rbrace \) and \( G(s) = {\mathcal L} \left\lbrace g(t) \right\rbrace \).
+$BR
+$BR
+\( \displaystyle (f \ast g)(t) = {\mathcal L}^{-1} \left\lbrace F(s)G(s) \right\rbrace = {\mathcal L}^{-1} \big\lbrace \)
+\{ ans_rule(20) \} 
+\( \big\rbrace \)
+$BR
+$BR
+\( \displaystyle \phantom{(f \ast g)(t)} = \) \{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
+
+\{ EndList('UL') \}
+END_TEXT
+Context()->normalStrings;
+
+
+##############################
+#  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $int->cmp()
+  ->withPostFilter(AnswerHints(
+  [Formula("1"), Formula("u(t-w)"), Formula("u(w)")] => "Enter the original integrand in unsimplified form"
+))
+);
+ANS( $answera->cmp() );
+ANS( $FsGs->cmp() );
+ANS( $answerb->cmp() );
+
+ENDDOCUMENT();

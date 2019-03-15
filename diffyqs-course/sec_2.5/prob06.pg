@@ -1,29 +1,9 @@
 ##DESCRIPTION
-#
-# File Created: 3/19/2009
-# Last Modified: 3/19/2009
-# Problem Author: Juan Marin
-# WeBWorK Entry: 
-# Location: Alfred University
-#
+## Variation of parameters
 ##ENDDESCRIPTION
 
-##
-
-## DBsubject(Differential equations)
-## DBchapter(Higher order differential equations)
-## DBsection(Variation of parameters)
-## Date(3/19/2009)
 ## Institution(Alfred University)
 ## Author(Juan Marin)
-## MLT(vp_multistep)
-## MLTleader(1)
-## Level(3)
-## TitleText1('Differential Equations with Boundary-Value Peoblems')
-## AuthorText1('Zill and Cullen')
-## EditionText1('7')
-## Section1('4.6')
-## Problem1('6')
 
 
 DOCUMENT();

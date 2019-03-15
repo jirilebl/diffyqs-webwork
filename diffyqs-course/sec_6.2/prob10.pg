@@ -1,0 +1,76 @@
+## DESCRIPTION
+## Differential Equations: Laplace Transforms
+## ENDDESCRIPTION
+
+## Institution(ASU)
+
+DOCUMENT() ;        # This should be the first executable line in the problem.
+
+loadMacros(
+  "PGstandard.pl",
+  "PGchoicemacros.pl",
+  "PGgraphmacros.pl",
+  "PGasu.pl",
+  "MathObjects.pl",
+  "PGcourse.pl"
+);
+
+TEXT(beginproblem()) ;
+$showPartialCorrectAnswers = 1;
+
+$r = random(2,6,1);
+$r2 = 2*$r;
+$b = random(14,19,1);
+
+
+Context("Numeric");
+
+Context()->variables->are('s'=>["Real", limits=>[1,2]]);
+
+$answer = Formula("tanh(s/4)/(s^2*(s^2+$r2*s+$b))");
+
+
+$graph3 = init_graph(-1,-2,3,2, 'axes'=>[0,0],'grid'=>[4,4]);
+$f1 = "x for x in <0,0.5> using color:blue and weight:3";
+$f2 = "1-x for x in <0.5,1> using color:blue and weight:3";
+$f3 = "x-1 for x in <1,1.5> using color:blue and weight:3";
+$f4 = "2-x for x in <1.5,2> using color:blue and weight:3";
+$f5 = "x-2 for x in <2,2.5> using color:blue and weight:3";
+$f6 = "3-x for x in <2.5,3> using color:blue and weight:3";
+plot_functions($graph3, $f1);
+plot_functions($graph3, $f2);
+plot_functions($graph3, $f3);
+plot_functions($graph3, $f4);
+plot_functions($graph3, $f5);
+plot_functions($graph3, $f6);
+$g = image(insertGraph($graph3),width=>200,height=>200,tex_size=>800);
+
+$func = "\begin{cases}
+            t, & 0 \leq t < 1/2 \cr
+            1-t, & 1/2 \leq t < 1
+             \end{cases}";
+
+BEGIN_TEXT
+Take the Laplace transform of the following initial value problem and 
+solve for \(X(s) = \mathcal{L}$LBRACE x(t) $RBRACE \):
+
+\[ x'' + {$r2} x' + {$b} x= T(t) \hspace{0.5in} x(0)=0, \; x'(0)=0\]
+
+Where
+\[T(t) = $func ,\hspace{0.2in} T(t+1) = T(t) . \]
+
+$PAR
+\(X(s)= \) \{ans_rule(50) \}
+$PAR
+Graph of  \( T(t) \) (a triangular wave function):
+$PAR
+$BCENTER
+$g
+$ECENTER
+END_TEXT
+
+
+ANS($answer->cmp());
+
+ENDDOCUMENT() ;        # This should be the last executable line in the problem.
+

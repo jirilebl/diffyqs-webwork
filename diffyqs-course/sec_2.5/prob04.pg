@@ -1,20 +1,10 @@
 #DESCRIPTION
-##  Calculus: Second-order nonhomogeneous linear equations
+## Calculus: Second-order nonhomogeneous linear equations
+## Undetermined coefficients
 ##ENDDESCRIPTION
 
-
-## DBsubject(Differential equations)
-## DBchapter(Higher order differential equations)
-## DBsection(Undetermined coefficients)
-## Date(06/21/2011)
 ## Institution(University of Minnesota)
 ## Author(Justin Sukiennik)
-## Level(3)
-## TitleText1('Calculus: Concepts and Contexts')
-## AuthorText1('Stewart')
-## EditionText1('4 Custom UMTYMP Ed.')
-## Section1('17.2')
-## Problem1('')
 ## KEYWORDS('calculus', 'differential equations', 'linear equations', 'second-order', 'nonhomogeneous', 'method of undetermined coefficients')
 
 #####################################################################
