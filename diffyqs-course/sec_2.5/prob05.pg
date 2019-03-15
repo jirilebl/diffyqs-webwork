@@ -1,0 +1,64 @@
+## DESCRIPTION
+## Calculus
+## ENDDESCRIPTION
+
+## Tagged by tda2d
+
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Undetermined coefficients)
+## Institution(Rochester)
+## MLT(undet_04)
+## Level(3)
+## KEYWORDS('differential equation' 'second order' 'linear' 'nonhomogeneous')
+
+DOCUMENT() ;       
+
+loadMacros(
+  "PGstandard.pl",
+  "PGchoicemacros.pl",
+  "PGcourse.pl"
+);
+
+do {
+  $B = random(2,4,1) ;
+  $C = random(-7,-3,1) ;             
+  $r = random(2,4,1) ;
+}
+until ($r*$r + $B*$r + $C != 0);
+
+$q0 = random(-9,9,1) ; 
+$q1 = random(-9,9,1) ; 
+$q2 = random(-9,9,1) ;
+
+
+$c = ($q2)/(($r)*($r)+$C+$B*$r) ;
+$b = ($q1-$c*(4*$r+2*$B))/(($r)*($r)+$C+$B*$r) ;
+$a = ($q0-$b*(2*$r+$B)-2*$c)/(($r)*($r)+$C+$B*$r) ;
+
+$S = "($c)*x**2 + ($b)*x + $a";
+
+
+TEXT(beginproblem()) ;
+$showPartialCorrectAnswers = 1 ;
+
+
+BEGIN_TEXT
+
+Use the method of undetermined coefficients to find
+one solution of $BR
+\( y'' + $B\,y' + $C\,y =  ($q2 \,x^2 + $q1 \, x + $q0 )\, e^{$r x} \). 
+$BR
+Note that the method finds a specific solution, not the general one.
+$BR
+\(y = \) \{ans_rule(80)\}
+
+END_TEXT
+
+$ans = "($S) *exp($r *x) "  ;
+ANS(fun_cmp($ans, vars=>"x")) ;
+
+
+
+ENDDOCUMENT() ;       
+
