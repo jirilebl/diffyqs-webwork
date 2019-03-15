@@ -77,7 +77,6 @@ ANS( $answer3->cmp() );
 
 #Context()->texStrings;
 #BEGIN_SOLUTION
-#${PAR}SOLUTION:$PAR
 #END_SOLUTION
 #Context()->normalStrings;
 

@@ -35,8 +35,6 @@ $fp = Formula("$b * tan( ($b / $a) * arctan( t / $a ) + $C )")->reduce();
 
 Context()->texStrings;
 BEGIN_TEXT
-\{ textbook_ref_exact("Rogawski ET 2e", "9.1","23") \}
-$PAR
 Solve \( ( t^2 + $a_sqr )\,\frac{dx}{dt} = ( x^2 + $b_sqr ) \), using separation of variables, given the inital condition \( x(0) = $b  \).
 $PAR
 \( x = \) \{ans_rule()\}

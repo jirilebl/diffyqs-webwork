@@ -26,8 +26,6 @@ $fp = Formula("($a x^x) + C * (x^x) * (e^(-x))")->reduce();
 
 Context()->texStrings;
 BEGIN_TEXT
-\{ textbook_ref_exact("Rogawski ET 2e", "9.5","17") \}
-$PAR
 Find the general solution of the first-order linear differential equation 
 \[ y' - (\ln x)y = $a x^x. \]
 $PAR
@@ -37,12 +35,14 @@ $BITALIC Note: Use \( C \) for the arbitrary constant. $EITALIC
 END_TEXT
 Context()->normalStrings;
 
+
+
 ANS($fp->cmp(limits => [0,4]));
 
+
+
 Context()->texStrings;
-SOLUTION(EV3(<<'END_SOLUTION'));
-$PAR
-$SOL
+BEGIN_SOLUTION
 The equation is in standard form \( y' + p(x) y = f(x) \) with \( p(x) = -\ln{x} \) and \( f(x) = $a x^x \).  The integrating factor is
 $PAR
 \( r (x) = e^{\int - \ln x dx} = e^{x - x \ln x} = \frac{e^x}{x^x} \).

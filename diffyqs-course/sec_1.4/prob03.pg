@@ -59,7 +59,6 @@ ANS($ans->cmp);
 
 ###################################
 SOLUTION(EV3(<<'END_SOLUTION'));
-$PAR SOLUTION $PAR
 Identify the \(p(x)\) and \(f(x)\) in \(\frac{dy}{dx} + p(x) y = f(x) \)
 $BR
 \(p(x)=$p,\;f(x)=$q\)
