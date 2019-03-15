@@ -12,13 +12,9 @@ DOCUMENT();        # This should be the first executable line in the problem.
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
-  "littleneck.pl",
   "contextFraction.pl",
   "PGcourse.pl"
 );
-# allow the student to change the seed for this problem.
-
-rand_button();
 
 
 TEXT(beginproblem());
@@ -67,9 +63,8 @@ END_TEXT
 
 ANS($ans->with(tolType=>'absolute', tolerance=>0.00002)->cmp);
 
-#TEXT(pretty_print( Context()->{flags} ));
 ###################################
-SOLUTION(EV3(<<'END_SOLUTION'));
+BEGIN_SOLUTION
 \(h=\frac{$b-$a}{5}=$dx\)
 
 $BCENTER

@@ -4,7 +4,7 @@
 
 ## Institution(John Wiley & Sons)
 ## Author(Brian Burns)
-## KEYWORDS('derivative')
+## KEYWORDS('calculus', 'differential equations', 'linear equation', 'first order')
 
 
 DOCUMENT();        # This should be the first executable line in the problem.
@@ -12,14 +12,9 @@ DOCUMENT();        # This should be the first executable line in the problem.
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
-  "littleneck.pl",
   "contextFraction.pl",
   "PGcourse.pl"
 );
-# allow the student to change the seed for this problem.
-
-rand_button();
-
 
 TEXT(beginproblem());
 
@@ -58,7 +53,7 @@ END_TEXT
 ANS($ans->cmp);
 
 ###################################
-SOLUTION(EV3(<<'END_SOLUTION'));
+BEGIN_SOLUTION
 Identify the \(p(x)\) and \(f(x)\) in \(\frac{dy}{dx} + p(x) y = f(x) \)
 $BR
 \(p(x)=$p,\;f(x)=$q\)
