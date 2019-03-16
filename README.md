@@ -6,10 +6,13 @@ Currently should be treated as **beta** quality.
 
 ## How to use
 
-To use, you should be able to unpack this directory into your templates and
-just directly use it.  The directory should be named exactly `diffyqs-webwork`.
-You could also just clone the git repository into your templates directory if
-you wish.
+To use, download the *diffyqs-webwork.tgz* and upload it to WeBWorK.  It should automatically unpack and create the right directory structure.  Then in
+homework editor go to import and then import sets from the diffyqs-webwork
+directory.
+
+You could also just unpack this directory into your templates directory, or
+even clone it directly from github.  In this case, make sure the directory 
+is named exactly `diffyqs-webwork` for the set def files to work.
 
 ## What is it exactly
 
@@ -24,4 +27,12 @@ pain.
 
 ## Miscellanea
 
-*make-defs.sh* creates the basic .def files from the files.  So do not edit the .def files
+*make-defs.sh* creates the basic .def files from the files.  So do not edit
+the .def files
+
+*make-tar.sh* creates a tar file useful for uploading into webwork.  This
+will create all the right directory structure.
+
+*diffyqs-webwork.tgz* is the tarfile suitable for uploading.  This is
+of course not contained in itself.  Check the date.  I'll rerun *make-tar.sh*
+when needed, but it could be out of date.
