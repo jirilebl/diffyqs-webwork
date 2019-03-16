@@ -1,8 +1,15 @@
-# Webwork problems
+# Notes on Diffy Qs WeBWorK Problems
 
-These are problems that for whatever reason I am not pushing into the OPL Contrib directory
+A set of WeBWorK problems for courses teaching a class with
+the *Notes on Diffy Qs* textbook.
 
-There are no guarantees here
+The problems were picked off from the Open Problem Library and somewhat (some
+more than others) modified to fit the style and notation of the book.
+They are essentially the same problems as those that are in the Edfinity
+Notes on Diffy Qs course.
 
-*convert-to-webwork.pl* is a script that converts the D2L grade export into something that can be imported into webwork.
-It probably requires modification if you want to use it yourself as it depends on exactly how you export with what fields, etc...
+I've cleaned off the OPL tags as they are no longer needed, and some of them
+were downright confusing and many were just wrong, and just made editing a
+pain.
+
+Currently should be treated as beta quality.
