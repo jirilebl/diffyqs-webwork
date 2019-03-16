@@ -26,14 +26,14 @@ TEXT(beginproblem());
 #  Setup
 
 Context("Numeric");
-Context()->variables->are(t=>"Real");
+Context()->variables->are(x=>"Real");
 
 $a = random(2,9,1);
 do { $b = random(2,6,1); } until ($b != $a);
 do { $n = random(2,5,1); } until ($n != $a && $n != $b);
 
-$p = Compute("-(t^$n + $a) cos(t) / t");
-$g = Formula("(t^$n + $a) e^($b t) / t");
+$p = Compute("-(x^$n + $a) cos(x) / x");
+$g = Formula("(x^$n + $a) e^($b x) / x");
 
 $popup = PopUp(["Choose","linear and homogeneous","linear and nonhomogeneous","nonlinear"],"linear and nonhomogeneous");
 
@@ -44,22 +44,22 @@ $popup = PopUp(["Choose","linear and homogeneous","linear and nonhomogeneous","n
 Context()->texStrings;
 BEGIN_TEXT
 Put the differential equation
-\( \displaystyle \frac{t y^{\,\prime}}{(t^{$n}+$a) y} = \cos(t) + \frac{e^{$b t}}{y} \)
-into the form \( y^{\,\prime} + p(t) y = g(t)\) and find
-\( p(t) \) and \( g(t) \).
+\( \displaystyle \frac{x y^{\,\prime}}{(x^{$n}+$a) y} = \cos(x) + \frac{e^{$b x}}{y} \)
+into the form \( y^{\,\prime} + p(x) y = g(x)\) and find
+\( p(x) \) and \( g(x) \).
 $BR
 $BR
-\( p(t) = \) 
+\( p(x) = \) 
 \{ ans_rule(30) \}
 \{ AnswerFormatHelp("formulas") \}
 $BR
-\( g(t) = \) 
+\( g(x) = \) 
 \{ ans_rule(30) \}
 \{ AnswerFormatHelp("formulas") \}
 $BR
 $BR
 Is the differential equation 
-\( \displaystyle \frac{t y^{\,\prime}}{(t^{$n}+$a) y} = \cos(t) + \frac{e^{$b t}}{y} \)
+\( \displaystyle \frac{x y^{\,\prime}}{(x^{$n}+$a) y} = \cos(x) + \frac{e^{$b x}}{y} \)
 linear and homogeneous, linear and nonhomogeneous, or nonlinear?
 $BR
 $BR

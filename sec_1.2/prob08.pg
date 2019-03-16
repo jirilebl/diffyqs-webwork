@@ -71,7 +71,7 @@ $tf->choose(4);
 
 Context()->texStrings;
 BEGIN_TEXT
-For the differential equations \(\frac{dy}{dx} = $y\) does Picard's existence and uniqueness theorem guarantee that there is a solution to this equation through the point
+For the differential equation \(\frac{dy}{dx} = $y\) does Picard's existence and uniqueness theorem guarantee that there is a solution to this equation through the point
 $BR
 \{ $tf->print_q() \}
 END_TEXT

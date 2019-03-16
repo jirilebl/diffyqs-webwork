@@ -31,7 +31,7 @@ $showPartialCorrectAnswers = 0;
 # Make a new checkbox multiple choice
 $cmc = new_checkbox_multiple_choice();
 $cmc -> qa (
-"Check all that apply to the differential equation \(\frac{d^3y}{dx^3}+5\left(\frac{dy}{dx}\right)^3-4y=e^x\)", 
+"Check all that apply to the differential equation \(\frac{d^3y}{dx^3}+5\left(\frac{dy}{dx}\right)^2-4y=e^x\)", 
 "third order",
 "ODE",
 );

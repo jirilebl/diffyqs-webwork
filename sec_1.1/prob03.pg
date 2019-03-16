@@ -42,7 +42,7 @@ Find the general solution of the differential equation
 $BITALIC Don't forget the "\({}+C\)" $EITALIC
 $BR
 $BR
-\( y = \) 
+\( y(x) = {} \) 
 \{ ans_rule(20) \}
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT

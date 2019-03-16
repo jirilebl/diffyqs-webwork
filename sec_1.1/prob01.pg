@@ -77,6 +77,8 @@ BEGIN_TEXT
 Set up an integral for solving 
 \( \displaystyle \frac{dy}{dx} = x^2 + x \)
 when \( y($a) = $ya \).
+$BR
+$BITALIC Use \(t\) for the variable of integration. $EITALIC
 $PAR
 $integral
 

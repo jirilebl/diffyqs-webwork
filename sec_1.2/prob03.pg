@@ -41,8 +41,9 @@ $gr = init_graph(-4,-4,4,4,axes=>[0,0],size=>[500,500],grid=>[8,8]);
 
 $fn = new VectorField( $desubs[$which], $gr );
 $fn->dot_radius(0);
-$fn->x_steps(20);
-$fn->y_steps(20);
+#24 is good here since it makes the solution visible
+$fn->x_steps(24);
+$fn->y_steps(24);
 $fn->rf_arrow_length( sub{my($dx,$dy)=@_;
 			  return(0) if sqrt($dx**2 + $dy**2) ==0;
 			  0.25*1/sqrt($dx**2 + $dy**2);} );
@@ -85,8 +86,8 @@ ANS( $solns[$which]->cmp() );
 $gr_soln = init_graph(-4,-4,4,4,axes=>[0,0],size=>[500,500],grid=>[8,8]);
 $fn_soln = new VectorField( $desubs[$which], $gr_soln );
 $fn_soln->dot_radius(0);
-$fn_soln->x_steps(20);
-$fn_soln->y_steps(20);
+$fn_soln->x_steps(24);
+$fn_soln->y_steps(24);
 $fn_soln->rf_arrow_length( sub{my($dx,$dy)=@_;
 			       return(0) if sqrt($dx**2 + $dy**2) ==0;
 			       0.25*1/sqrt($dx**2 + $dy**2);} );

@@ -2,7 +2,6 @@
 ##  Integrable/separable Differential Equation
 ##ENDDESCRIPTION
 
-## Author(???)
 ## KEYWORDS('differential equations', 'separable')
 
 DOCUMENT();        # This should be the first executable line in the problem.
@@ -19,14 +18,12 @@ $a = random(2,10,1);
 $b = random(2,11,1);
 
 BEGIN_TEXT
-Solve the differential equation.
-
+Solve the differential equation
 \[y' = $a y^2 \]
-
-Use the following initial condition: \( y($a)= $b \)
+using the initial condition \( y($a)= $b \).
 $PAR
 
-\(y =\) \{ ans_rule(45) \} $BR
+\(y(x) = {}\) \{ ans_rule(45) \} $BR
 $BITALIC Note: Your answer should be a function of \(x\). $EITALIC
 END_TEXT
 

@@ -50,7 +50,7 @@ BEGIN_TEXT
 
 Determine the order of the given differential equation and state whether the equation is linear or nonlinear.
 
-\[\displaystyle\  t^{$b}y^{($a)}-t^{3}y''+6y = 0\]
+\[\displaystyle\  t^{$b}x^{($a)}-t^{3}x''+6x = 0\]
 $BR
 The order of this differential equation is \{ ans_rule(10) \}. 
 $BR

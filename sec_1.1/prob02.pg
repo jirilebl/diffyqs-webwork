@@ -29,7 +29,7 @@ Find the general solution of the differential equation
 \( \displaystyle {dy\over dx}=x^{$r} + $b \)
 
 $PAR
-\(y = \) \{ ans_rule(35) \}
+\(y(x) = {}\) \{ ans_rule(35) \}
 
 END_TEXT
 Context()->normalStrings;
