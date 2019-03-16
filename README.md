@@ -13,3 +13,9 @@ were downright confusing and many were just wrong, and just made editing a
 pain.
 
 Currently should be treated as beta quality.
+
+To use, you should be able to unpack this directory into your templates and
+just directly use it.  You could also just clone the git repository into
+your templates directory if you wish.
+
+*make-defs.sh* creates the basic .def files from the files.  So do not edit the .def files
