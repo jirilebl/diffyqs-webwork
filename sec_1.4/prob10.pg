@@ -26,15 +26,15 @@ $c = $b/3;
 
 BEGIN_TEXT
 
-Find the function \(y(t)\) that satisfies the differential equation 
-\[ \frac{dy}{dt} - 2 t y = $b t^2 e^{t^2} \]
+Find the function \(y(x)\) that satisfies the differential equation 
+\[ \frac{dy}{dx} - 2 x y = $b x^2 e^{x^2} \]
 and the condition \( y(0) = $y0 \). 
 $BR 
 \(y(t)=\) \{ ans_rule(50) \}. 
 
 END_TEXT
 
-ANS(fun_cmp("($c*t^3 + $y0)*e^(t^2)", vars => 't'));
+ANS(fun_cmp("($c*x^3 + $y0)*e^(x^2)", vars => 'x'));
 
 ENDDOCUMENT();       # This should be the last executable line in the problem.
 

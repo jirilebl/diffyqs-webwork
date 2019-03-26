@@ -32,7 +32,7 @@ BEGIN_TEXT
 Consider the differential equation \(x' = $sign(x-$a)(x-$b)^3(x-$c)^2(x-$d) \). 
 $PAR
 List the constant (or equilibrium) solutions to this differential equation
-in increasing order and indicate whether or not these equations are stable, semi-stable (that means unstable from one side, stable from the other), or unstable.
+in increasing order and indicate whether or not these equilibria are ${BITALIC}stable${EITALIC}, ${BITALIC}semi-stable${EITALIC} (semi-stable means unstable from one side, stable from the other), or ${BITALIC}unstable${EITALIC}.
 $PAR
 \( x = {} \) \{ans_rule(10) \}  \{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
 $BR

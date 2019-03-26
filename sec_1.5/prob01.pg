@@ -26,19 +26,19 @@ $y1 = non_zero_random(-9,9,1);
 BEGIN_TEXT
 
 A Bernoulli differential equation is one of the form 
-\[ \frac{dy}{dx} + P(x)y = Q(x)y^n \ \ \ \ \ (*) \]
+\[ \frac{dy}{dx} + p(x)y = q(x)y^n \qquad (*) \]
 $BR 
 Observe that, if \(n=0\) or \(1\), the Bernoulli equation is linear. For other values of \(n\), the substitution
 \(u=y^{1-n}\) transforms the Bernoulli equation into the linear equation 
-\[ \frac{du}{dx} + (1-n)P(x)u = (1-n)Q(x). \]
+\[ \frac{du}{dx} + (1-n)p(x)u = (1-n)q(x). \]
 $BR $BR 
 Consider the initial value problem
-\[ x y' + y = $ma x y^2, \ \ \ y(1)=$y1. \] 
+\[ x y' + y = $ma x y^2, \qquad y(1)=$y1. \] 
 This differential equation can be written in the form \((*)\) with 
 $BR 
-\(P(x)=\) \{ans_rule(10)\}, 
+\(p(x)=\) \{ans_rule(10)\}, 
 $BR  
-\(Q(x)=\) \{ans_rule(10)\}, and 
+\(q(x)=\) \{ans_rule(10)\}, and 
 $BR 
 \(n=\) \{ans_rule(10)\}. 
 $BR $BR 
@@ -46,12 +46,12 @@ The substitution \(u=\) \{ans_rule(10)\} will transform it into the linear equat
 $BR 
 \( \displaystyle \frac{du}{dx} + \) \{ans_rule(10)\} \( u = \) \{ans_rule(10)\}. 
 $BR $BR 
-Using the substitution in part (b), we rewrite the initial condition in terms of \(x\) and \(u\): 
+Using the substitution above, we rewrite the initial condition in terms of \(x\) and \(u\): 
 $BR 
 \(u(1)=\) \{ans_rule(10)\}. 
 $BR $BR 
-Now solve the linear equation in part (b).
-and find the solution that satisfies the initial condition in part (c). 
+Now solve the linear equation for \(u\),
+and find the solution that satisfies the initial condition. 
 $BR 
 \(u(x)=\) \{ans_rule(40)\}. 
 $BR $BR 

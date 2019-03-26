@@ -46,7 +46,7 @@ $f[3] = Formula("-x(x-3)*(x+2)/3");
 
 foreach my $k (0..3) {
 
-  $gr[$k] = init_graph(-5,-5,5,5,axes=>[0,0],pixels=>[200,200]);
+  $gr[$k] = init_graph(-5,-5,5,5,axes=>[0,0],pixels=>[400,400]);
   $gr[$k] -> lb('reset');
 
   #  manually draw the grid

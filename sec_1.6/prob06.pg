@@ -47,7 +47,9 @@ $PAR
 Consider the differential equation \(x'(t) = f( x(t) ) \). 
 $PAR
 List the constant (or equilibrium) solutions to this differential equation
-in increasing order and indicate whether or not these equations are stable, semi-stable, or unstable.
+in increasing order and indicate whether or not these equalibria
+are stable, semi-stable (stable from one side, unstable from the other),
+or unstable.
 $BR
 \(x = {}\) \{ans_rule(10) \}  \{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
 $BR

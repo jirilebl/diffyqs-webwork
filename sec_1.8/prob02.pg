@@ -39,12 +39,13 @@ Use the "mixed partials" check to see if the following differential equation is 
 $BR
 If it is exact find a function F(x,y) whose differential, \(dF(x,y) \) is the left hand side of the differential equation. That is, level curves \(F(x,y) = C\) are solutions to the differential equation:
 \[ ( ${a}xy^2 + ${b}y )dx + ( ${a}x^2y +${c}x )dy= 0 \]
-First:
-$BR
-\(M_y(x,y)= \) \{ans_rule(30) \} , and 
-\(N_x(x,y)= \) \{ans_rule(30) \}.
+First, if this equation has the form \(M(x,y)dx+N(x,y)dy=0\):
 $PAR
-If the equation is not exact, enter $BITALIC not exact, $EITALIC  otherwise enter in 
+\(\dfrac{\partial M}{\partial y}(x,y)= \) \{ans_rule(30) \}, and
+$PAR
+\(\dfrac{\partial N}{\partial x}(x,y)= \) \{ans_rule(30) \}.
+$PAR
+If the equation is not exact, enter ${BITALIC}not exact${EITALIC},  otherwise enter in 
 \(F(x,y)  \) here \{ ans_rule(30) \}
 
 END_TEXT

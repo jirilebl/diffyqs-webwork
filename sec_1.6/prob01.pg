@@ -29,7 +29,12 @@ Suppose that a population develops according
 to the logistic equation 
 \[ \frac{dP}{dt} = $k P - $b P^2\]
 where \(t\) is measured in weeks.
-$BR $BR 
+$PAR
+A logistic equation has two equilibrium solutions.  The higher one is
+called the ${BITALIC}carrying capacity${EITALIC}, since if \(P\) models
+a population, then the carrying capacity is the maximum sustainable
+population that the environment can support.
+$PAR
 What is the carrying capacity?
 $BR
 \{ ans_rule(5) \}

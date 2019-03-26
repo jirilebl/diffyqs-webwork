@@ -23,16 +23,16 @@ $m = random(2,10,1) ;
 BEGIN_TEXT
 
 Solve the initial value problem $BR
-\[  \frac{dy}{dt} -  y = $a e^t + $B e^{$k t} \] with \( y(0) = $m. \)
+\[  \frac{dy}{dx} -  y = $a e^x + $B e^{$k x} \] with \( y(0) = $m. \)
 $PAR
 \( y = \) \{ans_rule(70) \}. $BR
 
 
 END_TEXT
 
-$ans = "($m - $b )* exp(t) + $a * t * exp(t) + $b * exp($k *t)" ;
+$ans = "($m - $b )* exp(x) + $a * x * exp(x) + $b * exp($k * x)" ;
 
 
-ANS(fun_cmp($ans, vars=>"t")) ;
+ANS(fun_cmp($ans, vars=>"x")) ;
 
 ENDDOCUMENT() ;       
