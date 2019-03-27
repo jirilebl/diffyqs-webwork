@@ -29,7 +29,7 @@ differential equation:
 
 \[ y'' + 6y' + 9y = 2 e^{-x} \]
 
-Answer: \( y(x) = \) \{ans_rule(40)\} \( + C_{1} \) \{ans_rule(25)\} \( + C_{2} \) \{ans_rule(25)\}.$BR
+\( y(x) = \) \{ans_rule(40)\} \( + C_{1} \) \{ans_rule(25)\} \( + C_{2} \) \{ans_rule(25)\}.$BR
 
 END_TEXT
 

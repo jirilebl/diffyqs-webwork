@@ -28,10 +28,9 @@ Given the matrix
         $a & $b \\
         $c & $d \\
 \end{array}\right]
+.
 \]
-$BR
-find its determinant;
-$BR
+$PAR
 The determinant of \(A\) is \{ans_rule(25) \}
 $BR
 END_TEXT

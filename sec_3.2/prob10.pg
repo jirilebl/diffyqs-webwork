@@ -47,7 +47,7 @@ BEGIN_TEXT
 Consider the following matrix
 \[ $A. \]
 $BR
-Find its determinant. \{ans_rule(25) \}
+Find its determinant: \{ans_rule(25) \}
 $BR
 Does the matrix have an inverse? \{ $pop->menu \}
 END_TEXT

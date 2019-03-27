@@ -41,10 +41,11 @@ BEGIN_TEXT
 Use the method of undetermined coefficients to find
 one solution of $BR
 \( y'' + $B\,y' + $C\,y =  ($q2 \,x^2 + $q1 \, x + $q0 )\, e^{$r x} \). 
-$BR
-Note that the method finds a specific solution, not the general one.
-$BR
+
+$PAR
 \(y = \) \{ans_rule(80)\}
+$PAR
+$BITALIC Note that the method finds a specific solution, not the general one. Do not include the complementary solution in your answer.$EITALIC
 
 END_TEXT
 

@@ -55,7 +55,7 @@ $a[1][0] x_1 & $pm2 & $abs2 x_2 & = & $b[1]
 Context("Fraction-NoDecimals");
 $f2 = Fraction($b[1],$a[1][0]);
 $h = Fraction($a[0][0]*$f2);
-$pop = PopUp(["select","=","≠"], "=");
+$pop = PopUp(["select","equals","does not equal"], "equals");
 
 
 ###########################################################################
