@@ -58,11 +58,17 @@ Answer:
 $BR
 where
 $BR
-\(\qquad c_n = \) \{ ans_rule(40) \} if \( n\ge m \) and \( n=2k \) is even,
+$SPACE$SPACE
+\( c_n = \) \{ ans_rule(40) \} if \( n\ge m \) and \( n=2k \) is even,
 $BR
-\(\qquad c_n = \) \{ ans_rule(40) \} if \( n\ge m \) and \( n=2k+1 \) is odd,
+$SPACE$SPACE
+\( c_n = \) \{ ans_rule(40) \} if \( n\ge m \) and \( n=2k+1 \) is odd,
 $BR
-\( m = \) \{ ans_rule(20) \} , and \(c\) is an arbitrary constant.
+$SPACE$SPACE
+\( m = \) \{ ans_rule(20) \},
+$BR
+$SPACE$SPACE
+and \(c\) is an arbitrary constant.
 $PAR
 Choose your answer so that \( c_m = 1 \).
 $PAR

@@ -69,24 +69,23 @@ Context()->texStrings;
 BEGIN_TEXT
 
 Consider the following initial value problem, defined for \( t \geq 0 \):
-\[ \displaystyle\frac{dy}{dt} = $f1t \ast $f2t, \quad \quad y(0) = $y0. \] 
+\[ \displaystyle\frac{dx}{dt} = $f1t \ast $f2t, \quad \quad x(0) = $y0. \] 
 
-\{ BeginList('OL', type=>'a') \}
-
-$ITEM Find the Laplace transform of the solution.
+$PAR
+$BR
+Find the Laplace transform of the solution.
 $BR
 $BR
-\( \displaystyle Y(s) = {\mathcal L}\left\lbrace y(t) \right\rbrace = \)
+\( \displaystyle X(s) = {\mathcal L}\left\lbrace x(t) \right\rbrace = \)
 \{ ans_rule(60) \}
 
-$ITEMSEP
-$ITEM  Obtain the solution \( y(t) \).
+$PAR
+$BR
+Obtain the solution \( x(t) \).
 $BR
 $BR
-\( y(t) = \)
+\( x(t) = \)
 \{ ans_rule(60) \}
-
-\{ EndList('OL', type=>'a') \}
 END_TEXT
 Context()->normalStrings;
 

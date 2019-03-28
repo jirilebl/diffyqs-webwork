@@ -35,8 +35,8 @@ $op = String("ordinary point");
 $rsp = String("regular singular point");
 $isp = String("irregular singular point");
 
-Context()->strings->add("Taylor"=>{},"Frobenius"=>{});
-$Taylor = String("Taylor");
+Context()->strings->add("power (Taylor)"=>{},"Frobenius"=>{});
+$Taylor = String("power (Taylor)");
 $Frobenius = String("Frobenius");
 
 $diffeqn = Formula("xy''+xy'+y")->reduce;

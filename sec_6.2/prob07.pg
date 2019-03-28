@@ -37,7 +37,7 @@ Consider the following initial value problem:
 \[ x'' + {$r2} x= $func \hspace{0.5in} x(0)=$y0, \hspace{0.05in} x'(0)=$y1 \]
 $PAR
 Solve for the Laplace transform of of \(x(t)\) 
-$BR \(X(s) = \mathcal{L} $LBRACE x(t) $RBRACE\) = {} \) \{ans_rule(70) \} 
+$BR \(X(s) = \mathcal{L} $LBRACE x(t) $RBRACE = {} \) \{ans_rule(70) \} 
 END_TEXT
 
 ANS(fun_cmp($ans1,vars=>["s"] )) ;

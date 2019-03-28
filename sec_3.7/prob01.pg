@@ -72,15 +72,15 @@ $multiansA = MultiAnswer($v[0],$v[1],$l,$w[0],$w[1],$v[0],$v[1],$l)->with(
   singleResult => 1,
   allowBlankAnswers => 1,
   checkTypes => 0,
-  format =>  "<table border='0'><tr>
-    <td> \(c_1\ \biggl\lbrack\) </td>
-    <td><table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-    <td> \(\biggr\rbrack\ e^{%s t} \ \ +  \ \ c_2\ \biggl(\biggl\lbrack\)  </td>
-    <td><table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-    <td> \(\biggr\rbrack\ + \biggl\lbrack\)</td>
-    <td><table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-    <td> \(\biggr\rbrack t\ \biggl) e^{%s t} \)</td>
-  </tr></table>",
+  #format =>  "<table border='0'><tr>
+  #  <td> \(c_1\ \biggl\lbrack\) </td>
+  #  <td><table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+  #  <td> \(\biggr\rbrack\ e^{%s t} \ \ +  \ \ c_2\ \biggl(\biggl\lbrack\)  </td>
+  #  <td><table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+  #  <td> \(\biggr\rbrack\ + \biggl\lbrack\)</td>
+  #  <td><table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+  #  <td> \(\biggr\rbrack t\ \biggl) e^{%s t} \)</td>
+  #</tr></table>",
   tex_format => "c_1 \left\lbrack\begin{array}{r} %s \\ %s \end{array}\right\rbrack \ 
                       e^{%s t} \ + \  
                  c_2 \left(
@@ -117,16 +117,16 @@ $multiansB = MultiAnswer($P11, $P12, $P21, $P22)->with(
   singleResult => 1,
   allowBlankAnswers => 1,
   checkTypes => 0,
-  format =>  "<table border='0'><tr>
-    <td> \( \biggl\lbrack \)</td>
-    <td><table border='0' cellspacing='10'>
-           <tr><td> %s $SPACE </td><td> $SPACE %s</td></tr>
-           <tr><td> %s $SPACE </td><td> $SPACE %s</td></tr></table></td>
-    <td> \(\biggr\rbrack\ \biggl\lbrack\)</td>
-    <td><table border='0' cellspacing='10'><tr><td> \(c_1\) </td></tr>
-                                           <tr><td> \(c_2\) </td></table></td>
-    <td> \(\biggr\rbrack\) </td>
-   </tr></table>",
+  #format =>  "<table border='0'><tr>
+  #  <td> \( \biggl\lbrack \)</td>
+  #  <td><table border='0' cellspacing='10'>
+  #         <tr><td> %s $SPACE </td><td> $SPACE %s</td></tr>
+  #         <tr><td> %s $SPACE </td><td> $SPACE %s</td></tr></table></td>
+  #  <td> \(\biggr\rbrack\ \biggl\lbrack\)</td>
+  #  <td><table border='0' cellspacing='10'><tr><td> \(c_1\) </td></tr>
+  #                                         <tr><td> \(c_2\) </td></table></td>
+  #  <td> \(\biggr\rbrack\) </td>
+  # </tr></table>",
   tex_format => "\left\lbrack\begin{array}{rr} 
                       %s & %s \\ %s & %s 
                  \end{array}\right\rbrack \  
@@ -160,9 +160,9 @@ $multiansC = MultiAnswer($y1, $y2)->with(
   singleResult => 1,
   allowBlankAnswers => 0,
   checkTypes => 1,
-  format => "<table border='0'>
-         <tr><td style='text-align:left'>\(x(t) = \) %s </td></tr> 
-         <tr><td style='text-align:left'>\(y(t) = \) %s </td></tr> </table>",
+  #format => "<table border='0'>
+  #       <tr><td style='text-align:left'>\(x(t) = \) %s </td></tr> 
+  #       <tr><td style='text-align:left'>\(y(t) = \) %s </td></tr> </table>",
   tex_format => "\begin{array}{l} x(t) = %s \\ y(t) = %s\end{array}",
   checker => sub {
       my ( $correct, $student, $answerHash ) = @_;
@@ -252,7 +252,6 @@ $BR
 $PAR
 $BR
 
-$BBOLD A.$EBOLD
  In eigenvalue/eigenvector form:
 $BR
 \{ mbox(
@@ -277,7 +276,6 @@ $BR
 $PAR
 $BR
 
-$BBOLD B.$EBOLD
  In fundamental matrix form: 
 $BR
 \{ mbox(
@@ -299,7 +297,6 @@ $BR
 $PAR
 $BR
 
-$BBOLD C.$EBOLD
  As two equations: $BITALIC (write "c1" and "c2" for \(c_1\) and \(c_2\) ) $EITALIC
 $BR
 \{ mbox(

@@ -117,11 +117,9 @@ $a21 & $a22
 \end{array}
 \right\rbrack.
 \]
+
 $BR
-
-\{ BeginList("UL") \}
-
-$ITEM
+$BR
 Find \( A'(t) \).
 $BCENTER
 \{ 
@@ -135,8 +133,8 @@ mbox(
 \}
 $ECENTER
 
-$ITEMSEP
-$ITEM
+$BR
+$BR
 Find \( A''(t) \).
 $BCENTER
 \{ 
@@ -163,8 +161,8 @@ $interval[2] = Compute("t < 0 or 0 < t < $b");
 Context()->texStrings;
 BEGIN_TEXT
 
-$ITEMSEP
-$ITEM
+$BR
+$BR
 \( A(t) \) is defined for all \( t \) in the interval(s) 
 \{ ans_rule(30) \}
 \{ AnswerFormatHelp("intervals") \}
@@ -178,8 +176,6 @@ $BR
 \( A''(t) \) is defined for all \( t \) in the interval(s) 
 \{ ans_rule(30) \}
 \{ AnswerFormatHelp("intervals") \}
-
-\{ EndList("UL") \}
 
 END_TEXT
 Context()->normalStrings;

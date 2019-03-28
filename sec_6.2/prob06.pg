@@ -74,24 +74,23 @@ $BR
 $ECENTER
 $BR
 
-\{ BeginList('UL') \}
-
-$ITEM Represent \( f(t) \) using a combination of Heaviside step functions.  Use \( u(t-a) \) for the Heaviside function shifted \( a \) units horizontally.
+$PAR
+$BR
+Represent \( f(t) \) using a combination of Heaviside step functions.  Use \( u(t-a) \) for the Heaviside function shifted \( a \) units horizontally.
 $BR
 $BR
 \( f(t) = \)
 \{ ans_rule(60) \}
 \{ AnswerFormatHelp("formulas") \}
 
-$ITEMSEP
-$ITEM Find the Laplace transform \( F(s) = {\mathcal L}\left\lbrace f(t) \right\rbrace \) for \( s \neq 0 \).
+$PAR
+$BR
+Find the Laplace transform \( F(s) = {\mathcal L}\left\lbrace f(t) \right\rbrace \) for \( s \neq 0 \).
 $BR
 $BR
 \( \displaystyle F(s) = {\mathcal L}\left\lbrace f(t) \right\rbrace = \)
 \{ ans_rule(60) \}
 \{ AnswerFormatHelp("formulas") \}
-
-\{ EndList('UL') \}
  END_TEXT
 Context()->normalStrings;
 

@@ -8,34 +8,43 @@ DOCUMENT() ;        # This should be the first executable line in the problem.
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
-  "PGasu.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
 TEXT(beginproblem()) ;
 $showPartialCorrectAnswers = 1;
 
+Context("Numeric");
+Context()->variables->are(
+t=>"Real",
+s=>"Real"
+);
+
 $a = random(2,9);
 $b = random(2,9);
-$c = random(11,23,2);
-$r = sqrt($c);
+$r = random(2,9);
+$c = $r*$r;
 $d = $b/$r;
 
-$ans1 = "$a*cos($r*t)+$d*sin($r*t)";
+$ans1 = Compute("$a*cos($r*t)+$d*sin($r*t)")->reduce;
+$Fs = Formula("($a s +$b)/(s^2 + $c)")->reduce;
 
-
+Context()->texStrings;
 BEGIN_TEXT
 
-Find the inverse Laplace transform of
-
-\[\frac{$a s +$b}{s^2 + $c} \hspace{0.5in} s > 0 \]
+Find the inverse Laplace transform \( f(t) = {\mathcal L}^{-1} \left\lbrace F(s) \right\rbrace \) of the function \( \displaystyle F(s) = $Fs \).
 $BR
-\(y(t)= \) \{ans_rule(40) \}.
-
+$BR
+\( \displaystyle f(t) = {\mathcal L}^{-1} \left\lbrace $Fs \right\rbrace = \)
+\{ ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
 
 END_TEXT
+Context()->normalStrings;
 
-ANS(fun_cmp($ans1,vars=>["t"] )) ;
+
+ANS($ans1->cmp());
 ENDDOCUMENT() ;        # This should be the last executable line in the problem.
 

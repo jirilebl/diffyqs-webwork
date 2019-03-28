@@ -66,25 +66,24 @@ $answer = $yt->with(
 Context()->texStrings;
 BEGIN_TEXT
 
-In an integro-differential equation, the unknown dependent variable \( y \) appears within an integral, and its derivative \( dy/dt \) also appears.  Consider the following initial value problem, defined for \( t \geq 0 \):
-\[ \displaystyle\frac{dy}{dt} + $csq \int_0^t y(t-w)\, e^{-$a w} \ dw = $b, \quad \quad y(0) = 0. \] 
+In an integro-differential equation, the unknown dependent variable \( x \) appears within an integral, and its derivative \( dx/dt \) also appears.  Consider the following initial value problem, defined for \( t \geq 0 \):
+\[ \displaystyle\frac{dx}{dt} + $csq \int_0^t x(t-w)\, e^{-$a w} \ dw = $b, \quad \quad x(0) = 0. \] 
 
-\{ BeginList('OL', type=>'a') \}
-
-$ITEM Use convolution and Laplace transforms to find the Laplace transform of the solution.
+$PAR
+$BR
+Use convolution and Laplace transforms to find the Laplace transform of the solution.
 $BR
 $BR
-\( \displaystyle Y(s) = {\mathcal L}\left\lbrace y(t) \right\rbrace = \)
+\( \displaystyle X(s) = {\mathcal L}\left\lbrace x(t) \right\rbrace = \)
 \{ ans_rule(60) \}
 
-$ITEMSEP
-$ITEM  Obtain the solution \( y(t) \).
+$PAR
+$BR
+Obtain the solution \( x(t) \).
 $BR
 $BR
-\( y(t) = \)
+\( x(t) = \)
 \{ ans_rule(60) \}
-
-\{ EndList('OL', type=>'a') \}
 END_TEXT
 Context()->normalStrings;
 
