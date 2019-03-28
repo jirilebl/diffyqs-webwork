@@ -196,9 +196,7 @@ $gr->stamps( closed_circle( 0,0, "blue" ) );
 $gr->stamps( closed_circle( 1,1, "blue" ) );
 
 Context()->texStrings;
-SOLUTION(EV3(<<'END_SOLUTION'));
-$PAR SOLUTION $PAR
-
+BEGIN_SOLUTION
 The nullclines are where \(\frac{dw}{dt}=0\) or \(\frac{dr}{dt}=0\).
 \(\frac{dw}{dt}=0\) when \(w-wr=0\), so \(w(1-r)=0\) giving \(w=0\) or
 \(r=1\).

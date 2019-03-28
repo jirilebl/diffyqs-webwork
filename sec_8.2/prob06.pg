@@ -75,8 +75,6 @@ ANS(str_cmp("source"));
 
 Context()->texStrings;
 BEGIN_SOLUTION
-${PAR}SOLUTION:$PAR
-$BR
 Solutions are \( x(t) = $solx \), \( y(t) = $soly \).
 Based on this we see that as \(t\) starts at 0 and grows
 the solutions will tend to infinity.  Therefore the behavior is a source.

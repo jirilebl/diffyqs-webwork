@@ -10,6 +10,7 @@ DOCUMENT();        # This should be the first executable line in the problem.
 loadMacros(
   "PGstandard.pl",
   "PGchoicemacros.pl",
+  "parserPopUp.pl",
   "PGcourse.pl"
 );
 
@@ -29,6 +30,8 @@ $b21=random(-5,5,1);
 $b22=random(-5,5,1);
 $b23=random(-5,5,1);
 
+$popup = PopUp(["Choose","Yes","No"],"No");
+
 BEGIN_TEXT
 Given the matrices
 \[
@@ -42,12 +45,9 @@ C=\left[\begin{array}{rrr}
 \end{array}\right],
 \]
 $BR
-can the operation \(BC\) be performed?
-$BR
-Your answer is (input Yes or No) \{ans_rule(15) \}
+can the operation \(BC\) be performed? $SPACE \{ $popup->menu(); \} 
 END_TEXT
 
-$ans = "No";
-ANS(str_cmp($ans));
+ANS($popup->cmp());
 
 ENDDOCUMENT();        # This should be the last executable line in the problem.

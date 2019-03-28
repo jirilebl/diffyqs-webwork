@@ -49,7 +49,7 @@ Context()->texStrings;
 BEGIN_TEXT
 For the linear differential equation \(y^\prime+$a xy = x^$n$integratingfactornew \) the integrating factor is:
 $BR
-\{$integratingfactor->ans_rule(20)\}
+\( r(x) = {} \) \{$integratingfactor->ans_rule(20)\}
 $PAR
 After multiplying both sides by the integrating factor and unapplying the product rule we get the new differential equation:
 $BR

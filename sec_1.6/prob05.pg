@@ -233,7 +233,7 @@ BEGIN_TEXT
 \{
 ColumnTable(
 "Determine which differential equation
-corresponds to each phase line.  You 
+corresponds to each phase diagram.  You 
 should be able to state briefly how
 you know your choices are correct.".
 $ml->print_q()

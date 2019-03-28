@@ -26,8 +26,8 @@ Context()->texStrings;
 BEGIN_TEXT
 
 Find the solution to the differential equation
-\[ \frac{dy}{dt} = y^2($a + t), \]
-\( y=$y0 \) when \( t=1 \).
+\[ \frac{dy}{dx} = y^2($a + x), \]
+such that \( y=$y0 \) when \( x=1 \).
 
 $PAR
 \( y = \) \{ ans_rule(35) \}
@@ -35,7 +35,7 @@ $PAR
 END_TEXT
 Context()->normalStrings;
 
-ANS(fun_cmp( "2*$y0/(2 + (1-t)*(1 + 2*$a + t)*$y0)", 'var'=>['t','y'] ) );
+ANS(fun_cmp( "2*$y0/(2 + (1-x)*(1 + 2*$a + x)*$y0)", 'var'=>['x','y'] ) );
 
 $ap1 = $a + 1;
 $ap1sq = $ap1*$ap1;
@@ -45,19 +45,19 @@ $consta = reduced_frac( (2+$ap1sq1y0), $y0 );
 Context()->texStrings;
 SOLUTION(EV3(<<'END_SOLUTION'));
 Separating variables gives
-\[ \frac{dy}{y^2} = ($a + t)\,dt, \]
+\[ \frac{dy}{y^2} = ($a + x)\,dx, \]
 so
-\[ \int \frac{dy}{y^2} = \int ($a + t)\,dt, \]
+\[ \int \frac{dy}{y^2} = \int ($a + x)\,dx, \]
 and
-\[ -\frac{1}{y} = {1\over2}($a + t)^2 + C, \]
+\[ -\frac{1}{y} = \frac{1}{2}($a + x)^2 + C, \]
 giving
-\[ y=-\frac{2}{($a + t)^2 + A}, \]
-where \(A = 2C\).  Since \(y=$y0\) when \(t=1\), we have
+\[ y=-\frac{2}{($a + x)^2 + A}, \]
+where \(A = 2C\).  Since \(y=$y0\) when \(x=1\), we have
 \[ $y0 = -\frac{2}{$ap1^2 + A},\quad \hbox{ so } \quad 
   $y0 A + $ap1sq1y0 = -2,\]
 and \( A = -{$consta}\). 
 Thus
-\[ y = -\frac{2}{($a + t)^2 - {$consta}}. \]
+\[ y = -\frac{2}{($a + x)^2 - {$consta}}. \]
 
 END_SOLUTION
 Context()->normalStrings;

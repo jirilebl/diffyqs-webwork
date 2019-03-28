@@ -44,7 +44,6 @@ $homogeneous = "a*e^(-$aor1 x) + b*x*e^(-$aor1 x)";
 ANS(fun_cmp("$ans + $homogeneous", var => 'x',  params => ['a', 'b']) );
 
 BEGIN_SOLUTION
-$SOL
 The auxiliary polynomial of \( y'' + $twoa y' + $aaor1 y = 0 \) is
 \[ r^2 + $twoa r + $aa = (r + $a)^2 \]
 with a double root \( r=-$a \), so the solution of the complementary equation is

@@ -22,7 +22,7 @@ Find the general solution to the differential equation
 \[ x^2 + $a x y + x \frac{dy}{dx}= 0 \]
 $BR
 $BR
-Find the integrating factor, \( u(x) = \) \{ans_rule(20) \}.
+Find the integrating factor, \( r(x) = \) \{ans_rule(20) \}.
  $BR
  $BR
 Find \(y(x) = \) \{ans_rule(40) \}. 

@@ -81,17 +81,14 @@ $ans4 = "D";
 Context()->texStrings;
 BEGIN_TEXT
 Match the following guess solutions \(y_p\) for the $BITALIC method of undetermined coefficients$EITALIC with the second-order nonhomogeneous linear equations below. $PAR
-$BCENTER
-$BBOLD A. $EBOLD \(\displaystyle y_p(x) = Ax^2+Bx+C \), $SPACE
-$BBOLD B. $EBOLD \(\displaystyle y_p(x) = Ae^{$a x} \), $SPACE
-$BBOLD C. $EBOLD \(\displaystyle  y_p(x) = A \cos $a x + B \sin $a x\),$BR
-$BBOLD D. $EBOLD \(\displaystyle  y_p(x) = (Ax + B)\cos $a x + (Cx+D)\sin $a x \) $SPACE
-$BBOLD E. $EBOLD \(\displaystyle  y_p(x) = A x e^{$a x},\)
-$SPACE and $SPACE
+$BBOLD A. $EBOLD \(\displaystyle y_p(x) = Ax^2+Bx+C \), $BR
+$BBOLD B. $EBOLD \(\displaystyle y_p(x) = Ae^{$a x} \), $BR
+$BBOLD C. $EBOLD \(\displaystyle  y_p(x) = A \cos $a x + B \sin $a x\), $BR
+$BBOLD D. $EBOLD \(\displaystyle  y_p(x) = (Ax + B)\cos $a x + (Cx+D)\sin $a x \), $BR
+$BBOLD E. $EBOLD \(\displaystyle  y_p(x) = A x e^{$a x}\), $BR
 $BBOLD F. $EBOLD \(\displaystyle  y_p(x) = e^{3x}(A \cos $a x + B \sin $a x)\)
-$ECENTER
 $PAR
-$HR
+$BR
 $BBOLD 1. $EBOLD\{ans_rule(3)\} \(\displaystyle $f \)
 $PAR
 $BBOLD 2. $EBOLD\{ans_rule(3)\} \(\displaystyle $g\)
@@ -99,8 +96,6 @@ $PAR
 $BBOLD 3. $EBOLD\{ans_rule(3)\} \(\displaystyle $h\)
 $PAR
 $BBOLD 4. $EBOLD\{ans_rule(3)\} \(\displaystyle $i\)
-$PAR
-$HR
 END_TEXT
 Context()->normalStrings;
 

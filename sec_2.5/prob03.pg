@@ -10,6 +10,7 @@ DOCUMENT();        # This should be the first executable line in the problem.
 loadMacros(
   "PGstandard.pl",
   "PGchoicemacros.pl",
+  "unorderedAnswer.pl",
   "PGcourse.pl"
 );
 
@@ -28,12 +29,7 @@ differential equation:
 
 \[ y'' + 6y' + 9y = 2 e^{-x} \]
 
-Answer: \( y(x) = \) \{ans_rule(40)\} \( + C_{1} \) \{ans_rule(25)\} \( + C_{2} \) \{ans_rule(25)\}.$BR
-
-
-NOTE: The order of your answers is important in this problem.  For example, 
-webwork may expect the answer "A+B" but the answer you give is "B+A".  
-Both answers are correct but webwork will only accept the former.
+\( y(x) = \) \{ans_rule(40)\} \( + C_{1} \) \{ans_rule(25)\} \( + C_{2} \) \{ans_rule(25)\}.$BR
 
 END_TEXT
 
@@ -41,7 +37,7 @@ END_TEXT
 
 
 ANS(fun_cmp($ans1, vars=>"x"));
-ANS(fun_cmp($ans2, vars=>"x"));
-ANS(fun_cmp($ans3, vars=>"x"));
+UNORDERED_ANS(fun_cmp($ans2, vars=>"x"),
+              fun_cmp($ans3, vars=>"x"));
 
 ENDDOCUMENT();        # This should be the last executable line in the problem.

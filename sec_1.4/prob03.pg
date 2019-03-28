@@ -60,7 +60,7 @@ $BR
 $PAR
 The integrating factor is \(e^{\int p(x) dx} = $mu\)
 $PAR
-Multiplying the DE by \($mu\) gives
+Multiplying the differential equation by the integrating factor \($mu\) gives
 
 \[$mu\frac{dy}{dx}+$mp y=$mq\]
 integrating we get 

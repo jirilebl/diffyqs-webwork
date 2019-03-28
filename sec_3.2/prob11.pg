@@ -45,7 +45,7 @@ BEGIN_TEXT
 Find the determinant of the matrix 
 \[ $A. \]
 $BR
-determinant = \{ans_rule(25) \}
+Determinant is \{ans_rule(25) \}
 $BR
 END_TEXT
 Context()->normalStrings;

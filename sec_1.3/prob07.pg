@@ -28,7 +28,7 @@ TEXT(beginproblem());
 
 BEGIN_TEXT
 Find the solution to the differential equation 
-\(\displaystyle\frac{dy}{dx} = \frac{$coeff x y}{(\ln y)^{$k}} \) which passes through the point \((0,e)\).
+\(\displaystyle\frac{dy}{dx} = \frac{$coeff x y}{(\ln y)^{$k}} \) which passes through the point \((x,y) = (0,e)\).
 $PAR
 Express your answer as
 $BR

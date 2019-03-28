@@ -25,7 +25,7 @@ $n = $m - (2*$b - $a )  ;
 BEGIN_TEXT
 
 Solve the initial value problem $BR
-\[  \frac{dy}{dt} + 2y = $A \sin(t) + $B \cos(t) \]
+\[  \frac{dy}{dx} + 2y = $A \sin(x) + $B \cos(x) \]
  with \( y(0) = $m. \)
  $PAR
 \( y = \) \{ans_rule(70) \}. $BR
@@ -34,9 +34,9 @@ the trick is to do integration by parts twice. $EITALIC
 END_TEXT
 
 
-$ans = FEQ( "(2*$a + $b )* sin(t) + (2*$b - $a )* cos(t) + $n * exp(-2* t)" ) ;
+$ans = FEQ( "(2*$a + $b )* sin(x) + (2*$b - $a )* cos(x) + $n * exp(-2* x)" ) ;
 
 
-ANS(fun_cmp($ans, var=>"t")) ;
+ANS(fun_cmp($ans, var=>"x")) ;
 
 ENDDOCUMENT() ;    
