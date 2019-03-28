@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Compute matrix exponential for a diagonal matrix
+## Compute matrix exponential
 ##ENDDESCRIPTION
 
 ## Institution(Oklahoma State University)
@@ -18,7 +18,6 @@ loadMacros(
 "MathObjects.pl",
 "MatrixCheckers.pl",
 "PGcourse.pl",
-"niceTables.pl",
 );
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
@@ -28,10 +27,29 @@ $showPartialCorrectAnswers = 1;
 
 Context("Matrix");
 
+# define A
+$a11 = random(-1,1,2);
+$a12 = non_zero_random(-3,3,1);
+$mult = non_zero_random(-2,2,1);
+$a21 = $mult * $a11;
+$b1 = random(-1,1,2);
+$a22 = $mult * $a12 + $b1;
+
+$a = Matrix([[$a11, $a12], [$a21, $a22]]);
+
+# B = A^-1
+$b = $a->inverse();
+
+# Pick two eigenvalues
 $e1= non_zero_random(-3,3,1);
 do { $e2= non_zero_random(-3,3,1); } while ($e1==$e2);
-$matrix = Matrix([[$e1, 0],[0, $e2]]);
-$matrix_exp = Matrix([[exp($e1), 0],[0, exp($e2)]]);
+
+$e = Matrix([[$e1, 0],[0, $e2]]);
+$eexp = Matrix([[exp($e1), 0],[0, exp($e2)]]);
+
+# matrix = A E A^-1
+$matrix = $a * $e *$b;
+$matrix_exp = $a * $eexp *$b;
 
 ###########################
 # Main text
