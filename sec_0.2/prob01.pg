@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Introduction to differential equations
-## ENDDESCRIPTION
+## Plugging a test solution into a differential equation and verifying it
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -126,5 +124,7 @@ ANS( $answer[4]->cmp() );
 ANS( $answer[5]->cmp() );
 
 ;
+
+COMMENT("Plugging a test solution into a differential equation and verifying it.");
 
 ENDDOCUMENT();

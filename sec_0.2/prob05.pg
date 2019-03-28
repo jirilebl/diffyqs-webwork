@@ -1,6 +1,4 @@
-## DESCRIPTION
-##   Checking solutions
-## ENDDESCRIPTION
+## Match solutions to equations
 
 ## Institution(OSU)
 ## Author(Zig Fiedorowicz)
@@ -58,5 +56,6 @@ ANS(str_cmp([ @ALPHABET[&invert(@shuffle)] ] ) );
      ##the correct answers are obtained by applying
      ##the inverse (adjoint) permutation to the captions.
 
+COMMENT("Match solutions to equations.");
 
 ENDDOCUMENT();        # This should be the last executable line in the problem.

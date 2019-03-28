@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Introduction to differential equations
-## ENDDESCRIPTION
+## Solve an IVP (one of the four fundamental equations)
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -78,5 +76,7 @@ ANS( $answer->cmp(
   } ) );
 
 ;
+
+COMMENT("Solve an IVP (one of the four fundamental equations).");
 
 ENDDOCUMENT();

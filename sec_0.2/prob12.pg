@@ -1,6 +1,4 @@
-## DESCRIPTION
-##   Checking solutions
-## ENDDESCRIPTION
+## Pick solutions from a list
 
 ## Institution(Rochester)
 ## KEYWORDS('differential equation' 'solution')
@@ -69,5 +67,7 @@ $BR
 END_TEXT
 
 ANS(checkbox_cmp($cmc->correct_ans));
+
+COMMENT("Pick solutions from a list.");
 
 ENDDOCUMENT();       # This should be the last executable line in the problem.

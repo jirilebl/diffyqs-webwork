@@ -1,6 +1,4 @@
-##DESCRIPTION
-##  ODE checking and initial conditions
-##ENDDESCRIPTION
+## Verify a family of solutions, then find a solution given an IC.
 
 ## Institution(University of Minnesota)
 ## Author(Justin Sukiennik)
@@ -54,5 +52,7 @@ Context()->normalStrings;
 
 ANS(($ans1)->cmp());
 ANS(($ans2)->cmp());
+
+COMMENT("Verify a family of solutions, then find a solution given an IC.");
 
 ENDDOCUMENT();        # This should be the last executable line in the problem.

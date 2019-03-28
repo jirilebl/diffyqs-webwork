@@ -1,6 +1,4 @@
-## DESCRIPTION
-##   Finding constants given initial conditions
-## ENDDESCRIPTION
+## Finding constants given initial conditions
 
 ## KEYWORDS('initial value' 'differential equation','Initial value problem' )
 
@@ -44,5 +42,7 @@ END_TEXT
 
 $ans = "$m *(e^($k *t)) + $n *(e^($l *t))";
 ANS(fun_cmp($ans, vars=>"t"));
+
+COMMENT("Finding constants given initial conditions.");
 
 ENDDOCUMENT();        # This should be the last executable line in the problem.

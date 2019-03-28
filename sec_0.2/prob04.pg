@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Introduction to differential equations
-## ENDDESCRIPTION
+## Veryfing a solution to a nonlinear equation
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -83,5 +81,7 @@ foreach my $i (0..1) {
 }
 
 ;
+
+COMMENT("Veryfing a solution to a nonlinear equation.");
 
 ENDDOCUMENT();

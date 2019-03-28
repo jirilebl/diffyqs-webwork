@@ -1,6 +1,4 @@
-##DESCRIPTION
 ## Guess a solution
-##ENDDESCRIPTION
 
 ## Institution(Univeristy of Utah)
 ## Author(Utah ww group)
@@ -34,5 +32,7 @@ EOT
 
 $ans = "sin(x)";
 ANS(fun_cmp($ans, limits=>[[1,2]], vars=>["x"]));
+
+COMMENT("Guess a solution.");
 
 ENDDOCUMENT();        # This should be the last executable line in the problem.

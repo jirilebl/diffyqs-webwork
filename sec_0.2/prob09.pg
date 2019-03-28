@@ -1,6 +1,4 @@
-##DESCRIPTION
 ## Find all solutions of a certain form
-##ENDDESCRIPTION
 
 ## Institution(Miami Univ. Ohio and Hope College)
 ## Author(Anna Ghazaryan, Fuli Zhang, and Paul Pearson)
@@ -47,13 +45,13 @@ BEGIN_TEXT
 Consider \(y'+$a y=0\).
 $PAR
 Find all values of \( r \) such that \( y = e^{rx} \) satisfies the differential equation.
-$BR
-$BITALIC If there is more than
-one correct answer, enter your answers as a comma separated list. $BITALIC
 $PAR
 \( r = {} \) 
 \{ ans_rule(20); \}
 \{ AnswerFormatHelp("numbers") \}
+$BR
+$BITALIC If there is more than
+one correct answer, enter your answers as a comma separated list. $BITALIC
 
 END_TEXT
 Context()->normalStrings;
@@ -67,5 +65,7 @@ $showPartialCorrectAnswers = 0;
 ANS( $answer[0]->cmp() );
 
 ;
+
+COMMENT("Find all solutions of a certain form.");
 
 ENDDOCUMENT();    

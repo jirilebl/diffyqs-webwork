@@ -1,6 +1,4 @@
-##DESCRIPTION
 ## Find all solutions of a certain form
-##ENDDESCRIPTION
 
 ## Institution(Miami Univ. Ohio and Hope College)
 ## Author(Anna Ghazaryan, Fuli Zhang, and Paul Pearson)
@@ -71,4 +69,6 @@ $showPartialCorrectAnswers = 0;
 ANS( $answer[0]->cmp() );
 
 ;
+
+COMMENT("Find all solutions of a certain form.");
 ENDDOCUMENT();    

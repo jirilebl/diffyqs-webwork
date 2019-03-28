@@ -1,6 +1,4 @@
-## DESCRIPTION
-##   Intro to ODE
-## ENDDESCRIPTION
+## Finding a parameter so that a function is a solution.
 
 ## Institution(Dartmouth)
 ## KEYWORDS('differential equation')
@@ -47,6 +45,8 @@ END_TEXT
 
 ANS(num_cmp($k));
 ANS(num_cmp(-$k));
+
+COMMENT("Finding a parameter so that a function is a solution.");
 
 ENDDOCUMENT();
 
