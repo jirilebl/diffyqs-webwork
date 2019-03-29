@@ -21,6 +21,8 @@ loadMacros(
 #####################################
 #  Setup
 
+TEXT(beginproblem());
+
 Context("Numeric");
 Context()->variables->are(
      r=>"Real",
