@@ -41,10 +41,8 @@ $soln = Formula("$dy0*x+$y0");
 Context()->texStrings;
 BEGIN_TEXT
 The differential equation
-$BR
 \[y^{\prime\prime} = 0\]
 has one of the following two parameter families as its general solution
-$BR
 \[
 \begin{aligned}
 y&=C_1e^x+C_2e^{-x}\\
@@ -53,10 +51,9 @@ y&=C_1\tan(x)+C_2\sec(x)\\
 y&=C_1+C_2x\\
 \end{aligned}
 \]
-$BR
 Find the solution such that \(y(0) = $y0\) and \(y^\prime(0)=$dy0\)
 $BR
-\(y(x) = {}\) \{$soln->ans_rule(20)\}
+\(y(x) = {}\) \{$soln->ans_rule(30)\}
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
