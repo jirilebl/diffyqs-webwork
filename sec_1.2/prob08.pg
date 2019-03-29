@@ -1,10 +1,9 @@
-##DESCRIPTION
-##ENDDESCRIPTION
+# Yes/no questions on whether Picard's theorem applies
 
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
 ## KEYWORDS('differential' 'equation' 'theorem', 'existence', 'uniqueness')
-#
+
 ########################################################################
 
 DOCUMENT();      
@@ -19,15 +18,13 @@ loadMacros(
 # Print problem number and point value (weight) for the problem
 TEXT(beginproblem());
 
-# Show which answers are correct and which ones are incorrect
-$showPartialCorrectAnswers = 1;
-Context()->variables->add(y=>"Real");
-Context()->strings->add(true=>{},false=>{});
 ##############################################################
 #
 #  Setup
 #
 #
+
+Context()->variables->add(y=>"Real");
 
 $y0 = Compute(random(1,9));
 $y = Formula("sqrt(y^2-($y0)^2)");
@@ -88,4 +85,9 @@ $showPartialCorrectAnswers = 0;
 
 ANS( str_cmp( $tf->ra_correct_ans ) );
 
+########################################################################
+
+COMMENT("Yes/no questions on whether Picard's theorem applies.");
+
 ENDDOCUMENT();        
+

@@ -1,6 +1,4 @@
-##DESCRIPTION
-##ENDDESCRIPTION
-
+# Match slope fields with equations
 
 ## Institution(University of Minnesota)
 ## Author(Justin Sukiennik)
@@ -8,7 +6,7 @@
 
 #####################################################################
 
-DOCUMENT();        # This should be the first executable line in the problem.
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
@@ -157,4 +155,6 @@ ANS(str_cmp($sl->ra_correct_ans));
 
 ########################################################################
 
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+COMMENT("Match slope fields with equations.");
+
+ENDDOCUMENT();

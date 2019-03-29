@@ -1,11 +1,10 @@
-# DESCRIPTION
-# Question on sketching the solution curve to a differential equation
-# ENDDESCRIPTION
+# Pick solutions from a list given a slope field, check all that apply.
 
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
 ## KEYWORDS('differential equations', 'direction field', 'solution curve', 'slope field')
 
+##############################################################################
 
 DOCUMENT();
 
@@ -17,8 +16,6 @@ loadMacros(
   "PGcourse.pl"
 );
 TEXT(beginproblem());
-$showPartialCorrectAnswers = 1;
-
 
 ##############################################################################
 ##############################################################################
@@ -62,6 +59,8 @@ $mc = new_checkbox_multiple_choice();
 $mc->qa("Which of the following are solutions to the differential equation \(\frac{dy}{dx} = f(x,y)\) whose slope field is graphed below?", "\(y=$f1tex\)", "\(y=$f2tex\)");
 $mc->extra("\(y=$f3tex\)","\(y=$f4tex\)","\(y=$f5tex\)","\(y=$f6tex\)");
 
+##############################################################################
+
 Context()->texStrings;
 BEGIN_TEXT
 \{ $mc->print_q() \}
@@ -78,11 +77,17 @@ $BR
 $BITALIC Check all that apply. $EITALIC
 END_TEXT
 Context()->normalStrings;
+
+##############################################################################
+
 install_problem_grader(~~&std_problem_grader);
 
 $showPartialCorrectAnswers = 0;
 
 ANS( checkbox_cmp( $mc->correct_ans() ) );
 
+##############################################################################
+
+COMMENT("Pick solutions from a list given a slope field, check all that apply.");
 
 ENDDOCUMENT();

@@ -1,9 +1,10 @@
-##DESCRIPTION
-##ENDDESCRIPTION
+# Sketch solutions on a slope field, ask a control question.
 
 ## Institution(University of Michigan)
 ## Author(Gavin LaRose)
 ## KEYWORDS('calculus', 'integral', 'differential equations', 'slope', 'direction field')
+
+#####################################################################
 
 DOCUMENT();
 
@@ -49,6 +50,8 @@ $fn->rf_arrow_length( sub{my($dx,$dy)=@_;
 			  0.25*1/sqrt($dx**2 + $dy**2);} );
 # $fn = new Fun( $dy, $gr );
 
+#####################################################################
+
 TEXT(beginproblem());
 Context()->texStrings;
 BEGIN_TEXT
@@ -80,7 +83,11 @@ $BR
 END_TEXT
 Context()->normalStrings;
 
+#####################################################################
+
 ANS( $solns[$which]->cmp() );
+
+#####################################################################
 
 ## generate a graph of the solution
 $gr_soln = init_graph(-4,-4,4,4,axes=>[0,0],size=>[500,500],grid=>[8,8]);
@@ -109,8 +116,10 @@ $gr_soln->stamps( closed_circle(0,0,'red') );
 $gr_soln->stamps( closed_circle($x0,$y0,'black') );
 $gr_soln->stamps( closed_circle($ic0[$which]->[0],0,'blue') );
 
+#####################################################################
+
 Context()->texStrings;
-SOLUTION(EV3(<<'END_SOLUTION'));
+BEGIN_SOLUTION
 The solution curves are shown in the graph below (that through
 the origin in red, through ($x0,$y0) in black, and that through
 ($ic0[$which]->[0],0) in blue).
@@ -128,6 +137,8 @@ confirms this.
 END_SOLUTION
 Context()->normalStrings;
 
-;
+#####################################################################
+
+COMMENT("Sketch solutions on a slope field, ask a control question.");
 
 ENDDOCUMENT();

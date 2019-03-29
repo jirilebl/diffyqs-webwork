@@ -1,10 +1,10 @@
-# DESCRIPTION
-# ENDDESCRIPTION
+# Choose equation given a slope field
 
 ## Institution(The College of Idaho)
 ## Author(LA Danielson)
 ## KEYWORDS('calculus', 'differential equations', 'graph', 'numerical', 'graphical and numerical methods')
 
+########################################################################
 
 DOCUMENT();
 loadMacros(
@@ -16,6 +16,7 @@ loadMacros(
   "PGcourse.pl"
 );
 
+########################################################################
 
 TEXT(beginproblem());
 Context()->variables->add(y=>"Real");
@@ -54,8 +55,9 @@ $fn->rf_arrow_length( sub{
     0.23*1/sqrt($dx*$dx + $dy*$dy);
 } );
 
-Context()->texStrings;
+########################################################################
 
+Context()->texStrings;
 BEGIN_TEXT
 $BCENTER
 \{ image(insertGraph($gr), height =>250, width =>250) \}
@@ -68,14 +70,16 @@ of these?
 $BR
 \( y' = \) \{ ans_rule(15) \}
 END_TEXT
-
 Context()->normalStrings;
+
+########################################################################
 
 ANS( $f->cmp() );
 
+########################################################################
 
 Context()->texStrings;
-SOLUTION(EV3(<<'END_SOLUTION'));
+BEGIN_SOLUTION
 The segments in the slope field for \(y' = $f_array[0]\) will have positive slope in Quadrants I and III, and negative slopes in QII and IV.
 $PAR
 The segments in the slope field for \(y' = $f_array[1]\) will have positive slope in the upper half of the plane (QI and II) and negative slopes in the lower half plane (QII and IV).
@@ -88,6 +92,10 @@ Every segment in the slope field for \(y' = $f_array[4]\), except at the origin,
 $PAR
 Therefore, the graph is the slope field for \(y'=$f\).
 END_SOLUTION
+
+########################################################################
+
+COMMENT("Choose equation given a slope field.");
 
 ENDDOCUMENT();
 

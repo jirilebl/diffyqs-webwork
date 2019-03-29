@@ -1,6 +1,4 @@
-## DESCRIPTION
-## First order ODEs: slope fields and the uniqueness theorem
-## ENDDESCRIPTION
+# Checking application of Picard's theorem
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -88,5 +86,9 @@ foreach my $i (0..4) {
 }
 
 ;
+
+########################################################################
+
+COMMENT("Checking application of Picard's theorem.");
 
 ENDDOCUMENT();

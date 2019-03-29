@@ -1,11 +1,10 @@
-# DESCRIPTION
-# Question on sketching the solution curve to a differential equation
-# ENDDESCRIPTION
+# Choose a solution given a slope field
 
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
 ## KEYWORDS('differential equations', 'direction field', 'solution curve')
 
+##############################################################################
 
 DOCUMENT();
 
@@ -17,7 +16,6 @@ loadMacros(
   "PGcourse.pl"
 );
 TEXT(beginproblem());
-$showPartialCorrectAnswers = 1;
 
 
 ##############################################################################
@@ -57,8 +55,10 @@ $f4tex = $f4->TeX;
 $f5tex = $f5->TeX;
 
 $mc = new_multiple_choice();
-$mc->qa("Which of the following is a solution to the differential equation \(\frac{dy}{dx} = f(x,y)\) whose slope field is graphed below?", "\( $f1tex\)");
-$mc->extra("\($f2tex\)","\($f3tex\)","\($f4tex\)","\($f5tex\)");
+$mc->qa("Which of the following is a solution to the differential equation \(\frac{dy}{dx} = f(x,y)\) whose slope field is graphed below?", "\(y=$f1tex\)");
+$mc->extra("\(y=$f2tex\)","\(y=$f3tex\)","\(y=$f4tex\)","\(y=$f5tex\)");
+
+##############################################################################
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -74,11 +74,17 @@ $ECENTER
 
 END_TEXT
 Context()->normalStrings;
+
+##############################################################################
+
 install_problem_grader(~~&std_problem_grader);
 
 $showPartialCorrectAnswers = 0;
 
 ANS( radio_cmp( $mc->correct_ans() ) );
 
+##############################################################################
+
+COMMENT("Choose a solution given a slope field.");
 
 ENDDOCUMENT();

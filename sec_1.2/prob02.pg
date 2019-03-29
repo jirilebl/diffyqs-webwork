@@ -1,9 +1,10 @@
-##DESCRIPTION
-##ENDDESCRIPTION
+# Match equations to slope fields
 
 ## Institution(University of Michigan)
 ## Author(Gavin LaRose)
 ## KEYWORDS('calculus', 'integral', 'differential equations', 'slope', 'direction field')
+
+#####################################################################
 
 DOCUMENT();
 
@@ -65,6 +66,8 @@ $ml->choose(6);
 
 @ans = @{$ml->selected_a()};
 
+#####################################################################
+
 TEXT(beginproblem());
 Context()->texStrings;
 BEGIN_TEXT
@@ -90,8 +93,10 @@ ANS( str_cmp( $ml->ra_correct_ans ) );
 
 @ca = @{$ml->ra_correct_ans};
 
+#####################################################################
+
 Context()->texStrings;
-SOLUTION(EV3(<<'END_SOLUTION'));
+BEGIN_SOLUTION
 We can determine the answers by considering the right-hand
 side of differential equation at different \((x,y)\) coordinates
 to determine what the slope has to be at those points.
@@ -112,6 +117,9 @@ VI. $ca[5]
 END_SOLUTION
 Context()->normalStrings;
 
-;
+#####################################################################
+
+COMMENT("Match equations to slope fields.");
 
 ENDDOCUMENT();
+
