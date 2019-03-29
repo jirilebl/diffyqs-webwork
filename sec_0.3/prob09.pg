@@ -1,11 +1,8 @@
-## DESCRIPTION
-## First order ODEs: linear ODEs and the integrating factor
-## ENDDESCRIPTION
+# Spotting a linear equation, where linearity depends on a parameter.
 
 ## Institution(Cleveland State University)
 ## Author(Barbara Margolius)
 ## KEYWORDS('differential equations','first order','integrating factor')
-
 
 ##############################
 #  Initialization
@@ -16,20 +13,19 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "unionLists.pl",
   "parserPopUp.pl",
   "PGcourse.pl"
 );
 
 TEXT(beginproblem());
 
-
 #############################
 #  Setup 
 Context("Numeric")->variables->are(
-a=>"Real",
+ a=>"Real",
 );
 $a=random(2,8);
+$answer = Compute("$a");
 $expr = Compute("a^2-$a*a")->reduce();
 
 #############################
@@ -42,10 +38,9 @@ For what value(s) of the constant \(a\) is the differential equation
 a linear equation?
 $BR$BR
 \(a = {}\) \{ ans_rule(10) \}
-
+\{ AnswerFormatHelp("numbers") \}
 $BR
 $BR
-
 END_TEXT
 Context()->normalStrings;
 
@@ -54,8 +49,8 @@ Context()->normalStrings;
 #  Answer evaluation 
 
 $showPartialCorrectAnswers = 1;
-ANS( num_cmp( $a ) );
+ANS( $answer->cmp );
 
-;
+COMMENT("Spotting a linear equation, where linearity depends on a parameter.");
 
 ENDDOCUMENT();

@@ -1,5 +1,4 @@
-##DESCRIPTION
-##ENDDESCRIPTION
+# Determine order and linearity, the order is randomized, and it is always linear.
 
 ## Institution(Muohio, Hope College)
 ## Author(Anna Ghazaryan,Fuli Zhang, Paul Pearson)
@@ -20,10 +19,6 @@ loadMacros(
 # Print problem number and point value (weight) for the problem
 TEXT(beginproblem());
 
-# Show which answers are correct and which ones are incorrect
-install_problem_grader(~~&std_problem_grader);
-$showPartialCorrectAnswers = 0;
-
 ##############################################################
 #
 #  Setup
@@ -41,8 +36,8 @@ Context("Numeric");
 $a = random(1,9,1);
 $b = random(4,9,1);
 
-$answer[0] = Compute("$b");
-$answer[1] = PopUp(["Choose","Linear","Nonlinear"],"Linear");
+$answer1 = Compute("$b");
+$answer2 = PopUp(["Choose","Linear","Nonlinear"],"Linear");
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -50,9 +45,10 @@ BEGIN_TEXT
 Determine the order of the given differential equation and state whether the equation is linear or nonlinear.
 \[\frac{d^{$b}x}{dt^{$b}}+\frac{d^{3}x}{dt^{3}}+\frac{d^{2}x}{dt^{2}}+\frac{dx}{dt}+x = $a\]
 $BR
-The order of this differential equation is \{ ans_rule(10) \}. 
+The order of this differential equation is \{ ans_rule(10) \}
+\{ AnswerFormatHelp("numbers") \}
 $PAR
-The equation is \{ $answer[1]->menu() \}.
+The equation is \{ $answer2->menu() \}.
 
 END_TEXT
 Context()->normalStrings;
@@ -61,14 +57,13 @@ Context()->normalStrings;
 #
 #  Answers
 #
-#
+install_problem_grader(~~&std_problem_grader);
 $showPartialCorrectAnswers = 0;
 
-foreach my $i (0..1) {
-  ANS( $answer[$i]->cmp );
-}
+ANS( $answer1->cmp );
+ANS( $answer2->cmp );
 
-;
+COMMENT("Determine order and linearity, the order is randomized, and it is always linear.");
 
 ENDDOCUMENT();    
 

@@ -1,6 +1,4 @@
-## DESCRIPTION
-## First order ODEs: slope fields and the uniqueness theorem
-## ENDDESCRIPTION
+# Putting a linear equation into standard form, and checking for homogeneity.
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -79,7 +77,6 @@ ANS( $p->cmp() );
 ANS( $g->cmp() );
 ANS( $popup->cmp() );
 
-
-;
+COMMENT("Putting a linear equation into standard form, and checking for homogeneity.");
 
 ENDDOCUMENT();

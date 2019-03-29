@@ -1,10 +1,8 @@
-##DESCRIPTION
-##  Which equations are linear? 
-##ENDDESCRIPTION
+# Classify a homogeneous linear ODE (check all that applies, nonrandomized equation).
 
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
-## KEYWORDS('linear' 'differential' 'equation')
+## KEYWORDS('differential equation', 'classify')
 
 ########################################################################
 
@@ -12,16 +10,12 @@ DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "MathObjects.pl",
   "PGchoicemacros.pl",
   "PGcourse.pl"
 );
 
 # Print problem number and point value (weight) for the problem
 TEXT(beginproblem());
-
-# Show which answers are correct and which ones are incorrect
-$showPartialCorrectAnswers = 1;
 
 ##############################################################
 #
@@ -50,20 +44,23 @@ $mc -> extra(
 #
 #
 
-Context()->texStrings;
 BEGIN_TEXT
 \{ $mc -> print_q() \}
 $BR
 \{ $mc -> print_a() \}
 END_TEXT
-Context()->normalStrings;
 
 ##############################################################
 #
 #  Answers
 #
 #
+
 install_problem_grader(~~&std_problem_grader);
 $showPartialCorrectAnswers = 0;
+
 ANS( checkbox_cmp( $mc->correct_ans() ) );
+
+COMMENT("Classify a homogeneous linear ODE (check all that applies, nonrandomized equation).");
+
 ENDDOCUMENT();

@@ -1,5 +1,4 @@
-##DESCRIPTION
-##ENDDESCRIPTION
+# Determine oder and linearity of an equation, order is random, linearity is not.
 
 ## Institution(Miami Univ. Ohio and Hope College)
 ## Author(Anna Ghazaryan, Fuli Zhang, and Paul Pearson)
@@ -20,10 +19,6 @@ loadMacros(
 # Print problem number and point value (weight) for the problem
 TEXT(beginproblem());
 
-# Show which answers are correct and which ones are incorrect
-install_problem_grader(~~&std_problem_grader);
-$showPartialCorrectAnswers = 0;
-
 ##############################################################
 #
 #  Setup
@@ -41,23 +36,21 @@ Context("Numeric");
 $a = random(3,5,1);
 do { $b = random(2,9,1); } until ($b > $a);
 
-$answer[0] = Compute("$a");
-$answer[1] = PopUp(["Choose","Linear","Nonlinear"],"Linear");
+$answer1 = Compute("$a");
+$answer2 = PopUp(["Choose","Linear","Nonlinear"],"Linear");
 
 Context()->texStrings;
 BEGIN_TEXT
-
 
 Determine the order of the given differential equation and state whether the equation is linear or nonlinear.
 
 \[\displaystyle\  t^{$b}x^{($a)}-t^{3}x''+6x = 0\]
 $BR
-The order of this differential equation is \{ ans_rule(10) \}. 
+The order of this differential equation is \{ ans_rule(10) \} 
+\{ AnswerFormatHelp("numbers") \}
 $BR
 $BR
-The equation is \{ $answer[1]->menu() \}.
-
-
+The equation is \{ $answer2->menu() \}.
 
 END_TEXT
 Context()->normalStrings;
@@ -67,13 +60,14 @@ Context()->normalStrings;
 #  Answers
 #
 #
+
+install_problem_grader(~~&std_problem_grader);
 $showPartialCorrectAnswers = 0;
 
+ANS( $answer1->cmp );
+ANS( $answer2->cmp );
 
-foreach my $i (0..1) {
-  ANS( $answer[$i]->cmp );
-}
+COMMENT("Determine oder and linearity of an equation, order is random, linearity is not");
 
-;
 ENDDOCUMENT();    
 
