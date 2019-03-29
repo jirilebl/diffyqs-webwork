@@ -1,17 +1,24 @@
 ## Finding constants given initial conditions
 
-## KEYWORDS('initial value' 'differential equation','Initial value problem' )
+## KEYWORDS('initial value', 'differential equation', 'initial value problem')
+
+################################################################################
 
 DOCUMENT();        # This should be the first executable line in the problem.
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
+################################################################################
+
 TEXT(beginproblem());
 
+Context("Numeric");
+Context()->variables->are(t=>'Real');
 
 do {
   $h = random(1,10,1);
@@ -21,11 +28,15 @@ do {
   $d = random(2,10,1);
   $m = (($c * $l) - $d )/$h ;
   $n = ($d - ($k * $c ))/$h ;
-#ensure the constants aren't trivial.
+  #ensure the constants aren't trivial.
 } while(($m == 0) or ($n == 0) or ($m == 1) or ($n == 1));
 
-BEGIN_TEXT
+$ans = Formula("$m *(e^($k *t)) + $n *(e^($l *t))");
 
+################################################################################
+
+Context()->texStrings;
+BEGIN_TEXT
 The solution of a certain differential equation is of the form 
 \[ x(t) = A \exp($k t) + B \exp($l t), \] 
 where \(A\) and \(B\) are constants. 
@@ -36,12 +47,16 @@ $PAR
 Find the solution by using the initial 
 conditions to get linear equations for \(A\) and \(B\).
 $PAR
-\( x(t)= \) \{ans_rule(40); \} 
-
+\( x(t)= {} \) \{ans_rule(40); \} 
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
+Context()->normalStrings;
 
-$ans = "$m *(e^($k *t)) + $n *(e^($l *t))";
-ANS(fun_cmp($ans, vars=>"t"));
+################################################################################
+
+ANS($ans->cmp());
+
+################################################################################
 
 COMMENT("Finding constants given initial conditions.");
 

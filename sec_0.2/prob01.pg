@@ -14,7 +14,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "unionLists.pl",
   "parserPrime.pl",
   "parserPopUp.pl",
   "answerHints.pl",

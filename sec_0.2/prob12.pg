@@ -3,20 +3,20 @@
 ## Institution(Rochester)
 ## KEYWORDS('differential equation' 'solution')
 
-DOCUMENT();        # This should be the first executable line in the problem.
+
+#####################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
   "PGchoicemacros.pl",
-  "PGgraphmacros.pl",
-  "PGmatrixmacros.pl",
-  "PGnumericalmacros.pl",
-  "PGmorematrixmacros.pl",
   "PGcourse.pl"
 );
 
+#####################################################
+
 TEXT(beginproblem());
-$showPartialCorrectAnswers = 1;
 
 $case = random(1,2,1);
 
@@ -58,16 +58,22 @@ $cmc -> qa ("Which of the following functions are solutions of the differential 
 
 $cmc-> extra ($no[0], $no[1], $no[2], $no[3]);
 
-BEGIN_TEXT
+#####################################################
 
+BEGIN_TEXT
 \{ $cmc -> print_q \}
 $BR
 \{ $cmc -> print_a \}
-
 END_TEXT
+
+#####################################################
+
+$showPartialCorrectAnswers = 1;
 
 ANS(checkbox_cmp($cmc->correct_ans));
 
+#####################################################
+
 COMMENT("Pick solutions from a list.");
 
-ENDDOCUMENT();       # This should be the last executable line in the problem.
+ENDDOCUMENT();

@@ -4,7 +4,9 @@
 ## Author(Zig Fiedorowicz)
 ## KEYWORDS('Differential Equations', 'Higher Order')
 
-DOCUMENT();        # This should be the first executable line in the problem.
+################################################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
@@ -12,8 +14,9 @@ loadMacros(
   "PGcourse.pl"
 );
 
+################################################################################
+
 TEXT(beginproblem());
-$showPartialCorrectAnswers = 0;
 
 $a = random(2,9,1);
 $aa = $a**2;
@@ -38,6 +41,7 @@ $ansStr5 = EV2(" \(y= Ce^{-$b x^3}+1\)");
 
 # Now randomize the questions:
 @shuffle = &shuffle(scalar(@questions));
+
 ################################################################################
 
 BEGIN_TEXT
@@ -52,10 +56,16 @@ TEXT(
 &OL(@answers[@shuffle])
 );
 
+################################################################################
+
+$showPartialCorrectAnswers = 0;
+
 ANS(str_cmp([ @ALPHABET[&invert(@shuffle)] ] ) );
      ##the correct answers are obtained by applying
      ##the inverse (adjoint) permutation to the captions.
 
 COMMENT("Match solutions to equations.");
 
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+################################################################################
+
+ENDDOCUMENT();

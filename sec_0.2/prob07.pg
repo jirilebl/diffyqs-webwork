@@ -5,11 +5,13 @@
 ## KEYWORDS('calculus', 'differential equations', 'first-order')
 
 #####################################################################
-DOCUMENT();        # This should be the first executable line in the problem.
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
@@ -41,10 +43,12 @@ BEGIN_TEXT
 Verify that every member of the family of functions \(\displaystyle y = \frac{\ln x + C}{x}\) is a solution of the differential equation \(x^2 y' + x y =1.\)  Answer the following questions. 
 $PAR
 Find a solution of the differential equation that satisfies the initial condition \( y($a)= $b.\) $BR
-\(y(x) = \) \{ans_rule(30); \}
+\(y(x) = {} \) \{ans_rule(30); \}
+\{ AnswerFormatHelp("formulas") \}
 $PAR
 Find a solution of the differential equation that satisfies the initial condition \( y($b)= $a.\) $BR
-\(y(x) = \) \{ans_rule(30); \} 
+\(y(x) = {} \) \{ans_rule(30); \} 
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
 
@@ -53,6 +57,8 @@ Context()->normalStrings;
 ANS(($ans1)->cmp());
 ANS(($ans2)->cmp());
 
+#####################################################################
+
 COMMENT("Verify a family of solutions, then find a solution given an IC.");
 
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+ENDDOCUMENT();

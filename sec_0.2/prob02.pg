@@ -3,48 +3,57 @@
 ## Institution(Dartmouth)
 ## KEYWORDS('differential equation')
 
+
+#####################################################
+
 DOCUMENT();
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
-  "PGgraphmacros.pl",
-  "Dartmouthmacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
  
-
-## Do NOT show partial correct answers
-$showPartialCorrectAnswers = 0;
+#####################################################
 
 ## Choose a value of k for sin(kt)
 $k = non_zero_random(2,20);
+
+$ans1 = Compute("$k");
+$ans2 = Compute("-$k");
 
 
 ## Ok, we are ready to begin the problem...
 ##
 TEXT(beginproblem());
 
+#####################################################
 
+Context()->texStrings;
 BEGIN_TEXT
 $BR
 For what positive value of \(k\) does the function \(y = \sin(kt) \) satisfy the differential equation \( y'' + \{$k*$k\}y = 0\)? 
 $BR
 \{ ans_rule(20); \}
+\{ AnswerFormatHelp("numbers") \}
 $BR
 $BR
 For what negative value of \(k\) does the function \(y = \cos(kt) \) satisfy the differential equation \( y'' + \{$k*$k\}y = 0\)? 
 $BR
 \{ ans_rule(20); \}
-$BR
-
-
-
-
-$PAR
+\{ AnswerFormatHelp("numbers") \}
 END_TEXT
+Context()->normalStrings;
 
-ANS(num_cmp($k));
-ANS(num_cmp(-$k));
+#####################################################
+
+## Do NOT show partial correct answers
+$showPartialCorrectAnswers = 0;
+
+ANS($ans1->cmp());
+ANS($ans2->cmp());
+
+#####################################################
 
 COMMENT("Finding a parameter so that a function is a solution.");
 

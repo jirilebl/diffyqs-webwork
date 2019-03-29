@@ -1,23 +1,29 @@
-## Guess a solution
+# Guess a solution
 
 ## Institution(Univeristy of Utah)
 ## Author(Utah ww group)
 ## KEYWORDS('differential equations')
 
+###########################################################
 
-DOCUMENT();        # This should be the first executable line in the problem.
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
 TEXT(beginproblem());
 
-TEXT(EV2(<<EOT));
-Solve this problem by educated guessing.  
+Context("Numeric");
 
+###########################################################
+
+Context()->texStrings;
+BEGIN_TEXT
+Solve this problem by educated guessing.  
 $BR 
 $BR 
 Suppose \(f\) is the function that satisifes
@@ -25,14 +31,19 @@ Suppose \(f\) is the function that satisifes
 for all \(x\) in its domain, 
 \(f(0) = 0\), and \(f'(0) = 1\).
 Then 
-$BR
-$BR
-\(f(x) = {} \) \{&ans_rule(30) ;\}
-EOT
+$PAR
+\(f(x) = {} \) \{ ans_rule(30) \}
+\{ AnswerFormatHelp("formulas") \}
+END_TEXT
+Context()->normalStrings;
 
-$ans = "sin(x)";
-ANS(fun_cmp($ans, limits=>[[1,2]], vars=>["x"]));
+###########################################################
+
+$ans = Formula("sin(x)");
+ANS($ans->cmp());
+
+###########################################################
 
 COMMENT("Guess a solution.");
 
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+ENDDOCUMENT();
