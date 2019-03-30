@@ -1,5 +1,4 @@
-##DESCRIPTION
-##ENDDESCRIPTION
+# Integrate to solve ODE, must put into standard form first
 
 ## Institution(Miami Univ. Ohio and Hope College)
 ## Author(Anna Ghazaryan, Fuli Zhang, Paul Pearson)
@@ -14,14 +13,12 @@ loadMacros(
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
   "parserFormulaUpToConstant.pl",
+  "PGML.pl",
   "PGcourse.pl"
 );
 
 # Print problem number and point value (weight) for the problem
 TEXT(beginproblem());
-
-# Show which answers are correct and which ones are incorrect
-$showPartialCorrectAnswers = 1;
 
 ##############################################################
 #
@@ -32,7 +29,7 @@ Context("Numeric");
 
 $a = random(2,9,1);
 
-$answer[0] = FormulaUpToConstant("$a (x-ln(abs(1+x)) )");
+$answer = FormulaUpToConstant("$a (x-ln(abs(1+x)) )");
 
 
 Context()->texStrings;
@@ -54,8 +51,19 @@ Context()->normalStrings;
 #
 #
 $showPartialCorrectAnswers = 0;
-ANS( $answer[0]->cmp() );
+ANS( $answer->cmp() );
+
+#############################################################
+
+BEGIN_PGML_SOLUTION
+First write the equation as
+>>[``y'= \frac{[$a] x}{1+x}``]<<
+Now we integrate
+>>[``y = \int \frac{[$a] x}{1+x} dx + C = [$answer]``]<<
+END_PGML_SOLUTION
 
 ;
+
+COMMENT("Integrate to solve ODE, must put into standard form first.");
 
 ENDDOCUMENT();    

@@ -3,39 +3,67 @@
 
 ## KEYWORDS('differential', 'equation', 'separable', 'solution', 'initial', 'value')
 
-DOCUMENT();        # This should be the first executable line in the problem.
+###########################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
-  "PGgraphmacros.pl",
-  "PGmatrixmacros.pl",
-  "PGnumericalmacros.pl",
-  "PGmorematrixmacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
   "PGcourse.pl"
 );
+
+###########################################################
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
+Context("Numeric");
+Context()->variables->are(t=>'Real');
+
 $a = random(2,9,1); 
-$t0 = 0;
-$x0 = random(1,9,1); 
+$x0 = random(2,9,1); 
 
-$c = $x0 * $x0 - 2* $a * $t0;
+$c = $x0 * $x0;
 
-BEGIN_TEXT
+###########################################################
 
-Solve the differential equation 
-\[ \frac{dx}{dt} = \frac{$a}{x} ,\]
-and find the particular solution satisfying the initial condition 
-\[ x($t0) = $x0. \]
-$BR
-\( x(t) = \) \{ ans_rule(40) \}. 
 
-END_TEXT
+BEGIN_PGML
+Solve the differential equation
 
-ANS(fun_cmp("sqrt(2*$a*t+$c)", vars => 't'));
+>>[``\frac{dx}{dt} = \frac{[$a]}{x} ,``]<<
 
-ENDDOCUMENT();       # This should be the last executable line in the problem.
+and find the particular solution satisfying the initial condition
+
+>>[``x(0) = [$x0].``]<<
+
+[`x(t) = {}`] [______]{"sqrt(2*$a*t+$c)"}{40}
+[@ AnswerFormatHelp("formulas") @]*
+END_PGML
+
+######################################################
+
+BEGIN_PGML_SOLUTION
+Since [`\frac{dx}{dt}= \frac{[$a]}{x}`]
+we have [`\frac{dt}{dx}= \frac{x}{[$a]}`].
+We can now integrate with respect to [:x:]:
+>>[``t = \int \frac{x}{[$a]} dx + C = \frac{x^2}{[$a*2]} + C.``]<<
+Solving for [:x:],
+>>[``x = \sqrt{[$a*2](t-C)}.``]<<
+Now [: x(0)= [$x0] :], so
+>>[``x(0) = \sqrt{[$a*2](0-C)} = [$x0].``]<<
+Solving for [:C:] we find
+>>[``C =- \frac{[$x0]^2}{[$a*2]}.``]<<
+Plugging this back into the solution we get
+>>[``x =
+\sqrt{[$a*2]\left(t-\left(- \frac{[$x0]^2}{[$a*2]}\right)\right)}
+=
+\sqrt{[$a*2]t+ [$x0]^2}
+``]<<
+END_PGML_SOLUTION
+
+ENDDOCUMENT();
 

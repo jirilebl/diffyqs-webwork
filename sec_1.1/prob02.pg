@@ -1,9 +1,10 @@
-##DESCRIPTION
-##ENDDESCRIPTION
+# Integrate to solve ODE
 
 ## Institution(University of Michigan)
 ## Author(Gavin LaRose)
 ## KEYWORDS('differential equation','calculus','antiderivatives'")
+
+#################################################################
 
 DOCUMENT();
 
@@ -15,6 +16,8 @@ loadMacros(
   "PGcourse.pl"
 );
 
+#################################################################
+
 Context("Numeric");
 $showPartialCorrectAnswers = 1;
 
@@ -22,6 +25,8 @@ $r = random(2,5,1);
 $b = random(1,8,1);
 
 TEXT(beginproblem());
+
+#################################################################
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -36,19 +41,25 @@ $PAR
 END_TEXT
 Context()->normalStrings;
 
+#################################################################
+
 $ans = FormulaUpToConstant("(1/($r+1))*x^($r+1) + $b*x + C");
 ANS($ans->cmp() );
 
 $r1 = $r + 1;
 
+#################################################################
+
 Context()->texStrings;
 BEGIN_SOLUTION
 
-\[ y=\int (x^{$r} + $b)\,dx = \frac{x^{$r1}}{$r1} + $b x + C\]
+\[ y=\int (x^{$r} + $b)\,dx + C = \frac{x^{$r1}}{$r1} + $b x + C\]
 
 END_SOLUTION
 Context()->normalStrings;
 
+#################################################################
 
-;
+COMMENT("Integrate to solve ODE.");
+
 ENDDOCUMENT();
