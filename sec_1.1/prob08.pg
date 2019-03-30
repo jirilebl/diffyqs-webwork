@@ -1,4 +1,4 @@
-# Integral as solution, simple separable
+# Integrate to solve after inverse function theorem, simple separable.
 
 ## KEYWORDS('differential', 'equation', 'separable', 'solution', 'initial', 'value')
 
@@ -38,6 +38,6 @@ END_PGML
 
 ########################################################
 
-COMMENT("Integral as solution, simple separable.");
+COMMENT("Integrate to solve after inverse function theorem, simple separable.");
 
 ENDDOCUMENT();

@@ -1,5 +1,4 @@
-##DESCRIPTION
-##ENDDESCRIPTION
+# Integrate to solve after inverse function theorem, simple separable.
 
 ## KEYWORDS('differential', 'equation', 'separable', 'solution', 'initial', 'value')
 
@@ -64,6 +63,10 @@ Plugging this back into the solution we get
 \sqrt{[$a*2]t+ [$x0]^2}
 ``]<<
 END_PGML_SOLUTION
+
+######################################################
+
+COMMENT("Integrate to solve after inverse function theorem, simple separable.");
 
 ENDDOCUMENT();
 

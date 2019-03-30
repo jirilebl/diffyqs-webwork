@@ -1,7 +1,4 @@
-## DESCRIPTION
-## First order ODEs: integrals as solutions
-## ENDDESCRIPTION
-
+# Integrate to solve after inverse function theorem, simple separable.
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -70,5 +67,9 @@ Plug this [:C:] into the answer to obtain the final answer:
 END_PGML_SOLUTION
 
 ;
+
+######################################################
+
+COMMENT("Integrate to solve after inverse function theorem, simple separable.");
 
 ENDDOCUMENT();
