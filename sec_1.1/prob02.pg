@@ -10,7 +10,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
-  "PGchoicemacros.pl",
+  "AnswerFormatHelp.pl",
   "parserFormulaUpToConstant.pl",
   "PGcourse.pl"
 );
@@ -22,6 +22,7 @@ $r = random(2,5,1);
 $b = random(1,8,1);
 
 TEXT(beginproblem());
+
 Context()->texStrings;
 BEGIN_TEXT
 
@@ -30,6 +31,7 @@ Find the general solution of the differential equation
 
 $PAR
 \(y(x) = {}\) \{ ans_rule(35) \}
+\{ AnswerFormatHelp("formulas") \}
 
 END_TEXT
 Context()->normalStrings;
@@ -40,9 +42,9 @@ ANS($ans->cmp() );
 $r1 = $r + 1;
 
 Context()->texStrings;
-SOLUTION(EV3(<<'END_SOLUTION'));
+BEGIN_SOLUTION
 
-\( y=\int (x^{$r} + $b)\,dx = \frac{x^{$r1}}{$r1} + $b x + C\)
+\[ y=\int (x^{$r} + $b)\,dx = \frac{x^{$r1}}{$r1} + $b x + C\]
 
 END_SOLUTION
 Context()->normalStrings;
