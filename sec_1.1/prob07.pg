@@ -17,6 +17,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
+  "PGML.pl",
   "PGcourse.pl"
 );
 
@@ -25,6 +26,8 @@ TEXT(beginproblem());
 
 #############################
 #  Setup
+
+$showPartialCorrectAnswers = 1;
 
 Context("Numeric");
 Context()->variables->set(x=>{limits=>[0,4]});
@@ -38,25 +41,33 @@ $answer = Compute("2 / (1 + e^(2x-$a2)) - 1");
 #############################
 #  Main text
 
-Context()->texStrings;
-BEGIN_TEXT
-Solve \( \displaystyle \frac{dy}{dx} = (y-1)(y+1) \) if the 
-solution passes through the point \( (x,y) = ($a,0) \).
-$BR
-$BR
-\( y(x) = \)
-\{ ans_rule(40) \} 
-\{ AnswerFormatHelp("formulas") \}
-END_TEXT
-Context()->normalStrings;
+BEGIN_PGML
+Solve [`` \frac{dy}{dx} = (y-1)(y+1) ``] if the
+solution passes through the point [` (x,y) = ([$a],0) `].
 
+[` y(x) = {} `]
+[_________]{$answer}{40}
+[@ AnswerFormatHelp("formulas") @]*
+END_PGML
 
 ############################
 #  Answers
 
-$showPartialCorrectAnswers = 1;
+BEGIN_PGML_SOLUTION
+_Solution sketch:_
+Rewrite [``\frac{dy}{dx} = (y-1)(y+1)``]
+as [``\frac{dx}{dy} = \frac{1}{(y-1)(y+1)}``]
 
-ANS( $answer->cmp() );
+Now integrate (use partial fractions)
+[``x = \int \frac{1}{(y-1)(y+1)} dy + C
+=
+\frac{1}{2} \ln \left(\frac{2}{y+1}-1\right) + C .
+``]
+
+Solve for [:y:].  Now use the condition [:y([$a])=0:] to solve for [:C:].
+Plug this [:C:] into the answer to obtain the final answer:
+>>[::y(x) = [$answer] .::]<<
+END_PGML_SOLUTION
 
 ;
 

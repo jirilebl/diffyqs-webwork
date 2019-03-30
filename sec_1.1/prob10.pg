@@ -1,7 +1,4 @@
-## DESCRIPTION
-## First order ODEs: integrals as solutions
-## ENDDESCRIPTION
-
+# Word problem for an ODE with integral as solution
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -47,8 +44,7 @@ with speed \( $a t^2 + $b \ \mathrm{km/s} \).  At
 time \( t = 0 \ \mathrm{s} \), it is \( $d0 \ \mathrm{km} \)
 from earth.  How far is it from earth one minute
 after time \( t = 0 \ \mathrm{s}\)?  Include units in your answer.
-$BR
-$BR
+$PAR
 Distance = 
 \{ ans_rule(30) \} 
 \{ AnswerFormatHelp("units") \}
@@ -63,6 +59,18 @@ $showPartialCorrectAnswers = 1;
 
 ANS( $answer->cmp(tolType=>absolute,tolerance=>0.0001) );
 
+BEGIN_SOLUTION
+To find distance traveled we integrate speed.  So distance from earth
+in kilometers after one minute (60 seconds) is
+\[
+$d0 + \int_0^{60} ($a t^2 + $b) \, dt
+=
+$d0 + \frac{$a (60)^3}{3} + $b(60) .
+\]
+END_SOLUTION
+
 ;
+
+COMMENT("Word problem for an ODE with integral as solution");
 
 ENDDOCUMENT();

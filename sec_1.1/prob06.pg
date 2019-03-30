@@ -43,23 +43,14 @@ BEGIN_PGML_SOLUTION
 Since [`\frac{dy}{dx}= [$a] y^2`]
 we have [`\frac{dx}{dy}= \frac{1}{[$a] y^2}`].
 We can now integrate with respect to [:y:]:
-
 >>[``x = \int \frac{1}{[$a] y^2} dy + C = \frac{-1}{[$a] y} + C.``]<<
-
 Solving for [:y:],
-
 >>[``y = \frac{-1}{[$a](x-C)}.``]<<
-
 Now [: y([$a])= [$b] :], so
-
 >>[``y([$a]) = \frac{-1}{[$a]([$a]-C)} = [$b].``]<<
-
 Solving for [:C:] we find
-
 >>[``C = \frac{1}{[$a*$b]}-[$a].``]<<
-
 Plugging this back into the solution we get
-
 >>[``y =
 \frac{-1}{[$a]\left(x-\left(\frac{1}{[$a*$b]}-[$a]\right)\right)}
 =

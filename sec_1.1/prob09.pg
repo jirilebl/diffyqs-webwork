@@ -1,5 +1,4 @@
-##DESCRIPTION
-##ENDDESCRIPTION
+# Integrable ODE general solution
 
 ## Institution(Miami Univ. Ohio and Hope College)
 ## Author(Anna Ghazaryan, Fuli Zhang, Paul Pearson)
@@ -32,7 +31,7 @@ Context("Numeric");
 
 $a = random(3,9,2);
 
-$answer[0] = FormulaUpToConstant("$a/2 e^(x^(2))");
+$answer = FormulaUpToConstant("$a/2 e^(x^(2))");
 
 
 Context()->texStrings;
@@ -54,7 +53,8 @@ Context()->normalStrings;
 #
 #
 $showPartialCorrectAnswers = 0;
-ANS( $answer[0]->cmp() );
+ANS( $answer->cmp() );
 
-;
+COMMENT("Integrable ODE general solution");
+
 ENDDOCUMENT();    

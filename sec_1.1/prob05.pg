@@ -1,46 +1,81 @@
-## DESCRIPTION
-## ENDDESCRIPTION
+# Integrate to solve after inverse function theorem, simple separable.
 
 ## Institution(Rochester)
 ## KEYWORDS('differential equation' 'separable' 'initial')
 
-DOCUMENT();        # This should be the first executable line in the problem.
+###########################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
-  "PGgraphmacros.pl",
-  "PGmatrixmacros.pl",
-  "PGnumericalmacros.pl",
-  "PGmorematrixmacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
   "PGcourse.pl"
 );
+
+###########################################################
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
-$a = random(-0.9,-0.1,.1); 
-$x0 = 0;
+Context("Numeric");
+
+$a = random(-0.9,-0.1,.1);
+$minusa = -$a;
 $denom = random(2,6,1); 
 if ($denom==5) { $denom = random(2,4,1); } 
 $y0 = $PI/$denom;
-$c = sin($y0) - $a * $x0;;
+$c = sin($y0);
 
-BEGIN_TEXT
+# Just being paranoid, don't want to go all the way up to the limit
+$lower_limit = (0.9-$c)/$a;
+$upper_limit = (-0.9-$c)/$a;
 
-Solve the differential equation 
-\[ \frac{dy}{dx} = \frac{$a}{\cos(y)} ,\]
-and find the particular solution satisfying the initial condition 
-\[ y($x0) = \frac{\pi}{$denom}. \]
-$BR
-\( y(x) = \) \{ ans_rule(40) \}. 
+Context()->variables->are(
+ x=>['Real',limits=> [$lower_limit,$upper_limit]]
+);
 
-END_TEXT
+###########################################################
 
-$lower_limit = (1-$c)/$a;
-$upper_limit = (-1-$c)/$a;
+BEGIN_PGML
+Solve the differential equation
 
-ANS(fun_cmp("arcsin($a*x + $c)", limits => [$lower_limit,$upper_limit]));
+>>[``\frac{dy}{dx} = \frac{[$a]}{\cos(y)} ,``]<<
 
-ENDDOCUMENT();       # This should be the last executable line in the problem.
+and find the particular solution satisfying the initial condition
+
+>>[``y(0) = \frac{\pi}{[$denom]}.``]<<
+
+[`y(x) = {}`] [_________]{"arcsin($a*x + $c)"}{40}
+[@ AnswerFormatHelp("formulas") @]*
+END_PGML
+
+######################################################
+
+BEGIN_PGML_SOLUTION
+Since [`\frac{dy}{dx}= \frac{[$a]}{\cos(y)}`]
+we have [`\frac{dx}{dy}= \frac{-\cos(y)}{[$minusa]}`].
+We can now integrate with respect to [:y:]:
+>>[``x = \int \frac{-\cos(y)}{[$minusa]} dy + C = \frac{-\sin(y)}{[$minusa]} + C.``]<<
+Solving for [:y:],
+>>[::y = arcsin([$a](x-C)).::]<<
+Now [: y(0)= pi/[$denom] :], so
+>>[::y(0) = arcsin([$a](0-C)) = pi/[$denom] .::]<<
+Solving for [:C:] we find
+>>[::C = (sin(pi/[$denom]))/[$minusa] .::]<<
+Plugging this back into the solution we get
+>>[::y =
+arcsin([$a](x-(sin(pi/[$denom]))/[$minusa]))
+=
+arcsin([$a]x+sin(pi/[$denom])).
+::]<<
+END_PGML_SOLUTION
+
+###########################################################
+
+COMMENT("Integrate to solve after inverse function theorem, simple separable.");
+
+ENDDOCUMENT();
 
