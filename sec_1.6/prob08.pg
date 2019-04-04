@@ -35,13 +35,14 @@ Context()->normalStrings;
 ANS($fp->cmp);
 
 Context()->texStrings;
-SOLUTION(EV3(<<'END_SOLUTION'));
+BEGIN_SOLUTION
 The two equilibria are \(x=0\) and \(=$A\).
 Let \( F(x) = \frac{1}{$A} x (1 - \frac{x}{$A}) \), and take \( x_0 = $init \).  Then, \( F(x_0) = \frac{1}{$A}($init)(1 - \frac{$init}{$A}) < 0 \),
 so \( x(t) \) is strictly decreasing and goes towards the equilibrium at $A.  Therefore,
 $PAR
 \( \displaystyle \lim_{t \to \infty} x(t) = $A \).
 END_SOLUTION
+Context()->normalStrings;
 
 ENDDOCUMENT();
 

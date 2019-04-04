@@ -71,7 +71,7 @@ Context()->normalStrings;
 ANS($alpha->cmp, $ans1->cmp, $ans2->cmp);
 
 Context()->texStrings;
-SOLUTION(EV3(<<'END_SOLUTION'));
+BEGIN_SOLUTION
 Rewrite the equation as
 \[ y' - \frac{$b}{$a x} y = \frac{1}{$a}x^{-$p-1} ,\]
 which is in standard linear form
@@ -99,6 +99,7 @@ The solution, therefore, is
 $PAR
 \( y = \frac{1}{-$apm} x^{-$p} + \left($y1 + \frac{1}{$apm}\right) x^{$m} = $ans2 \).
 END_SOLUTION
+Context()->normalStrings;
 
 ENDDOCUMENT();
 

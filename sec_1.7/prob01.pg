@@ -128,7 +128,7 @@ for ( my $i=1; $i<6; $i++ ) {
 $ouest = ( $k > 0 ) ? "under" : "over";
 
 Context()->texStrings;
-SOLUTION(EV3(<<'END_SOLUTION'));
+BEGIN_SOLUTION
 A rough sketch of the slope field and solution are shown in the graph
 below. 
 $BCENTER

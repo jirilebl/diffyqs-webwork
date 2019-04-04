@@ -37,8 +37,7 @@ $ans[2] = $c2;
 $ans[3] = $c3;
 
 
-TEXT(EV2(<<EOT));
-
+BEGIN_TEXT
 Suppose that \( f(x)\) and \( g(x) \) are given by the power series
 $BR
 \( f(x) = $a0 + $a1 x + $a2 x^2 + $a3 x^3 + \cdots \)
@@ -58,8 +57,7 @@ $BR$BR$BR
 \(c_1\) = \{ans_rule(20)\} $BR $BR
 \( c_2\) = \{ans_rule(20)\} $BR $BR
 \( c_3 \) = \{ans_rule(20)\} $BR $BR
-
-EOT
+END_TEXT
 
 #TEXT(
 

@@ -52,11 +52,12 @@ $ansStr4 =EV2(   " \( [ \frac{-1}{$b} ,\frac{1}{$b} ] \) " );
 @slice = &NchooseK(4,4);
 @shuffle = &shuffle(scalar(@slice));
 
-TEXT(EV2(<<EOT));
+BEGIN_TEXT
 
 Match each of the power series with its interval of convergence. $BR
 
-EOT
+END_TEXT
+
 TEXT(
 &match_questions_list(@questions[@slice]),
 &OL(@answers[@slice[@shuffle]])
