@@ -1,10 +1,10 @@
-## DESCRIPTION
-## Integrating factor
-## ENDDESCRIPTION
+# Integrating factor
 
 ## Institution(John Wiley & Sons)
 ## Author(Brian Burns)
 ## KEYWORDS('calculus', 'differential equations', 'linear equation', 'first order')
+
+##############################################################
 
 
 DOCUMENT();        # This should be the first executable line in the problem.
@@ -12,7 +12,7 @@ DOCUMENT();        # This should be the first executable line in the problem.
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
-  "contextFraction.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
@@ -43,8 +43,10 @@ BEGIN_TEXT
 Solve the initial value problem.
 \[\frac{dy}{dx}+$p y=$q,\;y(0)=$y\]
 $PAR
-\( \displaystyle y=\) \{ans_rule(40) \} 
+\( y={} \) \{ans_rule(40) \} 
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
+Context()->normalStrings;
 
 ###################################
 # Answers
@@ -53,6 +55,7 @@ END_TEXT
 ANS($ans->cmp);
 
 ###################################
+Context()->texStrings;
 BEGIN_SOLUTION
 Identify the \(p(x)\) and \(f(x)\) in \(\frac{dy}{dx} + p(x) y = f(x) \)
 $BR

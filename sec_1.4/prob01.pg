@@ -1,20 +1,20 @@
-##DESCRIPTION
-## Integrating factor
-##ENDDESCRIPTION
+# Integrating factor
 
 ## Institution(The College of Idaho)
 ## Author(LA Danielson)
 ## KEYWORDS('calculus', 'differential equations', 'linear equation', 'first order')
 
+####################################################
+
 DOCUMENT();
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
-  "Parser.pl",
-  "freemanMacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
+####################################################
 
 TEXT(beginproblem());
 ##axy'+by=x^{-p}
@@ -36,13 +36,14 @@ $apm = $a*$pm;
 #Context()->flags->set(reduceConstants=>0);
 $C = $y1+1/$apm;
 
-$context = Context();
+Context("Numeric");
 
-$context->variables->add(C=>'Real');
+Context()->variables->add(C=>'Real');
 
 $ans1 = Formula("(x^{-$p} / {-$apm}) + (C * x^($m))")->reduce();
 $ans2 = Formula("(x^{-$p} / {-$apm}) + ($C * x^($m))")->reduce();
 
+####################################################
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -52,23 +53,30 @@ $PAR
 $BR
 Identify the integrating factor, \(r(x)\).
 $BR
-\(r(x)\) = \{ans_rule()\}
+\(r(x)\) = \{ans_rule(40)\}
+\{ AnswerFormatHelp("formulas") \}
 $PAR
 $BR
 Find the general solution.
 $BR
-\( y(x) = \) \{ans_rule()\}
+\( y(x) = \) \{ans_rule(40)\}
+\{ AnswerFormatHelp("formulas") \}
 $BR
 $BITALIC Note: Use \( C \) for the arbitrary constant. $EITALIC
 $PAR
 $BR
 Solve the initial value problem \( y(1) = $y1 \).
 $BR
-\( y(x) = \) \{ans_rule()\}
+\( y(x) = \) \{ans_rule(40)\}
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
 
+####################################################
+
 ANS($alpha->cmp, $ans1->cmp, $ans2->cmp);
+
+####################################################
 
 Context()->texStrings;
 BEGIN_SOLUTION
@@ -100,6 +108,8 @@ $PAR
 \( y = \frac{1}{-$apm} x^{-$p} + \left($y1 + \frac{1}{$apm}\right) x^{$m} = $ans2 \).
 END_SOLUTION
 Context()->normalStrings;
+
+####################################################
 
 ENDDOCUMENT();
 

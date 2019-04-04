@@ -1,28 +1,31 @@
-## DESCRIPTION
-## Integrating factor
-## ENDDESCRIPTION
-#
+# Integrating factor
+
 ## Institution(W.H.Freeman)
 ## Author(Christopher Sira)
 ## KEYWORDS('calculus', 'differential equations', 'linear equation', 'first order')
 
+##############################################
+
 DOCUMENT();
 loadMacros(
   "PGstandard.pl",
-  "Parser.pl",
-  "freemanMacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
+##############################################
 
 TEXT(beginproblem());
 $a = Real(random(2,10,1));
 
-$context = Context();
+Context("Numeric");
 
-$context->variables->add(C=>'Real');
+Context()->variables->add(C=>'Real');
 
 $fp = Formula("($a x^x) + C * (x^x) * (e^(-x))")->reduce();
+
+##############################################
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -35,11 +38,13 @@ $BITALIC Note: Use \( C \) for the arbitrary constant. $EITALIC
 END_TEXT
 Context()->normalStrings;
 
+##############################################
 
 
 ANS($fp->cmp(limits => [0,4]));
 
 
+##############################################
 
 Context()->texStrings;
 BEGIN_SOLUTION

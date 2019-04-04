@@ -1,38 +1,44 @@
-## DESCRIPTION
-## First-Order Linear Differential Equations
-## ENDDESCRIPTION
+# First-order linear differential equation
 
 ## Institution(ASU)
 
-DOCUMENT() ;
+##############################################
+
+DOCUMENT();
+
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
   "PGcourse.pl"
 );
 
-TEXT(beginproblem()) ;
-$showPartialCorrectAnswers = 1 ;
+##############################################
 
-$k = random(3,9,1) ;
-$a = random(2,9,1) ;
-$b = random(1,9,1) ;
-$B = ($k - 1)*$b ;
-$m = random(2,10,1) ;
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
 
-BEGIN_TEXT
+$k = random(3,9,1);
+$a = random(2,9,1);
+$b = random(1,9,1);
+$B = ($k - 1)*$b;
+$m = random(2,10,1);
 
-Solve the initial value problem $BR
-\[  \frac{dy}{dx} -  y = $a e^x + $B e^{$k x} \] with \( y(0) = $m. \)
-$PAR
-\( y = \) \{ans_rule(70) \}. $BR
+##############################################
 
+BEGIN_PGML
+Solve the initial value problem
+>>[``
+\frac{dy}{dx} -  y = [$a] e^x + [$B] e^{[$k] x}
+``]<<
+with [: y(0) = [$m] :].
 
-END_TEXT
+[` y = {} `]
+[________]{"($m - $b )* exp(x) + $a * x * exp(x) + $b * exp($k * x)"}{70}
+[@ AnswerFormatHelp("formulas") @]*
+END_PGML
 
-$ans = "($m - $b )* exp(x) + $a * x * exp(x) + $b * exp($k * x)" ;
-
-
-ANS(fun_cmp($ans, vars=>"x")) ;
+##############################################
 
 ENDDOCUMENT() ;       

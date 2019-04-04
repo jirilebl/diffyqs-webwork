@@ -1,46 +1,56 @@
-## DESCRIPTION
-## First-Order Linear Differential Equations
-## ENDDESCRIPTION
+# First-order linear differential equation
 
 ## Institution(ASU)
+
+##############################################
 
 DOCUMENT() ; 
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
   "PGcourse.pl"
 );
+
+##############################################
 
 TEXT(beginproblem()) ;
 $showPartialCorrectAnswers = 1 ;
 
 do { $a= non_zero_random(-5,5,1); } until (($a != 1) and ($a != -1));
 
-BEGIN_TEXT
-Find the general solution to the differential equation
-\[ x^2 + $a x y + x \frac{dy}{dx}= 0 \]
-$BR
-$BR
-Find the integrating factor, \( r(x) = \) \{ans_rule(20) \}.
- $BR
- $BR
-Find \(y(x) = \) \{ans_rule(40) \}. 
-$BR
-Use $BITALIC C $EITALIC as the unknown constant.
-END_TEXT
+Context("Numeric");
+Context()->variables->are(x=>"Real",C=>"Real");
 
 $b = -1/$a;
 $ma = -$a;
 $aa = abs($a);
 $sgnma = $a>0 ? '-' : '+';
-$ans = "C e^($ma x) $sgnma x/$aa + 1/$aa^2 " ;
 
+##############################################
 
-ANS(fun_cmp("e^($a x)" )) ;
-ANS(fun_cmp($ans, vars=>["x","C"] )) ;   
+BEGIN_PGML
+Find the general solution to the differential equation
+>>[``
+x^2 + [$a] x y + x \frac{dy}{dx}= 0
+``]<<
 
-ENDDOCUMENT() ;        # This should be the last executable line in the problem.
+Find the integrating factor, [` r(x) = {}`]
+[__________]{"e^($a x)"}{25}
+[@ AnswerFormatHelp("formulas") @]*
+
+Find [`y(x) = {}`]
+[__________]{"C e^($ma x) $sgnma x/$aa + 1/$aa^2 "}{45}
+[@ AnswerFormatHelp("formulas") @]*
+
+_*Note:* Use [:C:] as the unknown constant._
+END_PGML
+
+##############################################
+
+ENDDOCUMENT();
 
 
 

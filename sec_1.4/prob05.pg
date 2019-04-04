@@ -1,42 +1,49 @@
-## DESCRIPTION
-## First-Order Linear Differential Equations
-## ENDDESCRIPTION
+# First-Order linear differential equation
 
 ## Institution(Rochester)
 ## KEYWORDS('differential equations', 'separable','differential equation' 'linear', 'Differential equations', 'Linear 1st order')
 
-DOCUMENT() ;
+##############################################
+
+DOCUMENT();
+
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
   "PGcourse.pl"
 );
 
-TEXT(beginproblem()) ;
-$showPartialCorrectAnswers = 1 ;
+##############################################
 
-$a = random(2,9,1) ;
-$b = random(2,9,1) ;
-$A = 5*$a  ;
-$B = 5*$b  ;
-$m = random(1,9,1) ;
-$n = $m - (2*$b - $a )  ;
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
 
-BEGIN_TEXT
+$a = random(2,9,1);
+$b = random(2,9,1);
+$A = 5*$a;
+$B = 5*$b;
+$m = random(1,9,1);
+$n = $m - (2*$b - $a );
 
-Solve the initial value problem $BR
-\[  \frac{dy}{dx} + 2y = $A \sin(x) + $B \cos(x) \]
- with \( y(0) = $m. \)
- $PAR
-\( y = \) \{ans_rule(70) \}. $BR
-$BITALIC Reminder: To find the anti-derivative of \( e^u\sin(u) \),
-the trick is to do integration by parts twice. $EITALIC
-END_TEXT
+Context("Numeric");
 
+##############################################
 
-$ans = FEQ( "(2*$a + $b )* sin(x) + (2*$b - $a )* cos(x) + $n * exp(-2* x)" ) ;
+BEGIN_PGML
+Solve the initial value problem
+>>[``  \frac{dy}{dx} + 2y = [$A] \sin(x) + [$B] \cos(x) ``]<<
+with [: y(0) = [$m] :].
 
+[` y = {} `]
+[________]{"(2*$a + $b )* sin(x) + (2*$b - $a )* cos(x) + $n * exp(-2* x)"}{70}
+[@ AnswerFormatHelp("formulas") @]*
 
-ANS(fun_cmp($ans, var=>"x")) ;
+_Reminder: To find the anti-derivative of [` e^u\sin(u) `],
+the trick is to do integration by parts twice._
+END_PGML
 
-ENDDOCUMENT() ;    
+##############################################
+
+ENDDOCUMENT();

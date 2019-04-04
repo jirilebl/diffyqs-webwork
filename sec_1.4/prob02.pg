@@ -1,6 +1,4 @@
-##DESCRIPTION
-## Solve by integrating factor and separation of variables 
-##ENDDESCRIPTION
+# Solve by integrating factor and separation of variables 
 
 
 ## Institution(Alfred University)
@@ -13,8 +11,9 @@ DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "parserFormulaUpToConstant.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "parserFormulaUpToConstant.pl",
   "PGcourse.pl"
 );
 
@@ -38,32 +37,39 @@ $integratingfactor = Formula("e^($a*x^2/2)");
 
 $integratingfactornew = Formula("e^(-$a*x^2/2)");
 
-
-
 $newleft = Formula("e^($a*x^2/2)*y");
 $newright = Formula("x^$n");
 $integrateleft = $newleft;
 $integrateright = FormulaUpToConstant("x^($n+1)/($n+1)");
 $solution = Formula("(x^($n+1)/($n+1)+k)e^(-$a*x^2/2)");
+
+##############################################################
+
 Context()->texStrings;
 BEGIN_TEXT
 For the linear differential equation \(y^\prime+$a xy = x^$n$integratingfactornew \) the integrating factor is:
 $BR
 \( r(x) = {} \) \{$integratingfactor->ans_rule(20)\}
+\{ AnswerFormatHelp("formulas") \}
 $PAR
 After multiplying both sides by the integrating factor and unapplying the product rule we get the new differential equation:
 $BR
 \(\frac{dy}{dx}\big[\) \{$newleft->ans_rule(20)\} \(\big]\) = \{$newright->ans_rule(20)\}
+\{ AnswerFormatHelp("formulas") \}
 $PAR 
 Integrating both sides we get the algebraic equation
 $BR
 \{$integrateleft->ans_rule(30)\}=\{$integrateright->ans_rule(30)\}
+\{ AnswerFormatHelp("formulas") \}
 $PAR
-Solving for y, the solution to the differential equation is
+Solving for \(y\), the solution to the differential equation is
 $BR
-\( y = {}\) \{$solution->ans_rule(20)\} (using k as the constant)
+\( y = {}\) \{$solution->ans_rule(20)\} (using \(k\) as the constant)
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
+
+##############################################################
 
 ANS($integratingfactor->cmp());
 ANS($newleft->cmp());
