@@ -40,7 +40,7 @@ $ans=Compute("$ansD");
 # Main text
 Context()->texStrings;
 BEGIN_TEXT
-Solve the initial value problem.
+Solve the initial value problem
 \[\frac{dy}{dx}+$p y=$q,\;y(0)=$y\]
 $PAR
 \( y={} \) \{ans_rule(40) \} 

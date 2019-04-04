@@ -40,7 +40,7 @@ with [: y(0) = [$m] :].
 [________]{"(2*$a + $b )* sin(x) + (2*$b - $a )* cos(x) + $n * exp(-2* x)"}{70}
 [@ AnswerFormatHelp("formulas") @]*
 
-_Reminder: To find the anti-derivative of [` e^u\sin(u) `],
+_*Reminder:* To find the anti-derivative of [` e^u\sin(u) `],
 the trick is to do integration by parts twice._
 END_PGML
 

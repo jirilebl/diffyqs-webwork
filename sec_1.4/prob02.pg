@@ -1,6 +1,5 @@
 # Solve by integrating factor and separation of variables 
 
-
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
 ## KEYWORDS('linear' 'differential' 'equation')
@@ -23,7 +22,8 @@ TEXT(beginproblem());
 # Show which answers are correct and which ones are incorrect
 $showPartialCorrectAnswers = 1;
 
-Context()->variables->are("x"=>"Real","y"=>"Real",k=>"Real");
+Context()->variables->are("x"=>"Real","y"=>"Real",C=>"Real");
+
 ##############################################################
 #
 #  Setup
@@ -41,31 +41,33 @@ $newleft = Formula("e^($a*x^2/2)*y");
 $newright = Formula("x^$n");
 $integrateleft = $newleft;
 $integrateright = FormulaUpToConstant("x^($n+1)/($n+1)");
-$solution = Formula("(x^($n+1)/($n+1)+k)e^(-$a*x^2/2)");
+$solution = Formula("(x^($n+1)/($n+1)+C)e^(-$a*x^2/2)");
 
 ##############################################################
 
 Context()->texStrings;
 BEGIN_TEXT
 For the linear differential equation \(y^\prime+$a xy = x^$n$integratingfactornew \) the integrating factor is:
-$BR
+$PAR
 \( r(x) = {} \) \{$integratingfactor->ans_rule(20)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 After multiplying both sides by the integrating factor and unapplying the product rule we get the new differential equation:
-$BR
-\(\frac{dy}{dx}\big[\) \{$newleft->ans_rule(20)\} \(\big]\) = \{$newright->ans_rule(20)\}
+$PAR
+\(\dfrac{dy}{dx}\Bigl[\) \{$newleft->ans_rule(27)\} \(\Bigr] = {}\) \{$newright->ans_rule(27)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR 
 Integrating both sides we get the algebraic equation
-$BR
-\{$integrateleft->ans_rule(30)\}=\{$integrateright->ans_rule(30)\}
+$PAR
+\{$integrateleft->ans_rule(30)\}\({}={}\)\{$integrateright->ans_rule(30)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 Solving for \(y\), the solution to the differential equation is
-$BR
-\( y = {}\) \{$solution->ans_rule(20)\} (using \(k\) as the constant)
+$PAR
+\( y = {}\) \{$solution->ans_rule(50)\}
 \{ AnswerFormatHelp("formulas") \}
+$BR
+$BITALIC $BBOLD Note:$EBOLD Use \(C\) as the constant. $EITALIC
 END_TEXT
 Context()->normalStrings;
 

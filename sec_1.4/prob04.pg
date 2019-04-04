@@ -32,9 +32,9 @@ BEGIN_TEXT
 Find the general solution of the first-order linear differential equation 
 \[ y' - (\ln x)y = $a x^x. \]
 $PAR
-\( y(x) = \) \{ans_rule()\}
+\( y(x) = \) \{ans_rule(40)\}
 $BR
-$BITALIC Note: Use \( C \) for the arbitrary constant. $EITALIC
+$BITALIC $BBOLD Note: $EBOLD Use \( C \) for the arbitrary constant. $EITALIC
 END_TEXT
 Context()->normalStrings;
 
