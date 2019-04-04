@@ -53,6 +53,7 @@ of the same material[1].  How was old the Shroud of Turin in 1988, according
 to these data?
 $BR
 Age = \{ ans_rule(20) \} years
+$SPACE $SPACE
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
@@ -66,17 +67,12 @@ Context()->normalStrings;
 $kval = Compute("ln(2)/$h");
 ANS($kval->cmp() );
 
-$context = Context();
 $tval = Compute("-$h*ln(0.91)/ln(2)");
 ANS(num_cmp( $tval, tol=>0.5, tolType=>"absolute" ) );
 
 ##################################################
 
-Context($context);
-
 $tint = round($tval);
-
-##################################################
 
 Context()->texStrings;
 BEGIN_SOLUTION

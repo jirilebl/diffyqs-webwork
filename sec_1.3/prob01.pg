@@ -80,7 +80,8 @@ $PAR
 Find the particular solution satisfying the initial condition 
 \[ y($x0) = $y0. \]
 $BR
-\( y(x) = \) \{ $soln->ans_rule(40) \}. 
+\( y(x) = \) \{ $soln->ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
 
