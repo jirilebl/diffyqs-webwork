@@ -16,7 +16,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGunion.pl",
   "answerHints.pl",
   "parserImplicitPlane.pl",
   "parserAssignment.pl",
@@ -59,19 +58,20 @@ BEGIN_TEXT
 Solve the differential equation
 \( \displaystyle \frac{dy}{dx} = \frac{x}{$aa y} \).
 
-\{ BeginList('UL') \}
-
-$ITEM Find an implicit solution and put your answer 
-in the following form (it should start with \(y^2\)):
+$PAR
 $BR
-\{ ans_rule(20) \} = constant.
+Find an implicit solution and put your answer 
+in the following form (it should start with \(y^2\)):
+$PAR
+\{ ans_rule(30) \} = constant.
 \{ AnswerFormatHelp("formulas") \}
 
-$ITEMSEP
-$ITEM Find the equation of the solution through
-the point \( (x,y) = ($sa,1) \).
+$PAR
 $BR
-\{ ans_rule(20) \}
+Find the equation of the solution through
+the point \( (x,y) = ($sa,1) \).
+$PAR
+\{ ans_rule(30) \}
 \{ AnswerFormatHelp("equations") \}
 END_TEXT
 Context()->normalStrings;
@@ -115,16 +115,15 @@ $answerc = Compute("y = -sqrt( (x/$a)^2 + $bb )");
 
 Context()->texStrings;
 BEGIN_TEXT
-$ITEMSEP
-$ITEM Find the equation of the solution through
+$PAR
+$BR
+Find the equation of the solution through
 the point \( (x,y) = (0,$b) \).  Your answer should 
 be of the form \( y = f(x) \).
-$BR
-\{ ans_rule(20) \}
+$PAR
+\{ ans_rule(30) \}
 \{ AnswerFormatHelp("equations") \}
 
-
-\{ EndList('UL') \}
 END_TEXT
 Context()->normalStrings;
 

@@ -1,16 +1,20 @@
-##DESCRIPTION
-##  Separable Differential Equation
-##ENDDESCRIPTION
+# Separable differential equation
 
 ## KEYWORDS('Differential Equation', 'Separable')
 
-DOCUMENT();        # This should be the first executable line in the problem.
+############################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
   "PGcourse.pl"
 );
+
+############################################################
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
@@ -18,15 +22,19 @@ $showPartialCorrectAnswers = 1;
 $a = random(2,10);
 $b = random(2,11);
 
-BEGIN_TEXT
-Find a function  \(y\)  of \(x\) such that  
-\[ $a yy' = x \ \mbox{ and } \ y($a)= $b. \]
-$BR
-\(y =\) \{ ans_rule(45) \}
-END_TEXT
+Context("Numeric");
+Context()->variables->are(x=>['Real',limits => [$a, $a+2]]);
 
+############################################################
 
+BEGIN_PGML
+Find a function [:y:] of [:x:] such that  
+>>[`` [$a] yy' = x \ \mbox{ and } \ y([$a])= [$b]. ``]<<
 
-ANS(fun_cmp("sqrt(x^2/$a + $b^2 - $a )", limits=>[$a, $a+2]));
+[`y ={}`] [__________]{"sqrt(x^2/$a + $b^2 - $a )"}{40}
+[@ AnswerFormatHelp("formulas") @]*
+END_PGML
 
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+############################################################
+
+ENDDOCUMENT();

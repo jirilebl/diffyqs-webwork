@@ -1,41 +1,45 @@
-## DESCRIPTION
-## ENDDESCRIPTION
+# Separable equation
 
 ## Institution(Dartmouth)
 ## KEYWORDS('separable' 'differential equation')
 
+########################################
+
 DOCUMENT();
+
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
-  "PGgraphmacros.pl",
-  "Dartmouthmacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
   "PGcourse.pl"
 );
- 
 
-## Do NOT show partial correct answers
-$showPartialCorrectAnswers = 0;
+########################################
+
+TEXT(beginproblem());
 
 $k = random(2,10,2);
 $coeff = random(2,20,1);
 
+Context("Numeric");
+Context()->variables->are(x=>['Real',limits => [1, 4]]);
 
-## Ok, we are ready to begin the problem...
-##
-TEXT(beginproblem());
+########################################
 
-
-BEGIN_TEXT
+BEGIN_PGML
 Find the solution to the differential equation 
-\(\displaystyle\frac{dy}{dx} = \frac{$coeff x y}{(\ln y)^{$k}} \) which passes through the point \((x,y) = (0,e)\).
-$PAR
-Express your answer as
-$BR
-\( \ln y = \) \{ans_rule(60)\}
-END_TEXT
+>>[``
+\frac{dy}{dx} = \frac{[$coeff] x y}{(\ln y)^{[$k]}} ,
+``]<<
+which passes through the point [:(x,y) = (0,e):].
 
-ANS(fun_cmp("($coeff*($k+1)*(x^2)/2 + 1)^(1/($k+1))",  limits => [[1,4]])    );
+Express your answer as
+
+[` \ln y = {} `]
+[__________]{"($coeff*($k+1)*(x^2)/2 + 1)^(1/($k+1))"}{40}
+[@ AnswerFormatHelp("formulas") @]*
+END_PGML
 
 ENDDOCUMENT();
 

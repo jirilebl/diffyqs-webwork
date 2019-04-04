@@ -1,16 +1,20 @@
-##DESCRIPTION
-##  Separable Differential Equation
-##ENDDESCRIPTION
+# Separable Differential Equation
 
 ## KEYWORDS('differential equation', 'separable')
 
-DOCUMENT();        # This should be the first executable line in the problem.
+############################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
   "PGcourse.pl"
 );
+
+############################################################
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
@@ -19,15 +23,23 @@ $a = random(2,10,1);
 $b = random(2,6,1);
 $d = random(2,17,1);
 
-BEGIN_TEXT
-Solve the separable differential equation for \(u\)
-  \[  \frac{du}{dt} = e^{$b u + $a t}. \] 
-Use the following initial condition: \( u(0) = - $d \). $BR
-\(u =\) \{ ans_rule(45) \}
-END_TEXT
-
-$ans = "-ln(e^($d*$b) + ($b/$a) - ($b/$a) e^($a t))/$b";
-
+Context("Numeric");
 $llim = (log($a/$b*exp($b*$d)+1))/$a - 1.1;
-ANS(fun_cmp($ans, var => "t", limits => [[$llim, $llim+1]]));
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+Context()->variables->are(t=>['Real',limits => [$llim, $llim+1]]);
+
+############################################################
+
+BEGIN_PGML
+Solve the separable differential equation for [`u`]
+>>[``
+\frac{du}{dt} = e^{[$b] u + [$a] t}.
+``]<<
+Use the following initial condition: \( u(0) = - [$d] \).
+
+[`u ={}`] [__________]{"-ln(e^($d*$b) + ($b/$a) - ($b/$a) e^($a t))/$b"}{40}
+[@ AnswerFormatHelp("formulas") @]*
+END_PGML
+
+############################################################
+
+ENDDOCUMENT();

@@ -1,15 +1,17 @@
-##DESCRIPTION
-##ENDDESCRIPTION
+# Solving separable equation
 
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
 ## KEYWORDS('differential', 'equation', 'separable', 'solution', 'initial', 'value')
+
+############################################################################
 
 DOCUMENT();        # This should be the first executable line in the problem.
 
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserFormulaUpToConstant.pl",
   "answerHints.pl",
   "PGcourse.pl"
@@ -42,6 +44,8 @@ $gensolnpos = Formula("sqrt(k*e^(-1/x)+$a)");
 $gensolnneg = Formula("-sqrt(k*e^(-1/x)+$a)");
 $soln =Formula($xvariable,"-sqrt($C*e^(-1/x+1)+$a)");
 
+############################################################################
+
 Context()->texStrings;
 BEGIN_TEXT
 To solve the separable differential equation 
@@ -49,18 +53,23 @@ To solve the separable differential equation
 we must find two separate integrals:
 $PAR
 \(\int\) \{$inty->ans_rule\} \(dy = \) \{$solny->ans_rule\}
+\{ AnswerFormatHelp("formulas") \}
 $BR
 and
 $BR
 \(\int\) \{$intx->ans_rule()\} \(dx = \)\{$solnx->ans_rule\}
+\{ AnswerFormatHelp("formulas") \}
 $PAR
 The first integral we integrate by substitution:
 $BR
 \(u = \) \{$u->ans_rule\} \(du = \) \{$du->ans_rule\}
+\{ AnswerFormatHelp("formulas") \}
 $PAR
 Solving for y we get one positive solution \(y = \) \{$gensolnpos->ans_rule\}
+\{ AnswerFormatHelp("formulas") \}
 $BR
 and one negative solution \(y = \) \{$gensolnneg->ans_rule\}
+\{ AnswerFormatHelp("formulas") \}
 $BR
 $BBOLD Note: $EBOLD $BITALIC You must simplify all arbitrary constants down to one constant \(k\). $EITALIC
 $PAR
@@ -70,6 +79,8 @@ $BR
 \( y(x) = \) \{ $soln->ans_rule(40) \}. 
 END_TEXT
 Context()->normalStrings;
+
+############################################################################
 
 ANS($inty->cmp());
 ANS($solny->cmp()->withPostFilter(AnswerHints(
@@ -85,20 +96,7 @@ ANS($gensolnpos->cmp()->withPostFilter(AnswerHints(
 ANS($gensolnneg->cmp()->withPostFilter(AnswerHints(
                 Formula("-sqrt(e^k*e^(-1/x)+$a)") => "When you remove the absolute values from the y^2-$a you need to make a constant that can be both positive and negative (and zero) - replace the e^k with just k")));
 ANS($soln->cmp());
-## an overengineered attempt to see if students where looking at the wrong solution
-#ANS($soln->cmp()->withPostFilter(AnswerHints(sub {
-#                my ( $correct, $student, $self ) = @_;
-#                my $context = Context()->copy;
-#                $context->flags->set(no_parameters=>0);
-#                $context->variables->add('C0'=>'Parameter');
-#                $context->variables->set(x=>{limits=>[1,5]},
-#                                         'C0'=>{limits=>[0.01,10^8]});
-#                my $c0 = Formula($context,'C0');
-#                $student = Formula($context,$student);
-#                $correct = Formula($context,"sqrt($c0*e^(-1/x)+$a)");
-#                if ($correct == $student){return 1;}
-#                else {return 0};}
-#            => "The initial condition is negative, you should use the negative #root solution."
-#)));
 
-ENDDOCUMENT();       # This should be the last executable line in the problem.
+############################################################################
+
+ENDDOCUMENT();

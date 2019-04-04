@@ -1,50 +1,56 @@
-##DESCRIPTION
-##ENDDESCRIPTION
+# Separable equation
 
 ## Institution(W.H.Freeman)
 ## Author(Christopher Sira)
 ## KEYWORDS('calculus', 'differential equations', 'separation of variables')
 
+#########################################################
+
 DOCUMENT();
+
 loadMacros(
   "PGstandard.pl",
-  "Parser.pl",
-  "freemanMacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
+
+#########################################################
 
 TEXT(beginproblem());
 
 $a = Real(random(2,6,1));
 $b = Real(random(2,6,1));
-$context = Context();
+Context("Numeric");
 
 $a_sqr = $a * $a;
 $b_sqr = $b * $b;
 
-$context->variables->add(t=>'Real');
-$context->variables->add(C=>'Real');
-
-$fp_gen = Formula("$b * tan( ($b / $a) * arctan( t / $a ) + C )")->reduce();
-##modified with initial value, until macro written to evaluate formulas with general C which may not be linear
+Context()->variables->are(t=>'Real', C=>'Real');
 
 $b4 = 4*$b; #for solution
 $C = pi/4;
 $fp = Formula("$b * tan( ($b / $a) * arctan( t / $a ) + $C )")->reduce();
 
+#########################################################
 
 Context()->texStrings;
 BEGIN_TEXT
 Solve \( ( t^2 + $a_sqr )\,\frac{dx}{dt} = ( x^2 + $b_sqr ) \), using separation of variables, given the inital condition \( x(0) = $b  \).
 $PAR
-\( x = \) \{ans_rule()\}
+\( x = {} \) \{ans_rule()\}
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
 
+#########################################################
+
 ANS($fp->cmp);
 
+#########################################################
+
 Context()->texStrings;
-SOLUTION(EV3(<<'END_SOLUTION'));
+BEGIN_SOLUTION
 Separate the equation into one side containing \(x\) and \(dx\), and one containing \(t\) and \(dt\).  Then integrate both sides separately.
 $PAR
 \( ( t^2 + $a_sqr )\,\frac{dx}{dt} = ( x^2 + $b_sqr ) \)
@@ -67,7 +73,7 @@ $PAR
 \(\frac{x}{$b} = \tan\left(\frac{$b}{$a}\arctan{(\frac{t}{$a})} + \frac{\pi}{4} \right)\).  Thus, 
 $PAR
 \( x = $b \tan\left(\frac{$b}{$a}\arctan{(\frac{t}{$a})} + \frac{\pi}{4} \right)\).
-
 END_SOLUTION
+Context()->normalStrings;
 
 ENDDOCUMENT();

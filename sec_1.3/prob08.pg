@@ -1,11 +1,8 @@
-## DESCRIPTION
-## First order ODEs: separable differential equations
-## ENDDESCRIPTION
+# Separable differential equation
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
 ## KEYWORDS('differential equations','first order','separable differential equations')
-
 
 ##############################
 #  Initialization
@@ -47,8 +44,7 @@ Find the equation of the solution to
 \( \displaystyle \frac{dy}{dx} = x^{$n} y \)
 through the point \( (x,y) = (1,$a) \) in the form
 \( y = ? \).
-$BR
-$BR
+$PAR
 \{ ans_rule(30) \}
 \{ AnswerFormatHelp("equations") \}
 END_TEXT
