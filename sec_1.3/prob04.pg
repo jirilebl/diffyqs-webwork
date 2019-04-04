@@ -37,7 +37,7 @@ Solve
 using separation of variables 
 given the inital condition \( y(0) = $c  \).
 Assume the function is defined
-for \(-\pi/2<x<\pi/2\).
+for \(-\frac{\pi}{2}<x<\frac{\pi}{2}\).
 
 $PAR
 \( y = {} \) \{ans_rule()\} 

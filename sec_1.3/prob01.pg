@@ -52,25 +52,29 @@ To solve the separable differential equation
 \[ \frac{x^2}{y^2-$a}\frac{dy}{dx} = \frac{1}{2y} ,\]
 we must find two separate integrals:
 $PAR
-\(\int\) \{$inty->ans_rule\} \(dy = \) \{$solny->ans_rule\}
+\(\displaystyle\int\) \{$inty->ans_rule(30)\} \(dy = \) \{$solny->ans_rule(30)\}
 \{ AnswerFormatHelp("formulas") \}
 $BR
 and
 $BR
-\(\int\) \{$intx->ans_rule()\} \(dx = \)\{$solnx->ans_rule\}
+\(\displaystyle\int\) \{$intx->ans_rule(30)\} \(dx = \)\{$solnx->ans_rule(30)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 The first integral we integrate by substitution:
 $BR
-\(u = \) \{$u->ans_rule\} \(du = \) \{$du->ans_rule\}
+\(u = {}\) \{$u->ans_rule(25)\} \(du = {}\) \{$du->ans_rule(25)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-Solving for y we get one positive solution \(y = \) \{$gensolnpos->ans_rule\}
-\{ AnswerFormatHelp("formulas") \}
+Solving for y we get one positive solution
 $BR
-and one negative solution \(y = \) \{$gensolnneg->ans_rule\}
+\(y = {}\) \{$gensolnpos->ans_rule(40)\}
 \{ AnswerFormatHelp("formulas") \}
+$PAR
+And one negative solution
 $BR
+\(y = {}\) \{$gensolnneg->ans_rule(40)\}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
 $BBOLD Note: $EBOLD $BITALIC You must simplify all arbitrary constants down to one constant \(k\). $EITALIC
 $PAR
 Find the particular solution satisfying the initial condition 

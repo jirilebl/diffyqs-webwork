@@ -34,7 +34,7 @@ Solve the separable differential equation for [`u`]
 >>[``
 \frac{du}{dt} = e^{[$b] u + [$a] t}.
 ``]<<
-Use the following initial condition: \( u(0) = - [$d] \).
+Use the following initial condition: [: u(0) = - [$d] :].
 
 [`u ={}`] [__________]{"-ln(e^($d*$b) + ($b/$a) - ($b/$a) e^($a t))/$b"}{40}
 [@ AnswerFormatHelp("formulas") @]*

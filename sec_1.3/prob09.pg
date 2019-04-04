@@ -1,6 +1,4 @@
-## DESCRIPTION
-## First order ODEs: separable differential equations
-## ENDDESCRIPTION
+# Separable differential equation
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -63,7 +61,8 @@ $BR
 Find an implicit solution and put your answer 
 in the following form (it should start with \(y^2\)):
 $PAR
-\{ ans_rule(30) \} = constant.
+\{ ans_rule(40) \} = constant.
+$SPACE $SPACE
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
@@ -71,7 +70,7 @@ $BR
 Find the equation of the solution through
 the point \( (x,y) = ($sa,1) \).
 $PAR
-\{ ans_rule(30) \}
+\{ ans_rule(40) \}
 \{ AnswerFormatHelp("equations") \}
 END_TEXT
 Context()->normalStrings;
@@ -121,7 +120,7 @@ Find the equation of the solution through
 the point \( (x,y) = (0,$b) \).  Your answer should 
 be of the form \( y = f(x) \).
 $PAR
-\{ ans_rule(30) \}
+\{ ans_rule(40) \}
 \{ AnswerFormatHelp("equations") \}
 
 END_TEXT
