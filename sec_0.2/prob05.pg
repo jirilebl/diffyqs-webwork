@@ -59,6 +59,7 @@ TEXT(
 ################################################################################
 
 $showPartialCorrectAnswers = 0;
+install_problem_grader(~~&std_problem_grader);
 
 ANS(str_cmp([ @ALPHABET[&invert(@shuffle)] ] ) );
      ##the correct answers are obtained by applying

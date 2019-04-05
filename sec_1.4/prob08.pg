@@ -29,7 +29,7 @@ Context()->variables->are(x=>["Real",limits=>[1,1.1]],
 
 BEGIN_PGML
 Find the general solution to the differential equation
->>[`` y' + [$alpha] x^{\{[$alpha] -1\}} y = x^{[$alpha]}``]<<
+>>[`` y' + [$alpha] x^{[$alpha-1]} y = x^{[$alpha]}``]<<
 
 Use the variable [` I = \int e^{x^{[$alpha]}}\, dx `] where it occurs in your answer.
 

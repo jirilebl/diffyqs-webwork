@@ -1,4 +1,4 @@
-## Veryfing a solution to a nonlinear equation
+# Veryfing a solution to a nonlinear equation
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -24,7 +24,7 @@ TEXT(beginproblem());
 #  Setup
 
 Context("Numeric")->variables->add(
-t=>"Real"
+  t=>"Real"
 );
 
 Context()->flags->set(
@@ -63,9 +63,8 @@ Enter your answers below in terms of
 the independent variable \( t \) in the order
 in which the terms were given.  Be sure you 
 can justify your answer.
-$BR
-$BR
-\{ ans_rule(20); \} = \{ ans_rule(20); \}
+$PAR
+\{ ans_rule(20); \} \({}={}\) \{ ans_rule(20); \}
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;

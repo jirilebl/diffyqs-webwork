@@ -68,7 +68,7 @@ END_TEXT
 
 #####################################################
 
-$showPartialCorrectAnswers = 1;
+$showPartialCorrectAnswers = 0;
 
 ANS(checkbox_cmp($cmc->correct_ans));
 

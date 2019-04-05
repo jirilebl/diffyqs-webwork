@@ -1,10 +1,10 @@
-## Finding constants given initial conditions
+# Finding constants given initial conditions
 
 ## KEYWORDS('initial value', 'differential equation', 'initial value problem')
 
-################################################################################
+##########################################################################
 
-DOCUMENT();        # This should be the first executable line in the problem.
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
@@ -13,7 +13,7 @@ loadMacros(
   "PGcourse.pl"
 );
 
-################################################################################
+##########################################################################
 
 TEXT(beginproblem());
 
@@ -31,9 +31,9 @@ do {
   #ensure the constants aren't trivial.
 } while(($m == 0) or ($n == 0) or ($m == 1) or ($n == 1));
 
-$ans = Formula("$m *(e^($k *t)) + $n *(e^($l *t))");
+$ans = Compute("$m *(e^($k *t)) + $n *(e^($l *t))");
 
-################################################################################
+##########################################################################
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -52,12 +52,12 @@ $PAR
 END_TEXT
 Context()->normalStrings;
 
-################################################################################
+##########################################################################
 
 ANS($ans->cmp());
 
-################################################################################
+##########################################################################
 
 COMMENT("Finding constants given initial conditions.");
 
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+ENDDOCUMENT();

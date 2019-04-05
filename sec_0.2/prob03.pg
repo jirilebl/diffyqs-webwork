@@ -14,7 +14,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "unionLists.pl",
   "parserAssignment.pl",
   "PGcourse.pl"
 );
@@ -26,7 +25,7 @@ TEXT(beginproblem());
 #  Setup
 
 Context("Numeric")->variables->add(
-y=>"Real", k=>"Real", 'C1'=>"Real", 'C2'=>"Real"
+  y=>"Real", k=>"Real", 'C1'=>"Real", 'C2'=>"Real"
 );
 parser::Assignment->Allow;
 
@@ -61,35 +60,31 @@ constant, and \( C_1 \) and \( C_2 \) are arbitrary
 constants.  Find the following.  Enter \( C_1 \) 
 as ${BTT}C1${ETT} and \( C_2 \) as ${BTT}C2${ETT}.
 
-\{ BeginList("UL") \}
-
-$ITEM \( \displaystyle \frac{dy}{dx} = \) 
-\{ ans_rule(30); \}
+$PAR
+\( \displaystyle \frac{dy}{dx} = \) 
+\{ ans_rule(45); \}
 \{ AnswerFormatHelp("formulas"); \}
 
-$ITEMSEP
-$ITEM  \( \displaystyle \frac{d^2y}{dx^2} = \)
-\{ ans_rule(30); \}
-\{ AnswerFormatHelp("formulas"); \}
-
-$ITEMSEP
-$ITEM  Rewrite your answer to the previous part 
-in terms of \( y \).
-$BR
+$PAR
 \( \displaystyle \frac{d^2y}{dx^2} = \)
-\{ ans_rule(30); \}
+\{ ans_rule(45); \}
 \{ AnswerFormatHelp("formulas"); \}
 
-$ITEMSEP
-$ITEM Find the general solution to 
+$PAR
+Rewrite your answer to the previous part 
+in terms of \( y \).
+$PAR
+\( \displaystyle \frac{d^2y}{dx^2} = \)
+\{ ans_rule(45); \}
+\{ AnswerFormatHelp("formulas"); \}
+
+$PAR
+Find the general solution to 
 \( \displaystyle \frac{d^2y}{dx^2} = $kk y \).
 Enter your answer as an equation \( y = \ldots \).
-$BR
-$BR
-\{ ans_rule(30); \}
+$PAR
+\{ ans_rule(45); \}
 \{ AnswerFormatHelp("equations"); \}
-
-\{ EndList("UL") \}
 END_TEXT
 Context()->normalStrings;
 

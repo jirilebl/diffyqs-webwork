@@ -40,7 +40,7 @@ $ans2 = Formula("(ln(x)+$c2)/x");
 
 Context()->texStrings;
 BEGIN_TEXT
-Verify that every member of the family of functions \(\displaystyle y = \frac{\ln x + C}{x}\) is a solution of the differential equation \(x^2 y' + x y =1.\)  Answer the following questions. 
+Verify that every member of the family of functions \(\displaystyle y = \frac{\ln x + C}{x}\) is a solution of the differential equation \(x^2 y' + x y =1.\)  Answer the following questions.
 $PAR
 Find a solution of the differential equation that satisfies the initial condition \( y($a)= $b.\) $BR
 \(y(x) = {} \) \{ans_rule(30); \}

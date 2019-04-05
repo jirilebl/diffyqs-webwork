@@ -33,15 +33,15 @@ Context()->variables->are("x"=>"Real","y"=>"Real",C=>"Real");
 $a = Compute(random(2,9));
 $n = Compute(random(2,8));
 
-$integratingfactor = Formula("e^($a*x^2/2)");
+$integratingfactor = Compute("e^($a*x^2/2)");
 
-$integratingfactornew = Formula("e^(-$a*x^2/2)");
+$integratingfactornew = Compute("e^(-$a*x^2/2)");
 
-$newleft = Formula("e^($a*x^2/2)*y");
-$newright = Formula("x^$n");
+$newleft = Compute("e^($a*x^2/2)*y");
+$newright = Compute("x^$n");
 $integrateleft = $newleft;
 $integrateright = FormulaUpToConstant("x^($n+1)/($n+1)");
-$solution = Formula("(x^($n+1)/($n+1)+C)e^(-$a*x^2/2)");
+$solution = Compute("(x^($n+1)/($n+1)+C)e^(-$a*x^2/2)");
 
 ##############################################################
 
@@ -49,7 +49,7 @@ Context()->texStrings;
 BEGIN_TEXT
 For the linear differential equation \(y^\prime+$a xy = x^$n$integratingfactornew \) the integrating factor is:
 $PAR
-\( r(x) = {} \) \{$integratingfactor->ans_rule(20)\}
+\( r(x) = {} \) \{$integratingfactor->ans_rule()\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 After multiplying both sides by the integrating factor and unapplying the product rule we get the new differential equation:
