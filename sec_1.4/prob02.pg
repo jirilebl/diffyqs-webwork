@@ -52,7 +52,7 @@ $PAR
 \( r(x) = {} \) \{$integratingfactor->ans_rule()\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-After multiplying both sides by the integrating factor and unapplying the product rule we get the new differential equation:
+After multiplying both sides by the integrating factor and "unapplying" the product rule we get the new differential equation:
 $PAR
 \(\dfrac{dy}{dx}\Bigl[\) \{$newleft->ans_rule(27)\} \(\Bigr] = {}\) \{$newright->ans_rule(27)\}
 \{ AnswerFormatHelp("formulas") \}
@@ -79,5 +79,35 @@ ANS($newright->cmp());
 ANS($integrateleft->cmp());
 ANS($integrateright->cmp());
 ANS($solution->cmp());
+
+##############################################################
+
+Context()->texStrings;
+BEGIN_SOLUTION
+The linear differential equation
+\(y^\prime+$a xy = x^{$n}$integratingfactornew \)
+is of the form \(y^\prime + p(x) y = f(x)\),
+where \(p(x) = $a x\).
+The integrating factor is
+\[
+r(x) = e^{\int p(x)\,dx} = e^{\int $a x \, dx} = $integratingfactor .
+\]
+After multiplying both sides by the integrating factor and "unapplying" the product rule we get the new differential equation:
+\[
+\frac{dy}{dx}\Bigl[ $integratingfactor y \Bigr] =
+x^{$n} .
+\]
+Integrating both sides we get the algebraic equation
+\[
+$integratingfactor y = $integrateright .
+\]
+Solving for \(y\), the solution to the differential equation is
+\[
+y = $solution .
+\]
+END_SOLUTION
+Context()->normalStrings;
+
+##############################################################
 
 ENDDOCUMENT();
