@@ -1,20 +1,18 @@
-##DESCRIPTION
-## Substitution
-##ENDDESCRIPTION
+# Substitution, Bernoulli
 
 ## KEYWORDS('differential', 'equation', 'bernoulli', 'linear', 'substitution')
 
-DOCUMENT();        # This should be the first executable line in the problem.
+#############################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
-  "PGgraphmacros.pl",
-  "PGmatrixmacros.pl",
-  "PGnumericalmacros.pl",
-  "PGmorematrixmacros.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
+
+#############################################################
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
@@ -23,43 +21,63 @@ $a = random(2,9,1)*random(-1,1,2);
 $ma = - $a; 
 $y1 = non_zero_random(-9,9,1);
 
+#############################################################
+
 BEGIN_TEXT
 
 A Bernoulli differential equation is one of the form 
 \[ \frac{dy}{dx} + p(x)y = q(x)y^n \qquad (*) \]
-$BR 
 Observe that, if \(n=0\) or \(1\), the Bernoulli equation is linear. For other values of \(n\), the substitution
 \(u=y^{1-n}\) transforms the Bernoulli equation into the linear equation 
 \[ \frac{du}{dx} + (1-n)p(x)u = (1-n)q(x). \]
-$BR $BR 
+
+$PAR 
 Consider the initial value problem
 \[ x y' + y = $ma x y^2, \qquad y(1)=$y1. \] 
 This differential equation can be written in the form \((*)\) with 
-$BR 
-\(p(x)=\) \{ans_rule(10)\}, 
-$BR  
-\(q(x)=\) \{ans_rule(10)\}, and 
-$BR 
-\(n=\) \{ans_rule(10)\}. 
-$BR $BR 
+$PAR 
+\(p(x)={} \) \{ans_rule(10)\},
+$SPACE $SPACE
+\{ AnswerFormatHelp("formulas") \}
+$PAR  
+\(q(x)={} \) \{ans_rule(10)\}, and 
+$SPACE $SPACE
+\{ AnswerFormatHelp("formulas") \}
+$PAR 
+\(n={} \) \{ans_rule(10)\}. 
+$SPACE $SPACE
+\{ AnswerFormatHelp("numbers") \}
+$PAR 
 The substitution \(u=\) \{ans_rule(10)\} will transform it into the linear equation 
-$BR 
-\( \displaystyle \frac{du}{dx} + \) \{ans_rule(10)\} \( u = \) \{ans_rule(10)\}. 
-$BR $BR 
+$PAR 
+\( \displaystyle \frac{du}{dx} + {}\)
+\{ans_rule(10)\}
+\( u = {}\) \{ans_rule(10)\}. 
+$SPACE $SPACE
+\{ AnswerFormatHelp("formulas") \}
+$PAR 
 Using the substitution above, we rewrite the initial condition in terms of \(x\) and \(u\): 
-$BR 
+$PAR 
 \(u(1)=\) \{ans_rule(10)\}. 
-$BR $BR 
+$SPACE $SPACE
+\{ AnswerFormatHelp("numbers") \}
+$PAR 
 Now solve the linear equation for \(u\),
 and find the solution that satisfies the initial condition. 
-$BR 
+$PAR 
 \(u(x)=\) \{ans_rule(40)\}. 
-$BR $BR 
+$SPACE $SPACE
+\{ AnswerFormatHelp("formulas") \}
+$PAR 
 Finally, solve for \(y\). 
-$BR   
+$PAR   
 \( y(x) = \) \{ ans_rule(50)\}.  
+$SPACE $SPACE
+\{ AnswerFormatHelp("formulas") \}
 
 END_TEXT
+
+#############################################################
 
 ANS(fun_cmp("1/x"));
 ANS(fun_cmp("$ma"));
@@ -75,5 +93,5 @@ ANS(fun_cmp("$a*x*ln(x)+x/$y1"));
 
 ANS(fun_cmp("1/($a*x*ln(x)+x/$y1)"));
 
-ENDDOCUMENT();       # This should be the last executable line in the problem.
+ENDDOCUMENT();
 
