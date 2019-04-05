@@ -1,12 +1,9 @@
-## DESCRIPTION
-## First order ODEs: linear ODEs and the integrating factor
-## Applications - mixing problems
-## ENDDESCRIPTION
+# First order ODEs: linear ODEs and the integrating factor
+# Applications - mixing problems
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
 ## KEYWORDS('differential equations','first order','integrating factor')
-
 
 
 ##############################
@@ -61,27 +58,24 @@ $PAR
 c(t) = $c \ \ \mathrm{kg/L}.
 \]
 
-\{ BeginList("OL",type=>'a') \}
-
-$ITEM
+$PAR
 Determine the amount of salt initially
 present within the tank.  
-$BR
-$BR
+$PAR
 Initial amount of salt = \{ ans_rule(20) \} kg
+$SPACE $SPACE
+\{ AnswerFormatHelp("numbers") \}
 
-$ITEMSEP
-$ITEM
+$PAR
 Determine the inflow concentration 
 \( c_{in}(t) \), where \( c_{in}(t) \)
 denotes the concentration of salt in the 
 brine solution flowing into the tank.
-$BR
-$BR
+$PAR
 \( c_{in}(t) = \)
 \{ ans_rule(50) \} kg / L
-
-\{ EndList("OL") \}
+$SPACE $SPACE
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
 

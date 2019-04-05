@@ -1,6 +1,4 @@
-## DESCRIPTION
-## First order ODEs: linear ODEs and the integrating factor
-## ENDDESCRIPTION
+# First order ODEs: linear ODEs and the integrating factor
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -26,7 +24,8 @@ TEXT(beginproblem());
 #############################
 #  Setup 
 
-Context("Numeric")->variables->are(x=>"Real");
+Context("Numeric");
+Context()->variables->are(x=>"Real");
 
 $a = non_zero_random(2,9,1);
 $b = random(2,5,1);
@@ -46,22 +45,18 @@ $g = $y + $yp;
 Context()->texStrings;
 BEGIN_TEXT
 The unique solution to the initial value problem
-$PAR
 \[
 y^{\,\prime} + y = g(x), 
 \ \ \
 y(0) = y_0,
 \]
-$BR
 is \( y(t) = $y \).  Determine the constant \( y_0 \) 
 and the function \( g(x) \).
-$BR
-$BR
+$PAR
 \( y_0 = \)
 \{ ans_rule(20) \}
 \{ AnswerFormatHelp("numbers") \}
-$BR
-$BR
+$PAR
 \( g(x) = \)
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \} 

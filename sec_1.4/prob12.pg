@@ -1,7 +1,5 @@
-## DESCRIPTION
-## First order ODEs: linear ODEs and the integrating factor
-## Applications - mixing problems
-## ENDDESCRIPTION
+# First order ODEs: linear ODEs and the integrating factor
+# Applications - mixing problems
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -16,7 +14,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
-  "PGunion.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
@@ -28,9 +26,9 @@ TEXT(beginproblem());
 
 Context("Numeric");
 Context()->variables->are(
-x=>"Real",
-t=>"Real",Deltat=>"Real",
-c=>"Real",
+  x=>"Real",
+  t=>"Real",
+  c=>"Real",
 );
 
 $f = random(2,6,1);   # flowrate (in g/L)
@@ -58,40 +56,42 @@ salt is flowing in at $f liters per minute.  The
 solution is mixed well and drained at $f liters
 per minute.  
 
-
-\{ BeginList('OL',type=>'a') \}
-
-$ITEM Let \( x \) be the amount of salt, in 
+$PAR
+Let \( x \) be the amount of salt, in 
 grams, in the fish tank after \( t \) minutes 
 have elapsed.  Find a formula for the rate of 
 change in the amount of salt, \( dx/dt \), 
 in terms of the amount of salt in the solution \( x \) and
 the unknown concentration of incoming brine \( c \).  
-$BR
+$PAR
 \( \dfrac{dx}{dt} = \)
 \{ ans_rule(40) \}
 grams/minute
+$SPACE $SPACE
+\{ AnswerFormatHelp("formulas") \}
 
-$ITEMSEP
-$ITEM Find a formula for the amount of salt, in 
+$PAR
+Find a formula for the amount of salt, in 
 grams, after \( t \) minutes have elapsed.  Your answer
 should be in terms of \( c \) and \( t \).
 $BR
 \( x(t) = \)
 \{ ans_rule(40) \}
 grams
+$SPACE $SPACE
+\{ AnswerFormatHelp("formulas") \}
 
 
-$ITEMSEP
-$ITEM In $t1 minutes there are $x1 grams 
+$PAR
+In $t1 minutes there are $x1 grams 
 of salt in the fish tank.  What is the concentration
 of salt in the incoming brine?
 $BR
 \( c = \)
 \{ ans_rule(30) \}
 g/L
-
-\{ EndList("OL") \}
+$SPACE $SPACE
+\{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;
 

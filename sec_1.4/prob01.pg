@@ -20,7 +20,8 @@ TEXT(beginproblem());
 ##axy'+by=x^{-p}
 $a = Real(random(2,4,1));
 $m = Real(non_zero_random(1,5,1));
-$b = $m*$a;##so that $b/$a = $m, 
+$b = $m*$a;
+##so that $b/$a = $m, 
 $p = Real(random(1,9,1));
 
 $y1 = Real(random(-9,9,1));

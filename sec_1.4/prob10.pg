@@ -1,40 +1,41 @@
-## DESCRIPTION
-## First-Order Linear Differential Equations
-## ENDDESCRIPTION
+# First-order linear differential equation
 
 ## Institution(ASU)
 
-DOCUMENT();        # This should be the first executable line in the problem.
+##############################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
-  "PGgraphmacros.pl",
-  "PGmatrixmacros.pl",
-  "PGnumericalmacros.pl",
-  "PGmorematrixmacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
   "PGcourse.pl"
 );
 
+##############################################################
+	
 TEXT(beginproblem());
-$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
 
 $b = non_zero_random(-15,15,3);
 $y0 = non_zero_random(-5,5,1);
 
 $c = $b/3;
 
-BEGIN_TEXT
+##############################################################
 
-Find the function \(y(x)\) that satisfies the differential equation 
-\[ \frac{dy}{dx} - 2 x y = $b x^2 e^{x^2} \]
-and the condition \( y(0) = $y0 \). 
-$BR 
-\(y(t)=\) \{ ans_rule(50) \}. 
+BEGIN_PGML
+Find the function [:y(x):] that satisfies the differential equation 
+>>[`` \frac{dy}{dx} - 2 x y = [$b] x^2 e^{x^2} ``]<<
+and the condition [: y(0) = [$y0] :]. 
 
-END_TEXT
+[`y(x)={}`]
+[______]{"($c*x^3 + $y0)*e^(x^2)"}{50}
+[@ AnswerFormatHelp("formulas") @]*
+END_PGML
 
-ANS(fun_cmp("($c*x^3 + $y0)*e^(x^2)", vars => 'x'));
-
-ENDDOCUMENT();       # This should be the last executable line in the problem.
+ENDDOCUMENT();
 

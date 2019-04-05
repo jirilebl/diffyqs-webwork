@@ -1,45 +1,42 @@
-## DESCRIPTION
-## Integrating factor
-## ENDDESCRIPTION
+# Integrating factor
 
 ## Institution(Dartmouth)
 ## KEYWORDS('linear' 'differential equation')
 
-
+###########################################################
 
 DOCUMENT();
+
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
-  "PGgraphmacros.pl",
-  "Dartmouthmacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
   "PGcourse.pl"
 );
  
+###########################################################
 
-## Do NOT show partial correct answers
-$showPartialCorrectAnswers = 0;
-
-$alpha = random(2,20 );
-
-## Ok, we are ready to begin the problem...
-##
 TEXT(beginproblem());
 
+$alpha = random(2,20);
 
-BEGIN_TEXT
-$BR
+Context("Numeric");
+Context()->variables->are(x=>["Real",limits=>[1,1.1]],
+                          I=>["Real",limits=>[1,10]]);
+
+###########################################################
+
+BEGIN_PGML
 Find the general solution to the differential equation
-\[ y' + $alpha x^{\{$alpha -1\}} y = x^{$alpha}\]
-$BR
-Use the variable \( I = \int e^{x^{$alpha}}\, dx \) where it occurs in your answer.
-$BR
-\( y = {} \) \{ans_rule(60)\}
+>>[`` y' + [$alpha] x^{\{[$alpha] -1\}} y = x^{[$alpha]}``]<<
 
-$PAR
-END_TEXT
+Use the variable [` I = \int e^{x^{[$alpha]}}\, dx `] where it occurs in your answer.
 
-ANS(fun_cmp("(x*exp(x**($alpha)) - I)/($alpha*exp(x**($alpha)))", vars=>['x','I'], limits=>[[1,1.1],[1,10]]));
+[` y = {} `]
+[______]{"(x*exp(x^($alpha)) - I)/($alpha*exp(x^($alpha)))"}{50}
+[@ AnswerFormatHelp("formulas") @]*
+END_PGML
 
 ENDDOCUMENT();
 

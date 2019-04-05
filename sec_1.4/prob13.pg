@@ -1,7 +1,5 @@
-## DESCRIPTION
-## First order ODEs: linear ODEs and the integrating factor
-## Applications - mixing problems
-## ENDDESCRIPTION
+# First order ODEs: linear ODEs and the integrating factor
+# Applications - mixing problems
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -16,7 +14,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
-  "PGunion.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
@@ -28,8 +26,9 @@ TEXT(beginproblem());
 
 Context("Numeric");
 Context()->variables->are(
-x=>"Real",
-t=>"Real",Deltat=>["Real",TeX=>'\Delta t'],
+  x=>"Real",
+  t=>"Real",
+  Deltat=>["Real",TeX=>'\Delta t'],
 );
 
 $f = random(2,6,1);   # flowrate (in g/L)
@@ -60,10 +59,8 @@ of salt $c grams per liter is added at a rate
 of $f liters per minute.  The tank is well mixed
 and drained at $f liters per minute.
 
-
-\{ BeginList('OL',type=>'a') \}
-
-$ITEM Let \( x \) be the amount of salt, in 
+$PAR
+Let \( x \) be the amount of salt, in 
 grams, in the solution after \( t \) minutes 
 have elapsed.  Find a formula for the incremental 
 change in the amount of salt, \( \Delta x \), 
@@ -74,24 +71,27 @@ $BR
 \( \Delta x = \)
 \{ ans_rule(40) \}
 grams
+$SPACE $SPACE
+\{ AnswerFormatHelp("formulas") \}
 
-$ITEMSEP
-$ITEM Find a formula for the amount of salt, in 
+$PAR
+Find a formula for the amount of salt, in 
 grams, after \( t \) minutes have elapsed.
 $BR
 \( x(t) = \)
 \{ ans_rule(40) \}
 grams
+$SPACE $SPACE
+\{ AnswerFormatHelp("formulas") \}
 
-
-$ITEMSEP
-$ITEM How long must the process continue until there
+$PAR
+How long must the process continue until there
 are exactly $x1 grams of salt in the tank?
 $BR
 \{ ans_rule(20) \}
 minutes
-
-\{ EndList("OL") \}
+$SPACE $SPACE
+\{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;
 
