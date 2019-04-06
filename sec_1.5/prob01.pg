@@ -22,6 +22,9 @@ $a = random(2,9,1)*random(-1,1,2);
 $ma = - $a; 
 $y1 = non_zero_random(-9,9,1);
 
+Context("Numeric");
+Context()->variables->are(x=>"Real",y=>"Real");
+
 #############################################################
 
 BEGIN_TEXT
@@ -80,19 +83,19 @@ END_TEXT
 
 #############################################################
 
-ANS(fun_cmp("1/x"));
-ANS(fun_cmp("$ma"));
-ANS(num_cmp(2));
+ANS(Compute("1/x")->cmp());
+ANS(Compute("$ma")->cmp());
+ANS(Compute("2")->cmp());
 
-ANS(fun_cmp("1/y", vars => 'y'));
-ANS(fun_cmp("- 1/x"));
-ANS(fun_cmp("$a"));
+ANS(Compute("1/y")->cmp());
+ANS(Compute("- 1/x")->cmp());
+ANS(Compute("$a")->cmp());
 
-ANS(num_cmp(1/$y1));
+ANS(Compute("1/$y1")->cmp());
 
-ANS(fun_cmp("$a*x*ln(x)+x/$y1"));
+ANS(Compute("$a*x*ln(x)+x/$y1")->cmp());
 
-ANS(fun_cmp("1/($a*x*ln(x)+x/$y1)"));
+ANS(Compute("1/($a*x*ln(x)+x/$y1)")->cmp());
 
 ENDDOCUMENT();
 

@@ -1,6 +1,4 @@
-## DESCRIPTION
-## First order ODEs: substitution
-## ENDDESCRIPTION
+# First order ODEs: substitution
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -16,7 +14,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGunion.pl",
   "parserAssignment.pl",
   "parserImplicitEquation.pl",
   "PGcourse.pl"
@@ -60,9 +57,8 @@ Solve the initial value problem
 \( \displaystyle y y^{\,\prime} + x = \sqrt{x^2+y^2} \)
 with \( y($x0) = $y0 \).
 
-\{ BeginList('UL') \}
-
-$ITEM To solve this, we should use the substitution
+$PAR
+To solve this, we should use the substitution
 $BR
 \( u = \) 
 \{ ans_rule(20) \}
@@ -103,8 +99,8 @@ $answerb = ImplicitEquation("u' = 2 sqrt(u)",solutions=>[
 
 Context()->texStrings;
 BEGIN_TEXT
-$ITEMSEP
-$ITEM After the substitution from the previous
+$PAR
+After the substitution from the previous
 part, we obtain the following linear differential 
 equation in \( x, u, u^{\,\prime} \).
 $BR
@@ -130,14 +126,12 @@ $answerc = Compute("y = $s sqrt($d2 x + $dd)")->reduce()->with(limits=>[0,1]);
 
 Context()->texStrings;
 BEGIN_TEXT
-$ITEMSEP
-$ITEM The solution to the original initial value
+$PAR
+The solution to the original initial value
 problem is described by the following equation in \( x, y \).
 $BR
 \{ ans_rule(20) \}
 \{ AnswerFormatHelp("equations") \}
-
-\{ EndList('UL') \}
 END_TEXT
 Context()->normalStrings;
 
