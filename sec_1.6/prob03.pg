@@ -1,10 +1,10 @@
-##DESCRIPTION
-## Equilibrium points and phase lines
-##ENDDESCRIPTION
+# Equilibrium points and phase lines
 
 ## KEYWORDS('differential', 'equation', 'constant', 'solution')
 
-DOCUMENT();        # This should be the first executable line in the problem.
+##############################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
@@ -18,6 +18,8 @@ loadMacros(
   "PGcourse.pl"
 );
 
+##############################################################
+
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
@@ -26,6 +28,8 @@ $pos = random(1,7,1);
 if (abs($pos + $neg) < 2) { $pos = 9; } 
 $a = - $pos - $neg;
 $b = $pos*$neg;
+
+##############################################################
 
 BEGIN_TEXT
 
@@ -41,9 +45,10 @@ For what values of \(x\) is \(x\) increasing? $BR
 
 END_TEXT
 
+##############################################################
+
 ANS(number_list_cmp("$neg, 0, $pos"));
 ANS(num_cmp($neg));
 ANS(num_cmp($pos));
 
-ENDDOCUMENT();       # This should be the last executable line in the problem.
-
+ENDDOCUMENT();

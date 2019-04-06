@@ -1,5 +1,5 @@
-##DESCRIPTION
-##ENDDESCRIPTION
+# Modify autonomous logistic equation for a word problem based on 
+# population leaving
 
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
@@ -12,8 +12,11 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
+
+########################################################
 
 # Print problem number and point value (weight) for the problem
 TEXT(beginproblem());
@@ -47,6 +50,8 @@ $PAR
 Starting in 2000,  \($e\) citizens of Cook island have left  every year  to become a mathematician, never to return. What is the new differential equation modeling the population of the island \(P\)?
 $BR
 \{$diffeqn->ans_rule(25)\} \(= 0\)
+$SPACE $SPACE
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
 

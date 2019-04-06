@@ -1,15 +1,20 @@
-##DESCRIPTION
-##ENDDESCRIPTION
+# Autonomous equation word problem, ask simple questions
+# including about carrying capacity (explains what that is)
 
 ## KEYWORDS('differential', 'equation')
 
-DOCUMENT();        # This should be the first executable line in the problem.
+########################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
+  "AnswerFormatHelp.pl",
   "MathObjects.pl",
   "PGcourse.pl"
 );
+
+########################################################
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
@@ -20,8 +25,9 @@ Context()->{format}{number} = "%.8f#";
 
 $k = Compute(list_random(0.05,0.10,0.15,0.20,0.25));
 $K = Compute(list_random(50,100,200,250,400,750,1000));
-$b = Compute($k/$K);
+$b = Compute("$k/$K");
 
+########################################################
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -38,13 +44,14 @@ $PAR
 What is the carrying capacity?
 $BR
 \{ ans_rule(5) \}
-$BR $BR 
+\{ AnswerFormatHelp("formulas") \}
+$PAR
 Is the solution increasing or decreasing
 when \( P \) is between \( 0 \) and the
 carriying capacity?
 $BR
 \{ pop_up_list(['?','increasing', 'decreasing']) \}
-$BR $BR 
+$PAR
 Is the solution increasing or decreasing when
 \( P \) is greater than the carrying capacity? 
 $BR
@@ -52,8 +59,10 @@ $BR
 END_TEXT
 Context()->normalStrings;
 
+########################################################
+
 ANS($K->cmp);
 ANS(str_cmp("increasing"));
 ANS(str_cmp("decreasing"));
 
-ENDDOCUMENT();       # This should be the last executable line in the problem.
+ENDDOCUMENT();
