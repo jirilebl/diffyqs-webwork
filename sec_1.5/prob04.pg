@@ -79,8 +79,7 @@ $answerb = ImplicitEquation("u' = u^2 + 1");
 Context()->texStrings;
 BEGIN_TEXT
 $PAR
-After the substitution from the previous
-part, we obtain the following differential 
+After the substitution above, we obtain the following differential 
 equation in \( x, u, u^{\,\prime} \).
 $BR
 \{ ans_rule(30) \}
@@ -111,8 +110,6 @@ problem is described by the following equation in \( x, y \).
 $BR
 \{ ans_rule(20) \}
 \{ AnswerFormatHelp("equations") \}
-
-\{ EndList('UL') \}
 END_TEXT
 Context()->normalStrings;
 

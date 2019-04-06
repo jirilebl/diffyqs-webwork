@@ -100,8 +100,7 @@ $answerb = ImplicitEquation("u' = 2 sqrt(u)",solutions=>[
 Context()->texStrings;
 BEGIN_TEXT
 $PAR
-After the substitution from the previous
-part, we obtain the following linear differential 
+After the substitution above, we obtain the following linear differential 
 equation in \( x, u, u^{\,\prime} \).
 $BR
 \{ ans_rule(30) \}
