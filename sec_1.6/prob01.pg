@@ -43,7 +43,7 @@ population that the environment can support.
 $PAR
 What is the carrying capacity?
 $BR
-\{ ans_rule(5) \}
+\{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
 Is the solution increasing or decreasing

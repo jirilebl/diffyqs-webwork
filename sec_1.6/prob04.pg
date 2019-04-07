@@ -38,17 +38,25 @@ $PAR
 List the constant (or equilibrium) solutions to this differential equation
 in increasing order and indicate whether or not these equilibria are ${BITALIC}stable${EITALIC}, ${BITALIC}semi-stable${EITALIC} (semi-stable means unstable from one side, stable from the other), or ${BITALIC}unstable${EITALIC}.
 $PAR
-\( x = {} \) \{ans_rule(10) \}  \{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
+\( x = {} \) \{ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
+$SPACE
+\{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
 $BR
-\( x = {} \) \{ans_rule(10) \}  \{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
+\( x = {} \) \{ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
+$SPACE
+\{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
 $BR
-\( x = {} \) \{ans_rule(10) \}  \{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
+\( x = {} \) \{ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
+$SPACE
+\{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
 $BR
-\( x = {} \) \{ans_rule(10) \}  \{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
+\( x = {} \) \{ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
+$SPACE
+\{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
 END_TEXT
 
 ##############################################################
@@ -66,4 +74,3 @@ ANS(Compute("$d")->cmp(),str_cmp($ans4));
 ##############################################################
 
 ENDDOCUMENT();
-

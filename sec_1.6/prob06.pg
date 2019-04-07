@@ -13,7 +13,6 @@ loadMacros(
   "AnswerFormatHelp.pl",
   "PGchoicemacros.pl",
   "PGgraphmacros.pl",
-  "PGdiffeqmacros.pl",
   "PGcourse.pl"
 );
 
@@ -55,20 +54,29 @@ Consider the differential equation \(x'(t) = f( x(t) ) \).
 $PAR
 List the constant (or equilibrium) solutions to this differential equation
 in increasing order and indicate whether or not these equalibria
-are stable, semi-stable (stable from one side, unstable from the other),
-or unstable.
+are ${BITALIC}stable${EITALIC}, ${BITALIC}semi-stable${EITALIC}
+(stable from one side, unstable from the other),
+or ${BITALIC}unstable${EITALIC}.
 $BR
-\(x = {}\) \{ans_rule(10) \}  \{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
+\(x = {}\) \{ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
+$SPACE
+\{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
 $BR
-\(x = {}\) \{ans_rule(10) \}  \{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
+\(x = {}\) \{ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
+$SPACE
+\{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
 $BR
-\(x = {}\) \{ans_rule(10) \}  \{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
+\(x = {}\) \{ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
+$SPACE
+\{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
 $BR
-\(x = {}\) \{ans_rule(10) \}  \{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
+\(x = {}\) \{ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
+$SPACE
+\{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
 END_TEXT
 
 #############################################################

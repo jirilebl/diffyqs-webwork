@@ -10,7 +10,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
-  "AnswerFormatHelp.pl"
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
