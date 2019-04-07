@@ -1,38 +1,46 @@
-##DESCRIPTION
-## Equilibrium points and phase lines
-##ENDDESCRIPTION
+# Equilibrium points and phase lines
 
 ## Institution(W.H.Freeman)
 ## Author(Christopher Sira)
 ## KEYWORDS('calculus', 'differential equations', 'logistic equation', 'population growth', 'exponential growth', 's-curve', 'sigmoid')
 
+#################################################################
+
 DOCUMENT();
 loadMacros(
   "PGstandard.pl",
-  "Parser.pl",
-  "freemanMacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl"
   "PGcourse.pl"
 );
 
+#################################################################
+
 TEXT(beginproblem());
+
+Context("Numeric");
+
 $A = Real(random(2,8, 1));
 
 $init = $A * 2;
 
-
-$fp = Formula("$A");
-
-$context = Context();
+#################################################################
 
 Context()->texStrings;
 BEGIN_TEXT
-Let \( x(t) \) be a solution of \( x' = \frac{1}{$A} x (1 - \frac{x}{$A}) \) such that \( x(0) = $init \).  Determine \( \displaystyle \lim_{t \to \infty} x(t) \) without finding \( x(t) \) explicitly.
+Let \( x(t) \) be a solution of \( x' = \frac{1}{$A} x (1 - \frac{x}{$A}) \) such that \( x(0) = $init \).
+Determine \( \displaystyle \lim_{t \to \infty} x(t) \) without finding \( x(t) \) explicitly.
 $PAR
-\( \displaystyle \lim_{t \to \infty} x(t) \) = \{ans_rule()\}
+\( \displaystyle \lim_{t \to \infty} x(t) = {} \) \{ans_rule(20)\}
+\{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;
 
-ANS($fp->cmp);
+#################################################################
+
+ANS(Compute("$A")->cmp);
+
+#################################################################
 
 Context()->texStrings;
 BEGIN_SOLUTION
@@ -43,6 +51,8 @@ $PAR
 \( \displaystyle \lim_{t \to \infty} x(t) = $A \).
 END_SOLUTION
 Context()->normalStrings;
+
+#################################################################
 
 ENDDOCUMENT();
 

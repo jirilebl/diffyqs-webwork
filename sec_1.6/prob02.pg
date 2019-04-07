@@ -24,6 +24,8 @@ TEXT(beginproblem());
 # Show which answers are correct and which ones are incorrect
 $showPartialCorrectAnswers = 1;
 
+Context("Numeric");
+
 Context()->variables->{namePattern} = qr/[a-z][a-z0-9_]*'*/i;
 Context()->variables->are("t"=>"Real","P"=>"Real","P'"=>"Real","P''"=>"Real","P'''"=>"Real");
 

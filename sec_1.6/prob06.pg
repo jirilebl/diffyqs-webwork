@@ -1,22 +1,28 @@
-## DESCRIPTION
-## Equilibrium points and phase lines
-## ENDDESCRIPTION
+# Equilibrium points and phase lines
 
 ## Institution(Rochester)
 ## KEYWORDS('differential equation' 'stability')
 
-DOCUMENT() ;        # This should be the first executable line in the problem.
+#############################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGchoicemacros.pl",
   "PGgraphmacros.pl",
   "PGdiffeqmacros.pl",
   "PGcourse.pl"
 );
 
+#############################################################
+
 TEXT(beginproblem()) ;
 $showPartialCorrectAnswers = 0 ;
+
+Context("Numeric");
 
 $a = random(-3.5, -2.5, 0.5);
 $b = $a + random(1,2,0.5);
@@ -34,6 +40,7 @@ $hermite_obj = new Hermite( [-4, $a, $b, $c, $d,4],
                             [$sign, $sign*$pa, 0, -$sign*$pc, $sign*$pd, $sign]);
 $fun_obj = new Fun($hermite_obj->rf_f,$graph);
 
+#############################################################
 
 BEGIN_TEXT
 The graph of the function  \(f(x)  \)  is
@@ -52,24 +59,28 @@ are stable, semi-stable (stable from one side, unstable from the other),
 or unstable.
 $BR
 \(x = {}\) \{ans_rule(10) \}  \{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
+\{ AnswerFormatHelp("numbers") \}
 $BR
 \(x = {}\) \{ans_rule(10) \}  \{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
+\{ AnswerFormatHelp("numbers") \}
 $BR
 \(x = {}\) \{ans_rule(10) \}  \{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
+\{ AnswerFormatHelp("numbers") \}
 $BR
 \(x = {}\) \{ans_rule(10) \}  \{ pop_up_list(''=>'','stable'=>'stable', 'unstable'=>'unstable', 'semi-stable' => 'semi-stable') \}
+\{ AnswerFormatHelp("numbers") \}
 END_TEXT
+
+#############################################################
 
 $ans1 = ($sign > 0) ? 'unstable': 'stable';
 $ans2 = 'semi-stable';
 $ans3 = ($sign > 0) ? 'stable': 'unstable';
 $ans4 = ($sign > 0) ? 'unstable':'stable' ;
 
-ANS(num_cmp($a),str_cmp($ans1));
-ANS(num_cmp($b),str_cmp($ans2));
-ANS(num_cmp($c),str_cmp($ans3));
-ANS(num_cmp($d),str_cmp($ans4));
-ENDDOCUMENT() ;        # This should be the last executable line in the problem.
+ANS(Compute("$a")->cmp(),str_cmp($ans1));
+ANS(Compute("$b")->cmp(),str_cmp($ans2));
+ANS(Compute("$c")->cmp(),str_cmp($ans3));
+ANS(Compute("$d")->cmp(),str_cmp($ans4));
 
-
-
+ENDDOCUMENT();

@@ -8,13 +8,9 @@ DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
-  "PGgraphmacros.pl",
-  "PGmatrixmacros.pl",
-  "PGnumericalmacros.pl",
-  "PGmorematrixmacros.pl",
-  "PGasu.pl",
-  "extraAnswerEvaluators.pl",
+  "MathObjects.pl"
+  "AnswerFormatHelp.pl"
+  "PGML.pl"
   "PGcourse.pl"
 );
 
@@ -22,6 +18,8 @@ loadMacros(
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
+
+Context("Numeric");
 
 $neg = random(-9,-1,1);
 $pos = random(1,7,1);
@@ -31,24 +29,22 @@ $b = $pos*$neg;
 
 ##############################################################
 
-BEGIN_TEXT
+BEGIN_PGML
+A function [:x(t):] satisfies the differential equation 
 
-A function \(x(t)\) satisfies the differential equation 
-\[ \frac{dx}{dt} = - x^4 - $a x^3 - $b x^2. \]
-$BR $BR 
-What are the constant solutions of this equation? $BR 
-$BITALIC Separate your answers by commas. $EITALIC
-$BR
-\{ ans_rule(50) \}. $BR $BR 
-For what values of \(x\) is \(x\) increasing? $BR 
-\{ans_rule(10)\} \( < x < \) \{ans_rule(10)\}.
+>>[`` \frac{dx}{dt} = - x^4 - [$a] x^3 - [$b] x^2. ``]<<
 
-END_TEXT
+What are the constant solutions of this equation?
+
+[___________]{"$neg,0,$pos"}{50} [@ AnswerFormatHelp("numbers") @]*  
+_*Note:* Separate your answers by commas._
+
+For what values of [:x:] is [:x:] increasing?
+
+[____________]{"$neg"} [` {} < x < {} `] [____________]{"$pos"}
+[@ AnswerFormatHelp("numbers") @]*
+END_PGML
 
 ##############################################################
-
-ANS(number_list_cmp("$neg, 0, $pos"));
-ANS(num_cmp($neg));
-ANS(num_cmp($pos));
 
 ENDDOCUMENT();

@@ -44,7 +44,7 @@ $PAR
 What is the carrying capacity?
 $BR
 \{ ans_rule(5) \}
-\{ AnswerFormatHelp("formulas") \}
+\{ AnswerFormatHelp("numbers") \}
 $PAR
 Is the solution increasing or decreasing
 when \( P \) is between \( 0 \) and the
