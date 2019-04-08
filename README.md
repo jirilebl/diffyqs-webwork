@@ -11,7 +11,7 @@ degree, but probably will also be a little more sparse.
 
 ## How to use
 
-To use, download the https://www.jirka.org/diffyqs/diffyqs-webwork.tgz
+To use, download https://www.jirka.org/diffyqs/diffyqs-webwork.tgz
 and upload it to your WeBWorK course.  It should automatically unpack and
 create the right directory structure.  Then in the homework editor go to import
 and then import sets from the diffyqs-webwork directory.  Or alternatively go
