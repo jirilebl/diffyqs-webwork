@@ -19,6 +19,9 @@ loadMacros(
 ######################################################
  
 Context("Numeric");
+Context()->flags->set(tolerance=>.0001);
+Context()->flags->set(tolType=>'absolute');
+Context()->{format}{number} = "%.6f#";
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
@@ -62,13 +65,15 @@ solution passing through the point (0,$y0).
 $PAR
 Use Euler's method with step size \( h=0.2 \) to estimate the
 solution at \( x=0.2,0.4,\ldots,1 \), using these to fill in the
-following table.  ${BITALIC}(Be sure ${BBOLD}not$EBOLD to round your
-answers at each step!)$EITALIC
+following table.
+$BR
+${BITALIC}${BBOLD}Note:$EBOLD Be sure ${BBOLD}not$EBOLD to round your
+answers at each step!$EITALIC
 $PAR
 \{ begintable(7) \}
 \{ row( "\(x = \)", "0", "0.2", "0.4", "0.6", "0.8", "1.0" ) \}
-\{ row( "\(y\approx\)", "\(~~~$y0~~~\)", ans_rule(8), ans_rule(8), ans_rule(8),
-        ans_rule(8), ans_rule(8) ) \}
+\{ row( "\(y\approx\)", "$SPACE $SPACE \($y0\) $SPACE $SPACE", ans_rule(10), ans_rule(10), ans_rule(10),
+        ans_rule(10), ans_rule(10) ) \}
 \{ endtable() \}
 $BR
 \{ AnswerFormatHelp("numbers") \}
@@ -149,18 +154,29 @@ ${BITALIC}(Click on the graph for a larger version.)$EITALIC
 $ECENTER
 
 $PAR
-Note that we are using \(h = 0.2\).  Therefore, Euler's method
-gives 
-$BR
-\( y(0.2) \approx y(0) + 0.2 ($k) y(0) = $yEul[1] \)
-$BR
-\( y(0.4) \approx y(0.2) + 0.2 ($k) y(0.2) = $yEul[2] \)
-$BR
-\( y(0.6) \approx y(0.4) + 0.2 ($k) y(0.4) = $yEul[3] \)
-$BR
-\( y(0.8) \approx y(0.6) + 0.2 ($k) y(0.6) = $yEul[4] \)
-$BR
-\( y(1.0) \approx y(0.8) + 0.2 ($k) y(0.8) = $yEul[5] \).
+Note that we are using \(h = 0.2\).
+The initial values are \(x_0 = 0\), \(y_0=$y0\).
+Therefore, Euler's method gives 
+$PAR
+\(x_1 = 0.2\),
+$SPACE
+\( y(0.2) \approx y_1 = y_0 + 0.2 ($k) y_0 = $yEul[1] \)
+$PAR
+\(x_2 = 0.4\),
+$SPACE
+\( y(0.4) \approx y_2 = y_1 + 0.2 ($k) y_1 = $yEul[2] \)
+$PAR
+\(x_3 = 0.6\),
+$SPACE
+\( y(0.6) \approx y_3 = y_2 + 0.2 ($k) y_2 = $yEul[3] \)
+$PAR
+\(x_4 = 0.8\),
+$SPACE
+\( y(0.8) \approx y_4 = y_3 + 0.2 ($k) y_3 = $yEul[4] \)
+$PAR
+\(x_5 = 1.0\),
+$SPACE
+\( y(1.0) \approx y_5 = y_4 + 0.2 ($k) y_4 = $yEul[5] \).
 
 $PAR
 A plot of the Euler approximation is shown in the graph below, in

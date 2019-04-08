@@ -24,6 +24,9 @@ $showPartialCorrectAnswers = 1;
 #####################################################################
 
 Context("Numeric");
+Context()->flags->set(tolerance=>.0001);
+Context()->flags->set(tolType=>'absolute');
+Context()->{format}{number} = "%.6f#";
 
 $a = random(2,5,1);
 
@@ -34,19 +37,24 @@ $ans4 = Compute("$ans3+0.5*($ans3-$a*2.5)");
 
 #####################################################################
 
+Context()->texStrings;
 BEGIN_TEXT
-Use Euler's method with step size \(0.5\) to compute the approximate \(y\)-values \(y_1,\) \(y_2,\) \(y_3,\) and \(y_4\) of the solution of the initial-value problem \[
+Use Euler's method with step size \(0.5\) to compute the approximate \(y\)-values \(y_1\), \(y_2\), \(y_3\), and \(y_4\) of the solution of the initial-value problem
+\[
 y' = y - $a x, \quad y(1)=0.
 \]
+${BITALIC}${BBOLD}Note:$EBOLD Be sure ${BBOLD}not$EBOLD to round your
+answers at each step!$EITALIC
 $PAR
-\(y_1 = \) \{ans_rule(20)\} \{ AnswerFormatHelp("numbers") \}
+\(y_1 = {}\) \{ans_rule(20)\} \{ AnswerFormatHelp("numbers") \}
 $PAR
-\(y_2 = \) \{ans_rule(20)\} \{ AnswerFormatHelp("numbers") \}
+\(y_2 = {}\) \{ans_rule(20)\} \{ AnswerFormatHelp("numbers") \}
 $PAR
-\(y_3 = \) \{ans_rule(20)\} \{ AnswerFormatHelp("numbers") \}
+\(y_3 = {}\) \{ans_rule(20)\} \{ AnswerFormatHelp("numbers") \}
 $PAR
-\(y_4 = \) \{ans_rule(20)\} \{ AnswerFormatHelp("numbers") \}
+\(y_4 = {}\) \{ans_rule(20)\} \{ AnswerFormatHelp("numbers") \}
 END_TEXT
+Context()->normalStrings;
 
 #####################################################################
 
@@ -54,5 +62,29 @@ ANS($ans1->cmp());
 ANS($ans2->cmp());
 ANS($ans3->cmp());
 ANS($ans4->cmp());
+
+#####################################################################
+
+Context()->texStrings;
+BEGIN_SOLUTION
+First \(x_0 = 0\), $SPACE \(y_0 = 0 \).
+$PAR
+\(x_1 = 1.5 \),
+$SPACE
+\( y_1 = 0+0.5(0 - $a \cdot 1) = $ans1 \)
+$PAR
+\(x_2 = 2 \),
+$SPACE
+\( y_2 = $ans1+0.5($ans1 - $a \cdot 1.5) = $ans2 \)
+$PAR
+\(x_3 = 2.5 \),
+$SPACE
+\( y_3 = $ans2+0.5($ans2 - $a \cdot 2) = $ans3 \)
+$PAR
+\(x_4 = 3 \),
+$SPACE
+\( y_4 = $ans3+0.5($ans3 - $a \cdot 2.5) = $ans4 \)
+END_SOLUTION
+Context()->normalStrings;
 
 ENDDOCUMENT();
