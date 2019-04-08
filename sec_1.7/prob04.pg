@@ -1,18 +1,17 @@
-## DESCRIPTION
-##  Euler's method
-## ENDDESCRIPTION
+# Euler's method
 
 ## Institution(John Wiley & Sons)
 ## Author(Brian Burns)
 ## KEYWORDS('calculus', 'differential equations', 'euler's method')
 
+###################################
 
-DOCUMENT();        # This should be the first executable line in the problem.
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
-  "contextFraction.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
@@ -21,12 +20,10 @@ TEXT(beginproblem());
 
 ###################################
 # Setup
-Context()->variables->are(x=>'Real');
+
 $a=non_zero_random(-4,4,1);
 $b=$a+1;
 $ya=random(0,5,1);
-Context("Fraction");
-Context()->variables->are(x=>'Real');
 Context("Numeric");
 Context()->variables->are(x=>'Real');
 Context()->flags->set(tolerance=>.0000000001);
@@ -43,6 +40,7 @@ for ($i = 0; $i< 5; $i++) {
   }
 $ansa=sprintf("%.6f",$xx2[5]);
 $ans=Compute("$ansa");
+
 ###################################
 # Main text
 Context()->texStrings;
@@ -50,11 +48,11 @@ BEGIN_TEXT
 Consider the initial value problem \[y'=$f, y($a)=$ya\]
 $PAR
 Use Euler's Method with five steps to approximate \(y($b)\) to six decimal places (do not round intermediate results).
+
 $PAR
-
-
- \(y($b)\approx\) \{ans_rule(20) \}
+\(y($b)\approx {}\) \{ans_rule(20) \} \{ AnswerFormatHelp("numbers") \}
 END_TEXT
+Context()->normalStrings;
 
 ###################################
 # Answers
@@ -64,13 +62,15 @@ END_TEXT
 ANS($ans->with(tolType=>'absolute', tolerance=>0.00002)->cmp);
 
 ###################################
+
+Context()->texStrings;
 BEGIN_SOLUTION
 \(h=\frac{$b-$a}{5}=$dx\)
 
 $BCENTER
 \{ begintable(4) \}
 
-\{ row( "\(~i~\)","$SPACE 0 $SPACE",1,2,3,4,5 ) \}
+\{ row( "\(~i~\)","$SPACE $SPACE 0 $SPACE $SPACE",1,2,3,4,5 ) \}
 
 \{ row( "\(~x_i~\)","$xx1[0]","$xx1[1]","$xx1[2]","$xx1[3]","$xx1[4]" ,"$xx1[5]")\}
 
@@ -87,4 +87,5 @@ END_SOLUTION
 Context()->normalStrings;
 
 ###################################
+
 ENDDOCUMENT();

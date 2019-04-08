@@ -1,17 +1,16 @@
-#DESCRIPTION
-##  Euler's method
-##ENDDESCRIPTION
+# Euler's method, compute a few points
 
 ## Institution(University of Minnesota)
 ## Author(Justin Sukiennik)
 ## KEYWORDS('calculus', 'differential equations', 'euler's method')
 
 #####################################################################
-DOCUMENT();        # This should be the first executable line in the problem.
+
+DOCUMENT();
 loadMacros(
   "PGstandard.pl",
-  "PGunion.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 #####################################################################
@@ -38,15 +37,15 @@ Use Euler's method with step size \(0.2\) to compute the approximate \(y\)-value
 y' = $a-x y, \quad y(0)=0.
 \]
 $PAR
-\(y_1 = \) \{ans_rule(20)\}
+\(y_1 = \) \{ans_rule(20)\} \{ AnswerFormatHelp("numbers") \}
 $PAR
-\(y_2 = \) \{ans_rule(20)\}
+\(y_2 = \) \{ans_rule(20)\} \{ AnswerFormatHelp("numbers") \}
 $PAR
-\(y_3 = \) \{ans_rule(20)\}
+\(y_3 = \) \{ans_rule(20)\} \{ AnswerFormatHelp("numbers") \}
 $PAR
-\(y_4 = \) \{ans_rule(20)\}
+\(y_4 = \) \{ans_rule(20)\} \{ AnswerFormatHelp("numbers") \}
 $PAR
-\(y_5 = \) \{ans_rule(20)\}
+\(y_5 = \) \{ans_rule(20)\} \{ AnswerFormatHelp("numbers") \}
 END_TEXT
 
 #####################################################################

@@ -1,9 +1,10 @@
-##DESCRIPTION
-##ENDDESCRIPTION
+# Euler's method, fill in table, compare to real solution
 
 ## Institution(University of Michigan)
 ## Author(Gavin LaRose)
 ## KEYWORDS('calculus', 'integral', 'differential equations', 'euler', 'numerical calculation')
+
+######################################################
 
 DOCUMENT();
 loadMacros(
@@ -11,8 +12,11 @@ loadMacros(
   "PGchoicemacros.pl",
   "PGgraphmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
+
+######################################################
  
 Context("Numeric");
 
@@ -44,9 +48,10 @@ for ( my $i=1; $i<=5; $i++ ) {
     $yEulr[$i] = round($yEul[$i-1]*1000)/1000;
 }
 
+######################################################
+
 Context()->texStrings;
 BEGIN_TEXT
-
 Consider the solution of the differential equation \( y' = $kd y \) 
 passing through \( y(0) = $y0 \).
 
@@ -59,14 +64,14 @@ Use Euler's method with step size \( h=0.2 \) to estimate the
 solution at \( x=0.2,0.4,\ldots,1 \), using these to fill in the
 following table.  ${BITALIC}(Be sure ${BBOLD}not$EBOLD to round your
 answers at each step!)$EITALIC
-$BR
-$BCENTER
+$PAR
 \{ begintable(7) \}
 \{ row( "\(x = \)", "0", "0.2", "0.4", "0.6", "0.8", "1.0" ) \}
 \{ row( "\(y\approx\)", "\(~~~$y0~~~\)", ans_rule(8), ans_rule(8), ans_rule(8),
         ans_rule(8), ans_rule(8) ) \}
 \{ endtable() \}
-$ECENTER
+$BR
+\{ AnswerFormatHelp("numbers") \}
 
 $PAR
 Plot your estimated solution on your slope field.  Compare the solution
@@ -81,9 +86,13 @@ with \( y(0) = $y0 \).
 END_TEXT
 Context()->normalStrings;
 
+######################################################
+
 foreach ( @yEul[1..5] ) { ANS( Compute($_)->cmp() ); }
 # ANS( num_cmp( [ @yEul[1..5] ] ) );
 ANS( radio_cmp( $ou->correct_ans() ) );
+
+######################################################
 
 # make a graph of the solution and Euler solutions
 # what is the scale?  ymax = ( y0, if k < 0 ), or ( y0 e^(k), else )
@@ -126,6 +135,8 @@ for ( my $i=1; $i<6; $i++ ) {
 }
 
 $ouest = ( $k > 0 ) ? "under" : "over";
+
+######################################################
 
 Context()->texStrings;
 BEGIN_SOLUTION

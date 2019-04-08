@@ -1,20 +1,20 @@
-#DESCRIPTION
-##  Euler's method
-##ENDDESCRIPTION
+# Euler's method, compute a couple of points
 
 ## Institution(University of Minnesota)
 ## Author(Justin Sukiennik)
 ## KEYWORDS('calculus', 'differential equations', 'euler's method')
 
-
 #####################################################################
-DOCUMENT();        # This should be the first executable line in the problem.
+
+DOCUMENT();
+
 loadMacros(
   "PGstandard.pl",
-  "PGunion.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
+
 #####################################################################
 
 TEXT(beginproblem());
@@ -33,18 +33,19 @@ $ans3 = Compute("$ans2+0.5*($ans2-$a*2)");
 $ans4 = Compute("$ans3+0.5*($ans3-$a*2.5)");
 
 #####################################################################
+
 BEGIN_TEXT
 Use Euler's method with step size \(0.5\) to compute the approximate \(y\)-values \(y_1,\) \(y_2,\) \(y_3,\) and \(y_4\) of the solution of the initial-value problem \[
 y' = y - $a x, \quad y(1)=0.
 \]
 $PAR
-\(y_1 = \) \{ans_rule(20)\}
+\(y_1 = \) \{ans_rule(20)\} \{ AnswerFormatHelp("numbers") \}
 $PAR
-\(y_2 = \) \{ans_rule(20)\}
+\(y_2 = \) \{ans_rule(20)\} \{ AnswerFormatHelp("numbers") \}
 $PAR
-\(y_3 = \) \{ans_rule(20)\}
+\(y_3 = \) \{ans_rule(20)\} \{ AnswerFormatHelp("numbers") \}
 $PAR
-\(y_4 = \) \{ans_rule(20)\}
+\(y_4 = \) \{ans_rule(20)\} \{ AnswerFormatHelp("numbers") \}
 END_TEXT
 
 #####################################################################
@@ -54,4 +55,4 @@ ANS($ans2->cmp());
 ANS($ans3->cmp());
 ANS($ans4->cmp());
 
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+ENDDOCUMENT();
