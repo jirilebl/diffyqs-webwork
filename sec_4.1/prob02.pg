@@ -1,17 +1,7 @@
-## DBsubject(Differential equations)
-## DBchapter(Higher order differential equations)
-## DBsection(Boundary value problems)
-## Date(20/12/2015)
 ## Institution(METU-NCC)
 ## Author(Benjamin Walter)
-## Level(3)
-## MO(1)
-## TitleText1('Differential Equations')
-## AuthorText1('')
-## EditionText1('')
-## Section1('.')
-## Problem1('')
 ## KEYWORDS('ODE', 'boundary value')
+
 ########################################################################
 
 DOCUMENT();      
@@ -19,17 +9,20 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "answerHints.pl",
   "parserMultiAnswer.pl",
-  "unionLists.pl",
   "PGchoicemacros.pl",
   "contextFraction.pl",
   "PGcourse.pl"
 );
 
+########################################################################
+
 TEXT(beginproblem());
 
 $showPartialCorrectAnswers = 1;
+
 ##############################################################
 #
 #  Setup
@@ -47,6 +40,7 @@ Context()->variables->are(
   "n"=>["Real",limits=>[1,6],resolution=>1],
   "a"=>"Real","b"=>"Real","c"=>"Real","d"=>"Real");
 Context()->strings->add(
+  "None"=>{alias=>"DNE"},
   "No Solution"=>{alias=>"DNE"},
   "No Solutions"=>{alias=>"DNE"});
 $Default = Context()->copy;
@@ -104,10 +98,10 @@ BEGIN_TEXT
 Solve the following differential equation with the given boundary 
 conditions.  
 $BR $SPACE $SPACE
-- If there are infinitely many solutions, use ${BBOLD}c${EBOLD} for any 
+- If there are infinitely many solutions, use ${BITALIC}c${EITALIC} for any 
 undetermined constants. 
 $BR $SPACE $SPACE
-- If there are no solutions, write ${BBOLD}No Solution${EBOLD}.  
+- If there are no solutions, type "No Solutions" or "None".  
 $BR $SPACE $SPACE
 - Write answers as functions of \(x\) (i.e. \(y=y(x)\)).
 
@@ -116,42 +110,37 @@ $PAR
 \[\displaystyle $DE = 0 \]
 
 $PAR
-
-\{ BeginList('UL') \}
-
-$ITEM
-$BBOLD A) $EBOLD $SPACE $SPACE  Boundary conditions:
+$BR
+Given the boundary conditions:
   \(\displaystyle \quad \begin{aligned}[t] 
                            y(0) &= $y0 \\
       y\left($t[$mix[0]]\right) &= $BV[$mix[0]]
                          \end{aligned} \)
-$PAR $SPACE $SPACE
-\(y = \) \{ ans_rule(40) \}
+$PAR
+Find \(y = {} \) \{ ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
 
-$ITEMSEP
-
-$ITEM 
-$BBOLD B) $EBOLD $SPACE $SPACE  Boundary conditions:  
+$PAR
+$BR
+Given the boundary conditions:
   \(\displaystyle \quad \begin{aligned}[t] 
                            y(0) &= $y0 \\
       y\left($t[$mix[1]]\right) &= $BV[$mix[1]]
                          \end{aligned} \)
-$PAR $SPACE $SPACE
-\(y = \) \{ ans_rule(40) \}
+$PAR
+Find \(y = {} \) \{ ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
                       
-$ITEMSEP
-
-$ITEM
-$BBOLD C) $EBOLD $SPACE $SPACE   Boundary conditions:
+$PAR
+$BR
+Given the boundary conditions:
   \(\displaystyle \quad \begin{aligned}[t] 
                            y(0) &= $y0 \\
       y\left($t[$mix[2]]\right) &= $BV[$mix[2]]
                          \end{aligned} \)
-$PAR $SPACE $SPACE
-\(y = \) \{ ans_rule(40) \}
-
-\{ EndList('UL') \}
-
+$PAR
+Find \(y = {} \) \{ ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
 
 END_TEXT
 Context()->normalStrings;

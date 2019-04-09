@@ -1,17 +1,9 @@
-## DBsubject(Differential equations)
-## DBchapter(Higher order differential equations)
-## DBsection(Boundary value problems)
-## Date(20/12/2015)
+# Find eigenvalues of a boundary value ODE problem
+
 ## Institution(METU-NCC)
 ## Author(Benjamin Walter)
-## Level(3)
-## MO(1)
-## TitleText1('Differential Equations')
-## AuthorText1('')
-## EditionText1('')
-## Section1('.')
-## Problem1('')
 ## KEYWORDS('ODE', 'boundary value')
+
 ########################################################################
 
 DOCUMENT();      
@@ -19,6 +11,7 @@ DOCUMENT();
 loadMacros(
    "PGstandard.pl",   
    "MathObjects.pl",
+   "AnswerFormatHelp.pl",
    "answerHints.pl",
    "unionLists.pl",
    "PGchoicemacros.pl",
@@ -27,6 +20,7 @@ loadMacros(
 TEXT(beginproblem());
 
 $showPartialCorrectAnswers = 1;
+
 ##############################################################
 #
 #  Setup
@@ -88,32 +82,36 @@ Find the eigenvalues and eigenfunctions for the following boundary value problem
 $PAR
 
 \[\displaystyle $DE = 0
-    \qquad \mathrm{with} \quad 
+    \qquad \text{with} \quad 
   $y0(0) = 0, \quad $y1($L) = 0. \]
 
 $PAR
 
-Eigenvalues: \(\quad \,\,\lambda_n = \)\{ ans_rule(20) \} $PAR
+Eigenvalues: \(\quad \,\,\lambda_n = \)\{ ans_rule(30) \}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
 
-Eigenfunctions: \(\ \  y_n = \)\{ ans_rule(20) \} $PAR
+Eigenfunctions: \(\ \  y_n = \)\{ ans_rule(30) \}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
 
-$SPACE $SPACE ${BBOLD}Notation:${EBOLD} Your answers should involve \(n\) and \(x\).
+${BBOLD}Notation:${EBOLD} Your answers should involve \(n\) and \(x\).
 
 END_TEXT
 
 $showHint = 2;
 
 BEGIN_TEXT
-$BR
-$HR
 $PAR
-If you don't get this in $showHint tries, you can get a hint.
+$BITALIC If you don't get this in $showHint tries, you can get a hint. $EITALIC
 END_TEXT
 BEGIN_HINT
 
-When computing eigenvalues, the following two formulas may be useful:$PAR
+When computing eigenvalues, the following two formulas may be useful:
+$PAR
 $SPACE $SPACE
-\(\sin(\theta) = 0\) when \(\displaystyle \theta = n\pi\). $BR
+\(\sin(\theta) = 0\) when \(\displaystyle \theta = n\pi\).
+$PAR
 $SPACE $SPACE
 \(\cos(\theta) = 0\) when \(\displaystyle \theta = \frac{(2n+1)\pi}{2}\).
 

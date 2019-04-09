@@ -1,17 +1,5 @@
-## DBsubject(Differential equations)
-## DBchapter(Higher order differential equations)
-## DBsection(Boundary value problems)
-## Date(7/19/2011)
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
-## MLT(SL)
-## Level(5)
-## MO(1)
-## TitleText1('Differential Equations')
-## AuthorText1('Zill')
-## EditionText1('7')
-## Section1('11.4')
-## Problem1('')
 ## KEYWORDS('sturm', 'louiville', 'differential', 'equation')
 
 ########################################################################
@@ -21,6 +9,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
 #  "weightedGrader.pl",
   "PGgraphmacros.pl",
@@ -267,8 +256,8 @@ ANS(Compute("n*pi/a")->cmp());
 # eigenfunctions
 $eigen1 = Formula("sin(pi/a*x)");
 $eigen2 = Formula("sin(2*pi*x/a)");
-$eigen3 = Formula("sin(3pi/a*x)");
-$eigen4 = Formula("sin(4pi/a*x)");
+$eigen3 = Formula("sin(3*pi*x/a)");
+$eigen4 = Formula("sin(4*pi*x/a)");
 
 @Goptions = (
   -1,-2,$L,2,                            # dimensions of graph

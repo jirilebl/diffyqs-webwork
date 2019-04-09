@@ -1,31 +1,16 @@
-#DESCRIPTION
-##  Calculus: Second-order homogeneous linear equations
-##ENDDESCRIPTION
+# Calculus: Second-order homogeneous linear equations
 
-
-## DBsubject(Differential equations)
-## DBchapter(Higher order differential equations)
-## DBsection(Boundary value problems)
-## Date(06/20/2011)
 ## Institution(University of Minnesota)
 ## Author(Justin Sukiennik)
-## MLT(bvp_03)
-## MLTleader(1)
-## Level(3)
-## MO(1)
-## TitleText1('Calculus: Concepts and Contexts')
-## AuthorText1('Stewart')
-## EditionText1('4 Custom UMTYMP Ed.')
-## Section1('17.1')
-## Problem1('30')
 ## KEYWORDS('calculus', 'differential equations', 'linear equations', 'second-order', 'boundary-value problem', 'homogeneous')
 
 #####################################################################
-DOCUMENT();        # This should be the first executable line in the problem.
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
@@ -53,8 +38,9 @@ Context()->texStrings;
 BEGIN_TEXT
 Solve the boundary-value problem \(\displaystyle y'' - $b y' + $a2 y = 0, \; y(0) = $c, \; y(1) = 0.\)
 $PAR
-Answer:  \(y(x) = \) \{ ans_rule(30) \}
-$HR
+\(y(x) = {} \) \{ ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
 $BBOLD Note: $EBOLD $BITALIC If there is no solution, type "None". $EITALIC
 END_TEXT
 Context()->normalStrings;
