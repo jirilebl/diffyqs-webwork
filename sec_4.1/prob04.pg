@@ -37,7 +37,7 @@ $DEcontext = Context()->copy;
 Context("Numeric");
 Context()->variables->are(
   "x"=>"Real",
-  "n"=>["Real",limits=>[1,6],resolution=>1]);
+  "n"=>["Real",limits=>[1,20],resolution=>1]);
 $Default = Context()->copy;
 Context()->variables->remove("x");
 $Default_nox = Context()->copy;
@@ -53,8 +53,13 @@ $DE = Formula($DEcontext, "y'' + lambda y")->reduce;
 
 $L = random(1,6,1);      # length of interval
 
-@d = (1,     # left boundary has derivative 
-      1);    # right boundary has derivative
+if (random(0,1,1) == 1) {
+  @d = (0,     # left boundary has derivative 
+        1);    # right boundary has derivative
+} else {
+  @d = (1,     # left boundary has derivative 
+        0);    # right boundary has derivative
+}
 
 $y0 = ($d[0]==0) ? Formula($DEcontext, "y")  : 
                    Formula($DEcontext, "y'") ;
@@ -126,6 +131,6 @@ Context()->normalStrings;
 ANS($lambda->cmp());
 ANS($f->cmp());
 
-COMMENT("Randomly picks L.  Takes derivatives on left and right boundary values.");
+COMMENT("Randomly picks L.  Randomly takes a derivative on left or right boundary values.");
 
 ENDDOCUMENT();        

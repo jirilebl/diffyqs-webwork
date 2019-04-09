@@ -112,10 +112,10 @@ $PAR
 $PAR
 $BR
 Given the boundary conditions:
-  \(\displaystyle \quad \begin{aligned}[t] 
-                           y(0) &= $y0 \\
-      y\left($t[$mix[0]]\right) &= $BV[$mix[0]]
-                         \end{aligned} \)
+\[
+y(0) = $y0, \quad
+y\left($t[$mix[0]]\right) = $BV[$mix[0]] .
+\]
 $PAR
 Find \(y = {} \) \{ ans_rule(50) \}
 \{ AnswerFormatHelp("formulas") \}
@@ -123,10 +123,10 @@ Find \(y = {} \) \{ ans_rule(50) \}
 $PAR
 $BR
 Given the boundary conditions:
-  \(\displaystyle \quad \begin{aligned}[t] 
-                           y(0) &= $y0 \\
-      y\left($t[$mix[1]]\right) &= $BV[$mix[1]]
-                         \end{aligned} \)
+\[
+y(0) = $y0, \quad
+y\left($t[$mix[1]]\right) = $BV[$mix[1]] .
+\]
 $PAR
 Find \(y = {} \) \{ ans_rule(50) \}
 \{ AnswerFormatHelp("formulas") \}
@@ -134,10 +134,10 @@ Find \(y = {} \) \{ ans_rule(50) \}
 $PAR
 $BR
 Given the boundary conditions:
-  \(\displaystyle \quad \begin{aligned}[t] 
-                           y(0) &= $y0 \\
-      y\left($t[$mix[2]]\right) &= $BV[$mix[2]]
-                         \end{aligned} \)
+\[
+y(0) = $y0, \quad
+y\left($t[$mix[2]]\right) = $BV[$mix[2]] .
+\]
 $PAR
 Find \(y = {} \) \{ ans_rule(50) \}
 \{ AnswerFormatHelp("formulas") \}
