@@ -22,7 +22,8 @@ $refreshCachedImages=1;
 #################################################
 
 Context("LimitedFraction");
-$a0 = Fraction(random(0,1),non_zero_random(-4,4));
+$a0c = Fraction(random(0,1),non_zero_random(-4,4));
+$a0 = 2*$a0c;
 $a1 = Fraction(random(0,1),non_zero_random(-4,4));
 $a2 = Fraction(random(0,1),non_zero_random(-4,4));
 $a3 = Fraction(random(0,1),non_zero_random(-4,4));
@@ -42,10 +43,11 @@ $b3r = Real($b3);
 
 Context()->texStrings;
 BEGIN_TEXT
-f is a function with the following Fourier coefficients
-$BR
+\(f\) is a \(2\pi\)-periodic function with the following
+Fourier coefficients
+$PAR
 \{begintable(2)\}
-\{row( '\( {\rm a}_0 = $a0\)',  '\(\)' )\}
+\{row( '\( {\rm a}_0 =$a0\)',  '\(\)' )\}
 \{row( '\( {\rm a}_1 =$a1\)',  '\({\rm b}_1 = $b1\)' )\}
 \{row( '\( {\rm a}_2 =$a2\)',  '\({\rm b}_2 = $b2\)' )\}
 \{row( '\( {\rm a}_3 =$a3\)',  '\({\rm b}_3 = $b3\)' )\}
@@ -56,13 +58,13 @@ Context()->normalStrings;
 
 Context("Numeric");
 
-$f[0] = Formula("$a0 + $a1*cos(x)+ $b1*sin(x) + $a2*cos(2*x) + $b2*sin(2*x) + $a3*cos(3*x)+$b3*sin(3*x)");
+$f[0] = Formula("$a0c + $a1*cos(x)+ $b1*sin(x) + $a2*cos(2*x) + $b2*sin(2*x) + $a3*cos(3*x)+$b3*sin(3*x)");
 
-$f[1] = Formula("$a0 + $a1*cos(x)+ $b1*sin(x) + $a2*cos(2*x) + $b2*sin(2*x) + sin(4*x)/2");
+$f[1] = Formula("$a0c + $a1*cos(x)+ $b1*sin(x) + $a2*cos(2*x) + $b2*sin(2*x) + sin(4*x)/2");
 
-$f[2] = Formula("$a0 + $a1*cos(5*x/3)+ $b1*sin(5*x/3) + $a2*cos(7*x/3) + $b2*sin(7*x/3) + $a3*cos(13*x/3)+$b3*sin(13*x/3)");
+$f[2] = Formula("$a0c + $a1*cos(5*x/3)+ $b1*sin(5*x/3) + $a2*cos(7*x/3) + $b2*sin(7*x/3) + $a3*cos(13*x/3)+$b3*sin(13*x/3)");
 
-$f[3] = Formula("$a0 + $a1*cos(3*x/2)+ $b1*sin(3*x/2) + $a2*cos(5*x/2) + $b2*sin(5*x/2) + $a3*cos(7*x/2)+$b3*sin(7*x/2)");
+$f[3] = Formula("$a0c + $a1*cos(3*x/2)+ $b1*sin(3*x/2) + $a2*cos(5*x/2) + $b2*sin(5*x/2) + $a3*cos(7*x/2)+$b3*sin(7*x/2)");
 
 
 ##  Graph size
@@ -70,7 +72,7 @@ $f[3] = Formula("$a0 + $a1*cos(3*x/2)+ $b1*sin(3*x/2) + $a2*cos(5*x/2) + $b2*sin
 ## size of the image to be displayed. 
 
 ($xmin,$xmax) = (-Real(pi),Real(pi));
-($ymin,$ymax) = (-4,4);
+($ymin,$ymax) = (-3,3);
 
 $F[0] = "$f[0] for x in <$xmin,$xmax> using color:red and weight:2";
 $F[1] = "$f[1] for x in <$xmin,$xmax> using color:red and weight:2";
@@ -79,7 +81,7 @@ $F[3] = "$f[3] for x in <$xmin,$xmax> using color:red and weight:2";
 ## create the graph.
 
 for $i (0..3) {
-$gr[$i] = init_graph($xmin,$ymin,$xmax,$ymax,axes=>[0,0],size=>[500,500],grid=>[$xmax-$xmin,10]);
+$gr[$i] = init_graph($xmin,$ymin,$xmax,$ymax,axes=>[0,0],size=>[500,500],grid=>[8,12]);
   plot_functions( $gr[$i],$F[$i] ); 
   $fig[$i]=image(insertGraph($gr[$i]),
   width=>200,height=>200,tex_size=>450);

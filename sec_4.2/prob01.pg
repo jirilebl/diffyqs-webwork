@@ -47,31 +47,33 @@ $b4 = Compute("$d");
 
 Context()->texStrings;
 BEGIN_TEXT
-Compute the coefficients of the Fourier series for the \(2\pi\)-periodic function \(f(t) = $a \cos(t) + $b \cos(2 t) + $c \sin(2 t) + $d \sin (4t)\).
-$BR
-$BR
-We are using the convention that the constant term is \(\frac{a_0}{2}\).
-$BR
-$BR
+Compute the following coefficients of the Fourier series for the \(2\pi\)-periodic function \(f(t) = $a \cos(t) + $b \cos(2 t) + $c \sin(2 t) + $d \sin (4t)\).
+$PAR
 \(a_0 = {}\) \{ ans_rule(10) \}
+\{ AnswerFormatHelp("numbers") \}
 $BR
 \(a_1 = {}\) \{ ans_rule(10) \}
+\{ AnswerFormatHelp("numbers") \}
 $BR
 \(a_2 = {}\) \{ ans_rule(10) \}
+\{ AnswerFormatHelp("numbers") \}
 $BR
 \(a_3 = {}\) \{ ans_rule(10) \}
+\{ AnswerFormatHelp("numbers") \}
 $BR
 \(a_4 = {}\) \{ ans_rule(10) \}
+\{ AnswerFormatHelp("numbers") \}
 $BR
 \(b_1 = {}\) \{ ans_rule(10) \}
+\{ AnswerFormatHelp("numbers") \}
 $BR
 \(b_2 = {}\) \{ ans_rule(10) \}
+\{ AnswerFormatHelp("numbers") \}
 $BR
 \(b_3 = {}\) \{ ans_rule(10) \}
+\{ AnswerFormatHelp("numbers") \}
 $BR
 \(b_4 = {}\) \{ ans_rule(10) \}
-$BR
-$BR
 \{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;

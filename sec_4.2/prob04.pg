@@ -34,15 +34,24 @@ $c = random(2,10,1);
 $f = Formula("$a*t^2 + $b*t + $c");
 
 # at 1
-$sol1 = $f->eval->(t=>1);
+$t1 = "1";
+$sol1 = $f->eval(t=>1);
+
 # at 1.5 pi
-$sol2 = $f->eval->(t=>Real("-0.5*pi"));
+$t2 = "1.5 \pi";
+$sol2 = $f->eval(t=>Real("-0.5*pi"));
+
 # at -2 pi
-$sol3 = $f->eval->(t=>0);
+$t3 = "-2 \pi";
+$sol3 = $f->eval(t=>0);
+
 # at 4
-$sol4 = $f->eval->(t=>Real("4-2*pi"));
+$t4 = "4";
+$sol4 = $f->eval(t=>Real("4-2*pi"));
+
 # at 10 pi
-$sol5 = $f->eval->(t=>0);
+$t5 = "10 \pi";
+$sol5 = $f->eval(t=>0);
 
 
 ###########################
@@ -52,10 +61,10 @@ Context()->texStrings;
 BEGIN_TEXT
 Let \( f(t) = $a t^2 + $b t + $c \) for \( -\pi < t \leq \pi \) and extend periodically.  Compute:
 $PAR
-\(f(1.5 \pi) = {}\) \{ ans_rule(30); \}
+\(f($t1) = {}\) \{ ans_rule(30); \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-\(f(-2\pi) = {}\) \{ ans_rule(30); \}
+\(f($t2) = {}\) \{ ans_rule(30); \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
 \(f($t3) = {}\) \{ ans_rule(30); \}
