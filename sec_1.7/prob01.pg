@@ -19,9 +19,6 @@ loadMacros(
 ######################################################
  
 Context("Numeric");
-Context()->flags->set(tolerance=>.0001);
-Context()->flags->set(tolType=>'absolute');
-Context()->{format}{number} = "%.6f#";
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
