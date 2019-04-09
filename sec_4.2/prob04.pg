@@ -1,0 +1,82 @@
+# Computing values of periodic extensions
+
+## Author(Jiri Lebl)
+## Institution(Oklahoma State University)
+## KEYWORDS('Fourier series', 'periodic extension')
+
+########################################################################
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+###########################
+# Setup
+
+Context("Numeric");
+Context()->variables->are(t=>"Real");
+
+$a = random(2,10,1);
+$b = random(2,10,1);
+$c = random(2,10,1);
+
+$f = Formula("$a*t^2 + $b*t + $c");
+
+# at 1
+$sol1 = $f->eval->(t=>1);
+# at 1.5 pi
+$sol2 = $f->eval->(t=>Real("-0.5*pi"));
+# at -2 pi
+$sol3 = $f->eval->(t=>0);
+# at 4
+$sol4 = $f->eval->(t=>Real("4-2*pi"));
+# at 10 pi
+$sol5 = $f->eval->(t=>0);
+
+
+###########################
+# Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Let \( f(t) = $a t^2 + $b t + $c \) for \( -\pi < t \leq \pi \) and extend periodically.  Compute:
+$PAR
+\(f(1.5 \pi) = {}\) \{ ans_rule(30); \}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\(f(-2\pi) = {}\) \{ ans_rule(30); \}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\(f($t3) = {}\) \{ ans_rule(30); \}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\(f($t4) = {}\) \{ ans_rule(30); \}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\(f($t5) = {}\) \{ ans_rule(30); \}
+\{ AnswerFormatHelp("numbers") \}
+END_TEXT
+Context()->normalStrings;
+
+###########################
+# Answer evaluation
+
+
+ANS($sol1->cmp);
+ANS($sol2->cmp);
+ANS($sol3->cmp);
+ANS($sol4->cmp);
+ANS($sol5->cmp);
+
+ENDDOCUMENT();
