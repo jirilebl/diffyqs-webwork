@@ -1,0 +1,149 @@
+# Compute Fourier series
+
+## Institution(University of Michigan)
+## Author(Gavin LaRose)
+
+#########################################################
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGchoicemacros.pl",
+  "PGgraphmacros.pl",
+  "PGcourse.pl"
+);
+
+#########################################################
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+Context()->flags->set( reduceConstants=>0 );
+
+$ll = random(-5,-2,1);
+$rr = random(2,5,1);
+
+$avg = ($ll+$rr)/2.0;
+$fourscale = 4*($rr-$ll)/2.0;
+
+    ## then we graph
+    $ftex = "\begin{cases}$ll & -\pi \le x < 0\cr $rr & 0 \le x < \pi\end{cases}";
+    @f = ( "$ll for x in <-3.1415,0> using color:blue and weight:1",
+	   "$rr for x in <0,3.1415> using color:blue and weight:1" );
+
+    @a = ( 0, 0, 0, 0 );
+    @b = ( 0, "{$fourscale \over \pi}", 0, "{$fourscale \over 3\pi}" );
+    $f1 = Compute("$avg + ($fourscale/pi)*sin(x)");
+    $f2 = Compute("$avg + ($fourscale/pi)*sin(x)");
+    $f3 = Compute("$avg + ($fourscale/pi)*sin(x) + ($fourscale/(3*pi))*sin(3*x)");
+
+    ## some variables for the solution
+    @aint = ( "\int_{-\pi}^0 $ll\,dx + \int_0^{\pi}\,$rr\,dx",
+	      "\int_{-\pi}^0 $ll \cos(x)\,dx + \int_0^{\pi} $rr \cos(x)\,dx",
+	      "\int_{-\pi}^0 $ll \cos(2x)\,dx + \int_0^{\pi} $rr \cos(2x)\,dx",
+	      "\int_{-\pi}^0 $ll \cos(3x)\,dx + \int_0^{\pi} $rr \cos(3x)\,dx" );
+    @bint = ( "",
+	      "\int_{-\pi}^0 $ll \sin(x)\,dx + \int_0^{\pi} $rr \sin(x)\,dx",
+	      "\int_{-\pi}^0 $ll \sin(2x)\,dx + \int_0^{\pi} $rr \sin(2x)\,dx",
+	      "\int_{-\pi}^0 $ll \sin(3x)\,dx + \int_0^{\pi} $rr \sin(3x)\,dx" );
+
+#########################################################
+
+Context()->texStrings;
+BEGIN_TEXT
+Let \(F_k\) be the \(k\)th Fourier approximation, that is
+the first \(k\) harmonics:
+\[ \displaystyle F_k(x) = \frac{a_0}{2} + \sum_{n=1}^{k} \bigl(a_n\cos(nx) + b_n\sin(nx)\bigr) . \]
+Construct the first three Fourier approximations to the square wave
+function
+\[ f(x) = $ftex \]
+$PAR
+\( F_1(x) = \) \{ ans_rule(60) \}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+\( F_2(x) = \) \{ ans_rule(60) \}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+\( F_3(x) = \) \{ ans_rule(60) \}
+\{ AnswerFormatHelp("formulas") \}
+END_TEXT
+Context()->normalStrings;
+
+#########################################################
+
+ANS($f1->cmp() );
+ANS($f2->cmp() );
+ANS($f3->cmp() );
+
+
+$sgr = init_graph(-3.1415,-6,3.1415,6,axes=>[0,0],ticks=>[8,6],
+		  size=>[250,250]);
+add_functions( $sgr, @f,
+	       "$f1 for x in <-3.1415,3.1415> using color:black and weight:1",
+	       "$f2 for x in <-3.1415,3.1415> using color:black and weight:1",
+	       "$f3 for x in <-3.1415,3.1415> using color:black and weight:1" );
+
+#########################################################
+
+Context()->texStrings;
+BEGIN_SOLUTION
+To find the Fourier approximations we need the coefficients:
+$PAR
+\( a_0 = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\,dx =
+   \frac{1}{\pi}\left( $aint[0] \right) = \{ 2*$avg \}. \)
+$PAR
+Then
+$PAR
+\( a_1 = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\cos x\,dx = 
+   \frac{1}{\pi}\left( $aint[1] \right) = $a[1], \)
+$PAR
+\( a_2 = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\cos 2x\,dx = 
+   \frac{1}{\pi}\left( $aint[1] \right) = $a[2], \)
+$PAR
+and
+$PAR
+\( a_3 = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\cos 3x\,dx = 
+   \frac{1}{\pi}\left( $aint[1] \right) = $a[3]. \)
+
+$PAR
+Similarly,
+$PAR
+\( b_1 = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\sin x\,dx = 
+   \frac{1}{\pi}\left( $bint[1] \right) = $b[1], \)
+$PAR
+\( b_2 = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\sin 2x\,dx = 
+   \frac{1}{\pi}\left( $bint[1] \right) = $b[2], \)
+$PAR
+and
+$PAR
+\( b_3 = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\sin 3x\,dx = 
+   \frac{1}{\pi}\left( $bint[1] \right) = $b[3]. \)
+
+$PAR
+Thus,
+\[ F_1 = $f1, \]
+\[ F_2 = $f2, \]
+and
+\[ F_3 = $f3. \]
+
+$PAR
+We can graph these, as shown in the graph below, which shows the function
+\(f\) in blue and the successive Fourier approximations in black.
+$BR
+$BCENTER
+\{ image( insertGraph($sgr), tex_size=>250, height=>250, width=>250,
+          extra_html_tags=>'alt="graph of the function f and first ' .
+          'three fourier approximations."' ) \}
+$ECENTER
+
+END_SOLUTION
+Context()->normalStrings;
+
+#########################################################
+
+;
+ENDDOCUMENT();

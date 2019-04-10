@@ -4,7 +4,7 @@
 ## Author(Gavin LaRose)
 ## KEYWORDS('calculus','integral', 'fourier', 'series', 'approximation')
 
-############################3
+###################################################
 
 DOCUMENT();
 
@@ -117,6 +117,8 @@ if ( $whichL == $whichR ) { ## then the function is either x or -x
 $an->{test_points} = [[1,1],[2,2],[3,3],[4,4],[5,5]];
 $bn->{test_points} = [[1,1],[2,2],[3,3],[4,4],[5,5]];
 
+###################################################
+
 Context()->texStrings;
 TEXT(beginproblem());
 BEGIN_TEXT
@@ -134,9 +136,13 @@ $BR
 END_TEXT
 Context()->normalStrings;
 
+###################################################
+
 ANS($a0->cmp() );
 ANS($an->cmp() );
 ANS($bn->cmp() );
+
+###################################################
 
 Context()->texStrings;
 BEGIN_SOLUTION

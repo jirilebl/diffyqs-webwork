@@ -1,0 +1,86 @@
+# Find antiderivative of a Fourier series
+
+## Author(Jiri Lebl)
+## Institution(Oklahoma State University)
+
+########################################################################
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+"PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+# Setup
+
+Context("Numeric");
+
+$a = random(2,9,1);
+do { $b = random(2,9,1); } until ($b != $a);
+do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
+
+Context()->variables->add(n => ['Real', limits=>[1,20], resolution=>1]);
+
+$answer1 = Compute("$b");
+$answer2 = Compute("2*$c");
+$answer3 = Compute("0");
+$answer4 = Compute("($a)/(pi*n^6)");
+
+
+############################
+# Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Take the function defined by the series
+\( f(t) = $b + \sum_{n=1}^\infty \frac{$a}{n^5} \cos( n \pi t) \).
+$PAR
+Find the antiderivative which is in the form
+\( F(t) = Ct + \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos( n \pi t) + b_n \sin( n \pi t) \), and such that \(F(0) = $c \)
+$PAR
+\( C = {} \) \{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+\( a_0 = {} \) \{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+\( a_n = {} \) \{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+\( b_n = {} \) \{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+##  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+ANS( $answer2->cmp() );
+ANS( $answer3->cmp() );
+ANS( $answer4->cmp() );
+
+#####################
+# Solution
+
+#Context()->texStrings;
+#BEGIN_SOLUTION
+#END_SOLUTION
+#Context()->normalStrings;
+
+;
+
+ENDDOCUMENT();
