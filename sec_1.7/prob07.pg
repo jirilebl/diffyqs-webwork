@@ -23,7 +23,7 @@ $showPartialCorrectAnswers = 1;
 Context("Numeric");
 Context()->variables->are(x=>'Real');
 
-$a0 = .1 * random(0,5,1);
+$a0 = Compute(.1 * random(0,5,1));
 $a1 = $a0 + 0.25;
 $a2 = $a0 + 0.5;
 $a3 = $a0 + 0.75;
@@ -31,9 +31,9 @@ $a4 = $a0 + 1;
 
 
 
-$b0 = random(1,9,1);
+$b0 = Compute(random(1,9,1));
 do {
-  $c0 = 0.5*random (1,5,1);
+  $c0 = Compute(0.5*random (1,5,1));
 } while ($c0 == 1);
 $c1 = 1/$c0**2;
 $c2 = exp($a0*$c0)*($b0-$a0/$c0 +$c1);
@@ -41,7 +41,8 @@ $d0 = $a0-$c0*$b0;
 $e0 = $b0 + $d0/4;
 $f0 = $a1 -$c0*$e0;
 $funct = Compute("x/$c0-$c1 + $c2*exp(-$c0*x)");
-$c3 = "$a4/$c0-$c1 + $c2*exp(-$c0*$a4)";
+$functtex = "\frac{x}{$c0}-\frac{1}{{$c0}^2} + e^{$a0 \cdot $c0}\left($b0-\frac{$a0}{$c0} +\frac{1}{{$c0}^2}\right) e^{-$c0 x}";
+$c3 = $a4/$c0-$c1 + $c2*exp(-$c0*$a4);
 
 @ans =();
 
@@ -63,26 +64,6 @@ $f3 = $a4 - $c0*$e3;
 
 
 $b4 = $b3 + ($d3 + $f3)/8;
-
-
-$ans[0] = Compute("$a1");
-$ans[1] = Compute("$b1");
-$ans[2] = Compute("$d1");
-$ans[3] = Compute("$e1");
-$ans[4] = Compute("$f1");
-$ans[5] = Compute("$a2");
-$ans[6] = Compute("$b2");
-$ans[7] = Compute("$d2");
-$ans[8] = Compute("$e2");
-$ans[9] = Compute("$f2");
-$ans[10] = Compute("$a3");
-$ans[11] = Compute("$b3");
-$ans[12] = Compute("$d3");
-$ans[13] = Compute("$e3");
-$ans[14] = Compute("$f3");
-$ans[15] = Compute("$a4");
-$ans[16] = Compute("$b4");
-$ans[17] = Compute("$c3");
 
 ####################################################
 
@@ -139,31 +120,66 @@ $PAR
 \( y($a4) = {}\) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
+$PAR
+While the approximate solution found above is
+\( y($a4) \approx {}\) \{ans_rule(20)\}
+\{ AnswerFormatHelp("numbers") \}
+
 END_TEXT
 Context()->normalStrings;
 
 ####################################################
 
-
-ANS(num_cmp($ans[0]));
-ANS(num_cmp($ans[1]));
-ANS(num_cmp($ans[2]));
-ANS(num_cmp($ans[3]));
-ANS(num_cmp($ans[4]));
-ANS(num_cmp($ans[5]));
-ANS(num_cmp($ans[6]));
-ANS(num_cmp($ans[7]));
-ANS(num_cmp($ans[8]));
-ANS(num_cmp($ans[9]));
-ANS(num_cmp($ans[10]));
-ANS(num_cmp($ans[11]));
-ANS(num_cmp($ans[12]));
-ANS(num_cmp($ans[13]));
-ANS(num_cmp($ans[14]));
-ANS(num_cmp($ans[15]));
-ANS(num_cmp($ans[16]));
+ANS($a1->cmp());
+ANS($b1->cmp());
+ANS($d1->cmp());
+ANS($e1->cmp());
+ANS($f1->cmp());
+ANS($a2->cmp());
+ANS($b2->cmp());
+ANS($d2->cmp());
+ANS($e2->cmp());
+ANS($f2->cmp());
+ANS($a3->cmp());
+ANS($b3->cmp());
+ANS($d3->cmp());
+ANS($e3->cmp());
+ANS($f3->cmp());
+ANS($a4->cmp());
+ANS($b4->cmp());
 ANS($funct->cmp());
-ANS(num_cmp($ans[17]));
+ANS($c3->cmp());
+ANS($b4->cmp());
+
+####################################################
+
+Context()->texStrings;
+BEGIN_SOLUTION
+The table should be:
+$BR
+\{begintable(6) . 
+row('$SPACE \(n\) $SPACE ', '\(x_n\)', '\(y_n\)', '\(k_1\)', '\( z_{n+1} \)','\(k_2\)').
+row('\(0\)','\($a0\)','\($b0\)','\($d0\)','\($e0\)','\($f0\)').
+row('\(1\)','\($a1\)','\($b1\)','\($d1\)','\($e1\)','\($f1\)').
+row('\(2\)','\($a2\)','\($b2\)','\($d2\)','\($e2\)','\($f2\)').
+row('\(3\)','\($a3\)','\($b3\)','\($d3\)','\($e3\)','\($f3\)').
+row('\(4\)','\($a4\)','\($b4\)').
+endtable();
+\}
+
+$PAR
+The exact solution is \(y(x)= $functtex .\)
+
+$PAR
+So
+\( y($a4) = $c3 ,\)
+while we approximated
+\( y($a4) \approx $b4 .\)
+
+END_SOLUTION
+Context()->normalStrings;
+
+####################################################
 
 ENDDOCUMENT();
 

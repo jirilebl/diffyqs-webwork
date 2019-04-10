@@ -1,10 +1,9 @@
-##DESCRIPTION
-##  Exact differential equation
-##ENDDESCRIPTION
+# Exact differential equation
 
 ## Institution(Miami University and Hope College and Cleveland State University)
 ## Author(Anna Ghazaryan, Fuli Zhang, Paul Pearson, Barbara Margolius)
-## KEYWORDS('Differential equaltion')
+
+##############################################################
 
 DOCUMENT();      
 
@@ -14,6 +13,8 @@ loadMacros(
   "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
+
+##############################################################
 
 # Print problem number and point value (weight) for the problem
 TEXT(beginproblem());
@@ -26,7 +27,7 @@ $showPartialCorrectAnswers = 1;
 #  Setup
 #
 #
-Context("Numeric")->variables->add(y=>"Real",c=>"Real");
+Context("Numeric")->variables->add(y=>"Real");
 $a = random(3,8,1);
 $b = random(2,3,1);
 $c = random(3,5,1);
@@ -43,20 +44,14 @@ $dy = Formula("$c y+$a")->reduce;
 
 Context()->texStrings;
 BEGIN_TEXT
-
- Solve the following differential equation: 
-$BR
-$BR
-\(\   ($dx)dx+($dy)dy=0\).
-
-$BR
-$BR
+Solve the following differential equation: 
+$PAR
+\(($dx)dx+($dy)dy=0\).
+$PAR
 \{ ans_rule(30) \} 
 =
 constant. 
-\{ AnswerFormatHelp("formulas") \}
-
-
+$SPACE \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
 

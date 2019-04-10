@@ -1,22 +1,26 @@
-## DESCRIPTION
-## Differential Equations: Exact Equations
-## ENDDESCRIPTION
+# Solving exact equations
 
 ## Institution(ASU)
 
-DOCUMENT() ;        # This should be the first executable line in the problem.
+###############################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
   "PGcourse.pl"
 );
 
-Context()->variables->add(y=>"Real");
+###############################################
 
 TEXT(beginproblem()) ;
 $showPartialCorrectAnswers = 1;
+
+Context()->variables->add(y=>"Real");
+
 
 $a= non_zero_random(-4,4,1);
 do {$b= non_zero_random(-4,4,1);} until ($b!=-1);
@@ -67,8 +71,10 @@ $multians = MultiAnswer($M, $N)->with(
 $lpol = nicestring([$b], ["y^${n1}"]);
 $rpol = nicestring([$n], ["x"]);
 
-BEGIN_TEXT
+###############################################
 
+Context()->texStrings;
+BEGIN_TEXT
 The differential equation 
 \[ y + $lpol = \left(y^${m1} + $rpol\right)y' \]
 can be written in differential form:
@@ -76,11 +82,15 @@ can be written in differential form:
 where $BR
 \(M(x,y)= \) \{$multians->ans_rule(30)\} , and 
 \(N(x,y)= \) \{$multians->ans_rule(30)\}.
+$SPACE \{ AnswerFormatHelp("formulas") \}
 $PAR
 The term \(M(x,y) \, dx + N(x,y) \, dy\) becomes an exact differential if the left hand side above is divided by \( y^${n1}\). Integrating that new equation, the solution of the differential equation is 
  \{ ans_rule(45) \} \(= C \).
-
+$SPACE \{ AnswerFormatHelp("formulas") \}
 END_TEXT
+Context()->normalStrings;
+
+###############################################
 
 # Can input a root, which defaults to [0,0], and another point
 #  which defaults to [2,1]
@@ -109,5 +119,5 @@ ANS( $multians->cmp() );
 ANS( $Fxy->cmp(checker =>~~&lcc, root=> $r1, other=>$r2));
 
 
-ENDDOCUMENT() ;        # This should be the last executable line in the problem.
+ENDDOCUMENT();
 

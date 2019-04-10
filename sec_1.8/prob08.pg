@@ -1,22 +1,26 @@
-## DESCRIPTION
-##  Exact differential equation
-## ENDDESCRIPTION
+# Implicit solve exact differential equation
 
 ## Institution(Rochester)
-## KEYWORDS('differential equation' 'exact')
+## KEYWORDS('differential equation', 'exact')
 
-DOCUMENT() ;        # This should be the first executable line in the problem.
+###################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "Parser.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
+
+###################################################
 
 TEXT(beginproblem()) ;
 $showPartialCorrectAnswers = 1 ;
 
-Context('Numeric')->variables->add(y=>'Real');
+Context('Numeric');
+Context()->variables->add(y=>'Real');
 
 $a = random(2,4,1) * random(-1,1,2);
 $b = non_zero_random(-4,4,1);
@@ -25,14 +29,18 @@ $n1=$n+1;
 $m = random(2,4,1);
 $m1= $m+1;
 
-BEGIN_TEXT
+###################################################
 
+Context()->texStrings;
+BEGIN_TEXT
 Find a function \(F(x,y)\) whose level curves are solutions to the differential equation
 \[ ( x^2 + ${a}xy )dx + x dy= 0 \]
-\(F(x,y) = \) \{ ans_rule(30) \}
-
+\(F(x,y) = {} \) \{ ans_rule(30) \}
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
+Context()->normalStrings;
 
+###################################################
 
 # Can input a root, which defaults to [0,0], and another point
 #  which defaults to [2,1]
@@ -56,8 +64,6 @@ sub lcc {
   return $correct == $student;
 }
 
-
-
 ANS(Compute("e^( ${a}x )(y   + x/$a - 1/($a)^2 )")->cmp(checker => ~~&lcc,
   root => [0, 1/($a)**2], other=>[0, 5+1/($a)^2] ));
 
@@ -66,7 +72,5 @@ ANS(Compute("e^( ${a}x )(y   + x/$a - 1/($a)^2 )")->cmp(checker => ~~&lcc,
 #          FEQ(" e^( ${a}x )(y   + x/$a - 1/($a)^2 ) "), initial_t=>0,initial_y=>2/($a)**2,tol => .1)    
 #);     
 
-ENDDOCUMENT() ;        # This should be the last executable line in the problem.
-
-
+ENDDOCUMENT();
 
