@@ -63,14 +63,16 @@ That is, level curves \(F(x,y) = C\) are solutions to the differential equation:
 \[ ( ${a}xy^2 + ${b}y )dx + ( ${a}x^2y +${c}x )dy= 0 \]
 First, if this equation has the form \(M(x,y)dx+N(x,y)dy=0\):
 $PAR
-\(\dfrac{\partial M}{\partial y}(x,y)= \) \{ans_rule(30) \}, and
+\(\dfrac{\partial M}{\partial y}(x,y)= \) \{ans_rule(30) \}
+\{AnswerFormatHelp("formulas") \}, and
 $PAR
-\(\dfrac{\partial N}{\partial x}(x,y)= \) \{ans_rule(30) \}.
-$SPACE
+\(\dfrac{\partial N}{\partial x}(x,y)= \) \{ans_rule(30) \}
 \{AnswerFormatHelp("formulas") \}
 $PAR
 If the equation is not exact, enter ${BITALIC}not exact${EITALIC},  otherwise enter in 
-\(F(x,y)  \) here \{ ans_rule(30) \}
+\(F(x,y)  \) here
+$BR
+\{ ans_rule(30) \}
 \{AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
