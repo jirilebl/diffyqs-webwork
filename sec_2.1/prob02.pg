@@ -1,6 +1,4 @@
-##DESCRIPTION
-##  Superposition principle
-##ENDDESCRIPTION
+# Superposition principle
 
 ## Author(Darwyn Cook)
 ## KEYWORDS('superposition')
@@ -12,6 +10,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
@@ -30,7 +29,7 @@ Context()->variables->{namePattern} = qr/[a-z][a-z0-9_]*'*/i;
 Context()->variables->add(A=>"Real",B=>"Real","y"=>"Real","y'"=>"Real","y''"=>"Real");
 Context()->variables->set(x=>{limits=>[-1,1]});
 $homogeneous = Formula("A*cos(x)+B*sin(x)");
-$non = Formula("xsin(x)+cos(x)*ln(cos(x))");
+$non = Formula("x*sin(x)+cos(x)*ln(cos(x))");
 $general = Compute($homogeneous+$non);
 $wronskian = Formula("1");
 
@@ -74,6 +73,7 @@ y&=$non \\
 By superposition, the general solution of the equation \(y^{\prime\prime}+y=\sec(x)\) is
 $BR
 \(y = \) \{$general->ans_rule\}
+\{ AnswerFormatHelp("formulas") \}
 $PAR
 Find the solution with
 $BR
@@ -84,6 +84,7 @@ y(0)^\prime&=$y1 \\
 \end{aligned}
 \]
 \(y = \)\{$ivp->ans_rule\}
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 
 Context()->normalStrings;

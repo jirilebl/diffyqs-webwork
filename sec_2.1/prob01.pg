@@ -1,6 +1,4 @@
-##DESCRIPTION
-##  Guessing affine solution to simple nonhomogeneous ODE 
-##ENDDESCRIPTION
+# Guessing affine solution to simple nonhomogeneous ODE 
 
 ## Author(Jiri Lebl)
 ## Institution(Oklahoma State University)
@@ -52,14 +50,12 @@ Guess an (affine) linear solution
 \( y'' + $a y = $b x + $c \).
 $PAR
 \( y = {} \) \{ ans_rule(20) \}
-$PAR
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 Guess an (affine) linear solution to 
 \( y'' + y' + $a y = $b x + $c \).
 $PAR
 \( y = {} \) \{ ans_rule(20) \}
-$PAR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
