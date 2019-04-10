@@ -109,11 +109,9 @@ $PAR
 Let \(S(t)\) be the Fourier Sine series of \(g\).
 $PAR
 $PAR
-$BCENTER
 \(S(t)= \displaystyle\sum_{n=1}^{\infty}\Bigg[\Big(\) 
   \{ ans_rule(55) \}
  \(\displaystyle\Big)\sin\Big(\frac{n \pi}{$L}t\Big)\Bigg]\)
-$ECENTER
 $BR
 \{ AnswerFormatHelp("formulas") \}
 $PAR 
@@ -144,11 +142,9 @@ $BR
 $PAR
 Let \(C(t)\) be the Fourier Cosine series of \(g\).
 $PAR
-$BCENTER
 \(C(t)= \) \{ ans_rule(5) \} \(+ \displaystyle\sum_{n=1}^{\infty}\Bigg[
 \Big(\) \{ ans_rule(60) \}\(\displaystyle\Big)\cos\Big(\frac{n \pi}{$L}t\Big)
 \Bigg]\)
-$ECENTER
 $BR
 \{ AnswerFormatHelp("formulas") \}
 $PAR
