@@ -81,7 +81,7 @@ $F[3] = "$f[3] for x in <$xmin,$xmax> using color:red and weight:2";
 ## create the graph.
 
 for $i (0..3) {
-$gr[$i] = init_graph($xmin,$ymin,$xmax,$ymax,axes=>[0,0],size=>[500,500],grid=>[8,12]);
+$gr[$i] = init_graph($xmin,$ymin,$xmax,$ymax,axes=>[0,0],size=>[500,500],grid=>[12,12]);
   plot_functions( $gr[$i],$F[$i] ); 
   $fig[$i]=image(insertGraph($gr[$i]),
   width=>200,height=>200,tex_size=>450);

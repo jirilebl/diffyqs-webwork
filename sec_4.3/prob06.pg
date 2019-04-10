@@ -49,10 +49,10 @@ Find the antiderivative which is in the form
 \( F(t) = Ct + \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos( n \pi t) + b_n \sin( n \pi t) \), and such that \(F(0) = $c \)
 $PAR
 \( C = {} \) \{ ans_rule(40) \}
-\{ AnswerFormatHelp("formulas") \}
+\{ AnswerFormatHelp("numbers") \}
 $PAR
 \( a_0 = {} \) \{ ans_rule(40) \}
-\{ AnswerFormatHelp("formulas") \}
+\{ AnswerFormatHelp("numbers") \}
 $PAR
 \( a_n = {} \) \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}

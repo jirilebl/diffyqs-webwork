@@ -61,12 +61,12 @@ $fc=Compute($a * $c + $b);
 Context()->texStrings;
 BEGIN_TEXT
 
-If \(f\) is the Fourier series of \(g(x)=$a x + $b\) for \(-$p < x < $p\), then 
+If \(f\) is the Fourier series of \(g(t)=$a t + $b\) for \(-$p < t < $p\), then 
 $PAR
-\(f(x)= \) \{ ans_rule(5) \} \(+\displaystyle\sum_{n=1}^{\infty} \Bigg[
-\Big(\) \{ ans_rule(15) \} \(\displaystyle\Big)\cos\Big(\frac{n \pi}{$p}x\Big)
+\(f(t)= \) \{ ans_rule(5) \} \(+\displaystyle\sum_{n=1}^{\infty} \Bigg[
+\Big(\) \{ ans_rule(15) \} \(\displaystyle\Big)\cos\Big(\frac{n \pi}{$p}t\Big)
 +
-\Big(\)\{ ans_rule(15) \}\(\displaystyle\Big)\sin\Big(\frac{n \pi}{$p}x\Big)
+\Big(\)\{ ans_rule(15) \}\(\displaystyle\Big)\sin\Big(\frac{n \pi}{$p}t\Big)
 \Bigg]\)
 $BR
 \{ AnswerFormatHelp("formulas") \}
@@ -104,4 +104,5 @@ ANS( $fnpd2->cmp() );
 ANS( $f0->cmp() );
 ANS( $fc->cmp() );
 ANS( $fp->cmp() );
+
 ENDDOCUMENT();

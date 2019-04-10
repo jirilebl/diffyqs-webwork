@@ -18,18 +18,18 @@ loadMacros(
 
 Context("Numeric");
 Context()->flags->set( reduceConstants=>0 );
-Context()->variables->add( n=>'Real' );
+Context()->variables->are( n=>'Real' );
 $showPartialCorrectAnswers = 1;
 
-$whichL = random(0,2);  ## the left function is  0, x, or -x
-$whichR = random(0,2);  ## the right function is 0, x, or -x
+$whichL = random(0,2);  ## the left function is  0, t, or -t
+$whichR = random(0,2);  ## the right function is 0, t, or -t
 $whichL = random(1,2) if ( $whichL == 0 && $whichR == 0 );
 $whichL = 1;
 $whichR = 2;
 
-@funcs = ( "0", "x", "-x" );
+@funcs = ( "0", "t", "-t" );
 
-if ( $whichL == $whichR ) { ## then the function is either x or -x
+if ( $whichL == $whichR ) { ## then the function is either t or -t
     $ftex = $funcs[$whichL];
 
     ## in this case all a_n are zero
@@ -41,15 +41,15 @@ if ( $whichL == $whichR ) { ## then the function is either x or -x
     $bn = $bn*(-1) if ( $whichL == 2 );
 
     ## for the solution, we have
-    $aint0 = "\frac{1}{\pi}\int_{-\pi}^{\pi}\,$ftex\,dx = 0";
-    $aintn = "\frac{1}{\pi}\int_{-\pi}^{\pi}\,$ftex\,\cos(n x)\,dx = 0";
-    $bintn = "\frac{1}{\pi}\int_{-\pi}^}{\pi}\,$ftex\,\sin(n x)\,dx = " . 
+    $aint0 = "\frac{1}{\pi}\int_{-\pi}^{\pi}\,$ftex\,dt = 0";
+    $aintn = "\frac{1}{\pi}\int_{-\pi}^{\pi}\,$ftex\,\cos(n t)\,dt = 0";
+    $bintn = "\frac{1}{\pi}\int_{-\pi}^}{\pi}\,$ftex\,\sin(n t)\,dt = " . 
 	$bn->TeX;
 
 } else {
     $fLeft = $funcs[$whichL];
     $fRight = $funcs[$whichR];
-    $ftex = "\begin{cases} $fLeft, & -\pi < x \le 0\cr $fRight, & 0 < x \le \pi\end{cases}";
+    $ftex = "\begin{cases} $fLeft, & -\pi < t \le 0\cr $fRight, & 0 < t \le \pi\end{cases}";
 
     if ( $whichL == 0 || $whichR == 0 ) {
 	## in this case we get a nonzero contribution from both a and b
@@ -57,7 +57,7 @@ if ( $whichL == $whichR ) { ## then the function is either x or -x
 	$an = Compute("(-1 + cos(n*pi))/(n^2*pi)");
 	$bn = Compute("-1*cos(n*pi)/k");
 
-	## and if we have -x on the right, or if we're integrating x on
+	## and if we have -t on the right, or if we're integrating t on
 	##    a negative domain, we multiply (some of) these by -1
 	if ( $whichR == 2 ) {
 	    $a0 = $a0*(-1);
@@ -71,42 +71,42 @@ if ( $whichL == $whichR ) { ## then the function is either x or -x
 
 	if ( $whichL == 0 ) {
 	    ## for the solution, we have
-	    $aint0 = "\frac{1}{\pi}\int_{0}^{\pi}\,$fRight\,dx = " . ($a0*2)->TeX;
-	    $aintn = "\frac{1}{\pi}\int_{0}^{\pi}\,$fRight\,\cos(n x)\,dx = " . 
+	    $aint0 = "\frac{1}{\pi}\int_{0}^{\pi}\,$fRight\,dt = " . ($a0*2)->TeX;
+	    $aintn = "\frac{1}{\pi}\int_{0}^{\pi}\,$fRight\,\cos(n t)\,dt = " . 
 		$an->TeX;
-	    $bintn = "\frac{1}{\pi}\int_{0}^{\pi}\,$fRight\,\sin(n x)\,dx = " . 
+	    $bintn = "\frac{1}{\pi}\int_{0}^{\pi}\,$fRight\,\sin(n t)\,dt = " . 
 		$bn->TeX;
 	} else {
 	    ## for the solution, we have
-	    $aint0 = "\frac{1}{\pi}\int_{-\pi}^{0}\,$fLeft\,dx = " . ($a0*2)->TeX;
-	    $aintn = "\frac{1}{\pi}\int_{-\pi}^{0}\,$fLeft\,\cos(n x)\,dx = " . 
+	    $aint0 = "\frac{1}{\pi}\int_{-\pi}^{0}\,$fLeft\,dt = " . ($a0*2)->TeX;
+	    $aintn = "\frac{1}{\pi}\int_{-\pi}^{0}\,$fLeft\,\cos(n t)\,dt = " . 
 		$an->TeX;
-	    $bintn = "\frac{1}{\pi}\int_{-\pi}^{0}\,$fLeft\,\sin(n x)\,dx = " . 
+	    $bintn = "\frac{1}{\pi}\int_{-\pi}^{0}\,$fLeft\,\sin(n t)\,dt = " . 
 		$bn->TeX;
 	}
 
     } else {
-	## we know that we go from -x to x or vice versa; the case -x to
-	##    x is
+	## we know that we go from -t to t or vice versa; the case -t to
+	##    t is
 	$a0 = Compute("pi/2");
 	$an = Compute("2*(-1 + cos(n*pi))/(n^2*pi)");
 	$bn = Compute("0");
 
-	## then, if we went x to -x, we just have the negative of these
+	## then, if we went t to -t, we just have the negative of these
 	if ( $whichL == 1 ) {
 	    $a0 = $a0*(-1);
 	    $an = $an*(-1);
 	}
 
 	## and for the solution we have
-	$aint0 = "\frac{1}{\pi}\int_{-\pi}^0\,$fLeft\,dx + " .
-	    "\frac{1}{\pi}\int_0^{\pi}\,$fRight\,dx = " .
+	$aint0 = "\frac{1}{\pi}\int_{-\pi}^0\,$fLeft\,dt + " .
+	    "\frac{1}{\pi}\int_0^{\pi}\,$fRight\,dt = " .
 	    ($a0*2)->TeX;
-	$aintn = "\frac{1}{\pi}\int_{-\pi}^0\,$fLeft\,\cos(n x)\,dx + " .
-	    "\frac{1}{\pi}\int_0^{\pi}\,$fRight\,\cos(n x)\,dx = " .
+	$aintn = "\frac{1}{\pi}\int_{-\pi}^0\,$fLeft\,\cos(n t)\,dt + " .
+	    "\frac{1}{\pi}\int_0^{\pi}\,$fRight\,\cos(n t)\,dt = " .
 	    $an->TeX;
-	$bintn = "\frac{1}{\pi}\int_{-\pi}^0\,$fLeft\,\sin(n x)\,dx + " .
-	    "\frac{1}{\pi}\int_0^{\pi}\,$fRight\,\sin(n x)\,dx = " .
+	$bintn = "\frac{1}{\pi}\int_{-\pi}^0\,$fLeft\,\sin(n t)\,dt + " .
+	    "\frac{1}{\pi}\int_0^{\pi}\,$fRight\,\sin(n t)\,dt = " .
 	    $bn->TeX;
     }
 }
@@ -123,13 +123,13 @@ Context()->texStrings;
 TEXT(beginproblem());
 BEGIN_TEXT
 Find the Fourier series for
-\[ f(x) = $ftex, \]
+\[ f(t) = $ftex, \]
 extended to a \(2 \pi\)-periodic function.
 $PAR
-\(\displaystyle \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n\,\cos(n x) + b_n\,\sin(n x) = {}\)
+\(\displaystyle \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n\,\cos(n t) + b_n\,\sin(n t) = {}\)
 $PAR
-\{ ans_rule(25) \} \( \displaystyle {} + \sum_{n=1}^{\infty} \) \{ ans_rule(25) \} \(\cos(n x) + {} \)
-\{ ans_rule(25) \} \(\sin(n x)\).
+\{ ans_rule(25) \} \( \displaystyle {} + \sum_{n=1}^{\infty} \) \{ ans_rule(25) \} \(\cos(n t) + {} \)
+\{ ans_rule(25) \} \(\sin(n t)\).
 $BR
 \{ AnswerFormatHelp("formulas") \}
 
@@ -154,7 +154,7 @@ and
 \[ b_n = $bintn. \]
 $PAR
 Thus,
-\[ $a0 + \sum_{n=1}^\infty\, $an\,\cos(n x) + $bn\,\sin(n x). \]
+\[ $a0 + \sum_{n=1}^\infty \Bigl[ $an\,\cos(n t) + $bn\,\sin(n t) \Bigr]. \]
 
 END_SOLUTION
 Context()->normalStrings;

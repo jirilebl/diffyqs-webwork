@@ -25,6 +25,7 @@ TEXT(beginproblem());
 #  Setup
 
 Context("Numeric");
+Context()->variables->are(t=>'Real');
 Context()->flags->set( reduceConstants=>0 );
 
 #
@@ -34,41 +35,41 @@ Context()->flags->set( reduceConstants=>0 );
 $f = list_random(2,3,4,5);
 $f2 = 2 * $f;
 
-$F1 = Compute("$f/2 + $f2/pi cos(x)");
-$F3 = Compute("$f/2 + $f2/pi cos(x) - $f2/(3 pi) cos(3x)");
-$F5 = Compute("$f/2 + $f2/pi cos(x) - $f2/(3 pi) cos(3x) + $f2/(5 pi) cos(5x)");
+$F1 = Compute("$f/2 + $f2/pi cos(t)");
+$F3 = Compute("$f/2 + $f2/pi cos(t) - $f2/(3 pi) cos(3t)");
+$F5 = Compute("$f/2 + $f2/pi cos(t) - $f2/(3 pi) cos(3t) + $f2/(5 pi) cos(5t)");
 
 #
 #  Part B
 #
 
 $g1 = $F3;
-$g2 = Compute("$f/2 + $f2/pi sin(x) - $f2/(3 pi) sin(3x)");
+$g2 = Compute("$f/2 + $f2/pi sin(t) - $f2/(3 pi) sin(3t)");
 $g3 = -($F5);
 
-$g[0] = "$F5 for x in <-6,6> using color:red and weight:2";
+$g[0] = "$F5 for t in <-6,6> using color:red and weight:2";
 $gr[0] = init_graph(-6,-7,6,7,'axes'=>[0,0]);
 $gr[0]->lb('reset');
-$gr[0]->lb(new Label(5.25,0.25,'x','black','center','middle'));
-$gr[0]->lb(new Label(0.25,5.25,'y','black','center','middle'));
+$gr[0]->lb(new Label(5.25,0.25,'t','black','center','middle'));
+#$gr[0]->lb(new Label(0.25,5.25,'y','black','center','middle'));
 
-$g[1] = "$g1 for x in <-6,6> using color:red and weight:2";
+$g[1] = "$g1 for t in <-6,6> using color:red and weight:2";
 $gr[1] = init_graph(-6,-7,6,7,'axes'=>[0,0]);
 $gr[1]->lb('reset');
-$gr[1]->lb(new Label(5.25,0.25,'x','black','center','middle'));
-$gr[1]->lb(new Label(0.25,5.25,'y','black','center','middle'));
+$gr[1]->lb(new Label(5.25,0.25,'t','black','center','middle'));
+#$gr[1]->lb(new Label(0.25,5.25,'y','black','center','middle'));
 
-$g[2] = "$g2 for x in <-6,6> using color:red and weight:2";
+$g[2] = "$g2 for t in <-6,6> using color:red and weight:2";
 $gr[2] = init_graph(-6,-7,6,7,'axes'=>[0,0]);
 $gr[2]->lb('reset');
-$gr[2]->lb(new Label(5.25,0.25,'x','black','center','middle'));
-$gr[2]->lb(new Label(0.25,5.25,'y','black','center','middle'));
+$gr[2]->lb(new Label(5.25,0.25,'t','black','center','middle'));
+#$gr[2]->lb(new Label(0.25,5.25,'y','black','center','middle'));
 
-$g[3] = "$g3 for x in <-6,6> using color:red and weight:2";
+$g[3] = "$g3 for t in <-6,6> using color:red and weight:2";
 $gr[3] = init_graph(-6,-7,6,7,'axes'=>[0,0]);
 $gr[3]->lb('reset');
-$gr[3]->lb(new Label(5.25,0.25,'x','black','center','middle'));
-$gr[3]->lb(new Label(0.25,5.25,'y','black','center','middle'));
+$gr[3]->lb(new Label(5.25,0.25,'t','black','center','middle'));
+#$gr[3]->lb(new Label(0.25,5.25,'y','black','center','middle'));
 
 
 for $i (0..3) {
@@ -97,11 +98,11 @@ $ftex[0] =
 " 
 \left\lbrace
 \begin{array}{rrr}
-0, && -\pi \leq x < -\pi/2,
+0, && -\pi \leq t < -\pi/2,
 \\
-$f, && -\pi/2 \leq x \leq \pi/2,
+$f, && -\pi/2 \leq t \leq \pi/2,
 \\
-0, && \pi/2 < x \leq \pi.
+0, && \pi/2 < t \leq \pi.
 \end{array}
 \right.
 ";
@@ -111,11 +112,11 @@ $ftex[1] =
 "
 \left\lbrace
 \begin{array}{rrr}
-0, && -\pi \leq x < -\pi/2,
+0, && -\pi \leq t < -\pi/2,
 \\
--$f, && -\pi/2 \leq x \leq \pi/2,
+-$f, && -\pi/2 \leq t \leq \pi/2,
 \\
-0, && \pi/2 < x \leq \pi.
+0, && \pi/2 < t \leq \pi.
 \end{array}
 \right.
 ";
@@ -124,9 +125,9 @@ $ftex[2] =
 "
 \left\lbrace
 \begin{array}{rrr}
--$f, && -\pi \leq x < 0,
+-$f, && -\pi \leq t < 0,
 \\
-$f, && 0 \leq x \leq \pi.
+$f, && 0 \leq t \leq \pi.
 \end{array}
 \right.
 ";
@@ -135,9 +136,9 @@ $ftex[3] =
 "
 \left\lbrace
 \begin{array}{rrr}
-$f, && -\pi \leq x < 0,
+$f, && -\pi \leq t < 0,
 \\
--$f, && 0 \leq x \leq \pi.
+-$f, && 0 \leq t \leq \pi.
 \end{array}
 \right.
 ";
@@ -149,9 +150,9 @@ $k = 0;
 @ftex = @ftex[@permc];
 @invc = invert(@permc);
 
-@functionname = ("f(x)", "g(x)", "h(x)", "j(x)");
+@functionname = ("f(t)", "g(t)", "h(t)", "j(t)");
 
-$popupc = PopUp(["?","f(x)","g(x)","h(x)","j(x)"], $functionname[$invc[$k]]);
+$popupc = PopUp(["?","f(t)","g(t)","h(t)","j(t)"], $functionname[$invc[$k]]);
 
 ############################################################################
 
@@ -167,16 +168,19 @@ and \( a_2, a_4, b_1, b_2, b_3, b_4, b_5 \) are all zero.
 $PAR
 If \(F_k\) is the partial sum of the Fourier series up to the \(k\)th harmonic,
 find the following Fourier approximations to the Fourier series, that is,
-\[ \displaystyle F_k(x) = \frac{a_0}{2} + \sum_{n=1}^{k} \bigl(a_n\cos(nx) + b_n\sin(nx)\bigr) . \]
+\[ \displaystyle F_k(t) = \frac{a_0}{2} + \sum_{n=1}^{k} \bigl(a_n\cos(nt) + b_n\sin(nt)\bigr) . \]
 $PAR
-\( F_1(x) = \) \{ ans_rule(50) \}
+\( F_1(t) = \) \{ ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
 $PAR
-\( F_3(x) = \) \{ ans_rule(50) \}
+\( F_3(t) = \) \{ ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
 $PAR
-\( F_5(x) = \) \{ ans_rule(50) \}
+\( F_5(t) = \) \{ ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
 $PAR
-(b) Using a calculator, graph the Fourier approximation
-\( F_5(x) \) and then select the letter of the graph which 
+Using a calculator, graph the Fourier approximation
+\( F_5(t) \) and then select the letter of the graph which 
 most closely resembles your graph. \{ $popup->menu() \}
 $PAR
 \{
@@ -192,14 +196,14 @@ $ECENTER
 \}
 $PAR
 Which function given below could the Fourier approximation 
-\( F_5(x) \) model? \{ $popupc->menu() \}
+\( F_5(t) \) model? \{ $popupc->menu() \}
 $PAR
 \{
 $BCENTER.
 BeginTable().
-  AlignedRow([ "\( \displaystyle f(x) = $ftex[0] \)", "\( \displaystyle g(x) = $ftex[1] \)" ]).
+  AlignedRow([ "\( \displaystyle f(t) = $ftex[0] \)", "\( \displaystyle g(t) = $ftex[1] \)" ]).
   TableSpace(25,0).
-  AlignedRow([ "\( \displaystyle h(x) = $ftex[2] \)", "\( \displaystyle j(x) = $ftex[3] \)" ]).
+  AlignedRow([ "\( \displaystyle h(t) = $ftex[2] \)", "\( \displaystyle j(t) = $ftex[3] \)" ]).
 EndTable().
 $ECENTER
 \}

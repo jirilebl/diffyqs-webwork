@@ -38,7 +38,9 @@ $answer1 = Compute("$a-2");
 
 Context()->texStrings;
 BEGIN_TEXT
-How many derivatives do you expect \( \displaystyle f(t) = \sum_{n=1}^\infty \frac{$b}{$c n^3+$d n^{$a}} \cos(n t) \) to be able to take before getting a function with "corners"?
+Let \( \displaystyle f(t) = \sum_{n=1}^\infty \frac{$b}{$c n^3+$d n^{$a}} \cos(n t) \).
+$PAR
+How many derivatives do you expect to be able to take before getting a function with "corners"?
 $PAR
 \(f\) has \{ ans_rule(5) \} derivatives.
 END_TEXT

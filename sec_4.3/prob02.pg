@@ -42,8 +42,8 @@ $bn=Compute("
 $bn->{test_points} = [[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12],[13],[14],[15],[16],[17],[18],[19],[20]];
 
 $func = "\begin{cases}
-            $a, & -$p < x < 0 \cr
-            $p2 - x^2, & 0 \leq x < $p
+            $a, & -$p < t < 0 \cr
+            $p2 - t^2, & 0 \leq t < $p
              \end{cases}";
 
 $np2   = Compute("-$p/2");
@@ -63,12 +63,14 @@ $fc=Compute($p**2 - $c**2);
 Context()->texStrings;
 BEGIN_TEXT
 
-If \(f\) is the Fourier series of \(g(x)=$func\), then 
+If \(f\) is the Fourier series of \(g(t)=$func\), then 
 $BR
-\(f(x)= \) \{ ans_rule(10) \} \(+\displaystyle\sum_{n=1}^{\infty} \Bigg[
-\Big(\) \{ ans_rule(20) \} \(\displaystyle\Big)\cos\Big(\frac{n \pi}{$p}x\Big)
-+
-\Big(\)\{ ans_rule(45) \}\(\displaystyle\Big)\sin\Big(\frac{n \pi}{$p}x\Big)
+\(f(t)= \) \{ ans_rule(10) \} \(+\displaystyle\sum_{n=1}^{\infty} \Bigg[
+\Big(\) \{ ans_rule(20) \} \(\displaystyle\Big)\cos\Big(\frac{n \pi}{$p}t\Big)
++ {} \)
+$BR
+\(
+\Big(\)\{ ans_rule(45) \}\(\displaystyle\Big)\sin\Big(\frac{n \pi}{$p}t\Big)
 \Bigg]\)
 $BR
 \{ AnswerFormatHelp("formulas") \}

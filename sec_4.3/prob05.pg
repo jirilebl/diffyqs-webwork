@@ -45,7 +45,7 @@ Find the series of the derivative
 \( f'(t) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos( n \pi t) + b_n \sin( n \pi t) \).
 $PAR
 \( a_0 = {} \) \{ ans_rule(40) \}
-\{ AnswerFormatHelp("formulas") \}
+\{ AnswerFormatHelp("numbers") \}
 $PAR
 \( a_n = {} \) \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
