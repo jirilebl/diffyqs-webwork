@@ -1,0 +1,73 @@
+# Solving nonhomogeneous Neumann boundary value ODE with finite cosine series
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'nonhomogeneous', 'inhomogeneous', 'equation', 'boundary value problem', 'cosine series', 'Fourier series', 'Neumann')
+
+########################################################################
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+"PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+# Setup
+
+Context("Numeric");
+
+$a = random(2,9,1);
+do { $b = random(2,9,1); } until ($b != $a);
+do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
+do { $d = random(2,9,1); } until (($d != $a) and ($d != $b) and ($d != $c));
+
+Context()->variables->add(t => ["Real", limits=>[0.1,10]]);
+
+$answer1 = Compute("($b/$a) + ($c/($a-(2^2)*(pi^2)))*cos(2*pi*t) + ($d/($a-(3^2)* (pi^2)))*cos(3*pi*t)");
+
+
+############################
+# Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Solve the boundary
+value problem \( \displaystyle x''(t) + $a x(t) = $b + $c \cos(2 \pi t) + $d \cos(3 \pi t) \)
+with \( x'(0) = 0 , x'(1) = 0 \) .
+$PAR
+The solution is
+$BR
+\( x(t) = {} \) \{ ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+# Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+
+#####################
+# Solution
+
+#Context()->texStrings;
+#BEGIN_SOLUTION
+#END_SOLUTION
+#Context()->normalStrings;
+
+;
+
+ENDDOCUMENT();
