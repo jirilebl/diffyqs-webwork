@@ -1,6 +1,4 @@
-##DESCRIPTION
-##  Superposition princinciple 
-##ENDDESCRIPTION
+# Superposition princinciple 
 
 ## Author(Jiri Lebl)
 ## Institution(Oklahoma State University)
@@ -57,14 +55,12 @@ Find the solution to
 \( y'' + f(x) y' + g(x) y = $c e^x \).
 $PAR
 \( y = {} \) \{ ans_rule(40) \}
-$PAR
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 Now find the solution to
 \( y'' + f(x) y' + g(x) y = $b \sin($a x) + $c e^x \).
 $PAR
 \( y = {} \) \{ ans_rule(40) \}
-$PAR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
