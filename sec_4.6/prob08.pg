@@ -54,15 +54,15 @@ Solve \( u_{t} = $asq u_{xx}, \quad 0 < x < 1\) and \(t > 0\),
 $BR
 subject to the boundary conditions \(u_x(0,t) = u_x(1,t) = 0 \),
 $BR
-and the initial condition \(u(x,0) = $b + $c \cos(\pi x) + $d \cos(2\pi x) \)
+and the initial condition \(u(x,0) = $b + $c \cos(\pi x) + $d \cos(2\pi x) . \)
 $PAR
-Solve:
-\(u(x,t) = {} \) \{ ans_rule(40) \}
+\(u(x,t) = {} \) \{ ans_rule(45) \}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 Based on this solution what is the steady state, that is
 what is
-\(\lim_{t\to \infty} u(x,t) = {} \) \{ ans_rule(40) \}
+$PAR
+\(\lim_{t\to \infty} u(x,t) = {} \) \{ ans_rule(20) \}
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;

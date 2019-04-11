@@ -49,7 +49,7 @@ $BR
 \frac{$a}{n^{$j}}
 \sin(n \pi x) . \)
 $PAR
-Then the solution is
+The solution is
 $PAR
 \( \displaystyle u(x,t) = \sum_{n=1}^\infty \) \{ ans_rule(20) \} \( e^{-(n\pi)^2t} \sin(n\pi x) \)
 $BR

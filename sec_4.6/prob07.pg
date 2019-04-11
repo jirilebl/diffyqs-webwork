@@ -41,9 +41,9 @@ $answer4 = Compute("$a4");
 
 Context()->texStrings;
 BEGIN_TEXT
-Consider the equation \( u_t = u_{xx} \), \( 0 < x < 1 \), \( t > 0 \).
+Consider the equation \( u_t = u_{xx} \), \( 0 < x < 1 \), \( t > 0 \),
 $BR
-Subject to the boundary conditions
+subject to the boundary conditions
 \( u(0,t) = 0 , u(1,t) = 0 \),
 $BR
 and the initial condition
@@ -52,7 +52,7 @@ $BR
 $a1 \sin(\pi x) + 
 $a2 \sin(2 \pi x) +
 $a3 \sin(3 \pi x) +
-$a4 \sin(4 \pi x) \)
+$a4 \sin(4 \pi x) . \)
 
 $PAR
 Fill in the constants in the solution:
