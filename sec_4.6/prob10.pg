@@ -1,0 +1,81 @@
+# Finding boundary conditions given a steady state of a one dimensional heat equation
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'heat equation')
+
+
+########################################################################
+
+###########################
+##  Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+"PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+#  Setup
+
+Context("Numeric");
+
+$a = non_zero_random(2,5,1);
+$b = $a + non_zero_random(1,4,1);
+$c = $b + non_zero_random(1,4,1);
+
+$answer1 = Compute("$b");
+$answer2 = Compute("$c");
+
+$steadystate = Compute("($c-$b) x + $b")->reduce();
+
+############################
+##  Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Consider the equation \( u_t = $a u_{xx} \), \( 0 < x < 1 \), \( t > 0 \).
+The boundary values were kept at constant temperatures.
+Suppose that the steady state solution turns out to be $steadystate .
+$PAR
+What were the boundary values?
+$PAR
+\( u(0,t) = {}\) \{ ans_rule(20) \}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( u(1,t) = {}\) \{ ans_rule(20) \}
+\{ AnswerFormatHelp("numbers") \}
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+##  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+ANS( $answer2->cmp() );
+
+#############################
+##  Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+We evaluate the steady state at \( x = 0 \) and \( x = 1 \),
+to obtain that 
+\( u(0,t) = $b \) and
+\( u(1,t) = $c \).
+END_SOLUTION
+Context()->normalStrings;
+
+;
+
+ENDDOCUMENT();
