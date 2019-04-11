@@ -44,14 +44,15 @@ BEGIN_TEXT
 Let \(F(t) = \sum_{n=1}^\infty $a e^{-n} \sin(n t)\).
 Find the steady periodic solution to \(x'' + $b\, x = F(t)\).
 $PAR
-\( x(t) =
+\( x(t) = {} \)
  \{ ans_rule(10) \}
 \( \displaystyle +
 \sum_{n=1}^\infty \Bigl[ \)
 \{ ans_rule(25) \}
 \( \cos(n t) +  \)
 \{ ans_rule(25) \}
-\( \sin(n t) \)
+\( \sin(n t) \Bigr]\)
+$SPACE
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
