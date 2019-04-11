@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Higher order ODEs: constant coefficient second order homogeneous linear ODEs
-## Linear, constant coefficients, homogeneous (repeated roots)
-## ENDDESCRIPTION
+# Higher order ODEs: constant coefficient second order homogeneous linear ODEs
+# Linear, constant coefficients, homogeneous (repeated roots)
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -65,8 +63,7 @@ ${BTT}c1${ETT} and \( c_2 \) as ${BTT}c2${ETT}.
 $BR
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("equations") \}
-$BR
-$BR
+$PAR
 Find the solution that satisfies the 
 initial conditions
 \( y(0) = $y0 \) and \( y^{\,\prime}(0) = 0 \).

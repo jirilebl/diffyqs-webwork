@@ -1,8 +1,5 @@
-## DESCRIPTION
-## Higher order ODEs: constant coefficient second order homogeneous linear ODEs
-## Linear, constant coefficients, homogeneous (distinct real roots)
-## ENDDESCRIPTION
-
+# Higher order ODEs: constant coefficient second order homogeneous linear ODEs
+# Linear, constant coefficients, homogeneous (distinct real roots)
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -65,8 +62,7 @@ ${BTT}c1${ETT} and \( c_2 \) as ${BTT}c2${ETT}.
 $BR
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("equations") \}
-$BR
-$BR
+$PAR
 Find the particular solution that satisfies
 \( y(0) = 1 \) and \( y^{\,\prime}(0) = 1 \).
 $BR

@@ -1,23 +1,27 @@
-## DESCRIPTION
-## Linear, constant coefficients, homogeneous (distinct real roots)
-## ENDDESCRIPTION
+# Linear, constant coefficients, homogeneous (distinct real roots)
 
 ## Institution(Dartmouth)
 ## KEYWORDS('differential equation' 'second order')
 
+################################################3
 
 DOCUMENT();
+
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
-  "PGgraphmacros.pl",
-  "Dartmouthmacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
  
+################################################3
+
+TEXT(beginproblem());
 
 ## Do NOT show partial correct answers
 $showPartialCorrectAnswers = 0;
+
+Context("Numeric");
 
 ## Choose real roots to a quadractic
 ## Take care of the case when the roots are the same
@@ -28,34 +32,33 @@ $root2 = random(-10,10);
 $sum_roots = $root1 + $root2;
 $prod_roots = $root1 * $root2;
 
-
-
 if ($sum_roots == 0){$linear_term = "";}
 else {$linear_term = " + " . preformat(-$sum_roots, "y'");}
 
 if ($prod_roots == 0){$constant_term = "";}
 else {$constant_term = " + " . preformat($prod_roots, "y");}
 
-$coeff = non_zero_random(2,10);
+$coeff = random(2,10);
 
-## Ok, we are ready to begin the problem...
-##
-TEXT(beginproblem());
-
+####################################################
 
 BEGIN_TEXT
-$BR
 For what values of \(r\) does the function \(y = $coeff e^{rx}\) satisfy the differential equation \( y'' $linear_term $constant_term = 0\)?
 
 $PAR
-The smaller one is \{ans_rule()\}.
-$BR
-The larger one (possibly the same) is \{ans_rule()\}.
+The smaller one is \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
 
 $PAR
+The larger one (possibly the same) is \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
 END_TEXT
-ANS(num_cmp(min($root1, $root2)));
-ANS(num_cmp(max($root1, $root2)));
+
+####################################################
+
+ANS(Compute(min($root1, $root2))->cmp());
+ANS(Compute(max($root1, $root2))->cmp());
+
 ENDDOCUMENT();
 
 

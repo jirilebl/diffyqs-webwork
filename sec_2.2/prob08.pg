@@ -1,18 +1,21 @@
-## DESCRIPTION
-##   Complex Numbers
-## ENDDESCRIPTION
+# Complex Numbers
 
 ## KEYWORDS('complex', 'imaginary','algebra', 'complex number')
 
+#########################################################
 
-DOCUMENT();        # This should be the first executable line in the problem.
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
+  "MathObjects.pl", # doesn't really use it, we should convert it
+  "AnswerFormatHelp.pl",
   "PGchoicemacros.pl",
   "PGcomplexmacros.pl",
   "PGcourse.pl"
 );
+
+#########################################################
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
@@ -23,15 +26,22 @@ $b = new Complex( 0 , non_zero_random( -1, 5, 1 ) );
 $c = new Complex( non_zero_random( -5, 5, 1 ), -2 );
 $d = new Complex( non_zero_random( -5, 5, 1), 1 );
 
+#########################################################
+
 BEGIN_TEXT
 
 Write the following numbers in \( a\ +\ bi \) form:
 $PAR
 \( \displaystyle \left( \frac{$a}{$b\ -\ ($c)} \right)^2\ =\) \{ans_rule(10)\} \(+\) \{ans_rule(10)\} \(i\),
+$SPACE
+\{ AnswerFormatHelp("numbers") \}
 $PAR
 \((i)^2( $d )^2\ =\) \{ans_rule(10)\} \(+\) \{ans_rule(10)\} \(i\).
-
+$SPACE
+\{ AnswerFormatHelp("numbers") \}
 END_TEXT
+
+#########################################################
 
 $i = new Complex( 0, 1);
 

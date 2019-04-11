@@ -1,14 +1,13 @@
-## DESCRIPTION
-##   Complex Numbers
-## ENDDESCRIPTION
+# Complex Numbers
 
 ## KEYWORDS('Complex','algebra', 'complex number')
 
-
-DOCUMENT();        # This should be the first executable line in the problem.
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
+  "MathObjects.pl", # doesn't really use it, we should convert it
+  "AnswerFormatHelp.pl",
   "PGchoicemacros.pl",
   "PGcomplexmacros.pl",
   "PGcourse.pl"
@@ -22,16 +21,25 @@ $a = new Complex( random(-6,-1,1) , 1 );
 $c = new Complex( non_zero_random( -6, 6, 1 ) , non_zero_random( -6, 6, 1 ) );
 do { $d = non_zero_random( -6, 6, 1 ); } while ($d == 1 or $d == -1);
 
+#########################################################
+
 BEGIN_TEXT
 Write the following numbers in \( a\ +\ bi \) form:
 $PAR
 \(($a)^2\ =\) \{ans_rule(5)\} \(+\) \{ans_rule(5)\} \(i\),
+$SPACE
+\{ AnswerFormatHelp("numbers") \}
 $PAR
 \(\displaystyle \frac{$c}{\frac{i}{$d}}\ =\) \{ans_rule(5)\} \(+\) \{ans_rule(5)\} \(i\),
+$SPACE
+\{ AnswerFormatHelp("numbers") \}
 $PAR
 \(\displaystyle \frac{$c}{\frac{1}{$d}}\ =\) \{ans_rule(5)\} \(+\) \{ans_rule(5)\} \(i\).
-
+$SPACE
+\{ AnswerFormatHelp("numbers") \}
 END_TEXT
+
+#########################################################
 
 $b = $c  / ( new Complex( 0, 1/$d ));
 

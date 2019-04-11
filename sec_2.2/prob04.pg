@@ -1,18 +1,17 @@
-#DESCRIPTION
-##  Calculus: Second-order homogeneous linear equations
-##  Linear, constant coefficients, homogeneous (distinct real roots)
-##ENDDESCRIPTION
+# Calculus: Second-order homogeneous linear equations
+# Linear, constant coefficients, homogeneous (distinct real roots)
 
 ## Institution(University of Minnesota)
 ## Author(Justin Sukiennik)
 ## KEYWORDS('calculus', 'differential equations', 'linear equations', 'second-order', 'initial-value problem', 'homogeneous')
 
 #####################################################################
-DOCUMENT();        # This should be the first executable line in the problem.
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
@@ -40,7 +39,8 @@ Context()->texStrings;
 BEGIN_TEXT
 Solve the initial-value problem \(\displaystyle 2 y'' + 5 y' - 3 y = 0, \; y(0) = $c, \; y'(0) = $d.\)
 $PAR
-Answer:  \(y(x) = \) \{ ans_rule(30) \}
+Answer:  \(y(x) = {}\) \{ ans_rule(30) \}
+\{ AnswerFormatHelp("formulas"); \}
 END_TEXT
 Context()->normalStrings;
 
@@ -48,4 +48,4 @@ Context()->normalStrings;
 
 ANS( $ans->cmp() );
 
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+ENDDOCUMENT();

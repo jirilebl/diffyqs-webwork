@@ -1,6 +1,4 @@
-##DESCRIPTION
-## solve constant coefficient equation with auxiliary equations
-##ENDDESCRIPTION
+# Solve constant coefficient equation with auxiliary equations
 
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
@@ -14,6 +12,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
@@ -53,21 +52,29 @@ $y1 = Compute(non_zero_random(-9,9));
 
 $soln = Formula("($y0*$b+$y1)/(-$c+$b)*exp(-$c*x)-($y1+$c*$y0)/(-$c+$b)*exp(-$b*x)");
 
+##############################################################
+
 Context()->texStrings;
 BEGIN_TEXT
 The differential equation \($diffeqn = $rhs\) has characteristic equation 
-$BCENTER\{$aux->ans_rule\} \(=0\) $ECENTER
-$BR
+$PAR
+\{$aux->ans_rule(30)\} \(=0\)
+$SPACE \{ AnswerFormatHelp("numbers") \}
+$PAR
  with roots \{$roots->ans_rule(30)\}
-$BR
+\{ AnswerFormatHelp("numbers") \}
+$PAR
 Therefore there are two fundamental solutions \{$fundamental->ans_rule(30)\}.
-$BR
+\{ AnswerFormatHelp("formulas") \} (enter as a comma separated list of formulas).
+
+$PAR
 Use these to solve the initial value problem
 \[$diffeqn = $rhs\]
 \[y(0) = $y0\]
 \[y^\prime(0) = $y1\]
-$BR
-$BCENTER \(y(x) = \)\{$soln->ans_rule(50)\} $ECENTER
+$PAR
+\(y(x) = {} \)\{$soln->ans_rule(50)\}
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
 

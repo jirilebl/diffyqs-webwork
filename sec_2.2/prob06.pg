@@ -1,17 +1,22 @@
-## DESCRIPTION
-## Linear, constant coefficients, homogeneous (distinct real roots)
-## ENDDESCRIPTION
+# Linear, constant coefficients, homogeneous (distinct real roots)
 
 ## Institution(Dartmouth)
 ## KEYWORDS('homogeneous' 'differential equation')
-#
+
+#############################################################################
 
 DOCUMENT();
 loadMacros(
   "PGstandard.pl",
+  "MathObjects.pl", # doesn't really use it, we should convert it
+  "AnswerFormatHelp.pl",
   "PGchoicemacros.pl",
   "PGcourse.pl"
 );
+
+#############################################################################
+
+TEXT(beginproblem());
  
 ##Hack around evaluation problem
 sub calleval {
@@ -30,7 +35,6 @@ sub calleval {
 ## Do NOT show partial correct answers
 $showPartialCorrectAnswers = 0;
 
-
 $root1 = non_zero_random(-10,10);
 $root2 = $root1 + random(1,5);
 ## If $root2 is zero, then $root1 < 0
@@ -38,9 +42,7 @@ if ($root2 == 0) {$root2 = random(1,10);}
 $function1 = "exp($root1*x)";
 $function2 = "exp($root2*x)";
 
-## Ok, we are ready to begin the problem...
-##
-TEXT(beginproblem());
+#############################################################################
 
 
 BEGIN_TEXT
@@ -55,15 +57,16 @@ The solution has the form
 with
 \(f_1(x) = \) \{NAMED_ANS_RULE(first_fcn,25)\} 
 and \(f_2(x) =\) \{NAMED_ANS_RULE(second_fcn,25)\}
-$BR
+\{ AnswerFormatHelp("formulas") \}
+$PAR
 
 Left to your own devices, you will probably write down the correct
 answers, but in case you want to quibble, enter your answers so that
 \(f_1, f_2\) are normalized with their value at \(x = 0\) equal to
 1.
-
-$PAR
 END_TEXT
+
+##########################################################
 
 ($ans_eval1) = num_cmp(exp($root1)); ## Value of $function1 at x = 1
 $firstAnswer = $inputs_ref->{first_fcn};  ## Grab the first answer entered by student
