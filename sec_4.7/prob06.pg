@@ -1,0 +1,94 @@
+# Questions on how frequency of oscillation transforms in the wave equation
+# based on length and tension.
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'wave equation')
+
+
+########################################################################
+
+###########################
+##  Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+"PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+#  Setup
+
+Context("Numeric");
+
+
+$a = random(2,9,1);
+do { $b = random(2,9,1); } until ($b != $a);
+$bsq = $b*$b;
+
+$answer1 = Compute("1/$a")->reduce;
+$answer2 = Compute("$b")->reduce;
+
+############################
+##  Main text
+#
+
+Context()->texStrings;
+BEGIN_TEXT
+Take the vibrating string satisfying
+$PAR
+\( \quad u_{tt} = \alpha^2 u_{xx}  , \qquad 0 < x < L , \quad t > 0 \)
+$PAR
+with boundary conditions \( \quad u(0,t) = u(L,t)= 0 . \) 
+$PAR
+The constant \(\alpha^2 = \frac{T}{\rho} \) where \(T\) is tension
+and \(\rho\) is linear density of the string.
+$PAR
+Suppose the string vibrates at base frequency \(\omega .\)
+$PAR
+If we lengthen the string to \( $a L \)
+the frequency \(\omega\) gets multiplied by
+\{ ans_rule(20) \}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+If we increase tension by a factor of \( $bsq \)
+the frequency \(\omega\) gets multiplied by
+\{ ans_rule(20) \}
+\{ AnswerFormatHelp("numbers") \}
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+##  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+ANS( $answer2->cmp() );
+
+
+#####################
+# Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+The base frequency (angular) is \( \frac{\pi \alpha}{L} \)
+where \(\alpha^2 = \frac{T}{\rho} \)
+for tension \(T\) and linear density \(\rho .\)
+Therefore increasing \(L\) by a factor of \($a,\)
+divides the base frequency by \($a .\)
+Increasing tension by a factor of \($bsq\) multiplies the frequency by the square root, that is \($b .\)
+END_SOLUTION
+Context()->normalStrings;
+
+;
+
+ENDDOCUMENT();
