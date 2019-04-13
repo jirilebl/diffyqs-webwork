@@ -1,0 +1,79 @@
+# Intuitive description of solution
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'heat equation')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+"PGstandard.pl",
+"PGchoicemacros.pl",
+"PGcourse.pl",
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+$showPartialCorrectAnswers = 0;
+
+$mc = new_checkbox_multiple_choice();
+
+$mc -> qa (
+"Suppose we have a laterally insulated rod and
+the temperature satisfies \( u_t = a^2 u_{xx} \).  Suppose near
+some point \(x_0\) and at some time \(t_0\), the solution is concave down.
+What is true about the solution \( u \) near \( x_0 \) at time \( t_0 \).
+There may be more than
+one correct answer.  Use your intuition.", 
+"It is decreasing as time goes on.$BR",
+);
+
+$mc -> extra(
+"It is increasing as time goes on.$BR",
+"It is staying constant as time goes on.$BR",
+"It is necessarily positive at that point.$BR",
+"It is necessarily negative at that point.$BR",
+);
+
+$mc -> makeLast("None of the above");
+
+#####################
+# Main text
+
+
+BEGIN_TEXT
+\{ $mc -> print_q() \}
+$BR
+\{ $mc -> print_a() \}
+END_TEXT
+
+
+#####################
+# Answer evaluation
+
+install_problem_grader(~~&std_problem_grader);
+
+$showPartialCorrectAnswers = 0;
+
+ANS( checkbox_cmp( $mc->correct_ans() ) );
+
+
+#####################
+# Solution
+
+BEGIN_SOLUTION
+The correct answer is \{ $mc->correct_ans() \}.
+It is decreasing as time goes on.
+$PAR
+Since concave down means \(u_{xx} < 0\), that means \(u_t < 0\) meaning \(u\)
+is decreasing at this point.
+$PAR
+The physical intuition is that the heat equation is trying to evenly distribute
+the heat within the rod, so a concave down graph means there is too much heat
+at this point and so it must be flowing away from this point.
+END_SOLUTION
+
+ENDDOCUMENT();

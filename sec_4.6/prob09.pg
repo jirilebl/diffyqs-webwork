@@ -1,0 +1,71 @@
+#  Solution of a heat equation directly from the formula for a given series
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'heat equation')
+
+########################################################################
+
+###########################
+##  Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+"PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+#  Setup
+
+Context("Numeric");
+
+Context()->variables->add(n => "Real");
+
+$a = non_zero_random(-9,9,1);
+$j = non_zero_random(2,10,1);
+
+$answer1 = Compute("$a/(n^$j)")->reduce();
+
+############################
+##  Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Consider the equation \( u_t = u_{xx} \), \( 0 < x < 1 \), \( t > 0 \),
+$BR
+with boundary conditions \( u(0,t) = 0 , u(1,t) = 0 \),
+$BR
+and an initial condition
+$BR
+\( \displaystyle u(x,0) =
+\sum_{n=1}^\infty
+\frac{$a}{n^{$j}}
+\sin(n \pi x) . \)
+$PAR
+The solution is
+$PAR
+\( \displaystyle u(x,t) = \sum_{n=1}^\infty \) \{ ans_rule(20) \} \( e^{-(n\pi)^2t} \sin(n\pi x) \)
+$BR
+$BR
+\{ AnswerFormatHelp("formulas") \}
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+##  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+
+;
+
+ENDDOCUMENT();

@@ -1,0 +1,93 @@
+# Solving heat equation from formula for finite Fourier series
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'heat equation')
+
+########################################################################
+
+###########################
+##  Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+"PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+#  Setup
+
+Context("Numeric");
+
+
+$a = random(2,9,1);
+$asq=$a*$a;
+do { $b = random(2,9,1); } until ($b != $a);
+do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
+do { $d = random(2,9,1); } until (($d != $a) and ($d != $b) and ($d != $c));
+
+Context()->variables->add(t => ["Real", limits=>[0.1,4]]);
+
+Context()->flags->set(
+     reduceConstants => 0,
+     reduceConstantFunctions => 0,
+);
+
+
+$answer1 = Compute("$b + $c e^(-($a pi)^2 t) cos(pi x) + $d e^(-($a 2 pi)^2 t) cos(2 pi x)");
+$answer2 = Compute("$b");
+
+############################
+##  Main text
+#
+
+Context()->texStrings;
+BEGIN_TEXT
+Solve \( u_{t} = $asq u_{xx}, \quad 0 < x < 1\) and \(t > 0\),
+$BR
+subject to the boundary conditions \(u_x(0,t) = u_x(1,t) = 0 \),
+$BR
+and the initial condition \(u(x,0) = $b + $c \cos(\pi x) + $d \cos(2\pi x) . \)
+$PAR
+\(u(x,t) = {} \) \{ ans_rule(45) \}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+Based on this solution what is the steady state, that is
+what is
+$PAR
+\(\lim_{t\to \infty} u(x,t) = {} \) \{ ans_rule(20) \}
+\{ AnswerFormatHelp("formulas") \}
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+##  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+ANS( $answer2->cmp() );
+
+
+#####################
+# Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+\( u(x,t) = $answer1 \)
+$BR
+\( \lim_{t\to\infty} u(x,t) = $answer2 \)
+END_SOLUTION
+Context()->normalStrings;
+
+;
+
+ENDDOCUMENT();
