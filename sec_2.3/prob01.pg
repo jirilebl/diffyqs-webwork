@@ -66,7 +66,7 @@ denote arbitrary constants and \( x \)
 the independent variable.  Enter
 \( c_1 \) as ${BTT}c1${ETT}, 
 \( c_2 \) as ${BTT}c2${ETT}, 
-etc.
+etc.    Enter the solution as an equation \(y = ?\).
 $PAR
 \{ ans_rule(50) \}
 \{ AnswerFormatHelp("equations") \}

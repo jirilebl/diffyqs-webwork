@@ -13,6 +13,7 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
 );
 
@@ -85,32 +86,34 @@ Write the nine fundamental solutions to the differential equation.
 $PAR
 \{ mbox( [
  "$SPACE \(y_1 = \)",
- ans_rule(10),
+ ans_rule(15),
  "\(\qquad y_2 = \)",
- ans_rule(10),
+ ans_rule(15),
  "\(\qquad y_3 = \)",
- ans_rule(10)
+ ans_rule(15)
 ] ) \}
 $PAR
 \{ mbox( [
  "$SPACE \(y_4 = \)",
- ans_rule(10),
+ ans_rule(15),
  "\(\qquad y_5 = \)",
- ans_rule(10),
+ ans_rule(15),
  "\(\qquad y_6 = \)",
- ans_rule(10)
+ ans_rule(15)
 ] ) \}
 $PAR
 \{ mbox( [
  "$SPACE \(y_7 = \)",
- ans_rule(10),
+ ans_rule(15),
  "\(\qquad y_8 = \)",
- ans_rule(10),
+ ans_rule(15),
  "\(\qquad y_9 = \)",
- ans_rule(10)
+ ans_rule(15)
 ] ) \}
 $PAR
-(You can enter your answers in any order.)
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+$BITALIC You can enter your answers in any order. $EITALIC
 
 END_TEXT
 Context()->normalStrings;

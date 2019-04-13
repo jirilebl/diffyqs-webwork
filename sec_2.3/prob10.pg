@@ -76,10 +76,10 @@ $BR
 $BITALIC $BBOLD Note: $EBOLD Enter the solutions as a comma separated list.$EITALIC
 $PAR
 Use these to solve the initial value problem
-\[$diffeqn = $rhs\]
-\[y(0) = $y0\]
-\[y^\prime(0) = $y1\]
-\[y^{\prime\prime}(0) = $y2\]
+\[$diffeqn = $rhs,
+\quad y(0) = $y0,
+\quad \frac{dy}{dx}(0) = $y1,
+\quad \frac{d^2y}{dx^2}(0) = $y2\]
 $BR
 \(y(x) = \)\{$soln->ans_rule(60)\}
 \{ AnswerFormatHelp("formulas") \}

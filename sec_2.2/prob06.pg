@@ -55,8 +55,10 @@ $BR
 The solution has the form
 \[y = C_1 f_1(x) + C_2 f_2(x)\] 
 with
-\(f_1(x) = \) \{NAMED_ANS_RULE(first_fcn,25)\} 
-and \(f_2(x) =\) \{NAMED_ANS_RULE(second_fcn,25)\}
+\(f_1(x) = \) \{NAMED_ANS_RULE(first_fcn,40)\}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+and \(f_2(x) =\) \{NAMED_ANS_RULE(second_fcn,40)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 

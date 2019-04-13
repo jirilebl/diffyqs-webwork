@@ -64,8 +64,9 @@ $PAR
 Find such a differential equation, assuming
 it is homogeneous and has constant coefficients.
 $PAR
-\{ ans_rule(40) \}
+\{ ans_rule(60) \}
 \{ AnswerFormatHelp("equations") \}
+$PAR
 END_TEXT
 Context()->normalStrings;
 
@@ -113,7 +114,8 @@ denote arbitrary constants and \( x \)
 the independent variable.  Enter
 \( c_1 \) as ${BTT}c1${ETT}, 
 \( c_2 \) as ${BTT}c2${ETT}, etc.
-$BR
+Enter the solution as an equation \(y=?\).
+$PAR
 \{ ans_rule(60) \}
 \{ AnswerFormatHelp("equations") \}
 END_TEXT

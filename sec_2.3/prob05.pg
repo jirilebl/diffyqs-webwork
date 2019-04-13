@@ -61,8 +61,9 @@ Enter your answer using
 y^{\,\prime\prime\prime}, y^{\,\prime\prime\prime\prime} \)
 for the dependent variable and its derivatives.
 $PAR
-\{ ans_rule(40) \}
+\{ ans_rule(60) \}
 \{ AnswerFormatHelp("equations") \}
+$PAR
 END_TEXT
 Context()->normalStrings;
 
@@ -115,8 +116,9 @@ dependent variable, and use \( x \) for
 the independent variable.  Enter 
 \( c_1 \) as ${BTT}c1${ETT}, 
 \( c_2 \) as ${BTT}c2${ETT}, etc.
-$BR
-\{ ans_rule(40) \}
+Enter the solution as an equation \(y = ?\).
+$PAR
+\{ ans_rule(60) \}
 \{ AnswerFormatHelp("equations") \}
 END_TEXT
 Context()->normalStrings;

@@ -64,6 +64,7 @@ $PAR
 \( \left( $g \right) + \)
 \{ $multians->ans_rule(5) \}
 \( \left( $h \right) = 0. \)
+$SPACE
 \{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;

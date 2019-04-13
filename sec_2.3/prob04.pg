@@ -66,7 +66,7 @@ BEGIN_TEXT
 Find the general solution to \( $diffeq \).
 In your answer, use \( c_1, c_2 \) and \( c_3 \) to 
 denote arbitrary constants and \( x \) 
-the independent variable.
+the independent variable.  Enter the solution as an equation \(y = ?\).
 $PAR
 \{ ans_rule(50) \}
 \{ AnswerFormatHelp("equations") \}
