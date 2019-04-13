@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Higher order ODEs: constant coefficient higher order homogeneous linear ODEs
-## Linear, constant coefficients, homogeneous (complex roots)
-## ENDDESCRIPTION
+# Higher order ODEs: constant coefficient higher order homogeneous linear ODEs
+# Linear, constant coefficients, homogeneous (complex roots)
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -62,15 +60,12 @@ Context()->texStrings;
 BEGIN_TEXT
 Suppose that a fourth order differential equation 
 has a solution \( y = $term \).
-$BR
-$BR
+$PAR
 Find such a differential equation, assuming
 it is homogeneous and has constant coefficients.
-$BR
+$PAR
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("equations") \}
-$BR
-$BR
 END_TEXT
 Context()->normalStrings;
 

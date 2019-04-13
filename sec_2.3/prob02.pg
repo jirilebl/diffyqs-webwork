@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Differential Equations.
-## Linear, constant coefficients, homogeneous
-## ENDDESCRIPTION
+# Differential Equations.
+# Linear, constant coefficients, homogeneous
 
 ## Institution(METU-NCC)
 ## Author(Benjamin Walter)
@@ -113,8 +111,6 @@ $PAR
 ] ) \}
 $PAR
 (You can enter your answers in any order.)
-
-
 
 END_TEXT
 Context()->normalStrings;

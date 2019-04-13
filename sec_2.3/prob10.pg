@@ -1,6 +1,4 @@
-##DESCRIPTION
-## Solve constant coefficient equation with auxiliary equations
-##ENDDESCRIPTION
+# Solve constant coefficient equation with auxiliary equations
 
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
@@ -14,6 +12,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
@@ -29,6 +28,7 @@ $showPartialCorrectAnswers = 1;
 #
 
 # Make a context for the derivatives
+Context("Numeric");
 Context()->variables->{namePattern} = qr/[a-z][a-z0-9_]*'*/i;
 Context()->variables->are("r"=>"Real","x"=>"Real","y"=>"Real","y'"=>"Real","y''"=>"Real","y'''"=>"Real");
 Context()->variables->set("y'" => {TeX => '\frac{dy}{dx}'},"y''" => {TeX => '\frac{d^2y}{dx^2}'},"y'''" => {TeX => '\frac{d^3y}{dx^3}'});
@@ -59,19 +59,30 @@ $roots = List(Compute("$a"),Compute("$b"));
 Context()->texStrings;
 BEGIN_TEXT
 The differential equation \($diffeqn = $rhs\) has characteristic equation 
-$BCENTER\{$aux->ans_rule\} \(=0\) $ECENTER
+$PAR
+\{$aux->ans_rule\} \({}=0\)
+$SPACE \{ AnswerFormatHelp("formulas") \}
+$PAR
+with roots \{$roots->ans_rule(30)\}
+\{ AnswerFormatHelp("numbers") \}
 $BR
- with roots \{$roots->ans_rule(30)\}
+$BITALIC $BBOLD Note: $EBOLD Enter the roots as a comma separated list.$EITALIC
+$PAR
+Therefore there are three fundamental solutions
 $BR
-Therefore there are three fundamental solutions \{$fundamental->ans_rule(30)\}.
+\{$fundamental->ans_rule(50)\}
+\{ AnswerFormatHelp("formulas") \}
 $BR
+$BITALIC $BBOLD Note: $EBOLD Enter the solutions as a comma separated list.$EITALIC
+$PAR
 Use these to solve the initial value problem
 \[$diffeqn = $rhs\]
 \[y(0) = $y0\]
 \[y^\prime(0) = $y1\]
 \[y^{\prime\prime}(0) = $y2\]
 $BR
-$BCENTER \(y(x) = \)\{$soln->ans_rule(50)\} $ECENTER
+\(y(x) = \)\{$soln->ans_rule(60)\}
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
 

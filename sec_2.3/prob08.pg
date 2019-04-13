@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Higher order ODEs: constant coefficient higher order homogeneous linear ODEs
-## Linear independence
-## ENDDESCRIPTION
+# Higher order ODEs: constant coefficient higher order homogeneous linear ODEs
+# Linear independence
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -16,6 +14,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
   "PGcourse.pl"
 );
@@ -65,14 +64,14 @@ f(x) = $f, \ \ \ \ g(x) = $g, \ \ \ \ h(x) = $h.
 If they are independent, enter all zeroes.  If they are 
 not linearly independent, find a nontrivial solution to the
 equation below.    Be sure you can justify your answer.
-$BR
-$BR
+$PAR
 \{ $multians->ans_rule(5) \}
 \( \left( $f \right) + \)
 \{ $multians->ans_rule(5) \}
 \( \left( $g \right) + \)
 \{ $multians->ans_rule(5) \}
 \( \left( $h \right) = 0. \)
+\{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;
 

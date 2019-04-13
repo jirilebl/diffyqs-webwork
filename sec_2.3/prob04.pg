@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Higher order ODEs: constant coefficient higher order homogeneous linear ODEs
-## Linear, constant coefficients, homogeneous (complex roots)
-## ENDDESCRIPTION
+# Higher order ODEs: constant coefficient higher order homogeneous linear ODEs
+# Linear, constant coefficients, homogeneous (complex roots)
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -69,8 +67,7 @@ Find the general solution to \( $diffeq \).
 In your answer, use \( c_1, c_2 \) and \( c_3 \) to 
 denote arbitrary constants and \( x \) 
 the independent variable.
-$BR
-$BR
+$PAR
 \{ ans_rule(50) \}
 \{ AnswerFormatHelp("equations") \}
 END_TEXT

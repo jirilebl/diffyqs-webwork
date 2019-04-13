@@ -67,7 +67,7 @@ $PAR
 Therefore there are two fundamental solutions \{$fundamental->ans_rule(30)\}
 \{ AnswerFormatHelp("formulas") \}
 $BR
-(enter as a comma separated list of formulas).
+$BITALIC $BBOLD Note: $EBOLD Enter the solutions as a comma separated list.$EITALIC
 
 $PAR
 Use these to solve the initial value problem
