@@ -1,0 +1,93 @@
+# Solve wave equation using d'Alembert
+
+## Author(Jiri Lebl)
+## Institution(Oklahoma State University)
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'wave equation', 'dAlembert')
+
+########################################################################
+
+###########################
+##  Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+"PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+#  Setup
+
+Context("Numeric");
+
+
+$a = random(2,9,1);
+$asq=$a*$a;
+do { $b = random(2,9,1); } until ($b != $a);
+
+Context()->variables->add(t => ["Real", limits=>[0.1,4]]);
+
+$answer1 = Compute("($b/(2*$a))*(sin(x+$a t)-sin(x-$a t))")->reduce;
+
+############################
+##  Main text
+#
+
+Context()->texStrings;
+BEGIN_TEXT
+The d'Alembert solution is very handy 
+for solving the wave equation on the entire real line.
+That is, we use that the solution is two waves traveling in 
+opposite directions.  More specifically we simply do not take the
+odd periodic extensions of the initial conditions.
+$PAR
+Solve the problem
+$PAR
+\( \quad u_{tt} = $asq u_{xx}  , \qquad -\infty < x < \infty , \quad t > 0 \)
+$PAR
+\( \quad u(x,0) = 0 , \qquad u_t(x,0) = $b \cos (x) \)
+$PAR
+\(u = {} \) \{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+##  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+
+
+#####################
+# Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+D'Alembert says that the
+solution is \(u(x,t) = A(x+$a t) + B(x-$a t) .\)
+We must have that \(u(x,0) = A(x)+B(x) = 0\) and
+\(u_t(x,0) = $a A'(x) - $a B'(x) = $b \cos(x) .\)
+So \(B(x) = -A(x)\) and
+\($a A'(x) + $a A'(x) = 2\cdot $a A'(x) = $b \cos(x).\)
+Therefore \(A'(x) = \frac{$b}{2\cdot $a} \cos(x)\) and
+\(A(x) = \frac{$b}{2\cdot $a} \sin(x)\) and
+\(B(x) = -A(x) =  \frac{-$b}{2 \cdot $a} \sin(x).\)
+
+$PAR
+Thus 
+\( u(x,t) = \frac{$b}{2\cdot $a}\bigl(\sin(x+$a t)-\sin(x-$a t)\bigr) . \)
+END_SOLUTION
+Context()->normalStrings;
+
+;
+
+ENDDOCUMENT();

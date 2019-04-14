@@ -1,0 +1,91 @@
+# Solve wave equation using d'Alembert
+
+## Author(Jiri Lebl)
+## Institution(Oklahoma State University)
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'wave equation', 'dAlembert')
+
+########################################################################
+
+###########################
+##  Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+"PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+#  Setup
+
+Context("Numeric");
+
+
+$a = random(2,9,1);
+$asq=$a*$a;
+do { $b = random(2,9,1); } until ($b != $a);
+
+Context()->variables->add(t => ["Real", limits=>[0.1,4]]);
+
+$answer1 = Compute("($b/2) e^(-(x+$a t)^2) + ($b/2) e^(-(x-$a t)^2)")->reduce;
+
+############################
+##  Main text
+#
+
+Context()->texStrings;
+BEGIN_TEXT
+The d'Alembert solution is very handy 
+for solving the wave equation on the entire real line.
+That is, we use that the solution is two waves traveling in 
+opposite directions.  More specifically we simply do not take the
+odd periodic extensions of the initial conditions.
+$PAR
+Solve the problem
+$PAR
+\( \quad u_{tt} = $asq u_{xx}  , \qquad -\infty < x < \infty , \quad t > 0 \)
+$PAR
+\( \quad u(x,0) = $b e^{-x^2}, \qquad u_t(x,0) = 0 \) 
+$PAR
+\(u = {} \) \{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+##  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+
+
+#####################
+# Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+Solution with zero initial velocity and initial position \(f(x)\) is \( \frac{f(x+$a t) + f(x-$a t)}{2} . \)
+$PAR
+Thus 
+\( u(x,t) = $answer1 \)
+$PAR
+In more detail, d'Alembert says that the
+solution is \(u(x,t) = A(x+$a t) + B(x-$a t) .\)
+We must have that \(u(x,0) = A(x)+B(x) = f(x)\) and
+\(u_t(x,0) = $a A'(x) - $a B'(x) = 0 .\)
+So \(B'(x) = A'(x).\)  So if we take \(A(x) = B(x) = \frac{1}{2} f(x),\)
+we will have a solution.
+END_SOLUTION
+Context()->normalStrings;
+
+;
+
+ENDDOCUMENT();

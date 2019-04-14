@@ -1,0 +1,88 @@
+# Solve wave equation using d'Alembert
+
+## Author(Jiri Lebl)
+## Institution(Oklahoma State University)
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'wave equation', 'dAlembert')
+
+########################################################################
+
+###########################
+##  Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+"PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+#  Setup
+
+Context("Numeric");
+
+
+$a = random(2,9,1);
+$asq=$a*$a;
+do { $b = random(2,9,1); } until ($b != $a);
+
+Context()->variables->add(t => ["Real", limits=>[0.1,4]]);
+
+$answer1 = Compute("$b/2")->reduce;
+$answer2 = Compute("$b/2")->reduce;
+
+############################
+##  Main text
+#
+
+Context()->texStrings;
+BEGIN_TEXT
+Suppose
+$PAR
+\( \quad u_{tt} = $asq u_{xx}  , \qquad -\infty < x < \infty , \quad t > 0 \)
+$PAR
+has the solution \( u(x,t) = A e^{x + $a t} + B e^{x-$a t}  \)
+for some numbers \(A\) and \(B\).
+$PAR
+Suppose we know that \(u(0,0) = $b\) and \(u_t(x,0) = 0\) for all \(x\).
+Then
+$PAR
+\(A = {} \) \{ ans_rule(20) \}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\(B = {} \) \{ ans_rule(20) \}
+\{ AnswerFormatHelp("numbers") \}
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+##  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+ANS( $answer2->cmp() );
+
+
+#####################
+# Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+The derivative of \(u\) in \(t\) is
+\( u_t(x,t) = $a A e^{x + $a t} - $a B e^{x-$a t} \), so
+\( u_t(x,0) = $a A e^{x} - $a B e^{x}  \).  Therefore \(A=B\).
+\( u(0,0) = A  + B = $b \), and so
+\( A = B = \frac{$b}{2} \).
+END_SOLUTION
+Context()->normalStrings;
+
+;
+
+ENDDOCUMENT();
