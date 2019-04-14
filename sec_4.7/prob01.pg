@@ -53,7 +53,7 @@ $ic = RadioButtons(
 BEGIN_TEXT
 A guitar string of length $L is tensioned and fixed at the ends.
 Suppose \(x\) denotes the position along the string and \(t\) denotes time.
-The string is release from rest with the initial displacement
+The string is released from rest with the initial displacement
 \(x($L-x)\).
 $PAR
 Choose the PDE, boundary, and initial conditions that fit this scenario.
