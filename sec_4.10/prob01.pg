@@ -1,0 +1,87 @@
+# Solve Dirichlet problem (Laplace equation) in a circle
+
+## Author(Jiri Lebl)
+## Institution(Oklahoma State University)
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'Laplace equation')
+
+########################################################################
+
+###########################
+##  Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+"PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+#  Setup
+
+Context("Numeric");
+
+
+$a = random(2,9,1);
+do { $b = random(2,9,1); } until ($b != $a);
+do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
+do { $d = random(2,9,1); } until (($d != $a) and ($d != $b) and ($d != $c));
+
+Context()->variables->add(r => ["Real"]);
+Context()->variables->add(theta => ["Real", TeX=>"\theta"]);
+
+Context()->flags->set(
+     reduceConstants => 0,
+     reduceConstantFunctions => 0,
+);
+
+
+$answer1 = Compute("$a r^($b) cos ($b theta ) + $c r^($d) sin ($d theta)");
+
+############################
+##  Main text
+#
+
+Context()->texStrings;
+BEGIN_TEXT
+Solve the Dirichlet problem in the circle of radius 1 using polar coordinates:
+$PAR
+\(\quad \nabla^2 u = u_{rr} + \frac{1}{r} u_r + \frac{1}{r^2} u_{\theta\theta} = 0 \) for \(0 < r < 1\).
+$PAR
+\(\quad u(1,\theta) = $a \cos ($b \theta ) + $c \sin ($d \theta) \)
+$PAR
+\( u(r,\theta) = {} \) \{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
+$BR
+(Write "theta" for \(\theta\))
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+##  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+
+
+#####################
+# Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+Simply plug into the series solution:
+$PAR
+\( u(r,\theta) = $answer1 \)
+END_SOLUTION
+Context()->normalStrings;
+
+;
+
+ENDDOCUMENT();

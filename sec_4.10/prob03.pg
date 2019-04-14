@@ -1,0 +1,83 @@
+# Compute temperature at the center of a circle using the Poisson integral formula
+
+## Author(Jiri Lebl)
+## Institution(Oklahoma State University)
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'Laplace equation')
+
+########################################################################
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"AnswerFormatHelp.pl",
+"PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+
+###########################
+# Setup
+
+Context("Numeric");
+
+$a = random(2,9,1);
+do { $b = random(2,9,1); } until ($b != $a);
+
+Context()->flags->set(
+     reduceConstants => 0,
+     reduceConstantFunctions => 0,
+);
+
+$answer1 = Compute("(1/4)*$a + (3/4)*$b");
+
+############################
+# Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Suppose \(u\) is a solution of
+$PAR
+\( \nabla^2 u = 0 \)
+$PAR
+inside the unit circle 
+for the boundary condition that \(u\) is equal to $a for a quarter of the circle,
+and $b for the remaining 3 quarters of the circle.  Find \(u\) at the origin:
+$PAR
+\( u(0,0) = {} \) \{ ans_rule(40) \}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+$BITALIC Use what you know about the Poisson formula and your intuition. $EITALIC
+END_TEXT
+Context()->normalStrings;
+
+
+#############################
+# Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+
+
+#####################
+# Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+${PAR}SOLUTION:$PAR
+$BR
+\( u(0,0) = $answer1 \)
+because the Poisson formula tells us that \(u\) at the origin is precisely the average of the values
+on the boundary of the unit disc.
+END_SOLUTION
+Context()->normalStrings;
+
+;
+
+ENDDOCUMENT();
