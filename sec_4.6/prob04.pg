@@ -39,41 +39,35 @@ $ainit = Compute("sin(x)");
 #####################
 # Main text
 
-
 Context()->texStrings;
 BEGIN_TEXT
 Suppose we have a laterally insulated metal rod of length $length, parametrized by length,
 starting with 0 at the left hand endpoint.  Suppose the left hand endpoint is kept at
 temperature $left, the right hand endpoint is kept at temperature $right, and
 the initial temperature at time \(t=0\) is \( \sin(x) \).
-$BR
+$PAR
 Set up the initial-boundary-value-problem. 
-$BR
-$BR
+$PAR
 The equation is:
-$BR
+$PAR
 \{ $eql->buttons() \}
-$BR
-$BR
+$PAR
 Range of idependent variables:
-$BR
+$PAR
 \(0 < x < {}\) \{ ans_rule(5) \},  \( t>0\),
-$BR
-$BR
+$PAR
 Boundary and initial conditions:
-$BR
+$PAR
 \(u(0,t) = {} \) \{ ans_rule(5) \}  for \(t>0\),
-$BR
+$PAR
 \(u(\) \{ ans_rule(5) \} \(,t) = {} \) \{ ans_rule(5) \}  for \( t>0\),
-$BR
+$PAR
 \(u(x,0) = {} \) \{ ans_rule(5) \}
-$BR
-$BR
+$PAR
 \{ AnswerFormatHelp("numbers") \} $SPACE
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
-
 
 #####################
 # Answer evaluation

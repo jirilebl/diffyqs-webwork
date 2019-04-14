@@ -1,9 +1,7 @@
-# classify separable differential equations
+# Set up a guitar string wave equation problem
 
-
-## Institution(Alfred University)
-## Author(Darwyn Cook)
-## KEYWORDS('partial', 'differential', 'equation', 'separable')
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
 
 ########################################################################
 
@@ -11,115 +9,76 @@ DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "MathObjects.pl",
-  "PGchoicemacros.pl",
+  "parserRadioButtons.pl",
   "PGcourse.pl"
 );
 
-# Print problem number and point value (weight) for the problem
+########################################################################
 TEXT(beginproblem());
 
-# Show which answers are correct and which ones are incorrect
-$showPartialCorrectAnswers = 1;
+$L = random(2,10);
 
-##############################################################
-#
-#  Setup
-#
-#
-Context("Numeric");
+$de = RadioButtons(
+    [ ["\( u_{tt} = a^2 u_{xx}, \quad 0<x<$L, \quad t>0 \)",
+       "\( u_t = k u_{xx}, \quad 0<x<$L, \quad t>0\)",
+       "\( u_{xx} + u_{tt} = 0, \quad 0<x<$L, \quad 0<t<$L \)",
+       "\( u_{xt} = 0, \quad 0<x<$L, \quad 0<t \)"],
+      "None of these" ],
+    0);
 
-$heat = 0;
-$wave = 1;
-$laplace = 2;
+$bc = RadioButtons(
+    [ ["\( u(0,t) = 0, \quad u($L,t) = 0, \quad t > 0 \)",
+       "\( u(0,t) = 0, \quad u_x($L,t) = 0, \quad t > 0 \)",
+       "\( u_x(0,t) = 0, \quad u($L,t) = 0, \quad t > 0 \)",
+       "\( u_x(0,t) = 0, \quad u_x($L,t) = 0, \quad t > 0 \)",
+       "\( u(0,t) = 0, \quad u_x(0,t) = 0, \quad t > 0 \)",
+       "\( u(0,t) = u($L,t), \quad t > 0 \)"],
+      "None of these" ],
+    0);
 
-$correct = $wave;
-@therest = ($heat,$wave,$laplace);
-splice(@therest,$correct,1);
+$ic = RadioButtons(
+    [ ["\( u(x,0) = x($L-x), \quad u_t(x,0) = 0, \quad t > 0 \)",
+       "\( u(x,0) = 0, \quad u_t(x,0) = x($L-x), \quad t > 0 \)",
+       "\( u(x,0) = 0, \quad u_t(x,0) = 0, \quad t > 0 \)",
+       "\( u(x,0) = x($L-x), \quad u_t(x,0) = x($L-x), \quad t > 0 \)",
+       "\( u(x,0) = x($L-x), \quad u_{tt}(x,0) = 0, \quad t > 0 \)",
+       "\( u(x,0) = x($L-x), \quad t > 0 \)",
+       "\( u_t(x,0) = x($L-x), \quad t > 0 \)",
+       "\( u(x,0) = 0, \quad u_{tt}(x,0) = x($L-x), \quad t > 0 \)"],
+      "None of these" ],
+    0);
 
-$PDE[$heat] = "\(\displaystyle k\frac{\partial^2 u}{\partial x^2} = \frac{\partial u}{\partial t}, \quad 0<x<L, \quad t>0\)$BR"; 
-$PDE[$wave] = "\(\displaystyle\alpha^2\frac{\partial^2 u}{\partial x^2} = \frac{\partial^2 u}{\partial t^2}, \quad 0<x<L, \quad t>0\)$BR";
-$PDE[$laplace] = "\(\displaystyle\frac{\partial^2 u}{\partial x^2} +\frac{\partial^2 u}{\partial y^2}=0, \quad 0<x<a, \quad 0<y<b\)$BR";
+########################################################################
 
-$boundary[$heat] = 
-"\( 
-\begin{aligned} 
-u(0,t) &= 0 &u(L,t) &= 0, &t > 0\\
-u(x,0) & = x(L-x),&& &0 < x < L\\
-&&&&\\
-&&&&\\
-\end{aligned}\)";
-
-$boundary[$wave] = 
-"\( 
-\begin{aligned} 
-u(0,t) &= 0 &u(L,t) &= 0, &t > 0\\
-u(x,0) & = x(L-x),&\frac{\partial u}{\partial t}\Bigg\vert_{t=0}  &= 0, &0 < x < L\\
-&&&&\\
-&&&&\\
-\end{aligned}\)";
-
-$boundary[$laplace] = "\( 
-\begin{aligned} 
-\frac{\partial u}{\partial x}\Bigg\vert_{x=0} & = 0, 
-&\frac{\partial u}{\partial x}\Bigg\vert_{x=a}  &= 0, &0 < y < b\\
-u(x,0) &= 0, &u(x,b) &= x(L-x), &0 < x < a\\
-&&&&\\
-&&&&\\
-\end{aligned}\)";
-
-$de = new_multiple_choice();
-$de->qa(
-"Partial Differential Equation", 
-$PDE[$correct]
-);
-$de->extra(
-$PDE[$therest[0]],
-$PDE[$therest[1]],
-);
-
-$bndry = new_multiple_choice();
-$bndry->qa(
-"Boundary/Initial Conditions", 
-$boundary[$correct],
-);
-$bndry->extra(
-$boundary[$therest[0]],
-$boundary[$therest[1]],
-);
-
-
-##############################################################
-#
-#  Text
-#
-#
-
-Context()->texStrings;
 BEGIN_TEXT
-The ends of a guitar string of length \(L\) are secured at both ends.
-The string is released from rest with initial displacement \(f(x)=x(L-x)\).
-$BR
-Choose the PDE and boundary/initial conditions that model this scenario.
+A guitar string of length $L is tensioned and fixed at the ends.
+Suppose \(x\) denotes the position along the string and \(t\) denotes time.
+The string is release from rest with the initial displacement
+\(x($L-x)\).
 $PAR
-\{ $de->print_q() \}
-$BR
-\{ $de->print_a() \}
-$BR
-\{ $bndry->print_q() \}
-$BR
-\{ $bndry->print_a() \}
+Choose the PDE, boundary, and initial conditions that fit this scenario.
+$PAR
+Differential equation:
+$PAR
+\{ $de->buttons() \}
+$PAR
+Boundary conditions:
+$PAR
+\{ $bc->buttons() \}
+$PAR
+Initial conditions:
+$PAR
+\{ $ic->buttons() \}
 END_TEXT
-Context()->normalStrings;
 
-##############################################################
-#
-#  Answers
-#
-#
+########################################################################
+
+install_problem_grader(~~&std_problem_grader);
 
 $showPartialCorrectAnswers = 0;
 
-ANS( radio_cmp( $de->correct_ans() ) );
-ANS( radio_cmp( $bndry->correct_ans() ) );
+ANS($de->cmp());
+ANS($bc->cmp());
+ANS($ic->cmp());
+
 ENDDOCUMENT();        

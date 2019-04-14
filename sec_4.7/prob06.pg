@@ -44,11 +44,11 @@ Context()->texStrings;
 BEGIN_TEXT
 Take the vibrating string satisfying
 $PAR
-\( \quad u_{tt} = \alpha^2 u_{xx}  , \qquad 0 < x < L , \quad t > 0 \)
+\( \quad u_{tt} = a^2 u_{xx}  , \qquad 0 < x < L , \quad t > 0 \)
 $PAR
 with boundary conditions \( \quad u(0,t) = u(L,t)= 0 . \) 
 $PAR
-The constant \(\alpha^2 = \frac{T}{\rho} \) where \(T\) is tension
+The constant \(a^2 = \frac{T}{\rho} \) where \(T\) is tension
 and \(\rho\) is linear density of the string.
 $PAR
 Suppose the string vibrates at base frequency \(\omega .\)
@@ -80,8 +80,8 @@ ANS( $answer2->cmp() );
 
 Context()->texStrings;
 BEGIN_SOLUTION
-The base frequency (angular) is \( \frac{\pi \alpha}{L} \)
-where \(\alpha^2 = \frac{T}{\rho} \)
+The base frequency (angular) is \( \frac{\pi a}{L} \)
+where \(a^2 = \frac{T}{\rho} \)
 for tension \(T\) and linear density \(\rho .\)
 Therefore increasing \(L\) by a factor of \($a,\)
 divides the base frequency by \($a .\)
