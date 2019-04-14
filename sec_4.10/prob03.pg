@@ -70,8 +70,6 @@ ANS( $answer1->cmp() );
 
 Context()->texStrings;
 BEGIN_SOLUTION
-${PAR}SOLUTION:$PAR
-$BR
 \( u(0,0) = $answer1 \)
 because the Poisson formula tells us that \(u\) at the origin is precisely the average of the values
 on the boundary of the unit disc.
