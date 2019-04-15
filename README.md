@@ -4,9 +4,9 @@ A set of WeBWorK problems for courses teaching a class with
 the *Notes on Diffy Qs* textbook.
 Currently these should be treated as **beta** quality.
 
-Coverage is Chapters 0, 1, 2, 3, 6, 7, 8.  It should have enough for a normal
+Coverage is Chapters 0, 1, 2, 3, 4, 6, 7, 8.  It should have enough for a normal
 ODE course which uses 0, 1, 2, 6, 7 or perhaps 0, 1, 2, 3, 8 if doing systems.
-Chapter 8 is somewhat sparse.  Chapters 4 and 5 will be coming soon to some
+Chapters 4 and 8 are a little sparse.  Chapter 5 will be coming at some point to some
 degree, but probably will also be a little more sparse.
 
 ## How to use
@@ -31,9 +31,9 @@ Notes on Diffy Qs course.  I will keep this repository more up to date, and
 every once in a while update the Edfinity course.
 
 I've cleaned off the OPL tags as they are no longer needed, and some of them
-were downright confusing and many were just wrong, and just made editing a
-pain.  I've left the authorship information where it was present to see who
-the original author was.
+were downright confusing and many were just wrong, especially after the edits,
+and they just made editing a bit more of a pain.  I've left the authorship
+information where it was present to see who the original author was.
 
 ## Miscellanea
 
