@@ -1,4 +1,4 @@
-## Differentiating a possible solution, finding the general solution for a specific constant.
+# Differentiating a possible solution, finding the general solution for a specific constant.
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -80,8 +80,8 @@ $PAR
 
 $PAR
 Find the general solution to 
-\( \displaystyle \frac{d^2y}{dx^2} = $kk y \).
-Enter your answer as an equation \( y = \ldots \).
+\( \displaystyle \frac{d^2y}{dx^2} = $kk y . \)
+Enter your answer as an equation \( y = ? \).
 $PAR
 \{ ans_rule(45); \}
 \{ AnswerFormatHelp("equations"); \}

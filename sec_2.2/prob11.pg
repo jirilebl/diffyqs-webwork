@@ -55,7 +55,7 @@ Context()->texStrings;
 BEGIN_TEXT
 Find the general solution to \( $diffeq \).
 $BR
-Enter your answer as \(y = \dots\) .
+Enter your answer as \(y = ? \) .
 In your answer, use \( c_1 \) and \( c_2 \) to 
 denote arbitrary constants and \( x \) 
 the independent variable.  Enter \( c_1 \) as 

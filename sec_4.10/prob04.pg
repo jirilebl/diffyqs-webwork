@@ -60,7 +60,7 @@ $PAR
 \( \displaystyle u(r,\theta) = \frac{1}{2\pi} \int_0^{\pi} \) \{ ans_rule(45) \} \( d \alpha \)
 $SPACE \{ AnswerFormatHelp("formulas") \}
 $PAR
-$BITALIC $BBOLD Note:$EBOLD Use "theta" for \(\theta\) and "alpha" for \(\alpha\), the variable of integration. $EITALIC
+$BITALIC $BBOLD Note:$EBOLD Use ${BTT}theta${ETT} for \(\theta\) and ${BTT}alpha${ETT} for \(\alpha\), the variable of integration. $EITALIC
 $PAR
 Now solve
 $PAR
@@ -72,7 +72,7 @@ $PAR
 \( \displaystyle w(r,\theta) = \frac{1}{2\pi} \int_{-\pi}^{\pi} \) \{ ans_rule(45) \} \( d \alpha \)
 $SPACE \{ AnswerFormatHelp("formulas") \}
 $PAR
-$BITALIC $BBOLD Note:$EBOLD Use "theta" for \(\theta\) and "alpha" for \(\alpha\), the variable of integration. $EITALIC
+$BITALIC $BBOLD Note:$EBOLD Use ${BTT}theta${ETT} for \(\theta\) and ${BTT}alpha${ETT} for \(\alpha\), the variable of integration. $EITALIC
 END_TEXT
 Context()->normalStrings;
 

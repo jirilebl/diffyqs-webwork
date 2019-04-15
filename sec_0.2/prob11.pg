@@ -24,22 +24,23 @@ Context("Numeric");
 Context()->texStrings;
 BEGIN_TEXT
 Solve this problem by educated guessing.  
-$BR 
-$BR 
+$PAR 
 Suppose \(f\) is the function that satisifes
-\[f''(x) = -f(x) \] 
-for all \(x\) in its domain, 
-\(f(0) = 0\), and \(f'(0) = 1\).
+\[{\bigl(f'(x)\bigr)}^2 = 4 f(x) \] 
+for all \(x\) in its domain and \(f(0) = 0\).
 Then 
 $PAR
 \(f(x) = {} \) \{ ans_rule(30) \}
 \{ AnswerFormatHelp("formulas") \}
+$PAR
+$BITALIC What simple function that you know becomes a something like a square root of itself when you differentiate it.
+Another way to see the equation is \(f'(x) = 2 \sqrt{f(x)}.\) $EITALIC
 END_TEXT
 Context()->normalStrings;
 
 ###########################################################
 
-$ans = Formula("sin(x)");
+$ans = Formula("x^2");
 ANS($ans->cmp());
 
 ###########################################################

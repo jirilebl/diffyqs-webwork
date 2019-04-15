@@ -58,7 +58,7 @@ $PAR
 \( u(r,\theta) = {} \) \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
 $BR
-$BITALIC${BBOLD}Note:$EBOLD Write "theta" for \(\theta\)$EITALIC
+$BITALIC${BBOLD}Note:$EBOLD Write ${BTT}theta${ETT} for \(\theta\)$EITALIC
 END_TEXT
 Context()->normalStrings;
 
