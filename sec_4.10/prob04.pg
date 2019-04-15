@@ -1,4 +1,4 @@
-# Solve Dirichlet problem (Laplace equation) in a circle
+# Compute temperature at the center of a circle using the Poisson integral formula
 
 ## Author(Jiri Lebl)
 ## Institution(Oklahoma State University)
@@ -7,7 +7,7 @@
 ########################################################################
 
 ###########################
-##  Initialization
+# Initialization
 
 DOCUMENT();
 
@@ -22,49 +22,50 @@ TEXT(beginproblem());
 
 
 ###########################
-#  Setup
+# Setup
 
 Context("Numeric");
-
+Context()->variables->are(r => ["Real"],
+                          theta => ["Real", TeX=>"\theta"]);
+                          alpha => ["Real", TeX=>"\alpha"]);
 
 $a = random(2,9,1);
 do { $b = random(2,9,1); } until ($b != $a);
-do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
-do { $d = random(2,9,1); } until (($d != $a) and ($d != $b) and ($d != $c));
-
-Context()->variables->are(r => ["Real"]);
-                          theta => ["Real", TeX=>"\theta"]);
 
 Context()->flags->set(
      reduceConstants => 0,
      reduceConstantFunctions => 0,
 );
 
-
-$answer1 = Compute("$a r^($b) cos ($b theta ) + $c r^($d) sin ($d theta)");
+$answer1 = Compute("$a (1-r^2) / (1-2 r cos(theta-alpha) + r^2)");
 
 ############################
-##  Main text
-#
+# Main text
 
 Context()->texStrings;
 BEGIN_TEXT
-Solve the Dirichlet problem in the circle of radius 1 using polar coordinates:
+Using the Poisson integral solve the Dirichlet problem in the circle of radius 1 using polar coordinates:
 $PAR
 \(\quad \nabla^2 u = u_{rr} + \frac{1}{r} u_r + \frac{1}{r^2} u_{\theta\theta} = 0 \) for \(0 < r < 1\).
 $PAR
-\(\quad u(1,\theta) = $a \cos ($b \theta ) + $c \sin ($d \theta) \)
+\(\quad \displaystyle
+u(1,\theta) =
+\begin{cases}
+$a & \text{if } 0 < \theta < \pi \\
+0 & \text{else}
+\end{cases}
+\)
 $PAR
-\( u(r,\theta) = {} \) \{ ans_rule(40) \}
-\{ AnswerFormatHelp("formulas") \}
-$BR
-$BITALIC${BBOLD}Note:$EBOLD Write "theta" for \(\theta.\)$EITALIC
+\( u(r,\theta) = \frac{1}{2\pi} \int_0^{\pi} \) \{ ans_rule(45) \} \( d \alpha \)
+$SPACE \{ AnswerFormatHelp("formulas") \}
+$PAR
+$BITALIC $BBOLD Note:$EBOLD Use "theta" for \(\theta\) and "alpha" for \(\alpha\), the variable of integration. $EITALIC
 END_TEXT
 Context()->normalStrings;
 
 
 #############################
-##  Answer evaluation
+# Answer evaluation
 
 $showPartialCorrectAnswers = 1;
 
@@ -76,9 +77,9 @@ ANS( $answer1->cmp() );
 
 Context()->texStrings;
 BEGIN_SOLUTION
-Simply plug into the series solution:
-$PAR
-\( u(r,\theta) = $answer1 \)
+\( u(0,0) = $answer1 \)
+because the Poisson formula tells us that \(u\) at the origin is precisely the average of the values
+on the boundary of the unit disc.
 END_SOLUTION
 Context()->normalStrings;
 

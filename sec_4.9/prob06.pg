@@ -1,8 +1,8 @@
-# Simple solution of the laplace equation given an expansion on one side of a square
+# Simple solution of the Laplace equation given an expansion on one side of a square
 
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
-## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'laplace equation')
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'Laplace equation')
 
 ###########################
 ##  Initialization

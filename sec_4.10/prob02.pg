@@ -32,8 +32,8 @@ do { $b = random(2,9,1); } until ($b != $a);
 do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
 do { $d = random(2,9,1); } until (($d != $a) and ($d != $b) and ($d != $c));
 
-Context()->variables->add(r => ["Real"]);
-Context()->variables->add(theta => ["Real", TeX=>"\theta"]);
+Context()->variables->are(r => ["Real"],
+                          theta => ["Real", TeX=>"\theta"]);
 
 Context()->flags->set(
      reduceConstants => 0,
