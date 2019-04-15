@@ -77,7 +77,7 @@ ANS( $answer1->cmp() );
 Context()->texStrings;
 BEGIN_SOLUTION
 The function
-\(r^($c) sin ($c theta )\) still is a solution, we just have to make sure
+\(r^{$c} \sin ($c \theta )\) still is a solution, we just have to make sure
 that when we plug in \( r = $a , \) then we get \( $b \sin ($c \theta) .\)
 $PAR
 Hence

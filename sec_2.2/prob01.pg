@@ -24,10 +24,10 @@ $showPartialCorrectAnswers = 0;
 Context("Numeric");
 
 ## Choose real roots to a quadractic
-## Take care of the case when the roots are the same
 
+# make sure the roots are different
 $root1 = random(-10,10);
-$root2 = random(-10,10);
+do { $root2 = random(-10,10); } while($root1 == $root2);
 
 $sum_roots = $root1 + $root2;
 $prod_roots = $root1 * $root2;
@@ -46,18 +46,13 @@ BEGIN_TEXT
 For what values of \(r\) does the function \(y = $coeff e^{rx}\) satisfy the differential equation \( y'' $linear_term $constant_term = 0\)?
 
 $PAR
-The smaller one is \{ans_rule(15)\}
-\{ AnswerFormatHelp("numbers") \}
-
-$PAR
-The larger one (possibly the same) is \{ans_rule(15)\}
+Enter the values as a comma separated list: \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 END_TEXT
 
 ####################################################
 
-ANS(Compute(min($root1, $root2))->cmp());
-ANS(Compute(max($root1, $root2))->cmp());
+ANS(Compute("$root1, $root2")->cmp());
 
 ENDDOCUMENT();
 

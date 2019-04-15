@@ -1,8 +1,8 @@
-# Compute temperature at the center of a circle using the Poisson integral formula
+# Solve the Laplace equation using the Poisson integral formula
 
 ## Author(Jiri Lebl)
 ## Institution(Oklahoma State University)
-## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'Laplace equation')
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'Laplace equation', 'Poisson kernel')
 
 ########################################################################
 
@@ -26,7 +26,7 @@ TEXT(beginproblem());
 
 Context("Numeric");
 Context()->variables->are(r => ["Real"],
-                          theta => ["Real", TeX=>"\theta"]);
+                          theta => ["Real", TeX=>"\theta"],
                           alpha => ["Real", TeX=>"\alpha"]);
 
 $a = random(2,9,1);
@@ -38,6 +38,7 @@ Context()->flags->set(
 );
 
 $answer1 = Compute("$a (1-r^2) / (1-2 r cos(theta-alpha) + r^2)");
+$answer2 = Compute("alpha^2 (1-r^2) / (1-2 r cos(theta-alpha) + r^2)");
 
 ############################
 # Main text
@@ -56,7 +57,19 @@ $a & \text{if } 0 < \theta < \pi \\
 \end{cases}
 \)
 $PAR
-\( u(r,\theta) = \frac{1}{2\pi} \int_0^{\pi} \) \{ ans_rule(45) \} \( d \alpha \)
+\( \displaystyle u(r,\theta) = \frac{1}{2\pi} \int_0^{\pi} \) \{ ans_rule(45) \} \( d \alpha \)
+$SPACE \{ AnswerFormatHelp("formulas") \}
+$PAR
+$BITALIC $BBOLD Note:$EBOLD Use "theta" for \(\theta\) and "alpha" for \(\alpha\), the variable of integration. $EITALIC
+$PAR
+Now solve
+$PAR
+\(\quad \nabla^2 w = w_{rr} + \frac{1}{r} w_r + \frac{1}{r^2} w_{\theta\theta} = 0 \) for \(0 < r < 1\).
+$PAR
+\(\quad \displaystyle
+w(1,\theta) = \theta^2 , \quad -\pi < \theta \leq \pi \)
+$PAR
+\( \displaystyle w(r,\theta) = \frac{1}{2\pi} \int_{-\pi}^{\pi} \) \{ ans_rule(45) \} \( d \alpha \)
 $SPACE \{ AnswerFormatHelp("formulas") \}
 $PAR
 $BITALIC $BBOLD Note:$EBOLD Use "theta" for \(\theta\) and "alpha" for \(\alpha\), the variable of integration. $EITALIC
@@ -70,6 +83,7 @@ Context()->normalStrings;
 $showPartialCorrectAnswers = 1;
 
 ANS( $answer1->cmp() );
+ANS( $answer2->cmp() );
 
 
 #####################
@@ -77,9 +91,11 @@ ANS( $answer1->cmp() );
 
 Context()->texStrings;
 BEGIN_SOLUTION
-\( u(0,0) = $answer1 \)
-because the Poisson formula tells us that \(u\) at the origin is precisely the average of the values
-on the boundary of the unit disc.
+\( \displaystyle
+u(r,\theta) = \frac{1}{2\pi} \int_0^{\pi} $answer1 \, d\alpha \)
+$PAR
+\( \displaystyle
+w(r,\theta) = \frac{1}{2\pi} \int_{-\pi}^{\pi} $answer2 \, d\alpha \)
 END_SOLUTION
 Context()->normalStrings;
 
