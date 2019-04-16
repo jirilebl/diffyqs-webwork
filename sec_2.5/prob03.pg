@@ -1,43 +1,92 @@
-##DESCRIPTION
-## Undetermined coefficients
-##ENDDESCRIPTION
+# Undetermined coefficients
 
-## Institution(Univeristy of Utah)
-## Author(Utah ww group)
+## Institution(Univeristy of Utah and Oklahoma State University)
+## Author(Utah ww group, Jiri Lebl)
 
-DOCUMENT();        # This should be the first executable line in the problem.
+##############################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "unorderedAnswer.pl",
   "PGcourse.pl"
 );
 
-TEXT( beginproblem() ); 
+##############################################################
 
+TEXT( beginproblem() ); 
 $showPartialCorrectAnswers = 1;
 
-$ans1 = "exp(-x)/2";
-$ans2 = "exp(-3*x)";
-$ans3 = "x*exp(-3*x)";
+Context("Numeric");
 
+$k1 = random(2,4,1);
+$k2 = random(2,4,1);
+$c = ($k1+1)*($k2+1)*random(1,5,1);
+
+$bb = $k1+$k2;
+$cc = $k1*$k2;
+
+$A = Compute("$c/(($k1+1)*($k2+1))")->reduce;
+
+$ans1 = Compute("$A*e^(-x)")->reduce;
+$ans2 = Compute("e^($k1*x)");
+$ans3 = Compute("e^($k2*x)");
+
+##############################################################
+
+Context()->texStrings;
 BEGIN_TEXT
-
 Use the method of undetermined coefficients to solve the following
 differential equation:
 
-\[ y'' + 6y' + 9y = 2 e^{-x} \]
+\[ y'' - $bb y' + $cc y = $c e^{-x} \]
 
-\( y(x) = \) \{ans_rule(40)\} \( + C_{1} \) \{ans_rule(25)\} \( + C_{2} \) \{ans_rule(25)\}.$BR
-
+\( y(x) = \) \{ans_rule(30)\} \( + C_{1} \) \{ans_rule(20)\} \( + C_{2} \) \{ans_rule(20)\}
+$BR
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
+Context()->normalStrings;
 
-#Answer: \( y(x) = C_{1} \) \{NAME_ANS_RULE(second_answer,25)\} \( + C_{2} \) \{NAMED_ANS_RULE(answer_rule,25)\}.
+##############################################################
 
+ANS($ans1->cmp());
+UNORDERED_ANS($ans2->cmp(),
+              $ans3->cmp());
 
-ANS(fun_cmp($ans1, vars=>"x"));
-UNORDERED_ANS(fun_cmp($ans2, vars=>"x"),
-              fun_cmp($ans3, vars=>"x"));
+##############################################################
 
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+Context()->texStrings;
+BEGIN_SOLUTION
+The characteristic equation is \(r^2- $bb r + $cc = (r-$k1)(r-$k2) = 0 \), so the
+associated homogeneous solution is
+\[
+y_c = C_1 e^{$k1 x} + C_2 x e^{$k2 x} .
+\]
+To find a particular solution we try
+\[
+y_p = A e^{-x} .
+\]
+We compute
+\[
+$c e^{-x} =
+y_p''-$bb y_p' + $cc y =
+A(1+$bb+$cc) e^{-x}
+.
+\]
+So 
+\(A(1+$bb+$cc) = $c .\) Solving for
+\(A\) we get \(A = $A\).
+Hence we find the solution
+\[
+y = y_p + y_c
+= $ans1 + C_1 $ans2 + C_2 $ans3 .
+\]
+END_SOLUTION
+Context()->normalStrings;
+
+##############################################################
+
+ENDDOCUMENT();

@@ -39,7 +39,7 @@ then released with zero velocity.
 $PAR
 
 In the notation of the text, what is the value \(c^2 - 4mk\)?
-\{ans_rule()\} \( \text m^2\text{kg}^2/\text{sec}^2 \)
+\{ans_rule(20)\} \( \text m^2\text{kg}^2/\text{sec}^2 \)
 $SPACE \{ AnswerFormatHelp("numbers") \}
 
 $PAR
@@ -60,10 +60,10 @@ $PAR
 \( \delta = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-\( c_1 = \) \{ans_rule(60)\}
+\( c_1 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-\( c_2 = \) \{ans_rule(60)\}
+\( c_2 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 END_TEXT
 
@@ -76,7 +76,7 @@ $r_imag = sqrt(-$c*$c + 4*$k*$m)/(2*$m);
 $c1 = 2*$x0;
 $c2 = (-$r_real*$c1)/$r_imag;
 
-ANS(Compute("$c*$c - 4*$k*$m")->cmp());
+ANS(Compute("$c^2 - 4*$k*$m")->cmp());
 ANS(Compute("$r_real")->cmp());
 ANS(Compute("$r_imag")->cmp());
 ANS(Compute("$r_real")->cmp());

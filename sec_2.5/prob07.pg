@@ -1,17 +1,28 @@
-## DESCRIPTION
-## Variation of parameters
-## ENDDESCRIPTION
+# Variation of parameters
 
 ## Institution(Berkeley)
 ## Author(Paul Vojta)
 ## KEYWORDS('differential equation' 'second order' 'linear' 'nonhomogeneous' 'variation of parameters')
 
+##############################################################
+
 DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
+
+##############################################################
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+Context()->variables->add(a=>'Parameter',b=>'Parameter');
+
 
 $a = random(1, 5);	# -$a is the (double) root of the characteristic poly.
 $b = random(3, 6);
@@ -26,23 +37,27 @@ $bmins2 = $b - 2;
 $bmins2or1 = $bmins2 == 1 ? '' : $bmins2;
 $bmins1bmins2 = $bmins1 * $bmins2;
 
-$ans = "e^(-$aor1 x)/($bmins1bmins2 x^$bmins2)";
+$ans = Compute("e^(-$aor1 x)/($bmins1bmins2 x^$bmins2)");
+$homogeneous = Compute("a*e^(-$aor1 x) + b*x*e^(-$aor1 x)");
 
-TEXT(beginproblem());
+##############################################################
 
-$showPartialCorrectAnswers = 1;
-
+Context()->texStrings;
 BEGIN_TEXT
 Find a particular solution to
 \(\displaystyle y'' + $twoa y' + $aaor1 y = \frac{e^{-$aor1 x}}{x^$b} \)
-$BR
-$BR
+$PAR
 \(y_{\text p} = \) \{ ans_rule(60) \}
-
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
-$homogeneous = "a*e^(-$aor1 x) + b*x*e^(-$aor1 x)";
-ANS(fun_cmp("$ans + $homogeneous", var => 'x',  params => ['a', 'b']) );
+Context()->normalStrings;
 
+##############################################################
+
+#ANS(fun_cmp("$ans + $homogeneous", var => 'x',  params => ['a', 'b']) );
+ANS(Compute("$ans + $homogeneous")->cmp());
+
+Context()->texStrings;
 BEGIN_SOLUTION
 The auxiliary polynomial of \( y'' + $twoa y' + $aaor1 y = 0 \) is
 \[ r^2 + $twoa r + $aa = (r + $a)^2 \]
@@ -76,5 +91,6 @@ Combining these gives the answer
     \left(\frac1{$bmins2} - \frac1{$bmins1}\right)
   = \frac{e^{-$aor1 x}}{$bmins1bmins2 x^{$bmins2or1}} \;. \]
 END_SOLUTION
+Context()->normalStrings;
 
 ENDDOCUMENT();

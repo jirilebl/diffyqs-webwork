@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Higher order ODEs: constant coefficient second order nonhomogeneous linear ODEs
-## ENDDESCRIPTION
+# Higher order ODEs: constant coefficient second order nonhomogeneous linear ODEs
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -23,6 +21,7 @@ loadMacros(
 
 TEXT(beginproblem());
 
+$showPartialCorrectAnswers = 1;
 
 #############################
 #  Setup 1
@@ -57,6 +56,7 @@ $diffeq = ImplicitEquation("$m x'' + $k x = $F");
 $y0  = Compute("0");
 $yp0 = Compute("0");
 
+#######################################
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -70,17 +70,14 @@ in the downward direction, and time is measured in
 seconds.
 
 $PAR
-$BR
-$BR
 Determine the spring constant \( k \).
-$BR
+$PAR
 \( k = \) 
 \{ ans_rule(10) \}
 Newtons / meter
+$SPACE \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-$BR
-$BR
 Formulate the initial value problem for \( x(t) \),
 where \( x(t) \) is the displacement of the object
 from its equilibrium rest state, measured positive
@@ -88,21 +85,18 @@ in the downward direction.
 $BR
 $BITALIC Give your answer in terms of
 \( x, x^{\,\prime}, x^{\,\prime\prime}, t \). $EITALIC
-$BR
-$BR
+$PAR
 Differential equation:
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("equations") \}
-$BR
-$BR
+$PAR
 Initial conditions: \( x(0) = \) \{ ans_rule(5) \} and
 \( x^{\,\prime}(0) = \) \{ ans_rule(5) \} 
 \{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;
 
-$showPartialCorrectAnswers = 1;
-
+#######################################
 
 ANS( $k->cmp() );
 
@@ -122,38 +116,34 @@ Context()->variables->are('t' =>'Real');
 $y = Compute("$r (cos(10 t) - cos(8 t)) / (8^2 - 100)");
 $ymax = $y->eval(t=>"pi/2");
 
+#######################################
+
 Context()->texStrings;
 BEGIN_TEXT
 
 $PAR
-$BR
-$BR
 Solve the initial value problem for \( x(t) \).
-$BR
+$PAR
 \( x(t) = \)
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
-$BR
-$BR
 Plot the solution and determine the maximum 
 excursion from equilibrium made by the object on
 the time interval \( 0 \leq t < \infty \).  If 
 there is no such maximum, enter ${BITALIC}NONE${EITALIC}.
-$BR
+$PAR
 maximum excursion = 
 \{ ans_rule(20) \} meters
+$SPACE
 \{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;
 
+#######################################
 
 ANS( $y->cmp() );
-
 ANS( $ymax->cmp() );
-
-
-
 
 ENDDOCUMENT();

@@ -1,44 +1,99 @@
-##DESCRIPTION
-## Undetermined coefficients
-##ENDDESCRIPTION
+# Undetermined coefficients
 
-## Institution(Univeristy of Utah)
-## Author(Utah ww group)
+## Institution(Univeristy of Utah and Oklahoma State University)
+## Author(Utah ww group, Jiri Lebl)
 
-DOCUMENT();        # This should be the first executable line in the problem.
+##############################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "unorderedAnswer.pl",
   "PGcourse.pl"
 );
 
-TEXT( beginproblem() ); 
+##############################################################
 
+TEXT( beginproblem() ); 
 $showPartialCorrectAnswers = 1;
 
-$ans1 = "2*x**2 - 4*x";
-$ans2 = "1";
-$ans3 = "exp(-x)";
+Context("Numeric");
 
+$k = random(2,4,1);
+$c = 2*$k*$k*random(1,4,1);
+$twok = 2*$k;
+
+$A = Compute("-$c/($k^2)")->reduce;
+$B = Compute("$c/(2*$k)")->reduce;
+
+# must be Formula since we need upToConstant=>1 to work
+$ans1 = Formula("$A*x+$B*x^2")->reduce;
+# must be Formula since we need upToConstant=>1 to work
+$ans2 = Formula("1");
+$ans3 = Compute("e^(-$k*x)");
+
+##############################################################
+
+Context()->texStrings;
 BEGIN_TEXT
-
 Use the method of undetermined coefficients to solve the following
 differential equation:
 
-\[ y'' + y' = 4 x \]
+\[ y'' + $k y' = $c x \]
 
-\( y(x) = \) \{ans_rule(40)\} \( + C_{1} \) \{ans_rule(25)\} \( + C_{2} \) \{ans_rule(25)\}.$BR
-
-
+\( y(x) = \) \{ans_rule(30)\} \( + C_{1} \) \{ans_rule(20)\} \( + C_{2} \) \{ans_rule(20)\}
+$BR
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
+Context()->normalStrings;
 
-#Answer: \( y(x) = C_{1} \) \{NAME_ANS_RULE(second_answer,25)\} \( + C_{2} \) \{NAMED_ANS_RULE(answer_rule,25)\}.
+##############################################################
 
+ANS($ans1->cmp(upToConstant=>1));
+UNORDERED_ANS($ans2->cmp(upToConstant=>1),
+              $ans3->cmp(upToConstant=>1));
 
-ANS(fun_cmp($ans1, vars=>"x"));
-UNORDERED_ANS(fun_cmp($ans2, vars=>"x"),
-              fun_cmp($ans3, vars=>"x"));
+##############################################################
 
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+Context()->texStrings;
+BEGIN_SOLUTION
+The characteristic equation is \(r^2+ $k r = r(r+$k) = 0 \), so the
+associated homogeneous solution is
+\[
+y_c = C_1 + C_2 e^{-$k x} .
+\]
+To find a particular solution we would want to try
+\[
+y_p = A + B x,
+\]
+but that won't work since the constant \(A\) will get eaten by the left hand side of the equation.
+So we multiply by \(x\) and try
+\[
+y_p = A x + B x^2.
+\]
+We compute
+\[
+$c x =
+y_p''+$k y_p' =
+$k A + 2B + $twok B x
+.
+\]
+So 
+\($k A + 2B = 0\) and
+\($twok B = $c .\)
+Solving for
+\(A\) and \(B\) we get \(A = $A\) and \(B = $B .\)
+Hence we find the solution
+\[
+y = y_p + y_c
+= $ans1 + C_1 $ans2 + C_2 $ans3 .
+\]
+END_SOLUTION
+Context()->normalStrings;
+
+##############################################################
+
+ENDDOCUMENT();

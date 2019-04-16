@@ -37,7 +37,7 @@ the spring is stretched \{2*$x0\} meters beyond its natural length and
 then released with zero velocity.
 $PAR
 In the notation of the text, what is the value \(c^2 - 4mk\)?
-\{ans_rule()\} \( \text m^2\text{kg}^2/\text{sec}^2 \)
+\{ans_rule(20)\} \( \text m^2\text{kg}^2/\text{sec}^2 \)
 $SPACE \{ AnswerFormatHelp("numbers") \}
 $PAR
 Find the position of the mass, in meters, after t seconds.  Your answer
@@ -52,10 +52,10 @@ $PAR
 \( \beta = \) \{ans_rule(20)\} (the smaller of the two)
 $SPACE \{ AnswerFormatHelp("numbers") \}
 $PAR
-\( c_1 = \) \{ans_rule(60)\}
+\( c_1 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-\( c_2 = \) \{ans_rule(60)\}
+\( c_2 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 END_TEXT
 
@@ -67,7 +67,7 @@ $r2 = (-$c - sqrt($c*$c - 4*$k*$m))/(2*$m);
 $c2 = (2 * $r1 * $x0)/($r1 - $r2);
 $c1 = 2*$x0 - $c2;
 
-ANS(Compute("$c*$c - 4*$m*$k")->cmp());
+ANS(Compute("$c^2 - 4*$m*$k")->cmp());
 ANS(Compute("$r1")->cmp());
 ANS(Compute("$r2")->cmp());
 ANS(Compute("$c1")->cmp());

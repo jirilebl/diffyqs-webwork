@@ -1,14 +1,12 @@
-#DESCRIPTION
-## Calculus: Second-order nonhomogeneous linear equations
-## Undetermined coefficients
-##ENDDESCRIPTION
+# Undetermined coefficients
 
 ## Institution(University of Minnesota)
 ## Author(Justin Sukiennik)
 ## KEYWORDS('calculus', 'differential equations', 'linear equations', 'second-order', 'nonhomogeneous', 'method of undetermined coefficients')
 
 #####################################################################
-DOCUMENT();        # This should be the first executable line in the problem.
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
@@ -106,4 +104,4 @@ ANS(str_cmp($ans2,"ignore_case"));
 ANS(str_cmp($ans3,"ignore_case"));
 ANS(str_cmp($ans4,"ignore_case"));
 
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+ENDDOCUMENT();

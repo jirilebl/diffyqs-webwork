@@ -21,10 +21,12 @@ loadMacros(
   "PGcourse.pl"
 );
 
-install_weighted_grader();
 
 TEXT(beginproblem());
 
+$showPartialCorrectAnswers = 1;
+
+install_weighted_grader();
 
 #############################
 #  Setup 
@@ -49,11 +51,11 @@ $y = Compute("$c1 e^(-2t) cos(6t) + $c2 e^(-2t) sin(6t) + $c3 e^(-t)");
 
 $yinfinity = Compute("0");
 
+#############################
 
 Context()->texStrings;
 BEGIN_TEXT
 Consider the initial value problem
-$PAR
 \[
 m x^{\,\prime\prime} + c x^{\,\prime} + k x = F(t), 
 \ \ \
@@ -61,7 +63,6 @@ x(0) = 0,
 \ \ \
 x^{\,\prime}(0) = 0
 \]
-$BR
 modeling the motion of a spring-mass-dashpot system
 initially at rest and subjected to an applied 
 force \( F(t) \), where the unit of force is the 
@@ -70,24 +71,18 @@ Newton (N).  Assume that \( m = $m \) kilograms,
 Newtons per meter, and \( F(t) = $F \) Newtons.  
 
 $PAR
-$BR
-$BR
 Solve the initial value problem.
-$BR
-$BR
+$PAR
 \( x(t) = \) \{ ans_box(2,50) \}
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
-$BR
-$BR
 Determine the long-term behavior of the system.
 Is \( \displaystyle \lim_{t\to\infty} x(t) = 0 \)?
 If it is, enter zero.  If not, enter a function that
 approximates \( x(t) \) for very large positive values
 of \( t \).
-$BR
-$BR
+$PAR
 For very large positive values of \( t \), 
 \( x(t) \approx \)
 \{ ans_rule(50) \}
@@ -96,12 +91,9 @@ For very large positive values of \( t \),
 END_TEXT
 Context()->normalStrings;
 
-$showPartialCorrectAnswers = 1;
+#############################
 
 WEIGHTED_ANS( $y->cmp(), 95 );
-
 WEIGHTED_ANS( $yinfinity->cmp(), 5 );
-
-
 
 ENDDOCUMENT();

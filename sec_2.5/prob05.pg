@@ -1,17 +1,25 @@
-## DESCRIPTION
-## Undetermined coefficients
-## ENDDESCRIPTION
+# Undetermined coefficients
 
 ## Institution(Rochester)
-## KEYWORDS('differential equation' 'second order' 'linear' 'nonhomogeneous')
+## KEYWORDS('differential equation', 'second order', 'linear', 'nonhomogeneous')
+
+#########################################################
 
 DOCUMENT() ;       
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
+
+#########################################################
+
+TEXT(beginproblem()) ;
+$showPartialCorrectAnswers = 1 ;
+
+Context("Numeric");
 
 do {
   $B = random(2,4,1) ;
@@ -31,27 +39,27 @@ $a = ($q0-$b*(2*$r+$B)-2*$c)/(($r)*($r)+$C+$B*$r) ;
 
 $S = "($c)*x**2 + ($b)*x + $a";
 
+#########################################################
 
-TEXT(beginproblem()) ;
-$showPartialCorrectAnswers = 1 ;
-
-
+Context()->texStrings;
 BEGIN_TEXT
 
 Use the method of undetermined coefficients to find
-one solution of $BR
-\( y'' + $B\,y' + $C\,y =  ($q2 \,x^2 + $q1 \, x + $q0 )\, e^{$r x} \). 
+one solution of
+\[ y'' + $B\,y' + $C\,y =  ($q2 \,x^2 + $q1 \, x + $q0 )\, e^{$r x} . \]
 
+\(y = {} \) \{ans_rule(80)\}
+\{ AnswerFormatHelp("formulas") \}
 $PAR
-\(y = \) \{ans_rule(80)\}
-$PAR
-$BITALIC Note that the method finds a specific solution, not the general one. Do not include the complementary solution in your answer.$EITALIC
+$BITALIC $BBOLD Note: $EBOLD The method finds a specific solution, not the general one. Do not include the complementary solution in your answer.$EITALIC
 
 END_TEXT
+Context()->normalStrings;
 
-$ans = "($S) *exp($r *x) "  ;
-ANS(fun_cmp($ans, vars=>"x")) ;
+#########################################################
 
+$ans = Compute("($S) *exp($r *x) ")->reduce;
+ANS($ans->cmp()) ;
 
 
 ENDDOCUMENT() ;       
