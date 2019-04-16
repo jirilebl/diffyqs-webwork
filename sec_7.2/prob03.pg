@@ -13,9 +13,10 @@ loadMacros(
   "PGcourse.pl"
 );
 
-Context("Numeric");
-TEXT(&beginproblem);
+TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
+
+Context("Numeric");
 
 $a = random(1, 10);
 $abs = "$g*sqrt(($a)**2 + ($b)**2 + ($c)**2)";
@@ -37,8 +38,8 @@ $BR$BR
 \( b_7 = \)  \{ans_rule(15)\}
 
 END_TEXT
-
 Context()->normalStrings;
+
 ANS(num_cmp("-$a/6"));
 ANS(num_cmp("$a^2/180"));
 ANS(num_cmp("-$a/12"));

@@ -13,9 +13,10 @@ loadMacros(
   "PGcourse.pl"
 );
 
-Context("Numeric");
-TEXT(&beginproblem);
+TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
+
+Context("Numeric");
 
 $a = non_zero_random(-6, 6);
 

@@ -13,9 +13,10 @@ loadMacros(
   "PGcourse.pl"
 );
 
-Context("Numeric");
-TEXT(&beginproblem);
+TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
+
+Context("Numeric");
 
 $a = random(1, 5);
 $b = random(1, 4);
@@ -42,8 +43,8 @@ $BR$BR
 \( c_7 = \)  \{ans_rule(15)\}
 
 END_TEXT
-
 Context()->normalStrings;
+
 ANS(num_cmp("0"));
 ANS(num_cmp("$c"));
 ANS(num_cmp("0"));

@@ -13,8 +13,9 @@ loadMacros(
   "PGcourse.pl"
 );
 
+TEXT(beginproblem());
+
 Context("Numeric");
-TEXT(&beginproblem);
 
 $a = random(1, 5);
 $b = random(1, 9);
@@ -29,8 +30,8 @@ $BR
 \( y = \)  \{ans_rule(40)\}
 
 END_TEXT
-
 Context()->normalStrings;
+
 ANS(fun_cmp("$b + 2*$a*$b*x^2 + (1/3)*$a^2*$b*x^4"));
 
 ENDDOCUMENT();
