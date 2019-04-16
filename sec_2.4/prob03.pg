@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Higher order ODEs: constant coefficient higher order homogeneous linear ODEs
-## ENDDESCRIPTION
+# Higher order ODEs: constant coefficient higher order homogeneous linear ODEs
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -47,8 +45,7 @@ find the frequency to be \( $f \
 \mathrm{Hz} \) (cycles per second).  
 What is the mass?  Assume there is no
 friction.
-$BR
-$BR
+$PAR
 Mass = \{ ans_rule(20) \}
 \{ AnswerFormatHelp("units") \}
 END_TEXT

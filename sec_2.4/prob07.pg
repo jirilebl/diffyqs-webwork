@@ -1,24 +1,27 @@
-##DESCRIPTION
-##ENDDESCRIPTION
-
 ## Institution(University of Michigan)
 ## Author(Gavin LaRose)
 ## KEYWORDS('calculus', 'integral', 'differential equations', 'higher derivatives')
 
+################################################
 
 DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGchoicemacros.pl",
   "hhAdditionalMacros.pl",
   "PGcourse.pl"
 );
 
-Context("Numeric");
-Context()->variables->add(t=>'Real');
+################################################
+
+TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+Context()->variables->are(t=>'Real');
 
 ## the characteristic equation is r^2 + R r + 1/C = 0; pick
 $sqrtc = random(2,5,1);
@@ -28,15 +31,22 @@ $c = $sqrtc*$sqrtc;
 $r = 2/$sqrtc;
 $rd = reduced_frac( 2, $sqrtc );
 
+if ($rd == 1) {
+  $rdstr = "";
+} else {
+  $rdstr = "$rd";
+}
+
 $q0 = random(2, 8, 1);
 ## then in the first case
-$q1 = Compute( "$q0*t*e^(-t/$sqrtc)" );
+$q1 = Compute( "$q0*t*e^(-t/$sqrtc)" )->reduce;
 ## and the second,
-$q2 = Compute( "($q0 + $q0*t/$sqrtc)*e^(-t/$sqrtc)" );
+$q2 = Compute( "($q0 + $q0*t/$sqrtc)*e^(-t/$sqrtc)" )->reduce;
 
 $q0osqrtc = reduced_frac( $q0, $sqrtc );
 
-TEXT(beginproblem());
+################################################
+
 Context()->texStrings;
 BEGIN_TEXT
 
@@ -70,29 +80,36 @@ $PAR
 If  \(L=1\)  henry,  \(R=$rd\)  ohm, and
 \(C=$c\)  farads, find a formula for the
 charge when
-$BR
+
+$PAR
 ${BBOLD}(a)$EBOLD
 \(Q(0) =0\) and \(Q'(0)=$q0\):
 $BR
-\(Q(t) = \) \{ ans_rule(35) \}
+\(Q(t) = \) \{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
 
 $PAR
 ${BBOLD}(b)$EBOLD
 \(Q(0)=$q0\) and \(Q'(0)=0\):
 $BR
-\( Q(t) = \) \{ ans_rule(35) \}
+\( Q(t) = \) \{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
 
 END_TEXT
 Context()->normalStrings;
 
+################################################
+
 ANS($q1->cmp() );
 ANS($q2->cmp() );
+
+################################################
 
 Context()->texStrings;
 BEGIN_SOLUTION
 In this case, the differential equation describing the charge is
-\( Q'' + $rd Q' + {1\over $c} Q =0\), so the characteristic equation
-is \(r^2 + $rd r + {1\over $c} =0\). This equation has one root,
+\( Q'' + $rdstr Q' + {1\over $c} Q =0\), so the characteristic equation
+is \(r^2 + $rdstr r + {1\over $c} =0\). This equation has one root,
 \(r = -\frac1{$sqrtc}\), so the general solution for \(Q\) is
 \[ Q(t) = (A + B t) e^{-t/$sqrtc}. \]
 Note that
@@ -107,11 +124,11 @@ $PAR
 ${BBOLD}(b)$EBOLD
 With \(Q(0) = $q0\) and \(Q'(0) = 0\), we have \(A = $q0\) and
 \(B = \frac{$q0}{$sqrtc}\), so that
-\( Q(t) = ($q0 + $q0osqrtc t) e^{-t/$sqrtc}\).
+\( Q(t) = ($q0 + $q0osqrtc t) e^{-t/$sqrtc} \).
 
 END_SOLUTION
 Context()->normalStrings;
 
+################################################
 
-;
 ENDDOCUMENT();

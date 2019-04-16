@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Mechanical vibrations
-## ENDDESCRIPTION
+# Mechanical vibrations
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -15,6 +13,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGgraphmacros.pl",
   "unionTables.pl",
   "answerHints.pl",
@@ -108,23 +107,23 @@ Assume that the units of time are
 seconds, and the units of displacement are centimeters.
 The first \( t \)-intercept is \( ($x1,$y1) \) and the
 first $type has coordinates \( ($x2,$y2) \).
-$BR
-$BR
+$PAR
 What is the period \( T \) of the periodic 
 motion?
 $BR
 \( T = \) \{ ans_rule(15) \} seconds
-$BR
-$BR
+$SPACE \{ AnswerFormatHelp("numbers") \}
+$PAR
 What is the frequency \( f \) in Hertz?
 What is the angular frequency \( \omega \)
 in radians / second?
 $BR
 \( f = \) \{ ans_rule(15) \} Hertz
+$SPACE \{ AnswerFormatHelp("numbers") \}
 $BR
 \( \omega = \) \{ ans_rule(15) \} radians / second
-$BR
-$BR
+$SPACE \{ AnswerFormatHelp("numbers") \}
+$PAR
 Determine the amplitude \( A \) and the 
 phase angle \( \gamma \) (in radians), and express 
 the displacement in the form 
@@ -132,15 +131,17 @@ the displacement in the form
 \( x \) in meters.
 $BR
 \( x(t) = {}\) \{ ans_rule(30) \} meters
-$BR
-$BR
+$SPACE \{ AnswerFormatHelp("formulas") \}
+$PAR
 With what initial displacement \( y(0) \) and
 initial velocity \( x^{\,\prime}(0) \) was the system set 
 into motion?
 $BR
 \( x(0) = {}\) \{ ans_rule(10) \} meters
+$SPACE \{ AnswerFormatHelp("numbers") \}
 $BR
 \( x^{\,\prime}(0) = {}\) \{ ans_rule(10) \} meters / second
+$SPACE \{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;
 
