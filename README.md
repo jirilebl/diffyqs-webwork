@@ -4,10 +4,10 @@ A set of WeBWorK problems for courses teaching a class with
 the *Notes on Diffy Qs* textbook.
 Currently these should be treated as **beta** quality.
 
-Coverage is Chapters 0, 1, 2, 3, 4, 6, 7, 8.  It should have enough for a normal
-ODE course which uses 0, 1, 2, 6, 7 or perhaps 0, 1, 2, 3, 8 if doing systems.
-Chapters 4 and 8 are a little sparse.  Chapter 5 will be coming at some point to some
-degree, but probably will also be a little more sparse.
+Coverage is Chapters 0, 1, 2, 3, 4, 6, 7, 8.  It should have enough for a
+normal ODE course which uses 0, 1, 2, 6, 7 or perhaps 0, 1, 2, 3, 8 if doing
+systems.  Chapters 4 and 8 are a little more sparse, there are a few problems
+for 5.1, but not enough to run the whole chapter.
 
 ## How to use
 

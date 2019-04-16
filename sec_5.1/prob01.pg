@@ -1,23 +1,8 @@
-##DESCRIPTION
-##  Algebra problem: true or false for inequality 
-##ENDDESCRIPTION
+# Sturm-Liouville eigenvalue problem
 
-
-## DBsubject(Differential equations)
-## DBchapter(Higher order differential equations)
-## DBsection(Boundary value problems)
-## Date(7/19/2011)
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
-## MLT(SL)
-## MLTleader(1)
-## Level(5)
-## TitleText1('Differential Equations')
-## AuthorText1('Zill')
-## EditionText1('7')
-## Section1('11.4')
-## Problem1('')
-## KEYWORDS('sturm', 'louiville', 'differential', 'equation')
+## KEYWORDS('Sturm-Liouville', 'differential', 'equation')
 
 ########################################################################
 
@@ -34,6 +19,7 @@ loadMacros(
   "PGchoicemacros.pl",
   "PGcourse.pl"
 );
+
 #install_weighted_grader();
 $refreshCachedImages=1;
 # Print problem number and point value (weight) for the problem
