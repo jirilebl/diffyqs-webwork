@@ -1,10 +1,7 @@
-## DESCRIPTION
-## Laplace transforms: from definition
-## ENDDESCRIPTION
+# Inverse Laplace transform
 
 ## Institution(Fort Lewis College)
 ## KEYWORDS('Laplace transform')
-
 
 ##############################
 #  Initialization
@@ -49,14 +46,11 @@ $answera = Compute("$a/$c*sin($c*t) + $b*cos($d*t)")->reduce;
 
 Context()->texStrings;
 BEGIN_TEXT
-
 Find the inverse Laplace transform \( f(t) = {\mathcal L}^{-1} \left\lbrace F(s) \right\rbrace \) of the function \( \displaystyle F(s) = $Fs \).
-$BR
-$BR
+$PAR
 \( \displaystyle f(t) = {\mathcal L}^{-1} \left\lbrace $Fs \right\rbrace = \)
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
-
 END_TEXT
 Context()->normalStrings;
 

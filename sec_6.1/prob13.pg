@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Laplace transforms: from definition
-## ENDDESCRIPTION
+# Laplace transform existence
 
 ## Institution(Fort Lewis College)
 ## KEYWORDS('Laplace transform')
@@ -58,7 +56,6 @@ Context()->texStrings;
 BEGIN_TEXT
 
 Consider \( f(t) = $ft \).
-$BR
 
 $PAR
 \{ $mc->print_q() \}
@@ -66,13 +63,11 @@ $BR
 \{ $mc->print_a() \}
 
 $PAR
-$BR
 Is \( f(t) \) exponentially bounded on \( 0\leq t < \infty \)?
 \{ $popup1-> menu() \}
 
 $PAR
-$BR
-Does the Laplace transform of \( f(t) \) exist (on some domain, i.e., for some values of s)?
+Does the Laplace transform of \( f(t) \) exist (on some domain, i.e., for some values of \(s\))?
 \{ $popup2-> menu() \}
 END_TEXT
 

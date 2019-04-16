@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Laplace transforms: from definition
-## ENDDESCRIPTION
+# Laplace transforms: from definition
 
 ## Institution(Fort Lewis College)
 ## KEYWORDS('Laplace transform')
@@ -53,9 +51,7 @@ $answere = Compute("(($b - $a)/s + 1/(s^2)) * e^(-s*$b)");
 
 Context()->texStrings;
 BEGIN_TEXT
-\{ BeginList('UL') \}
-
-$ITEM Set up an integral for finding the Laplace transform of the following function:
+Set up an integral for finding the Laplace transform of the following function:
 \[
 f(t) = \left\lbrace
 \begin{array}{l l}
@@ -66,22 +62,19 @@ $f2, & \ \ $b \leq t.
 \]
 $BR
 \( \displaystyle F(s) = {\mathcal L}\left\lbrace f(t) \right\rbrace = \int_A^B \)
-\{ ans_rule(20) \}
+\{ ans_rule(30) \}
 \{ AnswerFormatHelp("formulas") \}
-$BR
-$BR
+$PAR
 where \( A = \) \{ ans_rule(5) \} and \( B = \) \{ ans_rule(5) \}.
 
-$ITEMSEP
-$ITEM Find the antiderivative (with constant term 0) corresponding to the previous part.
-$BR
-$BR
+$PAR
+Find the antiderivative (with constant term 0) corresponding to the integral above.
+$PAR
 \{ ans_rule(40) \}
 
-$ITEMSEP
-$ITEM Evaluate appropriate limits to compute the Laplace transform of \( f(t) \):
-$BR
-$BR
+$PAR
+Evaluate appropriate limits to compute the Laplace transform of \( f(t) \):
+$PAR
 \( F(s) = {\mathcal L} \left\lbrace f(t) \right\rbrace = \)
 \{ ans_rule(40) \}
 
@@ -122,14 +115,11 @@ $answerf = Inequality("s>0");
 Context()->texStrings;
 BEGIN_TEXT
 
-$ITEMSEP
-$ITEM Where does the Laplace transform you found exist?  In other words, what is the domain of \( F(s) \)?
-$BR
-$BR
+$PAR
+Where does the Laplace transform you found exist?  In other words, what is the domain of \( F(s) \)?
+$PAR
 \{ ans_rule(20) \}
 \{ AnswerFormatHelp("inequalities") \}
-
-\{ EndList('UL') \}
 END_TEXT
 Context()->normalStrings;
 

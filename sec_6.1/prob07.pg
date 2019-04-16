@@ -1,10 +1,10 @@
-## DESCRIPTION
-## Differential Equations: Laplace Transforms
-## ENDDESCRIPTION
+# Inverse Laplace transform
 
 ## Institution(ASU)
 
-DOCUMENT() ;        # This should be the first executable line in the problem.
+#################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
@@ -13,7 +13,9 @@ loadMacros(
   "PGcourse.pl"
 );
 
-TEXT(beginproblem()) ;
+#################################################
+
+TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
 Context("Numeric");
@@ -31,12 +33,13 @@ $d = $b/$r;
 $ans1 = Compute("$a*cos($r*t)+$d*sin($r*t)")->reduce;
 $Fs = Formula("($a s +$b)/(s^2 + $c)")->reduce;
 
+#################################################
+
 Context()->texStrings;
 BEGIN_TEXT
 
 Find the inverse Laplace transform \( f(t) = {\mathcal L}^{-1} \left\lbrace F(s) \right\rbrace \) of the function \( \displaystyle F(s) = $Fs \).
-$BR
-$BR
+$PAR
 \( \displaystyle f(t) = {\mathcal L}^{-1} \left\lbrace $Fs \right\rbrace = \)
 \{ ans_rule(50) \}
 \{ AnswerFormatHelp("formulas") \}
@@ -44,7 +47,11 @@ $BR
 END_TEXT
 Context()->normalStrings;
 
+#################################################
 
 ANS($ans1->cmp());
-ENDDOCUMENT() ;        # This should be the last executable line in the problem.
 
+#################################################
+
+
+ENDDOCUMENT();

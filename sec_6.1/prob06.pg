@@ -1,14 +1,15 @@
-##DESCRIPTION
-##ENDDESCRIPTION
+# Laplace transform
 
 ## Author(Darwyn Cook)
 
+#####################################
 
-DOCUMENT();        # This should be the first executable line in the problem.
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserFunction.pl",
   "PGcourse.pl"
 );
@@ -56,12 +57,25 @@ $F = Formula($num/$den)->reduce;
 $Ftranslate = $F->substitute(s=>"s-$a");
 $translate = Formula("s-$a");
 
+#################################################
+
 Context()->texStrings;
 BEGIN_TEXT
-To find the Laplace transform of \($f\) you would substitute \{$translate->ans_rule\} into \($F\) which gives \{$Ftranslate->ans_rule\}
+Using the shifting property, to find the Laplace transform of \($f\) you would substitute
+$PAR
+\{$translate->ans_rule(40)\}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+into \($F\) which gives
+$PAR
+\{$Ftranslate->ans_rule(40)\}
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
+
+#################################################
+
 ANS($translate->cmp());
 ANS($Ftranslate->cmp());
 
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+ENDDOCUMENT();

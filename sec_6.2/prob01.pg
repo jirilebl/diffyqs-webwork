@@ -1,20 +1,24 @@
-## DESCRIPTION
-## Differential Equations: Laplace Transforms
-## ENDDESCRIPTION
+# Differential Equations: Laplace Transforms
 
 ## Institution(ASU)
 
-DOCUMENT() ;        # This should be the first executable line in the problem.
+#######################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
-  "PGasu.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
+#######################################################
+
 TEXT(beginproblem()) ;
 $showPartialCorrectAnswers = 1;
+
+Context("Numeric");
 
 $r1 = random(-9,-6,1);
 $r2= random(1,5,1);
@@ -30,24 +34,31 @@ $d=$y1+$b*$y0;
 $m = random(2,9);
 $m2 = $m**2;
 
+Context()->variables->are(s=>['Real',limits=>[$r2+1,$r2+10]]);
+
 $A=($r1*$y0-$d)/($r1-$r2);
 $B=($r2*$y0-$d)/($r2-$r1);
-$ans1 = FEQ("($y0*s+$d)/(s^2+$b*s+$c)+$m/((s^2+$b*s+$c)*(s^2+$m2))");
+$ans1 = Compute("($y0*s+$d)/(s^2+$b*s+$c)+$m/((s^2+$b*s+$c)*(s^2+$m2))")->reduce;
 
+#######################################################
+
+Context()->texStrings;
 BEGIN_TEXT
-
 Consider the following initial value problem:
-
 \[ x'' -{$nb} x' - {$nc} x= \sin($m t) \hspace{0.5in} x(0)=$y0, \; x'(0)=$y1\]
+Using \(X\) for the Laplace transform of \(x(t)\), i.e., \(X = \mathcal{L} $LBRACE x(t) $RBRACE,\)
+find the equation you get by taking the Laplace transform of the differential equation and solve for
 $PAR
-Using \(X\) for the Laplace transform of \(x(t)\), i.e., \(X = \mathcal{L} $LBRACE x(t) $RBRACE\), $BR
-find the equation you get by taking the Laplace transform of the differential equation and solve for  
-$BR \(X(s) = \) \{ans_rule(70) \} 
-
-
+\(X(s) = \) \{ans_rule(70) \} 
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
+Context()->normalStrings;
 
-ANS(fun_cmp($ans1,vars=>["s"] )) ;
+#######################################################
 
-ENDDOCUMENT() ;        # This should be the last executable line in the problem.
+ANS($ans1->cmp());
+
+#######################################################
+
+ENDDOCUMENT();
 

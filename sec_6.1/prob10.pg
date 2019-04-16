@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Laplace transforms: from definition
-## ENDDESCRIPTION
+# Inverse Laplace transform
 
 ## Institution(Fort Lewis College)
 ## KEYWORDS('Laplace transform')
@@ -52,13 +50,13 @@ Context()->texStrings;
 BEGIN_TEXT
 
 Find the inverse Laplace transform \( f(t) = {\mathcal L}^{-1} \left\lbrace F(s) \right\rbrace \) of the function \( \displaystyle F(s) = $Fs \).
-Use \(u(t)\) for the Heaviside function.
-$BR
-$BR
+
+$PAR
 \( \displaystyle f(t) = {\mathcal L}^{-1} \left\lbrace $Fs \right\rbrace = \)
 \{ ans_rule(50) \}
 \{ AnswerFormatHelp("formulas") \}
-
+$PAR
+$BITALIC $BBOLD Note: $EBOLD Use \(u(t)\) for the Heaviside function. $EITALIC
 END_TEXT
 Context()->normalStrings;
 

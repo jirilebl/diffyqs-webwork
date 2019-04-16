@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Laplace transforms: from definition
-## ENDDESCRIPTION
+# Laplace transforms: from definition
 
 ## Institution(Fort Lewis College)
 ## KEYWORDS('Laplace transform')
@@ -50,13 +48,10 @@ $answera = Compute("$a*1/(s-$r) + $b*1/(s^2) + $c*1/(s-$u)")->reduce;
 
 Context()->texStrings;
 BEGIN_TEXT
-\{ BeginList('OL', type=>'a') \}
-
-$ITEM Find the Laplace transform 
+Find the Laplace transform 
 \( F(s) = {\mathcal L}\left\lbrace f(t) \right\rbrace \) 
-of the function \( f(t) = $ft \), defined on the interval \( t \geq 0 \).
-$BR
-$BR
+of the function \( f(t) = $ft \), defined for \( t \geq 0 \).
+$PAR
 \( \displaystyle F(s) = {\mathcal L}\left\lbrace $ft \right\rbrace = \)
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
@@ -89,15 +84,11 @@ $answerb = Inequality("s>$u");
 
 Context()->texStrings;
 BEGIN_TEXT
-
-$ITEMSEP
-$ITEM For what values of \( s \) does the Laplace transform exist?
-$BR
-$BR
+$PAR
+For what values of \( s \) does the Laplace transform exist?
+$PAR
 \{ ans_rule(20) \}
 \{ AnswerFormatHelp("inequalities") \}
-
-\{ EndList('OL') \}
 END_TEXT
 Context()->normalStrings;
 
