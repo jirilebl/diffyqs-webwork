@@ -10,6 +10,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
@@ -17,26 +18,39 @@ TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
 Context("Numeric");
-
+Context()->variables->{namePattern} = qr/[a-z][a-z0-9_]*'*/i;
+Context()->variables->are(x=>"Real",
+                          y=>"Real",
+                          "y'"=>"Real",
+                          "y''"=>"Real",
+                          n=>['Real',limits=>[1,20],resolution=>1]);
 $a = non_zero_random(-6, 6);
+
+$eq = Compute("x^2y'' + 5xy' + (4 - $a x)y")->reduce;
+
+###############################################
 
 Context()->texStrings;
 BEGIN_TEXT
 
-Find the solution of \( x^2y'' + 5xy' + (4 - $a x)y = 0, \,x > 0 \) of the form
+Find the solution of \( $eq = 0, \,x > 0 \) of the form
 \[ y = x^r\sum_{n = 0}^{\infty} c_n x^n, \]
 where \(c_0 = 1\).
 
 $PAR
-\( r = {} \)  \{ans_rule(15)\}
+\( r = {} \)  \{ans_rule(15)\} \{ AnswerFormatHelp("numbers") \}
 $PAR
 \( c_n = {} \)  \{ans_rule(20)\}, \( \,n = 1, 2, 3, \ldots \)
-
+$SPACE \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 
 Context()->normalStrings;
-$ans = "($a)^n/(n!)^2";
-ANS(num_cmp("-2"));
-ANS(fun_cmp($ans, vars=>'n', test_points=>[1,2,3,4,5]));
+
+###############################################
+
+$ans = Compute("($a)^n/(n!)^2");
+
+ANS(Compute("-2")->cmp());
+ANS($ans->cmp());
 
 ENDDOCUMENT();
