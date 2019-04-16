@@ -16,7 +16,6 @@ loadMacros(
   "AnswerFormatHelp.pl",
   "parserAssignment.pl",
   "parserImplicitEquation.pl",
-  "unionLists.pl",
   "parserPopUp.pl",
   "PGcourse.pl"
 );
@@ -51,16 +50,15 @@ that the friction of the mass with the floor (i.e., the damping
 constant) is 
 \( $c \ \mathrm{N \cdot s / m} \).  
 
-\{ BeginList('UL') \}
-
-$ITEM Set up a differential equation that describes this 
+$PAR
+Set up a differential equation that describes this 
 system.  Let \( x \) to denote the displacement, in meters,
 of the mass from its equilibrium position, and give your answer
 in terms of \( x, x^{\,\prime}, x^{\,\prime\prime} \).  
 Assume that positive displacement 
 means the mass is farther from the wall than when the system
 is at equilibrium.
-$BR
+$PAR
 \{ ans_rule(30) \}
 \{ AnswerFormatHelp("equations") \}
 END_TEXT
@@ -99,8 +97,7 @@ $pop = PopUp(["?","over damped","critically damped","under damped"],"under dampe
 
 Context()->texStrings;
 BEGIN_TEXT
-$ITEMSEP
-$ITEM
+$PAR
 Find the general solution to your 
 differential equation from the previous part.  
 Use \( c_1 \) and \( c_2 \) to denote arbitrary
@@ -109,22 +106,21 @@ to represent the time elapsed in seconds. Enter
 \( c_1 \) as ${BTT}c1${ETT} and
 \( c_2 \) as ${BTT}c2${ETT}.  Your answer should
 be an equation of the form \( x = \ldots \).
-$BR
+$PAR
 \{ ans_rule(60) \}
 \{ AnswerFormatHelp("equations") \}
 
-$ITEMSEP
-$ITEM
+$PAR
 Is this system under damped, over damped, 
 or critically damped?  
-\{ $pop->menu() \}  Enter a value for the 
+\{ $pop->menu() \}
+$PAR
+Enter a value for the 
 damping constant that would make the system
 critically damped.
-$BR
+$PAR
 \{ ans_rule(10) \} \( \mathrm{N \cdot s / m} \)
-\{ AnswerFormatHelp("numbers") \}
-
-\{ EndList('UL') \}
+$SPACE \{ AnswerFormatHelp("numbers") \}
 
 END_TEXT
 Context()->normalStrings;
