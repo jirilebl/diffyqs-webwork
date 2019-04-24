@@ -12,10 +12,10 @@
 DOCUMENT();
 
 loadMacros(
-"PGstandard.pl",
-"MathObjects.pl",
-"AnswerFormatHelp.pl",
-"PGcourse.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl",
 );
 
 TEXT(beginproblem());
@@ -58,7 +58,7 @@ $PAR
 \( u(r,\theta) = {} \) \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
 $BR
-$BITALIC${BBOLD}Note:$EBOLD Write ${BTT}theta${ETT} for \(\theta.\)$EITALIC
+$BITALIC${BBOLD}Note:$EBOLD Write ${LQ}theta${RQ} for \(\theta.\)$EITALIC
 END_TEXT
 Context()->normalStrings;
 

@@ -1,24 +1,25 @@
-##DESCRIPTION
-## Interval of covergence for power series
-##ENDDESCRIPTION
+# Interval of covergence for power series
 
 ## Institution(OSU)
 ## Author(Utah ww group)
 ## KEYWORDS('calculus','Series', 'Power', 'Interval', 'Convergence','power series','interval of convergence')
 
-DOCUMENT();        # This should be the first executable line in the problem.
+#############################################################
 
+DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "PGchoicemacros.pl",
   "PGcourse.pl"
 );
 
+#############################################################
+
+TEXT(beginproblem());
+
 # No partial credit on this problem, so we say:
 install_problem_grader(~~&std_problem_grader);
 
-
-TEXT(beginproblem());
 $showPartialCorrectAnswers = 0;
 
 $a = random(2,11,1);
@@ -52,9 +53,12 @@ $ansStr4 =EV2(   " \( [ \frac{-1}{$b} ,\frac{1}{$b} ] \) " );
 @slice = &NchooseK(4,4);
 @shuffle = &shuffle(scalar(@slice));
 
+#############################################################
+
 BEGIN_TEXT
 
-Match each of the power series with its interval of convergence. $BR
+Match each of the power series with its interval of convergence.
+$PAR
 
 END_TEXT
 
@@ -62,9 +66,13 @@ TEXT(
 &match_questions_list(@questions[@slice]),
 &OL(@answers[@slice[@shuffle]])
 );
+
+#############################################################
+
 ANS(str_cmp([@ALPHABET[&invert(@shuffle)]], filters=>["remove_whitespace","ignore_order","ignore_case"]));
      ##the correct answers are obtained by applying
      ##the inverse (adjoint) permutation to the captions.
 
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+
+ENDDOCUMENT();
 

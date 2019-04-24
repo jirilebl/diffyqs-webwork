@@ -193,7 +193,7 @@ allowbreaks=>'yes'
 $PAR
 Find the general solution to this system of differential equations.
 Use \( a_1, a_2, b_1, b_2 \) to denote arbitrary constants, and enter 
-them as ${BTT}a1${ETT}, ${BTT}a2${ETT}, ${BTT}b1${ETT}, ${BTT}b2${ETT}. 
+them as ${LQ}a1${RQ}, ${LQ}a2${RQ}, ${LQ}b1${RQ}, ${LQ}b2${RQ}. 
 $BR
 \( x_1(t) = \) \{ $multians2->ans_rule(60) \}
 $BR

@@ -270,8 +270,8 @@ $ECENTER
 $PAR
 Find the most general real-valued solution to the linear system 
 of differential equations.  Use \( c_1 \) and \( c_2 \) to 
-denote arbitrary constants, and enter them as ${BTT}c1${ETT} and
-${BTT}c2${ETT}.
+denote arbitrary constants, and enter them as ${LQ}c1${RQ} and
+${LQ}c2${RQ}.
 $BR
 \( x_1(t) = \) \{ $multians1->ans_rule(50) \}
 $BR

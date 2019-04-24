@@ -1,22 +1,25 @@
-## DESCRIPTION
-## Interval of convergence of a power series
-## ENDDESCRIPTION
+# Interval of convergence of a power series
 
 ## Institution(Dartmouth)
 ## KEYWORDS('power series' 'radius of convergence')
 
+#########################################################
+
 DOCUMENT();
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
   "MathObjects.pl",
-  "Dartmouthmacros.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
  
+#########################################################
 
-## Do NOT show partial correct answers
+TEXT(beginproblem());
+
 $showPartialCorrectAnswers = 0;
+
+Context('Numeric');
 
 $nthroot = random(2,9);
 
@@ -25,24 +28,22 @@ if ($nthroot == 2)
 else
 {$rootn = "\root $nthroot \of n";}
 
-## Ok, we are ready to begin the problem...
-##
-TEXT(beginproblem());
-
+#########################################################
 
 BEGIN_TEXT
-    Find the radius of convergence of the power series 
+Find the radius of convergence of the power series 
 \[ \sum_{n=1}^\infty \frac{x^n}{$rootn} \]
-$BR
 Your answer should be a nonnegative real number or 
-${BITALIC}infinity$EITALIC.
-$BR
-$BR
+${BTT}infinity$ETT.
+$PAR
 Radius of convergence is \{ans_rule()\}
+\{ AnswerFormatHelp("numbers") \}
 END_TEXT
 
-Context('Numeric');
+#########################################################
+
 ANS(Real(1)->cmp);
+
 ENDDOCUMENT();
 
 

@@ -103,8 +103,8 @@ differential equation from the previous part.
 Use \( c_1 \) and \( c_2 \) to denote arbitrary
 constants.  Use \( t \) for independent variable 
 to represent the time elapsed in seconds.  Enter
-\( c_1 \) as ${BTT}c1${ETT} and
-\( c_2 \) as ${BTT}c2${ETT}.
+\( c_1 \) as ${LQ}c1${RQ} and
+\( c_2 \) as ${LQ}c2${RQ}.
 $PAR
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("equations") \}

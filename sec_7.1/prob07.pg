@@ -1,47 +1,68 @@
-## DESCRIPTION
-##   Representing a Function as a Power Series
-## ENDDESCRIPTION
+# Representing a Function as a Power Series
 
 ## KEYWORDS('Series', 'Power', 'Radius', 'Convergence', 'Coefficient','Power Series'  )
 
-DOCUMENT();        # This should be the first executable line in the problem.
+#################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
+
+#################################################
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
+Context("Numeric");
+
 $a = random(1,10,1);
+
+#################################################
 
 BEGIN_TEXT
 
 The function 
-	\( f(x) = $a x \ln(1 + 2x) \)
-is represented as a power series $BR 
-	\( \displaystyle f(x) = \sum_{n=0}^\infty c_n x^n .\)
-	
-$PAR
+\( f(x) = $a x \ln(1 + 2x) \)
+is represented as a power series
+\[ f(x) = \sum_{n=0}^\infty c_n x^n .\]
 
 Find the following coefficients in the power series:
 
 $PAR
-
-\( c_0 = \) \{ans_rule(20)\}  $BR
-\( c_1 = \) \{ans_rule(20)\}  $BR
-\( c_2 = \) \{ans_rule(20)\}  $BR
-\( c_3 = \) \{ans_rule(20)\}  $BR
-\( c_4 = \) \{ans_rule(20)\}
+\( c_0 = \) \{ans_rule(20)\}
+\{ AnswerFormatHelp("numbers") \}
 
 $PAR
+\( c_1 = \) \{ans_rule(20)\}
+\{ AnswerFormatHelp("numbers") \}
 
-Find the radius of convergence \( \rho \) of the series. $BR 
-\( \rho = \)  \{ans_rule(20)\}  . $BR
+$PAR
+\( c_2 = \) \{ans_rule(20)\}
+\{ AnswerFormatHelp("numbers") \}
+
+$PAR
+\( c_3 = \) \{ans_rule(20)\}
+\{ AnswerFormatHelp("numbers") \}
+
+$PAR
+\( c_4 = \) \{ans_rule(20)\}
+\{ AnswerFormatHelp("numbers") \}
+
+$PAR
+Find the radius of convergence \( \rho \) of the series.
+
+$PAR
+\( \rho = \)  \{ans_rule(20)\}
+\{ AnswerFormatHelp("numbers") \}
 
 END_TEXT
+
+#################################################
 
 #@ans=();
 $ans0 =  0;
@@ -53,11 +74,11 @@ $ans5 =  1/2;
 
 #ANS(num_cmp(relTol=>@ans));
 #ANS(ordered_num_cmp_list(@ans) );
-ANS(num_cmp($ans0));
-ANS(num_cmp($ans1));
-ANS(num_cmp($ans2));
-ANS(num_cmp($ans3));
-ANS(num_cmp($ans4));
-ANS(num_cmp($ans5));
+ANS(Compute($ans0)->cmp());
+ANS(Compute($ans1)->cmp());
+ANS(Compute($ans2)->cmp());
+ANS(Compute($ans3)->cmp());
+ANS(Compute($ans4)->cmp());
+ANS(Compute($ans5)->cmp());
 
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+ENDDOCUMENT();

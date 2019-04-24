@@ -64,8 +64,8 @@ Find the general solution to \( $diffeq \).
 In your answer, use \( c_1, c_2, c_3 \) and \( c_4 \) to 
 denote arbitrary constants and \( x \) 
 the independent variable.  Enter
-\( c_1 \) as ${BTT}c1${ETT}, 
-\( c_2 \) as ${BTT}c2${ETT}, 
+\( c_1 \) as ${LQ}c1${RQ}, 
+\( c_2 \) as ${LQ}c2${RQ}, 
 etc.    Enter the solution as an equation \(y = ?\).
 $PAR
 \{ ans_rule(50) \}

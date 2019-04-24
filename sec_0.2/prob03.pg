@@ -58,7 +58,7 @@ BEGIN_TEXT
 Suppose \( y = $f \) where \( k > 0 \) is a 
 constant, and \( C_1 \) and \( C_2 \) are arbitrary
 constants.  Find the following.  Enter \( C_1 \) 
-as ${BTT}C1${ETT} and \( C_2 \) as ${BTT}C2${ETT}.
+as ${LQ}C1${RQ} and \( C_2 \) as ${LQ}C2${RQ}.
 
 $PAR
 \( \displaystyle \frac{dy}{dx} = \) 

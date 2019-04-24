@@ -1,21 +1,26 @@
-##DESCRIPTION
-##  Series: power series Manipulation
-##ENDDESCRIPTION
+#  Series: power series Manipulation
 
 ## Institution(Univeristy of Utah)
 ## Author(Utah ww group)
 ## KEYWORDS('power series')
 
-DOCUMENT();        # This should be the first executable line in the problem.
+#################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
+#################################################
+
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
+
+Context("Numeric");
 
 $a0 = random(2,7,1);
 $a1 = random(2,7,1);
@@ -36,38 +41,46 @@ $ans[1] = $c1;
 $ans[2] = $c2;
 $ans[3] = $c3;
 
+#################################################
 
 BEGIN_TEXT
 Suppose that \( f(x)\) and \( g(x) \) are given by the power series
-$BR
-\( f(x) = $a0 + $a1 x + $a2 x^2 + $a3 x^3 + \cdots \)
-$BR
+\[
+f(x) = $a0 + $a1 x + $a2 x^2 + $a3 x^3 + \cdots
+\]
 and
-$BR
-\( g(x) = $b0 + $b1 x + $b2 x^2 + $b3 x^3 + \cdots . \)
-$BR
+\[
+g(x) = $b0 + $b1 x + $b2 x^2 + $b3 x^3 + \cdots .
+\]
 
 By multiplying power series, find the first few terms of the series 
 for the product
-$BR
-\( h(x)=f(x)\cdot g(x) = c_0+c_1 x +c_2 x^2 + c_3 x^3 + \cdots.\)
-$BR$BR$BR
+\[
+h(x)=f(x)\cdot g(x) = c_0+c_1 x +c_2 x^2 + c_3 x^3 + \cdots.
+\]
 
-\(c_0\) = \{ans_rule(20)\} $BR $BR
-\(c_1\) = \{ans_rule(20)\} $BR $BR
-\( c_2\) = \{ans_rule(20)\} $BR $BR
-\( c_3 \) = \{ans_rule(20)\} $BR $BR
+$PAR
+\(c_0\) = \{ans_rule(20)\}
+\{ AnswerFormatHelp("numbers") \}
+
+$PAR
+\(c_1\) = \{ans_rule(20)\}
+\{ AnswerFormatHelp("numbers") \}
+
+$PAR
+\( c_2\) = \{ans_rule(20)\}
+\{ AnswerFormatHelp("numbers") \}
+
+$PAR
+\( c_3 \) = \{ans_rule(20)\}
+\{ AnswerFormatHelp("numbers") \}
 END_TEXT
 
-#TEXT(
+#################################################
 
-#&match_questions_list($questions)
-#);
-ANS(num_cmp($ans[0]));
-ANS(num_cmp($ans[1]));
-ANS(num_cmp($ans[2]));
-ANS(num_cmp($ans[3]));
+ANS(Compute($ans[0])->cmp());
+ANS(Compute($ans[1])->cmp());
+ANS(Compute($ans[2])->cmp());
+ANS(Compute($ans[3])->cmp());
 
-
-
-ENDDOCUMENT();         # This should be the last executable line.
+ENDDOCUMENT();

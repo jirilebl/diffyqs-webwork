@@ -58,7 +58,7 @@ Enter your answer as \(y = ?\) .
 In your answer, use \( c_1 \) and \( c_2 \) to 
 denote arbitrary constants and \( x \) 
 the independent variable.  Enter \( c_1 \) as
-${BTT}c1${ETT} and \( c_2 \) as ${BTT}c2${ETT}.
+${LQ}c1${RQ} and \( c_2 \) as ${LQ}c2${RQ}.
 $PAR
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("equations") \}
