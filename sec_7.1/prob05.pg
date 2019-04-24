@@ -65,19 +65,11 @@ END_TEXT
 
 #################################################
 
-$ans0 =  "-$a * $b1" ;
-$ans1 =  "$ans0 * $b1" ;
-$ans2 =  "$ans1 * $b1" ;
-$ans3 =  "$ans2 * $b1" ;
-$ans4 =  "$ans3 * $b1" ;
-$ans5 =  $b ;
-
-
-ANS(Compute($ans0)->cmp());
-ANS(Compute($ans1)->cmp());
-ANS(Compute($ans2)->cmp());
-ANS(Compute($ans3)->cmp());
-ANS(Compute($ans4)->cmp());
-ANS(Compute($ans5)->cmp());
+ANS(Compute("-$a * $b1")->cmp());
+ANS(Compute("-$a * ($b1)^2")->cmp());
+ANS(Compute("-$a * ($b1)^3")->cmp());
+ANS(Compute("-$a * ($b1)^4")->cmp());
+ANS(Compute("-$a * ($b1)^5")->cmp());
+ANS(Compute("$b")->cmp());
 
 ENDDOCUMENT();

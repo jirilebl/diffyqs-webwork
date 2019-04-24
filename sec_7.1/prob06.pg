@@ -36,19 +36,19 @@ $PAR
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( c_1 = \) \{ans_rule(20)\}  $BR
+\( c_1 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( c_2 = \) \{ans_rule(20)\}  $BR
+\( c_2 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( c_3 = \) \{ans_rule(20)\}  $BR
+\( c_3 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( c_4 = \) \{ans_rule(20)\}  $PAR
+\( c_4 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR

@@ -34,7 +34,7 @@ BEGIN_TEXT
 Find the radius of convergence of the power series 
 \[ \sum_{n=1}^\infty \frac{x^n}{$rootn} \]
 Your answer should be a nonnegative real number or 
-${BTT}infinity$ETT.
+${LQ}infinity$RQ.
 $PAR
 Radius of convergence is \{ans_rule()\}
 \{ AnswerFormatHelp("numbers") \}
