@@ -1,10 +1,10 @@
-##DESCRIPTION
-## Solutions based at a regular singular point
-##ENDDESCRIPTION
+# Solutions based at a regular singular point
 
 ## Institution(CSUN)
 ## Author(David Protas)
 ## KEYWORDS('regular singular point')
+
+###############################################
 
 DOCUMENT();
 loadMacros(
@@ -13,6 +13,8 @@ loadMacros(
   "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
+
+###############################################
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
@@ -23,7 +25,7 @@ Context()->variables->are(x=>"Real",
                           y=>"Real",
                           "y'"=>"Real",
                           "y''"=>"Real",
-                          n=>['Real',limits=>[1,20],resolution=>1]);
+                          k=>['Real',limits=>[1,20],resolution=>1]);
 $a = non_zero_random(-6, 6);
 
 $eq = Compute("x^2y'' + 5xy' + (4 - $a x)y")->reduce;
@@ -34,13 +36,13 @@ Context()->texStrings;
 BEGIN_TEXT
 
 Find the solution of \( $eq = 0, \,x > 0 \) of the form
-\[ y = x^r\sum_{n = 0}^{\infty} c_n x^n, \]
-where \(c_0 = 1\).
+\[ y = x^r\sum_{k = 0}^{\infty} a_k x^k, \]
+where \(a_0 = 1\).
 
 $PAR
 \( r = {} \)  \{ans_rule(15)\} \{ AnswerFormatHelp("numbers") \}
 $PAR
-\( c_n = {} \)  \{ans_rule(20)\}, \( \,n = 1, 2, 3, \ldots \)
+\( a_k = {} \)  \{ans_rule(20)\}, \( \,k = 1, 2, 3, \ldots \)
 $SPACE \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 
@@ -48,7 +50,7 @@ Context()->normalStrings;
 
 ###############################################
 
-$ans = Compute("($a)^n/(n!)^2");
+$ans = Compute("($a)^k/(k!)^2");
 
 ANS(Compute("-2")->cmp());
 ANS($ans->cmp());

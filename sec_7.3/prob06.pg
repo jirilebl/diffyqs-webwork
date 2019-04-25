@@ -1,10 +1,10 @@
-##DESCRIPTION
-#  Solutions based at a regular singular point
-##ENDDESCRIPTION
+# Solutions based at a regular singular point
 
 ## Institution(CSUN)
 ## Author(David Protas)
 ## KEYWORDS('regular singular point')
+
+###########################################################
 
 DOCUMENT();
 loadMacros(
@@ -13,12 +13,16 @@ loadMacros(
   "PGcourse.pl"
 );
 
+###########################################################
+
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
 Context("Numeric");
 
 $a = non_zero_random(-6, 6);
+
+###########################################################
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -29,25 +33,34 @@ of the form
 \[ y_2 = x^{r_2}(1 + b_1 x + b_2 x^2 + b_3 x^3 + \cdots) \]
 where \( r_1 > r_2. \)
 $PAR
-\( r_1 = \)  \{ans_rule(15)\} $PAR
-\( a_1 = \)  \{ans_rule(15)\} $PAR
-\( a_2 = \)  \{ans_rule(15)\} $PAR
-\( a_3 = \)  \{ans_rule(15)\} $PAR$BR
-\( r_2 = \)  \{ans_rule(15)\} $PAR
-\( b_1 = \)  \{ans_rule(15)\} $PAR
-\( b_2 = \)  \{ans_rule(15)\} $PAR
-\( b_3 = \)  \{ans_rule(15)\}
+\( r_1 = \)  \{ans_rule(15)\} \{ AnswerFormatHelp("numbers") \}
+$PAR
+\( a_1 = \)  \{ans_rule(15)\} \{ AnswerFormatHelp("numbers") \}
+$PAR
+\( a_2 = \)  \{ans_rule(15)\} \{ AnswerFormatHelp("numbers") \}
+$PAR
+\( a_3 = \)  \{ans_rule(15)\} \{ AnswerFormatHelp("numbers") \}
+$PAR$BR
+\( r_2 = \)  \{ans_rule(15)\} \{ AnswerFormatHelp("numbers") \}
+$PAR
+\( b_1 = \)  \{ans_rule(15)\} \{ AnswerFormatHelp("numbers") \}
+$PAR
+\( b_2 = \)  \{ans_rule(15)\} \{ AnswerFormatHelp("numbers") \}
+$PAR
+\( b_3 = \)  \{ans_rule(15)\} \{ AnswerFormatHelp("numbers") \}
 
 END_TEXT
-
 Context()->normalStrings;
-ANS(num_cmp("1"));
-ANS(num_cmp("-$a/3"));
-ANS(num_cmp("($a)^2/30"));
-ANS(num_cmp("-($a)^3/630"));
-ANS(num_cmp("1/2"));
-ANS(num_cmp("-$a"));
-ANS(num_cmp("($a)^2/6"));
-ANS(num_cmp("-($a)^3/90"));
+
+###########################################################
+
+ANS(Compute("1")->cmp());
+ANS(Compute("-$a/3")->cmp());
+ANS(Compute("($a)^2/30")->cmp());
+ANS(Compute("-($a)^3/630")->cmp());
+ANS(Compute("1/2")->cmp());
+ANS(Compute("-$a")->cmp());
+ANS(Compute("($a)^2/6")->cmp());
+ANS(Compute("-($a)^3/90")->cmp());
 
 ENDDOCUMENT();

@@ -1,6 +1,4 @@
-##DESCRIPTION
-##  Classify singular points of a differential equation
-##ENDDESCRIPTION
+# Classify singular points of a differential equation
 
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
@@ -16,10 +14,10 @@ loadMacros(
   "PGcourse.pl"
 );
 
-# Print problem number and point value (weight) for the problem
+########################################################################
+
 TEXT(beginproblem());
 
-# Show which answers are correct and which ones are incorrect
 $showPartialCorrectAnswers = 0;
 
 ##############################################################
@@ -27,6 +25,8 @@ $showPartialCorrectAnswers = 0;
 #  Setup
 #
 #
+
+Context("Numeric");
 Context()->variables->{namePattern} = qr/[a-z][a-z0-9_]*'*/i;
 Context()->variables->are("x"=>"Real","y"=>"Real","y'"=>"Real","y''"=>"Real");
 Context()->strings->add(" "=>{},"ordinary point"=>{},"regular singular point"=>{},"irregular singular point"=>{});
@@ -41,7 +41,6 @@ $Frobenius = String("Frobenius");
 
 $diffeqn = Formula("xy''+xy'+y")->reduce;
 
-$singular =List(0); 
 ##############################################################
 #
 #  Text
@@ -58,12 +57,12 @@ $PAR
 $PAR
 \(x = 5\) is a \{ pop_up_list([$blank->string,$op->string,$rsp->string,$isp->string]) \}
 $PAR
-$BR
 For this differential equation you would use a \{pop_up_list([$blank->string,$Taylor->string,$Frobenius->string]) \} series solution to solve
 around the point \(x=0\).
 
 END_TEXT
 Context()->normalStrings;
+
 ##############################################################
 #
 #  Answers
@@ -74,5 +73,6 @@ ANS($op->cmp());
 ANS($rsp->cmp());
 ANS($op->cmp());
 ANS($Frobenius->cmp());
+
 ENDDOCUMENT();        
 

@@ -24,7 +24,7 @@ TEXT(beginproblem());
 
 Context("Numeric");
 
-Context()->variables->are(n => 'Real');
+Context()->variables->are(k => 'Real');
 
 $a = non_zero_random(-4, 4);
 $b = non_zero_random(-3, 3);
@@ -33,8 +33,8 @@ $c = non_zero_random(-3, 3);
 $poly = nicestring([$a, $b]);
 $prettyc = $c < 0 ? $c : "+$c";
 
-$f1 = Compute("-$b/(n+2)");
-$f2 = Compute("-($a*n+$c)/((n+1)(n+2))");
+$f1 = Compute("-$b/(k+2)");
+$f2 = Compute("-($a*k+$c)/((k+1)(k+2))");
 
 ##############################################################
 #
@@ -45,12 +45,12 @@ Context()->texStrings;
 BEGIN_TEXT
 
 If
-\[ y = \sum_{n=0}^\infty c_nx^n \]
+\[ y = \sum_{k=0}^\infty a_kx^k \]
 is a solution of the differential equation
-\[ y'' + ($poly)y' $prettyc y = 0 \;, \]
-then its coefficients \(c_n\) are related by the equation
+\[ y'' + ($poly)y' $prettyc y = 0, \]
+then its coefficients \(a_k\) satisfy the recurrence relation
 $PAR
-\( c_{n+2} = \) \{ $f1->ans_rule \} \(c_{n+1}\) + \{ $f2->ans_rule \} \(c_n\) .
+\( a_{k+2} = {} \) \{ $f1->ans_rule \} \(a_{k+1} + {}\) \{ $f2->ans_rule \} \(a_k\) .
 $SPACE
 \{ AnswerFormatHelp("formulas") \}
 

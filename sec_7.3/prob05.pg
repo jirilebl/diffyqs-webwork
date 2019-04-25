@@ -1,16 +1,17 @@
-##DESCRIPTION
-##  Find series solution to Bessel-like differential equation
-##ENDDESCRIPTION
+# Find series solution to Bessel-like differential equation
 
 ## Institution(Berkeley)
 ## Author(Paul Vojta)
 ## KEYWORDS('differential equation', 'second order', 'homogeneous', 'series solution')
+
+##############################################################
 
 DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGpolynomialmacros.pl",
   "PGcourse.pl"
 );
@@ -24,7 +25,7 @@ TEXT(beginproblem());
 
 Context("Numeric");
 
-Context()->variables->are(k => 'Real');
+Context()->variables->are(n => 'Real');
 
 $n1 = random(6, 10);
 $n2 = random($n1 + 1, 20);
@@ -33,9 +34,9 @@ $n2 = random($n1 + 1, 20);
 
 $a = random(2, 5);
 ($b, $anseven, $ansodd) = @{ list_random(
-  [2, "2(-$a)^(k-1)/(2^(2k-2)(k-1)!(k+1)!)", '0'],
-  [3, '0', "3!(-$a)^(k-1)/(2^(2k-2)(k-1)!(k+2)!)"],
-  [4, "4!(-$a)^(k-2)/(2^(2k-4)(k-2)!(k+2)!)", '0'] )};
+  [2, "2(-$a)^(n-1)/(2^(2n-2)(n-1)!(n+1)!)", '0'],
+  [3, '0', "3!(-$a)^(n-1)/(2^(2n-2)(n-1)!(n+2)!)"],
+  [4, "4!(-$a)^(n-2)/(2^(2n-4)(n-2)!(n+2)!)", '0'] )};
 $bb = $b * $b;
 
 $feven = Formula($anseven)->with(test_points => @testpts);
@@ -54,29 +55,32 @@ Find the general solution of the differential equation
 \[ x^2y'' + xy' + ($a x^2-$bb) y = 0 \;. \]
 $BR
 Answer:
-  \( \displaystyle y = c \sum_{n=m}^\infty c_n x^n \;, \)
+  \( \displaystyle y = c \sum_{k=m}^\infty a_k x^k \;, \)
 $BR
 where
 $BR
 $SPACE$SPACE
-\( c_n = \) \{ ans_rule(40) \} if \( n\ge m \) and \( n=2k \) is even,
+\( a_k = \) \{ ans_rule(40) \} if \( k\ge m \) and \( k=2n \) is even,
+$SPACE \{ AnswerFormatHelp("formulas") \}
 $BR
 $SPACE$SPACE
-\( c_n = \) \{ ans_rule(40) \} if \( n\ge m \) and \( n=2k+1 \) is odd,
+\( a_k = \) \{ ans_rule(40) \} if \( k\ge m \) and \( k=2n+1 \) is odd,
+$SPACE \{ AnswerFormatHelp("formulas") \}
 $BR
 $SPACE$SPACE
 \( m = \) \{ ans_rule(20) \},
+$SPACE \{ AnswerFormatHelp("numbers") \}
 $BR
 $SPACE$SPACE
 and \(c\) is an arbitrary constant.
 $PAR
-Choose your answer so that \( c_m = 1 \).
+Choose your answer so that \( a_m = 1 \).
 $PAR
-${BBOLD}Note:$EBOLD Because the coefficient of \( y'' \) is zero when \( x=0 \),
+$BITALIC${BBOLD}Note:$EBOLD Because the coefficient of \( y'' \) is zero when \( x=0 \),
 you will not find two linearly independent solutions of the differential
 equation defined near \( x=0 \).  In fact, by looking at the differential
 equation, you can see that any solution defined on an open interval containing
-\( x=0 \) must have \( y(0)=0 \).
+\( x=0 \) must have \( y(0)=0 \).$EITALIC
 
 END_TEXT
 Context()->normalStrings;

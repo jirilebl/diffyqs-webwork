@@ -34,32 +34,32 @@ Solve the initial value problem
  \[ ($a + x^2)y'' + $b y = 0, \,y(0) = 0, \,y'(0) = $c . \]
 If the solution is
 $PAR
-\( y = c_0 + c_1 x + c_2 x^2 + c_3 x^3 + c_4 x^4 + c_5 x^5 + c_6 x^6 + c_7 x^7 + \cdots \) ,
+\( y = \sum_{k=0}^\infty a_k x^k \) ,
 $PAR
 enter the following coefficients:
 $PAR
-\( c_0 = \)  \{ans_rule(15)\}
+\( a_0 = \)  \{ans_rule(15)\}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-\( c_1 = \)  \{ans_rule(15)\}
+\( a_1 = \)  \{ans_rule(15)\}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-\( c_2 = \)  \{ans_rule(15)\}
+\( a_2 = \)  \{ans_rule(15)\}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-\( c_3 = \)  \{ans_rule(15)\}
+\( a_3 = \)  \{ans_rule(15)\}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-\( c_4 = \)  \{ans_rule(15)\}
+\( a_4 = \)  \{ans_rule(15)\}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-\( c_5 = \)  \{ans_rule(15)\}
+\( a_5 = \)  \{ans_rule(15)\}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-\( c_6 = \)  \{ans_rule(15)\}
+\( a_6 = \)  \{ans_rule(15)\}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-\( c_7 = \)  \{ans_rule(15)\}
+\( a_7 = \)  \{ans_rule(15)\}
 \{ AnswerFormatHelp("numbers") \}
 
 END_TEXT

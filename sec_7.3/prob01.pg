@@ -1,6 +1,4 @@
-##DESCRIPTION
-##  Classify singular points of a differential equation
-##ENDDESCRIPTION
+# Classify singular points of a differential equation
 
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
@@ -13,26 +11,30 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
-# Print problem number and point value (weight) for the problem
+##############################################################
+
 TEXT(beginproblem());
 
-# Show which answers are correct and which ones are incorrect
-$showPartialCorrectAnswers = 0;
+$showPartialCorrectAnswers = 1;
 
 ##############################################################
 #
 #  Setup
 #
 #
+
+Context("Numeric");
 Context()->variables->{namePattern} = qr/[a-z][a-z0-9_]*'*/i;
 Context()->variables->are("x"=>"Real","y"=>"Real","y'"=>"Real","y''"=>"Real");
 
 $diffeqn = Formula("xy''+xy'+y")->reduce;
 
-$singular =List(0); 
+$singular = List(0); 
+
 ##############################################################
 #
 #  Text
@@ -42,23 +44,25 @@ $singular =List(0);
 Context()->texStrings;
 BEGIN_TEXT
 Write the differential equation \($diffeqn=0\) in standard form:
-$BR
+$PAR
 $BCENTER
 \(y^{\prime\prime}\)+\{ans_rule(5)\}\(y^{\prime}\)+\{ans_rule(5)\}\(y = 0\)
+$SPACE \{ AnswerFormatHelp("formulas") \}
 $ECENTER
 $PAR
 List the singular points of the differential equation:
 $PAR
-\(x = \) \{$singular->ans_rule\}
+\(x = {}\) \{$singular->ans_rule\}
+\{ AnswerFormatHelp("numbers") \}
 
 END_TEXT
 Context()->normalStrings;
+
 ##############################################################
 #
 #  Answers
 #
 #
-#ANS(Compute("1")->cmp);
 ANS(Compute("1")->cmp);
 ANS(Compute("1/x")->cmp);
 ANS($singular->cmp());
