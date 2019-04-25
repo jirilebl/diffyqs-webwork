@@ -74,15 +74,17 @@ $translate = Formula("s-$a");
 
 Context()->texStrings;
 BEGIN_TEXT
-Using the shifting property, to find the Laplace transform of \($f\) you would substitute
+Using the shifting property, to find the Laplace transform of \($f\) you would replace \(s\) in \($F\) with
 $PAR
 \{$translate->ans_rule(40)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-into \($F\) which gives
+which gives
 $PAR
 \{$Ftranslate->ans_rule(40)\}
 \{ AnswerFormatHelp("formulas") \}
+$PAR
+$BITALIC $BBOLD Note: $EBOLD Enter everything in terms of \(s\) $EITALIC
 END_TEXT
 Context()->normalStrings;
 

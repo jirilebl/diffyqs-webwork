@@ -15,6 +15,7 @@ loadMacros(
   "AnswerFormatHelp.pl",
   "answerHints.pl",
   "parserFormulaUpToConstant.pl",
+  "parserFunction.pl",
   "contextInequalities.pl",
   "PGcourse.pl"
 );
@@ -74,17 +75,20 @@ $BR
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 where \( A = \) \{ ans_rule(5) \} and \( B = \) \{ ans_rule(5) \}.
+$SPACE \{ AnswerFormatHelp("numbers") \}
 
 $PAR
 Find the antiderivative (with constant term 0) corresponding to the integral above.
 $PAR
 \{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
 
 $PAR
 Evaluate appropriate limits to compute the Laplace transform of \( f(t) \):
 $PAR
 \( F(s) = {\mathcal L} \left\lbrace f(t) \right\rbrace = \)
 \{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
 
 END_TEXT
 Context()->normalStrings;

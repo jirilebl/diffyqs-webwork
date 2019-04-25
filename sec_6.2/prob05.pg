@@ -7,6 +7,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserFunction.pl",
   "PGgraphmacros.pl",
   "PGcourse.pl"
@@ -62,6 +63,7 @@ Using the Heaviside function write down a formula for \(f(t)\).
 Use \( u(t-a) \) for the Heaviside function shifted \( a \) units horizontally.
 $PAR
 \(f(t)={}\) \{$f->ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
 

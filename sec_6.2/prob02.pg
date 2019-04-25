@@ -19,7 +19,7 @@ loadMacros(
 TEXT(beginproblem()) ;
 $showPartialCorrectAnswers = 1;
 
-Context("numeric");
+Context("Numeric");
 Context()->variables->are(
   s=>'Real',
   t=>'Real',
@@ -65,7 +65,7 @@ $PAR
 Now write the answer in its partial fraction decomposition,  
 \(X(s) = \frac{A}{s+a}+\frac{B}{s+b}\) where \(a < b\)
 $PAR
-\(X(s) = \) \{ans_rule(30) \} +  \{ans_rule(30) \}
+\(X(s) = \) \{ans_rule(30) \} \({} + {}\)  \{ans_rule(30) \}
 $SPACE \{ AnswerFormatHelp("formulas") \}
 
 $PAR

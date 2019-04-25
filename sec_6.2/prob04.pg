@@ -51,7 +51,7 @@ $SPACE \{ AnswerFormatHelp("formulas") \}
 $ECENTER
 $PAR
 $BITALIC $BBOLD Note: $EBOLD Enter the equation as it drops out of the Laplace transform, do not move terms from one side to the other yet.
-Use \(Y\) for the Laplace transform of \(y\), (not \(Y(s)\)).  
+Use \(Y\) for the Laplace transform of \(y(t)\), (not \(Y(s)\)).  
 $EITALIC
 $PAR
 So 
