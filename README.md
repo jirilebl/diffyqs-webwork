@@ -43,12 +43,13 @@ not edit the .def files themselves, they'd just get recreated at some point.
 *make-tar.sh* creates the tar file useful for uploading directly into WeBWorK.
 This will create all the right directory structure.
 
-## Branches
+## Branches on GitHub
 
 *master* branch is the current version, that should be always usable.  Since
 the best way to work is to work on several machines at once, new development is
 likely to break things for a little bit so there is the ...
 
 *develop* branch, where new things are done.  Once they are tested, they will
-be merged.  This branch will get merged onto *master* very often, usually the
-moment everything is tested.
+be merged into *master*.  This branch will get merged onto *master* very often,
+usually the moment everything is tested and fixed up on the WeBWorK machine.
+So most of the time the two branches should be identical.
