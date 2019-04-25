@@ -1,16 +1,17 @@
-##DESCRIPTION
-##  Find equation relating coefficients of series solution of differential equation
-##ENDDESCRIPTION
+# Find equation relating coefficients of series solution of differential equation
 
 ## Institution(Berkeley)
 ## Author(Paul Vojta)
 ## KEYWORDS('differential equation', 'second order', 'homogeneous', 'series solution')
+
+##############################################################
 
 DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
@@ -48,9 +49,10 @@ If
 is a solution of the differential equation
 \[ y'' + ($poly)y' $prettyc y = 0 \;, \]
 then its coefficients \(c_n\) are related by the equation
-$BR
-$BR
+$PAR
 \( c_{n+2} = \) \{ $f1->ans_rule \} \(c_{n+1}\) + \{ $f2->ans_rule \} \(c_n\) .
+$SPACE
+\{ AnswerFormatHelp("formulas") \}
 
 END_TEXT
 Context()->normalStrings;
@@ -65,7 +67,6 @@ $showPartialCorrectAnswers = 1;
 
 ANS( $f1->cmp );
 ANS( $f2->cmp );
-
 
 
 ENDDOCUMENT();

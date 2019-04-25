@@ -1,17 +1,20 @@
-##DESCRIPTION
-#  Power series solution of a differential equation
-##ENDDESCRIPTION
+# Power series solution of a differential equation
 
 ## Institution(CSUN)
 ## Author(David Protas)
 ## KEYWORDS('power series solution')
 
+##########################################################
+
 DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
+
+##########################################################
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
@@ -22,36 +25,55 @@ $a = random(1, 5);
 $b = random(1, 4);
 $c = random(2, 12);
 
+##########################################################
+
 Context()->texStrings;
 BEGIN_TEXT
 
 Solve the initial value problem
  \[ ($a + x^2)y'' + $b y = 0, \,y(0) = 0, \,y'(0) = $c . \]
 If the solution is
-$BR$BR
+$PAR
 \( y = c_0 + c_1 x + c_2 x^2 + c_3 x^3 + c_4 x^4 + c_5 x^5 + c_6 x^6 + c_7 x^7 + \cdots \) ,
-$BR$BR
+$PAR
 enter the following coefficients:
-$BR$BR
-\( c_0 = \)  \{ans_rule(15)\} $BR
-\( c_1 = \)  \{ans_rule(15)\} $BR
-\( c_2 = \)  \{ans_rule(15)\} $BR
-\( c_3 = \)  \{ans_rule(15)\} $BR
-\( c_4 = \)  \{ans_rule(15)\} $BR
-\( c_5 = \)  \{ans_rule(15)\} $BR
-\( c_6 = \)  \{ans_rule(15)\} $BR
+$PAR
+\( c_0 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( c_1 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( c_2 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( c_3 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( c_4 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( c_5 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( c_6 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
 \( c_7 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
 
 END_TEXT
 Context()->normalStrings;
 
-ANS(num_cmp("0"));
-ANS(num_cmp("$c"));
-ANS(num_cmp("0"));
-ANS(num_cmp("-$b*$c/(6*$a)"));
-ANS(num_cmp("0"));
-ANS(num_cmp("$b($b+6)*$c/(6*20*$a^2)"));
-ANS(num_cmp("0"));
-ANS(num_cmp("-$b*($b+6)*($b+20)*$c/(6*20*42*$a^3)"));
+##########################################################
+
+ANS(Compute("0")->cmp());
+ANS(Compute("$c")->cmp());
+ANS(Compute("0")->cmp());
+ANS(Compute("-$b*$c/(6*$a)")->cmp());
+ANS(Compute("0")->cmp());
+ANS(Compute("$b($b+6)*$c/(6*20*$a^2)")->cmp());
+ANS(Compute("0")->cmp());
+ANS(Compute("-$b*($b+6)*($b+20)*$c/(6*20*42*$a^3)")->cmp());
 
 ENDDOCUMENT();

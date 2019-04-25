@@ -1,16 +1,17 @@
-##DESCRIPTION
-##  Solve differential equation via series
-##ENDDESCRIPTION
+# Solve differential equation via series
 
 ## Institution(Berkeley)
 ## Author(Paul Vojta)
 ## KEYWORDS('differential equation', 'second order', 'homogeneous', 'series solution')
+
+##############################################################
 
 DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGpolynomialmacros.pl",
   "PGcourse.pl"
 );
@@ -57,9 +58,11 @@ BEGIN_TEXT
 Use power series to solve the initial-value problem
 \[ (x^2-$a)y'' + $b xy' $prettyc y = 0 \;, \qquad
   y(0) = 1\;, \qquad y'(0) = 0\;. \]
-$BR$BR
+$PAR
   \( \displaystyle y = \sum_{n=0}^\infty \) \{$feven->ans_rule\} \(x^{2n}\)
   \( \displaystyle + \sum_{n=0}^\infty \) \{$fodd->ans_rule\} \(x^{2n+1}\) .
+$SPACE
+\{ AnswerFormatHelp("formulas") \}
 
 END_TEXT
 Context()->normalStrings;
