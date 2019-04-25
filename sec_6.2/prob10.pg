@@ -1,19 +1,20 @@
-## DESCRIPTION
-## Differential Equations: Laplace Transforms
-## ENDDESCRIPTION
+# Differential Equations: Laplace Transforms
 
 ## Institution(ASU)
 
-DOCUMENT() ;        # This should be the first executable line in the problem.
+################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
-  "PGgraphmacros.pl",
-  "PGasu.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGgraphmacros.pl",
   "PGcourse.pl"
 );
+
+################################################
 
 TEXT(beginproblem()) ;
 $showPartialCorrectAnswers = 1;
@@ -27,7 +28,7 @@ Context("Numeric");
 
 Context()->variables->are('s'=>["Real", limits=>[1,2]]);
 
-$answer = Formula("tanh(s/4)/(s^2*(s^2+$r2*s+$b))");
+$answer = Compute("tanh(s/4)/(s^2*(s^2+$r2*s+$b))")->reduce;
 
 
 $graph3 = init_graph(-1,-2,3,2, 'axes'=>[0,0],'grid'=>[4,4]);
@@ -50,17 +51,23 @@ $func = "\begin{cases}
             1-t, & 1/2 \leq t < 1
              \end{cases}";
 
+################################################
+
+Context()->texStrings;
 BEGIN_TEXT
 Take the Laplace transform of the following initial value problem and 
 solve for \(X(s) = \mathcal{L}$LBRACE x(t) $RBRACE \):
-
-\[ x'' + {$r2} x' + {$b} x= T(t) \hspace{0.5in} x(0)=0, \; x'(0)=0\]
-
-Where
-\[T(t) = $func ,\hspace{0.2in} T(t+1) = T(t) . \]
+\[
+x'' + {$r2} x' + {$b} x= T(t), \quad x(0)=0, \quad x'(0)=0 ,
+\]
+where
+\[
+T(t) = $func , \quad T(t+1) = T(t) .
+\]
 
 $PAR
 \(X(s)= \) \{ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
 $PAR
 Graph of  \( T(t) \) (a triangular wave function):
 $PAR
@@ -68,9 +75,11 @@ $BCENTER
 $g
 $ECENTER
 END_TEXT
+Context()->normalStrings;
 
+################################################
 
 ANS($answer->cmp());
 
-ENDDOCUMENT() ;        # This should be the last executable line in the problem.
+ENDDOCUMENT();
 

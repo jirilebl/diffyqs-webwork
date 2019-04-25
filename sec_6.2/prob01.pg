@@ -45,7 +45,9 @@ $ans1 = Compute("($y0*s+$d)/(s^2+$b*s+$c)+$m/((s^2+$b*s+$c)*(s^2+$m2))")->reduce
 Context()->texStrings;
 BEGIN_TEXT
 Consider the following initial value problem:
-\[ x'' -{$nb} x' - {$nc} x= \sin($m t) \hspace{0.5in} x(0)=$y0, \; x'(0)=$y1\]
+\[
+x'' -{$nb} x' - {$nc} x= \sin($m t), \quad  x(0)=$y0, \quad x'(0)=$y1 .
+\]
 Using \(X\) for the Laplace transform of \(x(t)\), i.e., \(X = \mathcal{L} $LBRACE x(t) $RBRACE,\)
 find the equation you get by taking the Laplace transform of the differential equation and solve for
 $PAR

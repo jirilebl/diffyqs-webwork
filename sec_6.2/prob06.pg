@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Laplace transforms: from definition
-## ENDDESCRIPTION
+# Laplace transforms: from definition
 
 ## Institution(Fort Lewis College)
 ## KEYWORDS('Laplace transform')
@@ -46,8 +44,8 @@ add_functions($gr, "0 for x in <0,$a> using color:blue and weight:2",
 
 Context("Numeric");
 Context()->variables->are(
-t=>"Real",
-s=>"Real"
+  t=>"Real",
+s  =>"Real"
 );
 
 # Redefine the Heaviside function so the answer checker will work on [-1,1].
@@ -72,10 +70,8 @@ width=>200,height=>200,tex_size=>500 ) \}
 $BR
 (Click on graph to enlarge)
 $ECENTER
-$BR
 
 $PAR
-$BR
 Represent \( f(t) \) using a combination of Heaviside step functions.  Use \( u(t-a) \) for the Heaviside function shifted \( a \) units horizontally.
 $BR
 $BR
@@ -84,10 +80,8 @@ $BR
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
-$BR
 Find the Laplace transform \( F(s) = {\mathcal L}\left\lbrace f(t) \right\rbrace \) for \( s \neq 0 \).
-$BR
-$BR
+$PAR
 \( \displaystyle F(s) = {\mathcal L}\left\lbrace f(t) \right\rbrace = \)
 \{ ans_rule(60) \}
 \{ AnswerFormatHelp("formulas") \}

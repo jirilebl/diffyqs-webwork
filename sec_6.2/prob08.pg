@@ -1,10 +1,10 @@
-## DESCRIPTION
-## Differential Equations: Laplace Transforms
-## ENDDESCRIPTION
+# Differential Equations: Laplace Transforms
 
 ## Institution(ASU)
 
-DOCUMENT() ;        # This should be the first executable line in the problem.
+######################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
@@ -13,6 +13,8 @@ loadMacros(
   "parserFunction.pl",
   "PGcourse.pl"
 );
+
+######################################################
 
 TEXT(beginproblem()) ;
 $showPartialCorrectAnswers = 1;
@@ -36,32 +38,37 @@ $func = "\begin{cases}
             0, & 1 \leq t 
              \end{cases}";
 
+######################################################
+
 BEGIN_TEXT
 
 Take the Laplace transform of the following initial value  and 
 solve for \(X(s) = \mathcal{L}$LBRACE x(t) $RBRACE \):
-
-\[ x''  + {$c} x= $func \hspace{0.5in} x(0)=0, \; x'(0)=0\]
-$PAR  
+\[
+x''  + {$c} x= $func, \quad x(0)=0, \quad x'(0)=0 .
+\]
 \(X(s)= \) \{ans_rule(50) \}
-$BR
-$BITALIC Hint: First write the right hand side of the ODE in terms of the Heaviside function. $EITALIC
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+$BITALIC $BBOLD Hint: $EBOLD First write the right hand side of the ODE in terms of the Heaviside function. $EITALIC
 $PAR
 Now find the inverse transform to find
-$BR
-\(x(t) = \) \{ans_rule(50) \}
-$BR
-$BITALIC (Use \(u\) for the Heaviside function.) $EITALIC
 $PAR
-Note: 
-\[\frac{\pi}{(s^2+\pi^2)(s^2+$c)} = 
-\frac{\pi}{\pi^2-$c}\left( \frac{1}{s^2+$c} - \frac{1}{s^2+\pi^2}\right)\]
-
+\(x(t) = \) \{ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+$BITALIC Use \(u(t-a)\) for the Heaviside function shifted \(a\) units horizontaly. $EITALIC
+$PAR
+$BBOLD Note: $EBOLD
+$PAR
+\(\displaystyle \frac{\pi}{(s^2+\pi^2)(s^2+$c)} = 
+\frac{\pi}{\pi^2-$c}\left( \frac{1}{s^2+$c} - \frac{1}{s^2+\pi^2}\right)\)
 
 END_TEXT
+
+######################################################
 
 ANS($ans1->cmp()) ;
 ANS($ans2->cmp());
 
-ENDDOCUMENT() ;        # This should be the last executable line in the problem.
-
+ENDDOCUMENT();

@@ -1,10 +1,8 @@
-##DESCRIPTION
-##ENDDESCRIPTION
-
 ## Author(Darwyn Cook)
 
+#####################################################################
 
-DOCUMENT();        # This should be the first executable line in the problem.
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
@@ -13,6 +11,8 @@ loadMacros(
   "PGgraphmacros.pl",
   "PGcourse.pl"
 );
+
+#####################################################################
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
@@ -46,6 +46,8 @@ size=>[400,400]
 $f_graph = new Fun($f->perlFunction,$gr);
 $f_graph->steps(400); $f_graph->color("blue"); $f_graph->weight(2);
 
+#####################################################################
+
 Context()->texStrings;
 BEGIN_TEXT
 Consider a graph of the function \(f(t)\):
@@ -56,11 +58,15 @@ width=>200,height=>200,tex_size=>800 ) \}
 $ECENTER
 
 $PAR
-Using the Heaviside function write down a formula for \(f(t)\).  Use \( u(t-a) \) for the Heaviside function shifted \( a \) units horizontally.
-$BR
+Using the Heaviside function write down a formula for \(f(t)\).
+Use \( u(t-a) \) for the Heaviside function shifted \( a \) units horizontally.
+$PAR
 \(f(t)={}\) \{$f->ans_rule(40) \}
 END_TEXT
 Context()->normalStrings;
+
+#####################################################################
+
 ANS($f->cmp());
 
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+ENDDOCUMENT();

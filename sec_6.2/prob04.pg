@@ -1,20 +1,20 @@
-##DESCRIPTION
-##ENDDESCRIPTION
-
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
 ## KEYWORDS('laplace', 'differential', 'equation' )
 
+#######################################################
 
-DOCUMENT();        # This should be the first executable line in the problem.
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
   "unionTables.pl",
   "MathObjects.pl",
-  "Alfredmacros.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
+
+#######################################################
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
@@ -36,34 +36,45 @@ $B = -$A;
 $C = $a*$B;
 $y = Formula("$B*cos(k*t)+$C/k*sin(k*t)+$A*e^($a*t)");
 
+#######################################################
+
 Context()->texStrings;
 BEGIN_TEXT
 Take the Laplace transform of the initial value problem
-\[\frac{d^2y}{dt^2}+k^2 y = e^{$a t}, y(0) = 0, y^\prime(0)=0\]
-Use \(Y\) for the Laplace transform of \(y\), (not \(Y(s)\)).
-$BR
-$BR
+\[
+\frac{d^2y}{dt^2}+k^2 y = e^{$a t}, \quad y(0) = 0, \quad y^\prime(0)=0 .
+\]
+$PAR
 $BCENTER
-\{$lhs->ans_rule(10)\} = \{$rhs->ans_rule(10)\}
+\{$lhs->ans_rule(30)\} \( {} = {} \) \{$rhs->ans_rule(30)\}
+$SPACE \{ AnswerFormatHelp("formulas") \}
 $ECENTER
-$BR
-$BR
+$PAR
+$BITALIC $BBOLD Note: $EBOLD Enter the equation as it drops out of the Laplace transform, do not move terms from one side to the other yet.
+Use \(Y\) for the Laplace transform of \(y\), (not \(Y(s)\)).  
+$EITALIC
+$PAR
 So 
 \{ BeginTable(center=>0).
-      Row(['\(Y = \)','\(\hskip 35pt 1\)'.$BR."-----------------------------".$BR.ans_rule(15)],separation=>1).
+      Row(['\(Y = \)','\(\hskip 35pt 1\)'.$BR.$HR.ans_rule(15)],separation=>1).
    EndTable();
 \}
-$BR
-$BR
+$PAR
 \{ BeginTable(center=>0).
-      Row(['\(\hskip 10pt = \)',ans_rule(20).$BR."-----------------------------------".$BR.'\(\hskip 32pt s-$a\)','\(+\)',ans_rule(15).'\(s\)'.'\(+\)'.ans_rule(15).$BR."--------------------------------------------------------------".$BR.'\(\hskip 70pt s^2+k^2\)'],separation=>1).
+      Row(['\(\hskip 10pt = \)',ans_rule(20).$BR.$HR.'\(\hskip 32pt s-$a\)','\(+\)',ans_rule(15).'\(s\)'.'\(+\)'.ans_rule(15).$BR.$HR.'\(\hskip 70pt s^2+k^2\)'],separation=>1).
    EndTable();
 \}
-$BR
-$BR
-and \(y(t) = \) \{$y->ans_rule(80)\}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+and
+$PAR
+\(y(t) = {} \) \{$y->ans_rule(60)\}
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
+
+#######################################################
+
 ANS($lhs->cmp());
 ANS($rhs->cmp());
 ANS($Yden->cmp());
@@ -71,4 +82,5 @@ ANS($A->cmp());
 ANS($B->cmp());
 ANS($C->cmp());
 ANS($y->cmp());
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+
+ENDDOCUMENT();

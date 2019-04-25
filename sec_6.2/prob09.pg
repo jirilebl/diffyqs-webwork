@@ -1,21 +1,26 @@
-## DESCRIPTION
-## Differential Equations: Laplace Transforms
-## ENDDESCRIPTION
+# Differential Equations: Laplace Transforms
 
 ## Institution(ASU)
 
-DOCUMENT() ;        # This should be the first executable line in the problem.
+################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGgraphmacros.pl",
-  "PGasu.pl",
   "PGcourse.pl"
 );
 
+################################################
+
 TEXT(beginproblem()) ;
 $showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+Context()->variables->are(s=>'Real');
 
 $r1 = random(-9,-6,1);
 $r2= random(1,5,1);
@@ -24,7 +29,8 @@ $nb = -$b;
 $c = $r1*$r2;
 $nc=-$c;
 
-$ans5= FEQ("(1-exp(-s))/(s*(1-exp(-2*s))*(s^2-$nb*s-$nc))");
+$ans5 = Compute("(1-exp(-s))/(s*(1-exp(-2*s))*(s^2-$nb*s-$nc))")->reduce;
+
 $graph3 = init_graph(-1,-3,5,3, 'axes'=>[0,0],'grid'=>[6,6]);
 $f1 = "1 for x in <0,1> using color:blue and weight:3";
 $f2 = "0 for x in <1,2> using color:blue and weight:3";
@@ -43,18 +49,24 @@ $func = "\begin{cases}
             0, & 1 \leq t < 2
              \end{cases}";
 
+################################################
+
+Context()->texStrings;
 BEGIN_TEXT
 
 Take the Laplace transform of the following initial value problem and 
 solve for \(X(s) = \mathcal{L}$LBRACE x(t) $RBRACE \):
-
-\[ x'' -{$nb} x' - {$nc} x= S(t) \hspace{0.5in} x(0)=0, \; x'(0)=0\]
-
-Where
-\[S(t) = $func ,\hspace{0.2in} S(t+2) = S(t) . \]
+\[
+x'' -{$nb} x' - {$nc} x= S(t), \quad x(0)=0, \quad x'(0)=0 ,
+\]
+where
+\[
+S(t) = $func , \quad S(t+2) = S(t) .
+\]
 
 $PAR
-\(X(s)= \) \{ans_rule(50) \}.
+\(X(s)= \) \{ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
 $PAR
 The graph of  \( S(t) \) (a square wave function): 
 $PAR
@@ -63,7 +75,11 @@ $g
 $ECENTER
 
 END_TEXT
+Context()->normalStrings;
 
-ANS(fun_cmp($ans5,vars=>["s"] )) ;
-ENDDOCUMENT() ;        # This should be the last executable line in the problem.
+################################################
+
+ANS($ans5->cmp());
+
+ENDDOCUMENT();
 

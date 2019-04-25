@@ -1,20 +1,30 @@
-## DESCRIPTION
-## Differential Equations: Laplace Transforms
-## ENDDESCRIPTION
+# Differential Equations: Laplace Transforms
 
 ## Institution(ASU)
 
-DOCUMENT() ;        # This should be the first executable line in the problem.
+##############################################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGchoicemacros.pl",
-  "PGasu.pl",
   "PGcourse.pl"
 );
 
+##############################################################
+
 TEXT(beginproblem()) ;
 $showPartialCorrectAnswers = 1;
+
+Context("numeric");
+Context()->variables->are(
+  s=>'Real',
+  t=>'Real',
+  X=>'Real'
+);
 
 $r1 = 0;
 $r2= random(2,10,1);
@@ -26,40 +36,52 @@ $d=$y1+$b*$y0;
 
 $A=$d/$r2;
 $B=$y0-$A;
-$ans1 = "s^2*X-$y0*s-$y1+$b*(s*X-$y0)";
-$ans2 = "($y0*s+$d)/(s^2+$b*s)";
-$ans3="$A/s";
-$ans4="$B/(s+$r2)";
-$ans5="$A+$B*exp($nr2*t)";
 
+$ans1 = Compute("s^2*X-$y0*s-$y1+$b*(s*X-$y0)");
+$ans2 = Compute("($y0*s+$d)/(s^2+$b*s)");
+$ans3 = Compute("$A/s");
+$ans4 = Compute("$B/(s+$r2)");
+$ans5 = Compute("$A+$B*exp($nr2*t)");
+
+##############################################################
+
+Context()->texStrings;
 BEGIN_TEXT
 
 Use the Laplace transform to solve the following initial value problem:
-
-\[ x'' +{$b} x' = 0 \hspace{0.5in} x(0)=$y0, \; x'(0)=$y1\]
-
-First, using \(X\) for the Laplace transform of \(x(t)\), i.e.,
-\(X = \mathcal{L} $LBRACE x(t) $RBRACE\), $BR
+\[
+x'' +{$b} x' = 0, \quad x(0)=$y0, \quad x'(0)=$y1 .
+\]
+Using \(X\) for the Laplace transform of \(x(t)\), i.e.,
+\(X = \mathcal{L} $LBRACE x(t) $RBRACE\),
 find the equation you get by taking the Laplace transform of the differential equation 
-$BR \{ans_rule(50) \} \(=0\)
+$PAR
+\{ans_rule(50) \} \(=0\)
+$SPACE \{ AnswerFormatHelp("formulas") \}
 $PAR
 Now solve for  \(X(s) = \) \{ans_rule(40) \} 
-$BR
-and write the above answer in its partial fraction decomposition,  
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+Now write the answer in its partial fraction decomposition,  
 \(X(s) = \frac{A}{s+a}+\frac{B}{s+b}\) where \(a < b\)
-$BR \(X(s) = \) \{ans_rule(30) \} +  \{ans_rule(30) \}
+$PAR
+\(X(s) = \) \{ans_rule(30) \} +  \{ans_rule(30) \}
+$SPACE \{ AnswerFormatHelp("formulas") \}
 
 $PAR
 Now by inverting the transform, find  
-\(x(t)= \) \{ans_rule(40) \}.
-
-
+\(x(t)= \) \{ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
+Context()->normalStrings;
 
-ANS(fun_cmp($ans1,vars=>["s", "X"] )) ;
-ANS(fun_cmp($ans2,vars=>["s"] )) ;
-ANS(fun_cmp($ans3,vars=>["s"] )) ;
-ANS(fun_cmp($ans4,vars=>["s"] )) ;
-ANS(fun_cmp($ans5,vars=>["t"] )) ;
-ENDDOCUMENT() ;        # This should be the last executable line in the problem.
+##############################################################
+
+ANS($ans1->cmp());
+ANS($ans2->cmp());
+ANS($ans3->cmp());
+ANS($ans4->cmp());
+ANS($ans5->cmp());
+
+ENDDOCUMENT();
 

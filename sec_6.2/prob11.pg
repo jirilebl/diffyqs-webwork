@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Laplace transforms: system transfer functions
-## ENDDESCRIPTION
+# Laplace transforms: system transfer functions
 
 ## Institution(Fort Lewis College)
 ## KEYWORDS('Laplace transform')
@@ -15,9 +13,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGunion.pl",
-  "answerHints.pl",
-  "parserAssignment.pl",
   "parserFunction.pl",
   "PGcourse.pl"
 );
@@ -59,7 +54,8 @@ Context()->texStrings;
 BEGIN_TEXT
 
 Consider the problem:
-\[ ax'' + bx' + cx = f(t), \quad \quad x(0) = 0, \quad x'(0) = 0, \]
+\[
+ax'' + bx' + cx = f(t), \quad x(0) = 0, \quad x'(0) = 0, \]
 for time \( 0 < t < \infty \),
 where \( a, b, c \) are constants and \( f(t) \) is a known function.
 We view this problem as a linear system, where \( f(t) \) is
@@ -74,41 +70,35 @@ H(s) = \frac{X(s)}{F(s)} = \frac{1}{as^2+bs+c}
 \]
 the system transfer function.
 
-$BR
-$BR
+$PAR
 Suppose an input \( f(t) = $ft \), when applied to the linear system above, produces the output \( x(t) = $yt, \ t\geq 0. \) 
 
-\{ BeginList('UL') \}
-
-$ITEM Find \( X(s) = {\mathcal L}\left\lbrace x(t) \right\rbrace \) and \( F(s) = {\mathcal L}\left\lbrace f(t) \right\rbrace \).
-$BR
-$BR
-\( \displaystyle X(s) = \)
+$PAR
+Find \( X(s) = {\mathcal L}\left\lbrace x(t) \right\rbrace \) and \( F(s) = {\mathcal L}\left\lbrace f(t) \right\rbrace \).
+$PAR
+\( \displaystyle X(s) = {} \)
 \{ ans_rule(60) \}
-$BR
-$BR
-\( \displaystyle F(s) = \)
-\{ ans_rule(60) \}
-
-$ITEMSEP
-$ITEM
-Use your answer to the first part to find the system transfer function, \( H(s) \).
-$BR
-$BR
-\( \displaystyle H(s) = \)
-\{ ans_rule(60) \}
-
-$ITEMSEP
-$ITEM
-What will be the output if a Heaviside unit step input \( f(t) = u(t) \) is applied to the system?
-$BR
-$BR
-New \( \displaystyle x(t) = \)
-\{ ans_rule(60) \}
-
 \{ AnswerFormatHelp("formulas") \}
 
-\{ EndList('UL') \}
+$PAR
+\( \displaystyle F(s) = {} \)
+\{ ans_rule(60) \}
+\{ AnswerFormatHelp("formulas") \}
+
+$PAR
+Now find the system transfer function, \( H(s) \).
+$PAR
+\( \displaystyle H(s) = {} \)
+\{ ans_rule(60) \}
+\{ AnswerFormatHelp("formulas") \}
+
+$PAR
+What will be the output if a Heaviside unit step input \( f(t) = u(t) \) is applied to the system?
+$PAR
+New \( \displaystyle x(t) = {} \)
+\{ ans_rule(60) \}
+\{ AnswerFormatHelp("formulas") \}
+
 END_TEXT
 Context()->normalStrings;
 
