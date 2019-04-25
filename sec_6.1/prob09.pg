@@ -12,10 +12,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGunion.pl",
-  "answerHints.pl",
-  "parserAssignment.pl",
-  "contextInequalities.pl",
+  "parserFunction.pl",
   "PGcourse.pl"
 );
 
@@ -30,6 +27,16 @@ Context()->variables->are(
 t=>"Real",
 s=>"Real"
 );
+
+# A function for Heaviside even though it's not used,
+# just to not give away it's not used
+Context()->functions->add(
+  step => {
+    class => 'Parser::Legacy::Numeric',
+    perl => 'Parser::Legacy::Numeric::do_step'
+  },
+);
+parserFunction("u(t)" => "step(t)");
 
 $a = non_zero_random(-9, 9, 1);
 $b = non_zero_random(-9, 9, 1);

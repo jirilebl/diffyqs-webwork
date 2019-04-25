@@ -13,9 +13,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGunion.pl",
   "answerHints.pl",
-  "parserAssignment.pl",
   "parserFormulaUpToConstant.pl",
   "contextInequalities.pl",
   "PGcourse.pl"
@@ -29,8 +27,9 @@ TEXT(beginproblem());
 
 Context("Numeric");
 Context()->variables->are(
-t=>"Real", dt =>"Real",
-s=>"Real"
+  t=>"Real",
+  dt =>"Real",
+  s=>"Real"
 );
 
 $a = random(-9, 9, 2);
@@ -38,6 +37,15 @@ $b = random(2, 8, 2);
 
 $f1 = Formula("0");
 $f2 = Formula("t-$a")->reduce;
+
+# Heaviside is not used, but let's not tell anyone that
+Context()->functions->add(
+  step => {
+    class => 'Parser::Legacy::Numeric',
+    perl => 'Parser::Legacy::Numeric::do_step'
+  },
+);
+parserFunction("u(t)" => "step(t)");
 
 $answera = Compute("$f2 * e^(-s*t) * dt");
 $answerb = Compute("$b");
@@ -104,8 +112,9 @@ ANS( $answere->cmp() );
 
 Context("Inequalities");
 Context()->variables->are(
-s=>"Real"
+  s=>"Real"
 );
+
 $answerf = Inequality("s>0");
 
 

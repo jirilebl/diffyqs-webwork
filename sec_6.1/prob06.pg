@@ -14,11 +14,24 @@ loadMacros(
   "PGcourse.pl"
 );
 
+#####################################
+
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
+
 Context("Numeric");
-Context()->variables->are(t=>"Real",s=>"Real",dt=>"Real",a=>"Real",b=>"Real",m=>"Real");
-Context()->variables->set(t=>{limits=>[0,5]},s=>{limits=>[0,5]});
+Context()->variables->are(
+  t=>"Real",
+  s=>"Real",
+  dt=>"Real",
+  a=>"Real",
+  b=>"Real",
+  m=>"Real"
+);
+Context()->variables->set(
+  t=>{limits=>[0,5]},
+  s=>{limits=>[0,5]}
+);
 Context()->functions->add(
   step => {
     class => 'Parser::Legacy::Numeric',
@@ -26,7 +39,7 @@ Context()->functions->add(
   },
 );
 
-parserFunction("U(t)" => "step(t)");
+parserFunction("u(t)" => "step(t)");
 
 $n = random(1,9);
 $fact = 1;

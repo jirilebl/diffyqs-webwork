@@ -10,6 +10,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
+  "parserFunction.pl",
   "PGcourse.pl"
 );
 
@@ -20,9 +21,19 @@ $showPartialCorrectAnswers = 1;
 
 Context("Numeric");
 Context()->variables->are(
-t=>"Real",
-s=>"Real"
+  t=>"Real",
+  s=>"Real"
 );
+
+# A function for Heaviside even though it's not used,
+# just to not give away it's not used
+Context()->functions->add(
+  step => {
+    class => 'Parser::Legacy::Numeric',
+    perl => 'Parser::Legacy::Numeric::do_step'
+  },
+);
+parserFunction("u(t)" => "step(t)");
 
 $a = random(2,9);
 $b = random(2,9);

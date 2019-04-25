@@ -13,9 +13,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGunion.pl",
-  "answerHints.pl",
-  "parserAssignment.pl",
   "contextInequalities.pl",
   "PGcourse.pl"
 );
@@ -28,9 +25,9 @@ TEXT(beginproblem());
 
 Context("Numeric");
 Context()->variables->are(
-t=>"Real",
-s=>"Real",
-w=>"Real"
+  t=>"Real",
+  s=>"Real",
+  w=>"Real"
 );
 
 $ft = Formula("sin^2(w*t)")->reduce;
@@ -67,7 +64,7 @@ ANS( $answera->cmp() );
 
 Context("Inequalities");
 Context()->variables->are(
-s=>"Real"
+  s=>"Real"
 );
 
 $answerb = Inequality("s>0");

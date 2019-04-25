@@ -12,10 +12,6 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
-  "AnswerFormatHelp.pl",
-  "PGunion.pl",
-  "answerHints.pl",
-  "parserAssignment.pl",
   "PGchoicemacros.pl",
   "parserPopUp.pl",
   "PGcourse.pl"
@@ -29,7 +25,7 @@ TEXT(beginproblem());
 
 Context("Numeric");
 Context()->variables->are(
-t=>"Real"
+  t=>"Real"
 );
 
 $ft  = Formula("tan(t)");

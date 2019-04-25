@@ -12,9 +12,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGunion.pl",
-  "answerHints.pl",
-  "parserAssignment.pl",
   "parserFunction.pl",
   "PGcourse.pl"
 );
@@ -30,8 +27,8 @@ t=>"Real",
 s=>"Real"
 );
 
-# Redefine the Heaviside function so the answer checker will work on [-1,1].
-parserFunction("h(t)" => "1.5 * cos(e*t) + 5*pi/3 + arctan(t)");
+# The Heaviside function standin
+parserFunction("u(t)" => "1.5 * cos(e*t) + 5*pi/3 + arctan(t)");
 
 $a = random(1, 4, 1);
 do { $b = random(1, 4, 1); } until ( $b != $a );
