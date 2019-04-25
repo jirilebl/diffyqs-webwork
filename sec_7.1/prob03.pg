@@ -24,15 +24,15 @@ Context('Numeric');
 $nthroot = random(2,9);
 
 if ($nthroot == 2)
-{$rootn = "\sqrt{n}";}
+{$rootk = "\sqrt{k}";}
 else
-{$rootn = "\root $nthroot \of n";}
+{$rootk = "\root $nthroot \of k";}
 
 #########################################################
 
 BEGIN_TEXT
 Find the radius of convergence of the power series 
-\[ \sum_{n=1}^\infty \frac{x^n}{$rootn} \]
+\[ \sum_{k=1}^\infty \frac{x^k}{$rootk} \]
 Your answer should be a nonnegative real number or 
 ${LQ}infinity$RQ.
 $PAR

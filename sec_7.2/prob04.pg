@@ -34,7 +34,7 @@ Solve the initial value problem
  \[ ($a + x^2)y'' + $b y = 0, \,y(0) = 0, \,y'(0) = $c . \]
 If the solution is
 $PAR
-\( y = \sum_{k=0}^\infty a_k x^k \) ,
+\( \displaystyle y = \sum_{k=0}^\infty a_k x^k \) ,
 $PAR
 enter the following coefficients:
 $PAR

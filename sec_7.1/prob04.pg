@@ -26,23 +26,23 @@ $a = random(2,11,1);
 $b = random(2,11,1);
 $a1 =2*($a);
 
-$questStr1 = EV2( " \( \displaystyle \sum_{n=1}^\infty
-	\frac{(x-$a)^n}{(n!)$a^n} \) " );
+$questStr1 = EV2( " \( \displaystyle \sum_{k=1}^\infty
+	\frac{(x-$a)^k}{(k!)$a^k} \) " );
 
 $ansStr1 =EV2(  " \( ( -\infty , \infty ) \) " );
 
-$questStr2 = EV2( " \( \displaystyle \sum_{n=1}^\infty
-	\frac{(x - $a)^n}{($a)^n} \) " );
+$questStr2 = EV2( " \( \displaystyle \sum_{k=1}^\infty
+	\frac{(x - $a)^k}{($a)^k} \) " );
 
 $ansStr2 =EV2(  " \( (0 ,$a1) \) " );
 
-$questStr3 = EV2( " \( \displaystyle \sum_{n=1}^\infty
-	\frac{n!( $b x-$a)^n}{$a^n} \) " );
+$questStr3 = EV2( " \( \displaystyle \sum_{k=1}^\infty
+	\frac{k!( $b x-$a)^k}{$a^k} \) " );
 
 $ansStr3 =EV2(  " \(  \lbrace $a/$b \rbrace \) " );
 
-$questStr4 = EV2( " \( \displaystyle \sum_{n=1}^\infty
-	\frac{($b x)^n}{n^{$a}} \) " );
+$questStr4 = EV2( " \( \displaystyle \sum_{k=1}^\infty
+	\frac{($b x)^k}{k^{$a}} \) " );
 
 $ansStr4 =EV2(   " \( [ \frac{-1}{$b} ,\frac{1}{$b} ] \) " );
 

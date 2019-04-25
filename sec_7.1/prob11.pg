@@ -27,29 +27,30 @@ Context("Numeric");
 BEGIN_TEXT
 
 The Taylor 
-series for \( f(x) = \ln(\sec(x)) \) at \( a = 0 \)  is \( \sum_{n=0}^\infty
-c_n\, x^n. \)
+series for \( f(x) = \ln(\sec(x)) \) at \( a = 0 \)
+is \( \displaystyle \sum_{k=0}^\infty
+a_k\, x^k. \)
 $PAR
 Find the following coefficients.
 
 $PAR
-\( c_0 = \) \{ans_rule(20)\}
+\( a_0 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( c_1 = \) \{ans_rule(20)\}
+\( a_1 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( c_2 = \) \{ans_rule(20)\}
+\( a_2 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( c_3 = \) \{ans_rule(20)\}
+\( a_3 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( c_4 = \) \{ans_rule(20)\}
+\( a_4 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 END_TEXT
 

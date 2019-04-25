@@ -16,7 +16,7 @@ loadMacros(
 #################################################
 
 TEXT(beginproblem());
-$showPartialCorrectAnswers = 1;;
+$showPartialCorrectAnswers = 1;
 
 Context("Numeric");
 
@@ -29,26 +29,26 @@ $b1 = 1/$a;
 BEGIN_TEXT
 
 The function \( f(x) = \frac{$a}{(1 + $a x)^2} \) is represented as a power series:
-\[ f(x) = \sum_{n=0}^\infty c_n x^n \]
+\[ f(x) = \sum_{k=0}^\infty a_k x^k \]
 Find the first few coefficients in the power series:
 $PAR
-\( c_0 = \) \{ans_rule(20)\}
+\( a_0 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( c_1 = \) \{ans_rule(20)\}
+\( a_1 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( c_2 = \) \{ans_rule(20)\}
+\( a_2 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( c_3 = \) \{ans_rule(20)\}
+\( a_3 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( c_4 = \) \{ans_rule(20)\}
+\( a_4 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR

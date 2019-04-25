@@ -1,4 +1,4 @@
-# Write
+# Write a polynomial as a series around another point than 0
 
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
@@ -23,11 +23,11 @@ $showPartialCorrectAnswers = 1;
 Context("Numeric");
 
 do {
-  $a0 = random(1,9,1);
-  $a1 = random(1,9,1);
-  $a2 = random(2,9,1);
+  $a0 = non_zero_random(-4,4,1);
+  $a1 = non_zero_random(1,5,1);
+  $a2 = non_zero_random(2,5,1);
 
-  $x0 = random(1,9,1);
+  $x0 = non_zero_random(-5,5,1);
 
   $c0 = $a2*$x0*$x0-$a1*$x0+$a0;
   $c1 = $a1-2*$a2*$x0;
@@ -37,14 +37,14 @@ do {
 #################################################
 
 BEGIN_PGML
-Expand [:f(x) = [$a2] x^2 + [$a1] x + [$a0] :] as a power series around [: [$x0] :].
+Expand [:f(x) = [$c2] x^2 + [$c1] x + [$c0] :] as a power series around [: [$x0] :].
 
 [`f(x) = {}`]
-[___________]{"$c2"}{15}
+[___________]{"$a2"}{15}
 [` {(x-[$x0])}^2 + `]
-[___________]{"$c1"}{15}
+[___________]{"$a1"}{15}
 [` (x-[$x0]) + `]
-[___________]{"$c0"}{15}
+[___________]{"$a0"}{15}
 [`\quad`] [@ AnswerFormatHelp("numbers") @]*
 END_PGML
 

@@ -31,27 +31,27 @@ BEGIN_TEXT
 
 Suppose that
 \[\frac{$a}{($b + x)}  =
- \sum_{n=0}^\infty c_n x^n \]
+ \sum_{k=0}^\infty a_k x^k \]
 Find the following coefficients of the power series:
 
 $PAR
-\( c_0 = \) \{ans_rule(20)\}
+\( a_0 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( c_1 = \) \{ans_rule(20)\}
+\( a_1 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( c_2 = \) \{ans_rule(20)\}
+\( a_2 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( c_3 = \) \{ans_rule(20)\}
+\( a_3 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( c_4 = \) \{ans_rule(20)\}
+\( a_4 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR

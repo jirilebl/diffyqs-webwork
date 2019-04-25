@@ -29,28 +29,28 @@ BEGIN_TEXT
 The function 
 \( f(x) = $a x \ln(1 + 2x) \)
 is represented as a power series
-\[ f(x) = \sum_{n=0}^\infty c_n x^n .\]
+\[ f(x) = \sum_{k=0}^\infty a_k x^k .\]
 
 Find the following coefficients in the power series:
 
 $PAR
-\( c_0 = \) \{ans_rule(20)\}
+\( a_0 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( c_1 = \) \{ans_rule(20)\}
+\( a_1 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( c_2 = \) \{ans_rule(20)\}
+\( a_2 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( c_3 = \) \{ans_rule(20)\}
+\( a_3 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( c_4 = \) \{ans_rule(20)\}
+\( a_4 = \) \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
@@ -64,21 +64,11 @@ END_TEXT
 
 #################################################
 
-#@ans=();
-$ans0 =  0;
-$ans1 =  0;
-$ans2 =  $a*2;
-$ans3 =  $a*(-2);
-$ans4 =  $a*8/3;
-$ans5 =  1/2;
-
-#ANS(num_cmp(relTol=>@ans));
-#ANS(ordered_num_cmp_list(@ans) );
-ANS(Compute($ans0)->cmp());
-ANS(Compute($ans1)->cmp());
-ANS(Compute($ans2)->cmp());
-ANS(Compute($ans3)->cmp());
-ANS(Compute($ans4)->cmp());
-ANS(Compute($ans5)->cmp());
+ANS(Compute("0")->cmp());
+ANS(Compute("0")->cmp());
+ANS(Compute("$a*2")->cmp());
+ANS(Compute("$a*(-2)")->cmp());
+ANS(Compute("$a*8/3")->cmp());
+ANS(Compute("1/2")->cmp());
 
 ENDDOCUMENT();

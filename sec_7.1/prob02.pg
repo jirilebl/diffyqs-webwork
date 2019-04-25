@@ -27,7 +27,7 @@ $scalar=random(2,20);
 
 BEGIN_TEXT
 Find the radius of convergence of the power series 
-\[ \sum_{n=1}^\infty $scalar^n x^n n! \]
+\[ \sum_{k=1}^\infty $scalar^k x^k k! \]
 Your answer should be a nonnegative real number or 
 ${LQ}infinity$RQ. 
 $PAR

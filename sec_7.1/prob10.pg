@@ -28,19 +28,19 @@ $d = random(2,7,1);
 
 # ser[i] = [ series, sum, sumtex, func, val ]
 @ser = ( [ "1 + $a + {$a^2\over 2!} + {$a^3\over 3!} + {$a^4\over 4!} + " .
-		"\cdots + {$a^n\over n!} + \cdots",
+		"\cdots + {$a^k\over k!} + \cdots",
 	   "e^($a)", "e^{$a}", "e^{x}", $a ], 
 	 [ "$c - {$c^3\over 3!} + {$c^5\over 5!} - {$c^7\over 7!} + " .
-		"\cdots + {(-1)^{n} $c^{2n+1}\over (2n+1)!} + \cdots",
+		"\cdots + {(-1)^{k} $c^{2k+1}\over (2k+1)!} + \cdots",
 	   "sin($c)", "\sin($c)", "\sin(x)", $c ],
-	 [ "1 + $b + ($b)^2 + ($b)^3 + ($b)^4 + \cdots + ($b)^n + \cdots",
+	 [ "1 + $b + ($b)^2 + ($b)^3 + ($b)^4 + \cdots + ($b)^k + \cdots",
 	   "1/(1 - (1/$a))", "{1\over1 - {1\over $a}}", "{1\over 1-x}",
 	   "$b" ],
 );
 
 # we didn't really do cosine so don't do that one
 #	 [ "1 - {$d^2\over 2!} + {$d^4\over 4!} - {$d^6\over 6!} + " .
-#		"\cdots + {(-1)^{n} $d^{2n}\over (2n)!} + \cdots",
+#		"\cdots + {(-1)^{k} $d^{2k}\over (2k)!} + \cdots",
 #	   "cos($d)", "\cos($d)", "\cos(x)", $d ],
 
 $i0 = random(0,2,1);

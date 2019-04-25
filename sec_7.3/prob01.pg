@@ -46,7 +46,7 @@ BEGIN_TEXT
 Write the differential equation \($diffeqn=0\) in standard form:
 $PAR
 $BCENTER
-\(y^{\prime\prime}\)+\{ans_rule(5)\}\(y^{\prime}\)+\{ans_rule(5)\}\(y = 0\)
+\(y^{\prime\prime}+{}\)\{ans_rule(5)\}\(y^{\prime} + {}\) \{ans_rule(5)\}\(y = 0\)
 $SPACE \{ AnswerFormatHelp("formulas") \}
 $ECENTER
 $PAR
