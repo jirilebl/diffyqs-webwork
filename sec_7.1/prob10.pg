@@ -58,11 +58,11 @@ By recognizing each series below as a Taylor series evaluated at a
 particular value of \( x \), find the sum of each convergent series.
 
 $PAR
-\( $s0 = {} \) \{ ans_rule(15) \}
+\( $s0 = \) \{ ans_rule(15) \}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\( $s1 = {} \) \{ ans_rule(10) \}
+\( $s1 = \) \{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 
 END_TEXT

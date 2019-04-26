@@ -48,22 +48,22 @@ Let \( g(t) = $gt. \)
 $PAR
 Solve the initial value problem \[ x' - $a x = g(t), \quad \quad x(0) = 0, \] using the integrating factor technique (Do not use Laplace transforms).
 $PAR
-\( \displaystyle x(t) = {}\)
+\( \displaystyle x(t) = \)
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
 Use Laplace transforms to determine the transfer function \( \phi(t) \) given the initial value problem \[ \phi' - $a \phi = \delta(t), \quad \quad \phi(0) = 0. \]
 $PAR
-\( \displaystyle \phi(t) = {}\)
+\( \displaystyle \phi(t) = \)
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
 Evaluate the convolution integral \( (\phi \ast g)(t) = \int_0^t \phi(t-w)\, g(w)\ dw \), and compare the resulting function with the solution obtained by integrating factor above.
 $PAR
-\( \displaystyle (\phi \ast g)(t) = \int_0^t \) \{ ans_rule(30) \} \( dw \ = {} \) \{ ans_rule(40) \}
-$SPACE
+\( \displaystyle (\phi \ast g)(t) = \int_0^t \) \{ ans_rule(30) \} \( dw \ = \) \{ ans_rule(40) \}
+$BR
 \{ AnswerFormatHelp("formulas") \}
 
 END_TEXT

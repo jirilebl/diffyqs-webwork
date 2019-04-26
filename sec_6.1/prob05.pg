@@ -131,7 +131,7 @@ BEGIN_TEXT
 $PAR
 Where does the Laplace transform you found exist?  In other words, what is the domain of \( F(s) \)?
 $PAR
-\{ ans_rule(20) \}
+\{ ans_rule(30) \}
 \{ AnswerFormatHelp("inequalities") \}
 END_TEXT
 Context()->normalStrings;

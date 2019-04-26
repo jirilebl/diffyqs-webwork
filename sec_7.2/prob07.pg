@@ -51,28 +51,28 @@ is a solution of the differential equation
 then its coefficients \(a_k\) satisfy the following recurrence relation.
 For \( k \geq 0\),
 $PAR
-\( a_{k+2} = {} \) \{ $r1->ans_rule \} \(a_{k+1} + {}\) \{ $r2->ans_rule \} \(a_k\) .
+\( a_{k+2} = \) \{ $r1->ans_rule \} \(a_{k+1} + \) \{ $r2->ans_rule \} \(a_k\) .
 $SPACE
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 We also have 
 $PAR
-\( a_{1} = {} \) \{ $r0->ans_rule \} \(a_{0}\) .
+\( a_{1} = \) \{ $r0->ans_rule \} \(a_{0}\) .
 $SPACE
 \{ AnswerFormatHelp("numbers") \}
 $PAR
 Therefore, write the first few terms of a solution where \(y(0) = $y0 \)
 $PAR
-\( y = {} \)
+\( y = \)
 \{ $a0->ans_rule \}
-\( {} + {}\)
+\( + \)
 \{ $a1->ans_rule \}
-\( x + {}\) $BR
-\(\phantom{y = {}}\) \{ $a2->ans_rule \}
-\( x^2 + {}\)
+\( x + \) $BR
+\(\phantom{y = }\) \{ $a2->ans_rule \}
+\( x^2 + \)
 \{ $a3->ans_rule \}
-\( x^3 + {}\) $BR
-\(\phantom{y = {}}\) \{ $a4->ans_rule \}
+\( x^3 + \) $BR
+\(\phantom{y = }\) \{ $a4->ans_rule \}
 \( x^4 + \cdots \)
 $SPACE
 \{ AnswerFormatHelp("numbers") \}

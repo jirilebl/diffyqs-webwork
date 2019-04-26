@@ -46,13 +46,13 @@ BEGIN_TEXT
 Write the differential equation \($diffeqn=0\) in standard form:
 $PAR
 $BCENTER
-\(y^{\prime\prime}+{}\)\{ans_rule(5)\}\(y^{\prime} + {}\) \{ans_rule(5)\}\(y = 0\)
+\(y^{\prime\prime}+\)\{ans_rule(5)\}\(y^{\prime} + \) \{ans_rule(5)\}\(y = 0\)
 $SPACE \{ AnswerFormatHelp("formulas") \}
 $ECENTER
 $PAR
 List the singular points of the differential equation:
 $PAR
-\(x = {}\) \{$singular->ans_rule\}
+\(x = \) \{$singular->ans_rule\}
 \{ AnswerFormatHelp("numbers") \}
 
 END_TEXT

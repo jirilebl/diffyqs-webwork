@@ -45,7 +45,7 @@ x'' + {$r2} x= $func , \quad x(0)=$y0, \quad x'(0)=$y1 .
 \]
 Solve for the Laplace transform of of \(x(t)\) 
 $PAR
-\(X(s) = \mathcal{L} $LBRACE x(t) $RBRACE = {} \) \{ans_rule(70) \} 
+\(X(s) = \mathcal{L} $LBRACE x(t) $RBRACE = \) \{ans_rule(70) \} 
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 

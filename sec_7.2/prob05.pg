@@ -32,7 +32,7 @@ BEGIN_TEXT
 Solve the initial value problem
  \[ y'' + $a x y' - $c y = 0, \,y(0) = $b, \,y'(0) = 0 . \]
 $PAR
-\( y = {} \)  \{ans_rule(60)\}
+\( y = \)  \{ans_rule(60)\}
 \{ AnswerFormatHelp("formulas") \}
 
 END_TEXT

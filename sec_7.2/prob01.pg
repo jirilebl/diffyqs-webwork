@@ -50,7 +50,7 @@ is a solution of the differential equation
 \[ y'' + ($poly)y' $prettyc y = 0, \]
 then its coefficients \(a_k\) satisfy the recurrence relation
 $PAR
-\( a_{k+2} = {} \) \{ $f1->ans_rule \} \(a_{k+1} + {}\) \{ $f2->ans_rule \} \(a_k\) .
+\( a_{k+2} = \) \{ $f1->ans_rule \} \(a_{k+1} + \) \{ $f2->ans_rule \} \(a_k\) .
 $SPACE
 \{ AnswerFormatHelp("formulas") \}
 

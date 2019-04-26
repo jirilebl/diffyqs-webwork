@@ -49,9 +49,9 @@ BEGIN_TEXT
 Write the differential equation \($diffeqn=0\) in standard form:
 $PAR
 $BCENTER
-\(y^{\prime\prime} +{}\)
+\(y^{\prime\prime} +\)
 \{ ans_rule(20) \}
-\( y^{\prime} + {} \)
+\( y^{\prime} +  \)
 \{ ans_rule(20) \}
 \( y = 0 \)
 $SPACE \{ AnswerFormatHelp("formulas") \}
@@ -59,7 +59,7 @@ $ECENTER
 $BR
 List the singular points of the differential equation:
 $BR
-\(x = {} \) \{$singular->ans_rule\}
+\(x = \) \{$singular->ans_rule\}
 \{ AnswerFormatHelp("numbers") \}
 
 END_TEXT

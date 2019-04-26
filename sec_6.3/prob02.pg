@@ -55,7 +55,8 @@ For the functions \( f(t) = $ft \) and \( g(t) = $gt \), defined on \( 0\leq t <
 $PAR
 By directly evaluating the integral in the definition of \( f \ast g \).
 $PAR
-\( \displaystyle (f \ast g)(t) = \int_0^t \) \{ ans_rule(20) \} \( dw \ = {} \) \{ ans_rule(40) \}
+\( \displaystyle (f \ast g)(t) = \int_0^t \) \{ ans_rule(20) \} \( dw \ = \) \{ ans_rule(40) \}
+$BR
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
@@ -66,7 +67,7 @@ $PAR
 \( \big\rbrace \)
 $SPACE \{ AnswerFormatHelp("formulas") \}
 $PAR
-\( \displaystyle \phantom{(f \ast g)(t)} = {}\) \{ ans_rule(40) \}
+\( \displaystyle \phantom{(f \ast g)(t)} = \) \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;

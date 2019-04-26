@@ -42,7 +42,7 @@ BEGIN_TEXT
 
 Let \( f(t) \) be function defined and continuous on \( 0 \leq t < \infty \).  Determine:
 $PAR
-\( \displaystyle (f \ast \delta)(t) = \int_0^t f(t-w)\, \delta(w) \ dw = {} \)
+\( \displaystyle (f \ast \delta)(t) = \int_0^t f(t-w)\, \delta(w) \, dw = \)
 \{ ans_rule(20) \}
 \{ AnswerFormatHelp("formulas") \}
 

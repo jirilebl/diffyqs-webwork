@@ -76,26 +76,26 @@ Suppose an input \( f(t) = $ft \), when applied to the linear system above, prod
 $PAR
 Find \( X(s) = {\mathcal L}\left\lbrace x(t) \right\rbrace \) and \( F(s) = {\mathcal L}\left\lbrace f(t) \right\rbrace \).
 $PAR
-\( \displaystyle X(s) = {} \)
+\( \displaystyle X(s) = \)
 \{ ans_rule(60) \}
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
-\( \displaystyle F(s) = {} \)
+\( \displaystyle F(s) = \)
 \{ ans_rule(60) \}
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
 Now find the system transfer function, \( H(s) \).
 $PAR
-\( \displaystyle H(s) = {} \)
+\( \displaystyle H(s) = \)
 \{ ans_rule(60) \}
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
 What will be the output if a Heaviside unit step input \( f(t) = u(t) \) is applied to the system?
 $PAR
-New \( \displaystyle x(t) = {} \)
+New \( \displaystyle x(t) = \)
 \{ ans_rule(60) \}
 \{ AnswerFormatHelp("formulas") \}
 

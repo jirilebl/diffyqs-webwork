@@ -58,7 +58,7 @@ $PAR
 Find the radius of convergence \( \rho \) of the power series.
 
 $PAR
-\( \rho = {}\)  \{ans_rule(20)\}
+\( \rho = \)  \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 
 END_TEXT

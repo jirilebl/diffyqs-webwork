@@ -14,6 +14,7 @@ loadMacros(
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
   "parserFunction.pl",
+  "answerHints.pl",
   "PGcourse.pl"
 );
 
@@ -52,7 +53,8 @@ For the functions \( f(t) = u(t) \) and \( g(t) = u(t) \) (where \(u(t)\) is the
 $PAR
 By directly evaluating the integral in the definition of \( f \ast g \).
 $PAR
-\( \displaystyle (f \ast g)(t) = \int_0^t \) \{ ans_rule(20) \} \( dw \ = {} \) \{ ans_rule(40) \}
+\( \displaystyle (f \ast g)(t) = \int_0^t \) \{ ans_rule(20) \} \( dw \ = \) \{ ans_rule(40) \}
+$BR
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
@@ -64,7 +66,7 @@ $PAR
 $SPACE
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-\( \displaystyle \phantom{(f \ast g)(t)} = {} \) \{ ans_rule(40) \}
+\( \displaystyle \phantom{(f \ast g)(t)} = \) \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;

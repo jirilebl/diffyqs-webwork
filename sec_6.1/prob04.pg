@@ -78,7 +78,7 @@ BEGIN_TEXT
 $PAR
 For what values of \( s \) does the Laplace transform exist?
 $PAR
-\{ ans_rule(20) \}
+\{ ans_rule(30) \}
 \{ AnswerFormatHelp("inequalities") \}
 END_TEXT
 Context()->normalStrings;

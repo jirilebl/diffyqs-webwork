@@ -61,7 +61,7 @@ BEGIN_TEXT
 
 Use power series to solve the initial-value problem
 \[ $diffeq = 0 \;, \qquad $initconds\;. \]
-$BR$BR
+
   \( \displaystyle y = \sum_{n=0}^\infty \) \{$feven->ans_rule\} \(x^{2n}\)
   \( \displaystyle + \sum_{n=0}^\infty \) \{$fodd->ans_rule\} \(x^{2n+1}\) .
 $SPACE

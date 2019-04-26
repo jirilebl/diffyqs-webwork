@@ -46,7 +46,7 @@ Take the Laplace transform of the initial value problem
 \]
 $PAR
 $BCENTER
-\{$lhs->ans_rule(30)\} \( {} = {} \) \{$rhs->ans_rule(30)\}
+\{$lhs->ans_rule(30)\} \( = \) \{$rhs->ans_rule(30)\}
 $SPACE \{ AnswerFormatHelp("formulas") \}
 $ECENTER
 $PAR
@@ -68,7 +68,7 @@ $PAR
 $PAR
 and
 $PAR
-\(y(t) = {} \) \{$y->ans_rule(60)\}
+\(y(t) = \) \{$y->ans_rule(60)\}
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;

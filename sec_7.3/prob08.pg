@@ -40,9 +40,9 @@ Find the solution of \( $eq = 0, \,x > 0 \) of the form
 where \(a_0 = 1\).
 
 $PAR
-\( r = {} \)  \{ans_rule(15)\} \{ AnswerFormatHelp("numbers") \}
+\( r = \)  \{ans_rule(15)\} \{ AnswerFormatHelp("numbers") \}
 $PAR
-\( a_k = {} \)  \{ans_rule(20)\}, \( \,k = 1, 2, 3, \ldots \)
+\( a_k = \)  \{ans_rule(20)\}, \( \,k = 1, 2, 3, \ldots \)
 $SPACE \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 

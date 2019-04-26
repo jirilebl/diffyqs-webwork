@@ -14,6 +14,7 @@ loadMacros(
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
   "parserFunction.pl",
+  "PGunion.pl",
   "PGcourse.pl"
 );
 
@@ -69,14 +70,14 @@ $PAR
 Find the Laplace transform of the solution.
 
 $PAR
-\( \displaystyle X(s) = {\mathcal L}\left\lbrace x(t) \right\rbrace = {}\)
+\( \displaystyle X(s) = {\mathcal L}\left\lbrace x(t) \right\rbrace = \)
 \{ ans_rule(60) \}
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
  Obtain the solution \( x(t) \).
 $PAR
-\( x(t) = {}\)
+\( x(t) = \)
 \{ ans_rule(60) \}
 \{ AnswerFormatHelp("formulas") \}
 
