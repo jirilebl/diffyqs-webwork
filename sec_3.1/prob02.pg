@@ -47,9 +47,9 @@ $answer2 = Formula("sin($a t) y + $b t x");
 Context()->texStrings;
 BEGIN_TEXT
 Convert the second order ODE
-$PAR
-\( x'' = \sin($a t) x' + $b t x \)
-$PAR
+\[
+x'' = \sin($a t) x' + $b t x
+\]
 to a first order system of two equations.  Use \(y\) for \(x'\).  Write down
 what \(x'\) and \(y'\) are in terms of \(x\) and \(y\):
 $PAR

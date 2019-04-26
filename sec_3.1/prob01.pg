@@ -42,9 +42,9 @@ $answer6 = Compute("-$c");
 Context()->texStrings;
 BEGIN_TEXT
 Convert the second order ODE
-$PAR
-\( x'' + $a x' + $b x + $c = 0\)
-$PAR
+\[
+x'' + $a x' + $b x + $c = 0
+\]
 to a first order system of two equations.  Use \(y\) for \(x'\).
 Fill in the coefficients in the form below.
 $PAR
