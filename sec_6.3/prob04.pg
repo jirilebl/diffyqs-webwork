@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Laplace transforms: convolution
-## ENDDESCRIPTION
+# Laplace transforms: convolution
 
 ## Institution(Fort Lewis College)
 ## KEYWORDS('Laplace transform')
@@ -15,10 +13,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGunion.pl",
-  "answerHints.pl",
-  "parserAssignment.pl",
-  "contextInequalities.pl",
   "parserFunction.pl",
   "PGcourse.pl"
 );
@@ -31,8 +25,8 @@ TEXT(beginproblem());
 
 Context("Numeric");
 Context()->variables->are(
-t=>"Real",
-s=>"Real"
+  t=>"Real",
+  s=>"Real"
 );
 
 Context()->functions->add(
@@ -70,20 +64,18 @@ Consider the following integral equation, so called because the unknown dependen
 This equation is defined for \( t \geq 0 \).  
 
 $PAR
-$BR
 Use convolution and Laplace transforms to find the Laplace transform of the solution.
-$BR
-$BR
-\( \displaystyle X(s) = {\mathcal L}\left\lbrace x(t) \right\rbrace = \)
+$PAR
+\( \displaystyle X(s) = {\mathcal L}\left\lbrace x(t) \right\rbrace = {}\)
 \{ ans_rule(60) \}
+\{ AnswerFormatHelp("formulas") \}
 
 $PAR
-$BR
 Obtain the solution \( x(t) \).
-$BR
-$BR
-\( x(t) = \)
+$PAR
+\( x(t) = {} \)
 \{ ans_rule(60) \}
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
 

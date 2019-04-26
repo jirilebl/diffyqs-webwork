@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Laplace transforms: convolution
-## ENDDESCRIPTION
+# Laplace transforms: convolution
 
 ## Institution(Fort Lewis College)
 ## KEYWORDS('Laplace transform')
@@ -15,7 +13,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGunion.pl",
   "PGcourse.pl"
 );
 
@@ -27,9 +24,9 @@ TEXT(beginproblem());
 
 Context("Numeric");
 Context()->variables->are(
-s=>"Real",
-t=>"Real",
-w=>"Real"
+  s=>"Real",
+  t=>"Real",
+  w=>"Real"
 );
 
 $a = random(2,6,1);
@@ -56,23 +53,20 @@ BEGIN_TEXT
 For the functions \( f(t) = $ft \) and \( g(t) = $gt \), defined on \( 0\leq t < \infty \), compute \( f \ast g \) in two different ways:
 
 $PAR
-$BR
 By directly evaluating the integral in the definition of \( f \ast g \).
-$BR
-$BR
-\( \displaystyle (f \ast g)(t) = \int_0^t \) \{ ans_rule(20) \} \( dw \ = \ \) \{ ans_rule(40) \}
+$PAR
+\( \displaystyle (f \ast g)(t) = \int_0^t \) \{ ans_rule(20) \} \( dw \ = {} \) \{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
 
 $PAR
-$BR
 By computing \( {\mathcal L}^{-1} \left\lbrace F(s)G(s) \right\rbrace \) where \( F(s) = {\mathcal L} \left\lbrace f(t) \right\rbrace \) and \( G(s) = {\mathcal L} \left\lbrace g(t) \right\rbrace \).
-$BR
-$BR
+$PAR
 \( \displaystyle (f \ast g)(t) = {\mathcal L}^{-1} \left\lbrace F(s)G(s) \right\rbrace = {\mathcal L}^{-1} \big\lbrace \)
 \{ ans_rule(20) \} 
 \( \big\rbrace \)
-$BR
-$BR
-\( \displaystyle \phantom{(f \ast g)(t)} = \) \{ ans_rule(40) \}
+$SPACE \{ AnswerFormatHelp("formulas") \}
+$PAR
+\( \displaystyle \phantom{(f \ast g)(t)} = {}\) \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
