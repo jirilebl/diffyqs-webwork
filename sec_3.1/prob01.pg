@@ -1,5 +1,4 @@
-##DESCRIPTION
-##ENDDESCRIPTION
+# Convert an equation into first order system
 
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
@@ -12,11 +11,11 @@
 DOCUMENT();
 
 loadMacros(
-"PGstandard.pl",
-"MathObjects.pl",
-"AnswerFormatHelp.pl",
-"parserFunction.pl",
-"PGcourse.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "parserFunction.pl",
+  "PGcourse.pl",
 );
 
 TEXT(beginproblem());
@@ -26,23 +25,16 @@ TEXT(beginproblem());
 
 Context("Numeric");
 
-
 $a = random(2,9,1);
 do { $b = random(2,9,1); } until ($b != $a);
 do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
 
-Context()->flags->set(
-     reduceConstants => 0,
-     reduceConstantFunctions => 0,
-);
-
-
-$answer1 = Formula("0");
-$answer2 = Formula("1");
-$answer3 = Formula("0");
-$answer4 = Formula("-$b");
-$answer5 = Formula("-$a");
-$answer6 = Formula("-$c");
+$answer1 = Compute("0");
+$answer2 = Compute("1");
+$answer3 = Compute("0");
+$answer4 = Compute("-$b");
+$answer5 = Compute("-$a");
+$answer6 = Compute("-$c");
 
 ############################
 # Main text
@@ -50,21 +42,23 @@ $answer6 = Formula("-$c");
 Context()->texStrings;
 BEGIN_TEXT
 Convert the second order ODE
-$BR
+$PAR
 \( x'' + $a x' + $b x + $c = 0\)
-$BR
+$PAR
 to a first order system of two equations.  Use \(y\) for \(x'\).
 Fill in the coefficients in the form below.
 $PAR
-\( x' = {} \)
-\{ ans_rule(4) \} \( x + {} \)
-\{ ans_rule(4) \} \( y + {} \)
-\{ ans_rule(4) \} 
+\( x' = \)
+\{ ans_rule(5) \} \( x + \)
+\{ ans_rule(5) \} \( y + \)
+\{ ans_rule(5) \} 
+$SPACE \{ AnswerFormatHelp("numbers") \}
 $PAR
-\( y' = {} \)
-\{ ans_rule(4) \} \( x + {} \)
-\{ ans_rule(4) \} \( y + {} \)
-\{ ans_rule(4) \} 
+\( y' = \)
+\{ ans_rule(5) \} \( x + \)
+\{ ans_rule(5) \} \( y + \)
+\{ ans_rule(5) \} 
+$SPACE \{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;
 

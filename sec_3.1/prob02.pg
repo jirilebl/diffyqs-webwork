@@ -12,11 +12,10 @@
 DOCUMENT();
 
 loadMacros(
-"PGstandard.pl",
-"MathObjects.pl",
-"AnswerFormatHelp.pl",
-"parserFunction.pl",
-"PGcourse.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl",
 );
 
 TEXT(beginproblem());
@@ -48,17 +47,19 @@ $answer2 = Formula("sin($a t) y + $b t x");
 Context()->texStrings;
 BEGIN_TEXT
 Convert the second order ODE
-$BR
+$PAR
 \( x'' = \sin($a t) x' + $b t x \)
-$BR
+$PAR
 to a first order system of two equations.  Use \(y\) for \(x'\).  Write down
 what \(x'\) and \(y'\) are in terms of \(x\) and \(y\):
 $PAR
-\( x' = {} \)
-\{ ans_rule(20) \}
+\( x' = \)
+\{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
 $PAR
-\( y' = {} \)
-\{ ans_rule(20) \}
+\( y' = \)
+\{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
 
