@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Laplace transforms: delta function
-## ENDDESCRIPTION
+# Laplace transforms: delta function
 
 ## Institution(Fort Lewis College)
 ## KEYWORDS('Laplace transform')
@@ -15,10 +13,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGunion.pl",
-  "answerHints.pl",
-  "parserAssignment.pl",
-  "contextInequalities.pl",
   "parserFunction.pl",
   "PGcourse.pl"
 );
@@ -72,20 +66,19 @@ BEGIN_TEXT
 Consider the following initial value problem, in which an input of large amplitude and short duration has been idealized as a delta function.
 \[ x''  - $a x' = \delta(t - $b), \quad \quad x(0) = $y0, \quad x'(0) = 0. \] 
 
-\{ BeginList('UL') \}
-
-$ITEM Find the Laplace transform of the solution.
-$BR
-$BR
-\( \displaystyle X(s) = {\mathcal L}\left\lbrace x(t) \right\rbrace = \)
+$PAR
+Find the Laplace transform of the solution.
+$PAR
+\( \displaystyle X(s) = {\mathcal L}\left\lbrace x(t) \right\rbrace = {}\)
 \{ ans_rule(60) \}
+\{ AnswerFormatHelp("formulas") \}
 
-$ITEMSEP
-$ITEM  Obtain the solution \( x(t) \).
-$BR
-$BR
-\( x(t) = \)
+$PAR
+Obtain the solution \( x(t) \).
+$PAR
+\( x(t) = {}\)
 \{ ans_rule(60) \}
+\{ AnswerFormatHelp("formulas") \}
 
 END_TEXT
 Context()->normalStrings;
@@ -145,13 +138,15 @@ Context()->normalStrings;
 Context()->texStrings;
 BEGIN_TEXT
 
-$ITEMSEP
-$ITEM Express the solution as a piecewise-defined function and think about what happens to the graph of the solution at \( t = $b \).
-$BR
-$BR
+$PAR
+Express the solution as a piecewise-defined function and think about what happens to the graph of the solution at \( t = $b \).
+
+$PAR
 $piecewise
 
-\{ EndList('UL') \}
+$PAR
+\{ AnswerFormatHelp("formulas") \}
+
 END_TEXT
 Context()->normalStrings;
 

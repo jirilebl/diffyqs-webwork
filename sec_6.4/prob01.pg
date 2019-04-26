@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Laplace transforms: delta function
-## ENDDESCRIPTION
+# Laplace transforms: delta function
 
 ## Institution(Fort Lewis College)
 ## KEYWORDS('Laplace transform')
@@ -15,9 +13,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGunion.pl",
-  "answerHints.pl",
-  "parserAssignment.pl",
   "parserFunction.pl",
   "PGcourse.pl"
 );
@@ -46,10 +41,10 @@ Context()->texStrings;
 BEGIN_TEXT
 
 Let \( f(t) \) be function defined and continuous on \( 0 \leq t < \infty \).  Determine:
-$BR
-$BR
-\( \displaystyle (f \ast \delta)(t) = \int_0^t f(t-w)\, \delta(w) \ dw = \)
+$PAR
+\( \displaystyle (f \ast \delta)(t) = \int_0^t f(t-w)\, \delta(w) \ dw = {} \)
 \{ ans_rule(20) \}
+\{ AnswerFormatHelp("formulas") \}
 
 END_TEXT
 Context()->normalStrings;

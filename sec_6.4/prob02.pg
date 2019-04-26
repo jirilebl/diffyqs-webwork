@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Laplace transforms: delta function
-## ENDDESCRIPTION
+# Laplace transforms: delta function
 
 ## Institution(Fort Lewis College)
 ## KEYWORDS('Laplace transform')
@@ -15,9 +13,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGunion.pl",
-  "answerHints.pl",
-  "parserAssignment.pl",
   "PGcourse.pl"
 );
 
@@ -29,7 +24,7 @@ TEXT(beginproblem());
 
 Context("Numeric");
 Context()->variables->are(
-t=>"Real"
+  t=>"Real"
 );
 
 $a = random(1,6,1);
@@ -52,20 +47,21 @@ BEGIN_TEXT
 
 Evaluate the following:
 
-\{ BeginList('OL', type=>'a') \}
+$PAR
+\( \displaystyle \int_{-1}^6 ($ft)\, \delta(t-$c) \ dt = \)
+\{ ans_rule(25) \}
+\{ AnswerFormatHelp("formulas") \}
 
-$ITEM \( \displaystyle \int_{-1}^6 ($ft)\, \delta(t-$c) \ dt = \)
-\{ ans_rule(20) \}
+$PAR
+\( \displaystyle \int_{-1}^6 ($ft)\, \delta(t-$d) \ dt = \)
+\{ ans_rule(25) \}
+\{ AnswerFormatHelp("formulas") \}
 
-$ITEMSEP
-$ITEM  \( \displaystyle \int_{-1}^6 ($ft)\, \delta(t-$d) \ dt = \)
-\{ ans_rule(20) \}
+$PAR
+\( \displaystyle \int_{-1}^6 ($ft)\, \delta(t) \ dt = \)
+\{ ans_rule(25) \}
+\{ AnswerFormatHelp("formulas") \}
 
-$ITEMSEP
-$ITEM  \( \displaystyle \int_{-1}^6 ($ft)\, \delta(t) \ dt = \)
-\{ ans_rule(20) \}
-
-\{ EndList('OL', type=>'a') \}
 END_TEXT
 Context()->normalStrings;
 

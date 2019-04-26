@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Laplace transforms: delta function
-## ENDDESCRIPTION
+# Laplace transforms: delta function
 
 ## Institution(Fort Lewis College)
 ## KEYWORDS('Laplace transform')
@@ -15,10 +13,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGunion.pl",
-  "answerHints.pl",
-  "parserAssignment.pl",
-  "contextInequalities.pl",
   "PGcourse.pl"
 );
 
@@ -30,8 +24,8 @@ TEXT(beginproblem());
 
 Context("Numeric");
 Context()->variables->are(
-t=>"Real",
-w=>"Real"
+  t=>"Real",
+  w=>"Real"
 );
 
 $a = random(2,8,1);
@@ -51,27 +45,27 @@ BEGIN_TEXT
 
 Let \( g(t) = $gt. \)
 
-\{ BeginList('UL') \}
-
-$ITEM Solve the initial value problem \[ x' - $a x = g(t), \quad \quad x(0) = 0, \] using the integrating factor technique (Do not use Laplace transforms).
-$BR
-$BR
-\( \displaystyle x(t) = \)
+$PAR
+Solve the initial value problem \[ x' - $a x = g(t), \quad \quad x(0) = 0, \] using the integrating factor technique (Do not use Laplace transforms).
+$PAR
+\( \displaystyle x(t) = {}\)
 \{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
 
-$ITEMSEP
-$ITEM  Use Laplace transforms to determine the transfer function \( \phi(t) \) given the initial value problem \[ \phi' - $a \phi = \delta(t), \quad \quad \phi(0) = 0. \]
-$BR
-\( \displaystyle \phi(t) = \)
+$PAR
+Use Laplace transforms to determine the transfer function \( \phi(t) \) given the initial value problem \[ \phi' - $a \phi = \delta(t), \quad \quad \phi(0) = 0. \]
+$PAR
+\( \displaystyle \phi(t) = {}\)
 \{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
 
-$ITEMSEP
-$ITEM Evaluate the convolution integral \( (\phi \ast g)(t) = \int_0^t \phi(t-w)\, g(w)\ dw \), and compare the resulting function with the solution obtained by integrating factor above.
-$BR
-$BR
-\( \displaystyle (\phi \ast g)(t) = \int_0^t \) \{ ans_rule(30) \} \( dw \ = \ \) \{ ans_rule(40) \}
+$PAR
+Evaluate the convolution integral \( (\phi \ast g)(t) = \int_0^t \phi(t-w)\, g(w)\ dw \), and compare the resulting function with the solution obtained by integrating factor above.
+$PAR
+\( \displaystyle (\phi \ast g)(t) = \int_0^t \) \{ ans_rule(30) \} \( dw \ = {} \) \{ ans_rule(40) \}
+$SPACE
+\{ AnswerFormatHelp("formulas") \}
 
-\{ EndList('UL') \}
 END_TEXT
 Context()->normalStrings;
 

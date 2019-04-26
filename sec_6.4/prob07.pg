@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Laplace transforms: delta function
-## ENDDESCRIPTION
+# Laplace transforms: delta function
 
 ## Institution(Fort Lewis College)
 ## KEYWORDS('Laplace transform')
@@ -15,10 +13,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGunion.pl",
-  "answerHints.pl",
-  "parserAssignment.pl",
-  "contextInequalities.pl",
   "parserFunction.pl",
   "PGcourse.pl"
 );
@@ -31,8 +25,8 @@ TEXT(beginproblem());
 
 Context("Numeric");
 Context()->variables->are(
-s=>"Real",
-t=>"Real"
+  s=>"Real",
+  t=>"Real"
 );
 
 Context()->functions->add(
@@ -42,10 +36,9 @@ Context()->functions->add(
   },
 );
 
-# Define the Heaviside function h(t) = 0 on (-inf, 0) and 1 on [0, inf).
-# We need the actual definition of h(t) in this problem so that 1 = h(t) on [0, inf) and h(t-b) all can be entered.
+# Define the Heaviside function u(t) = 0 on (-inf, 0) and 1 on [0, inf).
+# We need the actual definition of u(t) in this problem so that 1 = u(t) on [0, inf) and u(t-b) all can be entered.
 #
-parserFunction("h(t)" => "1 - 1*step(-1*t)");
 parserFunction("u(t)" => "1 - 1*step(-1*t)");
 
 $a = random(2,4,1);
@@ -55,7 +48,7 @@ $asq = $a*$a;
 $Ys = Compute("$a*pi*e^(-$b*s)/(s^2+$asq*pi^2)")->reduce;
 $yt = Compute("u(t-$b)sin($a*pi*(t-$b))")->reduce;
 
-#Only check the answer for t\geq 0 so that h(t) will agree with 1; check around jump.
+#Only check the answer for t\geq 0 so that u(t) will agree with 1; check around jump.
 $answer = $yt->with(
   limits=>[$b-1,$b+1],
   test_at => [[0,$b-0.1],[0,$b+0.1],[0,$b-.9],[0,$b+.9]],
@@ -72,20 +65,20 @@ BEGIN_TEXT
 Consider the following initial value problem, in which an input of large amplitude and short duration has been idealized as a delta function.
 \[ x'' + $asq \pi^2 x = $a \pi \delta(t - $b), \quad \quad x(0) = 0, \quad x'(0) = 0. \] 
 
-\{ BeginList('UL') \}
+$PAR
+Find the Laplace transform of the solution.
 
-$ITEM Find the Laplace transform of the solution.
-$BR
-$BR
-\( \displaystyle X(s) = {\mathcal L}\left\lbrace x(t) \right\rbrace = \)
+$PAR
+\( \displaystyle X(s) = {\mathcal L}\left\lbrace x(t) \right\rbrace = {}\)
 \{ ans_rule(60) \}
+\{ AnswerFormatHelp("formulas") \}
 
-$ITEMSEP
-$ITEM  Obtain the solution \( x(t) \).
-$BR
-$BR
-\( x(t) = \)
+$PAR
+ Obtain the solution \( x(t) \).
+$PAR
+\( x(t) = {}\)
 \{ ans_rule(60) \}
+\{ AnswerFormatHelp("formulas") \}
 
 END_TEXT
 Context()->normalStrings;
@@ -145,13 +138,14 @@ Context()->normalStrings;
 Context()->texStrings;
 BEGIN_TEXT
 
-$ITEMSEP
-$ITEM Express the solution as a piecewise-defined function and think about what happens to the graph of the solution at \( t = $b \).
-$BR
-$BR
-$piecewise
+$PAR
+Express the solution as a piecewise-defined function and think about what happens to the graph of the solution at \( t = $b \).
 
-\{ EndList('UL') \}
+$PAR
+$piecewise
+$PAR
+\{ AnswerFormatHelp("formulas") \}
+
 END_TEXT
 Context()->normalStrings;
 
@@ -163,6 +157,5 @@ $showPartialCorrectAnswers = 1;
 
 ANS( $piece1->cmp() );
 ANS( $piece2->cmp() );
-
 
 ENDDOCUMENT();

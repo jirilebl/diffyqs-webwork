@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Laplace transforms: delta function
-## ENDDESCRIPTION
+# Laplace transforms: delta function
 
 ## Institution(Fort Lewis College)
 ## KEYWORDS('Laplace transform')
@@ -15,9 +13,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGunion.pl",
-  "answerHints.pl",
-  "parserAssignment.pl",
   "parserFunction.pl",
   "PGcourse.pl"
 );
@@ -30,7 +25,7 @@ TEXT(beginproblem());
 
 Context("Numeric");
 Context()->variables->are(
-t=>"Real"
+  t=>"Real"
 );
 
 $a = random(1,4,1);
@@ -54,10 +49,10 @@ BEGIN_TEXT
 Sketch the graph of the function 
 \[ k(t) = \int_0^t \left( \delta(w-$a) -\delta(w-$c) \right) dw, \quad 0\leq t < \infty. \]
 Use the graph to express \( k(t) \) in terms of shifts of the Heaviside step function \( u(t) \).
-$BR
-$BR
-\( \displaystyle k(t) = \)
-\{ ans_rule(20) \}
+$PAR
+\( \displaystyle k(t) = {}\)
+\{ ans_rule(30) \}
+\{ AnswerFormatHelp("formulas") \}
 
 END_TEXT
 Context()->normalStrings;
