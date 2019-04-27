@@ -1,20 +1,22 @@
-#DESCRIPTION
-##  Algebra problem:  Systems of equations and inequalities
-##ENDDESCRIPTION
+# Algebra problem:  Systems of equations and inequalities
 
 ## Institution(Hope College)
 ## Author(Paul Pearson)
 ## KEYWORDS('algebra', 'matrix operation', 'matrix')
 
+####################################
 
-DOCUMENT();        # This should be the first executable line in the problem.
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserPopUp.pl",
   "PGcourse.pl"
 );
+
+####################################
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 0;
@@ -42,20 +44,23 @@ $ans2 = "Yes";
 
 $pop = PopUp(["Choose","Yes","No"],$ans2);
 
+####################################
+
 Context()->texStrings;
 BEGIN_TEXT
-Consider the following matrix
+Consider the matrix
 \[ $A. \]
-$BR
-Find its determinant: \{ans_rule(25) \}
-$BR
+$PAR
+Find its determinant: \{ans_rule(25) \} \{ AnswerFormatHelp("numbers") \}
+$PAR
 Does the matrix have an inverse? \{ $pop->menu \}
 END_TEXT
 Context()->normalStrings;
 
+####################################
+
 ANS($ans1->cmp);
 ANS($pop->cmp);
 
-;
+ENDDOCUMENT();
 
-ENDDOCUMENT();        # This should be the last executable line in the problem.

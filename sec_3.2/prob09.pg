@@ -1,28 +1,34 @@
-#DESCRIPTION
-##  Finding the determinant of a 2x2 matrix
-##ENDDESCRIPTION
+# Finding the determinant of a 2x2 matrix
 
 ## KEYWORDS('algebra', 'determinant', 'matrix')
 
-DOCUMENT();        # This should be the first executable line in the problem.
+####################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
-  "PGmatrixmacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
+####################################
+
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 0;
+
+Context("Numeric");
 
 $a=random(-3,5,1);
 $b=random(-3,5,1);
 $c=random(-3,5,1);
 $d=random(-3,5,1);
 
+####################################
+
 BEGIN_TEXT
-Given the matrix
+Let
 \[A =
 \left[\begin{array}{rr}
         $a & $b \\
@@ -32,11 +38,13 @@ Given the matrix
 \]
 $PAR
 The determinant of \(A\) is \{ans_rule(25) \}
-$BR
+\{ AnswerFormatHelp("numbers") \}
 END_TEXT
 
-$ans1 = $a*$d-$b*$c;
-ANS(num_cmp($ans1));
+####################################
 
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+$ans1 = Compute("$a*$d-$b*$c");
+ANS($ans1->cmp());
+
+ENDDOCUMENT();
 

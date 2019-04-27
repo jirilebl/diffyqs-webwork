@@ -1,11 +1,10 @@
-## DESCRIPTION
-## Linear Algebra
-## ENDDESCRIPTION
+# Linear Algebra
 
 ## Institution(Rochester and Hope College)
 ## Author(Paul Pearson)
 ## KEYWORDS('linear algebra','matrix','inverse')
 
+#################################################
 
 DOCUMENT() ;        
 
@@ -16,20 +15,20 @@ loadMacros(
   "PGcourse.pl"
 );
 
-$showPartialCorrectAnswers = 1 ;
-
-############
+#################################################
 
 TEXT(beginproblem());
+
+$showPartialCorrectAnswers = 1 ;
 
 Context('Matrix');
 
 do { 
 
-$A = Matrix([
-[random(-6,6,1),random(-6,6,1)],
-[random(-6,6,1),random(-6,6,1)],
-]);
+  $A = Matrix([
+    [random(-6,6,1),random(-6,6,1)],
+    [random(-6,6,1),random(-6,6,1)],
+  ]);
 
 } until ( ($A->det()) != 0);
 
@@ -38,18 +37,19 @@ $I = Matrix([[1,0],[0,1]]);
 
 $answer = $A->inverse();
 
+#################################################
 
 Context()->texStrings;
 BEGIN_TEXT
 Find a \( 2 \times 2 \) matrix such that 
-$BR
-$BR
+$PAR
 $BCENTER
 \( $A \) \{ $answer->ans_array() \} \( = $I\).
 $ECENTER
 END_TEXT
 Context()->normalStrings;
 
+#################################################
 
 ANS( $answer->cmp(checker => sub {
       my ( $correct, $student, $self ) = @_;
@@ -57,7 +57,5 @@ ANS( $answer->cmp(checker => sub {
       return $A * $stu == $I;
     }
 ) );
-
-;
 
 ENDDOCUMENT();

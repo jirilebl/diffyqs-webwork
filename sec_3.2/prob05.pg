@@ -1,10 +1,10 @@
-## DESCRIPTION
-## Linear Algebra
-## ENDDESCRIPTION
+# Linear Algebra
 
 ## Institution(Hope College)
 ## Author(Paul Pearson)
 ## KEYWORDS('linear algebra','matrix','multiplication')
+
+################################################
 
 DOCUMENT();
 loadMacros(
@@ -14,8 +14,12 @@ loadMacros(
   "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
-$showPartialCorrectAnswers = 0;
+
+################################################
+
 TEXT(beginproblem()); 
+
+$showPartialCorrectAnswers = 0;
 
 Context('Matrix');
 Context()->parens->set("[" => {formMatrix => 1});
@@ -36,6 +40,8 @@ $B = Matrix([
 
 $popup = PopUp(['Choose','True','False'],'True');
 
+################################################
+
 Context()->texStrings;
 BEGIN_TEXT
 Let 
@@ -43,27 +49,24 @@ Let
 \[ B = $B.\]
 If possible, compute the following.  
 If an answer does not exist, enter ${BBOLD}DNE${EBOLD}.
-$BR
-$BR
+$PAR
 \( A + B = \)
 \{ ans_box(3,30).$SPACE.AnswerFormatHelp('matrices') \}
-$BR
-$BR
+$PAR
 \( B + A = \)
 \{ ans_box(3,30).$SPACE.AnswerFormatHelp('matrices') \}
-$BR
-$BR
+$PAR
 \{ $popup->menu \} True or False: \( A + B = B + A \) for every pair of matrices 
 \( A \) and \( B \) of the same size.
 END_TEXT
 Context()->normalStrings;
+
+################################################
 
 install_problem_grader(~~&std_problem_grader);
 
 ANS( ($A + $B)->cmp() );
 ANS( ($B + $A)->cmp() );
 ANS( $popup->cmp );
-
-
 
 ENDDOCUMENT();
