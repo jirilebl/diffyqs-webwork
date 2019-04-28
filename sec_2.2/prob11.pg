@@ -54,20 +54,20 @@ $answerb = Compute("y = ($A + $B x) e^($a x)")->reduce;
 Context()->texStrings;
 BEGIN_TEXT
 Find the general solution to \( $diffeq \).
-$BR
+$PAR
 Enter your answer as \(y = ? \) .
 In your answer, use \( c_1 \) and \( c_2 \) to 
 denote arbitrary constants and \( x \) 
 the independent variable.  Enter \( c_1 \) as 
 ${LQ}c1${RQ} and \( c_2 \) as ${LQ}c2${RQ}.
-$BR
+$PAE
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("equations") \}
 $PAR
 Find the solution that satisfies the 
 initial conditions
 \( y(0) = $y0 \) and \( y^{\,\prime}(0) = 0 \).
-$BR
+$PAR
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("equations") \}
 END_TEXT
@@ -125,7 +125,8 @@ ANS( $answera->cmp( checker => sub {
 }));
 
 
-ANS( $answerb->cmp() );
+# there's a possibility of some numerical instability, so best just 
+ANS( $answerb->cmp(tolType=>"absolute", tol=>0.001) );
 
 COMMENT("Characteristic polynomial (r - a)^2");
 
