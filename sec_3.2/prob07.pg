@@ -19,13 +19,11 @@ loadMacros(
 #################################################
 
 TEXT(beginproblem());
-
 $showPartialCorrectAnswers = 1 ;
 
 Context('Matrix');
 
 do {
-
   $A = Matrix([
     [non_zero_random(-6,6,1),non_zero_random(-6,6,1)],
     [non_zero_random(-6,6,1),non_zero_random(-6,6,1)],
@@ -38,7 +36,6 @@ do {
 
   $AB = $A * $B;
   $BA = $B * $A;
-
 } until ($AB != $BA);
 
 $popup = PopUp(["Choose","True","False"],"False");
@@ -49,9 +46,13 @@ Context()->texStrings;
 BEGIN_TEXT
 If \(A = $A\) and \(B = $B\), then
 $PAR
-\(AB=\) \{ $AB->ans_array() \} and
+\(AB=\) \{ $AB->ans_array() \}
+\{ AnswerFormatHelp("matrices") \}
 $PAR
-\( BA=\) \{ $BA->ans_array() \}.
+and
+$PAR
+\( BA=\) \{ $BA->ans_array() \}
+\{ AnswerFormatHelp("matrices") \}
 $PAR
 \{ $popup->menu() \} True or False: \( AB = BA \) for any two square matrices \( A \) and \( B \) of the same size.
 END_TEXT

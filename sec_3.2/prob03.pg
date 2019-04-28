@@ -11,6 +11,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
@@ -40,6 +41,7 @@ BEGIN_TEXT
 Compute the following product. 
 $PAR
 \( $A $B = \) \{ $ans->ans_array(15) \}
+\{ AnswerFormatHelp("matrices") \}
 END_TEXT
 Context()->normalStrings;
 

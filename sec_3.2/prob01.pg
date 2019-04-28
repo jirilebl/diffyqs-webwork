@@ -10,6 +10,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
   "PGcourse.pl"
 );
@@ -56,8 +57,10 @@ If the answer is a line such as \( y = x + 1 \), enter \( x = x \) and \( y = x+
 If there is no solution, enter ${LQ}DNE${RQ} for both answers.
 $PAR
 \( x = \) \{ $x->ans_rule(15) \}
+\{ AnswerFormatHelp("numbers") \}
 $PAR
 \( y = \) \{ $y->ans_rule(15) \}
+\{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;
 

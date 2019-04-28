@@ -35,12 +35,11 @@ $A = Matrix([[$a11, $a12, $a13], [$a21, 0, $a23], [0, $a32, $a33]]);
 
 
 $ans1 = Compute("$a21 * $a32 * $a13 - $a21 * $a12 * $a33 - $a32 * $a23 * $a11");
-if ($ans1 == 0){
-$ans2 = "No";
+if ($ans1 == 0) {
+  $ans2 = "No";
+} else {
+  $ans2 = "Yes";
 }
-else {
-$ans2 = "Yes";
-};
 
 $pop = PopUp(["Choose","Yes","No"],$ans2);
 
@@ -49,7 +48,7 @@ $pop = PopUp(["Choose","Yes","No"],$ans2);
 Context()->texStrings;
 BEGIN_TEXT
 Consider the matrix
-\[ $A. \]
+\[ $A \]
 $PAR
 Find its determinant: \{ans_rule(25) \} \{ AnswerFormatHelp("numbers") \}
 $PAR

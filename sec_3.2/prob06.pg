@@ -17,13 +17,13 @@ loadMacros(
 #################################################
 
 TEXT(beginproblem()); 
-$showPartialCorrectAnswers = 0;
+$showPartialCorrectAnswers = 1;
 
 Context('Matrix');
 
 $A = Matrix([
-[non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
-[0,non_zero_random(-5,5,1)],
+  [non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
+  [0,non_zero_random(-5,5,1)],
 ]);
 
 #################################################
@@ -34,12 +34,10 @@ Let
 \[ A = $A.\]
 If possible, compute the following.  
 If an answer does not exist, enter ${LQ}DNE${RQ}.
-$BR
-$BR
+$PAR
 \( A^2 = \)
 \{ ans_box(3,30).$SPACE.AnswerFormatHelp('matrices') \}
-$BR
-$BR
+$PAR
 \( A^3 = \)
 \{ ans_box(3,30).$SPACE.AnswerFormatHelp('matrices') \}
 END_TEXT
@@ -47,11 +45,7 @@ Context()->normalStrings;
 
 #################################################
 
-install_problem_grader(~~&std_problem_grader);
-
-
 ANS( ($A * $A)->cmp() );
 ANS( ($A * $A * $A)->cmp() );
-
 
 ENDDOCUMENT();

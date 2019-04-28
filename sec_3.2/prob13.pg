@@ -1,21 +1,26 @@
-## DESCRIPTION
-## Systems of Linear Equations
-## ENDDESCRIPTION
+# Systems of Linear Equations
 
 ## Institution(Hope College)
 ## Author(Paul Pearson)
 ## KEYWORDS('Algebra' 'Linear Equations' 'Matrix' 'Matrices')
 
+####################################################
+
 DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserPopUp.pl",
   "MatrixReduce.pl",
   "PGcourse.pl"
 );
-$showPartialCorrectAnswers = 1;
+
+
+####################################################
+
 TEXT(beginproblem()); 
+$showPartialCorrectAnswers = 1;
 
 Context('Matrix');
 
@@ -58,6 +63,8 @@ $x = Matrix([
 [$x2]
 ]);
 
+####################################################
+
 Context()->texStrings;
 BEGIN_TEXT
 Perform the indicated row operations on the matrix \( A \) successively 
@@ -87,6 +94,8 @@ $a2[2][1] x_1 + $a2[2][2] x_2 & = & $a2[2][3] \\
 \( \vec{x} = \) \{ $x->ans_array(10) \}
 END_TEXT
 Context()->normalStrings;
+
+####################################################
 
 ANS( $A[1]->cmp() );
 ANS( $A[0]->cmp() );

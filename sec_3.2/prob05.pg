@@ -18,24 +18,21 @@ loadMacros(
 ################################################
 
 TEXT(beginproblem()); 
-
-$showPartialCorrectAnswers = 0;
+$showPartialCorrectAnswers = 1;
 
 Context('Matrix');
 Context()->parens->set("[" => {formMatrix => 1});
 
 do {
+  $A = Matrix([
+    [non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
+    [non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
+  ]);
 
-$A = Matrix([
-[non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
-[non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
-]);
-
-$B = Matrix([
-[non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
-[non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
-]);
-
+  $B = Matrix([
+    [non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
+    [non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
+  ]);
 } until ( $A!= $B );
 
 $popup = PopUp(['Choose','True','False'],'True');
@@ -48,7 +45,7 @@ Let
 \[ A = $A,\]
 \[ B = $B.\]
 If possible, compute the following.  
-If an answer does not exist, enter ${BBOLD}DNE${EBOLD}.
+If an answer does not exist, enter ${LQ}DNE${RQ}.
 $PAR
 \( A + B = \)
 \{ ans_box(3,30).$SPACE.AnswerFormatHelp('matrices') \}
@@ -62,8 +59,6 @@ END_TEXT
 Context()->normalStrings;
 
 ################################################
-
-install_problem_grader(~~&std_problem_grader);
 
 ANS( ($A + $B)->cmp() );
 ANS( ($B + $A)->cmp() );

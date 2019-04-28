@@ -1,19 +1,21 @@
-#DESCRIPTION
-##  Finding the determinant of a 4x4 
-##ENDDESCRIPTION
+# Finding the determinant of a 4x4 
 
 ## Institution(METU-NCC)
 ## Author(Benjamin Walter)
 ## KEYWORDS('algebra', 'matrix operation', 'matrix', 'determinant')
 
-DOCUMENT();        # This should be the first executable line in the problem.
+####################################################
 
+DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "PGchoicemacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
+
+####################################################
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 0;
@@ -40,21 +42,24 @@ if(random(0,1,1) == 1) {
   $A = $A->transpose;
 }
 
+####################################################
+
 Context()->texStrings;
 BEGIN_TEXT
-Find the determinant of the matrix 
-\[ $A. \]
-$BR
-Determinant is \{ans_rule(25) \}
-$BR
+Consider the matrix
+\[ $A \]
+The determinant is \{ans_rule(25) \}
+\{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;
 
+####################################################
 
 ANS($A->det->cmp);
 
+####################################################
 
 COMMENT('MathObject.  Random permuation of random 4x4 block-triangular matrix.');
 
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+ENDDOCUMENT();
 
