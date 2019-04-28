@@ -68,18 +68,15 @@ BEGIN_TEXT
 Perform the indicated row operations on the matrix \( A \) successively 
 in the order they are given until a matrix in row echelon form is produced.  \( R_1 \) refers to row 1 and \( R_2 \) refers to row 2.
 \[ A = $A[2]\]
-$BR
 Apply \( (1/$m[2]) R_1 \to R_1 \) to \( A \).
-$BCENTER
+$PAR
 \{ $A[1]->ans_array \}
 \{ AnswerFormatHelp("matrices") \}
-$ECENTER
-$BR
+$PAR
 Apply \( R_2 - $m[1] R_1 \to R_2 \) to the previous result.
-$BCENTER 
+$PAR 
 \{ $A[0]->ans_array \}
 \{ AnswerFormatHelp("matrices") \}
-$ECENTER
 $PAR
 Solve the system
 \[

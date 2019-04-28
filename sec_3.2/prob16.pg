@@ -1,4 +1,4 @@
-# Systems of Linear Equations
+# Find reduced row echelon form, solve systems of linear equations
 
 ## Institution(Hope College)
 ## Author(Paul Pearson)
@@ -81,11 +81,9 @@ BEGIN_TEXT
 Find the reduced row echelon form of the matrix \( M \).
 Your answers must be fractions (decimals are not allowed).
 \[ M = $M. \]
-$BR
-$BCENTER
-\{ $Mreduced->ans_array(10) \}.
+$PAR
+\{ $Mreduced->ans_array(10) \}
 \{ AnswerFormatHelp("matrices") \}
-$ECENTER
 $PAR
 Solve the system
 \[

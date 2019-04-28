@@ -1,4 +1,4 @@
-# Linear Algebra
+# Matrix product
 
 ## Institution(TCNJ and Hope College)
 ## Author(Paul Pearson)
@@ -23,13 +23,13 @@ $showPartialCorrectAnswers = 1;
 Context('Matrix');
 
 $A = Matrix([
-[non_zero_random(-9,9,1),non_zero_random(-9,9,1)],
-[non_zero_random(-9,9,1),non_zero_random(-9,9,1)],
+ [non_zero_random(-9,9,1),non_zero_random(-9,9,1)],
+ [non_zero_random(-9,9,1),non_zero_random(-9,9,1)],
 ]);
 
 $B = Matrix([
-[non_zero_random(-9,9,1),non_zero_random(-9,9,1),non_zero_random(-9,9,1)],
-[non_zero_random(-9,9,1),non_zero_random(-9,9,1),non_zero_random(-9,9,1)],
+ [non_zero_random(-9,9,1),non_zero_random(-9,9,1),non_zero_random(-9,9,1)],
+ [non_zero_random(-9,9,1),non_zero_random(-9,9,1),non_zero_random(-9,9,1)],
 ]);
 
 $ans = $A * $B;
@@ -40,7 +40,7 @@ Context()->texStrings;
 BEGIN_TEXT
 Compute the following product. 
 $PAR
-\( $A $B = \) \{ $ans->ans_array(15) \}
+\( $A $B = \) \{ $ans->ans_array(10) \}
 \{ AnswerFormatHelp("matrices") \}
 END_TEXT
 Context()->normalStrings;
