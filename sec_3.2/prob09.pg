@@ -34,9 +34,7 @@ Let
         $a & $b \\
         $c & $d \\
 \end{array}\right]
-.
 \]
-$PAR
 The determinant of \(A\) is \{ans_rule(25) \}
 \{ AnswerFormatHelp("numbers") \}
 END_TEXT

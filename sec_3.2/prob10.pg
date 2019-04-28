@@ -47,10 +47,9 @@ $pop = PopUp(["Choose","Yes","No"],$ans2);
 
 Context()->texStrings;
 BEGIN_TEXT
-Consider the matrix
-\[ $A \]
-$PAR
-Find its determinant: \{ans_rule(25) \} \{ AnswerFormatHelp("numbers") \}
+Let
+\[ A= $A \]
+The determinant of \(A\) is \{ans_rule(25) \} \{ AnswerFormatHelp("numbers") \}
 $PAR
 Does the matrix have an inverse? \{ $pop->menu \}
 END_TEXT

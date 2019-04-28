@@ -46,9 +46,9 @@ if(random(0,1,1) == 1) {
 
 Context()->texStrings;
 BEGIN_TEXT
-Consider the matrix
-\[ $A \]
-The determinant is \{ans_rule(25) \}
+Let
+\[ A = $A \]
+The determinant of \(A\) is \{ans_rule(25) \}
 \{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;

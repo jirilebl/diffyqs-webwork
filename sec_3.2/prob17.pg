@@ -47,10 +47,10 @@ for ($i = 0; $i < 2; $i++) {
 $pm1 = ($A->element(1,2) < 0) ? "-" : "+";
 $pm2 = ($A->element(2,2) < 0) ? "-" : "+";
 $abs1 = abs($a[0][1]); $abs2 = abs($a[1][1]);
-$dS = "\begin{array}{rcrcr}
-$a[0][0] x_1 & $pm1 & $abs1 x_2 & = & h\\
-$a[1][0] x_1 & $pm2 & $abs2 x_2 & = & $b[1]
-\end{array}";
+$dS = "\begin{aligned}
+$a[0][0] x_1 $pm1 $abs1 x_2 & = h\\
+$a[1][0] x_1 $pm2 $abs2 x_2 & = $b[1]
+\end{aligned}";
 
 Context("Fraction-NoDecimals");
 $f2 = Fraction($b[1],$a[1][0]);
@@ -63,9 +63,10 @@ $pop = PopUp(["select","equals","does not equal", "is greater than", "is less th
 ###########################################################################
 Context()->texStrings;
 BEGIN_TEXT
-For what value(s) of \(h\) is the linear system consistent?
+For what value(s) of \(h\) is the following linear system consistent?
 \[ $dS \]
-\(h\) \{$pop->menu()\} \{ans_rule(15)\}
+The system is consistent if \(h\) \{$pop->menu()\} \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;
 
