@@ -1,6 +1,4 @@
-# DESCRIPTION
 # Determine the values of h that makes the linear system consistent.
-# ENDDESCRIPTION
 
 ## Institution(University of Missouri-Columbia)
 ## Author(Rick Lynch)
@@ -14,6 +12,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGchoicemacros.pl",
   "contextFraction.pl",
   "parserPopUp.pl",
@@ -64,7 +63,7 @@ $pop = PopUp(["select","equals","does not equal"], "equals");
 Context()->texStrings;
 BEGIN_TEXT
 For what value(s) of \(h\) is the linear system consistent?
-$PAR \[ $dS \] $PAR
+\[ $dS \]
 \(h\) \{$pop->menu()\} \{ans_rule(15)\}
 END_TEXT
 Context()->normalStrings;
@@ -90,7 +89,6 @@ From the the second equation, \($eq2\), we obtain \(x_1 =  $f1 x_2 + $f2\). Subs
 END_SOLUTION
 Context()->normalStrings;
 
-COMMENT('Created in 2013.
-$BR
-Desc: Determine the values of h that makes the linear system consistent.');
+COMMENT('Desc: Determine the values of h that makes the linear system consistent.');
+
 ENDDOCUMENT();

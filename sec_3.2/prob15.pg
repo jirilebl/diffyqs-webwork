@@ -1,11 +1,11 @@
-## DESCRIPTION
-##   Echelon Form of a Matrix
-## ENDDESCRIPTION
+# Echelon Form of a Matrix
 
 ## Institution(Rochester)
 ## KEYWORDS('Matrix', 'Echelon')
 
-DOCUMENT();        # This should be the first executable line in the problem.
+###########################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
@@ -15,11 +15,13 @@ loadMacros(
   "PGcourse.pl"
 );
 
+###########################################
+
 TEXT(beginproblem());
 
-install_problem_grader(~~&std_problem_grader);
-
 $showPartialCorrectAnswers = 0;
+
+install_problem_grader(~~&std_problem_grader);
 
 $a11=random(-5,5,1);
 $a12=non_zero_random(-5,5,1);
@@ -41,6 +43,7 @@ $popup4 = PopUp(["Choose","Yes","No"],"Yes");
 $popup5 = PopUp(["Choose","Yes","No"],"No");
 $popup6 = PopUp(["Choose","Yes","No"],"No");
 
+###########################################
 
 BEGIN_TEXT
 Let
@@ -51,8 +54,6 @@ $PAR
 Is the matrix \(A\) in reduced echelon form? \{ $popup2->menu \}
 
 $PAR
-$BR
-$BR
 
 Let
 \(B= \{ display_matrix_mm([[1, 0, $a13], [0, 1, $a23], [0, 0, 0]]) \}\)  
@@ -62,8 +63,6 @@ $PAR
 Is the matrix \(B\) in reduced echelon form? \{ $popup4->menu \}
 
 $PAR
-$BR
-$BR
 
 Let
 \(C= \{ display_matrix_mm([[1, 0, $a13], [$a12, 1, $a23], [0, 0, 0]]) \}\)  
@@ -71,10 +70,9 @@ $PAR
 Is the matrix \(C\) in echelon form? \{ $popup5->menu \}
 $PAR
 Is the matrix \(C\) in reduced echelon form? \{ $popup6->menu \}
-
-
-
 END_TEXT
+
+###########################################
 
 ANS($popup1->cmp);
 ANS($popup2->cmp);

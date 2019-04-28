@@ -1,25 +1,26 @@
-## DESCRIPTION
-## Linear Algebra
-## ENDDESCRIPTION
+# reduced row echelon form
 
 ## Institution(Rochester and Hope College)
 ## Author(Paul Pearson)
 ## KEYWORDS('linear algebra','matrix','echelon')
 
+###########################################
 
 DOCUMENT() ;        
 
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
-$showPartialCorrectAnswers = 1 ;
 
-############
+###########################################
 
 TEXT(beginproblem());
+
+$showPartialCorrectAnswers = 1 ;
 
 Context('Matrix');
 
@@ -44,23 +45,26 @@ do {
 # reduced row echelon form of A
 
 $answer = Matrix([
-[1,0,0,$a],
-[0,1,0,$b],
-[0,0,1,$c],
+  [1,0,0,$a],
+  [0,1,0,$b],
+  [0,0,1,$c],
 ]);
 
 $A = $P*$answer ;
+
+###########################################
 
 Context()->texStrings;
 BEGIN_TEXT
 Reduce the matrix \[ A= $A\]
 to reduced row-echelon form. 
 $PAR
-$BCENTER
 \{ $answer->ans_array() \} 
-$ECENTER
+\{ AnswerFormatHelp("matrices") \}
 END_TEXT
 Context()->normalStrings;
+
+###########################################
 
 ANS( $answer->cmp() );
 

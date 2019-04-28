@@ -1,22 +1,24 @@
-## DESCRIPTION
-## Linear Algebra
-## ENDDESCRIPTION
+# Compute inverse
 
 ## Institution(Rochester and Hope College)
 ## Author(Paul Pearson)
+
+###############################################
 
 DOCUMENT() ;        
 
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
-  "parserVectorUtils.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
-$showPartialCorrectAnswers = 1 ;
+###############################################
 
 TEXT(beginproblem());
+
+$showPartialCorrectAnswers = 1 ;
 
 Context('Matrix');
 
@@ -32,16 +34,21 @@ $A = Matrix([[1, $a, $b], [0, 1, $c], [0, 0, 1]]);
 
 $answer = Matrix([[1,$ans1,$ans2],[0,1,$ans3],[0,0,1]]);
 
+###############################################
+
 Context()->texStrings;
 BEGIN_TEXT
 If \( A = $A \), then 
-$BR
-$BR
-\( A^{-1} = \) \{ $answer->ans_array() \}.
+$PAR
+\( A^{-1} = \) \{ $answer->ans_array() \}
+\{ AnswerFormatHelp("matrices") \}
 END_TEXT
 Context()->normalStrings;
+
+###############################################
 
 ANS( $answer->cmp() );
 
 COMMENT('Matrix entries in the answer are always integers.');
+
 ENDDOCUMENT();
