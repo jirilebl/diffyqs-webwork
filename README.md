@@ -9,7 +9,7 @@ normal ODE course which uses 0, 1, 2, 6, 7 or perhaps 0, 1, 2, 3, 8 if doing
 systems.  Chapters 4 and 8 are a little more sparse, there are a few problems
 for 5.1, but not enough to run the whole chapter.
 
-## How to use
+## How to use?
 
 To use, download https://www.jirka.org/diffyqs/diffyqs-webwork.tgz
 and upload it to your WeBWorK course.  It should automatically unpack and
@@ -22,13 +22,14 @@ You could also just unpack this directory into your templates directory, or
 even clone it directly from github.  In this case, make sure the directory 
 is named exactly `diffyqs-webwork` for the set def files to work.
 
-## What is it exactly
+## Where did the problems come from?
 
-The problems were picked off from the Open Problem Library and somewhat (some
-more heavily than others) modified to fit the style and notation of the book.
-They are essentially the same problems as those that are in the Edfinity
-Notes on Diffy Qs course.  I will keep this repository more up to date, and
-every once in a while update the Edfinity course.
+The problems were mostly picked off from the Open Problem Library and somewhat
+(some more heavily than others) modified to fit the style and notation of the
+book.  A few problems not in OPL were added.  They are essentially the same
+problems as those that are in the Edfinity Notes on Diffy Qs course.  I will
+keep this repository more up to date, and every once in a while update the
+Edfinity course.
 
 I've cleaned off the OPL tags as they are no longer needed, and some of them
 were downright confusing and many were just wrong, especially after the edits,
