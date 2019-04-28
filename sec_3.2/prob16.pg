@@ -87,24 +87,20 @@ $PAR
 $PAR
 Solve the system
 \[
-\left\lbrace
-\begin{array}{rcr}
-$expr[1] & = & $a[1][3] \\
-$expr[2] & = & $a[2][3] 
-\end{array}
-\right.
+\begin{aligned}
+$expr[1] & = $a[1][3] \\
+$expr[2] & = $a[2][3] 
+\end{aligned}
 \]
 \( \vec{x} = \) \{ $x[1]->ans_array(10) \}
 \{ AnswerFormatHelp("matrices") \}
 $PAR
 Solve the system
 \[
-\left\lbrace
-\begin{array}{rcr}
-$expr[1] & = & $a[1][4] \\
-$expr[2] & = & $a[2][4] 
-\end{array}
-\right.
+\begin{aligned}
+$expr[1] & = $a[1][4] \\
+$expr[2] & = $a[2][4] 
+\end{aligned}
 \]
 \( \vec{x} = \) \{ $x[2]->ans_array(10) \}
 \{ AnswerFormatHelp("matrices") \}
