@@ -28,7 +28,8 @@ TEXT(beginproblem());
 
 Context("ImplicitPlane");
 Context()->variables->are(
-x=>"Real",y=>"Real"
+  x=>"Real",
+  y=>"Real"
 );
 
 $a = random(2,7,1);
@@ -57,7 +58,6 @@ Solve the differential equation
 \( \displaystyle \frac{dy}{dx} = \frac{x}{$aa y} \).
 
 $PAR
-$BR
 Find an implicit solution and put your answer 
 in the following form (it should start with \(y^2\)):
 $PAR
@@ -66,7 +66,6 @@ $SPACE $SPACE
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
-$BR
 Find the equation of the solution through
 the point \( (x,y) = ($sa,1) \).
 $PAR
@@ -115,7 +114,6 @@ $answerc = Compute("y = -sqrt( (x/$a)^2 + $bb )");
 Context()->texStrings;
 BEGIN_TEXT
 $PAR
-$BR
 Find the equation of the solution through
 the point \( (x,y) = (0,$b) \).  Your answer should 
 be of the form \( y = f(x) \).
@@ -131,7 +129,5 @@ Context()->normalStrings;
 #  Answers 2
 
 ANS( $answerc->cmp() );
-
-;
 
 ENDDOCUMENT();
