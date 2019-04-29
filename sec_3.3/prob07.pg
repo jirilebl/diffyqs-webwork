@@ -16,7 +16,6 @@ loadMacros(
   "AnswerFormatHelp.pl",
   "PGmatrixmacros.pl",
   "parserPopUp.pl",
-  "parserMultiAnswer.pl",
   "weightedGrader.pl",
   "PGcourse.pl"
 );
@@ -29,7 +28,7 @@ install_weighted_grader();
 #############################
 #  Setup
 
-Context("Numeric");
+Context("Matrix");
 Context()->variables->are(
 t=>"Real",
 );
@@ -43,7 +42,7 @@ $a = random(2,5,1);
 [0,-2]
 );
 
-@C = ( 
+$C = Matrix( 
   [ Formula("0"),  Formula("0") ],
   [ Formula("$a"), Formula("0") ]
 ); 
@@ -64,32 +63,6 @@ $pop0 = PopUp(["Choose","zero","nonzero","one"],"zero");
 $pop1 = PopUp(["Choose","also a fundamental matrix","simply a solution matrix"],"simply a solution matrix");
 
 
-$multians1 = MultiAnswer($C[0][0], $C[0][1], $C[1][0], $C[1][1])->with(
-
-  singleResult => 1,
-  allowBlankAnswers => 1,
-  checkTypes => 0,
-  format =>  "<table border='0' cellspacing='10'>
-  <tr><td> %s </td><td> %s </td></tr>
-  <tr><td> %s </td><td> %s </td></tr>
-  </table>",
-  tex_format =>  "\left\lbrack\begin{array}{rr} %s & %s \\ %s & %s \end{array}\right\rbrack",
-
-  checker => sub {
-      my ( $correct, $student, $answerHash ) = @_;
-      my @c = @{$correct};
-      my @s = @{$student};
-      my @score = ();
-      foreach my $j (0..3) {
-        $score[$j] = 0;
-        if ($c[$j]->typeMatch($s[$j]) && $c[$j] == $s[$j]) { $score[$j] = 1; }
-      }
-      return [ @score ];
-  }
-
-);
-
-
 ######################
 #  Main text
 
@@ -99,30 +72,26 @@ Let
 $PAR
 \[
 {\vec{x}^{\,\prime}} =
-\left\lbrack
-\begin{array}{rr}
+\begin{bmatrix}
 $P[0][0] & $P[0][1] \\
 $P[1][0] & $P[1][1]
-\end{array}
-\right\rbrack
+\end{bmatrix}
 {\vec{x}},
 \]
 \[
 X(t) =
-\left\lbrack
-\begin{array}{rr}
+\begin{bmatrix}
 e^{t} & $y2[0] \\
 0 & $y2[1]
-\end{array}
-\right\rbrack,
-\ \ \
+\end{bmatrix}
+,
+\quad
 \hat{X}(t) = 
-\left\lbrack
-\begin{array}{rr}
+\begin{bmatrix}
 $x1[0] & 0 \\
 $x1[1] & 0
-\end{array}
-\right\rbrack.
+\end{bmatrix}
+.
 \]
 
 
@@ -135,19 +104,14 @@ Determine a constant matrix \( C \) such that the given
 matrix \( \hat{X}(t) \) can be represented as
 \( \hat{X}(t) = X(t) C \).
 $PAR
-$BCENTER
-\{ 
-mbox(
-  "\( C = \)",
-  display_matrix([
-  [$multians1->ans_rule(10),$multians1->ans_rule(10)], 
-  [$multians1->ans_rule(10),$multians1->ans_rule(10)]], align=>'cc')
-);
-\}
-$ECENTER
+
+\( C = \) \{ $C->ans_array(10) \}
+\{ AnswerFormatHelp("matrices") \}
 
 $PAR
-The determinant of the matrix \( C \) is \{ ans_rule(10) \},
+The determinant of the matrix \( C \) is \{ ans_rule(10) \}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
 which is \{ $pop0->menu() \}.  Therefore, the matrix 
 \( \hat{X}(t) \) is \{ $pop1->menu() \}.
 
@@ -160,12 +124,10 @@ Context()->normalStrings;
 
 $showPartialCorrectAnswers = 1;
 
-WEIGHTED_ANS( $multians1->cmp(), 80 );
+WEIGHTED_ANS( $C->cmp(), 80 );
 
 WEIGHTED_ANS( $det->cmp(), 10 );
 WEIGHTED_ANS( $pop0->cmp(), 5 );
 WEIGHTED_ANS( $pop1->cmp(), 5 );
-
-COMMENT("Uses parserMultiAnswer.pl to format the matrix nicely.");
 
 ENDDOCUMENT();

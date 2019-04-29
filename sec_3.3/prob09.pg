@@ -162,42 +162,45 @@ is a solution to the system of linear homogeneous
 differential equations 
 $PAR
 \[
-\begin{array}{rcl}
-x_1^{\,\prime} & = & $row1, \\
-x_2^{\,\prime} & = & $row2, \\
-x_3^{\,\prime} & = & $row3.
-\end{array}
+\begin{aligned}
+x_1^{\prime} & = $row1, \\
+x_2^{\prime} & = $row2, \\
+x_3^{\prime} & = $row3.
+\end{aligned}
 \]
 
 $PAR
 Find the value of each term in the equation
-\( x_1^{\,\prime} = $row1 \) in terms of the variable \( t \).
+\( x_1^{\prime} = $row1 \) in terms of the variable \( t \).
 (Enter the terms in the order given.)
 $PAR
 \{ $multians1->ans_rule(10) \} = 
 \{ $multians1->ans_rule(10) \} + 
 \{ $multians1->ans_rule(10) \} + 
-\{ $multians1->ans_rule(10) \}. 
+\{ $multians1->ans_rule(10) \} 
+\{ AnswerFormatHelp("formulas") \} 
 
 $PAR
 Find the value of each term in the equation
-\( x_2^{\,\prime} = $row2 \) in terms of the variable \( t \).
+\( x_2^{\prime} = $row2 \) in terms of the variable \( t \).
 (Enter the terms in the order given.)
 $PAR
 \{ $multians2->ans_rule(10) \} = 
 \{ $multians2->ans_rule(10) \} + 
 \{ $multians2->ans_rule(10) \} + 
-\{ $multians2->ans_rule(10) \}. 
+\{ $multians2->ans_rule(10) \}
+\{ AnswerFormatHelp("formulas") \} 
 
 $PAR
 Find the value of each term in the equation
-\( x_3^{\,\prime} = $row3 \) in terms of the variable \( t \).
+\( x_3^{\prime} = $row3 \) in terms of the variable \( t \).
 (Enter the terms in the order given.)
 $PAR
 \{ $multians3->ans_rule(10) \} = 
 \{ $multians3->ans_rule(10) \} + 
 \{ $multians3->ans_rule(10) \} + 
-\{ $multians3->ans_rule(10) \}. 
+\{ $multians3->ans_rule(10) \}
+\{ AnswerFormatHelp("formulas") \} 
 
 END_TEXT
 Context()->normalStrings;
@@ -211,8 +214,5 @@ $showPartialCorrectAnswers = 1;
 ANS( $multians1->cmp() );
 ANS( $multians2->cmp() );
 ANS( $multians3->cmp() );
-
-
-COMMENT("Uses parserMultiAnswer.pl and has fancy formatting of student answers.");
 
 ENDDOCUMENT();

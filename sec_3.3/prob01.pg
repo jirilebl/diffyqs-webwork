@@ -14,9 +14,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGmatrixmacros.pl",
-  "parserPopUp.pl",
-  "parserMultiAnswer.pl",
   "PGcourse.pl"
 );
 
@@ -26,9 +23,10 @@ TEXT(beginproblem());
 #############################
 #  Setup
 
-Context("Numeric");
+Context("Matrix");
 Context()->variables->{namePattern} = qr/[a-z][a-z0-9_]*'*/i;
-Context()->variables->add(
+Context()->variables->are(
+  "x"=>"Real",
   "x'"=>"Real",
   "y"=>"Real",
   "y'"=>"Real",
@@ -45,112 +43,22 @@ $a12 = Formula("$b t");
 $a21 = Formula("$c");
 $a22 = Formula("$d tan(t)");
 
+$A = Matrix([[$a11,$a12],[$a21,$a22]]);
+
 $f1 = Formula("$c sin(t)");
 $f2 = Formula("$a cos(t)");
+
+$f = Matrix([[$f1],[$f2]]);
 
 $x = Formula("x");
 $y = Formula("y");
 
+$xy = Matrix([[$x],[$y]]);
+
 $xp = Formula("x'");
 $yp = Formula("y'");
 
-@multians = ();
-
-$multians[0] = MultiAnswer($xp, $yp)->with(
-
-  singleResult => 1,
-  allowBlankAnswers => 1,
-  checkTypes => 0,
-  format =>  "<table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table>",
-  tex_format =>  "\left\lbrack \begin{array}{r} %s \\ %s \end{array} \right\rbrack",
-
-  checker => sub {
-      my ( $correct, $student, $answerHash ) = @_;
-      my @c = @{$correct};
-      my @s = @{$student};
-      my @score = ();
-      foreach my $j (0..1) {
-        $score[$j] = 0;
-        if ($c[$j]->typeMatch($s[$j]) && $c[$j] == $s[$j]) { $score[$j] = 1; }
-      }
-      return [ @score ];
-  }
-
-);
-
-
-
-$multians[1] = MultiAnswer($a11, -1*$a12, $a21, $a22)->with(
-
-  singleResult => 1,
-  allowBlankAnswers => 1,
-  checkTypes => 0,
-  format =>  "<table border='0' cellspacing='10'>
-  <tr><td> %s </td><td> %s </td></tr>
-  <tr><td> %s </td><td> %s </td></tr>
-  </table>",
-  tex_format =>  "\left\lbrack \begin{array}{rr} %s & %s \\ %s & %s \end{array} \right\rbrack",
-
-  checker => sub {
-      my ( $correct, $student, $answerHash ) = @_;
-      my @c = @{$correct};
-      my @s = @{$student};
-      my @score = ();
-      foreach my $j (0..3) {
-        $score[$j] = 0;
-        if ($c[$j]->typeMatch($s[$j]) && $c[$j] == $s[$j]) { $score[$j] = 1; }
-      }
-      return [ @score ];
-  }
-
-);
-
-
-$multians[2] = MultiAnswer($x, $y)->with(
-
-  singleResult => 1,
-  allowBlankAnswers => 1,
-  checkTypes => 0,
-  format =>  "<table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table>",
-  tex_format =>  "\left\lbrack \begin{array}{r} %s \\ %s \end{array} \right\rbrack",
-
-  checker => sub {
-      my ( $correct, $student, $answerHash ) = @_;
-      my @c = @{$correct};
-      my @s = @{$student};
-      my @score = ();
-      foreach my $j (0..1) {
-        $score[$j] = 0;
-        if ($c[$j]->typeMatch($s[$j]) && $c[$j] == $s[$j]) { $score[$j] = 1; }
-      }
-      return [ @score ];
-  }
-
-);
-
-
-$multians[3] = MultiAnswer($f1, -1*$f2)->with(
-
-  singleResult => 1,
-  allowBlankAnswers => 1,
-  checkTypes => 0,
-  format =>  "<table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table>",
-  tex_format =>  "\left\lbrack \begin{array}{r} %s \\ %s \end{array} \right\rbrack",
-
-  checker => sub {
-      my ( $correct, $student, $answerHash ) = @_;
-      my @c = @{$correct};
-      my @s = @{$student};
-      my @score = ();
-      foreach my $j (0..1) {
-        $score[$j] = 0;
-        if ($c[$j]->typeMatch($s[$j]) && $c[$j] == $s[$j]) { $score[$j] = 1; }
-      }
-      return [ @score ];
-  }
-
-);
-
+$xyp = Matrix([[$xp],[$yp]]);
 
 ######################
 #  Main text
@@ -160,8 +68,8 @@ BEGIN_TEXT
 Write the system 
 \[
 \begin{aligned}
-x^{\,\prime} & = $a11 x - $a12 y + $f1 \\
-y^{\,\prime} & = $a22 y + $a21 x - $f2
+x' & = $a11 x - $a12 y + $f1 \\
+y' & = $a22 y + $a21 x - $f2
 \end{aligned}
 \]
 in the form 
@@ -170,23 +78,20 @@ in the form
 = 
 P(t) \left\lbrack\begin{array}{c} x \\ y \end{array}\right\rbrack + {\vec{f}}(t).
 \]
-$BR
-Use prime notation for derivatives and write 
-\( x \) and \( x^{\,\prime} \), etc., instead of 
-\( x(t) \), \( x^{\,\prime}(t) \), or \( \frac{dx}{dt} \).
+
 $PAR
-\{ 
-mbox(
-  display_matrix([[$multians[0]->ans_rule(10)], [$multians[0]->ans_rule(10)]], align=>'c'),
-  " =",
-  display_matrix([
-  [$multians[1]->ans_rule(10),$multians[1]->ans_rule(10)], 
-  [$multians[1]->ans_rule(10),$multians[1]->ans_rule(10)]], align=>'cc'),
-  display_matrix([[$multians[2]->ans_rule(10)], [$multians[2]->ans_rule(10)]], align=>'c'),
-  " +",
-  display_matrix([[$multians[3]->ans_rule(10)], [$multians[3]->ans_rule(10)]], align=>'c')
-);
-\}
+\{ $xyp->ans_array(5) \}
+\(=\)
+\{ $A->ans_array(10) \}
+\{ $xy->ans_array(5) \}
+\(+\)
+\{ $f->ans_array(10) \}
+\{ AnswerFormatHelp("matrices") \}
+$PAR
+$BITALIC $BBOLD Note: $EBOLD Use prime notation for derivatives and write 
+\( x \) and \( x' \), etc., instead of 
+\( x(t) \), \( x'(t) \), or \( \frac{dx}{dt} \).
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 
@@ -196,12 +101,10 @@ Context()->normalStrings;
 
 $showPartialCorrectAnswers = 1;
 
-foreach my $j (0..3) {
-  ANS( $multians[$j]->cmp() );
-}
-
-;
+ANS($xyp->cmp());
+ANS($A->cmp());
+ANS($xy->cmp());
+ANS($f->cmp());
 
 ENDDOCUMENT();
-
 

@@ -113,41 +113,33 @@ BEGIN_TEXT
 Consider the system of differential equations
 \[
 {\vec{x}^{\,\prime}} =
-\left\lbrack 
-\begin{array}{rr}
+\begin{bmatrix}
 $matrix[0] & $matrix[1] \\
 $matrix[2] & $matrix[3] 
-\end{array}
-\right\rbrack
+\end{bmatrix}
 {\vec{x}},
-\ \ \ 
+\quad
 {\vec{x}}(0) = 
-\left\lbrack
-\begin{array}{r}
+\begin{bmatrix}
 $y1init \\
 $y2init
-\end{array}
-\right\rbrack.
+\end{bmatrix}
+.
 \]
-$PAR
 Verify that 
 \[
 {\vec{x}}(t) =
 c_1 e^{$eval1 t} 
-\left\lbrack
-\begin{array}{r}
+\begin{bmatrix}
 $evect1[0] \\
 $evect1[1] 
-\end{array}
-\right\rbrack
+\end{bmatrix}
 +
 c_2 e^{$eval2 t} 
-\left\lbrack
-\begin{array}{r}
+\begin{bmatrix}
 $evect2[0] \\
 $evect2[1] 
-\end{array}
-\right\rbrack
+\end{bmatrix}
 \]
 is a solution to the system of differential 
 equations for any choice of the constants 
@@ -160,17 +152,12 @@ the unique solution of
 $SPACE \( {\vec{x}}(0) = {\vec{x}_0} \)).
 
 $PAR
-$BCENTER
-\{ 
-mbox(
-  "\( {\vec{x}}(t) = \big( \)",
-  ans_rule(5), 
-  "\( \big) \cdot e^{$eval1 t} \left\lbrack \begin{array}{r} $evect1[0] \\ $evect1[1] \end{array} \right\rbrack  + \big( \) ",
-  ans_rule(5), 
-  "\( \big) \cdot e^{$eval2 t} \left\lbrack \begin{array}{r} $evect2[0] \\ $evect2[1] \end{array} \right\rbrack. \)"  
-);
-\}
-$ECENTER
+\( {\vec{x}}(t) = \Big( \)
+\{ ans_rule(5) \} 
+\( \Big) \cdot e^{$eval1 t} \left\lbrack \begin{array}{r} $evect1[0] \\ $evect1[1] \end{array} \right\rbrack  + \Big( \)
+\{ ans_rule(5) \}
+\( \Big) \cdot e^{$eval2 t} \left\lbrack \begin{array}{r} $evect2[0] \\ $evect2[1] \end{array} \right\rbrack. \)
+$SPACE \{ AnswerFormatHelp("numbers") \}
 
 END_TEXT
 Context()->normalStrings;

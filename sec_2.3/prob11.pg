@@ -3,24 +3,23 @@
 ## Institution(Rochester)
 ## KEYWORDS('differential equation' 'higher order' 'third')
 
+##############################################
 
-DOCUMENT();        # This should be the first executable line in the problem.
+DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "PGchoicemacros.pl",
-  "PGgraphmacros.pl",
-  "PGmatrixmacros.pl",
+  "unionTables.pl",
   "PGcourse.pl"
 );
 
+##############################################
+
 TEXT(beginproblem());
 
-# Do not show which answers are incorrect.
 $showPartialCorrectAnswers = 0;
 
-# Make a new checkbox multiple choice
 $ml = new_match_list();
-# $cmc now "contains" the checkbox multiple choice object.
 
 $b = random(2,9,1);
 $c = random(2,5,1);
@@ -29,44 +28,32 @@ while ($c == $d) {$d = random(2,5,1);}
 $c1 = $c + $d;
 $c2 = $c * $d;
 
-# Insert some  questions and matching answers in the q/a list
-$ml -> qa ( "\( y'''- y''- y'+ y = 0 \)",
-                        "\( e^x, \ xe^x, \ e^{-x} \)",
-            "\( y'''+y' = 0 \)",
-                        "\( 1, \ \cos(x), \ \sin(x) \)",
-            "\( y'''-$b y''+y'-$b y = 0 \)",
-                        "\( e^{$b x}, \ \cos(x), \ \sin(x) \)",
-            "\( y'''-$c1 y'' +$c2 y' = 0 \)",
-                        "\( 1, \ e^{$c x}, \ e^{$d x} \)",
-            "\( y'''+3y''+3y'+y = 0 \)",
-                        "\(e^{-x}, \ xe^{-x}, \ x^2e^{-x} \)",
+$ml -> qa ( "\(\ y'''- y''- y'+ y = 0 \)",
+                        "\(\quad e^x, \quad xe^x, \quad e^{-x} \)",
+            "\(\ y'''+y' = 0 \)",
+                        "\(\quad 1, \quad \cos(x), \quad \sin(x) \)",
+            "\(\ y'''-$b y''+y'-$b y = 0 \)",
+                        "\(\quad e^{$b x}, \quad \cos(x), \quad \sin(x) \)",
+            "\(\ y'''-$c1 y'' +$c2 y' = 0 \)",
+                        "\(\quad 1, \quad e^{$c x}, \quad e^{$d x} \)",
+            "\(\ y'''+3y''+3y'+y = 0 \)",
+                        "\(\quad e^{-x}, \quad xe^{-x}, \quad x^2e^{-x} \)",
 
 );
 
 $ml->choose(5);
 
+##############################################
+
 BEGIN_TEXT
 Match the third order linear equations with their fundamental solution sets.
-$BR
-\{ $ml -> print_q \}
-$BR
-\{ $ml -> print_a \}
+$PAR
+\{ ColumnMatchTable($ml) \}
 END_TEXT
 
-#Enter the correct answers to be checked against the answers to the students.
+##############################################
+
 ANS(str_cmp( $ml->ra_correct_ans )   ) ;
 
 ENDDOCUMENT();
-##################################################################
-##########Date:: 23-4-101, 13:22:15################
-
-
-## DESCRIPTION
-##  ## Differential equations
-##  ay''' + by'' + cy' + dy =  0,
-##  $b,$a,$c,$d integers
-##   
-## 
-## ENDDESCRIPTION
-DOCUMENT() ;       
 
