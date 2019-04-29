@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Systems of ODEs: introduction to systems of ODEs
-## ENDDESCRIPTION
+# Systems of ODEs: introduction to systems of ODEs
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -15,9 +13,9 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGmatrixmacros.pl",
   "parserMultiAnswer.pl",
-  "unionLists.pl",
   "PGcourse.pl"
 );
 
@@ -158,12 +156,9 @@ $y2[1]
 \end{array}
 \right\rbrack.
 \]
-$BR
 
 
-\{ BeginList("UL") \}
-
-$ITEM
+$PAR
 Show that \( {\vec{x}_1}(t) \) 
 is a solution to the system 
 \( {\vec{x}^{\,\prime}} = P {\vec{x}} \) 
@@ -194,8 +189,7 @@ mbox(
 $ECENTER
 
 
-$ITEMSEP
-$ITEM
+$PAR
 Show that \( {\vec{x}_2}(t) \) 
 is a solution to the system 
 \( {\vec{x}^{\,\prime}} = P {\vec{x}} \) 
@@ -224,8 +218,6 @@ mbox(
 );
 \}
 $ECENTER
-
-\{ EndList("UL") \}
 
 END_TEXT
 Context()->normalStrings;

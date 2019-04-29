@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Linear systems of ODEs
-## ENDDESCRIPTION
+# Linear systems of ODEs
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -15,8 +13,8 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGmatrixmacros.pl",
-  "unionLists.pl",
   "parserMultiAnswer.pl",
   "PGcourse.pl"
 );
@@ -29,9 +27,9 @@ TEXT(beginproblem());
 
 Context("Numeric");
 Context()->variables->add(
-t=>"Real",
-a=>"Real",b=>"Real",k=>"Real",
-A=>"Real",B=>"Real"
+  t=>"Real",
+  a=>"Real",b=>"Real",k=>"Real",
+  A=>"Real",B=>"Real"
 );
 
 $answer1 = Compute("a k e^(k t)");
@@ -100,11 +98,7 @@ $multians1 = MultiAnswer($answer1, $answer2)->with(
 
 Context()->texStrings;
 BEGIN_TEXT
-\{ BeginList('UL') \}
-
-  
-
-$ITEM Assuming \( a, b \) and \( k \) are constants, 
+Assuming \( a, b \) and \( k \) are constants, 
 calculate the following derivative.
 \{ 
 mbox([
@@ -114,8 +108,8 @@ mbox([
 );
 \}
 
-$ITEMSEP
-$ITEM Find a value of \( k \) so that 
+$PAR
+Find a value of \( k \) so that 
 \( \displaystyle 
 \left\lbrack 
 \begin{array}{r} $evect1[0] \\ $evect1[1] \end{array} 
@@ -134,12 +128,12 @@ $matrix[2] & $matrix[3]
 \right\rbrack 
 {\vec{x}}.
 \)
-$BR
+$PAR
 \( k = \) 
 \{ ans_rule(10) \}
 
-$ITEMSEP
-$ITEM Find a value of \( k \) so that 
+$PAR
+Find a value of \( k \) so that 
 \( \displaystyle 
 \left\lbrack 
 \begin{array}{r} $evect2[0] \\ $evect2[1] \end{array} 
@@ -158,12 +152,9 @@ $matrix[2] & $matrix[3]
 \right\rbrack 
 {\vec{x}}.
 \)
-$BR
+$PAR
 \( k = \) 
 \{ ans_rule(10) \}
-
-
-\{ EndList('UL') \}
 END_TEXT
 Context()->normalStrings;
 

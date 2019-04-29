@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Systems of ODEs: introduction to systems of ODEs
-## ENDDESCRIPTION
+# Systems of ODEs: introduction to systems of ODEs
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -15,11 +13,11 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGmatrixmacros.pl",
   "parserPopUp.pl",
   "parserMultiAnswer.pl",
   "weightedGrader.pl",
-  "unionLists.pl",
   "PGcourse.pl"
 );
 
@@ -126,16 +124,13 @@ $x1[1] & 0
 \end{array}
 \right\rbrack.
 \]
-$BR
 
-\{ BeginList("UL") \}
 
-$ITEM
+$PAR
 Verify that the matrix \( X(t) \) is a fundamental 
 matrix of the given linear system.
 
-$ITEMSEP
-$ITEM
+$PAR
 Determine a constant matrix \( C \) such that the given
 matrix \( \hat{X}(t) \) can be represented as
 \( \hat{X}(t) = X(t) C \).
@@ -151,13 +146,10 @@ mbox(
 \}
 $ECENTER
 
-$ITEMSEP
-$ITEM
+$PAR
 The determinant of the matrix \( C \) is \{ ans_rule(10) \},
 which is \{ $pop0->menu() \}.  Therefore, the matrix 
 \( \hat{X}(t) \) is \{ $pop1->menu() \}.
-
-\{ EndList("UL") \}
 
 END_TEXT
 Context()->normalStrings;

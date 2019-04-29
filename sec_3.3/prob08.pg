@@ -1,6 +1,3 @@
-## DESCRIPTION
-## ENDDESCRIPTION
-
 ## Institution(Rochester)
 
 DOCUMENT();        # This should be the first executable line in the problem.
@@ -111,7 +108,7 @@ Match the differential equations and their vector valued function solutions: $BR
 It will be good practice to multiply at least one solution out fully, to make sure that you
 know how to do it, but you can get the other answers quickly by process of elimination and
 just multiply out one row element.
-$BR$BR
+$PAR
 \{ $ml -> print_q \}
 $BR
 \{ $ml -> print_a \}

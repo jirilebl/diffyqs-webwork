@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Systems of ODEs: introduction to systems of ODEs
-## ENDDESCRIPTION
+# Systems of ODEs: introduction to systems of ODEs
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -15,9 +13,9 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGmatrixmacros.pl",
   "parserMultiAnswer.pl",
-  "unionLists.pl",
   "PGcourse.pl"
 );
 
@@ -150,7 +148,6 @@ $y3p, $y1, 2*$y2, $y3
 Context()->texStrings;
 BEGIN_TEXT
 Show that 
-$PAR
 \[
 {\vec{x}}(t) =
 \left\lbrack
@@ -161,7 +158,6 @@ $y3
 \end{array}
 \right\rbrack
 \]
-$BR
 is a solution to the system of linear homogeneous 
 differential equations 
 $PAR
@@ -172,47 +168,36 @@ x_2^{\,\prime} & = & $row2, \\
 x_3^{\,\prime} & = & $row3.
 \end{array}
 \]
-$BR
 
-\{ BeginList("UL") \}
-
-$ITEM
+$PAR
 Find the value of each term in the equation
 \( x_1^{\,\prime} = $row1 \) in terms of the variable \( t \).
 (Enter the terms in the order given.)
-$BR
-$BR
+$PAR
 \{ $multians1->ans_rule(10) \} = 
 \{ $multians1->ans_rule(10) \} + 
 \{ $multians1->ans_rule(10) \} + 
 \{ $multians1->ans_rule(10) \}. 
 
-$ITEMSEP
-$ITEM
+$PAR
 Find the value of each term in the equation
 \( x_2^{\,\prime} = $row2 \) in terms of the variable \( t \).
 (Enter the terms in the order given.)
-$BR
-$BR
+$PAR
 \{ $multians2->ans_rule(10) \} = 
 \{ $multians2->ans_rule(10) \} + 
 \{ $multians2->ans_rule(10) \} + 
 \{ $multians2->ans_rule(10) \}. 
 
-$ITEMSEP
-$ITEM
+$PAR
 Find the value of each term in the equation
 \( x_3^{\,\prime} = $row3 \) in terms of the variable \( t \).
 (Enter the terms in the order given.)
-$BR
-$BR
+$PAR
 \{ $multians3->ans_rule(10) \} = 
 \{ $multians3->ans_rule(10) \} + 
 \{ $multians3->ans_rule(10) \} + 
 \{ $multians3->ans_rule(10) \}. 
-
-
-\{ EndList("UL") \}
 
 END_TEXT
 Context()->normalStrings;

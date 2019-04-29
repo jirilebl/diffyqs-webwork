@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Systems of ODEs: introduction to systems of ODEs
-## ENDDESCRIPTION
+# Systems of ODEs: introduction to systems of ODEs
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -15,11 +13,11 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGmatrixmacros.pl",
   "parserPopUp.pl",
   "parserMultiAnswer.pl",
   "weightedGrader.pl",
-  "unionLists.pl",
   "PGcourse.pl"
 );
 
@@ -33,7 +31,7 @@ install_weighted_grader();
 
 Context("Numeric");
 Context()->variables->are(
-t=>"Real",
+  t=>"Real"
 );
 Context()->reduction->set('(-x)-y'=>0);
 Context()->reduction->set('(-x)+y'=>0);
@@ -86,7 +84,6 @@ $multians1 = MultiAnswer($C[0][0], $C[0][1], $C[1][0], $C[1][1])->with(
 Context()->texStrings;
 BEGIN_TEXT
 Let
-$PAR
 \[
 {\vec{x}^{\,\prime}} =
 \left\lbrack
@@ -114,19 +111,15 @@ e^{t} & -e^{-t}
 \end{array}
 \right\rbrack.
 \]
-$BR
 
+$PAR
 Recall the definitions of the hyperbolic functions: \( \ \sinh(t) = \frac{1}{2}(e^t - e^{-t}) \) and \( \cosh(t) = \frac{1}{2}(e^t + e^{-t}) \).
-$BR
 
-\{ BeginList("UL") \}
-
-$ITEM
+$PAR
 Verify that the matrix \( X(t) \) is a fundamental 
 matrix of the given linear system.
 
-$ITEMSEP
-$ITEM
+$PAR
 Determine a constant matrix \( C \) such that the given
 matrix \( \hat{X}(t) \) can be represented as
 \( \hat{X}(t) = X(t) C \).
@@ -142,13 +135,10 @@ mbox(
 \}
 $ECENTER
 
-$ITEMSEP
-$ITEM
+$PAR
 The determinant of the matrix \( C \) is \{ ans_rule(10) \},
 which is \{ $pop0->menu() \}.  Therefore, the matrix 
 \( \hat{X}(t) \) is \{ $pop1->menu() \}.
-
-\{ EndList("UL") \}
 
 END_TEXT
 Context()->normalStrings;

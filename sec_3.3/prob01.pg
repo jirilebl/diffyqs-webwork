@@ -1,7 +1,4 @@
-## DESCRIPTION
-## Linear systems of ODEs
-## Matrix notation for systems
-## ENDDESCRIPTION
+# Linear systems of ODEs, matrix notation for systems
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -16,6 +13,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGmatrixmacros.pl",
   "parserPopUp.pl",
   "parserMultiAnswer.pl",
@@ -31,7 +29,10 @@ TEXT(beginproblem());
 Context("Numeric");
 Context()->variables->{namePattern} = qr/[a-z][a-z0-9_]*'*/i;
 Context()->variables->add(
-"x'"=>"Real","y"=>Real,"y'"=>Real,t=>"Real",
+  "x'"=>"Real",
+  "y"=>"Real",
+  "y'"=>"Real",
+  "t"=>"Real"
 );
 
 $a = random(2,9,1);
@@ -157,22 +158,22 @@ $multians[3] = MultiAnswer($f1, -1*$f2)->with(
 Context()->texStrings;
 BEGIN_TEXT
 Write the system 
-\( x^{\,\prime} = $a11 x - $a12 y + $f1 \), $SPACE
-\( y^{\,\prime} = $a22 y + $a21 x - $f2 \)
+\[
+\begin{aligned}
+x^{\,\prime} & = $a11 x - $a12 y + $f1 
+y^{\,\prime} & = $a22 y + $a21 x - $f2
+\]
 in the form 
-$PAR
 \[ 
 \frac{d}{dt} \left\lbrack\begin{array}{c} x \\ y \end{array}\right\rbrack 
 = 
 P(t) \left\lbrack\begin{array}{c} x \\ y \end{array}\right\rbrack + {\vec{f}}(t).
 \]
 $BR
-$BR
 Use prime notation for derivatives and write 
 \( x \) and \( x^{\,\prime} \), etc., instead of 
 \( x(t) \), \( x^{\,\prime}(t) \), or \( \frac{dx}{dt} \).
 $PAR
-$BCENTER
 \{ 
 mbox(
   display_matrix([[$multians[0]->ans_rule(10)], [$multians[0]->ans_rule(10)]], align=>'c'),
@@ -185,7 +186,6 @@ mbox(
   display_matrix([[$multians[3]->ans_rule(10)], [$multians[3]->ans_rule(10)]], align=>'c')
 );
 \}
-$ECENTER
 END_TEXT
 Context()->normalStrings;
 

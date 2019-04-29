@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Systems of ODEs: introduction to systems of ODEs
-## ENDDESCRIPTION
+# Systems of ODEs: introduction to systems of ODEs
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -15,6 +13,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGmatrixmacros.pl",
   "parserMultiAnswer.pl",
   "weightedGrader.pl",

@@ -16,7 +16,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "PGmatrixmacros.pl",
-  "unionLists.pl",
   "parserMultiAnswer.pl",
   "weightedGrader.pl",
   "contextInequalities.pl",
@@ -118,8 +117,7 @@ $a21 & $a22
 \right\rbrack.
 \]
 
-$BR
-$BR
+$PAR
 Find \( A'(t) \).
 $BCENTER
 \{ 
@@ -133,8 +131,7 @@ mbox(
 \}
 $ECENTER
 
-$BR
-$BR
+$PAR
 Find \( A''(t) \).
 $BCENTER
 \{ 
@@ -161,18 +158,15 @@ $interval[2] = Compute("t < 0 or 0 < t < $b");
 Context()->texStrings;
 BEGIN_TEXT
 
-$BR
-$BR
+$PAR
 \( A(t) \) is defined for all \( t \) in the interval(s) 
 \{ ans_rule(30) \}
 \{ AnswerFormatHelp("intervals") \}
-$BR
-$BR
+$PAR
 \( A'(t) \) is defined for all \( t \) in the interval(s) 
 \{ ans_rule(30) \}
 \{ AnswerFormatHelp("intervals") \}
-$BR
-$BR
+$PAR
 \( A''(t) \) is defined for all \( t \) in the interval(s) 
 \{ ans_rule(30) \}
 \{ AnswerFormatHelp("intervals") \}
