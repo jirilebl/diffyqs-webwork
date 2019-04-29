@@ -160,8 +160,9 @@ BEGIN_TEXT
 Write the system 
 \[
 \begin{aligned}
-x^{\,\prime} & = $a11 x - $a12 y + $f1 
+x^{\,\prime} & = $a11 x - $a12 y + $f1 \\
 y^{\,\prime} & = $a22 y + $a21 x - $f2
+\end{aligned}
 \]
 in the form 
 \[ 

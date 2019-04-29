@@ -193,7 +193,6 @@ $PAR
 \{ $multians2->ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
 
-\{ EndList('UL') \}
 END_TEXT
 Context()->normalStrings;
 
