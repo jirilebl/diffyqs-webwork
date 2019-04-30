@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## Distinct real eigenvalues
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
+# Distinct real eigenvalues
 
 
 ## Institution(Fort Lewis College)
@@ -16,6 +14,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
@@ -41,28 +40,23 @@ BEGIN_TEXT
 The general solution of the linear system
 \( {\vec{x}^{\,\prime}} = A {\vec{x}} \)
 is
-$PAR
 \[
 {\vec{x}}(t)
 =
-\left\lbrack
-\begin{array}{rcl}
+\begin{bmatrix}
 e^{t/$a} & 0 \\
 0 & e^{t/$b}
-\end{array}
-\right\rbrack
-\left\lbrack
-\begin{array}{c}
+\end{bmatrix}
+\begin{bmatrix}
 c_1 \\
 c_2
-\end{array}
-\right\rbrack.
+\end{bmatrix}
+.
 \]
-$BR
 Determine the constant coefficient matrix \( A \).
-$BR
-$BR
+$PAR
 \( A = \) \{ $A->ans_array() \}
+\{ AnswerFormatHelp("matrices") \}
 END_TEXT
 Context()->normalStrings;
 
@@ -73,8 +67,5 @@ Context()->normalStrings;
 $showPartialCorrectAnswers = 1;
 
 ANS( $A->cmp() );
-
-
-;
 
 ENDDOCUMENT();

@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## Distinct real eigenvalues
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
+# Distinct real eigenvalues
 
 ## Institution(Rochester and Fort Lewis College)
 ## Author(Anonymous and Paul Pearson)
@@ -16,7 +14,7 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
-  "unionLists.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
@@ -88,26 +86,22 @@ $rightside2 = Formula("$u x + $v y")->reduce();
 
 Context()->texStrings;
 BEGIN_TEXT
-
 Find the solution to the linear system of
 differential equations
-\(
-\displaystyle
-\left\lbrace
-\begin{array}{rcl} 
-x^{\,\prime} & = & $rightside1 \\ 
-y^{\,\prime} & = & $rightside2
-\end{array}
-\right.
-\)
-$SPACE
+\[
+\begin{aligned} 
+x^{\prime} & = $rightside1 , \\ 
+y^{\prime} & = $rightside2 ,
+\end{aligned}
+\]
 satisfying the initial conditions 
 \( x(0) = $x1init \) and \( y(0) = $x2init \).
-$BR
-$BR
+$PAR
 \( x(t) = \) \{ ans_rule(40) \}
-$BR
+\{ AnswerFormatHelp("formulas") \}
+$PAR
 \( y(t) = \) \{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
 
 END_TEXT
 Context()->normalStrings;

@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## Distinct real eigenvalues
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
+# Distinct real eigenvalues
 
 ## Institution(Rochester and Fort Lewis College)
 ## Author(Anonymous and Paul Pearson)
@@ -15,8 +13,8 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
-  "unionLists.pl",
   "answerHints.pl",
   "PGcourse.pl"
 );
@@ -105,15 +103,15 @@ $multians1 = MultiAnswer($eval1, $answers[0], $answers[1], $eval2, $answers[2], 
     singleResult => 1,
     checkTypes => 0,
     allowBlankAnswers => 1,
-    format =>  
-    "<table border='0' cellspacing='0'>
-    <tr>
-      <td> %s, </td>
-      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-      <td>&nbsp;&nbsp; %s,</td>
-      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-    </tr>
-    </table>",
+    #format =>  
+    #"<table border='0' cellspacing='0'>
+    #<tr>
+      #<td> %s, </td>
+      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+      #<td>&nbsp;&nbsp; %s,</td>
+      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+    #</tr>
+    #</table>",
     tex_format =>  
     "%s, \left\lbrack \begin{array}{r} %s \\ %s \end{array}\right\rbrack; \ \ 
      %s, \left\lbrack \begin{array}{r} %s \\ %s \end{array}\right\rbrack",
@@ -183,20 +181,17 @@ $multians1 = MultiAnswer($eval1, $answers[0], $answers[1], $eval2, $answers[2], 
 
 Context()->texStrings;
 BEGIN_TEXT
-\{ BeginList('UL') \}
-
-$ITEM
 Find the eigenvalues and eigenvectors of the matrix
 \( 
 \displaystyle
-\left\lbrack
-\begin{array}{rr}
+\begin{bmatrix}
 $m11 & $m12 \\
 $m21 & $m22
-\end{array}
-\right\rbrack.
+\end{bmatrix}
+.
 \)
-$BCENTER
+
+$PAR
 \{ 
 mbox(
 [
@@ -212,48 +207,40 @@ display_matrix([[$multians1->ans_rule(5)],[$multians1->ans_rule(5)]]),
 allowbreaks=>'yes'
 ) 
 \}
-$ECENTER
+\{ AnswerFormatHelp("numbers") \}
+\{ AnswerFormatHelp("matrices") \}
 
-
-$ITEMSEP
-$ITEM
+$PAR
 Solve the system of differential equations
-\( 
-\displaystyle
+\[ 
 {\vec{x}^{\, \prime}}
 =
-\left\lbrack
-\begin{array}{rr}
+\begin{bmatrix}
 $m11 & $m12 \\
 $m21 & $m22
-\end{array}
-\right\rbrack
+\end{bmatrix}
 {\vec{x}}
-\)
+\]
 satisfying the initial conditions
-\(
+\[
 \displaystyle
-\left\lbrack
-\begin{array}{r}
+\begin{bmatrix}
 x_1(0) \\
 x_2(0)
-\end{array}
-\right\rbrack
+\end{bmatrix}
 =
-\left\lbrack
-\begin{array}{r}
+\begin{bmatrix}
 $x1init \\
 $x2init
-\end{array}
-\right\rbrack.
-\)
-$BR
-$BR
+\end{bmatrix}
+.
+\]
+$PAR
 \( x_1(t) = \) \{ ans_rule(40) \}
-$BR
+\{ AnswerFormatHelp("formulas") \}
+$PAR
 \( x_2(t) = \) \{ ans_rule(40) \}
-
-\{ EndList('UL') \}
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
 
