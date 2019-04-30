@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## Distinct real eigenvalues
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
+# Distinct real eigenvalues
 
 ## Institution(Rochester and Fort Lewis College)
 ## Author(Paul Pearson)
@@ -16,6 +14,7 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
   "PGcourse.pl"
 );
@@ -50,18 +49,18 @@ $multians1 = MultiAnswer($lambda1, $v11, $v21, $lambda2, $v12, $v22)->with(
     singleResult => 1,
     checkTypes => 0,
     allowBlankAnswers => 1,
-    format =>  
-    "<table border='0' cellspacing='0'>
-    <tr>
-      <td> %s, </td>
-      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-      <td>&nbsp;&nbsp; %s,</td>
-      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-    </tr>
-    </table>",
+    #format =>  
+    #"<table border='0' cellspacing='0'>
+    #<tr>
+      #<td> %s, </td>
+      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+      #<td>&nbsp;&nbsp; %s,</td>
+      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+    #</tr>
+    #</table>",
     tex_format =>  
-    "%s, \left\lbrack \begin{array}{r} %s \\ %s \end{array}\right\rbrack; \ \ 
-     %s, \left\lbrack \begin{array}{r} %s \\ %s \end{array}\right\rbrack",
+    "%s, \begin{bmatrix} %s \\ %s \end{bmatrix} \ \ 
+     %s, \begin{bmatrix} %s \\ %s \end{bmatrix}",
 
     checker => sub {
         my ($correct, $student, $answerHash ) = @_;
@@ -127,22 +126,18 @@ $multians1 = MultiAnswer($lambda1, $v11, $v21, $lambda2, $v12, $v22)->with(
 Context()->texStrings;
 BEGIN_TEXT
 For the linear system
-$PAR
 \[ 
 \displaystyle
 { \vec{x}^{\,\prime} }
 =
-\left\lbrack
-\begin{array}{rr}
+\begin{bmatrix}
 $A11 & $A12 \\
 $A21 & $A22
-\end{array}
-\right\rbrack
+\end{bmatrix}
 {\vec{x}}
 \]
-$BR
 Find the eigenvalues and eigenvectors for the coefficient matrix.
-$BCENTER
+$PAR
 \{ 
 mbox(
 [
@@ -158,7 +153,9 @@ display_matrix([[$multians1->ans_rule(5)],[$multians1->ans_rule(5)]]),
 allowbreaks=>'yes'
 ) 
 \}
-$ECENTER
+\{ AnswerFormatHelp("numbers") \}
+$SPACE
+\{ AnswerFormatHelp("matrices") \}
 END_TEXT
 Context()->normalStrings;
 

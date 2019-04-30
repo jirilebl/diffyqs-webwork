@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## Distinct real eigenvalues
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
+# Distinct real eigenvalues
 
 ## Institution(Rochester and Fort Lewis College)
 ## Author(Anonymous and Paul Pearson)
@@ -16,7 +14,7 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
-  "unionLists.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 
@@ -88,43 +86,37 @@ $rightside2 = Formula("$u x + $v y")->reduce();
 
 Context()->texStrings;
 BEGIN_TEXT
-\{ BeginList('UL') \}
-$ITEM
 Given that 
-\( {\vec{v}_1} = \left\lbrack \begin{array}{r} $a \\ $c \end{array} \right\rbrack \)
+\( {\vec{v}_1} = \begin{bmatrix} $a \\ $c \end{bmatrix} \)
 and
-\( {\vec{v}_2} = \left\lbrack \begin{array}{r} $b \\ $d \end{array} \right\rbrack \)
+\( {\vec{v}_2} = \begin{bmatrix} $b \\ $d \end{bmatrix} \)
 are eigenvectors of the matrix
-\( \left\lbrack \begin{array}{rr} $s & $t \\ $u & $v \end{array} \right\rbrack \),
+\( \begin{bmatrix} $s & $t \\ $u & $v \end{bmatrix} \),
 determine the corresponding eigenvalues.
-$BR
+$PAR
 \( \lambda_1 = \) \{ans_rule(5)\} 
-$BR
+\{ AnswerFormatHelp("numbers") \}
+$PAR
 \( \lambda_2 = \) \{ans_rule(5)\}
+\{ AnswerFormatHelp("numbers") \}
 
-$ITEMSEP
-$ITEM
+$PAR
 Find the solution to the linear system of
 differential equations
-\(
-\displaystyle
-\left\lbrace
-\begin{array}{rcl} 
-x^{\,\prime} & = & $rightside1 \\ 
-y^{\,\prime} & = & $rightside2
-\end{array}
-\right.
-\)
-$SPACE
+\[
+\begin{aligned}
+x^{\prime} & = $rightside1 \\ 
+y^{\prime} & = $rightside2
+\end{aligned}
+\]
 satisfying the initial conditions 
 \( x(0) = $x1init \) and \( y(0) = $x2init \).
-$BR
-$BR
+$PAR
 \( x(t) = \) \{ ans_rule(40) \}
-$BR
+\{ AnswerFormatHelp("formulas") \}
+$PAR
 \( y(t) = \) \{ ans_rule(40) \}
-
-\{ EndList('UL') \}
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
 
