@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## Distinct real eigenvalues
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
+# Distinct real eigenvalues
 
 ## Institution(Rochester and Fort Lewis College)
 ## Author(Paul Pearson)
@@ -16,8 +14,8 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
-  "unionLists.pl",
   "parserPopUp.pl",
   "weightedGrader.pl",
   "PGcourse.pl"
@@ -53,18 +51,18 @@ $multians1 = MultiAnswer($lambda1, $v11, $v21, $lambda2, $v12, $v22)->with(
     singleResult => 1,
     checkTypes => 0,
     allowBlankAnswers => 1,
-    format =>  
-    "<table border='0' cellspacing='0'>
-    <tr>
-      <td> %s, </td>
-      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-      <td>&nbsp;&nbsp; %s,</td>
-      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-    </tr>
-    </table>",
+    #format =>  
+    #"<table border='0' cellspacing='0'>
+    #<tr>
+      #<td> %s, </td>
+      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+      #<td>&nbsp;&nbsp; %s,</td>
+      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+    #</tr>
+    #</table>",
     tex_format =>  
-    "%s, \left\lbrack \begin{array}{r} %s \\ %s \end{array}\right\rbrack; \ \ 
-     %s, \left\lbrack \begin{array}{r} %s \\ %s \end{array}\right\rbrack",
+    "%s, \begin{bmatrix} %s \\ %s \end{bmatrix} \ \ 
+     %s, \begin{bmatrix} %s \\ %s \end{bmatrix}",
     checker => sub {
         my ($correct, $student, $self ) = @_;
         my @c = @{$correct};
@@ -129,17 +127,17 @@ $multians2 = MultiAnswer($y1top, $y1bot, $y2top, $y2bot)->with(
     singleResult => 1,
     checkTypes => 0,
     allowBlankAnswers => 1,
-    format =>  
-    "<table border='0' cellspacing='0'>
-    <tr>
-      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-      <td>&nbsp;&nbsp;</td>
-      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-    </tr>
-    </table>",
+    #format =>  
+    #"<table border='0' cellspacing='0'>
+    #<tr>
+      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+      #<td>&nbsp;&nbsp;</td>
+      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+    #</tr>
+    #</table>",
     tex_format =>  
-    "\left\lbrack \begin{array}{r} %s \\ %s \end{array}\right\rbrack, \ \ 
-     \left\lbrack \begin{array}{r} %s \\ %s \end{array}\right\rbrack",
+    "\begin{bmatrix} %s \\ %s \end{bmatrix}, \ \ 
+     \begin{bmatrix} %s \\ %s \end{bmatrix}",
 
     checker => sub {
         my ($correct, $student, $answerHash ) = @_;
@@ -208,7 +206,6 @@ $popup = PopUp(["Choose","Yes, it is a fundamental set","No, it is not a fundame
 Context()->texStrings;
 BEGIN_TEXT
 Consider the linear system
-$PAR
 \[ 
 \displaystyle
 { \vec{x}^{\,\prime} }
@@ -221,13 +218,10 @@ $A21 & $A22
 \right\rbrack
 {\vec{x}}.
 \]
-$BR
 
-\{ BeginList("UL") \}
-
-$ITEM
+$PAR
 Find the eigenvalues and eigenvectors for the coefficient matrix.
-$BCENTER
+$PAR
 \{ 
 mbox(
 [
@@ -243,15 +237,16 @@ display_matrix([[$multians1->ans_rule(5)],[$multians1->ans_rule(5)]]),
 allowbreaks=>'yes'
 ) 
 \}
-$ECENTER
+\{ AnswerFormatHelp("numbers") \}
+$SPACE
+\{ AnswerFormatHelp("matrices") \}
 
-$ITEMSEP
-$ITEM
+$PAR
 For each eigenpair in the previous part, form a 
 solution of 
 \( {\vec{x}^{\,\prime}} = A {\vec{x}} \).  
 Use \( t \) as the independent variable in your answers.
-$BCENTER
+$PAR
 \{ 
 mbox(
 [
@@ -259,20 +254,18 @@ mbox(
 display_matrix([[$multians2->ans_rule(10)],[$multians2->ans_rule(10)]]),
 ' and \( {\vec{x}_2}(t) =  \) ', 
 display_matrix([[$multians2->ans_rule(10)],[$multians2->ans_rule(10)]]),
+AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
 \}
-$ECENTER
 
-$ITEMSEP
-$ITEM
+$PAR
 Does the set of solutions you found form a 
 fundamental set (i.e., linearly independent set)
 of solutions?
+$PAR
 \{ $popup->menu() \}
-
-\{ EndList("UL") \}
 END_TEXT
 Context()->normalStrings;
 
@@ -281,9 +274,9 @@ Context()->normalStrings;
 
 $showPartialCorrectAnswers = 1;
 
-WEIGHTED_ANS( $multians1->cmp(), 49 );
-WEIGHTED_ANS( $multians2->cmp(), 49 );
-WEIGHTED_ANS( $popup->cmp(), 2 );
+WEIGHTED_ANS( $multians1->cmp(), 45 );
+WEIGHTED_ANS( $multians2->cmp(), 45 );
+WEIGHTED_ANS( $popup->cmp(), 10 );
 
 COMMENT('Randomized with distinct real eigenvalues and integral answers.');
 
