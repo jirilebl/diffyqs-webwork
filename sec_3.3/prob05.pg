@@ -63,15 +63,15 @@ $P[1][0]*$y1[0] + $P[1][1]*$y1[1]
   singleResult => 1,
   allowBlankAnswers => 1,
   checkTypes => 0,
-  format =>  "
-  <table border='0'>
-  <tr><td>
-    <table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table>
-  </td><td>
-    <table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table>  
-  </td></tr>
-  </table>",
-  tex_format =>  "\left\lbrack \begin{array}{r} %s \\ %s \end{array} \right\rbrack = \left\lbrack \begin{array}{r} %s \\ %s \end{array} \right\rbrack",
+  #format =>  "
+  #<table border='0'>
+  #<tr><td>
+    #<table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table>
+  #</td><td>
+    #<table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table>  
+  #</td></tr>
+  #</table>",
+  tex_format =>  "\begin{bmatrix} %s \\ %s \end{bmatrix} = \begin{bmatrix} %s \\ %s \end{bmatix}",
 
   checker => sub {
       my ( $correct, $student, $answerHash ) = @_;
@@ -98,15 +98,15 @@ $P[1][0]*$y2[0] + $P[1][1]*$y2[1]
   singleResult => 1,
   allowBlankAnswers => 1,
   checkTypes => 0,
-  format =>  "
-  <table border='0'>
-  <tr><td>
-    <table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table>
-  </td><td>
-    <table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table>  
-  </td></tr>
-  </table>",
-  tex_format =>  "\left\lbrack \begin{array}{r} %s \\ %s \end{array} \right\rbrack = \left\lbrack \begin{array}{r} %s \\ %s \end{array} \right\rbrack",
+  #format =>  "
+  #<table border='0'>
+  #<tr><td>
+    #<table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table>
+  #</td><td>
+    #<table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table>  
+  #</td></tr>
+  #</table>",
+  tex_format =>  "\begin{bmatrix} %s \\ %s \end{bmatrix} = \begin{bmatrix} %s \\ %s \end{bmatrix}",
 
   checker => sub {
       my ( $correct, $student, $answerHash ) = @_;
@@ -132,29 +132,26 @@ Let
 $PAR
 \[
 P =
-\left\lbrack
-\begin{array}{rr}
+\begin{bmatrix}
 $P[0][0] & $P[0][1] \\
 $P[1][0] & $P[1][1]
-\end{array}
-\right\rbrack,
+\end{bmatrix}
+,
 \]
 \[
 {\vec{x}_1}(t) =
-\left\lbrack
-\begin{array}{r}
+\begin{bmatrix}
 $y1[0] \\
 $y1[1]
-\end{array}
-\right\rbrack,
+\end{bmatrix}
+,
 \ \ \
 {\vec{x}_2}(t) =
-\left\lbrack
-\begin{array}{r}
+\begin{bmatrix}
 $y2[0] \\
 $y2[1]
-\end{array}
-\right\rbrack.
+\end{bmatrix}
+.
 \]
 
 
@@ -168,12 +165,10 @@ $PAR
 \[ 
 {\vec{x}_1^{\,\prime}}(t) 
 = 
-\left\lbrack 
-\begin{array}{rr} 
+\begin{bmatrix}
 $P[0][0] & $P[0][1] \\ 
 $P[1][0] & $P[1][1] 
-\end{array}
-\right\rbrack 
+\end{bmatrix}
 {\vec{x}_1}(t) 
 \]
 Enter your answers in terms of the variable \( t \).
@@ -197,12 +192,10 @@ $PAR
 \[ 
 {\vec{x}_2^{\,\prime}}(t) 
 = 
-\left\lbrack 
-\begin{array}{rr} 
+\begin{bmatrix}
 $P[0][0] & $P[0][1] \\ 
 $P[1][0] & $P[1][1] 
-\end{array}
-\right\rbrack 
+\end{bmatrix}
 {\vec{x}_2}(t) 
 \]
 Enter your answers in terms of the variable \( t \).
