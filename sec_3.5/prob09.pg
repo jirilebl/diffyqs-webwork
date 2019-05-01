@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## Phase planes
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
+# Phase planes
 
 ## Institution(Rochester and Fort Lewis College)
 ## Author(Paul Pearson)
@@ -17,6 +15,7 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
   "unionLists.pl",
   "parserRadioButtons.pl",
@@ -222,17 +221,16 @@ display_matrix([['\( x(t) \)'],['\( y(t) \)']]),
 display_matrix([[$multians->ans_rule(10)],[$multians->ans_rule(10)]]),
 '\( + \ c_2 \)', 
 display_matrix([[$multians->ans_rule(10)],[$multians->ans_rule(10)]]),
+AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
 \}
 
 $PAR
-$BR
-$BR
 
 In the phase plane, this system is best described as a
-$BR
+$PAR
 \{ $radio->buttons() \}
 
 END_TEXT
@@ -247,6 +245,6 @@ $showPartialCorrectAnswers = 1;
 WEIGHTED_ANS( $multians->cmp(), 95 );
 WEIGHTED_ANS( $radio->cmp(), 5 );
 
-COMMENT('MathObject version. Purely imaginary eigenvalues +/- b i.');
+COMMENT('Purely imaginary eigenvalues +/- b i.');
 
 ENDDOCUMENT();

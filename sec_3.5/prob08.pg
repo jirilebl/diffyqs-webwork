@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## Phase planes
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
+# Phase planes
 
 ## Institution(Rochester and Fort Lewis College)
 ## Author(Paul Pearson)
@@ -17,6 +15,7 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
   "unionLists.pl",
   "parserRadioButtons.pl",
@@ -150,8 +149,7 @@ $A21 & $A22
 \end{bmatrix}
 \begin{bmatrix} x \\ y \end{bmatrix}
 \)
-$BR
-$BR
+$PAR
 \{ 
 mbox(
 [
@@ -160,17 +158,16 @@ display_matrix([['\( x(t) \)'],['\( y(t) \)']]),
 display_matrix([[$multians->ans_rule(15)],[$multians->ans_rule(15)]]),
 '\( + \ c_2 \)', 
 display_matrix([[$multians->ans_rule(15)],[$multians->ans_rule(15)]]),
+AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
 \}
 
 $PAR
-$BR
-$BR
 
 In the phase plane, this system is best described as a
-$BR
+$PAR
 \{ $radio->buttons() \}
 END_TEXT
 Context()->normalStrings;
@@ -184,6 +181,6 @@ $showPartialCorrectAnswers = 1;
 WEIGHTED_ANS( $multians->cmp(), 95 );
 WEIGHTED_ANS( $radio->cmp(), 5 );
 
-COMMENT('MathObject version. Complex eigenvalues with positive real part a +/- b i.');
+COMMENT('Complex eigenvalues with positive real part a +/- b i.');
 
 ENDDOCUMENT();

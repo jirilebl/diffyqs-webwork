@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## Phase planes
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
+# Phase planes
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -16,13 +14,12 @@ loadMacros(
   "PGstandard.pl",
   "PGchoicemacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGgraphmacros.pl",
   "PGunion.pl",
   "parserPopUp.pl",
   "PGcourse.pl"
 );
-
-#ProblemRandomize(when=>"Always");
 
 TEXT(beginproblem());
 
@@ -228,20 +225,17 @@ $y0bot[0]
 \]
 $BR
 Find \( c_1 \) and \( c_2 \).
-$BR
-$BR
-\( c_1 = \) ".ans_rule(20).
-$BR.
-"\(c_2 = \) ".ans_rule(20).
-$BR.
-$BR.
+$PAR
+\( c_1 = \) ".ans_rule(20).AnswerFormatHelp(\"numbers\").
+$PAR.
+"\(c_2 = \) ".ans_rule(20).AnswerFormatHelp(\"numbers\").
+$PAR.
 "Sketch the phase plane trajectory that 
 satisfies the given initial condition.  
 Which graph most closely resembles the graph 
 you drew? ".
 $popup->menu().
-$BR.
-$BR.
+$PAR.
 "".
 $mc->print_q().
 $BR.

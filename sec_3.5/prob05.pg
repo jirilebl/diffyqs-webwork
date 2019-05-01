@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## Phase planes
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
+# Phase planes
 
 ## Institution(Rochester and Fort Lewis College)
 ## Author(Paul Pearson)
@@ -313,7 +311,7 @@ BEGIN_TEXT
 ColumnTable(
 "Match each initial value problem with the 
 phase plane plot of its solution.
-$BR
+$PAR
 $BITALIC
 The arrows
 on the curves indicate how the solution point

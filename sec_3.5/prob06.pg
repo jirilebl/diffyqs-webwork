@@ -17,6 +17,7 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
   "MatrixUnimodular.pl",
   "unionLists.pl",
@@ -151,8 +152,7 @@ $M[1] & $M[3]
 \end{bmatrix}
 \begin{bmatrix} x \\ y \end{bmatrix}
 \)
-$BR
-$BR
+$PAR
 \{ 
 mbox(
 [
@@ -161,17 +161,16 @@ display_matrix([['\( x(t) \)'],['\( y(t) \)']]),
 display_matrix([[$multians->ans_rule(10)],[$multians->ans_rule(10)]]),
 '\( + \ c_2 \)', 
 display_matrix([[$multians->ans_rule(10)],[$multians->ans_rule(10)]]),
+AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
 \}
 
 $PAR
-$BR
-$BR
 
 In the phase plane, this system is best described as a
-$BR
+$PAR
 \{ $radio->buttons() \}
 END_TEXT
 Context()->normalStrings;

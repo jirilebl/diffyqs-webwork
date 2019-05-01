@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Phase plane matching (real distinct & complex)
-## ENDDESCRIPTION
+# Phase plane matching (real distinct & complex)
 
 ## Institution(METU-NCC)
 ## Author(Benjamin Walter)
@@ -217,7 +215,8 @@ BEGIN_TEXT
 \{
 ColumnTable(
 "Match each linear system with one of the 
-phase plane direction fields.  $BR
+phase plane direction fields.
+$PAR
 $BITALIC The blue
 lines are the arrow shafts, and the
 dots are the arrow tips. $EITALIC".

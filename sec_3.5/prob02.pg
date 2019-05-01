@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## Phase planes
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
+# Phase planes
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -181,7 +179,7 @@ BEGIN_TEXT
 ColumnTable(
 "Match each linear system with one of the 
 phase plane direction fields.
-$BR
+$PAR
 $BITALIC The blue
 lines are the arrow shafts, and the
 dots are the arrow tips.$EITALIC".

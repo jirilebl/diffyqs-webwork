@@ -1,21 +1,27 @@
-## DESCRIPTION
-## ENDDESCRIPTION
+# Calculate eigenvalues eigenvectors
 
 ## Institution(ASU)
 ## KEYWORDS('differential equation' 'first order' 'matrices' 'eigenvalue')
 
-DOCUMENT();        # This should be the first executable line in the problem.
+##########################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGchoicemacros.pl",
   "PGcourse.pl"
 );
 
-Context("Matrix");
+##########################################
+
+TEXT(beginproblem());
 
 $showPartialCorrectAnswers = 1;
+
+Context("Matrix");
 
 # define change-of-basis matrix
 do {
@@ -55,7 +61,8 @@ else {
 }
 $matrix = $a * $e *$b;
 
-TEXT(beginproblem());
+##########################################
+
 Context()->texStrings;
 BEGIN_TEXT
 Calculate the eigenvalues of this matrix:
@@ -65,22 +72,29 @@ $PAR
 $BITALIC You'll probably want to use a calculator or computer to estimate the roots of the polynomial that defines
 the eigenvalues.$EITALIC
 $PAR  
-smaller eigenvalue \( = \) \{ans_rule(10)\} 
+smaller eigenvalue \( = \) \{ans_rule(15)\} 
+\{ AnswerFormatHelp("numbers") \}
 $PAR
-associated eigenvector \( =  \) \{ $smallEigVal_vector->ans_array \}   
+associated eigenvector \( =  \) \{ $smallEigVal_vector->ans_array(15) \}   
+\{ AnswerFormatHelp("matrices") \}
 $PAR
-larger eigenvalue \( = \) \{ ans_rule(10) \}
+larger eigenvalue \( = \) \{ ans_rule(15) \}
+\{ AnswerFormatHelp("numbers") \}
 $PAR
-associated eigenvector  \( = \)  \{ $largeEigVal_vector->ans_array \}   
+associated eigenvector  \( = \)  \{ $largeEigVal_vector->ans_array(15) \}   
+\{ AnswerFormatHelp("matrices") \}
 
 END_TEXT
 Context()->normalStrings;
+
+##########################################
 
 ANS($smallEigVal->cmp(tolerance => 0.1));
 ANS($smallEigVal_vector->cmp(tolerance => 0.1, parallel=>1));
 ANS($largeEigVal->cmp(tolerance => 0.1));
 ANS($largeEigVal_vector->cmp(tolerance => 0.1, parallel=>1));
 
+##########################################
 
 #  behavior of differential equations defined by A
 $mc = new_multiple_choice();  # the parens are important -- otherwise the name of the object is new_multiple_choice.
@@ -107,22 +121,21 @@ $mc->qa(
 	
 $mc->extra(@answers);
 
+##########################################
+
 Context()->texStrings;
 BEGIN_TEXT
-$HR
 $PAR 
  \{ $mc->print_q() \} 
 $BR 
 \{ $mc->print_a() \}
-$HR
 END_TEXT
 Context()->normalStrings;
+
+##########################################
 
 ANS(radio_cmp($mc->correct_ans));
 
 
-ENDDOCUMENT() ;        
-
-
-
+ENDDOCUMENT();
 
