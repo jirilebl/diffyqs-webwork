@@ -1,6 +1,4 @@
-##DESCRIPTION
-## Finding the Jacobian matrix for a nonlinear system of differential equations
-##ENDDESCRIPTION
+# Finding the Jacobian matrix for a nonlinear system of differential equations
 
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
@@ -15,10 +13,10 @@
 DOCUMENT();
 
 loadMacros(
-"PGstandard.pl",
-"MathObjects.pl",
-"MatrixCheckers.pl",
-"PGcourse.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl",
 );
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
@@ -43,12 +41,11 @@ $jac = Compute("[[$a*2*x+$c*y,$b*2*y+$c*x],[$a*e^($a*x),$b*2*y]]");
 Context()->texStrings;
 BEGIN_TEXT
 Take the system \( x' = $funcx , \quad y' = $funcy \).
-$BR
+$PAR
 The Jacobian matrix is
-$BR
-\{
-$jac->ans_array(20);
-\}
+$PAR
+\{ $jac->ans_array(20); \}
+\{ AnswerFormatHelp("matrices") \}
 END_TEXT
 Context()->normalStrings;
 

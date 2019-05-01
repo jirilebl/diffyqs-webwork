@@ -14,6 +14,7 @@ loadMacros(
   "MathObjects.pl",
   "PGgraphmacros.pl",
   "PGunion.pl",
+  "VectorField2D.pl",
   "imageChoice.pl",
   "PGcourse.pl"
 );
@@ -145,46 +146,45 @@ foreach my $j (0..5) {
 #
 #  Graph canvas setup
 #
-$htmlsize = 300;
-$texsize  = 450;
 
 @gr = ();
 
 foreach my $j (0..5) {
+  $gr[$j] = init_graph(-2,-2,2,2,grid=>[8,8],axes=>[0,0],pixels=>[400,400]);
 
-  $gr[$j] = init_graph(-2,-2,2,2,axes=>[0,0],size=>[$htmlsize,$htmlsize]);
-  $gr[$j]->lb('reset');
-  foreach my $i (1) {
-    $gr[$j]->lb( new Label( $i,-0.1, $i,'black','center','middle'));
-    $gr[$j]->lb( new Label(-$i,-0.1,-$i,'black','center','middle'));
-    $gr[$j]->lb( new Label(-0.05, $i, $i,'black','right','middle'));
-    $gr[$j]->lb( new Label(-0.05,-$i,-$i,'black','right','middle'));
-  }
-  $gr[$j]->lb( new Label(1.8,0.15,'x1','black','center','middle'));
-  $gr[$j]->lb( new Label(0.15,1.8,'x2','black','center','middle'));
-  $gr[$j]->new_color("dodgerblue",30, 144, 255); 
-  $gr[$j]->h_ticks(0,"black",-2,-1.75,-1.5,-1.25,-1,-0.75,-0.5,-0.25,0.25,0.5,0.75,1,1.25,1.5,1.75,2);
-  $gr[$j]->v_ticks(0,"black",-2,-1.75,-1.5,-1.25,-1,-0.75,-0.5,-0.25,0.25,0.5,0.75,1,1.25,1.5,1.75,2);
+  my $thex;
+  my $they;
 
-  #  Slope field 
-  $dx[$j] = sub{my ($x,$y) = @_; -1*($A[$j][0][0]*$x + $A[$j][0][1]*$y); };
-  $dy[$j] = sub{my ($x,$y) = @_; -1*($A[$j][1][0]*$x + $A[$j][1][1]*$y); };
-  $vf[$j] = new VectorField( $dx[$j], $dy[$j], $gr[$j] );
+  $a11 = $A[$j][0][0];
+  $a12 = $A[$j][0][1];
+  $a21 = $A[$j][1][0];
+  $a22 = $A[$j][1][1];
 
-  $vectorscale = 0.1;
+  $thex = Formula("$a11*x+$a12*y");
+  $they = Formula("$a21*x+$a22*y");
 
-  $vf[$j]->arrow_weight(2);
-  $vf[$j]->arrow_color("dodgerblue");
-  $vf[$j]->dot_radius(2);
-  $vf[$j]->dot_color("blue");
-  $vf[$j]->x_steps(16); 
-  $vf[$j]->y_steps(16); 
-  $vf[$j]->rf_arrow_length( sub{
-    my($dx,$dy)=@_;
-    return(0) if sqrt($dx**2 + $dy**2)==0;
-    $vectorscale*1/sqrt($dx**2 + $dy**2);
-  });
-
+  # Rescale by only "somewhat" to make things look easier to read
+  $thex = Compute("$thex/(5+3*sqrt(($thex)^2+($they)^2))");
+  $they = Compute("$they/(5+3*sqrt(($thex)^2+($they)^2))");
+  
+  VectorField2D(
+    graphobject => $gr[$j],
+    Fx => $thex,
+    Fy => $they,
+    xvar => "x",
+    yvar => "y",
+    xmin => -2,
+    xmax =>  2,
+    ymin => -2,
+    ymax =>  2,
+    xsamples => 14,
+    ysamples => 14,
+    vectorcolor => "blue",
+    vectorscale => 1,
+    vectorthickness => 2,
+    #xavoid=>0,
+    #yavoid=>0,
+  );
 } # end setting up graph
 
 
@@ -215,11 +215,7 @@ BEGIN_TEXT
 \{
 ColumnTable(
 "Match each linear system with one of the 
-phase plane direction fields.
-$PAR
-$BITALIC The blue
-lines are the arrow shafts, and the
-dots are the arrow tips. $EITALIC".
+phase plane direction fields.".
 $ml->print_q()
 ,
 $BCENTER.

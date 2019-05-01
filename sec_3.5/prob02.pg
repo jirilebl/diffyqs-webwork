@@ -15,6 +15,7 @@ loadMacros(
   "MathObjects.pl",
   "PGgraphmacros.pl",
   "PGunion.pl",
+  "VectorField2D.pl",
   "imageChoice.pl",
   "PGcourse.pl"
 );
@@ -77,76 +78,57 @@ $systems[3] =
 \begin{bmatrix}x\\y\end{bmatrix}
 \)";
 
-
 #
 #  Graph canvas setup
 #
-$htmlsize = 300;
-$texsize  = 450;
 
 @gr = ();
 
 foreach my $j (0..3) {
+  $gr[$j] = init_graph(-2,-2,2,2,grid=>[8,8],axes=>[0,0],pixels=>[400,400]);
 
-  $gr[$j] = init_graph(-2,-2,2,2,axes=>[0,0],size=>[$htmlsize,$htmlsize]);
-  $gr[$j]->lb('reset');
-  foreach my $i (1) {
-    $gr[$j]->lb( new Label( $i,-0.1, $i,'black','center','middle'));
-    $gr[$j]->lb( new Label(-$i,-0.1,-$i,'black','center','middle'));
-    $gr[$j]->lb( new Label(-0.05, $i, $i,'black','right','middle'));
-    $gr[$j]->lb( new Label(-0.05,-$i,-$i,'black','right','middle'));
-  }
-  $gr[$j]->lb( new Label(1.8,0.15,'x','black','center','middle'));
-  $gr[$j]->lb( new Label(0.15,1.8,'y','black','center','middle'));
-  $gr[$j]->new_color("dodgerblue",30, 144, 255); 
-  $gr[$j]->h_ticks(0,"black",-2,-1.75,-1.5,-1.25,-1,-0.75,-0.5,-0.25,0.25,0.5,0.75,1,1.25,1.5,1.75,2);
-  $gr[$j]->v_ticks(0,"black",-2,-1.75,-1.5,-1.25,-1,-0.75,-0.5,-0.25,0.25,0.5,0.75,1,1.25,1.5,1.75,2);
-
+  my $thex;
+  my $they;
   if ($j == 0) {
-
     #  Slope field for y' / x' = (-2y) / (x-3y)
-    $dy[$j] = sub{my ($x,$y) = @_; -1*(-2*($y)); };
-    $dx[$j] = sub{my ($x,$y) = @_; -1*($x - 3*($y)); };
-    $vf[$j] = new VectorField( $dx[$j], $dy[$j], $gr[$j] );
-
+    $thex = Formula("x-3y");
+    $they = Formula("-2y");
   } elsif ($j == 1) {
-
     #  Slope field for y' / x' = (-2x/3-5y/3) / (-4x/3-y/3)
-    $dy[$j] = sub{my ($x,$y) = @_; -1*(-2*($x)/3 - 5*($y)/3); };
-    $dx[$j] = sub{my ($x,$y) = @_; -1*(-4*($x)/3 - ($y)/3); };
-    $vf[$j] = new VectorField( $dx[$j], $dy[$j], $gr[$j] );
-
+    $thex = Formula("-4x/3-y/3");
+    $they = Formula("-2x/3-5y/3");
   } elsif ($j == 2) {
-
     #  Slope field for y' / x' = (x+3y) / (3x+y)
-    $dy[$j] = sub{my ($x,$y) = @_; -1*($x + 3 * ($y)); };
-    $dx[$j] = sub{my ($x,$y) = @_; -1*(3*($x) + ($y)); };
-    $vf[$j] = new VectorField( $dx[$j], $dy[$j], $gr[$j] );
-
+    $thex = Formula("3x+y");
+    $they = Formula("x+3y");
   } else {
-
     #  Slope field for y' / x' = (x+y/2) / (x/2+3y/2)
-    $dy[$j] = sub{my ($x,$y) = @_; -1*(($x) + ($y)/2); };
-    $dx[$j] = sub{my ($x,$y) = @_; -1*(($x)/2 + 3*($y)/2); };
-    $vf[$j] = new VectorField( $dx[$j], $dy[$j], $gr[$j] );
-
+    $thex = Formula("x/2+3y/2");
+    $they = Formula("x+y/2");
   }
-
-  $vectorscale = 0.1;
-
-  $vf[$j]->arrow_weight(2);
-  $vf[$j]->arrow_color("dodgerblue");
-  $vf[$j]->dot_radius(2);
-  $vf[$j]->dot_color("blue");
-  $vf[$j]->x_steps(16); 
-  $vf[$j]->y_steps(16); 
-  $vf[$j]->rf_arrow_length( sub{
-    my($dx,$dy)=@_;
-    return(0) if sqrt($dx**2 + $dy**2)==0;
-    $vectorscale*1/sqrt($dx**2 + $dy**2);
-  });
-
-
+  
+  # Rescale by only "somewhat" to make things look easier to read
+  $thex = Compute("$thex/(5+3*sqrt(($thex)^2+($they)^2))");
+  $they = Compute("$they/(5+3*sqrt(($thex)^2+($they)^2))");
+  
+  VectorField2D(
+    graphobject => $gr[$j],
+    Fx => $thex,
+    Fy => $they,
+    xvar => "x",
+    yvar => "y",
+    xmin => -2,
+    xmax =>  2,
+    ymin => -2,
+    ymax =>  2,
+    xsamples => 14,
+    ysamples => 14,
+    vectorcolor => "blue",
+    vectorscale => 1,
+    vectorthickness => 2,
+    #xavoid=>0,
+    #yavoid=>0,
+  );
 } # end setting up graph
 
 
@@ -178,11 +160,7 @@ BEGIN_TEXT
 \{
 ColumnTable(
 "Match each linear system with one of the 
-phase plane direction fields.
-$PAR
-$BITALIC The blue
-lines are the arrow shafts, and the
-dots are the arrow tips.$EITALIC".
+phase plane direction fields.".
 $ml->print_q()
 ,
 $BCENTER.

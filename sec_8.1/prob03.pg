@@ -1,6 +1,4 @@
-##DESCRIPTION
-## Find critical points of a nonlinear system of ODE, where there is a whole curve of critical points
-##ENDDESCRIPTION
+# Find critical points of a nonlinear system of ODE, where there is a whole curve of critical points
 
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
@@ -14,13 +12,13 @@
 DOCUMENT();
 
 loadMacros(
-"PGstandard.pl",
-"MathObjects.pl",
-"MatrixCheckers.pl",
-"contextFraction.pl",
-"AnswerFormatHelp.pl",
-"PGcourse.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "contextFraction.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl",
 );
+
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
@@ -43,12 +41,11 @@ $sol = Compute("$a*x^2+$b*x");
 
 Context()->texStrings;
 BEGIN_TEXT
-The system \( x' = $funx , \quad y' = $funy \) has lots of critical points.  In fact a whole curve of them.  They satisfy an
-equation of the form \( y = f(x) \), what is it?
-$BR
+The system \( x' = $funx , \quad y' = $funy \) has lots of critical points.  In
+fact a whole curve of them.  They satisfy an equation of the form \( y = f(x)
+\), what is it?
+$PAR
 \( y = {} \) \{ ans_rule(40); \}
-$BR
-$BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;

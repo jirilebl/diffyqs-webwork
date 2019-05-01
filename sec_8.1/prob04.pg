@@ -1,6 +1,4 @@
-## DESCRIPTION
-##   Pick among several nonlinear system phase plane vector fields
-## ENDDESCRIPTION
+# Pick among several nonlinear system phase plane vector fields
 
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
@@ -62,8 +60,6 @@ x^{\prime} = x \quad y^{\prime} = -y^2
 #
 #  Graph canvas setup
 #
-$htmlsize = 300;
-$texsize  = 450;
 
 @gr = ();
 
