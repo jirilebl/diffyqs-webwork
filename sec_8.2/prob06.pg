@@ -1,6 +1,4 @@
-##DESCRIPTION
-## A degenerate critical point that can nonetheless be classified
-##ENDDESCRIPTION
+# A degenerate critical point that can nonetheless be classified
 
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
@@ -14,12 +12,14 @@
 DOCUMENT();
 
 loadMacros(
-"PGstandard.pl",
-"MathObjects.pl",
-"MatrixCheckers.pl",
-"contextFraction.pl",
-"PGcourse.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "parserPopUp.pl",
+  "contextFraction.pl",
+  "PGcourse.pl",
 );
+
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
@@ -38,6 +38,8 @@ $d = random(2,10,1);
 $solx = Compute("a/(1 - a*$c*t)");
 $soly = Compute("b/(1 - b*$d*t)");
 
+$popup = PopUp(["?", "saddle", "source", "sink", "spiral sink", "spiral source", "center"], "source");
+
 ###########################
 # Main text
 
@@ -48,27 +50,24 @@ but the system is not almost linear.
 Solve the system for an initial point
 \( (x(0),y(0))= (a,b) \), where neither \(a\) nor \(b\) are zero (recall how to solve separable equations).
 Use \(t\) for your time variable:
-$BR
-\( x(t) = {} \) \{ ans_rule(40); \}
-$BR
-\( y(t) = {} \) \{ ans_rule(40); \}
-$BR
-$BR
+$PAR
+\( x(t) = {} \) \{ ans_rule(40) \} \{ AnswerFormatHelp("formulas") \}
+$PAR
+\( y(t) = {} \) \{ ans_rule(40) \} \{ AnswerFormatHelp("formulas") \}
+$PAR
 Based on this solution, the system behaves like what at the origin?
-$BR
-Bahavior: \{ ans_rule(20); \}
-$BR
-Type "sink", "source", "saddle", "spiral sink", "spiral source", "center".
+$PAR
+Bahavior: \{ $popup->menu() \}
 END_TEXT
 Context()->normalStrings;
 
 ###########################
 # Answer evaluation
 
-ANS($solx->cmp);
-ANS($soly->cmp);
+ANS($solx->cmp());
+ANS($soly->cmp());
 
-ANS(str_cmp("source"));
+ANS($popup->cmp());
 
 #####################
 # Solution
@@ -78,15 +77,12 @@ BEGIN_SOLUTION
 Solutions are \( x(t) = $solx \), \( y(t) = $soly \).
 Based on this we see that as \(t\) starts at 0 and grows
 the solutions will tend to infinity.  Therefore the behavior is a source.
-$BR
-$BR
+$PAR
 Notice that only a small range of time \(t \) is allowed before
 the solution blows up.  The solution only exists if we have both 
 \( t < \frac{1}{a$c} \) and
 \( t < \frac{1}{b$d} \).
 END_SOLUTION
 Context()->normalStrings;
-
-
 
 ENDDOCUMENT();

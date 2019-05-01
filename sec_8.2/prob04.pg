@@ -1,6 +1,4 @@
-##DESCRIPTION
-## Finding and classifying critical points of a conservative system
-##ENDDESCRIPTION
+# Finding and classifying critical points of a conservative system
 
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
@@ -14,10 +12,11 @@
 DOCUMENT();
 
 loadMacros(
-"PGstandard.pl",
-"MathObjects.pl",
-"MatrixCheckers.pl",
-"PGcourse.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "parserPopUp.pl",
+  "PGcourse.pl",
 );
 
 TEXT(beginproblem());
@@ -40,57 +39,54 @@ $ans2 = Compute("$a");
 
 $jac = Compute("[[0,1],[-2*x,0]]");
 
+$popup1 = PopUp(["?", "saddle", "source", "sink", "spiral sink", "spiral source", "center"], "saddle");
+$popup2 = PopUp(["?", "saddle", "source", "sink", "spiral sink", "spiral source", "center"], "center");
+
 #####################
 # Main text
 
 Context()->texStrings;
 BEGIN_TEXT
 Take the conservative equation \( x'' + x^2 - $asq = 0 \).
-$BR
-$BR
+$PAR
 Write down the corresponding first order system using the extra variable
 \(y\):
-$BR
-\( x' = {} \) \{ ans_rule(20) \}
-$BR
-\( y' = {} \) \{ ans_rule(20) \}
-$BR
-$BR
+$PAR
+\( x' = {} \) \{ ans_rule(20) \} \{ AnswerFormatHelp("formulas") \}
+$PAR
+\( y' = {} \) \{ ans_rule(20) \} \{ AnswerFormatHelp("formulas") \}
+$PAR
 The critical points are on the x-axis at the following two x values
 (order them as they are on the number line):
-$BR
+$PAR
 \{ ans_rule(5) \} 
-\{ ans_rule(5) \} 
-$BR
-$BR
+\{ ans_rule(5) \}  \{ AnswerFormatHelp("numbers") \}
+$PAR
 Compute the Jacobian matrix for all \( x \) and \( y \):
 \{
 $jac->ans_array(14);
 \}
-$BR
-$BR
+$PAR
 The behavior at the first critical point is
-\{ ans_rule(15) \}
-$BR
+\{ $popup1->menu() \}
+$PAR
 The behavior at the second critical point is
-\{ ans_rule(15) \}
-$BR
-For behavior write one of: "saddle", "source", "sink", "spiral sink", "spiral source", "center".
+\{ $popup2->menu() \}
 END_TEXT
 Context()->normalStrings;
 
 #####################
 # Answer evaluation
 
-ANS($func1->cmp);
-ANS($func2->cmp);
+ANS($func1->cmp());
+ANS($func2->cmp());
 
-ANS($ans1->cmp);
-ANS($ans2->cmp);
+ANS($ans1->cmp());
+ANS($ans2->cmp());
 
-ANS($jac->cmp);
+ANS($jac->cmp());
 
-ANS(str_cmp("saddle"));
-ANS(str_cmp("center"));
+ANS($popup1->cmp());
+ANS($popup2->cmp());
 
 ENDDOCUMENT();
