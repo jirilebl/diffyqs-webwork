@@ -47,15 +47,15 @@ $multians1 = MultiAnswer($lambda1, $v1top, $v1bot, $lambda2, $v2top, $v2bot)->wi
     singleResult => 1,
     checkTypes => 0,
     allowBlankAnswers => 1,
-    #format =>  
-    #"<table border='0' cellspacing='0'>
-    #<tr>
-      #<td> %s, </td>
-      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-      #<td>&nbsp;&nbsp; %s,</td>
-      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-    #</tr>
-    #</table>",
+    format =>  
+    "<table border='0' cellspacing='0'>
+    <tr>
+      <td> %s, </td>
+      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+      <td>&nbsp;&nbsp; %s,</td>
+      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+    </tr>
+    </table>",
     tex_format =>  
     "%s, \left\lbrack \begin{array}{r} %s \\ %s \end{array}\right\rbrack, 
      %s, \left\lbrack \begin{array}{r} %s \\ %s \end{array}\right\rbrack",

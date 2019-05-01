@@ -70,12 +70,12 @@ $evects = MultiAnswer($a11, $a21, $a12, $a22)->with(
     singleResult => 1,
     checkTypes => 0,
     allowBlankAnswers => 1,
-    #format =>  "<table border='0' cellspacing='0'>
-    #<tr>
-      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-    #</tr>
-    #</table>",
+    format =>  "<table border='0' cellspacing='0'>
+    <tr>
+      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+    </tr>
+    </table>",
     tex_format =>  "\begin{bmatrix} %s \\ %s \end{bmatrix}, 
     \begin{bmatrix} %s \\ %s \end{bmatrix}",
 

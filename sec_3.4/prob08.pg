@@ -103,15 +103,15 @@ $multians1 = MultiAnswer($eval1, $answers[0], $answers[1], $eval2, $answers[2], 
     singleResult => 1,
     checkTypes => 0,
     allowBlankAnswers => 1,
-    #format =>  
-    #"<table border='0' cellspacing='0'>
-    #<tr>
-      #<td> %s, </td>
-      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-      #<td>&nbsp;&nbsp; %s,</td>
-      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-    #</tr>
-    #</table>",
+    format =>  
+    "<table border='0' cellspacing='0'>
+    <tr>
+      <td> %s, </td>
+      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+      <td>&nbsp;&nbsp; %s,</td>
+      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+    </tr>
+    </table>",
     tex_format =>  
     "%s, \left\lbrack \begin{array}{r} %s \\ %s \end{array}\right\rbrack; \ \ 
      %s, \left\lbrack \begin{array}{r} %s \\ %s \end{array}\right\rbrack",

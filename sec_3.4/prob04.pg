@@ -51,15 +51,15 @@ $multians1 = MultiAnswer($lambda1, $v11, $v21, $lambda2, $v12, $v22)->with(
     singleResult => 1,
     checkTypes => 0,
     allowBlankAnswers => 1,
-    #format =>  
-    #"<table border='0' cellspacing='0'>
-    #<tr>
-      #<td> %s, </td>
-      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-      #<td>&nbsp;&nbsp; %s,</td>
-      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-    #</tr>
-    #</table>",
+    format =>  
+    "<table border='0' cellspacing='0'>
+    <tr>
+      <td> %s, </td>
+      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+      <td>&nbsp;&nbsp; %s,</td>
+      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+    </tr>
+    </table>",
     tex_format =>  
     "%s, \begin{bmatrix} %s \\ %s \end{bmatrix} \ \ 
      %s, \begin{bmatrix} %s \\ %s \end{bmatrix}",
@@ -127,14 +127,14 @@ $multians2 = MultiAnswer($y1top, $y1bot, $y2top, $y2bot)->with(
     singleResult => 1,
     checkTypes => 0,
     allowBlankAnswers => 1,
-    #format =>  
-    #"<table border='0' cellspacing='0'>
-    #<tr>
-      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-      #<td>&nbsp;&nbsp;</td>
-      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-    #</tr>
-    #</table>",
+    format =>  
+    "<table border='0' cellspacing='0'>
+    <tr>
+      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+      <td>&nbsp;&nbsp;</td>
+      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+    </tr>
+    </table>",
     tex_format =>  
     "\begin{bmatrix} %s \\ %s \end{bmatrix}, \ \ 
      \begin{bmatrix} %s \\ %s \end{bmatrix}",
