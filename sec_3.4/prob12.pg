@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## Complex eigenvalues
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
+# Complex eigenvalues
 
 ## Institution(Rochester and Fort Lewis College)
 ## Author(Paul Pearson)
@@ -16,6 +14,7 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
   "PGcourse.pl"
 );
@@ -48,15 +47,15 @@ $multians1 = MultiAnswer($lambda1, $v1top, $v1bot, $lambda2, $v2top, $v2bot)->wi
     singleResult => 1,
     checkTypes => 0,
     allowBlankAnswers => 1,
-    format =>  
-    "<table border='0' cellspacing='0'>
-    <tr>
-      <td> %s, </td>
-      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-      <td>&nbsp;&nbsp; %s,</td>
-      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-    </tr>
-    </table>",
+    #format =>  
+    #"<table border='0' cellspacing='0'>
+    #<tr>
+      #<td> %s, </td>
+      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+      #<td>&nbsp;&nbsp; %s,</td>
+      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+    #</tr>
+    #</table>",
     tex_format =>  
     "%s, \left\lbrack \begin{array}{r} %s \\ %s \end{array}\right\rbrack, 
      %s, \left\lbrack \begin{array}{r} %s \\ %s \end{array}\right\rbrack",
@@ -114,23 +113,17 @@ $multians1 = MultiAnswer($lambda1, $v1top, $v1bot, $lambda2, $v2top, $v2bot)->wi
 Context()->texStrings;
 BEGIN_TEXT
 Consider the linear system
-$PAR
 \[ 
-\displaystyle
 { \vec{x}^{\,\prime} }
 =
-\left\lbrack
-\begin{array}{rr}
+\begin{bmatrix}
 $A11 & $A12 \\
 $A21 & $A22
-\end{array}
-\right\rbrack
+\end{bmatrix}
 {\vec{x}}.
 \]
-$BR
-$BR
 Find the eigenvalues and eigenvectors for the coefficient matrix.
-$BCENTER
+$PAR
 \{ 
 mbox(
 [
@@ -146,7 +139,9 @@ display_matrix([[$multians1->ans_rule(5)],[$multians1->ans_rule(5)]]),
 allowbreaks=>'yes'
 ) 
 \}
-$ECENTER
+\{ AnswerFormatHelp("numbers") \}
+$SPACE
+\{ AnswerFormatHelp("matrices") \}
 END_TEXT
 Context()->normalStrings;
 
@@ -157,7 +152,6 @@ Context()->normalStrings;
 $showPartialCorrectAnswers = 1;
 
 ANS( $multians1->cmp() );
-
 
 COMMENT('Complex eigenvalues +/- ai and complex eigenvectors.');
 

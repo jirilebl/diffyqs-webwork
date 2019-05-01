@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## Complex eigenvalues
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
+# Complex eigenvalues
 
 ## Institution(Rochester and Fort Lewis College)
 ## Author(Paul Pearson)
@@ -16,6 +14,7 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
   "PGcourse.pl"
 );
@@ -110,48 +109,45 @@ BEGIN_TEXT
 Suppose \( A \) is a \( 2 \times 2 \) real matrix 
 with an eigenvalue \( \lambda = $a + $b i \) and
 corresponding eigenvector
-$PAR
 \[
 {\vec{v}}
 =
-\left\lbrack
-\begin{array}{c}
+\begin{bmatrix}
 $vtop \\
 $vbot
-\end{array}
-\right\rbrack.
+\end{bmatrix}
+.
 \]
-$BR
 Determine a fundamental set (i.e., linearly 
 independent set) of solutions for
 \( {\vec{x}^{\,\prime}} = A {\vec{x}} \),
 where the fundamental set consists entirely 
 of ${BITALIC}real${EITALIC} solutions.
-$BR
-$BR
+$PAR
 Enter your solutions below.  Use \( t \)
 as the independent variable in your answers.
-$BCENTER
+$PAR
 \{ 
 mbox(
 [
 '\( {\vec{x}_1}(t) =  \) ', 
 display_matrix([[$multians2->ans_rule(30)],[$multians2->ans_rule(30)]]),
+\{ AnswerFormatHelp("matrices") \}
 ],
 allowbreaks=>'yes'
 ) 
 \}
-$BR
+$PAR
 \{ 
 mbox(
 [
 '\( {\vec{x}_2}(t) =  \) ', 
 display_matrix([[$multians2->ans_rule(30)],[$multians2->ans_rule(30)]]),
+\{ AnswerFormatHelp("matrices") \}
 ],
 allowbreaks=>'yes'
 ) 
 \}
-$ECENTER
 
 END_TEXT
 Context()->normalStrings;

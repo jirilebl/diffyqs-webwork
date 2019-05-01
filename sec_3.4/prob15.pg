@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Systems of ODEs: Writing solutions given eigenvalues and eigenvectors 
-## Complex eigenvalues
-## ENDDESCRIPTION
+# Systems of ODEs: Writing solutions given eigenvalues and eigenvectors 
+# Complex eigenvalues
 
 ## Institution(METU-NCC)
 ## Author(Benjamin Walter)
@@ -16,6 +14,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGmatrixmacros.pl",
   "parserMultiAnswer.pl",
   "unionTables.pl",
@@ -243,39 +242,35 @@ Context()->normalStrings;
 Context()->texStrings;
 BEGIN_TEXT
 Suppose that the matrix \(A\) has the following eigenvalues and eigenvectors:
-$BR
-$SPACE $SPACE \(\lambda_1 = $lambda1 \) with 
-  \( \displaystyle{\vec{v}_1} = 
-    \left\lbrack
-    \begin{array}{r}
+$PAR
+\[
+\lambda_1 = $lambda1 \quad \text{with} \quad
+  \vec{v}_1 = 
+    \begin{bmatrix}
      $evec10  \\
      $evec11  
-    \end{array}
-  \right\rbrack. \)
-$BR
+    \end{bmatrix}
+.
+\]
 and
-$BR
-$SPACE $SPACE \(\lambda_2 = $lambda2 \) with 
-  \( \displaystyle{\vec{v}_2} = 
-    \left\lbrack
-    \begin{array}{r}
+\[
+\lambda_2 = $lambda2 \quad \text{with} \quad
+\vec{v}_2 = 
+    \begin{bmatrix}
      $evec20  \\
      $evec21  
-    \end{array}
-  \right\rbrack. \)
-$PAR
+    \end{bmatrix}
+.
+\]
 Write the solution to the linear system 
   \({\vec{r}\,'} = A{\vec{r}}\)
 in the following forms.
 
-$BR
 $PAR
-$BR
-
- In eigenvalue/eigenvector form, but make sure to write it as real functions (with the sines and cosines)
-$BR
+In eigenvalue/eigenvector form, but make sure to write it as real functions (with the sines and cosines)
+$PAR
 \{ mbox(
- "\(\qquad \displaystyle \biggl\lbrack\begin{array}{c} x(t) \\ y(t)\end{array}\biggr\rbrack = c_1 \Biggl( \)",
+ "\(\displaystyle \biggl\lbrack\begin{array}{c} x(t) \\ y(t)\end{array}\biggr\rbrack = c_1 \Biggl( \)",
   display_matrix([
   [$v11],[$v12] 
   ], align=>'c'),
@@ -287,10 +282,11 @@ $BR
   $sin1,
   "\(\Biggr) \)", 
   $exp1,
+ AnswerFormatHelp("matrices")
 ); \}
-$BR
+$PAR
 \{ mbox(
-  "$SPACE \(\phantom{X} \qquad \hspace{1cm}\) $SPACE",
+  "\(\phantom{X} \qquad \hspace{1cm}\) $SPACE",
   "\( \quad + \ c_2 \Biggl( \)",
   display_matrix([
   [$v31],[$v32] 
@@ -302,18 +298,15 @@ $BR
   ], align=>'c'),
   $cos2,
   "\(\Biggr) \)", 
-  $exp2
+  $exp2,
+ AnswerFormatHelp("matrices")
 ); \}
 
-$BR
 $PAR
-$BR
-
-
- In fundamental matrix form: 
-$BR
+In fundamental matrix form: 
+$PAR
 \{ mbox(
- "\(\qquad \displaystyle \biggl\lbrack\begin{array}{c} x(t) \\ y(t)\end{array}\biggr\rbrack = \)",
+ "\(\displaystyle \biggl\lbrack\begin{array}{c} x(t) \\ y(t)\end{array}\biggr\rbrack = \)",
  display_matrix([
  [$multiansB->ans_rule(20),$multiansB->ans_rule(20)],
  [$multiansB->ans_rule(20),$multiansB->ans_rule(20)]
@@ -324,27 +317,25 @@ $BR
      c_1  \\
      c_2 
     \end{array}
-  \right\rbrack \)"
+  \right\rbrack \)",
+ AnswerFormatHelp("matrices")
 ); \}
 
-$BR
 $PAR
-$BR
 
- As two equations: $BITALIC (write "c1" and "c2" for \(c_1\) and \(c_2\) ) $EITALIC
-$BR
-\{ mbox(
- "\(\qquad x(t) = \)", $multiansC->ans_rule(50) 
-); \}
-$BR
-\{ mbox(
- "\(\qquad y(t) = \)", $multiansC->ans_rule(50) 
-); \}
-
-$BR
+As two equations: $BITALIC (write "c1" and "c2" for \(c_1\) and \(c_2\) ) $EITALIC
 $PAR
-$BR
+\{ mbox(
+ "\(\qquad x(t) = \)", $multiansC->ans_rule(50) ,
+ AnswerFormatHelp("formulas")
+); \}
+$PAR
+\{ mbox(
+ "\(\qquad y(t) = \)", $multiansC->ans_rule(50) ,
+ AnswerFormatHelp("formulas")
+); \}
 
+$PAR
 $BBOLD Note:$EBOLD if you are feeling adventurous you could use other
 eigenvectors like \(4\,{\vec{v}_1}\) or
 \(-3\,{\vec{v}_2}\).

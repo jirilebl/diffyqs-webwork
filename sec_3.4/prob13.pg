@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## Complex eigenvalues
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
+# Complex eigenvalues
 
 
 ## Institution(Rochester and Fort Lewis College)
@@ -17,8 +15,8 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
-  "unionLists.pl",
   "PGcourse.pl"
 );
 
@@ -50,15 +48,15 @@ $multians1 = MultiAnswer($lambda1, $v1top, $v1bot, $lambda2, $v2top, $v2bot)->wi
     singleResult => 1,
     checkTypes => 0,
     allowBlankAnswers => 1,
-    format =>  
-    "<table border='0' cellspacing='0'>
-    <tr>
-      <td> %s, </td>
-      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-      <td>&nbsp;&nbsp; %s,</td>
-      <td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-    </tr>
-    </table>",
+    #format =>  
+    #"<table border='0' cellspacing='0'>
+    #<tr>
+      #<td> %s, </td>
+      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+      #<td>&nbsp;&nbsp; %s,</td>
+      #<td><table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+    #</tr>
+    #</table>",
     tex_format =>  
     "%s, \left\lbrack \begin{array}{r} %s \\ %s \end{array}\right\rbrack, 
      %s, \left\lbrack \begin{array}{r} %s \\ %s \end{array}\right\rbrack",
@@ -115,9 +113,7 @@ $multians1 = MultiAnswer($lambda1, $v1top, $v1bot, $lambda2, $v2top, $v2bot)->wi
 Context()->texStrings;
 BEGIN_TEXT
 Consider the linear system
-$PAR
 \[ 
-\displaystyle
 { \vec{x}^{\,\prime} }
 =
 \left\lbrack
@@ -128,13 +124,10 @@ $A21 & $A22
 \right\rbrack
 {\vec{x}}.
 \]
-$BR
 
-\{ BeginList("UL") \}
-
-$ITEM
+$PAR
 Find the eigenvalues and eigenvectors for the coefficient matrix.
-$BCENTER
+$PAR
 \{ 
 mbox(
 [
@@ -150,7 +143,9 @@ display_matrix([[$multians1->ans_rule(5)],[$multians1->ans_rule(5)]]),
 allowbreaks=>'yes'
 ) 
 \}
-$ECENTER
+\{ AnswerFormatHelp("numbers") \}
+$SPACE
+\{ AnswerFormatHelp("matrices") \}
 END_TEXT
 Context()->normalStrings;
 
@@ -188,8 +183,8 @@ $multians2 = MultiAnswer($ytop, $ybot)->with(
     singleResult => 1,
     checkTypes => 0,
     allowBlankAnswers => 1,
-    format =>  
-    "<table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table>",
+    #format =>  
+    #"<table border='0' cellspacing='5'><tr><td> %s </td></tr><tr><td> %s </td></tr></table>",
     tex_format =>  
     "\begin{array}{l} x_1(t) = %s \\ x_2(t) = %s \end{array}",
     checker => sub {
@@ -221,36 +216,31 @@ $multians2 = MultiAnswer($ytop, $ybot)->with(
 
 Context()->texStrings;
 BEGIN_TEXT
-$ITEMSEP
-$ITEM
-Find the real-valued solution to the initial value problem
 $PAR
+Find the real-valued solution to the initial value problem
 \[ 
-\left\lbrace
-\begin{array}{rcrcl}
+\begin{aligned}
 x_1^{\,\prime} 
-& = &
+& =
 $A11 x_1 + $A12 x_2,
-& &
-x_1(0) = $y0top,
 \\ 
 x_2^{\,\prime}
-& = & 
+& = 
 $A21 x_1 + $A22 x_2,
-& &
-x_2(0) = $y0bot.
-\end{array}
-\right.
+\end{aligned}
+\qquad
+\begin{aligned}
+x_1(0) &= $y0top, \\
+x_2(0) &= $y0bot.
+\end{aligned}
 \]
-$BR
 Use \( t \) as the independent variable in your answers.
-$BR
-$BR
+$PAR
 \( x_1(t) = \) \{ $multians2->ans_rule(50) \} 
-$BR
+\{ AnswerFormatHelp("formulas") \}
+$PAR
 \( x_2(t) = \) \{ $multians2->ans_rule(50) \} 
-
-\{ EndList("OL") \}
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
 
