@@ -45,7 +45,9 @@ $popup = PopUp(["?", "saddle", "source", "sink", "spiral sink", "spiral source",
 
 Context()->texStrings;
 BEGIN_TEXT
-The system \( x' = $c x^2 , \quad y' = $d y^2 \) has an isolated critical point at (0,0),
+The system
+\[ x' = $c x^2 , \quad y' = $d y^2 \]
+has an isolated critical point at (0,0),
 but the system is not almost linear.
 Solve the system for an initial point
 \( (x(0),y(0))= (a,b) \), where neither \(a\) nor \(b\) are zero (recall how to solve separable equations).
@@ -80,8 +82,8 @@ the solutions will tend to infinity.  Therefore the behavior is a source.
 $PAR
 Notice that only a small range of time \(t \) is allowed before
 the solution blows up.  The solution only exists if we have both 
-\( t < \frac{1}{a$c} \) and
-\( t < \frac{1}{b$d} \).
+\( t < \frac{1}{$c a} \) and
+\( t < \frac{1}{$d b} \).
 END_SOLUTION
 Context()->normalStrings;
 

@@ -49,7 +49,8 @@ Context()->texStrings;
 BEGIN_TEXT
 Take the system \( x' = $funcx , \quad y' = $funcy \).
 $PAR
-How many critical points are there? \{ ans_rule(5) \}.
+How many critical points are there? \{ ans_rule(5) \}
+\{ AnswerFormatHelp("numbers") \}
 $PAR
 Take the critical point with the largest x-coordinate:
 $PAR

@@ -65,11 +65,10 @@ $systems[3] =
 "\( \displaystyle
 {\vec{y}^{\,\prime}} 
 =
-\frac{1}{2} 
 \left\lbrack 
 \begin{array}{rr} 
--0.5 & 0 \\ 
-0 & -0.5 
+-1.5 & 0 \\ 
+0 & -1.5 
 \end{array} 
 \right\rbrack 
 {\vec{y}}
@@ -100,9 +99,9 @@ foreach my $j (0..3) {
     $thex = Formula("x+y");
     $they = Formula("y");
   } else {
-    #  Slope field for y' / x' = (-0.5y) / (-0.5x)
-    $thex = Formula("-0.5x");
-    $they = Formula("-0.5y");
+    #  Slope field for y' / x' = (-1.5y) / (-1.5x)
+    $thex = Formula("-1.5x");
+    $they = Formula("-1.5y");
   }
   
   # Rescale by only "somewhat" to make things look easier to read

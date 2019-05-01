@@ -164,8 +164,8 @@ foreach my $j (0..5) {
   $they = Formula("$a21*x+$a22*y");
 
   # Rescale by only "somewhat" to make things look easier to read
-  $thex = Compute("$thex/(5+3*sqrt(($thex)^2+($they)^2))");
-  $they = Compute("$they/(5+3*sqrt(($thex)^2+($they)^2))");
+  $thex = Compute("$thex/(7+4*sqrt(($thex)^2+($they)^2))");
+  $they = Compute("$they/(7+4*sqrt(($thex)^2+($they)^2))");
   
   VectorField2D(
     graphobject => $gr[$j],
