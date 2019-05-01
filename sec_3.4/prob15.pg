@@ -31,7 +31,7 @@ my $a0 = non_zero_random(-5,5,1);   my $b0 = 0; #random(-5,5,1);
 my $a1 = random(-5,5,1);            my $b1 = non_zero_random(-5,5,1);
 
 # eigenvalue = alpha + beta i
-my $alpha = random(-5,5,1);
+my $alpha = non_zero_random(-5,5,1);
 my $beta  =  random(1,5,1);
 
 Context("Complex");
@@ -263,11 +263,11 @@ and
 .
 \]
 Write the solution to the linear system 
-  \({\vec{r}\,'} = A{\vec{r}}\)
+  \(\begin{bmatrix}x'\\y'\end{bmatrix} = A\begin{bmatrix}x\\y\end{bmatrix}\)
 in the following forms.
 
 $PAR
-In eigenvalue/eigenvector form, but make sure to write it as real functions (with the sines and cosines)
+In eigenvalue/eigenvector form, but make sure to write it as real functions (with the sines and cosines):
 $PAR
 \{ mbox(
  "\(\displaystyle \biggl\lbrack\begin{array}{c} x(t) \\ y(t)\end{array}\biggr\rbrack = c_1 \Biggl( \)",
@@ -281,12 +281,11 @@ $PAR
   ], align=>'c'),
   $sin1,
   "\(\Biggr) \)", 
-  $exp1,
- AnswerFormatHelp("matrices")
+  $exp1
 ); \}
-$PAR
+$BR
 \{ mbox(
-  "\(\phantom{X} \qquad \hspace{1cm}\) $SPACE",
+  "\(\phantom{X} \qquad \hspace{1cm}\)",
   "\( \quad + \ c_2 \Biggl( \)",
   display_matrix([
   [$v31],[$v32] 
@@ -298,9 +297,11 @@ $PAR
   ], align=>'c'),
   $cos2,
   "\(\Biggr) \)", 
-  $exp2,
- AnswerFormatHelp("matrices")
+  $exp2
 ); \}
+\{ AnswerFormatHelp("formulas") \}
+$SPACE
+\{ AnswerFormatHelp("matrices") \}
 
 $PAR
 In fundamental matrix form: 
@@ -318,22 +319,18 @@ $PAR
      c_2 
     \end{array}
   \right\rbrack \)",
- AnswerFormatHelp("matrices")
+ $SPACE.AnswerFormatHelp("matrices")
 ); \}
 
 $PAR
 
-As two equations: $BITALIC (write "c1" and "c2" for \(c_1\) and \(c_2\) ) $EITALIC
+As two equations: $BITALIC (write ${LQ}c1${RQ} and ${LQ}c2${RQ} for \(c_1\) and \(c_2\) ) $EITALIC
 $PAR
-\{ mbox(
- "\(\qquad x(t) = \)", $multiansC->ans_rule(50) ,
- AnswerFormatHelp("formulas")
-); \}
+\(x(t) = \) \{ $multiansC->ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
 $PAR
-\{ mbox(
- "\(\qquad y(t) = \)", $multiansC->ans_rule(50) ,
- AnswerFormatHelp("formulas")
-); \}
+\(y(t) = \) \{ $multiansC->ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
 
 $PAR
 $BBOLD Note:$EBOLD if you are feeling adventurous you could use other
@@ -354,8 +351,6 @@ $showPartialCorrectAnswers = 1;
 ANS( $multiansA->cmp() );
 ANS( $multiansB->cmp() );
 ANS( $multiansC->cmp() );
-
-COMMENT("MathObject version. ");
 
 ENDDOCUMENT();
 

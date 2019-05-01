@@ -27,7 +27,7 @@ Context("Complex-Matrix");
 
 $a = non_zero_random(-7,7,1);
 
-($P11,$P12,$P21,$P22) = Matrix( Real("$a * 4"), Real("$a * (-2)"), Real("$a * 5"), Real("$a * (-2)") );
+($P11,$P12,$P21,$P22) = ( Real("$a * 4"), Real("$a * (-2)"), Real("$a * 5"), Real("$a * (-2)") );
 
 $P = Matrix ([[$P11,$P12],[$P21,$P22]]);
 
