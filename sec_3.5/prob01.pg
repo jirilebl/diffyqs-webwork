@@ -226,9 +226,9 @@ $y0bot[0]
 $BR
 Find \( c_1 \) and \( c_2 \).
 $PAR
-\( c_1 = \) ".ans_rule(20).AnswerFormatHelp(\"numbers\").
+\( c_1 = \) ".ans_rule(20).AnswerFormatHelp("numbers").
 $PAR.
-"\(c_2 = \) ".ans_rule(20).AnswerFormatHelp(\"numbers\").
+"\(c_2 = \) ".ans_rule(20).AnswerFormatHelp("numbers").
 $PAR.
 "Sketch the phase plane trajectory that 
 satisfies the given initial condition.  

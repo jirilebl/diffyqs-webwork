@@ -71,17 +71,19 @@ $PAR
 $PAR
 $BITALIC You'll probably want to use a calculator or computer to estimate the roots of the polynomial that defines
 the eigenvalues.$EITALIC
+$PAR
+The system has two real eigenvalues \(\lambda_1\) and \(\lambda_2\) where \(\lambda_1 < \lambda_2\)
 $PAR  
-smaller eigenvalue \( = \) \{ans_rule(15)\} 
+smaller eigenvalue \( \lambda_1 = \) \{ans_rule(15)\} 
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-associated eigenvector \( =  \) \{ $smallEigVal_vector->ans_array(15) \}   
+associated eigenvector \( \vec{v}_1 =  \) \{ $smallEigVal_vector->ans_array(15) \}   
 \{ AnswerFormatHelp("matrices") \}
 $PAR
-larger eigenvalue \( = \) \{ ans_rule(15) \}
+larger eigenvalue \( \lambda_2 = \) \{ ans_rule(15) \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-associated eigenvector  \( = \)  \{ $largeEigVal_vector->ans_array(15) \}   
+associated eigenvector  \( \vec{v}_2 = \)  \{ $largeEigVal_vector->ans_array(15) \}   
 \{ AnswerFormatHelp("matrices") \}
 
 END_TEXT

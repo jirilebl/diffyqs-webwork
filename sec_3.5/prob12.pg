@@ -22,8 +22,9 @@ TEXT(beginproblem());
 
 $showPartialCorrectAnswers = 1;
 
-Context("Numeric");
-Context()->variables->add(t=>"Real",y=>"Real");
+# Don't give away the answers aren't real
+Context("Complex");
+Context()->variables->are(x=>"Real",t=>"Real",y=>"Real");
 Context()->noreduce('(-x)+y');
 
 # how many positive eigenvalues?
@@ -65,13 +66,16 @@ Consider the system of differential equations
 \frac{dx}{dt} = $dxdt \qquad
 \frac{dy}{dt} = $dydt .
 \] 	 
-For this system, the smaller eigenvalue is  \{ans_rule(5)\} and the larger eigenvalue is  \{ans_rule(5)\}.
+For this system, the eigenvalues are \{ans_rule(20)\}
+\{ AnswerFormatHelp("numbers"); \}
+$BR
+$BITALIC Enter as a comma separated list. $EITALIC
 
 END_TEXT
 Context()->normalStrings;
 
-ANS($r1->cmp());
-ANS($r2->cmp());
+$r1r2 = List($r1,$r2);
+ANS($r1r2->cmp());
 
 @answers =(
         'All of the solutions curves would converge towards 0 (sink/stable node).',
@@ -94,7 +98,7 @@ BEGIN_TEXT
 
 $PAR
 How do the solution curves of the system above behave?
-$BR
+$PAR
  \{ $mc->buttons() \}
 $PAR
 END_TEXT
@@ -118,7 +122,7 @@ BEGIN_TEXT
 
 The solution to the above differential equation with initial values \(x(0) = $x0, \,\, y(0) = $y0 \) is  
 $PAR
-\(x(t) = \) \{ans_rule(50)\},
+\(x(t) = \) \{ans_rule(50)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 \(y(t) = \) \{ans_rule(50)\}
