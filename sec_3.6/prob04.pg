@@ -16,8 +16,6 @@ loadMacros(
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
-  "unionLists.pl",
-  "unionTables.pl",
   "PGcourse.pl"
 );
 
@@ -179,11 +177,11 @@ mbox(
 '\( {\vec{x}^{\, \prime\prime}} = \) ', 
 display_matrix([[$multians1->ans_rule(5),$multians1->ans_rule(5)],[$multians1->ans_rule(5),$multians1->ans_rule(5)]]),
 ' \( {\vec{x}} \) ',
-AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
 \}
+\{ AnswerFormatHelp("matrices") \}
 
 $PAR
 Find the general solution to this system of differential equations.

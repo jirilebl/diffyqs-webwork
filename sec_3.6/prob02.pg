@@ -16,7 +16,6 @@ loadMacros(
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
-  "unionLists.pl",
   "unionTables.pl",
   "PGcourse.pl"
 );
@@ -154,29 +153,31 @@ mbox(
 '\( {\vec{x}^{\, \prime\prime}} = \) ', 
 display_matrix([[$multians1->ans_rule(5),$multians1->ans_rule(5)],[$multians1->ans_rule(5),$multians1->ans_rule(5)]]),
 ' \( {\vec{x}} \) ',
-AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
 \}
+\{ AnswerFormatHelp("matrices") \}
 
 $PAR
 Find the general solution to this system of differential equations.
-$PAR
-\{ 
-mbox(
-[
+\{ BeginTable(center=>0).
+Row([
 display_matrix([['\( x_1(t) \)'],['\( x_2(t) \)']]),
-' = ',
+'\(=\)',
+mbox([
 display_matrix([[$multians2->ans_rule(5)],[$multians2->ans_rule(5)]]),
-'\( \Big( a_1 \cos\big( \)' . $multians2->ans_rule(5) . '\( \big) + b_1 \sin\big( \)' . $multians2->ans_rule(5) . '\( \big) \Big) + \)',
+'\( \Big( a_1 \cos\big( \)' . $multians2->ans_rule(5) . '\( \big) + b_1 \sin\big( \)' . $multians2->ans_rule(5) . '\( \big) \Big) + {} \)',
+])],separation=> 0).
+Row([
+$SPACE, $SPACE,
+mbox([
 display_matrix([[$multians2->ans_rule(5)],[$multians2->ans_rule(5)]]),
 '\( \Big( a_2 \cos\big( \)' . $multians2->ans_rule(5) . '\( \big) + b_2 \sin\big( \)' . $multians2->ans_rule(5) . '\( \big) \Big) \)'
-],
-allowbreaks=>'yes'
-) 
+])], separation => 0).
+EndTable()
 \}
-\{ AnswerFormatHelp("formulas") \}
+\{ AnswerFormatHelp("numbers") \}
 \{ AnswerFormatHelp("matrices") \}
 END_TEXT
 Context()->normalStrings;

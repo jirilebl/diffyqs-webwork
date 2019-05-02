@@ -16,8 +16,6 @@ loadMacros(
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
-  "unionLists.pl",
-  "unionTables.pl",
   "parserPopUp.pl",
   "PGcourse.pl"
 );
@@ -148,11 +146,13 @@ mbox(
 '\( {\vec{x}^{\, \prime\prime}} = \) ', 
 display_matrix([[$multians1->ans_rule(5),$multians1->ans_rule(5)],[$multians1->ans_rule(5),$multians1->ans_rule(5)]]),
 ' \( {\vec{x}} \) '
-AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
 \}
+\{ AnswerFormatHelp("matrices") \}
+
+$PAR
 \( x_1(0) = \) \{ $multians2->ans_rule(10) \} meters
 $SPACE \{ AnswerFormatHelp("numbers") \}
 $PAR

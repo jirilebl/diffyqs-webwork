@@ -102,7 +102,6 @@ Context()->normalStrings;
 $showPartialCorrectAnswers = 1;
 
 ANS( $lambdalist->cmp() );
-ANS( $answer2->cmp() );
 ANS( $answer3->cmp() );
 ANS( $answer4->cmp() );
 
