@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -16,6 +14,7 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "unionTables.pl",
   "unionLists.pl",
   "PGcourse.pl"
@@ -74,19 +73,27 @@ $PAR
 If \( x(0) = $x0 \ \mathrm{kg} \) and \( y(0) = $y0 \
 \mathrm{kg} \), find the amount of salt in each tank 
 after \( t \) minutes.
-$BR
+$PAR
 \( x(t) = \) \{ ans_rule(40) \} kilograms
-$BR
+$SPACE
+\{ AnswerFormatHelp("formulas") \}
+$PAR
 \( y(t) = \) \{ ans_rule(40) \} kilograms
+$SPACE
+\{ AnswerFormatHelp("formulas") \}
 
 $PAR
 As \( t \to \infty \), how much salt is in each tank?
-$BR
+$PAR
 In the long run, tank 1 will have \{ ans_rule(5) \} kilograms of salt.
-$BR
+$SPACE $SPACE
+\{ AnswerFormatHelp("numbers") \}
+$PAR
 In the long run, tank 2 will have \{ ans_rule(5) \} kilograms of salt.
-$BR
-(Reread the question and think about why this answer makes sense.)
+$SPACE $SPACE
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+$BITALIC Reread the question and think about why this answer makes sense. $EITALIC
 END_TEXT
 Context()->normalStrings;
 

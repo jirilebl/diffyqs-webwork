@@ -1,6 +1,4 @@
-##DESCRIPTION
-##  Find natural freuquencies a second order system of ODE
-##ENDDESCRIPTION
+# Find natural freuquencies a second order system of ODE
 
 ## Author(Jiri Lebl)
 ## Institution(Oklahoma State University)
@@ -14,12 +12,12 @@
 DOCUMENT();
 
 loadMacros(
-"PGstandard.pl",
-"MathObjects.pl",
-"AnswerFormatHelp.pl",
-"contextFraction.pl",
-"unorderedAnswer.pl",
-"PGcourse.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "contextFraction.pl",
+  "unorderedAnswer.pl",
+  "PGcourse.pl",
 );
 
 TEXT(beginproblem());
@@ -68,18 +66,13 @@ $Ma & $Mb \\ $Mc & $Md
 \vec{x}
 \]
 Find the natural frequencies of the system (you might want to use a calculator here)
-$BR
-$BR
-\(\omega_1 = {}
-\)
+$PAR
+\(\omega_1 = \)
 \{ ans_rule(40) \}
-$BR
-$BR
-\(\omega_2 = {}
-\)
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\(\omega_2 = \)
 \{ ans_rule(40) \}
-$BR
-$BR
 \{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;
@@ -102,8 +95,7 @@ The eigenvalues of the matrix
 $Ma & $Mb \\ $Mc & $Md
 \end{bmatrix}\)
 are \( $eig1 \) and \( $eig2 \).
-$BR
-$BR
+$PAR
 The natural frequencies are the square roots of the negatives of the eigenvalues, so
 \( $answer1 \) and \( $answer2 \).
 END_SOLUTION

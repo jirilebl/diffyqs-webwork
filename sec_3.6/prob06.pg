@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -16,6 +14,7 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
   "unionTables.pl",
   "PGcourse.pl"
@@ -109,7 +108,8 @@ mbox(
 display_matrix([['\(x^{\,\prime}\)'],['\(y^{\,\prime}\)']]),
 ' = ', 
 display_matrix([[$multians1->ans_rule(10),$multians1->ans_rule(10)],[$multians1->ans_rule(10),$multians1->ans_rule(10)]]),
-display_matrix([['\(x\)'],['\(y\)']])
+display_matrix([['\(x\)'],['\(y\)']]),
+AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 )

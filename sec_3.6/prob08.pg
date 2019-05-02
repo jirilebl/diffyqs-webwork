@@ -1,6 +1,4 @@
-##DESCRIPTION
-## Solve second order system with positive eigenvalues in the coefficient matrix
-##ENDDESCRIPTION
+# Solve second order system with positive eigenvalues in the coefficient matrix
 
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
@@ -14,11 +12,11 @@
 DOCUMENT();
 
 loadMacros(
-"PGstandard.pl",
-"MathObjects.pl",
-"AnswerFormatHelp.pl",
-"contextFraction.pl",
-"PGcourse.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "contextFraction.pl",
+  "PGcourse.pl",
 );
 
 TEXT(beginproblem());
@@ -41,6 +39,7 @@ $Md = Compute("(1/2)*$e1^2+(1/2)*$e2^2");
 
 $answer1 = Compute("$e1^2")->reduce;
 $answer2 = Compute("$e2^2")->reduce;
+$lambdalist = List($answer1,$answer2);
 
 $answer3 = Compute("1*1*e^($e1 t)+(-1)*1*e^(-$e1 t)+($e1/$e2)*1*e^($e2 t)+(-$e1/$e2)*1*e^(-$e2 t)")->reduce;
 $answer4 = Compute("1*1*e^($e1 t)+(-1)*1*e^(-$e1 t)+($e1/$e2)*(-1)*e^($e2 t)+(-$e1/$e2)*(-1)*e^(-$e2 t)")->reduce;
@@ -64,22 +63,13 @@ $Ma & $Mb \\ $Mc & $Md
 \end{bmatrix}
 \vec{x}
 \]
-Find the two eigenvalues, and let \( \lambda_1 \) be the smaller one.
-$BR
-$BR
-\(\lambda_1 = {}
+Find the two eigenvalues and enter them as a comma separated list
+$PAR
+\(\lambda_1, \lambda_2 =
 \)
 \{ ans_rule(40) \}
-$BR
-$BR
-\(\lambda_2 = {}
-\)
-\{ ans_rule(40) \}
-$BR
-$BR
 \{ AnswerFormatHelp("numbers") \}
-$BR
-$BR
+$PAR
 Guess a solution of the form \( \vec{x} =  \vec{v} e^{\omega t} \),
 plug it into \( {\vec{x}\,}' = A \vec{x} \) as usual.
 Then guess what \( \vec{v} \) and \( \omega \) should be in terms of the eigenvalues
@@ -87,26 +77,20 @@ and eigenvectors of \( A \).
 You should collect 4 different linearly independent solutions.
 For this notice that a square root of a positive number has two answers,
 a positive and a negative.
-$BR
-$BR
+$PAR
 Then find the solution of the initial value problem where:
 \[
 \vec{x}(0) = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
 \qquad
 {\vec{x}\,}'(0) = \begin{bmatrix} $foure1 \\ 0 \end{bmatrix}
 \]
-$BR
-$BR
-\(x_1(t) = {}
-\)
+$PAR
+\(x_1(t) = \)
 \{ ans_rule(40) \}
-$BR
-$BR
-\(x_2(t) = {}
-\)
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+\(x_2(t) = \)
 \{ ans_rule(40) \}
-$BR
-$BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
@@ -117,7 +101,7 @@ Context()->normalStrings;
 
 $showPartialCorrectAnswers = 1;
 
-ANS( $answer1->cmp() );
+ANS( $lambdalist->cmp() );
 ANS( $answer2->cmp() );
 ANS( $answer3->cmp() );
 ANS( $answer4->cmp() );
@@ -130,8 +114,7 @@ Context()->texStrings;
 BEGIN_SOLUTION
 The two eigenvalues are \( \lambda_1 = $answer1 \) and \(\lambda_2 = $answer2 \), eigenvectors are
 \( \vec{v}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix} \) and \( \vec{v}_2 =  \begin{bmatrix} 1 \\ -1 \end{bmatrix} \)
-$BR
-$BR
+$PAR
 Plugging in \( \vec{x} = \vec{v} e^{ \omega t } \) into
 \( {\vec{x}\,}' = A \vec{x} \)
 gives us

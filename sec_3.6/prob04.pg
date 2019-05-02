@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -16,6 +14,7 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
   "unionLists.pl",
   "unionTables.pl",
@@ -179,7 +178,8 @@ mbox(
 [
 '\( {\vec{x}^{\, \prime\prime}} = \) ', 
 display_matrix([[$multians1->ans_rule(5),$multians1->ans_rule(5)],[$multians1->ans_rule(5),$multians1->ans_rule(5)]]),
-' \( {\vec{x}} \) '
+' \( {\vec{x}} \) ',
+AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
@@ -189,10 +189,12 @@ $PAR
 Find the general solution to this system of differential equations.
 Use \( a_1, a_2, b_1, b_2 \) to denote arbitrary constants, and enter 
 them as ${LQ}a1${RQ}, ${LQ}a2${RQ}, ${LQ}b1${RQ}, ${LQ}b2${RQ}. 
-$BR
+$PAR
 \( x_1(t) = \) \{ $multians2->ans_rule(60) \}
-$BR
+\{ AnswerFormatHelp("formulas") \}
+$PAR
 \( x_2(t) = \) \{ $multians2->ans_rule(60) \}
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
 

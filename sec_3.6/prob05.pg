@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -16,6 +14,7 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
   "unionLists.pl",
   "unionTables.pl",
@@ -149,28 +148,36 @@ mbox(
 '\( {\vec{x}^{\, \prime\prime}} = \) ', 
 display_matrix([[$multians1->ans_rule(5),$multians1->ans_rule(5)],[$multians1->ans_rule(5),$multians1->ans_rule(5)]]),
 ' \( {\vec{x}} \) '
+AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
 \}
 \( x_1(0) = \) \{ $multians2->ans_rule(10) \} meters
-$BR
+$SPACE \{ AnswerFormatHelp("numbers") \}
+$PAR
 \( x_2(0) = \) \{ $multians2->ans_rule(10) \} meters
-$BR
+$SPACE \{ AnswerFormatHelp("numbers") \}
+$PAR
 \( x_1^{\,\prime}(0) = \) \{ $multians2->ans_rule(10) \} meters/second
-$BR
+$SPACE \{ AnswerFormatHelp("numbers") \}
+$PAR
 \( x_2^{\,\prime}(0) = \) \{ $multians2->ans_rule(10) \} meters/second
+$SPACE \{ AnswerFormatHelp("numbers") \}
 
 $PAR
 Find the solution to this system of differential equations.
-$BR
+$PAR
 \( x_1(t) = \) \{ ans_rule(40) \} meters
-$BR
+$SPACE \{ AnswerFormatHelp("formulas") \}
+$PAR
 \( x_2(t) = \) \{ ans_rule(40) \} meters
+$SPACE \{ AnswerFormatHelp("formulas") \}
 
 $PAR
 Will the cars be moving toward the wall, away from the wall,
 or will they be nearly stationary?
+$PAR
 \{ $pop->menu() \}
 END_TEXT
 Context()->normalStrings;

@@ -1,6 +1,4 @@
-##DESCRIPTION
-##  Find a particular solution of a nonhomogeneous second order system of ODE
-##ENDDESCRIPTION
+# Find a particular solution of a nonhomogeneous second order system of ODE
 
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
@@ -14,11 +12,11 @@
 DOCUMENT();
 
 loadMacros(
-"PGstandard.pl",
-"MathObjects.pl",
-"AnswerFormatHelp.pl",
-"contextFraction.pl",
-"PGcourse.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "contextFraction.pl",
+  "PGcourse.pl",
 );
 
 TEXT(beginproblem());
@@ -66,7 +64,7 @@ $answer2 = Compute("$v2*cos($Cf*t)")->reduce;
 
 Context()->texStrings;
 BEGIN_TEXT
-Take the system 
+Consider the system 
 \[
 {\vec{x}\,}'' =
 \begin{bmatrix}
@@ -78,18 +76,13 @@ $Cc \cos($Cf t) \\ 0
 \end{bmatrix}
 \]
 Find a particular solution of the form \( \begin{bmatrix}x_1(t) \\ x_2(t) \end{bmatrix} = \vec{v} \cos($Cf t) \)
-$BR
-$BR
-\(x_1(t) = {}
-\)
+$PAR
+\(x_1(t) = \)
 \{ ans_rule(40) \}
-$BR
-$BR
-\(x_2(t) = {}
-\)
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+\(x_2(t) = \)
 \{ ans_rule(40) \}
-$BR
-$BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
