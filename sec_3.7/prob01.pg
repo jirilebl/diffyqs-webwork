@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Systems of ODEs: Writing solutions given eigenvalues and eigenvectors 
-## Repeated eigenvalues
-## ENDDESCRIPTION
+# Systems of ODEs: Writing solutions given eigenvalues and eigenvectors 
+# Repeated eigenvalues
 
 ## Institution(METU-NCC)
 ## Author(Benjamin Walter)
@@ -72,15 +70,15 @@ $multiansA = MultiAnswer($v[0],$v[1],$l,$w[0],$w[1],$v[0],$v[1],$l)->with(
   singleResult => 1,
   allowBlankAnswers => 1,
   checkTypes => 0,
-  #format =>  "<table border='0'><tr>
-  #  <td> \(c_1\ \biggl\lbrack\) </td>
-  #  <td><table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-  #  <td> \(\biggr\rbrack\ e^{%s t} \ \ +  \ \ c_2\ \biggl(\biggl\lbrack\)  </td>
-  #  <td><table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-  #  <td> \(\biggr\rbrack\ + \biggl\lbrack\)</td>
-  #  <td><table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
-  #  <td> \(\biggr\rbrack t\ \biggl) e^{%s t} \)</td>
-  #</tr></table>",
+  format =>  "<table border='0'><tr>
+    <td> \(c_1\ \biggl\lbrack\) </td>
+    <td><table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+    <td> \(\biggr\rbrack\ e^{%s t} \ \ +  \ \ c_2\ \biggl(\biggl\lbrack\)  </td>
+    <td><table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+    <td> \(\biggr\rbrack\ + \biggl\lbrack\)</td>
+    <td><table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table></td>
+    <td> \(\biggr\rbrack t\ \biggl) e^{%s t} \)</td>
+  </tr></table>",
   tex_format => "c_1 \left\lbrack\begin{array}{r} %s \\ %s \end{array}\right\rbrack \ 
                       e^{%s t} \ + \  
                  c_2 \left(
@@ -117,16 +115,16 @@ $multiansB = MultiAnswer($P11, $P12, $P21, $P22)->with(
   singleResult => 1,
   allowBlankAnswers => 1,
   checkTypes => 0,
-  #format =>  "<table border='0'><tr>
-  #  <td> \( \biggl\lbrack \)</td>
-  #  <td><table border='0' cellspacing='10'>
-  #         <tr><td> %s $SPACE </td><td> $SPACE %s</td></tr>
-  #         <tr><td> %s $SPACE </td><td> $SPACE %s</td></tr></table></td>
-  #  <td> \(\biggr\rbrack\ \biggl\lbrack\)</td>
-  #  <td><table border='0' cellspacing='10'><tr><td> \(c_1\) </td></tr>
-  #                                         <tr><td> \(c_2\) </td></table></td>
-  #  <td> \(\biggr\rbrack\) </td>
-  # </tr></table>",
+  format =>  "<table border='0'><tr>
+    <td> \( \biggl\lbrack \)</td>
+    <td><table border='0' cellspacing='10'>
+           <tr><td> %s $SPACE </td><td> $SPACE %s</td></tr>
+           <tr><td> %s $SPACE </td><td> $SPACE %s</td></tr></table></td>
+    <td> \(\biggr\rbrack\ \biggl\lbrack\)</td>
+    <td><table border='0' cellspacing='10'><tr><td> \(c_1\) </td></tr>
+                                           <tr><td> \(c_2\) </td></table></td>
+    <td> \(\biggr\rbrack\) </td>
+   </tr></table>",
   tex_format => "\left\lbrack\begin{array}{rr} 
                       %s & %s \\ %s & %s 
                  \end{array}\right\rbrack \  
@@ -160,9 +158,9 @@ $multiansC = MultiAnswer($y1, $y2)->with(
   singleResult => 1,
   allowBlankAnswers => 0,
   checkTypes => 1,
-  #format => "<table border='0'>
-  #       <tr><td style='text-align:left'>\(x(t) = \) %s </td></tr> 
-  #       <tr><td style='text-align:left'>\(y(t) = \) %s </td></tr> </table>",
+  format => "<table border='0'>
+         <tr><td style='text-align:left'>\(x(t) = \) %s </td></tr> 
+         <tr><td style='text-align:left'>\(y(t) = \) %s </td></tr> </table>",
   tex_format => "\begin{array}{l} x(t) = %s \\ y(t) = %s\end{array}",
   checker => sub {
       my ( $correct, $student, $answerHash ) = @_;
@@ -226,7 +224,7 @@ Context()->texStrings;
 BEGIN_TEXT
 Suppose that the matrix \(\mathrm{A}\) has repeated eigenvalue with the 
 following eigenvector and generalized eigenvector:
-$BR
+$PAR
 $SPACE $SPACE \(\lambda = $l\) with eigenvector
   \( \displaystyle{\vec{v}} = 
     \left\lbrack
@@ -248,12 +246,10 @@ Write the solution to the linear system
   \({\vec{r}\,'} = \mathrm{A}{\vec{r}}\)
 in the following forms.
 
-$BR
 $PAR
-$BR
 
- In eigenvalue/eigenvector form:
-$BR
+In eigenvalue/eigenvector form:
+$PAR
 \{ mbox(
  "\(\qquad \displaystyle \biggl\lbrack\begin{array}{c} x(t) \\ y(t)\end{array}\biggr\rbrack = c_1 \)",
   display_matrix([
@@ -272,12 +268,10 @@ $BR
   $exp2
 ); \}
 
-$BR
 $PAR
-$BR
 
- In fundamental matrix form: 
-$BR
+In fundamental matrix form: 
+$PAR
 \{ mbox(
  "\(\qquad \displaystyle \biggl\lbrack\begin{array}{c} x(t) \\ y(t)\end{array}\biggr\rbrack = \)",
  display_matrix([
@@ -293,34 +287,28 @@ $BR
   \right\rbrack \)"
 ); \}
 
-$BR
 $PAR
-$BR
 
- As two equations: $BITALIC (write "c1" and "c2" for \(c_1\) and \(c_2\) ) $EITALIC
-$BR
+As two equations: $BITALIC (write ${LQ}c1${RQ} and ${LQ}c2${RQ} for \(c_1\) and \(c_2\) ) $EITALIC
+$PAR
 \{ mbox(
  "\(\qquad x(t) = \)", $multiansC->ans_rule(30) 
 ); \}
-$BR
+$PAR
 \{ mbox(
  "\(\qquad y(t) = \)", $multiansC->ans_rule(30) 
 ); \}
 
 
-$BR
 $PAR
-$BR
 
-$BBOLD Note:$EBOLD if you are feeling adventurous you could use other
+$BITALIC $BBOLD Note:$EBOLD if you are feeling adventurous you could use other
 eigenvectors like \(4\,{\vec{v}}\) and other generalized
-eigenvectors like \({\vec{w}}-3\,{\vec{v}}\).
-$BR
-Just remember that if you change \({\vec{v}}\), you must
-also change \({\vec{w}}\) for its fundamental solution!
+eigenvectors like \({\vec{w}}-3\,{\vec{v}}\). $EITALIC
+$PAR
+$BITALIC Just remember that if you change \({\vec{v}}\), you must
+also change \({\vec{w}}\) for its fundamental solution! $EITALIC
 
-
-  
 END_TEXT
 Context()->normalStrings;
 
@@ -334,7 +322,7 @@ ANS( $multiansA->cmp() );
 ANS( $multiansB->cmp() );
 ANS( $multiansC->cmp() );
 
-COMMENT("MathObject version. Repeated Eigenvalues, Generalized Eigenvectors");
+COMMENT("Repeated Eigenvalues, Generalized Eigenvectors");
 
 ENDDOCUMENT();
 
