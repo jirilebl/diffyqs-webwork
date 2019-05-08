@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## Repeated eigenvalues
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
+# Repeated eigenvalues
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -17,6 +15,7 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
   "unionLists.pl",
   "PGcourse.pl"
@@ -269,13 +268,11 @@ $y0bot
 \right\rbrack.
 \]
 
-$BR
-$BR
 Find the eigenvalue \( \lambda \), an eigenvector
 \( {\vec{v}_1} \), and a generalized
 eigenvector \( {\vec{v}_2} \) for the 
 coefficient matrix of this linear system.
-$BCENTER
+$PAR
 \{ 
 mbox(
 [
@@ -285,19 +282,19 @@ $multians0->ans_rule(5),
 display_matrix([[$multians0->ans_rule(5)],[$multians0->ans_rule(5)]]),
 ', \( {\vec{v}_2} =  \) ', 
 display_matrix([[$multians0->ans_rule(5)],[$multians0->ans_rule(5)]]),
+$SPACE,
+AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
 \}
-$ECENTER
 
 
-$BR
-$BR
+$PAR
 Find the most general real-valued solution to the linear system 
 of differential equations.  Use \( t \) as the independent
 variable in your answers.
-$BCENTER
+$PAR
 \{ 
 mbox(
 [
@@ -305,19 +302,21 @@ mbox(
 display_matrix([[$multians1->ans_rule(10)],[$multians1->ans_rule(10)]]),
 '\( + \ c_2 \)', 
 display_matrix([[$multians1->ans_rule(10)],[$multians1->ans_rule(10)]]),
+$SPACE,
+AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
 \}
-$ECENTER
 
-$BR
-$BR
+$PAR
 Solve the original initial value problem.
-$BR
-\( x_1(t) = {} \) \{ $multians2->ans_rule(20) \}
-$BR
-\( x_2(t) = {} \) \{ $multians2->ans_rule(20) \}
+$PAR
+\( x_1(t) = \) \{ $multians2->ans_rule(20) \}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+\( x_2(t) = \) \{ $multians2->ans_rule(20) \}
+\{ AnswerFormatHelp("formulas") \}
 
 END_TEXT
 Context()->normalStrings;

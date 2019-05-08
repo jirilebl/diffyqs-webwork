@@ -14,6 +14,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGmatrixmacros.pl",
   "parserMultiAnswer.pl",
   "unionTables.pl",
@@ -251,7 +252,7 @@ $PAR
 In eigenvalue/eigenvector form:
 $PAR
 \{ mbox(
- "\(\qquad \displaystyle \biggl\lbrack\begin{array}{c} x(t) \\ y(t)\end{array}\biggr\rbrack = c_1 \)",
+ "\(\displaystyle \biggl\lbrack\begin{array}{c} x(t) \\ y(t)\end{array}\biggr\rbrack = c_1 \)",
   display_matrix([
   [$v11],[$v12] 
   ], align=>'c'),
@@ -265,7 +266,9 @@ $PAR
   [$v31],[$v32] 
   ], align=>'c'),
   "\(t \Biggr)\)",
-  $exp2
+  $exp2,
+  $SPACE,
+  AnswerFormatHelp("matrices")
 ); \}
 
 $PAR
@@ -273,7 +276,7 @@ $PAR
 In fundamental matrix form: 
 $PAR
 \{ mbox(
- "\(\qquad \displaystyle \biggl\lbrack\begin{array}{c} x(t) \\ y(t)\end{array}\biggr\rbrack = \)",
+ "\(\displaystyle \biggl\lbrack\begin{array}{c} x(t) \\ y(t)\end{array}\biggr\rbrack = \)",
  display_matrix([
  [$multiansB->ans_rule(10),$multiansB->ans_rule(10)],
  [$multiansB->ans_rule(10),$multiansB->ans_rule(10)]
@@ -284,20 +287,20 @@ $PAR
      c_1  \\
      c_2 
     \end{array}
-  \right\rbrack \)"
+  \right\rbrack \)",
+  $SPACE,
+  AnswerFormatHelp("matrices")
 ); \}
 
 $PAR
 
 As two equations: $BITALIC (write ${LQ}c1${RQ} and ${LQ}c2${RQ} for \(c_1\) and \(c_2\) ) $EITALIC
 $PAR
-\{ mbox(
- "\(\qquad x(t) = \)", $multiansC->ans_rule(30) 
-); \}
+\(x(t) = \) \{ $multiansC->ans_rule(30) \}
+\{ AnswerFormatHelp("formulas") \}
 $PAR
-\{ mbox(
- "\(\qquad y(t) = \)", $multiansC->ans_rule(30) 
-); \}
+\(y(t) = \) \{ $multiansC->ans_rule(30) \}
+\{ AnswerFormatHelp("formulas") \}
 
 
 $PAR
