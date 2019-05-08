@@ -226,7 +226,7 @@ BEGIN_TEXT
 Suppose that the matrix \(\mathrm{A}\) has repeated eigenvalue with the 
 following eigenvector and generalized eigenvector:
 $PAR
-$SPACE $SPACE \(\lambda = $l\) with eigenvector
+\(\lambda = $l\) with eigenvector
   \( \displaystyle{\vec{v}} = 
     \left\lbrack
     \begin{array}{r}
@@ -266,10 +266,9 @@ $PAR
   [$v31],[$v32] 
   ], align=>'c'),
   "\(t \Biggr)\)",
-  $exp2,
-  $SPACE,
-  AnswerFormatHelp("matrices")
+  $exp2
 ); \}
+\{ AnswerFormatHelp("matrices") \}
 
 $PAR
 
@@ -287,19 +286,18 @@ $PAR
      c_1  \\
      c_2 
     \end{array}
-  \right\rbrack \)",
-  $SPACE,
-  AnswerFormatHelp("matrices")
+  \right\rbrack \)"
 ); \}
+\{ AnswerFormatHelp("matrices") \}
 
 $PAR
 
 As two equations: $BITALIC (write ${LQ}c1${RQ} and ${LQ}c2${RQ} for \(c_1\) and \(c_2\) ) $EITALIC
 $PAR
-\(x(t) = \) \{ $multiansC->ans_rule(30) \}
+\(x(t) = \) \{ $multiansC->ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-\(y(t) = \) \{ $multiansC->ans_rule(30) \}
+\(y(t) = \) \{ $multiansC->ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
 
 

@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## Repeated eigenvalues
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
+# Repeated eigenvalues
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -17,6 +15,7 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
   "unionLists.pl",
   "PGcourse.pl"
@@ -236,7 +235,6 @@ $multians2 = MultiAnswer($y1ivp, $y2ivp)->with(
 Context()->texStrings;
 BEGIN_TEXT
 Consider the initial value problem
-$PAR
 \[
 \displaystyle
 \begin{array}{rcll}
@@ -246,12 +244,10 @@ x_2^{\,\prime} & = & $A21 x_1 + $A22 x_2, & \ x_2(0) = $y2init.
 \end{array} 
 \]
 
-$PAR
 Find the eigenvalue \( \lambda \), an eigenvector
 \( {\vec{v}_1} \), and a generalized
 eigenvector \( {\vec{v}_2} \) for the 
 coefficient matrix of this linear system.
-$BCENTER
 \{ 
 mbox(
 [
@@ -265,24 +261,29 @@ display_matrix([[$multians0->ans_rule(5)],[$multians0->ans_rule(5)]]),
 allowbreaks=>'yes'
 ) 
 \}
-$ECENTER
+\{ AnswerFormatHelp("numbers") \}
+\{ AnswerFormatHelp("matrices") \}
 
 $PAR
 Find the most general real-valued solution to the linear system 
 of differential equations.  Use \( c_1 \) and \( c_2 \) to 
 denote arbitrary constants, and enter them as ${LQ}c1${RQ} and
 ${LQ}c2${RQ}.
-$BR
+$PAR
 \( x_1(t) = \) \{ $multians1->ans_rule(50) \}
-$BR
+\{ AnswerFormatHelp("formulas") \}
+$PAR
 \( x_2(t) = \) \{ $multians1->ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
 
 $PAR
 Solve the original initial value problem.
-$BR
-\( x_1(t) = \) \{ $multians2->ans_rule(20) \}
-$BR
-\( x_2(t) = \) \{ $multians2->ans_rule(20) \}
+$PAR
+\( x_1(t) = \) \{ $multians2->ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+\( x_2(t) = \) \{ $multians2->ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
 
 END_TEXT
 Context()->normalStrings;

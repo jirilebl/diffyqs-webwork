@@ -282,12 +282,12 @@ $multians0->ans_rule(5),
 display_matrix([[$multians0->ans_rule(5)],[$multians0->ans_rule(5)]]),
 ', \( {\vec{v}_2} =  \) ', 
 display_matrix([[$multians0->ans_rule(5)],[$multians0->ans_rule(5)]]),
-$SPACE,
-AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
 \}
+\{ AnswerFormatHelp("numbers") \}
+\{ AnswerFormatHelp("matrices") \}
 
 
 $PAR
@@ -302,20 +302,19 @@ mbox(
 display_matrix([[$multians1->ans_rule(10)],[$multians1->ans_rule(10)]]),
 '\( + \ c_2 \)', 
 display_matrix([[$multians1->ans_rule(10)],[$multians1->ans_rule(10)]]),
-$SPACE,
-AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
 \}
+\{ AnswerFormatHelp("matrices") \}
 
 $PAR
 Solve the original initial value problem.
 $PAR
-\( x_1(t) = \) \{ $multians2->ans_rule(20) \}
+\( x_1(t) = \) \{ $multians2->ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-\( x_2(t) = \) \{ $multians2->ans_rule(20) \}
+\( x_2(t) = \) \{ $multians2->ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
 
 END_TEXT

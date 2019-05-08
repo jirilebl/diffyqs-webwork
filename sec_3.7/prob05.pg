@@ -1,17 +1,21 @@
-## DESCRIPTION
-## Repeated eigenvalues
-## ENDDESCRIPTION
+# Repeated eigenvalues
 
 ## Institution(Rochester and Hope College)
 ## Author(Paul Pearson)
+
+##############################################
 
 DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
+
+##############################################
+
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
@@ -26,17 +30,21 @@ $k = Compute("- ($a - $c)^2/(4*$b)");
 
 $A = Matrix([[$a, 'k'], [$b, $c]]);
 
+##############################################
+
 Context()->texStrings;
 BEGIN_TEXT
 For which value of \(k\) does the matrix 
 \[ A = $A \]
 have one real eigenvalue of multiplicity \(2\)? 
-$BR
-$BR
-\(k=\) \{ans_rule(20)\}. 
+$PAR
+\(k=\) \{ans_rule(20)\}
+\{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;
 
+##############################################
+
 ANS($k->cmp);
-;
+
 ENDDOCUMENT();

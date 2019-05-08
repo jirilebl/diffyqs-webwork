@@ -1,49 +1,58 @@
-## DESCRIPTION
-## Differential Equations
-## ENDDESCRIPTION
+# Matrix with doubled zero eigenvalue
 
 ## Institution(ASU)
 
-DOCUMENT();        # This should be the first executable line in the problem.
+#######################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "PGchoicemacros.pl",
-  "PGmatrixmacros.pl",
-  "PGnumericalmacros.pl",
-  "PGmorematrixmacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
+
+#######################################
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
-$x1 = "2+42*t";
-$x2 = "4-14*t";
+Context("Numeric");
+Context()->variables->are(t=>'Real');
 
+$a = random(2,20,1);
+$b = random(2,20,1);
+
+$x1 = Compute("$a+(3*$a+9*$b)*t")->reduce;
+$x2 = Compute("$b-($a+3*$b)*t")->reduce;
+
+#######################################
+
+Context()->texStrings;
 BEGIN_TEXT
-
-Solve the system 
+Solve
 \[
 \frac{d\vec{x}}{dt} = \begin{bmatrix} 3 & 9 \\ -1 & -3 \end{bmatrix} \vec{x}
 \qquad
 \text{with}
 \quad
-\vec{x}(0) = \begin{bmatrix} 2\\4 \end{bmatrix}.
+\vec{x}(0) = \begin{bmatrix} $a\\$b \end{bmatrix}.
 \] 
-$PAR
-$BR 
 \( x_1(t) = \) \{ans_rule(50)\}
-$BR 
+\{ AnswerFormatHelp("formulas") \}
+$PAR 
 \( x_2(t) = \) \{ans_rule(50)\}
-
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
+Context()->normalStrings;
 
-ANS(fun_cmp($x1, vars=>'t'));
-ANS(fun_cmp($x2, vars=>'t'));
+#######################################
 
 
+ANS($x1->cmp());
+ANS($x2->cmp());
 
-ENDDOCUMENT();       # This should be the last executable line in the problem.
+ENDDOCUMENT();
 
 

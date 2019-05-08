@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## Repeated eigenvalues
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
+# Repeated eigenvalues
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -15,6 +13,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserVectorUtils.pl",
   "PGcourse.pl"
 );
@@ -45,6 +44,7 @@ All phase plane solution points remain stationary as \( t \)
 increases.
 $PAR
 \( A = {}\) \{ $A->ans_array() \}
+\{ AnswerFormatHelp("matrices") \}
 
 END_TEXT
 Context()->normalStrings;

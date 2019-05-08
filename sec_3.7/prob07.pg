@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## Repeated eigenvalues
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
+# Repeated eigenvalues
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -15,6 +13,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserVectorUtils.pl",
   "PGcourse.pl"
 );
@@ -49,6 +48,7 @@ the line \( x_2 = 2 x_1 \) and vertical tangents on the line
 eigenvalue and \( a_{21} = -$k \).
 $PAR
 \( A = {} \) \{ $A->ans_array() \}
+\{ AnswerFormatHelp("matrices") \}
 
 END_TEXT
 Context()->normalStrings;

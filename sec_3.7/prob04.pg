@@ -1,7 +1,5 @@
-## DESCRIPTION
-## Eigenvalues and systems of differential equations
-## Repeated eigenvalues
-## ENDDESCRIPTION
+# Eigenvalues and systems of differential equations
+# Repeated eigenvalues
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -17,6 +15,7 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
   "PGcourse.pl"
 );
@@ -31,15 +30,17 @@ TEXT(beginproblem());
 Context("Numeric");
 Context()->variables->are(t=>"Real");
 
+$m = non_zero_random(-2,2,1);
+
 # the matrix to be analyzed
-$A11 = 3;  $A12 = -1;
-$A21 = 1;  $A22 =  5;
+$A11 = $m*3;  $A12 = $m*(-1);
+$A21 = $m*1;  $A22 = $m*5;
 
-$v1top = Formula("-e^(4 t)");
-$v1bot = Formula("e^(4 t)");
+$v1top = Formula("-e^($m*4 t)");
+$v1bot = Formula("e^($m*4 t)");
 
-$v2top = Formula("(1 - t) e^(4 t)");
-$v2bot = Formula("t e^(4 t)");
+$v2top = Formula("(1 - $m t) e^($m*4 t)");
+$v2bot = Formula("$m t e^($m*4 t)");
 
 $multians = MultiAnswer($v1top, $v1bot, $v2top, $v2bot)->with(
 
@@ -125,7 +126,6 @@ $A21 & $A22
 {\vec{x}}.
 \)
 $PAR
-$BCENTER
 \{ 
 mbox(
 [
@@ -138,7 +138,7 @@ display_matrix([[$multians->ans_rule(10)],[$multians->ans_rule(10)]]),
 allowbreaks=>'yes'
 ) 
 \}
-$ECENTER
+\{ AnswerFormatHelp("matrices") \}
 END_TEXT
 Context()->normalStrings;
 
@@ -149,8 +149,6 @@ Context()->normalStrings;
 $showPartialCorrectAnswers = 1;
 
 ANS( $multians->cmp() );
-
-COMMENT('MathObject version. Not randomized.');
 
 ENDDOCUMENT();
 
