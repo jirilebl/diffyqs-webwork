@@ -140,13 +140,9 @@ $BCENTER
 $ECENTER
 
 $PAR
-$BR
-$BR
-
 Set up a system of first-order differential equations that models this
 situation.
-$BR
-$BR
+$PAR
 \{
 mbox(
 [
@@ -165,25 +161,29 @@ allowbreaks=>'yes'
 \}
 
 $PAR
-$BR
-$BR
 If \( Q_1(0) = $init1 \ \mathrm{kg} \) and \( Q_2(0) = $init2 \
 \mathrm{kg} \), find the amount of solute in each tank 
 after \( t \) minutes.
-$BR
+$PAR
 \( Q_1(t) = \) \{ ans_rule(60) \} kg
-$BR
+$SPACE
+\{ AnswerFormatHelp("formulas") \}
+$PAR
 \( Q_2(t) = \) \{ ans_rule(60) \} kg
+$SPACE
+\{ AnswerFormatHelp("formulas") \}
 
 
 $PAR
-$BR
-$BR
 As \( t \to \infty \), how much solute is in each tank?
-$BR
+$PAR
 In the long run, Tank 1 will have \{ ans_rule(10) \} kg of solute.
-$BR
+$SPACE
+\{ AnswerFormatHelp("numbers") \}
+$PAR
 In the long run, Tank 2 will have \{ ans_rule(10) \} kg of solute.
+$SPACE
+\{ AnswerFormatHelp("numbers") \}
 $PAR
 $BITALIC Reread the question and think about why this answer makes sense. $EITALIC
 

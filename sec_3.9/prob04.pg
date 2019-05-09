@@ -126,10 +126,9 @@ BEGIN_TEXT
 Determine all equilibrium solutions (i.e., constant solutions that other
 solutions approach as \( t \to \infty \))
 of the following nonhomogeneous linear system:
-$PAR
 \[
 \displaystyle
-\ {\vec{x}^{\, \prime}}(t)
+{\vec{x}^{\, \prime}}(t)
 =
 \left\lbrack
 \begin{array}{rr}
@@ -146,10 +145,10 @@ $g
 \end{array} 
 \right\rbrack.
 \]
-$BR
-$BR
+
+$PAR
 As \( t \to \infty \), the equilibrium solution has the form
-$BR
+$PAR
 \{ 
 mbox(
 [
@@ -161,6 +160,7 @@ display_matrix([[$multians1->ans_rule(5)],[$multians1->ans_rule(5)]]),
 allowbreaks=>'yes'
 ) 
 \}
+\{ AnswerFormatHelp("matrices") \}
 END_TEXT
 Context()->normalStrings;
 

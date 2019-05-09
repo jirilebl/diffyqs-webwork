@@ -1,4 +1,5 @@
-# Systems of ODEs: Nonhomogeneous Systems
+# Systems of ODEs: Nonhomogeneous Systems,
+# COMPLEX integer eigenvalues.
 
 ## Institution(METU-NCC)
 ## Author(Benjamin Walter)
@@ -333,7 +334,7 @@ Context()->texStrings;
 BEGIN_TEXT
 In this problem you will solve the nonhomogeneous system
 \[
-{\vec{x}\,'}\  =  
+{\vec{x}\,'}  =  
  \left\lbrack
    \begin{array}{rr}
     $A11 & $A12 \\
@@ -341,62 +342,55 @@ In this problem you will solve the nonhomogeneous system
    \end{array}
  \right\rbrack \,
 {\vec{x}}
-\ + \ 
++ 
  \left\lbrack
    \begin{array}{r}
     $g1 \\ $g2
    \end{array}
- \right\rbrack\]
+ \right\rbrack
+\]
 
 $PAR
-$BR
-$BR
-
 Write a fundamental matrix for the associated homogeneous system
-$BR
+$PAR
 \{ mbox( [ 
-'\( {X}\ =\ \) ',
+'\( {X} = \) ',
 display_matrix(
    [[$multiansA->ans_rule(20), $multiansA->ans_rule(20)],
-    [$multiansA->ans_rule(20), $multiansA->ans_rule(20)]])
+    [$multiansA->ans_rule(20), $multiansA->ans_rule(20)]]),
+$SPACE,
+AnswerFormatHelp("matrices")
 ] ) \}
 
 $PAR
-$BR
-$BR
-
 Compute the inverse
-$BR
+$PAR
 \{ mbox( [ 
-'\( {X}^{\mathrm{-}1}\ =\ \) ',
+'\( {X}^{\mathrm{-}1} = \) ',
 display_matrix(
    [[$multiansB->ans_rule(25), $multiansB->ans_rule(25)],
-    [$multiansB->ans_rule(25), $multiansB->ans_rule(25)]])
+    [$multiansB->ans_rule(25), $multiansB->ans_rule(25)]]),
+$SPACE,
+AnswerFormatHelp("matrices")
 ] ) \}
 
 
 $PAR
-$BR
-$BR
-
 Multiply by the nonhomogenity \({\vec{f}}  \) and integrate
-$BR
-
+$PAR
 \{ mbox( [ 
-'\(\displaystyle  \int {X}^{\mathrm{-}1}\; {\vec{f}}\; dt\ =\ \) ',
+'\(\displaystyle  \int {X}^{\mathrm{-}1}\; {\vec{f}}\; dt = \) ',
 display_matrix(
    [[$multiansC->ans_rule(30), '\(+ c_1\)'],
     [$multiansC->ans_rule(30), '\(+ c_2\)']])
 ] ) \}
-
+\{ AnswerFormatHelp("matrices") \}
+$BR
 $BITALIC Do not include \(c_1\) and \(c_2\) in your answers. $EITALIC
 
 $PAR
-$BR
-$BR
-
 Give the solution to the system
-$BR
+$PAR
 \{ mbox( [ 
 '\(\displaystyle {\vec{x}}\ = c_1 \) ',
 display_matrix(
@@ -407,14 +401,15 @@ display_matrix(
    [[$multiansD->ans_rule(20)],
     [$multiansD->ans_rule(20)]])
 ]) \}
-$BR
+$PAR
 \{ mbox([
 '\(\phantom{y = } \quad + \)',
 display_matrix(
    [[$multiansD->ans_rule(65)],
     [$multiansD->ans_rule(65)]])
 ] ) \}
-
+\{ AnswerFormatHelp("matrices") \}
+$BR
 $BITALIC Do not include \(c_1\) and \(c_2\) in your answers. $EITALIC
 
 END_TEXT
@@ -423,9 +418,6 @@ $showHint = 2;
 
 BEGIN_TEXT
 $PAR
-$BR
-$BR
-
 $BITALIC
 If you don't get this in $showHint tries, you can get a hint.
 $EITALIC
@@ -485,6 +477,6 @@ ANS( $multiansB->cmp() );
 ANS( $multiansC->cmp() );
 ANS( $multiansD->cmp() );
 
-COMMENT('MathObject version.  Randomized with COMPLEX integer eigenvalues.');
+COMMENT('COMPLEX integer eigenvalues.');
 
 ENDDOCUMENT();

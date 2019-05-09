@@ -283,10 +283,8 @@ $init2
 \]
 
 $PAR
-$BR
 Form the complementary solution to the homogeneous equation.
-$BR
-$BR
+$PAR
 \{ 
 mbox(
 [
@@ -298,34 +296,33 @@ display_matrix([[$multians1->ans_rule(15)],[$multians1->ans_rule(15)]]),
 allowbreaks=>'yes'
 ) 
 \}
+\{ AnswerFormatHelp("matrices") \}
 
 $PAR
-$BR
 Construct a particular solution by assuming 
 the form \( {\vec{x}}_p(t) = {\vec{a}} e^{$r t} 
 + {\vec{b}} t + {\vec{c}} \) and solving for the undetermined 
 constant vectors \( {\vec{a}}, {\vec{b}}, \) and 
 \( {\vec{c}} \).
-$BR
-$BR
+$PAR
 \{ 
 mbox(
 [
 '\( {\vec{x}}_p(t) = \)',
 display_matrix([[$multians2->ans_rule(15)],[$multians2->ans_rule(15)]]),
+$SPACE,
+AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
 \}
 
 $PAR
-$BR
 Form the general solution \( {\vec{x}}(t) = 
 {\vec{x}}_c(t) + {\vec{x}}_p(t) \) and 
 impose the initial condition to obtain the solution of the 
 initial value problem.
-$BR
-$BR
+$PAR
 \{
 mbox(
 [
@@ -336,8 +333,10 @@ display_matrix([[$multians3->ans_rule(50)],[$multians3->ans_rule(50)]]),
 allowbreaks=>'yes'
 )
 \}
+\{ AnswerFormatHelp("matrices") \}
 END_TEXT
 Context()->normalStrings;
+
 
 
 ###################################
@@ -348,7 +347,5 @@ $showPartialCorrectAnswers = 1;
 ANS( $multians1->cmp() );
 ANS( $multians2->cmp() );
 ANS( $multians3->cmp() );
-
-;
 
 ENDDOCUMENT();

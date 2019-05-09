@@ -66,13 +66,12 @@ $nonhomog2 = Formula("$p * sin(t) + $q * (e^t)");
 Context()->texStrings;
 BEGIN_TEXT
 We wish to solve the system
-$BR
-\( {\vec{x}\,}' = $matrix \vec{x} +
-\begin{bmatrix} \sin(t) \\ e^t \end{bmatrix} \) ,
-$BR
+\[
+{\vec{x}\,}' = $matrix \vec{x} +
+\begin{bmatrix} \sin(t) \\ e^t \end{bmatrix} ,
+\]
 via eigenvector decomposition.
-$BR
-$BR
+$PAR
 Let \( \vec{v}_1 \) be an eigenvector for the smaller eigenvalue
 of the coefficient matrix
 and
@@ -81,25 +80,28 @@ Let us pick the eigenvectors such that
 \( \vec{v}_1 = \begin{bmatrix} \{ $a->element(1,1) \} \\ ? \end{bmatrix} \)
 and \( \vec{v}_2 = \begin{bmatrix} \{ $a->element(1,2) \} \\ ? \end{bmatrix} \).
 What are these eigenvectors:
-$BR
-\( \vec{v}_1 = {} \)
+$PAR
+\( \vec{v}_1 = \)
 \{ $v1->ans_array(3); \}
-$BR
-\( \vec{v}_2 = {} \)
+\{ AnswerFormatHelp("matrices") \}
+$PAR
+\( \vec{v}_2 = \)
 \{ $v2->ans_array(3); \}
-$BR
-$BR
+\{ AnswerFormatHelp("matrices") \}
+$PAR
 Then fill in the equation to
 write it in the eigenvector decomposed form.
-$BR
-\( \vec{v}_1 \xi_1' + \vec{v}_2 \xi_2' = {}\)
+$PAR
+\( \vec{v}_1 \xi_1' + \vec{v}_2 \xi_2' = \)
 \{ ans_rule(3) \}
-\( \vec{v}_1 \xi_1 + {} \)
+\( \vec{v}_1 \xi_1 + \)
 \{ ans_rule(3) \}
 \( \vec{v}_2 \xi_2 + \vec{v}_1 \)
 \{ ans_rule(15) \}
 \( + \vec{v}_2 \)
 \{ ans_rule(15) \}
+$BR
+\{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
 

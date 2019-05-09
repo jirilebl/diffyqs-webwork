@@ -50,8 +50,8 @@ $d2 = non_zero_random(-3,3,1);
 $y1 = Formula("$d1*t")->reduce;
 $y2 = Formula("$d2*t^2")->reduce;
 
-$alpha = Formula("$init1 - $d1")->reduce;
-$beta = Formula("$init2 - $d2")->reduce;
+$alpha = Compute("$init1 - $d1")->reduce;
+$beta = Compute("$init2 - $d2")->reduce;
 
 $g1 = Formula("$d1 - ($a[0][0]*($y1 + $alpha) + $a[0][1]*($y2 + $beta))")->reduce;
 $g2 = Formula("$d2*2*t - ($a[1][0]*($y1 + $alpha) + $a[1][1]*($y2 + $beta))")->reduce;
@@ -62,7 +62,6 @@ $g2 = Formula("$d2*2*t - ($a[1][0]*($y1 + $alpha) + $a[1][1]*($y2 + $beta))")->r
 
 Context()->texStrings;
 BEGIN_TEXT
-
 Consider the initial value problem
 \[
 \displaystyle
@@ -86,7 +85,7 @@ $init2
 \right\rbrack.
 \]
 
-$BR
+$PAR
 Suppose we know that 
 \[
 \displaystyle
@@ -101,14 +100,13 @@ $y2 + \beta
 \]
 is the unique solution to this initial value problem.  Find \( {\vec{f}}(t) \) and the constants \( \alpha \) and \( \beta \).
 
-$BR
-$BR
-\( \alpha = \) \{ ans_rule(5) \}
-$BR
-$BR
-\( \beta = \) \{ ans_rule(5) \}
-$BR
-$BR
+$PAR
+\( \alpha = \) \{ ans_rule(10) \}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( \beta = \) \{ ans_rule(10) \}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
 \{ 
 mbox(
 [
@@ -118,6 +116,7 @@ display_matrix([[ans_rule(20)],[ans_rule(20)]]),
 allowbreaks=>'yes'
 ) 
 \}
+\{ AnswerFormatHelp("matrices") \}
 
 END_TEXT
 Context()->normalStrings;

@@ -1,4 +1,5 @@
 # Systems of ODEs: Nonhomogeneous Systems
+# REPEATED integer eigenvalues.
 
 ## Institution(METU-NCC)
 ## Author(Benjamin Walter)
@@ -111,13 +112,13 @@ $multiansA = MultiAnswer($P11, $P12, $P21, $P22)->with(
   singleResult => 1,
   allowBlankAnswers => 1,
   checkTypes => 0,
-  #format =>  "<table border='0'><tr>
-  #  <td> \( \boldsymbol{\Psi} = \biggl\lbrack \)</td>
-  #  <td><table border='0' cellspacing='10'>
-  #         <tr><td> %s $SPACE </td><td> $SPACE %s</td></tr>
-  #         <tr><td> %s $SPACE </td><td> $SPACE %s</td></tr></table></td>
-  #  <td> \(\biggr\rbrack\)</td>
-  # </tr></table>",
+  format =>  "<table border='0'><tr>
+    <td> \( {X} = \biggl\lbrack \)</td>
+    <td><table border='0' cellspacing='10'>
+           <tr><td> %s $SPACE </td><td> $SPACE %s</td></tr>
+           <tr><td> %s $SPACE </td><td> $SPACE %s</td></tr></table></td>
+    <td> \(\biggr\rbrack\)</td>
+   </tr></table>",
   tex_format => "{X} = 
                  \left\lbrack\begin{array}{rr}
                       %s & %s \\ %s & %s
@@ -173,13 +174,13 @@ $multiansB = MultiAnswer($Pi11, $Pi12, $Pi21, $Pi22)->with(
   singleResult => 1,
   allowBlankAnswers => 1,
   checkTypes => 0,
-  #format => "<table border='0'><tr>
-  #  <td> \( \boldsymbol{\Psi}^{\mathrm{-}1} \ = \ \biggl\lbrack \)</td>
-  #  <td><table border='0' cellspacing='10'>
-  #         <tr><td> %s $SPACE </td><td> $SPACE %s</td></tr>
-  #         <tr><td> %s $SPACE </td><td> $SPACE %s</td></tr></table></td>
-  #  <td> \(\biggr\rbrack\)</td>
-  # </tr></table>",
+  format => "<table border='0'><tr>
+    <td> \( {X}^{\mathrm{-}1} \ = \ \biggl\lbrack \)</td>
+    <td><table border='0' cellspacing='10'>
+           <tr><td> %s $SPACE </td><td> $SPACE %s</td></tr>
+           <tr><td> %s $SPACE </td><td> $SPACE %s</td></tr></table></td>
+    <td> \(\biggr\rbrack\)</td>
+   </tr></table>",
   tex_format => "{X}^{\mathrm{-}1} = \left\lbrack\begin{array}{rr}
                       %s & %s \\ %s & %s
                  \end{array}\right\rbrack",
@@ -213,13 +214,13 @@ $multiansC = MultiAnswer($iPig1, $iPig2)->with(
   singleResult => 1,
   allowBlankAnswers => 1,
   checkTypes => 0,
-  #format =>  "<table border='0'><tr>
-  #  <td> \( \biggl\lbrack\)</td>
-  #  <td><table border='0' cellspacing='10'>
-  #         <tr><td> %s </td></tr>
-  #         <tr><td> %s </td></tr></table></td>
-  #  <td> \(\biggr\rbrack\)</td>
-  # </tr></table>",
+  format =>  "<table border='0'><tr>
+    <td> \( \biggl\lbrack\)</td>
+    <td><table border='0' cellspacing='10'>
+           <tr><td> %s </td></tr>
+           <tr><td> %s </td></tr></table></td>
+    <td> \(\biggr\rbrack\)</td>
+   </tr></table>",
   tex_format => "\left\lbrack\begin{array}{r}
                       %s \\ %s 
                  \end{array}\right\rbrack",
@@ -250,22 +251,22 @@ $multiansD = MultiAnswer($P11, $P21, $P12, $P22, $yP1, $yP2)->with(
   singleResult => 1,
   allowBlankAnswers => 1,
   checkTypes => 0,
-  #format =>  "<table border='0'><tr>
-  #  <td> \( {\vec{x}} = 
-  #       \biggl\lbrack \)</td>
-  #  <td><table border='0' cellspacing='10'>
-  #         <tr><td> %s </td></tr>
-  #         <tr><td> %s </td></tr></table></td>
-  #  <td> \(\biggr\rbrack c_1 + \biggl\lbrack\) </td>
-  #  <td><table border='0' cellspacing='10'>
-  #         <tr><td> %s </td></tr>
-  #         <tr><td> %s </td></tr></table></td>
-  #  <td> \(\biggr\rbrack c_2 + \biggl\lbrack\) </td>
-  #  <td><table border='0' cellspacing='10'>
-  #         <tr><td> %s </td></tr>
-  #         <tr><td> %s </td></tr></table></td>
-  #  <td> \(\biggr\rbrack \) </td>
-  # </tr></table>",
+  format =>  "<table border='0'><tr>
+    <td> \( {\vec{x}} = 
+         \biggl\lbrack \)</td>
+    <td><table border='0' cellspacing='10'>
+           <tr><td> %s </td></tr>
+           <tr><td> %s </td></tr></table></td>
+    <td> \(\biggr\rbrack c_1 + \biggl\lbrack\) </td>
+    <td><table border='0' cellspacing='10'>
+           <tr><td> %s </td></tr>
+           <tr><td> %s </td></tr></table></td>
+    <td> \(\biggr\rbrack c_2 + \biggl\lbrack\) </td>
+    <td><table border='0' cellspacing='10'>
+           <tr><td> %s </td></tr>
+           <tr><td> %s </td></tr></table></td>
+    <td> \(\biggr\rbrack \) </td>
+   </tr></table>",
   tex_format => "{\vec{x}} =
                  c_1 \left\lbrack\begin{array}{r} 
                       %s \\ %s
@@ -322,7 +323,7 @@ Context()->texStrings;
 BEGIN_TEXT
 In this problem you will solve the nonhomogeneous system
 \[
-{\vec{x}\,'}\  = \ 
+{\vec{x}\,'} =  
  \left\lbrack
    \begin{array}{rr}
     $A11 & $A12 \\
@@ -330,62 +331,56 @@ In this problem you will solve the nonhomogeneous system
    \end{array}
  \right\rbrack \,
 {\vec{x}}
-\ + \ 
++
  \left\lbrack
    \begin{array}{r}
     $g1 \\ $g2
    \end{array}
- \right\rbrack\]
+ \right\rbrack
+\]
 
 $PAR
-$BR
-$BR
-
 Write a fundamental matrix for the associated homogeneous system
-$BR
+$PAR
 \{ mbox( [ 
-'\( {X}\ =\ \) ',
+'\( {X} = \) ',
 display_matrix(
    [[$multiansA->ans_rule(10), $multiansA->ans_rule(10)],
     [$multiansA->ans_rule(10), $multiansA->ans_rule(10)]])
+$SPACE,
+AnswerFormatHelp("matrices")
 ] ) \}
 
 $PAR
-$BR
-$BR
-
 Compute the inverse
-$BR
+$PAR
 \{ mbox( [ 
-'\( {X}^{\mathrm{-}1}\ =\ \) ',
+'\( {X}^{\mathrm{-}1} = \) ',
 display_matrix(
    [[$multiansB->ans_rule(15), $multiansB->ans_rule(15)],
-    [$multiansB->ans_rule(15), $multiansB->ans_rule(15)]])
+    [$multiansB->ans_rule(15), $multiansB->ans_rule(15)]]),
+$SPACE,
+AnswerFormatHelp("matrices")
 ] ) \}
 
 
 $PAR
-$BR
-$BR
-
 Multiply by the nonhomogeneity \({\vec{f}}\) and integrate
-$BR
-
+$PAR
 \{ mbox( [ 
 '\(\displaystyle  \int {X}^{\mathrm{-}1}\; {\vec{f}}\; dt\ =\ \) ',
 display_matrix(
    [[$multiansC->ans_rule(15), '\(+ c_1\)'],
     [$multiansC->ans_rule(15), '\(+ c_2\)']])
 ] ) \}
+\{ AnswerFormatHelp("matrices") \}
+$BR
 
 $BITALIC Do not include \(c_1\) and \(c_2\) in your answers. $EITALIC
 
 $PAR
-$BR
-$BR
-
 Give the solution to the system
-$BR
+$PAR
 \{ mbox( [ 
 '\(\displaystyle {\vec{x}}\ = c_1 \) ',
 display_matrix(
@@ -396,13 +391,15 @@ display_matrix(
    [[$multiansD->ans_rule(10)],
     [$multiansD->ans_rule(10)]])
 ]) \}
-$BR
+$PAR
 \{ mbox([
 '\(\phantom{y = } \quad + \)',
 display_matrix(
    [[$multiansD->ans_rule(40)],
     [$multiansD->ans_rule(40)]])
 ] ) \}
+\{ AnswerFormatHelp("matrices") \}
+$BR
 
 $BITALIC Do not include \(c_1\) and \(c_2\) in your answers. $EITALIC
 
@@ -413,9 +410,6 @@ $showHint = 2;
 BEGIN_TEXT
 
 $PAR
-$BR
-$BR
-
 $BITALIC If you don't get this in $showHint tries, you can get a hint. $EITALIC
 END_TEXT
 
@@ -484,6 +478,6 @@ ANS( $multiansB->cmp() );
 ANS( $multiansC->cmp() );
 ANS( $multiansD->cmp() );
 
-COMMENT('MathObject version.  Randomized with REPEATED integer eigenvalues.');
+COMMENT('REPEATED integer eigenvalues.');
 
 ENDDOCUMENT(); 
