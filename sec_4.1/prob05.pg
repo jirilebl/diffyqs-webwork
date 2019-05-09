@@ -87,15 +87,19 @@ $PAR
 
 $PAR
 
-Eigenvalues: \(\quad \,\,\lambda_n = \)\{ ans_rule(30) \}
+Eigenvalues:
+$PAR
+\(\lambda_n = \)\{ ans_rule(30) \}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 
-Eigenfunctions: \(\ \  y_n = \)\{ ans_rule(30) \}
+Eigenfunctions:
+$PAR
+\(y_n = \)\{ ans_rule(30) \}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 
-${BBOLD}Notation:${EBOLD} Your answers should involve \(n\) and \(x\).
+$BITALIC ${BBOLD}Notation:${EBOLD} Your answers should involve \(n\) and \(x\). $EITALIC
 
 END_TEXT
 

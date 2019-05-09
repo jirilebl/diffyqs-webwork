@@ -316,7 +316,7 @@ $multiansD = MultiAnswer($P11, $P21, $P12, $P22, $yP1, $yP2)->with(
 
 Context()->texStrings;
 BEGIN_TEXT
-In this problem you will solve the nonhomogeneous system
+Consider the nonhomogeneous system
 \[
 {\vec{x}\,'}  =  
  \left\lbrack
@@ -326,12 +326,14 @@ In this problem you will solve the nonhomogeneous system
    \end{array}
  \right\rbrack \,
 {\vec{x}}
-\ + \ 
++  
  \left\lbrack
    \begin{array}{r}
     $g1 \\ $g2
    \end{array}
- \right\rbrack\]
+ \right\rbrack
+.
+\]
 
 $PAR
 Write a fundamental matrix for the associated homogeneous system
@@ -362,13 +364,13 @@ $PAR
 Multiply by the nonhomogeneity \({\vec{f}}\) and integrate
 $PAR
 \{ mbox( [ 
-'\(\displaystyle  \int {X}^{\mathrm{-}1}\; {\vec{f}}\; dt\ =\ \) ',
+'\(\displaystyle  \int {X}^{\mathrm{-}1}\; {\vec{f}}\; dt = \) ',
 display_matrix(
    [[$multiansC->ans_rule(30), '\(+ c_1\)'],
-    [$multiansC->ans_rule(30), '\(+ c_2\)']])
+    [$multiansC->ans_rule(30), '\(+ c_2\)']]),
+$SPACE,
+AnswerFormatHelp("matrices")
 ] ) \}
-\{ AnswerFormatHelp("matrices") \}
-$BR
 
 $BITALIC Do not include \(c_1\) and \(c_2\) in your answers. $EITALIC
 

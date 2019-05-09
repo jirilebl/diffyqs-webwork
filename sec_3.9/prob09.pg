@@ -159,6 +159,7 @@ display_matrix([[$multians2->ans_rule(10)],[$multians2->ans_rule(10)]])
 allowbreaks=>'yes'
 ) 
 \}
+\{ AnswerFormatHelp("matrices") \}
 
 $PAR
 If \( Q_1(0) = $init1 \ \mathrm{kg} \) and \( Q_2(0) = $init2 \

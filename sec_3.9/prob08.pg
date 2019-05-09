@@ -170,24 +170,25 @@ mbox(
 display_matrix([[$multians1->ans_rule(15)],[$multians1->ans_rule(15)]]),
 ' \( + \ c_2 \) ', 
 display_matrix([[$multians1->ans_rule(15)],[$multians1->ans_rule(15)]]),
+$SPACE,
+AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
 \}
-\{ AnswerFormatHelp("matrices") \}
 
 $PAR
 Show that seeking a particular solution of the form \( {\vec{x}}_p(t) = $g1 {\vec{a}} \), where \( {\vec{a}} = \left\lbrack
 \begin{array}{c} a_1 \\ a_2 \end{array} \right\rbrack \) is a constant vector, does not work.
 In fact, if \( {\vec{x}}_p \) had this form, we would arrive at the following contradiction:
 $PAR
-\( a_2 = \) \{ ans_rule(5) \} \( \cdot a_1 \)
+\( a_2 = \) \{ ans_rule(5) \} \( \cdot \, a_1 \)
 $SPACE $SPACE 
 \{ AnswerFormatHelp("numbers") \}
 $PAR
 and
 $PAR
-\( a_2 = \) \{ ans_rule(5) \} \( \cdot a_1 - \) \{ ans_rule(5) \}.
+\( a_2 = \) \{ ans_rule(5) \} \( \cdot \, a_1 \ - \) \{ ans_rule(5) \}
 $SPACE $SPACE 
 \{ AnswerFormatHelp("numbers") \}
 
@@ -196,7 +197,7 @@ Show that seeking a particular solution of the form \( {\vec{x}}_P(t) = t $g1 {\
 \begin{array}{c} a_1 \\ a_2 \end{array} \right\rbrack \) is a constant vector, does not work either.
 In fact, if \( {\vec{x}}_p \) had this form, we would arrive at the following contradiction:
 $PAR
-\( a_2 = \) \{ ans_rule(5) \} \( \cdot a_1 \)
+\( a_2 = \) \{ ans_rule(5) \} \( \cdot \, a_1 \)
 $SPACE $SPACE 
 \{ AnswerFormatHelp("numbers") \}
 $PAR
@@ -207,7 +208,7 @@ $PAR
 $PAR
 and
 $PAR
-\( a_2 = \) \{ ans_rule(5) \}.
+\( a_2 = \) \{ ans_rule(5) \}
 \{ AnswerFormatHelp("numbers") \}
 
 END_TEXT

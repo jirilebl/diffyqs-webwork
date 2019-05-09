@@ -112,11 +112,12 @@ mbox(
 [
 ' \( {\vec{f}}(t) = \)', 
 display_matrix([[ans_rule(20)],[ans_rule(20)]]),
+$SPACE,
+AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
 \}
-\{ AnswerFormatHelp("matrices") \}
 
 END_TEXT
 Context()->normalStrings;

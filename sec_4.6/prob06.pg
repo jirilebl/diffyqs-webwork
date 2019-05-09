@@ -272,9 +272,9 @@ Context()->texStrings;
 BEGIN_TEXT
 ${BITALIC}In your answers below,
 for the variable \(\lambda\) type the word 
-${EITALIC}${BBOLD}lambda${EBOLD}${BITALIC}, 
+${LQ}lambda${RQ}, 
 for \(\gamma\) type the word
-${EITALIC}${BBOLD}gamma${EBOLD}${BITALIC}; 
+${LQ}gamma${RQ}; 
 otherwise treat these as you would any other variable.${EITALIC}
 
 $PAR

@@ -321,7 +321,7 @@ $multiansD = MultiAnswer($P11, $P21, $P12, $P22, $yP1, $yP2)->with(
 
 Context()->texStrings;
 BEGIN_TEXT
-In this problem you will solve the nonhomogeneous system
+Consider the nonhomogeneous system
 \[
 {\vec{x}\,'} =  
  \left\lbrack
@@ -337,6 +337,7 @@ In this problem you will solve the nonhomogeneous system
     $g1 \\ $g2
    \end{array}
  \right\rbrack
+.
 \]
 
 $PAR
@@ -346,7 +347,7 @@ $PAR
 '\( {X} = \) ',
 display_matrix(
    [[$multiansA->ans_rule(10), $multiansA->ans_rule(10)],
-    [$multiansA->ans_rule(10), $multiansA->ans_rule(10)]])
+    [$multiansA->ans_rule(10), $multiansA->ans_rule(10)]]),
 $SPACE,
 AnswerFormatHelp("matrices")
 ] ) \}
@@ -368,12 +369,13 @@ $PAR
 Multiply by the nonhomogeneity \({\vec{f}}\) and integrate
 $PAR
 \{ mbox( [ 
-'\(\displaystyle  \int {X}^{\mathrm{-}1}\; {\vec{f}}\; dt\ =\ \) ',
+'\(\displaystyle  \int {X}^{\mathrm{-}1}\; {\vec{f}}\; dt = \) ',
 display_matrix(
    [[$multiansC->ans_rule(15), '\(+ c_1\)'],
-    [$multiansC->ans_rule(15), '\(+ c_2\)']])
+    [$multiansC->ans_rule(15), '\(+ c_2\)']]),
+$SPACE,
+AnswerFormatHelp("matrices")
 ] ) \}
-\{ AnswerFormatHelp("matrices") \}
 $BR
 
 $BITALIC Do not include \(c_1\) and \(c_2\) in your answers. $EITALIC
@@ -396,10 +398,10 @@ $PAR
 '\(\phantom{y = } \quad + \)',
 display_matrix(
    [[$multiansD->ans_rule(40)],
-    [$multiansD->ans_rule(40)]])
+    [$multiansD->ans_rule(40)]]),
+$SPACE,
+AnswerFormatHelp("matrices")
 ] ) \}
-\{ AnswerFormatHelp("matrices") \}
-$BR
 
 $BITALIC Do not include \(c_1\) and \(c_2\) in your answers. $EITALIC
 

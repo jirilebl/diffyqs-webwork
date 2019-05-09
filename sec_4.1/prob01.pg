@@ -41,7 +41,7 @@ $PAR
 \(y(x) = {} \) \{ ans_rule(50) \}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-$BBOLD Note: $EBOLD $BITALIC If there is no solution, type "None". $EITALIC
+$BITALIC $BBOLD Note: $EBOLD If there is no solution, type ${LQ}None${RQ}. $EITALIC
 END_TEXT
 Context()->normalStrings;
 
