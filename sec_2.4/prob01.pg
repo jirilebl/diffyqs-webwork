@@ -178,6 +178,6 @@ ANS( $pop->cmp() );
 
 ANS( Compute("sqrt(4*$k*$m)")->cmp() );
 
-COMMENT("MathObject version. Under damped system.");
+COMMENT("Underdamped system.");
 
 ENDDOCUMENT();

@@ -59,7 +59,7 @@ ANS($A->det->cmp);
 
 ####################################################
 
-COMMENT('MathObject.  Random permuation of random 4x4 block-triangular matrix.');
+COMMENT('Random permuation of random 4x4 block-triangular matrix.');
 
 ENDDOCUMENT();
 

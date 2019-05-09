@@ -91,6 +91,6 @@ From the the second equation, \($eq2\), we obtain \(x_1 =  $f1 x_2 + $f2\). Subs
 END_SOLUTION
 Context()->normalStrings;
 
-COMMENT('Desc: Determine the values of h that makes the linear system consistent.');
+COMMENT('Determine the values of h that makes the linear system consistent.');
 
 ENDDOCUMENT();
