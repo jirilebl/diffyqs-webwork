@@ -1,6 +1,4 @@
-##DESCRIPTION
-## Solving nonhomogeneous system with eigenvector decomposition
-##ENDDESCRIPTION
+# Solving nonhomogeneous system with eigenvector decomposition
 
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
@@ -14,10 +12,10 @@
 DOCUMENT();
 
 loadMacros(
-"PGstandard.pl",
-"MathObjects.pl",
-"MatrixCheckers.pl",
-"PGcourse.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl",
 );
 
 TEXT(beginproblem());

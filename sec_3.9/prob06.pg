@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Systems of ODEs: Nonhomogeneous Systems
-## ENDDESCRIPTION
+# Systems of ODEs: Nonhomogeneous Systems
 
 ## Institution(METU-NCC)
 ## Author(Benjamin Walter)
@@ -14,6 +12,7 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
   "answerHints.pl",
   "PGcourse.pl"

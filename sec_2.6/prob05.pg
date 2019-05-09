@@ -14,7 +14,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "unionLists.pl",
   "parserImplicitEquation.pl",
   "PGcourse.pl"
 );
@@ -130,7 +129,7 @@ $PAR
 Plot the solution and determine the maximum 
 excursion from equilibrium made by the object on
 the time interval \( 0 \leq t < \infty \).  If 
-there is no such maximum, enter ${BITALIC}NONE${EITALIC}.
+there is no such maximum, enter ${LQ}NONE${RQ}.
 $PAR
 maximum excursion = 
 \{ ans_rule(20) \} meters

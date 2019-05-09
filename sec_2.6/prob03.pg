@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Higher order ODEs: constant coefficient second order nonhomogeneous linear ODEs
-## ENDDESCRIPTION
+# Higher order ODEs: constant coefficient second order nonhomogeneous linear ODEs
 
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
@@ -16,7 +14,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "unionLists.pl",
   "weightedGrader.pl",
   "PGcourse.pl"
 );

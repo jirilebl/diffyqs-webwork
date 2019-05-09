@@ -1,6 +1,4 @@
-## DESCRIPTION
-## Linear systems: Nonhomogeneous linear systems
-## ENDDESCRIPTION
+# Linear systems: Nonhomogeneous linear systems
 
 ## Institution(Fort Lewis College)
 ## Author(Veronika Furst)
@@ -17,9 +15,8 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
-  "unionTables.pl",
-  "unionLists.pl",
   "PGcourse.pl"
 );
 

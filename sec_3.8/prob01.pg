@@ -1,6 +1,4 @@
-##DESCRIPTION
-## Compute matrix exponential for a diagonal matrix
-##ENDDESCRIPTION
+# Compute matrix exponential for a diagonal matrix
 
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
@@ -14,11 +12,10 @@
 DOCUMENT();
 
 loadMacros(
-"PGstandard.pl",
-"MathObjects.pl",
-"MatrixCheckers.pl",
-"PGcourse.pl",
-"niceTables.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl"
 );
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
@@ -28,8 +25,10 @@ $showPartialCorrectAnswers = 1;
 
 Context("Matrix");
 
-$e1= non_zero_random(-3,3,1);
-do { $e2= non_zero_random(-3,3,1); } while ($e1==$e2);
+$e1 = non_zero_random(-3,3,1);
+do {
+  $e2 = non_zero_random(-3,3,1);
+} while ($e1==$e2);
 $matrix = Matrix([[$e1, 0],[0, $e2]]);
 $matrix_exp = Matrix([[exp($e1), 0],[0, exp($e2)]]);
 
@@ -40,12 +39,10 @@ Context()->texStrings;
 BEGIN_TEXT
 Compute the matrix exponential
 \( e^A \) for the matrix \( A = $matrix \).
-$BR
-$BR
-\( e^A = {} \)
-\{
-$matrix_exp->ans_array(5);
-\}
+$PAR
+\( e^A = \)
+\{ $matrix_exp->ans_array(5) \}
+\{ AnswerFormatHelp("matrices") \}
 END_TEXT
 Context()->normalStrings;
 

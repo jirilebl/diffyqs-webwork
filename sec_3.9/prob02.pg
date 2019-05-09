@@ -17,8 +17,8 @@ loadMacros(
   "PGstandard.pl",
   "PGmatrixmacros.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
-  "unionLists.pl",
   "PGcourse.pl"
 );
 
