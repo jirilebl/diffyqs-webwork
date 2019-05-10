@@ -98,6 +98,20 @@ $multians2 = MultiAnswer( $c0, $c1, $c2, $c3, $c4, $c5, $c6, $c7 )->with(
         my ($correct, $student, $self ) = @_;
 	my ($s0, $s1, $s2, $s3, $s4, $s5, $s6, $s7) = @{$student};
 
+        # kind of a hack
+        if($s0->type ne "Number") {
+          $s0 = Real(0);
+        }
+        if($s1->type ne "Number") {
+          $s1 = Real(0);
+        }
+        if($s4->type ne "Number") {
+          $s4 = Real(0);
+        }
+        if($s5->type ne "Number") {
+          $s5 = Real(0);
+        }
+
         if ( (
              ($s0 != 0 || $s1 != 0) && 
              ($s4 != 0 || $s5 != 0) && 
@@ -119,7 +133,6 @@ $multians2 = MultiAnswer( $c0, $c1, $c2, $c3, $c4, $c5, $c6, $c7 )->with(
              )
            ) 
         { return 1; } else { Value::Error('At least one entry is incorrect'); }
-
     }
 );
 
@@ -139,7 +152,7 @@ masses are \( m_1 = $m1 \ \mathrm{kg} \) and \( m_2 = $m2 \ \mathrm{kg} \),
 and the spring constants are \( k_1 = $k1 \ \mathrm{N/m} \), 
 \( k_2 = $k2 \ \mathrm{N/m} \), and \( k_3 = $k3 \ \mathrm{N/m} \).
 
-$BCENTER.
+$BCENTER
 \{ image("2masses-3springs-new.png", width=>444, height=>122, tex_size=>800) \}
 $ECENTER
 
@@ -177,7 +190,7 @@ display_matrix([[$multians2->ans_rule(5)],[$multians2->ans_rule(5)]]),
 ])], separation => 0).
 EndTable()
 \}
-\{ AnswerFormatHelp("numbers") \}
+\{ AnswerFormatHelp("formulas") \}
 \{ AnswerFormatHelp("matrices") \}
 END_TEXT
 Context()->normalStrings;
@@ -191,7 +204,5 @@ $showPartialCorrectAnswers = 1;
 ANS( $multians1->cmp() );
 
 ANS( $multians2->cmp() );
-
-;
 
 ENDDOCUMENT();
