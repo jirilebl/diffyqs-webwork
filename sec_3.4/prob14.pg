@@ -132,7 +132,7 @@ mbox(
 [
 '\( {\vec{x}_1}(t) =  \) ', 
 display_matrix([[$multians2->ans_rule(30)],[$multians2->ans_rule(30)]]),
-AnswerFormatHelp("matrices")
+AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
@@ -143,7 +143,7 @@ mbox(
 [
 '\( {\vec{x}_2}(t) =  \) ', 
 display_matrix([[$multians2->ans_rule(30)],[$multians2->ans_rule(30)]]),
-AnswerFormatHelp("matrices")
+AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 

@@ -254,7 +254,7 @@ mbox(
 display_matrix([[$multians2->ans_rule(10)],[$multians2->ans_rule(10)]]),
 ' and \( {\vec{x}_2}(t) =  \) ', 
 display_matrix([[$multians2->ans_rule(10)],[$multians2->ans_rule(10)]]),
-AnswerFormatHelp("matrices")
+AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 

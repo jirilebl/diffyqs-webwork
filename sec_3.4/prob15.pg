@@ -319,7 +319,8 @@ $PAR
      c_2 
     \end{array}
   \right\rbrack \)",
- $SPACE.AnswerFormatHelp("matrices")
+ $SPACE,
+ AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices")
 ); \}
 
 $PAR
@@ -333,9 +334,9 @@ $PAR
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
-$BBOLD Note:$EBOLD if you are feeling adventurous you could use other
+$BITALIC $BBOLD Note:$EBOLD If you are feeling adventurous you could use other
 eigenvectors like \(4\,{\vec{v}_1}\) or
-\(-3\,{\vec{v}_2}\).
+\(-3\,{\vec{v}_2}\).$EITALIC
 
 
   

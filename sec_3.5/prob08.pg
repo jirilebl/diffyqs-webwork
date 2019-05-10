@@ -139,8 +139,7 @@ Context()->texStrings;
 BEGIN_TEXT
 Find the most general real-valued solution to the linear system 
 of differential equations
-\(
-\displaystyle
+\[
 \begin{bmatrix} x' \\ y' \end{bmatrix}
 =
 \begin{bmatrix}
@@ -148,7 +147,7 @@ $A11 & $A12 \\
 $A21 & $A22
 \end{bmatrix}
 \begin{bmatrix} x \\ y \end{bmatrix}
-\)
+\]
 $PAR
 \{ 
 mbox(
@@ -158,7 +157,7 @@ display_matrix([['\( x(t) \)'],['\( y(t) \)']]),
 display_matrix([[$multians->ans_rule(15)],[$multians->ans_rule(15)]]),
 '\( + \ c_2 \)', 
 display_matrix([[$multians->ans_rule(15)],[$multians->ans_rule(15)]]),
-AnswerFormatHelp("matrices")
+AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
