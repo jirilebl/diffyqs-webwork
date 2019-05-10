@@ -61,14 +61,16 @@ be put in the form \( \vec{x}' = P(t) \vec{x} + \vec{g}(t) \).
 Determine \( P(t) \) and \( \vec{g}(t) \).
 
 $PAR
-\( P(t) = \)
-\{ $Pt->ans_array(20) \}
-\{ AnswerFormatHelp("matrices") \}
+\{ mbox("\( P(t) = \)",
+    $Pt->ans_array(20),
+    AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices"))
+\}
 
 $PAR
-\( \vec{g}(t) = \)
-\{ $gt->ans_array(20) \}
-\{ AnswerFormatHelp("matrices") \}
+\{ mbox("\( \vec{g}(t) = \)",
+    $gt->ans_array(20),
+    AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices"))
+\}
 
 END_TEXT
 Context()->normalStrings;

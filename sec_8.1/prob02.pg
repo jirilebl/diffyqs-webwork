@@ -44,6 +44,8 @@ $PAR
 The Jacobian matrix is
 $PAR
 \{ $jac->ans_array(20) \}
+$BR
+\{ AnswerFormatHelp("formulas") \}
 \{ AnswerFormatHelp("matrices") \}
 END_TEXT
 Context()->normalStrings;

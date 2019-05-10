@@ -102,7 +102,6 @@ z^{\prime}(t)
 \right\rbrack.
 \]
 $PAR
-$BCENTER
 \(
 \displaystyle
 \begin{bmatrix} y_1^{\prime} \\ y_2^{\prime} \\ y_3^{\prime} \\ y_4^{\prime} \end{bmatrix}
@@ -111,8 +110,9 @@ $BCENTER
 \{ $ansm->ans_array(6) \}
 \( \begin{bmatrix} y_1 \\ y_2 \\ y_3 \\ y_4 \end{bmatrix} + \)
 \{ $ansv->ans_array(6) \}
+$BR
+\{ AnswerFormatHelp("formulas") \}
 \{ AnswerFormatHelp("matrices") \}
-$ECENTER
 
 END_TEXT
 Context()->normalStrings;

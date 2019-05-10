@@ -86,7 +86,8 @@ $PAR
 \{ $xy->ans_array(5) \}
 \(+\)
 \{ $f->ans_array(10) \}
-\{ AnswerFormatHelp("matrices") \}
+$BR
+\{ AnswerFormatHelp("formulas") \} \{ AnswerFormatHelp("matrices") \}
 $PAR
 $BITALIC $BBOLD Note: $EBOLD Use prime notation for derivatives and write 
 \( x \) and \( x' \), etc., instead of 

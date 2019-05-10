@@ -71,14 +71,16 @@ Find
 
 
 $PAR
-\( A'(t) = \)
-\{ $Ap->ans_array(25) \}
-\{ AnswerFormatHelp("matrices") \}
+\{ mbox("\(A'(t) = \)",
+    $Ap->ans_array(25),
+    AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices"))
+\}
 
 $PAR
-\( A''(t) = \)
-\{ $App->ans_array(25) \}
-\{ AnswerFormatHelp("matrices") \}
+\{ mbox("\( A''(t) = \)",
+    $App->ans_array(25),
+    AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices"))
+\}
 
 END_TEXT
 Context()->normalStrings;

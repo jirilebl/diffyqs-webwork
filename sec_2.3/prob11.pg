@@ -20,6 +20,13 @@ TEXT(beginproblem());
 $showPartialCorrectAnswers = 0;
 
 $ml = new_match_list();
+$ml->rf_print_q(~~&pop_up_list_print_q);
+$ml->ra_pop_up_list([
+"No answer" => "?",
+"A" => "A", "B" => "B", "C" => "C", 
+"D" => "D", "E" => "E", #"F" => "F",
+#"G" => "G", "H" => "H", "I" => "I",
+]);
 
 $b = random(2,9,1);
 $c = random(2,5,1);

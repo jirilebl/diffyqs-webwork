@@ -76,6 +76,7 @@ $PAR
 
 \( \displaystyle \frac{d}{dt} \left( \left\lbrack \begin{array}{c} a \\ b \end{array} \right\rbrack e^{k t} \right) = \)
 \{ $ans->ans_array(20) \}
+\{ AnswerFormatHelp("formulas") \}
 \{ AnswerFormatHelp("matrices") \}
 
 $PAR

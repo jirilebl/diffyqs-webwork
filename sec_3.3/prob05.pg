@@ -178,7 +178,7 @@ mbox(
   display_matrix([[$multians1->ans_rule(20)], [$multians1->ans_rule(20)]], align=>'c'),
   " =",
   display_matrix([[$multians1->ans_rule(30)], [$multians1->ans_rule(30)]], align=>'c'),
-  AnswerFormatHelp("matrices")
+  AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices")
 );
 \}
 
@@ -205,7 +205,7 @@ mbox(
   display_matrix([[$multians2->ans_rule(20)], [$multians2->ans_rule(20)]], align=>'c'),
   " =",
   display_matrix([[$multians2->ans_rule(30)], [$multians2->ans_rule(30)]], align=>'c'),
-  AnswerFormatHelp("matrices")
+  AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices")
 );
 \}
 

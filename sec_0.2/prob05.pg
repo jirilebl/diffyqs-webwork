@@ -28,6 +28,13 @@ $b2 = 2*$b;
 $b3 = 3*$b;
 
 $ml = new_match_list();
+$ml->rf_print_q(~~&pop_up_list_print_q);
+$ml->ra_pop_up_list([
+"No answer" => "?",
+"A" => "A", "B" => "B", "C" => "C", 
+"D" => "D", "E" => "E", #"F" => "F",
+#"G" => "G", "H" => "H", "I" => "I",
+]);
 
 $ml->qa(EV2("\(\ \frac{d^2y}{dx^2}+$aa y =0\)" ),
 		EV2("\(\ y = A\cos($a x) + B\sin($a x)\)"));

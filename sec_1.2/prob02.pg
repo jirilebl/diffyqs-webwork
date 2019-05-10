@@ -54,6 +54,14 @@ foreach $f ( @slfunc ) {
 
 # make the matching object
 $ml = new_match_list();
+$ml->rf_print_q(~~&pop_up_list_print_q);
+$ml->ra_pop_up_list([
+"No answer" => "?",
+"A" => "A", "B" => "B", "C" => "C", 
+"D" => "D", "E" => "E", "F" => "F",
+#"G" => "G", "H" => "H", "I" => "I",
+]);
+
 @qa = ();
 for (my $i=0; $i<@equations; $i++) {
     push( @qa, $equations[$i],
