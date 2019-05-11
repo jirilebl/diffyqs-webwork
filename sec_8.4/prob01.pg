@@ -1,11 +1,8 @@
-##DESCRIPTION
-##  Using Bendixson-Dulac theorem to show nonexistence of closed trajectories.
-##ENDDESCRIPTION
+# Using Bendixson-Dulac theorem to show nonexistence of closed trajectories.
 
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
 ## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'Bendixson-Dulac', 'closed trajectory')
-
 
 ########################################################################
 
@@ -15,11 +12,12 @@
 DOCUMENT();
 
 loadMacros(
-"PGstandard.pl",
-"MathObjects.pl",
-"contextFraction.pl",
-"parserPopUp.pl",
-"PGcourse.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "contextFraction.pl",
+  "parserPopUp.pl",
+  "PGcourse.pl"
 );
 
 TEXT(beginproblem());
@@ -92,36 +90,39 @@ Compute the expression in the (simpler) Bendixson-Dulac theorem
 decide if the theorem applies or not (if it applies, then the system
 has no closed trajectory).  The region you take
 is the largest region in which both \(f\) and \(g\) are defined.
-$BR
-$BR
+
+$PAR
 System: \( \displaystyle $system1 \).
-$BR
+$PAR
 \( \frac{\partial f}{\partial x}+\frac{\partial g}{\partial y} = {} \) \{ ans_rule(40); \}
-$BR
+\{ AnswerFormatHelp("formulas") \}
+$PAR
 Does the theorem apply: \{ $mc1->menu(); \}
-$BR
-$BR
+
+$PAR
 System: \( \displaystyle $system2 \).
-$BR
+$PAR
 \( \frac{\partial f}{\partial x}+\frac{\partial g}{\partial y} = {} \) \{ ans_rule(40); \}
-$BR
+\{ AnswerFormatHelp("formulas") \}
+$PAR
 Does the theorem apply: \{ $mc2->menu(); \}
-$BR
-$BR
+$PAR
+
 System: \( \displaystyle $system3 \).
-$BR
+$PAR
 \( \frac{\partial f}{\partial x}+\frac{\partial g}{\partial y} = {} \) \{ ans_rule(40); \}
-$BR
+\{ AnswerFormatHelp("formulas") \}
+$PAR
 Does the theorem apply: \{ $mc3->menu(); \}
-$BR
-$BR
+$PAR
+
 System: \( \displaystyle $system4 \).
-$BR
+$PAR
 \( \frac{\partial f}{\partial x}+\frac{\partial g}{\partial y} = {} \) \{ ans_rule(40); \}
-$BR
+\{ AnswerFormatHelp("formulas") \}
+$PAR
 Does the theorem apply: \{ $mc4->menu(); \}
-$BR
-$BR
+$PAR
 
 $BITALIC No partial credit is awarded for this question.$EITALIC
 
@@ -142,7 +143,5 @@ ANS($sol3->cmp);
 ANS($mc3->cmp);
 ANS($sol4->cmp);
 ANS($mc4->cmp);
-
-;
 
 ENDDOCUMENT();
