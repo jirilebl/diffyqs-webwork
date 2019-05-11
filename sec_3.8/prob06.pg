@@ -91,7 +91,7 @@ BEGIN_SOLUTION
 As \(A^2=0\) we also get that \(A^3=0\), \(A^4=0\), etc.
 So the Taylor series goes only up to the first order term:
 \[
-e^{tA} \approx I + tA
+e^{tA} = I + tA
 =
 $id + t $matrix
 =
