@@ -138,6 +138,7 @@ display_matrix([[$multians->ans_rule(10)],[$multians->ans_rule(10)]]),
 allowbreaks=>'yes'
 ) 
 \}
+\{ AnswerFormatHelp("formulas") \}
 \{ AnswerFormatHelp("matrices") \}
 END_TEXT
 Context()->normalStrings;

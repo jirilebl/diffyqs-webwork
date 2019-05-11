@@ -113,7 +113,7 @@ mbox(
 ' \( {\vec{f}}(t) = \)', 
 display_matrix([[ans_rule(20)],[ans_rule(20)]]),
 $SPACE,
-AnswerFormatHelp("matrices")
+AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 

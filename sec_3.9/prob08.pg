@@ -171,7 +171,7 @@ display_matrix([[$multians1->ans_rule(15)],[$multians1->ans_rule(15)]]),
 ' \( + \ c_2 \) ', 
 display_matrix([[$multians1->ans_rule(15)],[$multians1->ans_rule(15)]]),
 $SPACE,
-AnswerFormatHelp("matrices")
+AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 

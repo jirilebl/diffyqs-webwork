@@ -15,6 +15,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
+  "PGmatrixmacros.pl",
   "PGcourse.pl"
 );
 TEXT(beginproblem());
@@ -25,7 +26,7 @@ $showPartialCorrectAnswers = 1;
 
 Context("Matrix");
 
-Context()->variables->add(t=>"Real");
+Context()->variables->are(t=>"Real");
 
 # define A
 $a11 = random(-1,1,2);
@@ -52,10 +53,11 @@ $e = Matrix([[$e1, 0],[0, $e2]]);
 # matrix = A E A^-1
 $matrix = $a * $e *$b;
 
-$matrix_exp = Compute("[[$a12*$b21*e^($e2*t)+$a11*$b11*e^($e1*t),$a12*$b22*e^($e2*t)+$a11*$b12*e^($e1*t)],[$a22*$b21*e^($e2*t)+$a21*$b11*e^($e1*t),$a22*$b22*e^($e2*t)+$a21*$b12*e^($e1*t)]]");
+$matrix_exp = Compute("[[$a12*$b21*e^($e2*t)+$a11*$b11*e^($e1*t),$a12*$b22*e^($e2*t)+$a11*$b12*e^($e1*t)],[$a22*$b21*e^($e2*t)+$a21*$b11*e^($e1*t),$a22*$b22*e^($e2*t)+$a21*$b12*e^($e1*t)]]")->reduce;
 
 ###########################
 # Main text
+
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -63,9 +65,10 @@ Compute the matrix exponential
 \( e^{tA} \) for the matrix \( A = $matrix \).
 Note the \(t\)!
 $PAR
-\( e^{tA} = \)
-\{ $matrix_exp->ans_array(5) \}
-\{ AnswerFormatHelp("matrices") \}
+\{ mbox("\( e^{tA} = \)",
+    $matrix_exp->ans_array(20),
+    AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices"))
+\}
 END_TEXT
 Context()->normalStrings;
 
@@ -73,5 +76,30 @@ Context()->normalStrings;
 # Answer evaluation
 
 ANS($matrix_exp->cmp);
+
+###########################
+# Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+First diagonalize \(A\) as
+\[
+A = $a $e {$a}^{-1}
+\]
+then compute
+\[
+e^{tA}
+=
+$a
+\begin{bmatrix}
+e^{\{ Compute("$e1 t")->reduce \}} & 0 \\
+0 & e^{\{ Compute("$e2 t")->reduce \}}
+\end{bmatrix}
+{$a}^{-1}
+=
+$matrix_exp
+\]
+END_SOLUTION
+Context()->normalStrings;
 
 ENDDOCUMENT();

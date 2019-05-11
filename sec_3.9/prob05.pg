@@ -360,7 +360,7 @@ display_matrix(
    [[$multiansA->ans_rule(20), $multiansA->ans_rule(20)],
     [$multiansA->ans_rule(20), $multiansA->ans_rule(20)]]),
 $SPACE,
-AnswerFormatHelp("matrices")
+AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices")
 ] ) \}
 
 $PAR
@@ -372,7 +372,7 @@ display_matrix(
    [[$multiansB->ans_rule(25), $multiansB->ans_rule(25)],
     [$multiansB->ans_rule(25), $multiansB->ans_rule(25)]]),
 $SPACE,
-AnswerFormatHelp("matrices")
+AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices")
 ] ) \}
 
 
@@ -385,7 +385,7 @@ display_matrix(
    [[$multiansC->ans_rule(30), '\(+ c_1\)'],
     [$multiansC->ans_rule(30), '\(+ c_2\)']]),
 $SPACE,
-AnswerFormatHelp("matrices")
+AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices")
 ] ) \}
 $BITALIC Do not include \(c_1\) and \(c_2\) in your answers. $EITALIC
 
@@ -409,6 +409,7 @@ display_matrix(
    [[$multiansD->ans_rule(65)],
     [$multiansD->ans_rule(65)]])
 ] ) \}
+\{ AnswerFormatHelp("formulas") \}
 \{ AnswerFormatHelp("matrices") \}
 $BR
 $BITALIC Do not include \(c_1\) and \(c_2\) in your answers. $EITALIC

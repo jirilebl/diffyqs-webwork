@@ -41,7 +41,7 @@ Compute the matrix exponential
 \( e^A \) for the matrix \( A = $matrix \).
 $PAR
 \( e^A = \)
-\{ $matrix_exp->ans_array(5) \}
+\{ $matrix_exp->ans_array(20) \}
 \{ AnswerFormatHelp("matrices") \}
 END_TEXT
 Context()->normalStrings;
@@ -50,5 +50,31 @@ Context()->normalStrings;
 # Answer evaluation
 
 ANS($matrix_exp->cmp);
+
+
+###########################
+# Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+Because diagonal matrices multiply and add componentwise,
+the Taylor series formula means that for a diagonal matrix
+we take the exponential of the diagonal entries:
+\[
+e^A = 
+\exp\left(
+\begin{bmatrix}
+$e1 & 0 \\
+0 & $e2
+\end{bmatrix}
+\right)
+=
+\begin{bmatrix}
+e^{$e1} & 0 \\
+0 & e^{$e2}
+\end{bmatrix}
+\]
+END_SOLUTION
+Context()->normalStrings;
 
 ENDDOCUMENT();

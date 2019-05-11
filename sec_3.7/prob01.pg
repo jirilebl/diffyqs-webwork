@@ -288,6 +288,7 @@ $PAR
     \end{array}
   \right\rbrack \)"
 ); \}
+\{ AnswerFormatHelp("formulas") \}
 \{ AnswerFormatHelp("matrices") \}
 
 $PAR
@@ -303,7 +304,7 @@ $PAR
 
 $PAR
 
-$BITALIC $BBOLD Note:$EBOLD if you are feeling adventurous you could use other
+$BITALIC $BBOLD Note:$EBOLD If you are feeling adventurous you could use other
 eigenvectors like \(4\,{\vec{v}}\) and other generalized
 eigenvectors like \({\vec{w}}-3\,{\vec{v}}\). $EITALIC
 $PAR

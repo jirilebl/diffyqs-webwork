@@ -15,6 +15,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
+  "PGmatrixmacros.pl",
   "parserPopUp.pl",
   "PGcourse.pl",
 );
@@ -63,8 +64,12 @@ $PAR
 \{ ans_rule(5) \}  \{ AnswerFormatHelp("numbers") \}
 $PAR
 Compute the Jacobian matrix for all \( x \) and \( y \):
+$PAR
 \{
-$jac->ans_array(14);
+ mbox(
+   $jac->ans_array(14),
+   AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices")
+ )
 \}
 $PAR
 The behavior at the first critical point is

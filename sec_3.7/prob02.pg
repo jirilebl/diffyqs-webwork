@@ -306,6 +306,7 @@ display_matrix([[$multians1->ans_rule(10)],[$multians1->ans_rule(10)]]),
 allowbreaks=>'yes'
 ) 
 \}
+\{ AnswerFormatHelp("formulas") \}
 \{ AnswerFormatHelp("matrices") \}
 
 $PAR

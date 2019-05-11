@@ -296,6 +296,7 @@ display_matrix([[$multians1->ans_rule(15)],[$multians1->ans_rule(15)]]),
 allowbreaks=>'yes'
 ) 
 \}
+\{ AnswerFormatHelp("formulas") \}
 \{ AnswerFormatHelp("matrices") \}
 
 $PAR
@@ -311,7 +312,7 @@ mbox(
 '\( {\vec{x}}_p(t) = \)',
 display_matrix([[$multians2->ans_rule(15)],[$multians2->ans_rule(15)]]),
 $SPACE,
-AnswerFormatHelp("matrices")
+AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
@@ -333,6 +334,7 @@ display_matrix([[$multians3->ans_rule(50)],[$multians3->ans_rule(50)]]),
 allowbreaks=>'yes'
 )
 \}
+\{ AnswerFormatHelp("formulas") \}
 \{ AnswerFormatHelp("matrices") \}
 END_TEXT
 Context()->normalStrings;
