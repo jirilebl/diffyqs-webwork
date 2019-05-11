@@ -80,7 +80,7 @@ $PAR
 $PAR
 Next, use the exponential to find the solution to \(\vec{x}' = A \vec{x}\) with initial condition \(\vec{x}(0) = $v \):
 $PAR
-\{ mbox("\( \vec{x}(t) \approx \)",
+\{ mbox("\( \vec{x}(t) = \)",
     $sol->ans_array(40),
     AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices"))
 \}
