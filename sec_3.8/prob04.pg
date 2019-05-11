@@ -1,0 +1,79 @@
+# Compute quadratic approximation and approximation to a solution using
+# the series.
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## KEYWORDS('matrix exponential')
+
+########################################################################
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGmatrixmacros.pl",
+  "PGcourse.pl"
+);
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+###########################
+# Setup
+
+Context("Matrix");
+
+Context()->variables->are(t=>"Real");
+
+# define A
+do {
+  $a11 = non_zero_random(-5,5,2);
+  $a12 = non_zero_random(-5,5,2);
+  $a21 = non_zero_random(-5,5,2);
+  $a22 = non_zero_random(-5,5,2);
+} while ($a11*$a22 == $a12*$a21);
+
+$id = Matrix([[1, 0], [0, 1]]);
+$a = Matrix([[$a11, $a12], [$a21, $a22]]);
+
+$v1 = non_zero_random(-5,5,2);
+$v2 = non_zero_random(-5,5,2);
+$v = Matrix([[$v1], [$v2]]);
+
+$approxetA = Compute("$id + $a*t + (1/2)*$a*$a*t^2")->reduce;
+$approxsol = Compute("$approxetA*$v")->reduce;
+
+###########################
+# Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Using the series expention compute the approximation up to second degree (up to
+the term with \(t^2\)) of
+\( e^{tA} \) for the matrix \( A = $matrix \).
+$PAR
+\{ mbox("\( e^{tA} \approx \)",
+    $approxetA->ans_array(20),
+    AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices"))
+\}
+$PAR
+Next, use the above approximation to find the solution to \(\vec{x}' = A \vec{x}\) with initial condition \(\vec{x}(0) = $v \):
+$PAR
+\{ mbox("\( \vec{x}(t) \approx \)",
+    $approxsol->ans_array(20),
+    AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices"))
+\}
+END_TEXT
+Context()->normalStrings;
+
+###########################
+# Answer evaluation
+
+ANS($approxetA->cmp);
+ANS($approxsol->cmp);
+
+ENDDOCUMENT();
