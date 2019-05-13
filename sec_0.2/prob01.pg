@@ -64,8 +64,9 @@ Suppose \( x = $x \).
 $PAR
 Find the value of the expression
 \( $expr \) in terms of the variable \( t \).
-$BITALIC Enter the terms in the order given. $EITALIC
 $BR
+$BITALIC Enter the terms in the order given. $EITALIC
+$PAR
 \{ ans_rule(10) \}
 +
 \{ ans_rule(10) \}
@@ -80,7 +81,7 @@ Simplify your answer above to obtain
 a differential equation in terms
 of the dependent variable \( x \) satisfied
 by \( x = $x \).  
-$BR
+$PAR
 \( $expr = \) 
 \{ ans_rule(10) \}
 \{ AnswerFormatHelp("formulas") \}
@@ -88,7 +89,9 @@ $BR
 $PAR
 Is \( x = e^t \) a solution to your
 differential equation in the previous part?
-\{ $answer[5]->menu() \}  $BITALIC Be sure you can
+\{ $answer[5]->menu() \}
+$BR
+$BITALIC Be sure you can
 justify your answer. $EITALIC
 END_TEXT
 Context()->normalStrings;

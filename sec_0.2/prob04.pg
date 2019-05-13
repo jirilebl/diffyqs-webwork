@@ -59,10 +59,11 @@ Show that \( y = $y \) is a solution to
 1 - y^2
 \).
 $PAR
-Enter your answers below in terms of 
-the independent variable \( t \) in the order
-in which the terms were given.  Be sure you 
-can justify your answer.
+Compute each side of the equation in terms of the
+the independent variable \( t \).
+$BR
+$BITALIC
+Be sure you can justify your answer. $EITALIC
 $PAR
 \{ ans_rule(20); \} \({}={}\) \{ ans_rule(20); \}
 \{ AnswerFormatHelp("formulas") \}

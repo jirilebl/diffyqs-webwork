@@ -33,7 +33,7 @@ $PAR
 \(f(x) = {} \) \{ ans_rule(30) \}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-$BITALIC Hint: What simple function that you know becomes a something like a square root of itself when you differentiate it.
+$BITALIC $BBOLD Hint: $EBOLD What simple function that you know becomes a something like a square root of itself when you differentiate it.
 Another way to see the equation is \(f'(x) = 2 \sqrt{f(x)}.\) $EITALIC
 END_TEXT
 Context()->normalStrings;

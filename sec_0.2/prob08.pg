@@ -52,8 +52,8 @@ y&=C_1+C_2x\\
 \end{aligned}
 \]
 Find the solution such that \(y(0) = $y0\) and \(y^\prime(0)=$dy0\)
-$BR
-\(y(x) = {}\) \{$soln->ans_rule(30)\}
+$PAR
+\(y(x) = \) \{$soln->ans_rule(30)\}
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
