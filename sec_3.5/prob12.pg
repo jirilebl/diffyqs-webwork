@@ -12,7 +12,7 @@ loadMacros(
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
   "parserRadioButtons.pl",
-  "PGasu.pl",
+  "contextFraction.pl",
   "PGcourse.pl"
 );
 
@@ -22,25 +22,25 @@ TEXT(beginproblem());
 
 $showPartialCorrectAnswers = 1;
 
+Context("Fraction");
 # Don't give away the answers aren't real
-Context("Complex");
-Context()->variables->are(x=>"Real",t=>"Real",y=>"Real");
+Context()->variables->are(x=>"Real",t=>"Real",y=>"Real",i=>"Real");
 Context()->noreduce('(-x)+y');
 
 # how many positive eigenvalues?
 $posCount = random(0,2,1);
 if ($posCount == 0){
-  $m11 = Real(random(-1.6, -1.2, 0.2)); ## value in original version 
+  $m11 = Fraction(random(-1.6, -1.2, 0.2)); ## value in original version 
 }
 elsif ($posCount == 1){
-  $m11 = Real(random(0.8,1.2,0.2));
+  $m11 = Fraction(random(0.8,1.2,0.2));
 }
 else { 
-  $m11 = Real(random(2.8,3.2,0.2));
+  $m11 = Fraction(random(2.8,3.2,0.2));
 }
 
-$m12 = Real(random(0.5, 1, 0.25));
-$m21 = 1.25/$m12;
+$m12 = Fraction(random(0.5, 1, 0.25));
+$m21 = Fraction("1.25/$m12");
 $m22 = -2+$m11;
 
 # With these choices in the matrix [[m11,m12],[m21,m22]] 
@@ -53,11 +53,17 @@ $matrix_trace = 2*($m11 - 1);
 # 9 = trace^2-4*det 
 # so the eigenvalues are distinct:
 
-$r1 = $m11 - 1 - 3/2;
-$r2 = $m11 - 1 + 3/2;
+$r1 = Real("$m11 - 1 - 3/2");
+$r2 = Real("$m11 - 1 + 3/2");
 
 $dxdt = Formula("$m11*x + $m12*y")->reduce;
 $dydt = Formula("$m21*x + $m22*y")->reduce;
+
+#From now on, treat these as reals
+$m11 = Real("$m11");
+$m12 = Real("$m12");
+$m21 = Real("$m21");
+$m22 = Real("$m22");
 
 Context()->texStrings;
 BEGIN_TEXT
