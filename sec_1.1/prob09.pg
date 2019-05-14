@@ -39,9 +39,8 @@ BEGIN_TEXT
 Find the general solution of the differential equation
 \[ y'= $a xe^{x^{2}}.\]
 $BITALIC Don't forget the "\({} +C\)" $EITALIC
-$BR
-$BR
-\( y = \) 
+$PAR
+\( y(x) = \) 
 \{ ans_rule(20) \}
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT

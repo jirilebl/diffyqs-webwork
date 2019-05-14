@@ -125,7 +125,9 @@ $imageTable1 =
 Context()->texStrings;
 
 $sl = new_select_list();
-$sl->{rf_print_q} = ~~&alt_print_q;
+$sl->rf_print_q(~~&pop_up_list_print_q);
+$sl->ra_pop_up_list( [No_answer=>"?", A=>"A", B=>"B", C=>"C",
+D=>"D"]);
 $sl->{separation} = 10;
 
 $sl->qa(
@@ -144,7 +146,6 @@ BEGIN_TEXT
 Match the slope fields labeled $BBOLD A $EBOLD through $BBOLD D $EBOLD with the differential equations below.
 $PAR $imageTable1 $PAR
 $PAR
-$BR
 \{$sl->print_q\}
 END_TEXT
 Context()->normalStrings;

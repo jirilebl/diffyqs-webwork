@@ -62,20 +62,23 @@ $BR
 $PAR
 The first integral we integrate by substitution:
 $BR
-\(u = {}\) \{$u->ans_rule(25)\} \(du = {}\) \{$du->ans_rule(25)\}
+\(u = \) \{$u->ans_rule(25)\}
+\{ AnswerFormatHelp("formulas") \}
+$BR
+\(du = \) \{$du->ans_rule(25)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-Solving for y we get one positive solution
+Solving for \(y\) we get one positive solution
 $BR
-\(y = {}\) \{$gensolnpos->ans_rule(40)\}
+\(y = \) \{$gensolnpos->ans_rule(40)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 And one negative solution
 $BR
-\(y = {}\) \{$gensolnneg->ans_rule(40)\}
+\(y = \) \{$gensolnneg->ans_rule(40)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-$BBOLD Note: $EBOLD $BITALIC You must simplify all arbitrary constants down to one constant \(k\). $EITALIC
+$BITALIC $BBOLD Note: $EBOLD You must simplify all arbitrary constants down to one constant \(k\). $EITALIC
 $PAR
 Find the particular solution satisfying the initial condition 
 \[ y($x0) = $y0. \]
