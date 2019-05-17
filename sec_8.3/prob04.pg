@@ -1,16 +1,18 @@
-##DESCRIPTION
-##ENDDESCRIPTION
-
 ## Institution(Rochester)
 ## KEYWORDS('differential equation' 'first order' 'model')
 
-DOCUMENT();        # This should be the first executable line in the problem.
+##############################################
+
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
+
+##############################################
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
@@ -43,6 +45,7 @@ $d = Real($d_val[random(0,3,1)]);
 $e = Real($d/$r);
 
 
+##############################################
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -54,24 +57,34 @@ $PAR
 			    &   & 			   \cr
 \displaystyle \frac{dW}{dt} & = & - $d W + $e RW 
 \end{array} \]
-$BR 
+$PAR 
 Find all the equilibrium solutions: 
 $PAR
-In the absence of wolves, the population of rabbits approaches \{ ans_rule(20) \}. 
+In the absence of wolves, the population of rabbits approaches \{ ans_rule(20) \}
+\{ AnswerFormatHelp("numbers") \}
 $PAR
-In the absence of rabbits, the population of wolves approaches \{ ans_rule(20) \}. 
+In the absence of rabbits, the population of wolves approaches \{ ans_rule(20) \}
+\{ AnswerFormatHelp("numbers") \}
 $PAR 
-If both wolves and rabbits are present, their populations approach \( r = \) \{ ans_rule(20) \} and 
-\( w = \) \{ ans_rule(20) \}.  
+If both wolves and rabbits are present, their populations approach
+$PAR
+\( r = \) \{ ans_rule(20) \}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+and 
+$PAR
+\( w = \) \{ ans_rule(20) \}
+\{ AnswerFormatHelp("numbers") \}
 
 END_TEXT
-
 Context()->normalStrings;
+
+##############################################
 
 ANS($rab->cmp());
 ANS(Real(0)->cmp());
 ANS($r->cmp());
 ANS($w->cmp());
 
-ENDDOCUMENT();       # This should be the last executable line in the problem.
+ENDDOCUMENT();
 

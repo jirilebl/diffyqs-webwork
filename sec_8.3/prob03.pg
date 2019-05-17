@@ -1,6 +1,4 @@
-##DESCRIPTION
-## Find equilibrium solutions of a modified predator-prey system
-##ENDDESCRIPTION
+# Find equilibrium solutions of a modified predator-prey system
 
 ## Institution(Berkeley)
 ## Author(Paul Vojta)
@@ -12,9 +10,12 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
-  "extraAnswerEvaluators.pl",
+  "AnswerFormatHelp.pl",
+  "contextLimitedPoint.pl",
   "PGcourse.pl"
 );
+
+##############################################
 
 TEXT(beginproblem());
 
@@ -29,23 +30,28 @@ do {
 
 $oneoverM = 1/$M;
 
-Context('Numeric');
+Context('LimitedPoint');
 
 $equilR = Compute("$r/$b");
 # $equilRtex = $equilR->TeX;
 $equilW = Compute("$k*(1-$equilR/$M)/$a");
 
-$ans1 = "(0,0), ($M, 0), ($equilR,$equilW)";
+$ans1 = List(Point("(0,0)"), Point("($M, 0)"), Point("($equilR,$equilW)"));
+
+##############################################
 
 Context()->texStrings;
 BEGIN_TEXT
 
 Consider the following model for the populations of rabbits and wolves (where \(R\) is the population of rabbits and \(W\) is the population of wolves). 
-\[ \begin{aligned} \frac{dR}{dt} &= $k R(1 - $oneoverM R) - $a RW \\
-  \frac{dW}{dt} &= -$r W + $b RW \end{aligned} \]
-$BR$BR
+\[
+  \begin{aligned}
+    \frac{dR}{dt} &= $k R(1 - $oneoverM R) - $a RW \\
+    \frac{dW}{dt} &= -$r W + $b RW
+  \end{aligned}
+\]
 Find all of the equilibrium solutions.
-$BR
+$PAR
 Enter your answer as a list of ordered pairs \( (R,W) \), where \(R\) is
 the number of rabbits and \(W\) the number of wolves.
 For example, if you found three equilibrium solutions,
@@ -53,16 +59,17 @@ one with 100 rabbits and 10 wolves, one with 200 rabbits and 20 wolves,
 and one with 300 rabbits and 30 wolves, you would enter
 \( (100,10),(200,20),(300,30) \).  Do not round fractional answers to the
 nearest integer.
-$BR
+$PAR
 Answer = \{ ans_rule(50) \}
+\{ AnswerFormatHelp("points") \}
 
 END_TEXT
 Context()->normalStrings;
 
+##############################################
+
 $showPartialCorrectAnswers = 1;
 
-ANS( interval_cmp($ans1, unions => 'no') );
-
-
+ANS( $ans1->cmp() );
 
 ENDDOCUMENT();
