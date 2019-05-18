@@ -68,12 +68,12 @@ In the absence of rabbits, the population of wolves approaches \{ ans_rule(20) \
 $PAR 
 If both wolves and rabbits are present, their populations approach
 $PAR
-\( r = \) \{ ans_rule(20) \}
+Rabbits \( = \) \{ ans_rule(20) \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
 and 
 $PAR
-\( w = \) \{ ans_rule(20) \}
+Wolves \( = \) \{ ans_rule(20) \}
 \{ AnswerFormatHelp("numbers") \}
 
 END_TEXT

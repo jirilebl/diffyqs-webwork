@@ -47,7 +47,7 @@ $ans2 = Compute("(-$r*L+$b*A*L)/($k*A*(1-A/$M)-$a*A*L)");
 Context()->texStrings;
 BEGIN_TEXT
 
-We model the populations of aphids and ladybugs with:
+We model the populations of aphids and ladybugs (where \(A\) is the population of aphids and \(L\) is the population of ladybugs) with:
 \[
   \begin{aligned}
     \frac{dA}{dt} &= $k A(1 - $oneoverM A) - $a AL \\
