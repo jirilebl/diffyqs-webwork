@@ -1,4 +1,4 @@
-# 
+# Pendulum with friction
 
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
@@ -63,13 +63,13 @@ BEGIN_PGML
 Consider the damped nonlinear pendulum equation
 [` \theta'' + \mu \theta' + \left( \frac{g}{L} \right) \sin \theta = 0 `]
 for some [` \mu > 0 , `] which denotes the friction.
-The [`g`] denotes the gravitational constant
+The [`g`] denotes the gravitational acceleration
 and [`L`] denotes length.
 
 _In the answers below write "theta" for [`\theta`], "omega" for [`\omega`],
 and "mu" for [`\mu`]._
 
-On planet Froomt IV, where we live, the gravitational constant [`g`] is [$g].
+On planet Froomt IV, where we live, the gravitational acceleration [`g`] is [$g].
 The pendulum is of length [$L].
 Let us ignore units, since Froomtians use rather odd names for their units.
 In the following [`\mu`] is variable, since we wish to figure out what it does.
