@@ -1,0 +1,74 @@
+# Find a list of critical points of a nonlinear system of ODE
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation', 'nonlinear', 'critical point')
+
+########################################################################
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "contextLimitedPoint.pl",
+  "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+###########################
+# Setup
+
+Context("LimitedPoint");
+
+Context()->variables->are(x=>"Real",y=>"Real");
+
+do {
+  $a = random(1.5,10,0.1);
+  $b = random(1.5,10,0.1);
+  $c = random(1.5,10,0.1);
+  $d = random(1.5,10,0.1);
+# avoid repeats
+} while($b == 1/$c or $b*$b == $a or $b*$b*$d == $a or $d == $a*$c*$c);
+
+$funx = Compute("(x-$a)*(x-$b*y)*(y-$c*x)");
+$funy = Compute("y*(y^2-$d*x)");
+
+$critpts = List(Point("($a,0)"),
+                Point("(0,0)"),
+                Point("($a,-sqrt($a*$d))"),
+                Point("($a,sqrt($a*$d))"),
+                Point("($b^2*$d,$b*$d)"),
+                Point("($d/($c^2),$d/$c)"));
+
+###########################
+# Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Find all the critical points of the system
+\[
+\begin{aligned}
+x' & = $funx ,\\
+y' & = $funy .
+\end{aligned}
+\]
+Enter the points as a comma separated list:
+$PAR
+\{ ans_rule(80); \}
+\{ AnswerFormatHelp("points") \}
+END_TEXT
+Context()->normalStrings;
+
+###########################
+# Answer evaluation
+
+ANS($critpts->cmp);
+
+ENDDOCUMENT();

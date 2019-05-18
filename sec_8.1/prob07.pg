@@ -1,0 +1,66 @@
+# Convert to system
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation', 'nonlinear', 'critical point')
+
+########################################################################
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+###########################
+# Setup
+
+Context("Numeric");
+
+Context()->variables->are(x=>"Real",y=>"Real");
+
+$a = random(2,10,1);
+$b = random(2,10,1);
+$c = random(2,10,1);
+$d = random(2,10,1);
+
+$funx = Compute("y");
+$funy = Compute("-$a*x^2-$b*x*y-$c*y^2+$d");
+
+###########################
+# Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Convert the (nonlinear) equation
+\[
+x'' + $a x^2 + $b x x' + $c (x')^2 = $d
+\]
+to a nonlinear first order system in \(x\) and \(y\) where \(y\) is the derivative of \(x\):
+$PAR
+\(x' = \)
+\{ ans_rule(50); \}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+\(y' = \)
+\{ ans_rule(50); \}
+\{ AnswerFormatHelp("formulas") \}
+END_TEXT
+Context()->normalStrings;
+
+###########################
+# Answer evaluation
+
+ANS($funcx->cmp);
+ANS($funcy->cmp);
+
+ENDDOCUMENT();

@@ -1,0 +1,92 @@
+# Find linearization
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation', 'nonlinear', 'critical point')
+
+########################################################################
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "contextLimitedPoint.pl",
+  "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+###########################
+# Setup
+
+Context("Matrix");
+
+Context()->variables->are(x=>"Real",y=>"Real");
+
+do {
+  $a = random(1,10,1);
+  $b = random(1,10,1);
+  $c = random(1,10,1);
+  $d = random(1,10,1);
+} while($a*$d == $b*$c);
+
+$e = random(1,3,1);
+$f = random(1,3,1);
+
+$g = random(1,10,1);
+$h = random(1,10,1);
+
+#x' = a*(x-e)+b*(y-f)+g*(x-e)^2
+#y' = c*(x-e)+d*(y-f)+h*(x-e)*(y-f)
+
+$funx = Compute("$b*y+$g*x^2-2*$e*$g*x+$a*x+$e^2*$g-$b*$f-$a*$e")->reduce;
+$funy = Compute("$h*x*y-$e*$h*y+$d*y-$f*$h*x+$c*x+$e*$f*$h-$d*$f-$c*$e")->reduce;
+
+$mat = Compute("[[$a,$b],[$c,$d]]");
+
+###########################
+# Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+The system
+\[
+\begin{aligned}
+x' & = $funx ,\\
+y' & = $funy ,
+\end{aligned}
+\]
+has a critical point at \(($e,$f)\).  The change of variables \(u = x-$e,v=y-$f\) brings the
+critical point to the origin.  Then the linearization is:
+$PAR
+\(
+\displaystyle
+{\begin{bmatrix}
+u \\ v
+\end{bmatrix}}'
+=
+\)
+\{ $mat->ans_array(10); \}
+\(
+\displaystyle
+{\begin{bmatrix}
+u \\ v
+\end{bmatrix}
+\)
+$SPACE $SPACE
+\{ AnswerFormatHelp("matrices") \}
+END_TEXT
+Context()->normalStrings;
+
+###########################
+# Answer evaluation
+
+ANS($mat->cmp);
+
+ENDDOCUMENT();
