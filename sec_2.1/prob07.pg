@@ -41,7 +41,7 @@ $answerrs = List(Real("$a"),Real("$b"));
 $sol1 = Formula("x^($a)");
 $sol2 = Formula("x^($b)");
 
-$soli = Formula("(($b*$c-$d)/($b-$a))*x^($a)+(($a*$c-$d)/($b-$a))*x^($b)")->reduce;
+$soli = Formula("(($b*$c-$d)/($b-$a))*x^($a)-(($a*$c-$d)/($b-$a))*x^($b)")->reduce;
 
 ##############################################################
 #
@@ -51,7 +51,7 @@ $soli = Formula("(($b*$c-$d)/($b-$a))*x^($a)+(($a*$c-$d)/($b-$a))*x^($b)")->redu
 
 Context()->texStrings;
 BEGIN_TEXT
-Consider \(x^{2}y''+$c1 xy'-$c0 y=0 \).
+Consider \(x^{2}y''-$c1 xy'+$c0 y=0 \).
 
 $PAR
 Find all values of \( r \) such that \( y = x^{r} \) satisfies the differential equation for \(x>0\).
@@ -63,7 +63,7 @@ $PAR
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-Find two linearly independent solutions:
+Enter two linearly independent solutions of the form above:
 
 $PAR
 \( y_1 = \) 
@@ -76,7 +76,7 @@ $PAR
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
-Now solve the initial value problem \(y(1) = $c\), \(y'(1) = $d\):
+Now find a solution satisfying the initial values \(y(1) = $c\), \(y'(1) = $d\):
 
 $PAR
 \( y = \) 
@@ -92,7 +92,7 @@ Context()->normalStrings;
 #
 #
 
-ANS( $answer->cmp() );
+ANS( $answerrs->cmp() );
 UNORDERED_ANS( $sol1->cmp(), $sol2->cmp() );
 ANS( $soli->cmp() );
 
