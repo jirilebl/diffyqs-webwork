@@ -40,7 +40,7 @@ and [`L`] denotes length.
 Suppose gravity [`g`] is 9.8 meters per second squared, and the length of the pendulum is
 [$L] meters.
 Suppose the initial angle is [$theta0] radians and initial angular velocity is
-[$omega0].
+[$omega0] radians per second.
 
 Find the formula for the trajectory of the pendulum.
 _Write "theta" for [`\theta`]._

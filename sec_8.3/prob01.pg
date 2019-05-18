@@ -80,12 +80,12 @@ We write the equation as a system
 
 [` \omega' = `] [_____________]{"-mu*omega-($g/$L)*sin(theta)"}{50} [@ AnswerFormatHelp("formulas") @]*
 
-There are infinitely many critical points [`(\theta,\omega)`] and they are all of the form (where [`k`] is an integer):
+There are infinitely many critical points [`(\theta,\omega)`] and they are all of the form ([`k`] is an integer):
 
 [`\Bigl( `] [_______]{"pi"} [` k , \  0 \Bigr) `] [@ $SPACE @]* [@ AnswerFormatHelp("numbers") @]*
 
 The Jacobian matrix is
-[________________]*{$jac}
+[____________________]*{$jac} [@ $BR @]*
 [@ AnswerFormatHelp("formulas") @]*
 [@ AnswerFormatHelp("matrices") @]*
 
