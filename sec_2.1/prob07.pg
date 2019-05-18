@@ -1,0 +1,103 @@
+# Find all solutions of a certain form, then the general solution, then a particular one
+
+## Institution(Miami Univ. Ohio, Hope College, Oklahoma State University)
+## Author(Anna Ghazaryan, Fuli Zhang, Paul Pearson, Jiri Lebl)
+## KEYWORDS('differential equations')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "unorderedAnswer.pl",
+  "PGcourse.pl"
+);
+
+TEXT(beginproblem());
+
+##############################################################
+#
+#  Setup
+#
+#
+
+Context("Numeric");
+
+Context()->variables->are(x=>"Real");
+
+$a = random(2,10,1);
+do { $b = random(2,10,1); } until ($b != $a);
+
+$c = random(1,5,1);
+$d = random(1,5,1);
+
+$c0 = $a * $b;
+$c1 = $a + $b - 1;
+
+$answerrs = List(Real("$a"),Real("$b"));
+$sol1 = Formula("x^($a)");
+$sol2 = Formula("x^($b)");
+
+$soli = Formula("(($b*$c-$d)/($b-$a))*x^($a)+(($a*$c-$d)/($b-$a))*x^($b)")->reduce;
+
+##############################################################
+#
+#  Text
+#
+#
+
+Context()->texStrings;
+BEGIN_TEXT
+Consider \(x^{2}y''+$c1 xy'-$c0 y=0 \).
+
+$PAR
+Find all values of \( r \) such that \( y = x^{r} \) satisfies the differential equation for \(x>0\).
+Enter as a comma separated list:
+
+$PAR
+\( r = \) 
+\{ ans_rule(20); \}
+\{ AnswerFormatHelp("numbers") \}
+
+$PAR
+Find two linearly independent solutions:
+
+$PAR
+\( y_1 = \) 
+\{ ans_rule(20); \}
+\{ AnswerFormatHelp("formulas") \}
+
+$PAR
+\( y_2 = \) 
+\{ ans_rule(20); \}
+\{ AnswerFormatHelp("formulas") \}
+
+$PAR
+Now solve the initial value problem \(y(1) = $c\), \(y'(1) = $d\):
+
+$PAR
+\( y = \) 
+\{ ans_rule(50); \}
+\{ AnswerFormatHelp("formulas") \}
+
+END_TEXT
+Context()->normalStrings;
+
+##############################################################
+#
+#  Answers
+#
+#
+
+ANS( $answer->cmp() );
+UNORDERED_ANS( $sol1->cmp(), $sol2->cmp() );
+ANS( $soli->cmp() );
+
+##############################################################
+
+COMMENT("Find all solutions of a certain form, then the general solution, then a particular one");
+
+ENDDOCUMENT();    
