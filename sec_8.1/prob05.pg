@@ -30,22 +30,22 @@ Context("LimitedPoint");
 Context()->variables->are(x=>"Real",y=>"Real");
 
 do {
-  $a = random(1.5,10,0.1);
-  $b = random(1.5,10,0.1);
-  $c = random(1.5,10,0.1);
-  $d = random(1.5,10,0.1);
+  $aa = random(0.5,3,0.1);
+  $b = random(0.5,3,0.1);
+  $c = random(2,5,1);
+  $a = $aa*$c*$c;
 # avoid repeats
-} while($b == 1/$c or $b*$b == $a or $b*$b*$d == $a or $d == $a*$c*$c);
+} while($b == 1/$c or $b*$b == $a or $b == 1 or $a == 1);
 
 $funx = Compute("(x-$a)*(x-$b*y)*(y-$c*x)");
-$funy = Compute("y*(y^2-$d*x)");
+$funy = Compute("y*(y^2-$a*x)");
 
 $critpts = List(Point("($a,0)"),
                 Point("(0,0)"),
-                Point("($a,-sqrt($a*$d))"),
-                Point("($a,sqrt($a*$d))"),
-                Point("($b^2*$d,$b*$d)"),
-                Point("($d/($c^2),$d/$c)"));
+                Point("($a,-$a)"),
+                Point("($a,$a)"),
+                Point("($b^2*$a,$b*$a)"),
+                Point("($a/($c^2),$a/$c)"));
 
 ###########################
 # Main text
@@ -55,13 +55,13 @@ BEGIN_TEXT
 Find all the critical points of the system
 \[
 \begin{aligned}
-x' & = $funx ,\\
-y' & = $funy .
+x' & = $funx,\\
+y' & = $funy.
 \end{aligned}
 \]
 Enter the points as a comma separated list:
 $PAR
-\{ ans_rule(80); \}
+\{ ans_rule(70); \}
 \{ AnswerFormatHelp("points") \}
 END_TEXT
 Context()->normalStrings;

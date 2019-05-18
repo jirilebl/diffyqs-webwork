@@ -33,8 +33,8 @@ $b = random(2,10,1);
 $c = random(2,10,1);
 $d = random(2,10,1);
 
-$funx = Compute("y");
-$funy = Compute("-$a*x^2-$b*x*y-$c*y^2+$d");
+$funcx = Compute("y");
+$funcy = Compute("-$a*x^2-$b*x*y-$c*y^2+$d");
 
 ###########################
 # Main text
@@ -60,7 +60,7 @@ Context()->normalStrings;
 ###########################
 # Answer evaluation
 
-ANS($funcx->cmp);
-ANS($funcy->cmp);
+ANS($funcx->cmp());
+ANS($funcy->cmp());
 
 ENDDOCUMENT();
