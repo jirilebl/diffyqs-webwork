@@ -49,7 +49,7 @@ aren't linearly independent.  That is, they would be linearly dependent if they 
 $BITALIC constant $EITALIC multiples of each other.
 $PAR
 Solve for \(A\) in \( f(x) = A g(x) \)
-$BR
+$PAR
 \( A = {} \) \{ ans_rule(20) \}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
