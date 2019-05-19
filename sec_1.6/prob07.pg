@@ -135,13 +135,11 @@ ColumnTable(
 equation \[ \frac{dx}{dt} = f(x) \]
 is shown below.  Make a rough sketch of the 
 corresponding function \( f(x) \).
-$BR
-$BR
+$PAR
 Which graph A-D most closely matches 
 the graph you drew? ".  
 $popup->menu().
-$BR.
-$BR.
+$PAR.
 $BCENTER.
 image(insertGraph($gr[4]), width=>60, height=>300, 'tex_size'=>100).
 $ECENTER
