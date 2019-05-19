@@ -22,9 +22,9 @@ $showPartialCorrectAnswers = 1;
 
 Context("Numeric");
 
-$mass = Real(random(3000,6000,500));
-$speed = Real(random(1.1,4,0.1));
-$compress = Real(random(0.05,0.15,0.05));
+$mass = Real(random(3000,6000,100));
+$speed = Real(random(1.1,2,0.1));
+$compress = Real(random(0.05,0.15,0.01));
 $dspeed = $speed*2;
 
 # m x'' + k x = 0, x(0) = 0, x'(0) = speed
@@ -37,13 +37,13 @@ $dspeed = $speed*2;
 
 $k = $mass * (($speed / $compress)**2);
 
-$mass2 = $mass+Real(random(1000,2000,500));
+$mass2 = $mass+Real(random(1000,2000,100));
 
 # compress = speed/(sqrt(k/m))
 
 $compress2 = $speed / sqrt($k/$mass2);
 
-$compresscrit = $compress+Real(random(0.1,0.2,0.05));
+$compresscrit = $compress+Real(random(0.1,0.2,0.01));
 
 $masscrit = $k / (($speed / $compresscrit)**2);
 
@@ -55,29 +55,33 @@ BEGIN_PGML
 A [$mass] kg railcar hits a bumper (a spring) at [$speed] m/s,
 and the spring compresses by [$compress] m.  Assume no damping.
 
-Find [:k=:] [____________]{"$k"} [@ AnswerFormatHelp("numbers") @]* 
+Find [:k=:] [____________]{"$k"}{25} N/m
+[@ $SPACE @]* [@ AnswerFormatHelp("numbers") @]* 
 
-_*Hint:* You have to solve the equation without knowing [:k:],
-and the compression is the maximum displacement.
+_*Hint:* Solve the differential equation leaving [:k:] as unknown.
+The compression of the spring is the maximum displacement.
 It is easiest if you assume that 0 displacement is where
 the railcar is just touching the bumper._
 
-Find out how far does the spring compress when a
-[$mass2] kg railcar hits the spring at the same speed:
+How far does the spring compress when a
+[$mass2] kg railcar hits the spring at the same speed?
 
-[____________]{"$compress2"} [@ AnswerFormatHelp("numbers") @]* 
+[____________]{"$compress2"}{25} m
+[@ $SPACE @]* [@ AnswerFormatHelp("numbers") @]* 
 
 If the spring
 would break if it compresses further than [$compresscrit] m, what is the maximum
 mass of a railcar that can hit it at [$speed] m/s?
 
-[____________]{"$masscrit"} [@ AnswerFormatHelp("numbers") @]* 
+[____________]{"$masscrit"}{25} kg
+[@ $SPACE @]* [@ AnswerFormatHelp("numbers") @]* 
 
 What is
 the maximum mass of a railcar that can hit the spring without breaking
 at [$dspeed] m/s?
 
-[____________]{"$masscritdouble"} [@ AnswerFormatHelp("numbers") @]* 
+[____________]{"$masscritdouble"}{25} kg
+[@ $SPACE @]* [@ AnswerFormatHelp("numbers") @]* 
 
 END_PGML
 
@@ -87,28 +91,29 @@ BEGIN_PGML_SOLUTION
 The equation to solve is
 
 >>[``
-[$mass] x'' + k x = 0, \qquad x(0) = 0, \quad x'(0) = $speed.
+[$mass] x'' + k x = 0, \qquad x(0) = 0, \quad x'(0) = [$speed].
 ``]<<
 
-The solution is (without yet solving for [:x'(0)=$speed:])
+The solution is (without yet solving for [:x'(0)=[$speed]:])
 
 >>[``
-x(t) = A \sin\left(\sqrt{\frac{k}{$mass}}t\right).
+x(t) = C \sin\left(\sqrt{\frac{k}{[$mass]}}t\right).
 ``]<<
 
-Now [:A:] is the maximum displacement.  As
+Now [:C:] is the maximum displacement, that is, how far the spring
+compresses.  As
 
 >>[``
-x'(t) = \sqrt{\frac{k}{$mass}} A \cos\left(\sqrt{\frac{k}{$mass}} t\right) ,
+x'(t) = \sqrt{\frac{k}{[$mass]}} C \cos\left(\sqrt{\frac{k}{[$mass]}} t\right) ,
 ``]<<
 
 we have to satisfy
 
 >>[``
-$speed = x'(0) = \sqrt{\frac{k}{$mass}} A
+[$speed] = x'(0) = \sqrt{\frac{k}{[$mass]}} C = \sqrt{\frac{k}{[$mass]}} [$compress].
 ``]<<
 
-Solving for [:k:] we find [:k=[$k]:].
+Solving for [:k:] we find [:k=[$k]:] N/m.
 
 The other parts are similar.  The idea is to now solve
 
@@ -116,13 +121,12 @@ The other parts are similar.  The idea is to now solve
 m x'' + [$k] x = 0, \qquad x(0) = 0, \quad x'(0) = s,
 ``]<<
 
-where [:m:] is mass and [:s:] is the speed.  We find the equation
+where [:m:] is mass and [:s:] is speed.  If [:C:] is the
+compression as before, we find the equation
 
 >>[``
-s = \sqrt{\frac{$k}{m}} A
+s = \sqrt{\frac{[$k]}{m}} C .
 ``]<<
-
-for the displacement [:A:].
 
 So if a [$mass2] kg railcar hits the spring it compresses
 [$compress2] m.
