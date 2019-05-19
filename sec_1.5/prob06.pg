@@ -24,9 +24,9 @@ Context()->variables->are(
   x=>"Real"
 );
 
-$a = random(2,9,1);
+$a = random(2,3,1);
 $b = random(1,9,1);
-$c = random(1,9,1);
+$c = random(1,5,1);
 $d = random(1,9,1);
 
 $answer = Compute("(1/($c^($a)))*((($a-1)*$d+$b*$c)*x^($a)-($b*$c^($a))*x)/($a-1)")->reduce;
