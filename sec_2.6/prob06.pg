@@ -1,0 +1,53 @@
+# Pure resonance
+
+## KEYWORDS('differential', 'equation', 'constant', 'solution')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
+  "PGcourse.pl"
+);
+
+##############################################################
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+Context()->variables->are(t=>"Real");
+
+$mass = random(0.3,3,0.2);
+$k = random(2,10,0.1);
+$F = random(2,3,0.1);
+
+$omega = Compute("sqrt($k/$mass)");
+
+##############################################################
+
+BEGIN_PGML
+Consider the mass-spring system for mass [$mass] kg, spring constant [$k] N/m, and an oscillating force [`[$F] \cos( \omega t) `] Newtons.  That is,
+
+>>[``
+[$mass] x'' + [$k] x = [$F] \cos(\omega t) .
+``]<<
+
+What positive angular frequency [`\omega`] leads to resonance?
+
+[` \omega = `] [____________]{"$omega"} [@ AnswerFormatHelp("numbers") @]*
+
+What is the resonance part of the solution (without the complementary solution):
+
+[` y_p = `] [___________]{"($F/(2*$mass*$omega))*t*sin($omega*t)"}{60}
+[@ AnswerFormatHelp("formulas") @]*
+
+END_PGML
+
+##############################################################
+
+ENDDOCUMENT();

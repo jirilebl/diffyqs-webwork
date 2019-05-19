@@ -133,4 +133,6 @@ ANS($Yp->cmp);
 ANS( $multipart4->cmp() );
 ANS($Yp->cmp);
 
+COMMENT("Variation of parameters, tutorial problem");
+
 ENDDOCUMENT();

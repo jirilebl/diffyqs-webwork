@@ -62,7 +62,7 @@ x(0) = 0,
 \ \ \
 x^{\,\prime}(0) = 0
 \]
-modeling the motion of a spring-mass-dashpot system
+modeling the motion of a damped mass-spring system
 initially at rest and subjected to an applied 
 force \( F(t) \), where the unit of force is the 
 Newton (N).  Assume that \( m = $m \) kilograms, 

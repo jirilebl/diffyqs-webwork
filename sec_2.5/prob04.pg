@@ -11,6 +11,8 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "parserPopUp.pl",
+  "PGunion.pl",
   "PGcourse.pl"
 );
 
@@ -74,34 +76,35 @@ $i = "y''-2y'-15y = 3x\cos 2x";
 $ans4 = "D";
 }
 
+$popup1 = PopUp(["?","A","B","C","D","E","F"],$ans1);
+$popup2 = PopUp(["?","A","B","C","D","E","F"],$ans2);
+$popup3 = PopUp(["?","A","B","C","D","E","F"],$ans3);
+$popup4 = PopUp(["?","A","B","C","D","E","F"],$ans4);
+
 #####################################################################
 
 Context()->texStrings;
 BEGIN_TEXT
 Match the following guess solutions \(y_p\) for the $BITALIC method of undetermined coefficients$EITALIC with the second-order nonhomogeneous linear equations below. $PAR
-$BBOLD A. $EBOLD \(\displaystyle y_p(x) = Ax^2+Bx+C \), $BR
-$BBOLD B. $EBOLD \(\displaystyle y_p(x) = Ae^{$a x} \), $BR
-$BBOLD C. $EBOLD \(\displaystyle  y_p(x) = A \cos $a x + B \sin $a x\), $BR
-$BBOLD D. $EBOLD \(\displaystyle  y_p(x) = (Ax + B)\cos $a x + (Cx+D)\sin $a x \), $BR
-$BBOLD E. $EBOLD \(\displaystyle  y_p(x) = A x e^{$a x}\), $BR
-$BBOLD F. $EBOLD \(\displaystyle  y_p(x) = e^{3x}(A \cos $a x + B \sin $a x)\)
-$PAR
-$BR
-$BBOLD 1. $EBOLD\{ans_rule(3)\} \(\displaystyle $f \)
-$PAR
-$BBOLD 2. $EBOLD\{ans_rule(3)\} \(\displaystyle $g\)
-$PAR
-$BBOLD 3. $EBOLD\{ans_rule(3)\} \(\displaystyle $h\)
-$PAR
-$BBOLD 4. $EBOLD\{ans_rule(3)\} \(\displaystyle $i\)
+\{ ColumnTable(
+"$BBOLD 1. $EBOLD" . $popup1->menu() . "\(\quad \displaystyle $f \)$PAR".
+"$BBOLD 2. $EBOLD" . $popup1->menu() . "\(\quad \displaystyle $g\)$PAR".
+"$BBOLD 3. $EBOLD" . $popup1->menu() . "\(\quad \displaystyle $h\)$PAR".
+"$BBOLD 4. $EBOLD" . $popup1->menu() . "\(\quad \displaystyle $i\)$PAR",
+"$BBOLD A. $EBOLD \(\displaystyle y_p(x) = Ax^2+Bx+C \), $PAR".
+"$BBOLD B. $EBOLD \(\displaystyle y_p(x) = Ae^{$a x} \), $PAR".
+"$BBOLD C. $EBOLD \(\displaystyle  y_p(x) = A \cos $a x + B \sin $a x\), $PAR".
+"$BBOLD D. $EBOLD \(\displaystyle  y_p(x) = (Ax + B)\cos $a x + (Cx+D)\sin $a x \), $PAR".
+"$BBOLD E. $EBOLD \(\displaystyle  y_p(x) = A x e^{$a x}\), $PAR".
+"$BBOLD F. $EBOLD \(\displaystyle  y_p(x) = e^{3x}(A \cos $a x + B \sin $a x)\)"); \}
 END_TEXT
 Context()->normalStrings;
 
 #####################################################################
 
-ANS(str_cmp($ans1,"ignore_case"));
-ANS(str_cmp($ans2,"ignore_case"));
-ANS(str_cmp($ans3,"ignore_case"));
-ANS(str_cmp($ans4,"ignore_case"));
+ANS($popup1->cmp());
+ANS($popup2->cmp());
+ANS($popup3->cmp());
+ANS($popup4->cmp());
 
 ENDDOCUMENT();

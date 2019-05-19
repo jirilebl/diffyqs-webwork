@@ -93,4 +93,6 @@ Combining these gives the answer
 END_SOLUTION
 Context()->normalStrings;
 
+COMMENT("Variation of parameters.");
+
 ENDDOCUMENT();
