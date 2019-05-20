@@ -77,20 +77,23 @@ Newtons / meter
 $SPACE \{ AnswerFormatHelp("numbers") \}
 
 $PAR
+$BITALIC Hint is to use earth gravity of \(9.8\) meters per second squared, and note that Newton is kg meter per second squared. $EITALIC
+
+$PAR
 Formulate the initial value problem for \( x(t) \),
 where \( x(t) \) is the displacement of the object
 from its equilibrium rest state, measured positive
 in the downward direction.
 $BR
 $BITALIC Give your answer in terms of
-\( x, x^{\,\prime}, x^{\,\prime\prime}, t \). $EITALIC
+\( x, x^{\prime}, x^{\prime\prime}, t \). $EITALIC
 $PAR
 Differential equation:
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("equations") \}
 $PAR
 Initial conditions: \( x(0) = \) \{ ans_rule(5) \} and
-\( x^{\,\prime}(0) = \) \{ ans_rule(5) \} 
+\( x^{\prime}(0) = \) \{ ans_rule(5) \} 
 \{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;

@@ -43,13 +43,30 @@ Context()->variables->set(
 );
 
 
-$m = 10; # mass
+$m = random(5,15,1); # mass
 $r = random(2,19,1);
 $mr = $m * $r;
 
-$F = Compute("$mr cos(10 t)");
+# These give nice answers, avoid 10 since we used
+# that in the previous problem
+@Apos = (4,5,5.6,7,12.5,14,17.5);
+$a = $Apos[random(0,6,1)];
 
-$k = Compute("$m * 9.8 / 0.098");
+$F = Compute("$mr cos($a t)");
+
+$asq = $a*$a;
+
+#k/m = asq
+
+#k= m g / disp
+
+#(m g / disp)/m = g/disp = asq
+#g/asq = disp;
+
+$disp = Compute("9.8 / $asq")->reduce;
+$dispcm = $disp*100.0;
+
+$k = Compute("$asq*$m")->reduce; #$m * 9.8 / $disp
 
 $diffeq = ImplicitEquation("$m x'' + $k x = $F");
 $y0  = Compute("0");
@@ -60,7 +77,7 @@ Context()->texStrings;
 BEGIN_TEXT
 A \( $m \) kilogram object suspended from the 
 end of a vertically hanging spring stretches the spring
-\( 9.8 \) centimeters.  At time \( t = 0 \), the 
+\( $dispcm \) centimeters.  At time \( t = 0 \), the 
 resulting mass-spring system is disturbed from its 
 rest state by the force \( F(t) = $F \).  The force
 \( F(t) \) is expressed in Newtons and is positive
@@ -76,6 +93,9 @@ Newtons / meter
 $SPACE \{ AnswerFormatHelp("numbers") \}
 
 $PAR
+$BITALIC Hint is to use earth gravity of \(9.8\) meters per second squared, and note that Newton is kg meter per second squared. $EITALIC
+
+$PAR
 Formulate the initial value problem for \( x(t) \),
 where \( x(t) \) is the displacement of the object
 from its equilibrium rest state, measured positive
@@ -83,14 +103,14 @@ in the downward direction.
 $BR
 $BITALIC
 Give your answer in terms of
-\( x, x^{\,\prime}, x^{\,\prime\prime}, t \). $EITALIC
+\( x, x^{\prime}, x^{\prime\prime}, t \). $EITALIC
 $PAR
 Differential equation:
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("equations") \}
 $PAR
 Initial conditions: \( x(0) = \) \{ ans_rule(5) \} and
-\( x^{\,\prime}(0) = \) \{ ans_rule(5) \} 
+\( x^{\prime}(0) = \) \{ ans_rule(5) \} 
 \{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;
@@ -112,7 +132,7 @@ ANS( $yp0->cmp() );
 Context("Numeric");
 Context()->variables->are('t' =>'Real');
 
-$y = Compute("$r/20 t sin(10 t)");
+$y = Compute("$r/(2*$a) t sin($a t)");
 
 
 Context()->texStrings;
@@ -143,7 +163,7 @@ ANS( $y->cmp() );
 
 ANS( Compute("NONE")->cmp() );
 
-
+COMMENT("Compute k from displacement, then the force will cause resonance");
 
 
 ENDDOCUMENT();
