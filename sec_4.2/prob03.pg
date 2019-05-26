@@ -127,8 +127,10 @@ Find the Fourier series for
 extended to a \(2 \pi\)-periodic function.
 $PAR
 \(\displaystyle \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n\,\cos(n t) + b_n\,\sin(n t) = {}\)
-$PAR
-\{ ans_rule(25) \} \( \displaystyle {} + \sum_{n=1}^{\infty} \) \{ ans_rule(25) \} \(\cos(n t) + {} \)
+\{ ans_rule(10) \} \( {} + {}\)
+$BR
+$SPACE $SPACE $SPACE
+\(\displaystyle \sum_{n=1}^{\infty} \) \{ ans_rule(25) \} \(\cos(n t) + {}\)
 \{ ans_rule(25) \} \(\sin(n t)\).
 $BR
 \{ AnswerFormatHelp("formulas") \}
@@ -159,7 +161,5 @@ Thus,
 END_SOLUTION
 Context()->normalStrings;
 
-
-;
 ENDDOCUMENT();
 
