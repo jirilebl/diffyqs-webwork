@@ -30,7 +30,7 @@ $a = random(2,9,1);
 $b = random(2,9,1);
 $c = random(2,9,1);
 
-$a0 = Compute("((2*$c)*(pi^2)+(6*$a))/3");
+$a0half = Compute("$a + (($c)*(pi^2))/3");
 $an = Compute("((4*$c)*(-1)^n)/(n^2)")->reduce;
 $bn = Compute("-((2*$b)*(-1)^n)/n")->reduce;
 
@@ -58,7 +58,7 @@ Context()->normalStrings;
 
 ###################################################
 
-ANS($a0->cmp() );
+ANS($a0half->cmp() );
 ANS($an->cmp() );
 ANS($bn->cmp() );
 
