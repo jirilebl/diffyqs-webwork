@@ -35,10 +35,10 @@ Solve the initial value problem
 \[ $p \left( \sin(x) \frac{dy}{dx} + \cos (x) y \right) = \cos(x)\sin^{$k}(x), \]
 for \(0 < x < \pi \) and \( y(\pi / 2) = $m. \)
 $PAR
-Find the integrating factor, \( u(x) = {} \) \{ans_rule(20) \}
+Find the integrating factor, \( u(x) = \) \{ans_rule(20) \}
 $SPACE \{ AnswerFormatHelp("formulas") \}
 $PAR
-Then find \(y(x) = {} \) \{ans_rule(50) \}
+Then find \(y(x) = \) \{ans_rule(50) \}
 $SPACE \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;

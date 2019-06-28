@@ -48,7 +48,7 @@ Use the method of undetermined coefficients to find
 one solution of
 \[ y'' + $B\,y' + $C\,y =  ($q2 \,x^2 + $q1 \, x + $q0 )\, e^{$r x} . \]
 
-\(y = {} \) \{ans_rule(80)\}
+\(y = \) \{ans_rule(80)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 $BITALIC $BBOLD Note: $EBOLD The method finds a specific solution, not the general one. Do not include the complementary solution in your answer.$EITALIC

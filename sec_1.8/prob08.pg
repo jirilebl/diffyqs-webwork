@@ -35,7 +35,7 @@ Context()->texStrings;
 BEGIN_TEXT
 Find a function \(F(x,y)\) whose level curves are solutions to the differential equation
 \[ ( x^2 + ${a}xy )dx + x dy= 0 \]
-\(F(x,y) = {} \) \{ ans_rule(30) \}
+\(F(x,y) = \) \{ ans_rule(30) \}
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
