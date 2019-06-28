@@ -16,8 +16,8 @@ loadMacros(
 
 ###################################################
 
-TEXT(beginproblem()) ;
-$showPartialCorrectAnswers = 1 ;
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
 
 Context('Numeric');
 Context()->variables->add(y=>'Real');

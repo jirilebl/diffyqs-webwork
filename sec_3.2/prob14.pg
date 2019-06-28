@@ -6,7 +6,7 @@
 
 ###########################################
 
-DOCUMENT() ;        
+DOCUMENT();        
 
 loadMacros(
   "PGstandard.pl",
@@ -20,7 +20,7 @@ loadMacros(
 
 TEXT(beginproblem());
 
-$showPartialCorrectAnswers = 1 ;
+$showPartialCorrectAnswers = 1;
 
 Context('Matrix');
 
@@ -50,7 +50,7 @@ $answer = Matrix([
   [0,0,1,$c],
 ]);
 
-$A = $P*$answer ;
+$A = $P*$answer;
 
 ###########################################
 

@@ -5,7 +5,7 @@
 
 #########################################################
 
-DOCUMENT() ;       
+DOCUMENT();       
 
 loadMacros(
   "PGstandard.pl",
@@ -16,26 +16,26 @@ loadMacros(
 
 #########################################################
 
-TEXT(beginproblem()) ;
-$showPartialCorrectAnswers = 1 ;
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
 
 Context("Numeric");
 
 do {
-  $B = random(2,4,1) ;
-  $C = random(-7,-3,1) ;             
-  $r = random(2,4,1) ;
+  $B = random(2,4,1);
+  $C = random(-7,-3,1);             
+  $r = random(2,4,1);
 }
 until ($r*$r + $B*$r + $C != 0);
 
-$q0 = random(-9,9,1) ; 
-$q1 = random(-9,9,1) ; 
-$q2 = random(-9,9,1) ;
+$q0 = random(-9,9,1); 
+$q1 = random(-9,9,1); 
+$q2 = random(-9,9,1);
 
 
-$c = ($q2)/(($r)*($r)+$C+$B*$r) ;
-$b = ($q1-$c*(4*$r+2*$B))/(($r)*($r)+$C+$B*$r) ;
-$a = ($q0-$b*(2*$r+$B)-2*$c)/(($r)*($r)+$C+$B*$r) ;
+$c = ($q2)/(($r)*($r)+$C+$B*$r);
+$b = ($q1-$c*(4*$r+2*$B))/(($r)*($r)+$C+$B*$r);
+$a = ($q0-$b*(2*$r+$B)-2*$c)/(($r)*($r)+$C+$B*$r);
 
 $S = "($c)*x**2 + ($b)*x + $a";
 
@@ -59,8 +59,8 @@ Context()->normalStrings;
 #########################################################
 
 $ans = Compute("($S) *exp($r *x) ")->reduce;
-ANS($ans->cmp()) ;
+ANS($ans->cmp());
 
 
-ENDDOCUMENT() ;       
+ENDDOCUMENT();       
 

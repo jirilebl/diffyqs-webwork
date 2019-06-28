@@ -15,7 +15,7 @@ loadMacros(
 
 ###############################################
 
-TEXT(beginproblem()) ;
+TEXT(beginproblem());
 
 Context("Numeric");
 Context()->variables->are(
@@ -59,6 +59,9 @@ if ($z==3) {
   $Fxy = Compute("(${b}e^x sin(y) + ${a}x y )");
 }
 
+$M = Compute("${b}e^x \sin(y) +${a}y")->reduce;
+$N = Compute("${d}x + ${c}e^x \cos(y)")->reduce;
+
 ###############################################
 
 Context()->texStrings;
@@ -67,7 +70,7 @@ Use the "mixed partials" check to see if the following differential equation is 
 $PAR
 If it is exact find a function \(F(x,y)\) whose differential, \(dF(x,y) \) is the left hand side of the differential equation. 
 That is, level curves \(F(x,y) = C\) are solutions to the differential equation
-\[ ( ${b}e^x \sin(y) +${a}y )dx + ( ${d}x + ${c}e^x \cos(y) )dy= 0 \]
+\[ ( $M )dx + ( $N )dy= 0 \]
 First, if this equation has the form \(M(x,y)dx+N(x,y)dy=0\):
 $PAR
 \(\dfrac{\partial M}{\partial y}(x,y)= \) \{ans_rule(30) \}
@@ -76,7 +79,7 @@ $PAR
 \(\dfrac{\partial N}{\partial x}(x,y)= \) \{ans_rule(30) \}
 \{AnswerFormatHelp("formulas") \}
 $PAR
-If the equation is not exact, enter ${BITALIC}not exact${EITALIC},
+If the equation is not exact, enter ${LQ}not exact${RQ},
 otherwise enter in 
 \(F(x,y)  \) here
 $BR

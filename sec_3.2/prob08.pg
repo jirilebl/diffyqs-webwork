@@ -6,7 +6,7 @@
 
 #################################################
 
-DOCUMENT() ;        
+DOCUMENT();        
 
 loadMacros(
   "PGstandard.pl",
@@ -19,7 +19,7 @@ loadMacros(
 
 TEXT(beginproblem());
 
-$showPartialCorrectAnswers = 1 ;
+$showPartialCorrectAnswers = 1;
 
 Context('Matrix');
 

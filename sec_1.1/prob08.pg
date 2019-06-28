@@ -22,6 +22,12 @@ Context()->variables->are(t=>['Real',limits=>[-0.1,0.1]]);
 $a = random(2,9,1) * random(-1,1,2); 
 $k = random(4,6,1); 
 $x0 = non_zero_random(-6,6,1);
+$x0abs = $x0;
+$x0sign = 1;
+if ($x0 < 0) {
+  $x0sign = -1;
+  $x0abs = -$x0;
+}
 
 BEGIN_PGML
 Solve the differential equation
@@ -30,7 +36,7 @@ Solve the differential equation
 
 and find the particular solution satisfying the initial condition 
 
->>[`` x(0) = \frac{1}{[$x0]}. ``]<<
+>>[`` x(0) = \frac{[$x0sign]}{[$x0abs]}. ``]<<
 
 [` x(t) = {} `] [_________]{"((-$k+1)*$a*t+($x0)^($k-1))^(-1/($k-1))"}{40}
 [@ AnswerFormatHelp("formulas") @]*

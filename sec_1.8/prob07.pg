@@ -4,7 +4,7 @@
 
 ########################################
 
-DOCUMENT() ;
+DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
@@ -49,4 +49,4 @@ Context()->normalStrings;
 ANS(Compute("sin(x)")->cmp());
 ANS(Compute("$a/sin(x) + $r * ((sin(x))**$k )")->cmp());
 
-ENDDOCUMENT() ;    
+ENDDOCUMENT();    

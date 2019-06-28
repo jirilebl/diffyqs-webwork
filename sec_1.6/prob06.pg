@@ -18,8 +18,8 @@ loadMacros(
 
 #############################################################
 
-TEXT(beginproblem()) ;
-$showPartialCorrectAnswers = 0 ;
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 0;
 
 Context("Numeric");
 
@@ -84,7 +84,7 @@ END_TEXT
 $ans1 = ($sign > 0) ? 'unstable': 'stable';
 $ans2 = 'semi-stable';
 $ans3 = ($sign > 0) ? 'stable': 'unstable';
-$ans4 = ($sign > 0) ? 'unstable':'stable' ;
+$ans4 = ($sign > 0) ? 'unstable':'stable';
 
 ANS(Compute("$a")->cmp(),str_cmp($ans1));
 ANS(Compute("$b")->cmp(),str_cmp($ans2));

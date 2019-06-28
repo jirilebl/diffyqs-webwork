@@ -84,7 +84,6 @@ which is in standard linear form
 with \( p(x) = \frac{-$m}{x} \) and \( f(x) = \frac{1}{$a} x^{-$p1}\).  The integrating factor \( r(x) \) is defined by
 \[ r(x) = e^{\int p(x) dx} = e^{\ln x^{-$m}} = x^{-$m}. \]
 $PAR
-$BR
 Let us now find the general solution.
 When multiplied by \( r(x) \), the equation becomes:
 \[ x^{-$m} y' - $m x^{-$m1} y = \frac{1}{$a}x^{-$pm1}. \]
@@ -94,7 +93,6 @@ So \( x^{-$m} y = \frac{1}{$a(-$pm)} x^{-$pm} + C \) and
 $PAR
 \[ y = \frac{1}{-$apm} x^{-$p} + C x^{$m}. \]
 $PAR
-$BR
 Finally, let's find the particular solution.
 If \( y(1) = $y1 \), we find
 $PAR
