@@ -77,7 +77,7 @@ Newtons per meter, and \( F(t) = $F \) Newtons.
 $PAR
 Solve the initial value problem.
 $PAR
-\( x(t) = \) \{ ans_box(2,50) \}
+\( x(t) = \) \{ ans_rule(80) \}
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
