@@ -229,17 +229,24 @@ mbox(
 $multians1->ans_rule(5),
 ', \( {\vec{v}_1} =  \) ', 
 display_matrix([[$multians1->ans_rule(5)],[$multians1->ans_rule(5)]]),
-', and \( \lambda_2 = \) ',
-$multians1->ans_rule(5),
-', \( {\vec{v}_2} =  \) ', 
-display_matrix([[$multians1->ans_rule(5)],[$multians1->ans_rule(5)]]),
+AnswerFormatHelp("numbers").$BR.AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
 \}
-\{ AnswerFormatHelp("numbers") \}
-$SPACE
-\{ AnswerFormatHelp("matrices") \}
+and
+\{ 
+mbox(
+[
+'\( \lambda_2 = \) ',
+$multians1->ans_rule(5),
+', \( {\vec{v}_2} =  \) ', 
+display_matrix([[$multians1->ans_rule(5)],[$multians1->ans_rule(5)]]),
+AnswerFormatHelp("numbers").$BR.AnswerFormatHelp("matrices")
+],
+allowbreaks=>'yes'
+) 
+\}
 
 $PAR
 For each eigenpair in the previous part, form a 
@@ -252,7 +259,16 @@ mbox(
 [
 '\( {\vec{x}_1}(t) =  \) ', 
 display_matrix([[$multians2->ans_rule(10)],[$multians2->ans_rule(10)]]),
-' and \( {\vec{x}_2}(t) =  \) ', 
+AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices")
+],
+allowbreaks=>'yes'
+) 
+\}
+and
+\{ 
+mbox(
+[
+'\( {\vec{x}_2}(t) =  \) ', 
 display_matrix([[$multians2->ans_rule(10)],[$multians2->ans_rule(10)]]),
 AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices")
 ],

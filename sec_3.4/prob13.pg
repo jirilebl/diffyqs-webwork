@@ -135,17 +135,24 @@ mbox(
 $multians1->ans_rule(5),
 ', \( {\vec{v}_1} =  \) ', 
 display_matrix([[$multians1->ans_rule(5)],[$multians1->ans_rule(5)]]),
-', and \( \lambda_2 = \) ',
-$multians1->ans_rule(5),
-', \( {\vec{v}_2} =  \) ', 
-display_matrix([[$multians1->ans_rule(5)],[$multians1->ans_rule(5)]]),
+AnswerFormatHelp("numbers").$BR.AnswerFormatHelp("matrices")
 ],
 allowbreaks=>'yes'
 ) 
 \}
-\{ AnswerFormatHelp("numbers") \}
-$SPACE
-\{ AnswerFormatHelp("matrices") \}
+and
+\{ 
+mbox(
+[
+'\( \lambda_2 = \) ',
+$multians1->ans_rule(5),
+', \( {\vec{v}_2} =  \) ', 
+display_matrix([[$multians1->ans_rule(5)],[$multians1->ans_rule(5)]]),
+AnswerFormatHelp("numbers").$BR.AnswerFormatHelp("matrices")
+],
+allowbreaks=>'yes'
+) 
+\}
 END_TEXT
 Context()->normalStrings;
 
