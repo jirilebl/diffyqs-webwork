@@ -17,7 +17,7 @@ loadMacros(
 
 ##############################################################
 
-TEXT( beginproblem() ); 
+TEXT(beginproblem()); 
 $showPartialCorrectAnswers = 1;
 
 Context("Numeric");
