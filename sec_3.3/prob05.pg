@@ -71,7 +71,7 @@ $P[1][0]*$y1[0] + $P[1][1]*$y1[1]
     #<table border='0' cellspacing='10'><tr><td> %s </td></tr><tr><td> %s </td></tr></table>  
   #</td></tr>
   #</table>",
-  tex_format =>  "\begin{bmatrix} %s \\ %s \end{bmatrix} = \begin{bmatrix} %s \\ %s \end{bmatix}",
+  tex_format =>  "\begin{bmatrix} %s \\ %s \end{bmatrix} = \begin{bmatrix} %s \\ %s \end{bmatrix}",
 
   checker => sub {
       my ( $correct, $student, $answerHash ) = @_;
