@@ -28,6 +28,8 @@ Context("Matrix");
 
 Context()->variables->are(t=>"Real");
 
+$id = Value::Matrix->I(2);
+
 # define A
 $a11 = random(-1,1,2);
 $a12 = non_zero_random(-3,3,1);

@@ -94,12 +94,13 @@ write it in the eigenvector decomposed form.
 $PAR
 \( \vec{v}_1 \xi_1' + \vec{v}_2 \xi_2' = \)
 \{ ans_rule(3) \}
-\( \vec{v}_1 \xi_1 + \)
+\( \xi_1 \vec{v}_1 + \)
 \{ ans_rule(3) \}
-\( \vec{v}_2 \xi_2 + \vec{v}_1 \)
+\( \xi_2 \vec{v}_2 + \)
 \{ ans_rule(15) \}
-\( + \vec{v}_2 \)
+\( \vec{v}_1 + \)
 \{ ans_rule(15) \}
+\( \vec{v}_2 \)
 $BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT

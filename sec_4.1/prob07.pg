@@ -71,7 +71,7 @@ The eigenvalues (when is the string popped out) are \( \frac{\rho \omega^2}{T} =
 $PAR
 It the string is completely popped out, that means we are looking at the first eigenvalue, that is \( k = 1 \).
 That is \( \frac{\rho \omega^2}{T} = \frac{\pi^2}{L^2} \).  Plugging in \(L=$a\), \(\rho = $c\), \(\omega=$b\),
-and solving for \(\T\), we obtain
+and solving for \(T\), we obtain
 \[ T = $sol \]
 END_SOLUTION
 Context()->normalStrings;
