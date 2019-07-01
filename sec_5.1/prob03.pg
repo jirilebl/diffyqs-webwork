@@ -14,7 +14,7 @@ loadMacros(
   "answerHints.pl",
   "parserMultiAnswer.pl",
   "unionLists.pl",
-  "scaffold.pl",
+  #"scaffold.pl",
   "PGcourse.pl"
 );
 
@@ -311,16 +311,18 @@ For extra practice we will solve this problem from scratch.
 END_TEXT
 
 
-Scaffold::Begin(can_open=>"always");
-#################################################################
-Section::Begin("${BBOLD}Separate Variables.${EBOLD}");
+# Scaffold::Begin(can_open=>"always");
+# #################################################################
+# Section::Begin("${BBOLD}Separate Variables.${EBOLD}");
 
 
 BEGIN_TEXT
+$PAR
+$HR
+$PAR
+${BBOLD}Separate variables.${EBOLD}$PAR
 
 
-
-${BBOLD}Separate variables.${EBOLD}$BR
 Assume \(u(x,t) = X(x)\,T(t)\) and split the PDE into two 
 differential equations, one with \(X\) and one with \(T\). 
 $BR
@@ -357,13 +359,16 @@ DE for \(T(t)\): \{ans_rule(20)\} \( = 0\)
 END_TEXT
 
 
-Section::End();
-##############################################################
-Section::Begin("${BBOLD}Find Eigenfunctions for \(X(x)\).${EBOLD}");
+# Section::End();
+# ##############################################################
+# Section::Begin("${BBOLD}Find Eigenfunctions for \(X(x)\).${EBOLD}");
 
 
 BEGIN_TEXT
-
+$PAR
+$HR
+$PAR
+${BBOLD}Find Eigenfunctions for \(X(x)\).${EBOLD}$PAR
 
 The problem splits into cases based on the sign of \(\lambda\).$BR
 $SPACE $SPACE 
@@ -444,13 +449,16 @@ $BR
 END_TEXT
 
 
-Section::End();
-#########################################################
-Section::Begin("${BBOLD}Solve for \(T(t)\).${EBOLD}");
+# Section::End();
+# #########################################################
+# Section::Begin("${BBOLD}Solve for \(T(t)\).${EBOLD}");
 
 
 BEGIN_TEXT
-
+$PAR
+$HR
+$PAR
+${BBOLD}Solve for \(T(t)\).${EBOLD}$PAR
 
 
 Plug the eigenvalues \(\lambda_n = \gamma_n^2\) from ${BBOLD}Case 3${EBOLD} into the 
@@ -475,13 +483,16 @@ where \(c_n\) are unknown constants.
 END_TEXT
 
 
-Section::End();
-############################################################
-Section::Begin("${BBOLD}Eigenfunction expansion.${EBOLD}");
+# Section::End();
+# ############################################################
+# Section::Begin("${BBOLD}Eigenfunction expansion.${EBOLD}");
 
 
 BEGIN_TEXT
-
+$PAR
+$HR
+$PAR
+${BBOLD}Eigenfunction expansion.${EBOLD}$PAR
 
 We compute \(c_n\) by plugging \(t=0\) into the formula for \(u(x,t)\)
 and setting equal to the initial heat distribution given in the problem. $BR
@@ -509,9 +520,9 @@ $BR $BR $SPACE $SPACE
 END_TEXT
 
 
-Section::End();
-###########################################################
-Scaffold::End();
+# Section::End();
+# ###########################################################
+# Scaffold::End();
 
 
 Context()->normalStrings;
