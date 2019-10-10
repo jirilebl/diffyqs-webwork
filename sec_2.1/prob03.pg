@@ -15,7 +15,6 @@ loadMacros(
 "PGstandard.pl",
 "MathObjects.pl",
 "AnswerFormatHelp.pl",
-"parserFunction.pl",
 "PGcourse.pl",
 );
 
@@ -83,7 +82,4 @@ ANS( $answer2->cmp() );
 #END_SOLUTION
 #Context()->normalStrings;
 
-;
-
 ENDDOCUMENT();
-

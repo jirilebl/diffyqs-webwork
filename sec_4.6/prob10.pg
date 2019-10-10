@@ -76,6 +76,4 @@ to obtain that
 END_SOLUTION
 Context()->normalStrings;
 
-;
-
 ENDDOCUMENT();

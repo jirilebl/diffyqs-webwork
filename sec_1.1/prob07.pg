@@ -66,9 +66,7 @@ Plug this [:C:] into the answer to obtain the final answer:
 >>[::y(x) = [$answer] .::]<<
 END_PGML_SOLUTION
 
-;
-
-######################################################
+############################
 
 COMMENT("Integrate to solve after inverse function theorem, simple separable.");
 

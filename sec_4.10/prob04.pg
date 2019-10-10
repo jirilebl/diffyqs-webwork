@@ -99,6 +99,4 @@ w(r,\theta) = \frac{1}{2\pi} \int_{-\pi}^{\pi} $answer2 \, d\alpha \)
 END_SOLUTION
 Context()->normalStrings;
 
-;
-
 ENDDOCUMENT();

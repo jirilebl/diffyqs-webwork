@@ -121,6 +121,4 @@ ANS( $answer8->cmp() );
 #END_SOLUTION
 #Context()->normalStrings;
 
-;
-
 ENDDOCUMENT();

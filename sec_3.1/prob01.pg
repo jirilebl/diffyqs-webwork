@@ -26,7 +26,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "parserFunction.pl",
   "PGcourse.pl",
 );
 
@@ -103,7 +102,4 @@ that is,
 END_SOLUTION
 Context()->normalStrings;
 
-;
-
 ENDDOCUMENT();
-

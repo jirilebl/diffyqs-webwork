@@ -275,6 +275,4 @@ ANS( $popup->cmp() );
 
 ANS( radio_cmp( $mc->correct_ans() ) );
 
-;
-
 ENDDOCUMENT();

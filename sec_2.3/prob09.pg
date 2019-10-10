@@ -78,8 +78,4 @@ $showPartialCorrectAnswers = 1;
 
 ANS( $multians->cmp() );
 
-;
-
 ENDDOCUMENT();
-
-

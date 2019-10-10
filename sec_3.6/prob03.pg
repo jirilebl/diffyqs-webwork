@@ -208,9 +208,6 @@ Context()->normalStrings;
 $showPartialCorrectAnswers = 1;
 
 ANS( $multians1->cmp() );
-
 ANS( $multians2->cmp() );
-
-;
 
 ENDDOCUMENT();

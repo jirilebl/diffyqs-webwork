@@ -80,7 +80,7 @@ foreach my $i (0..1) {
   ANS( $answer[$i]->cmp() );
 }
 
-;
+############################
 
 COMMENT("Veryfing a solution to a nonlinear equation.");
 

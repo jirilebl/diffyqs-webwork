@@ -101,6 +101,4 @@ The natural frequencies are the square roots of the negatives of the eigenvalues
 END_SOLUTION
 Context()->normalStrings;
 
-;
-
 ENDDOCUMENT();

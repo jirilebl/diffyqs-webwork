@@ -89,6 +89,4 @@ Increasing tension by a factor of \($bsq\) multiplies the frequency by the squar
 END_SOLUTION
 Context()->normalStrings;
 
-;
-
 ENDDOCUMENT();

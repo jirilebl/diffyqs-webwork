@@ -62,7 +62,7 @@ Now we integrate
 >>[``y = \int \frac{[$a] x}{1+x} dx + C = [$answer]``]<<
 END_PGML_SOLUTION
 
-;
+#############################################################
 
 COMMENT("Integrate to solve ODE, must put into standard form first.");
 

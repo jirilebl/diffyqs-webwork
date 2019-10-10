@@ -85,9 +85,7 @@ foreach my $i (0..4) {
   ANS( $answer[$i]->cmp() );
 }
 
-;
-
-########################################################################
+############################
 
 COMMENT("Checking application of Picard's theorem.");
 

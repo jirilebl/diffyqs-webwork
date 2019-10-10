@@ -98,7 +98,7 @@ foreach my $i (0..3) {
   ANS( $answer[$i]->cmp() );
 }
 
-;
+############################
 
 COMMENT("Differentiating a possible solution, finding the general solution for a specific constant.");
 

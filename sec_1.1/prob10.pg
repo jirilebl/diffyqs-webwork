@@ -69,7 +69,7 @@ $d0 + \frac{$a (60)^3}{3} + $b(60) .
 \]
 END_SOLUTION
 
-;
+############################
 
 COMMENT("Word problem for an ODE with integral as solution");
 

@@ -66,6 +66,4 @@ $showPartialCorrectAnswers = 1;
 
 ANS( $answer1->cmp() );
 
-;
-
 ENDDOCUMENT();

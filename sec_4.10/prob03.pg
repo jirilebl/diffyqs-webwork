@@ -76,6 +76,4 @@ on the boundary of the unit disc.
 END_SOLUTION
 Context()->normalStrings;
 
-;
-
 ENDDOCUMENT();

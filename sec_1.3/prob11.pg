@@ -97,6 +97,4 @@ to be in that range.
 END_SOLUTION
 Context()->normalStrings;
 
-
-;
 ENDDOCUMENT();

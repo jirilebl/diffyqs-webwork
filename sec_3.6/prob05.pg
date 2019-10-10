@@ -200,6 +200,4 @@ ANS( $y->cmp() );
 
 ANS( $pop->cmp() );
 
-;
-
 ENDDOCUMENT();

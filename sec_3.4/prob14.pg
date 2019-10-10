@@ -159,6 +159,4 @@ $showPartialCorrectAnswers = 1;
 
 ANS( $multians2->cmp() );
 
-;
-
 ENDDOCUMENT(); 

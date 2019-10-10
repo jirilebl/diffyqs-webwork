@@ -83,6 +83,4 @@ The derivative of \(u\) in \(t\) is
 END_SOLUTION
 Context()->normalStrings;
 
-;
-
 ENDDOCUMENT();

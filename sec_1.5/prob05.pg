@@ -136,7 +136,4 @@ Context()->normalStrings;
 
 ANS( $answerc->cmp() );
 
-
-;
-
 ENDDOCUMENT();

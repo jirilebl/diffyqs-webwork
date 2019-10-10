@@ -88,6 +88,4 @@ $BR
 END_SOLUTION
 Context()->normalStrings;
 
-;
-
 ENDDOCUMENT();

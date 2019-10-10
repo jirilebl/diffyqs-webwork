@@ -147,6 +147,4 @@ Context()->normalStrings;
 
 COMMENT("Positive eigenvalues in the coefficient matrix");
 
-;
-
 ENDDOCUMENT();

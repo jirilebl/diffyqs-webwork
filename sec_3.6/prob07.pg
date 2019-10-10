@@ -108,7 +108,4 @@ ANS( $y->cmp() );
 ANS( $xinf->cmp() );
 ANS( $yinf->cmp() );
 
-
-;
-
 ENDDOCUMENT();

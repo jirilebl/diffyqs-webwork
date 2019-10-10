@@ -215,7 +215,4 @@ ANS( $Q2->cmp() );
 ANS( $Q1inf->cmp() );
 ANS( $Q2inf->cmp() );
 
-
-;
-
 ENDDOCUMENT();

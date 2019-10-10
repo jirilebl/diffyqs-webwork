@@ -102,12 +102,7 @@ Context()->normalStrings;
 $showPartialCorrectAnswers = 1;
 
 ANS( $answera->cmp() );
-
 ANS( $answerb->cmp() );
-
 ANS( $answerc->cmp() );
-
-
-;
 
 ENDDOCUMENT();

@@ -82,6 +82,4 @@ $PAR
 END_SOLUTION
 Context()->normalStrings;
 
-;
-
 ENDDOCUMENT();

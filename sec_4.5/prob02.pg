@@ -75,6 +75,4 @@ ANS( $answer3->cmp() );
 #END_SOLUTION
 #Context()->normalStrings;
 
-;
-
 ENDDOCUMENT();

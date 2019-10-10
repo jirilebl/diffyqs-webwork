@@ -15,7 +15,6 @@ loadMacros(
 "PGstandard.pl",
 "MathObjects.pl",
 "AnswerFormatHelp.pl",
-"parserFunction.pl",
 "PGcourse.pl",
 );
 
@@ -88,8 +87,6 @@ We find
 \(y = $answer2 \).
 END_SOLUTION
 Context()->normalStrings;
-
-;
 
 ENDDOCUMENT();
 

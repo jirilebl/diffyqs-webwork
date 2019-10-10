@@ -97,7 +97,4 @@ For the second equation, substitute \( x'' = y' \) and \( x' = y\) into
 END_SOLUTION
 Context()->normalStrings;
 
-;
-
 ENDDOCUMENT();
-

@@ -88,6 +88,4 @@ Thus
 END_SOLUTION
 Context()->normalStrings;
 
-;
-
 ENDDOCUMENT();
