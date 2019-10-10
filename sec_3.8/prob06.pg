@@ -1,7 +1,18 @@
-# Compute matrix exponential for a matrix depending on t for a nilpotent matrix
+##DESCRIPTION
+## Compute matrix exponential for a matrix depending on t for a nilpotent matrix
+##ENDDESCRIPTION
 
-## Institution(Oklahoma State University)
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Matrix exponential)
 ## Author(Jiri Lebl)
+## Institution(Oklahoma State University)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('3.8')
+## Problem1('')
 ## KEYWORDS('matrix exponential')
 
 ########################################################################
@@ -101,5 +112,9 @@ $matrix_exp
 \]
 END_SOLUTION
 Context()->normalStrings;
+
+###########################
+
+COMMENT("Matrix exponential for a nilpotent matrix, depending on t");
 
 ENDDOCUMENT();

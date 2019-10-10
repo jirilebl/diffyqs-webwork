@@ -1,8 +1,19 @@
-# Compute quadratic approximation and approximation to a solution using
-# the series.
+##DESCRIPTION
+## Compute quadratic approximation and approximation to a solution using
+## the Taylor series.
+##ENDDESCRIPTION
 
-## Institution(Oklahoma State University)
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Matrix exponential)
 ## Author(Jiri Lebl)
+## Institution(Oklahoma State University)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('3.8')
+## Problem1('')
 ## KEYWORDS('matrix exponential')
 
 ########################################################################
@@ -118,5 +129,9 @@ $approxetA $v = $approxsol .
 \]
 END_SOLUTION
 Context()->normalStrings;
+
+###########################
+
+COMMENT("Solution using Taylor series for matrix exponential");
 
 ENDDOCUMENT();
