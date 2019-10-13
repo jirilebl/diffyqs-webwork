@@ -1,8 +1,20 @@
-# Find the recurrence relations and a solution to first order equation
+##DESCRIPTION
+## Find the recurrence relations and a solution to first order equation
+##ENDDESCRIPTION
 
-## Institution(Oklahoma State University)
+## DBsubject(Differential equations)
+## DBchapter(Series solutions)
+## DBsection(Ordinary point)
 ## Author(Jiri Lebl)
-## KEYWORDS('differential equation', 'second order', 'homogeneous', 'series solution')
+## Institution(Oklahoma State University)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('7.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'power series', 'series solution', 'recurrence')
 
 ##############################################################
 
