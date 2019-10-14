@@ -1,8 +1,20 @@
-# Finding steady state periodic solution, resonance
+##DESCRIPTION
+## Finding steady state periodic solution, resonance
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Misc.)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
-## KEYWORDS('ODE', 'ordinary', 'differential', 'nonhomogeneous', 'inhomogeneous', 'equation', 'boundary value problem', 'cosine series', 'Fourier series', 'Neumann')
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('4.5')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'nonhomogeneous', 'inhomogeneous', 'equation', 'Fourier series', 'steady state', 'resonance')
 
 ########################################################################
 
