@@ -1,7 +1,19 @@
-# Simple solution of the Laplace equation given an expansion on one side of a square
+##DESCRIPTION
+## Simple solution of the Laplace equation given an expansion on one side of a square
+##ENDDESCRIPTION
 
-## Institution(Oklahoma State University)
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection(Laplace's equation)
 ## Author(Jiri Lebl)
+## Institution(Oklahoma State University)
+## Level(4)
+## TitleText2('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText2('Jiri Lebl')
+## EditionText2('5')
+## Section2('4.9')
+## Problem2('')
+## MO(1)
 ## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'Laplace equation')
 
 ###########################
@@ -10,14 +22,13 @@
 DOCUMENT();
 
 loadMacros(
-"PGstandard.pl",
-"MathObjects.pl",
-"AnswerFormatHelp.pl",
-"PGcourse.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl",
 );
 
 TEXT(beginproblem());
-
 
 ###########################
 #  Setup
@@ -35,7 +46,6 @@ $answer1 = Compute("$a sin($b pi y)* sinh($b pi (1-x))/sinh($b pi)");
 
 ############################
 ##  Main text
-#
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -54,14 +64,12 @@ $PAR
 END_TEXT
 Context()->normalStrings;
 
-
 #############################
 ##  Answer evaluation
 
 $showPartialCorrectAnswers = 1;
 
 ANS( $answer1->cmp() );
-
 
 #####################
 # Solution
@@ -70,5 +78,9 @@ ANS( $answer1->cmp() );
 #BEGIN_SOLUTION
 #END_SOLUTION
 #Context()->normalStrings;
+
+#############################
+
+COMMENT("Simple solution of the Laplace equation given an expansion on one side (left) of a square");
 
 ENDDOCUMENT();

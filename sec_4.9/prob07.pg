@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Simple solution of the Laplace equation given an expansion on two sides of a square
+## Simple solution of the Laplace equation in an infinite strip
 ##ENDDESCRIPTION
 
 ## DBsubject(Differential equations)
@@ -34,32 +34,34 @@ TEXT(beginproblem());
 #  Setup
 
 Context("Numeric");
-Context()->variables->add(y=>'Real');
 
 $a = random(2,9,1);
+#$asq=$a*$a;
 do { $b = random(2,9,1); } until ($b != $a);
 do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
+do { $d = random(2,9,1); } until (($d != $a) and ($d != $b) and ($d != $c));
 
-Context()->variables->add(t => ["Real", limits=>[0.1,4]]);
+Context()->variables->add(y => "Real");
 
-$answer1 = Compute("$a sin(pi x) * sinh(pi y)/sinh(pi) + $b sin($c pi y)* sinh($c pi(1-x))/sinh($c pi)");
+Context()->flags->set(
+     reduceConstants => 0,
+     reduceConstantFunctions => 0,
+);
+
+$answer1 = Compute("$c((x-$b)/(-$a-$b)) + $d((x+$a)/($b+$a))");
 
 ############################
 ##  Main text
 
 Context()->texStrings;
 BEGIN_TEXT
-Solve the partial differential equation problem
+We wish to solve
+\( \nabla^2 \psi = \psi_{xx} + \psi_{yy} = 0 \) in the region in the plane given by \( -$a < x < $b \) and \(-\infty < y < \infty\).  Suppose that
+when \( x =-$a \), then \(\psi = $c \) and 
+when \( x =$b \), then \(\psi = $d \).
+Suppose that \(\psi\) does not depend on \(y\).
 $PAR
-\( \quad u_{xx} + u_{xx} = 0  , \qquad 0 < x < 1 , \quad 0 < y < 1 \)
-$PAR
-\( \quad 
-u(x,0) = 0 , \quad
-u(x,1) = $a \sin(\pi x), \quad
-u(0,y) = $b \sin($c \pi y), \quad
-u(1,y) = 0. \)
-$PAR
-\(u(x,y) = {} \) \{ ans_rule(60) \}
+\(\psi = {} \) \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
@@ -74,13 +76,19 @@ ANS( $answer1->cmp() );
 #####################
 # Solution
 
-#Context()->texStrings;
-#BEGIN_SOLUTION
-#END_SOLUTION
-#Context()->normalStrings;
+Context()->texStrings;
+BEGIN_SOLUTION
+If \(\psi\) is a function only of \(x\), then the equation is \(\psi_{xx} = 0 \).  Hence,
+\(\psi\) is an affine linear function of \(x\), that is, \(\psi = A x + B\).
+You just need to solve
+for \(A\) and \(B\) so that \(\psi\) satisfies the boundary conditions.  One way to do it is:
+$PAR
+\( \psi = $answer1 \)
+END_SOLUTION
+Context()->normalStrings;
 
 #############################
 
-COMMENT("Simple solution of the Laplace equation given an expansion on two sides of a square");
+COMMENT("Simple solution of the Laplace equation in an infinite strip");
 
 ENDDOCUMENT();
