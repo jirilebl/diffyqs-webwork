@@ -1,6 +1,18 @@
-# Finding constants given initial conditions
+##DESCRIPTION
+## Finding constants given initial conditions
+##ENDDESCRIPTION
 
-## KEYWORDS('initial value', 'differential equation', 'initial value problem')
+## DBsubject(Differential equations)
+## DBchapter(Introductory concepts)
+## DBsection(Verification of solutions)
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('0.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'verify', 'initial value', 'initial value problem')
 
 ##########################################################################
 

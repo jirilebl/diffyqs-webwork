@@ -1,8 +1,20 @@
-# Find all solutions of a certain form
+##DESCRIPTION
+## Find all solutions of a certain form
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Introductory concepts)
+## DBsection(Verification of solutions)
 ## Institution(Miami Univ. Ohio and Hope College)
 ## Author(Anna Ghazaryan, Fuli Zhang, and Paul Pearson)
-## KEYWORDS('differential equations')
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('0.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation')
 
 ########################################################################
 

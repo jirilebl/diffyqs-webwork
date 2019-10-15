@@ -1,8 +1,20 @@
-# Verify a family of solutions, then find a solution given an IC.
+##DESCRIPTION
+## Verify a family of solutions, then find a solution given an initial condition.
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Introductory concepts)
+## DBsection(Verification of solutions)
 ## Institution(University of Minnesota)
 ## Author(Justin Sukiennik)
-## KEYWORDS('calculus', 'differential equations', 'first-order')
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('0.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'verify', 'initial value', 'initial value problem')
 
 #####################################################################
 
@@ -61,6 +73,6 @@ ANS(($ans2)->cmp());
 
 #####################################################################
 
-COMMENT("Verify a family of solutions, then find a solution given an IC.");
+COMMENT("Verify a family of solutions, then find a solution given an initial condition.");
 
 ENDDOCUMENT();

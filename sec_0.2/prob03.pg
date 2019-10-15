@@ -1,9 +1,20 @@
-# Differentiating a possible solution, finding the general solution for a specific constant.
+##DESCRIPTION
+## Differentiating a possible solution, finding the general solution for a specific constant.
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Introductory concepts)
+## DBsection(Verification of solutions)
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
-## KEYWORDS('differential equations')
-
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('0.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'verify')
 
 ##############################
 #  Initialization
@@ -20,7 +31,6 @@ loadMacros(
 
 TEXT(beginproblem());
 
-
 #############################
 #  Setup
 
@@ -28,7 +38,6 @@ Context("Numeric")->variables->add(
   y=>"Real", k=>"Real", 'C1'=>"Real", 'C2'=>"Real"
 );
 parser::Assignment->Allow;
-
 
 Context()->flags->set(
   reduceConstants=>0, # no decimals
@@ -48,7 +57,6 @@ $answer[0] = $fx;
 $answer[1] = $fxx;
 $answer[2] = Formula("k^2 y");
 $answer[3] = Formula("y=$fk");
-
 
 #############################
 #  Main text
@@ -87,7 +95,6 @@ $PAR
 \{ AnswerFormatHelp("equations"); \}
 END_TEXT
 Context()->normalStrings;
-
 
 ############################
 #  Answers

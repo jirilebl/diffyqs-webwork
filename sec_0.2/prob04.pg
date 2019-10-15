@@ -1,9 +1,20 @@
-# Veryfing a solution to a nonlinear equation
+##DESCRIPTION
+## Verifying a solution to a nonlinear equation
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Introductory concepts)
+## DBsection(Verification of solutions)
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
-## KEYWORDS('differential equations')
-
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('0.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'verify', 'nonlinear')
 
 ##############################
 #  Initialization
@@ -18,7 +29,6 @@ loadMacros(
 );
 
 TEXT(beginproblem());
-
 
 #############################
 #  Setup
@@ -70,7 +80,6 @@ $PAR
 END_TEXT
 Context()->normalStrings;
 
-
 ############################
 #  Answers
 
@@ -82,6 +91,6 @@ foreach my $i (0..1) {
 
 ############################
 
-COMMENT("Veryfing a solution to a nonlinear equation.");
+COMMENT("Verifying a solution to a nonlinear equation.");
 
 ENDDOCUMENT();

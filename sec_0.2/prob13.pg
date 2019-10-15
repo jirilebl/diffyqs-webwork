@@ -1,9 +1,20 @@
-# Solve an IVP (one of the four fundamental equations)
+##DESCRIPTION
+## Solve an initial value problem (one of the four fundamental equations)
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Introductory concepts)
+## DBsection(Verification of solutions)
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
-## KEYWORDS('differential equations')
-
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('0.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation')
 
 ##############################
 #  Initialization
@@ -18,7 +29,6 @@ loadMacros(
 );
 
 TEXT(beginproblem());
-
 
 #############################
 #  Setup
@@ -38,8 +48,6 @@ do { $A0 = random(2,9,1); } until ($A0 != $k);
 
 $answer = Formula("$A0 * e^($k t)");
 
-
-
 #############################
 #  Main text
 
@@ -55,7 +63,6 @@ $BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
-
 
 ############################
 #  Answers
@@ -75,9 +82,8 @@ ANS( $answer->cmp(
     }
   } ) );
 
-
 ############################
 
-COMMENT("Solve an IVP (one of the four fundamental equations).");
+COMMENT("Solve an initial value problem (one of the four fundamental equations).");
 
 ENDDOCUMENT();

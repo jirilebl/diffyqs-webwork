@@ -1,8 +1,19 @@
-# Match solutions to equations
+##DESCRIPTION
+## Match solutions to equations
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Introductory concepts)
+## DBsection(Verification of solutions)
 ## Institution(OSU)
 ## Author(Zig Fiedorowicz)
-## KEYWORDS('Differential Equations', 'Higher Order')
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('0.2')
+## Problem1('')
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'match')
 
 ################################################################################
 
@@ -65,8 +76,8 @@ install_problem_grader(~~&std_problem_grader);
 
 ANS(str_cmp($ml->ra_correct_ans));
 
-COMMENT("Match solutions to equations.");
-
 ################################################################################
+
+COMMENT("Match solutions to equations.");
 
 ENDDOCUMENT();

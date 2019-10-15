@@ -1,8 +1,19 @@
-# Pick solutions from a list
+##DESCRIPTION
+## Pick solutions from a list
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Introductory concepts)
+## DBsection(Verification of solutions)
 ## Institution(Rochester)
-## KEYWORDS('differential equation' 'solution')
-
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('0.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'match')
 
 #####################################################
 

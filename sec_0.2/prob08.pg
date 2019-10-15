@@ -1,8 +1,19 @@
-# Pick a solution from a list, then solve the IVP.
+##DESCRIPTION
+## Pick a solution from a list, then solve the initial value problem.
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Introductory concepts)
+## DBsection(Verification of solutions)
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
-## KEYWORDS('ivp', 'initial', 'value', 'problem')
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('0.2')
+## Problem1('')
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'match', 'initial value', 'initial value problem')
 
 ########################################################################
 
@@ -79,6 +90,6 @@ ANS($soln->cmp()->withPostFilter(AnswerHints(
 
 ##############################################################
 
-COMMENT("Pick a solution from a list, then solve the IVP.");
+COMMENT("Pick a solution from a list, then solve the initial value problem.");
 
 ENDDOCUMENT();        

@@ -1,9 +1,20 @@
+##DESCRIPTION
 ## Plugging a test solution into a differential equation and verifying it
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Introductory concepts)
+## DBsection(Verification of solutions)
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
-## KEYWORDS('differential equations')
-
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('0.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'verify')
 
 ##############################
 #  Initialization
@@ -22,12 +33,11 @@ loadMacros(
 
 TEXT(beginproblem());
 
-
 #############################
 #  Setup
 
 Context("Numeric")->variables->add(
-t=>"Real"
+  t=>"Real"
 );
 parser::Prime->Enable("t");
 
@@ -95,7 +105,6 @@ $BITALIC Be sure you can
 justify your answer. $EITALIC
 END_TEXT
 Context()->normalStrings;
-
 
 ############################
 #  Answers
