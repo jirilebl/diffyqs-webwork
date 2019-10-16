@@ -21,45 +21,37 @@ loadMacros(
 TEXT(beginproblem());
 
 ##############################################################
-#
 #  Setup
-#
-#
+
 Context("Numeric");
+
+Context()->variables->set(x => {limits => [0,5]});
 
 $a = random(2,9,1);
 
 $answer = FormulaUpToConstant("$a (x-ln(abs(1+x)) )");
 
-
-Context()->texStrings;
-BEGIN_TEXT
-Find the general solution of the differential equation
-\[ (1+x)y'= $a x.\]
-$BITALIC Don't forget the "\({}+C\)" $EITALIC
-$BR
-$BR
-\( y(x) = {} \) 
-\{ ans_rule(20) \}
-\{ AnswerFormatHelp("formulas") \}
-END_TEXT
-Context()->normalStrings;
-
 ##############################################################
-#
-#  Answers
-#
-#
-$showPartialCorrectAnswers = 0;
-ANS( $answer->cmp() );
+#  Main text
+
+BEGIN_PGML
+Find the general solution of the differential equation
+>>[`` (1+x)y'= [$a] x. ``]<<
+
+[`y(x) = {}`] [____________]{$answer->cmp()}{30}
+[@ AnswerFormatHelp("formulas") @]*
+
+_Don't forget the "[`+C`]"._
+END_PGML
 
 #############################################################
+#  Solution
 
 BEGIN_PGML_SOLUTION
 First write the equation as
->>[``y'= \frac{[$a] x}{1+x}``]<<
-Now we integrate
->>[``y = \int \frac{[$a] x}{1+x} dx + C = [$answer]``]<<
+>>[``y'= \frac{[$a] x}{1+x} .``]<<
+Now integrate
+>>[``y = \int \frac{[$a] x}{1+x} dx + C = [$answer] .``]<<
 END_PGML_SOLUTION
 
 #############################################################

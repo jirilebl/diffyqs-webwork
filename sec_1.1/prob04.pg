@@ -60,7 +60,7 @@ Plugging this back into the solution we get
 >>[``x =
 \sqrt{[$a*2]\left(t-\left(- \frac{[$x0]^2}{[$a*2]}\right)\right)}
 =
-\sqrt{[$a*2]t+ [$x0]^2}
+\sqrt{[$a*2]t+ [$x0]^2} .
 ``]<<
 END_PGML_SOLUTION
 

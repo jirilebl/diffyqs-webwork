@@ -13,6 +13,7 @@ loadMacros(
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
   "parserFormulaUpToConstant.pl",
+  "PGML.pl",
   "PGcourse.pl"
 );
 
@@ -23,36 +24,36 @@ TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
 ##############################################################
-#
 #  Setup
-#
-#
+
 Context("Numeric");
 
 $a = random(3,9,2);
 
 $answer = FormulaUpToConstant("$a/2 e^(x^(2))");
 
+##############################################################
+#  Main text
 
-Context()->texStrings;
-BEGIN_TEXT
+BEGIN_PGML
 Find the general solution of the differential equation
-\[ y'= $a xe^{x^{2}}.\]
-$BITALIC Don't forget the "\({} +C\)" $EITALIC
-$PAR
-\( y(x) = \) 
-\{ ans_rule(20) \}
-\{ AnswerFormatHelp("formulas") \}
-END_TEXT
-Context()->normalStrings;
+>>[`` y'= [$a] xe^{x^{2}}. ``]<<
+
+[` y(x) = `] [_________]{$answer->cmp()}{30}
+[@ AnswerFormatHelp("formulas") @]*
+
+_Don't forget the "[`+C`]"._
+END_PGML
+
+#############################################################
+#  Solution
+
+BEGIN_PGML_SOLUTION
+We integrate (use the substitution [`u=x^2`]):
+>>[``y = \int [$a] xe^{x^{2}}\, dx + C = [$answer] .``]<<
+END_PGML_SOLUTION
 
 ##############################################################
-#
-#  Answers
-#
-#
-$showPartialCorrectAnswers = 0;
-ANS( $answer->cmp() );
 
 COMMENT("Integrable ODE general solution");
 

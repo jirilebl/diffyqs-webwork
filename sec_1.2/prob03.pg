@@ -11,7 +11,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
-  "PGchoicemacros.pl",
+  "parserPopUp.pl",
   "PGgraphmacros.pl",
   "PGcourse.pl"
 );
@@ -20,7 +20,10 @@ Context("Numeric");
 Context()->variables->add(y=>"Real");
 $showPartialCorrectAnswers = 1;
 
+$refreshCachedImages = 1;
+
 $which = random(0,3,1);
+
 @desubs = ( sub { my ($x,$y) = @_; return $x + $y; },
 	    sub { my ($x,$y) = @_; return $x - $y; },
 	    sub { my ($x,$y) = @_; return -1*$x + $y; },
@@ -29,6 +32,60 @@ $which = random(0,3,1);
 ## we can also write this as y' = a x + b y, in which case
 ##    a and b are for the different cases
 @ab = ( [1,1], [1,-1], [-1,1], [-1,-1] );
+
+@popup1 = (
+  PopUp(["Choose",
+         "Always increasing",
+         "Always decreasing",
+         "First increasing then decreasing",
+         "First decreasing then increasing"],
+        "First decreasing then increasing"),
+  PopUp(["Choose",
+         "Always increasing",
+         "Always decreasing",
+         "First increasing then decreasing",
+         "First decreasing then increasing"],
+        "First decreasing then increasing"),
+  PopUp(["Choose",
+         "Always increasing",
+         "Always decreasing",
+         "First increasing then decreasing",
+         "First decreasing then increasing"],
+        "First increasing then decreasing"),
+  PopUp(["Choose",
+         "Always increasing",
+         "Always decreasing",
+         "First increasing then decreasing",
+         "First decreasing then increasing"],
+        "First increasing then decreasing")
+      );
+
+@popup2 = (
+  PopUp(["Choose",
+         "Always increasing",
+         "Always decreasing",
+         "First increasing then decreasing",
+         "First decreasing then increasing"],
+        "Always decreasing"),
+  PopUp(["Choose",
+         "Always increasing",
+         "Always decreasing",
+         "First increasing then decreasing",
+         "First decreasing then increasing"],
+        "Always increasing"),
+  PopUp(["Choose",
+         "Always increasing",
+         "Always decreasing",
+         "First increasing then decreasing",
+         "First decreasing then increasing"],
+        "Always increasing"),
+  PopUp(["Choose",
+         "Always increasing",
+         "Always decreasing",
+         "First increasing then decreasing",
+         "First decreasing then increasing"],
+        "Always decreasing"));
+
 
 ## some solutions
 @solns = ( Compute("-x-1"), Compute("x-1"), Compute("x+1"), Compute("-x+1") );
@@ -66,15 +123,25 @@ $PAR
 On a print out of this slope field, sketch the solutions that pass
 through the points
 $BR
-${BBOLD}(i)$EBOLD (0,0);
+(i) (0,0);
 $BR
-${BBOLD}(ii)$EBOLD ($ic1[$which]->[0],$ic1[$which]->[1]); and
+(ii) ($ic1[$which]->[0],$ic1[$which]->[1]); and
 $BR
-${BBOLD}(iii)$EBOLD ($ic0[$which]->[0],$ic0[$which]->[1]).
+(iii) ($ic0[$which]->[0],$ic0[$which]->[1]).
+
+$PAR
+From your sketch, the function \(y\) giving the solution
+through (0,0) is
+\{ $popup1[$which]->menu() \}
+
+$PAR
+From your sketch, the function \(y\) giving the solution
+through ($ic1[$which]->[0],$ic1[$which]->[1]) is
+\{ $popup2[$which]->menu() \}
 
 $PAR
 From your sketch, what is the equation of the solution to the
-differential equation that passes through ($ic0[$which]->[0],0)?
+differential equation that passes through ($ic0[$which]->[0],$ic0[$which]->[1])?
 (Verify that your solution is correct by substituting it into the
 differential equation.)
 $BR
@@ -85,6 +152,8 @@ Context()->normalStrings;
 
 #####################################################################
 
+ANS( $popup1[$which]->cmp() );
+ANS( $popup2[$which]->cmp() );
 ANS( $solns[$which]->cmp() );
 
 #####################################################################

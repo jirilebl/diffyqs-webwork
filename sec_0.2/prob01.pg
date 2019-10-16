@@ -25,7 +25,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "parserPrime.pl",
   "parserPopUp.pl",
   "answerHints.pl",
   "PGcourse.pl"
@@ -39,8 +38,6 @@ TEXT(beginproblem());
 Context("Numeric")->variables->add(
   t=>"Real"
 );
-parser::Prime->Enable("t");
-
 
 $k = random(2,5,1);
 $k3 = 3 * $k;
