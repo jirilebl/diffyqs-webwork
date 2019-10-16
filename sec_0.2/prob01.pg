@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Plugging a test solution into a differential equation and verifying it
+## Plugging a test solution into a differential equation, verifying it, and verifying a nonsolution
 ##ENDDESCRIPTION
 
 ## DBsubject(Differential equations)
@@ -62,7 +62,9 @@ $answer[3] = Formula("-$k^3*$x")->reduce;
 
 $answer[4] = Formula("0");
 
-$answer[5] = PopUp(["Choose","Yes","No"],"No");
+$answer[5] = PopUp(["Choose","Yes","No"],"Yes");
+
+$answer[6] = PopUp(["Choose","Yes","No"],"No");
 
 #############################
 #  Main text
@@ -97,9 +99,15 @@ $PAR
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
-Is \( x = e^t \) a solution to your
-differential equation in the previous part?
+So, is \(x = $x \) a solution to your
+differential equation above?
 \{ $answer[5]->menu() \}
+
+$PAR
+Now,
+is \( x = e^t \) a solution to your
+differential equation above?
+\{ $answer[6]->menu() \}
 $BR
 $BITALIC Be sure you can
 justify your answer. $EITALIC
@@ -133,9 +141,45 @@ ANS( $answer[3]->cmp()->withPostFilter(AnswerHints(
 );
 ANS( $answer[4]->cmp() );
 ANS( $answer[5]->cmp() );
+ANS( $answer[6]->cmp() );
+
+############################
+#  Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+As \(x = $x \), then
+\( x' = $k $x \),
+\(x'' = $k^2 $x \), and
+\(x''' = $k^3 $x \).
+So the terms are:
+$PAR
+\(x''' = $answer[0] \)
+$PAR
+\(- $k3 x'' = $answer[1] \) 
+$PAR
+\($kk3 x' = $answer[2] \) 
+$PAR
+\(-$kkk x = $answer[3] \) 
+$PAR
+When we add those terms together we get \(0\), and hence the differential equation we get is
+$PAR
+\(x''' - $k3 x'' + $kk3 x' - $kkk x = 0 \)
+$PAR
+The right hand side \(0\) is precisely what we get when we plug in \(x=$x\),
+and so \(x = $x\) is a solution to the equation.
+$PAR
+On the other hand when we plug in \(x = e^x\) to the left hand side we get
+$PAR
+\( x''' - $k3 x'' + $kk3 x' - $kkk x = e^x - $k3 e^x + $kk3 e^x - $kkk e^x = (1-$k3+$kk3-$kkk) e^x \not= 0 \)
+$PAR
+Since the left hand side is not zero when we plug in \(x = e^x\),
+then this is not a solution to the differential equation.
+END_SOLUTION
+Context()->normalStrings;
 
 ############################
 
-COMMENT("Plugging a test solution into a differential equation and verifying it.");
+COMMENT("Plugging a test solution into a differential equation, verifying it, and verifying a nonsolution.");
 
 ENDDOCUMENT();

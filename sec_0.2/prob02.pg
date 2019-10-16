@@ -32,6 +32,7 @@ $k = non_zero_random(2,20);
 
 $ans1 = Compute("$k");
 $ans2 = Compute("-$k");
+$ans3 = Compute("$k");
 
 TEXT(beginproblem());
 
@@ -44,10 +45,16 @@ $PAR
 \{ ans_rule(20); \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-For what negative value of \(k\) does the function \(y = \cos(kt) \) satisfy the differential equation \( y'' + \{$k*$k\}y = 0\)? 
+For what negative value of \(k\) does the function \(y = \sin(kt) \) satisfy the differential equation \( y'' + \{$k*$k\}y = 0\)? 
 $PAR
 \{ ans_rule(20); \}
 \{ AnswerFormatHelp("numbers") \}
+$PAR
+Similarly, for which positive value of \(k\) does the function \(y = \cos(kt) \) satisfy the differential equation \( y'' + \{$k*$k\}y = 0\)? 
+$PAR
+\{ ans_rule(20); \}
+\{ AnswerFormatHelp("numbers") \}
+
 END_TEXT
 Context()->normalStrings;
 
@@ -58,6 +65,31 @@ $showPartialCorrectAnswers = 0;
 
 ANS($ans1->cmp());
 ANS($ans2->cmp());
+ANS($ans3->cmp());
+
+#####################################################
+
+Context()->texStrings;
+BEGIN_SOLUTION
+Let
+\(y = \sin(kt) \).  Then \(y' = k \cos(kt)\) and \( y'' = -k^2 \sin(kt) \).  So if we plug this into the left hand side of the
+equation we get
+$PAR
+\( y'' + \{$k*$k\} y = -k^2 \sin(kt) + \{ $k*$k \} \sin(kt) = (-k^2 + \{$k*$k\}) \sin(kt) \)
+$PAR
+For this to be equal to zero we must have that \( -k^2 + \{$k*$k\} = 0 \), or in other words that 
+\(k= \pm \sqrt{ \{$k*$k\} } \).  So either \( k = $k \) or \( k = -$k \).
+$PAR
+Let
+\(y = \cos(kt) \).  Then \(y' = -k \sin(kt)\) and \( y'' = -k^2 \cos(kt) \).  If we plug this into the left hand side of the
+equation we get
+$PAR
+\( y'' + \{$k*$k\} y = -k^2 \cos(kt) + \{ $k*$k \} \cos(kt) = (-k^2 + \{$k*$k\}) \cos(kt) \)
+$PAR
+For this to be equal to zero we must have that \( -k^2 + \{$k*$k\} = 0 \).  We now want just the positive value \(k\) so
+\(k= \sqrt{ \{$k*$k\} } = $k \).
+END_SOLUTION
+Context()->normalStrings;
 
 #####################################################
 
