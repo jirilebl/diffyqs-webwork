@@ -31,10 +31,7 @@ loadMacros(
 TEXT(beginproblem());
 
 ##############################################################
-#
 #  Setup
-#
-#
 Context("Numeric");
 
 $a = random(2,9,1);
@@ -43,10 +40,7 @@ $answer = List(Real("-$a"));
 
 
 ##############################################################
-#
 #  Text
-#
-#
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -63,14 +57,30 @@ one correct answer, enter your answers as a comma separated list. $BITALIC
 END_TEXT
 Context()->normalStrings;
 
+
+
 ##############################################################
-#
 #  Answers
-#
-#
 
 $showPartialCorrectAnswers = 0;
 ANS( $answer->cmp() );
+
+##############################################################
+#  Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+As 
+\( y = e^{rx}, \) then
+\( y' = r e^{rx} .\)
+So
+\[
+y'+$a y = r e^{rx} + $a e^{rx} = (r+$a) e^{rx} .
+\]
+The only way this will be zero is if \(r+$a = 0,\) or in other words
+\( r = -$a .\)
+END_SOLUTION
+Context()->normalStrings;
 
 ##############################################################
 

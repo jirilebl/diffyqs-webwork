@@ -72,22 +72,20 @@ ANS($ans3->cmp());
 Context()->texStrings;
 BEGIN_SOLUTION
 Let
-\(y = \sin(kt) \).  Then \(y' = k \cos(kt)\) and \( y'' = -k^2 \sin(kt) \).  So if we plug this into the left hand side of the
-equation we get
-$PAR
-\( y'' + \{$k*$k\} y = -k^2 \sin(kt) + \{ $k*$k \} \sin(kt) = (-k^2 + \{$k*$k\}) \sin(kt) \)
-$PAR
-For this to be equal to zero we must have that \( -k^2 + \{$k*$k\} = 0 \), or in other words that 
-\(k= \pm \sqrt{ \{$k*$k\} } \).  So either \( k = $k \) or \( k = -$k \).
+\(y = \sin(kt) . \)  Then \(y' = k \cos(kt)\) and \( y'' = -k^2 \sin(kt) . \)
+So if we plug this into the left hand side of the equation we get
+\[ y'' + \{$k*$k\} y = -k^2 \sin(kt) + \{ $k*$k \} \sin(kt) = (-k^2 + \{$k*$k\}) \sin(kt) . \]
+For this to be equal to zero we must have that \( -k^2 + \{$k*$k\} = 0 , \)
+or in other words that 
+\(k= \pm \sqrt{ \{$k*$k\} } . \)
+So either \( k = $k \) or \( k = -$k .\)
 $PAR
 Let
-\(y = \cos(kt) \).  Then \(y' = -k \sin(kt)\) and \( y'' = -k^2 \cos(kt) \).  If we plug this into the left hand side of the
-equation we get
-$PAR
-\( y'' + \{$k*$k\} y = -k^2 \cos(kt) + \{ $k*$k \} \cos(kt) = (-k^2 + \{$k*$k\}) \cos(kt) \)
-$PAR
-For this to be equal to zero we must have that \( -k^2 + \{$k*$k\} = 0 \).  We now want just the positive value \(k\) so
-\(k= \sqrt{ \{$k*$k\} } = $k \).
+\(y = \cos(kt) .\)  Then \(y' = -k \sin(kt)\) and \( y'' = -k^2 \cos(kt) .\)
+If we plug this into the left hand side of the equation we get
+\[ y'' + \{$k*$k\} y = -k^2 \cos(kt) + \{ $k*$k \} \cos(kt) = (-k^2 + \{$k*$k\}) \cos(kt) . \]
+For this to be equal to zero we must have that \( -k^2 + \{$k*$k\} = 0 . \)  We now want just the positive value of \(k\) so
+\(k= \sqrt{ \{$k*$k\} } = $k . \)
 END_SOLUTION
 Context()->normalStrings;
 

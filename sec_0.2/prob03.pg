@@ -106,6 +106,32 @@ foreach my $i (0..3) {
 }
 
 ############################
+#  Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+The derivatives are
+$PAR
+\( \displaystyle \frac{dy}{dx} = $fx \) 
+$PAR
+\( \displaystyle \frac{d^2y}{dx^2} = $fxx \)
+
+$PAR
+Notice that the second derivative is \( k^2 \) times \(y,\) that is, 
+$PAR
+\( \displaystyle \frac{d^2y}{dx^2} = k^2 \bigl($f\bigr) = k^2 y \)
+
+$PAR
+As \($k^2 = $kk\),
+the general solution to
+\( \displaystyle \frac{d^2y}{dx^2} = $kk y \) is the above \(y\) with
+\(k = $k\), that is,
+$PAR
+\( y = $fk \)
+END_SOLUTION
+Context()->normalStrings;
+
+############################
 
 COMMENT("Differentiating a possible solution, finding the general solution for a specific constant.");
 

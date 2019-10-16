@@ -70,6 +70,24 @@ ANS($ans->cmp());
 
 ##########################################################################
 
+Context()->texStrings;
+BEGIN_SOLUTION
+First, as \(x(0) = $c,\) we have
+\[ 0 = x(0) = A \exp($k \cdot 0) + B \exp($l \cdot 0) = A+B .\]
+
+Next, let us find
+\[ x'(t) = $k A \exp($k t) + $l B \exp($l t) . \]
+As \(x'(0) = $c,\) we have
+\[ 0 = x(0) = $k A \exp($k \cdot 0) + $l B \exp($l \cdot 0) = $k A+$l B .\]
+Solving \(A+B = 0 \) and \($k A + $l B = 0\) for \(A\) and \(B,\) we find
+\[ A = $m , \qquad B = $n . \]
+Therefore, the solution satisfying the initial conditions as
+\[ x(t) = $m \exp($k t) + $n \exp($l t) . \]
+END_SOLUTION
+Context()->normalStrings;
+
+##########################################################################
+
 COMMENT("Finding constants given initial conditions.");
 
 ENDDOCUMENT();

@@ -34,14 +34,8 @@ TEXT(beginproblem());
 #  Setup
 
 Context("Numeric")->variables->are(
-t=>"Real"
+  t=>"Real"
 );
-Context()->flags->set(
-  reduceConstants=>0, # no decimals
-  reduceConstantFunctions=>1, # combine 4+5*2?
-  formatStudentAnswer=>'parsed', # no decimals
-);
-
 
 $k = random(-1,1,2) * random(2,10,1);
 do { $A0 = random(2,9,1); } until ($A0 != $k);
@@ -54,10 +48,9 @@ $answer = Formula("$A0 * e^($k t)");
 Context()->texStrings;
 BEGIN_TEXT
 Find a solution to 
-\( \displaystyle \frac{dA}{dt} = $k A  \) if
-\( A(0) = $A0 \).
-$BR
-$BR
+\( \displaystyle \frac{dA}{dt} = $k A , \) where
+\( A(0) = $A0 .\)
+$PAR
 \( A(t) = \)
 \{ ans_rule(30); \}
 \{ AnswerFormatHelp("formulas") \}
@@ -69,18 +62,25 @@ Context()->normalStrings;
 
 $showPartialCorrectAnswers = 1;
 
-ANS( $answer->cmp( 
-  checker=>sub {
-    my ( $correct, $student, $ansHash ) = @_;
-    return 0 unless $student->isFormula;
-    my $studer = $student->D('t');
-    my $stuA0 = $student->eval(t=>0);
-    if (($studer == $k*$student) && ($stuA0 == $A0)) {
-      return 1;
-    } else {
-      return 0;
-    }
-  } ) );
+ANS( $answer->cmp() ); 
+
+#############################
+#  Main text
+
+Context()->texStrings;
+BEGIN_SOLUTION
+The equation is the exponential growth equation.  Its solution
+is, therefore, \(A(t) = C e^{$k t} .\)
+To make \(A(0) = $A0 \) we plug in \(t=0.\)  That is,
+\[
+$A0 = A(0) = C e^{$k \cdot 0} = C .
+\]
+So \(C = $A0 ,\) and so the solution is
+\[
+A(t) = $answer .
+\]
+END_SOLUTION
+Context()->normalStrings;
 
 ############################
 

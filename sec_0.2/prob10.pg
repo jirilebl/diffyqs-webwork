@@ -31,10 +31,7 @@ loadMacros(
 TEXT(beginproblem());
 
 ##############################################################
-#
 #  Setup
-#
-#
 
 Context("Numeric");
 
@@ -47,10 +44,7 @@ $c1 = $a + $b + 1;
 $answer = List(Real("-$a"),Real("-$b"));
 
 ##############################################################
-#
 #  Text
-#
-#
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -68,12 +62,39 @@ END_TEXT
 Context()->normalStrings;
 
 ##############################################################
-#
 #  Answers
-#
-#
+
 $showPartialCorrectAnswers = 0;
+
 ANS( $answer->cmp() );
+
+##############################################################
+#  Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+If \( y = x^r , \) then \( y' = r x^{r-1} \)
+and \( y'' = r(r-1)x^{r-2} . \)
+So
+\[
+x^{2}y''+$c1 xy'+$c0 y
+=
+x^2 r(r-1) x^{r-2} + $c1 x r x^{r-1} + $c0 x^r
+=
+x^r \bigl( r(r-1) + $c1 r + $c0 \bigr) .
+\]
+The only way this will be zero is if \(r(r-1) + $c1 r + $c0 = 0,\) or in other words if
+\( r = -$a \) or \(r = -$b .\)
+$PAR
+$BITALIC Remark: $EITALIC
+Perhaps it is worth noting that the above computation only works
+for \(x > 0 .\)  When \(r\) is not an integer it may not make sense to
+talk about powers \(x^r.\)  In our specific example, both values of \(r\)
+are integers.  This means that the solution works for all \(x.\)  If one of
+the values of \(r\) was not an integer, such as \(\frac{1}{2}\) or \(\pi\)
+then \(x^r\) may not be defined for \(x \leq 0 .\)
+END_SOLUTION
+Context()->normalStrings;
 
 ##############################################################
 
