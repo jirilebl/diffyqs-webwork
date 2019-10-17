@@ -1,8 +1,20 @@
-# Determine order and linearity, the order is randomized, and it is always linear.
+##DESCRIPTION
+## Determine order and linearity, the order is randomized, and it is always linear.
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Introductory concepts)
+## DBsection(Classifications of differential equations)
 ## Institution(Muohio, Hope College)
 ## Author(Anna Ghazaryan,Fuli Zhang, Paul Pearson)
-## KEYWORDS('differential equations')
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('0.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'classify')
 
 ########################################################################
 
@@ -16,22 +28,16 @@ loadMacros(
   "PGcourse.pl"
 );
 
-# Print problem number and point value (weight) for the problem
 TEXT(beginproblem());
 
 ##############################################################
-#
 #  Setup
-#
-#
+
 Context("Numeric");
 
 
 ##############################################################
-#
 #  Text
-#
-#
 
 $a = random(1,9,1);
 $b = random(4,9,1);
@@ -41,27 +47,41 @@ $answer2 = PopUp(["Choose","Linear","Nonlinear"],"Linear");
 
 Context()->texStrings;
 BEGIN_TEXT
-
-Determine the order of the given differential equation and state whether the equation is linear or nonlinear.
+Determine the order of the given differential equation and state whether
+the equation is linear or nonlinear.
 \[\frac{d^{$b}x}{dt^{$b}}+\frac{d^{3}x}{dt^{3}}+\frac{d^{2}x}{dt^{2}}+\frac{dx}{dt}+x = $a\]
 $BR
 The order of this differential equation is \{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
 The equation is \{ $answer2->menu() \}.
-
 END_TEXT
 Context()->normalStrings;
 
 ##############################################################
-#
 #  Answers
-#
+
 install_problem_grader(~~&std_problem_grader);
 $showPartialCorrectAnswers = 0;
 
 ANS( $answer1->cmp );
 ANS( $answer2->cmp );
+
+##############################################################
+#  Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+As there is a derivative \(\frac{d^{$b}x}{dt^{$b}}\) of order \($b\),
+and this is the highest order that appears, that is the order of this equation.
+$PAR
+As each derivative of \(x\) or \(x\) itself appears linearly, that is, it
+appears to at most the first power, and it does not appear in any other
+functions, the equation is linear.
+END_SOLUTION
+Context()->normalStrings;
+
+##############################################################
 
 COMMENT("Determine order and linearity, the order is randomized, and it is always linear.");
 

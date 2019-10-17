@@ -1,13 +1,25 @@
-# Classify several (nonrandomized) equations as linear/nonlinear, ODE/PDE, order.
+##DESCRIPTION
+## Classify several (nonrandomized) equations as linear/nonlinear, ODE/PDE, order.
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Introductory concepts)
+## DBsection(Classifications of differential equations)
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('0.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'classify')
 
 ##########################################################################
 
 DOCUMENT();
 
-# Load whatever macros you need for the problem
 loadMacros(
   "PGstandard.pl",
   "PGchoicemacros.pl",
@@ -17,9 +29,7 @@ loadMacros(
   "PGcourse.pl"
 );
 
-## Display the problem information
 TEXT(beginproblem());
-
 
 ##########################################################################
 ##
@@ -166,6 +176,8 @@ ANS($eqn7order->cmp);
 ANS($eqn8linearity->cmp);
 ANS($eqn8type->cmp);
 ANS($eqn8order->cmp);
+
+##########################################################################
 
 COMMENT("Classify several (nonrandomized) equations as linear/nonlinear, ODE/PDE, order.");
 

@@ -1,8 +1,19 @@
-# Classify a constant coefficient linear ODE (check all that applies, nonrandomized equation).
+##DESCRIPTION
+## Classify a constant coefficient linear ODE (check all that applies, nonrandomized equation).
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Introductory concepts)
+## DBsection(Classifications of differential equations)
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
-## KEYWORDS('differential equation', 'classify')
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('0.3')
+## Problem1('')
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'classify')
 
 ########################################################################
 
@@ -14,14 +25,10 @@ loadMacros(
   "PGcourse.pl"
 );
 
-# Print problem number and point value (weight) for the problem
 TEXT(beginproblem());
 
 ##############################################################
-#
 #  Setup
-#
-#
 
 $mc = new_checkbox_multiple_choice();
 $mc -> qa (
@@ -39,10 +46,7 @@ $mc -> extra(
 
 
 ##############################################################
-#
 #  Text
-#
-#
 
 BEGIN_TEXT
 \{ $mc -> print_q() \}
@@ -51,15 +55,14 @@ $BR
 END_TEXT
 
 ##############################################################
-#
 #  Answers
-#
-#
 
 install_problem_grader(~~&std_problem_grader);
 $showPartialCorrectAnswers = 0;
 
 ANS( checkbox_cmp( $mc->correct_ans() ) );
+
+##############################################################
 
 COMMENT("Classify a constant coefficient linear ODE (check all that applies, nonrandomized equation).");
 

@@ -1,8 +1,20 @@
-# Putting a linear equation into standard form, and checking for homogeneity.
+##DESCRIPTION
+## Putting a linear equation into standard form, and checking for homogeneity.
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Introductory concepts)
+## DBsection(Classifications of differential equations)
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
-## KEYWORDS('differential equations','existence','uniqueness')
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('0.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'classify')
 
 ##############################
 #  Initialization
@@ -19,7 +31,6 @@ loadMacros(
 
 TEXT(beginproblem());
 
-
 #############################
 #  Setup
 
@@ -35,7 +46,6 @@ $g = Formula("(x^$n + $a) e^($b x) / x");
 
 $popup = PopUp(["Choose","linear and homogeneous","linear and nonhomogeneous","nonlinear"],"linear and nonhomogeneous");
 
-
 #############################
 #  Main text
 
@@ -45,26 +55,22 @@ Put the differential equation
 \( \displaystyle \frac{x y^{\,\prime}}{(x^{$n}+$a) y} = \cos(x) + \frac{e^{$b x}}{y} \)
 into the form \( y^{\,\prime} + p(x) y = g(x)\) and find
 \( p(x) \) and \( g(x) \).
-$BR
-$BR
+$PAR
 \( p(x) = \) 
 \{ ans_rule(30) \}
 \{ AnswerFormatHelp("formulas") \}
-$BR
+$PAR
 \( g(x) = \) 
 \{ ans_rule(30) \}
 \{ AnswerFormatHelp("formulas") \}
-$BR
-$BR
+$PAR
 Is the differential equation 
 \( \displaystyle \frac{x y^{\,\prime}}{(x^{$n}+$a) y} = \cos(x) + \frac{e^{$b x}}{y} \)
 linear and homogeneous, linear and nonhomogeneous, or nonlinear?
-$BR
-$BR
+$PAR
 Answer: \{ $popup->menu() \}
 END_TEXT
 Context()->normalStrings;
-
 
 ############################
 #  Answers
@@ -76,6 +82,8 @@ install_problem_grader(~~&std_problem_grader);
 ANS( $p->cmp() );
 ANS( $g->cmp() );
 ANS( $popup->cmp() );
+
+############################
 
 COMMENT("Putting a linear equation into standard form, and checking for homogeneity.");
 
