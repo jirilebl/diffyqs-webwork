@@ -13,6 +13,7 @@ loadMacros(
   "MathObjects.pl",
   "PGchoicemacros.pl",
   "PGgraphmacros.pl",
+  "PGunion.pl",
   "PGcourse.pl"
 );
 
@@ -41,7 +42,7 @@ $showPartialCorrectAnswers = 0;
 	    sub { my ($x,$y) = @_; return -1*$y*$y; } );
 @sfields = ( );
 foreach $f ( @slfunc ) {
-    $gr = init_graph(-5,-5,5,5,axes=>[0,0],size=>[300,300]);
+    $gr = init_graph(-5,-5,5,5,axes=>[0,0],size=>[400,400]);
     $fn = new VectorField( $f, $gr );
     $fn->dot_radius(0);
     $fn->x_steps(15);
@@ -65,8 +66,8 @@ $ml->ra_pop_up_list([
 @qa = ();
 for (my $i=0; $i<@equations; $i++) {
     push( @qa, $equations[$i],
-	  image(insertGraph($sfields[$i]),tex_size=>150,height=>150,
-		width=>150,extra_html_tags=>'alt="graph of a slope field"') );
+	  image(insertGraph($sfields[$i]),tex_size=>200,height=>200,
+		width=>200,extra_html_tags=>'alt="graph of a slope field"') );
 }
 $ml->qa( @qa );
 
@@ -79,21 +80,23 @@ $ml->choose(6);
 TEXT(beginproblem());
 Context()->texStrings;
 BEGIN_TEXT
+Match the slope fields shown below with the differential equations.
+$PAR
+\{
+BeginTable().
+Row( ["${BBOLD}A.$EBOLD" . $ans[0],
+      "${BBOLD}B.$EBOLD" . $ans[1],
+      "${BBOLD}C.$EBOLD" . $ans[2] ] ).
+TableSpace(40).
+Row( ["${BBOLD}D.$EBOLD" . $ans[3],
+	  "${BBOLD}E.$EBOLD" . $ans[4],
+	  "${BBOLD}F.$EBOLD" . $ans[5] ] ).
+EndTable()
+\}
 
-Match the slope fields shown below with the differential equations
+$PAR
 
 \{ $ml->print_q() \}
-
-\{ begintable(3) \}
-\{ row( "${BBOLD}A.$EBOLD" . $ans[0],
-	"${BBOLD}B.$EBOLD" . $ans[1],
-	"${BBOLD}C.$EBOLD" . $ans[2] ) \}
-\{ row( "${BBOLD}D.$EBOLD" . $ans[3],
-	"${BBOLD}E.$EBOLD" . $ans[4],
-	"${BBOLD}F.$EBOLD" . $ans[5] ) \}
-\{ endtable() \}
-
-
 END_TEXT
 Context()->normalStrings;
 
@@ -108,20 +111,19 @@ BEGIN_SOLUTION
 We can determine the answers by considering the right-hand
 side of differential equation at different \((x,y)\) coordinates
 to determine what the slope has to be at those points.
-This gives the correct answers
+This gives the correct answers:
+$PAR
+1. \(\leftrightarrow\) $ca[0]
 $BR
-I. $ca[0]
+2. \(\leftrightarrow\) $ca[1]
 $BR
-II. $ca[1]
+3. \(\leftrightarrow\) $ca[2]
 $BR
-III. $ca[2]
+4. \(\leftrightarrow\) $ca[3]
 $BR
-IV. $ca[3]
+5. \(\leftrightarrow\) $ca[4]
 $BR
-V. $ca[4]
-$BR
-VI. $ca[5]
-
+6. \(\leftrightarrow\) $ca[5]
 END_SOLUTION
 Context()->normalStrings;
 

@@ -47,10 +47,10 @@ $PAR
 $BCENTER
 \{image( insertGraph($graph), width=>200, height=>200 )\}
 $BR
-(the horizontal axis is x.) 
+(the horizontal axis is \(x\).) 
 $ECENTER
 $PAR
-Consider the differential equation \(x'(t) = f( x(t) ) \). 
+Consider the differential equation \(x' = f( x ) \). 
 $PAR
 List the constant (or equilibrium) solutions to this differential equation
 in increasing order and indicate whether or not these equalibria

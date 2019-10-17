@@ -49,8 +49,8 @@ Context()->texStrings;
 BEGIN_TEXT
 The population of Cook island has always been modeled by a logistic equation \(P^\prime=k(M-P)\) with growth rate \(k=$r\) and carrying capacity \(M=$C\) with time t in years. 
 $PAR
-Starting in 2000,  \($e\) citizens of Cook island have left  every year  to become a mathematician, never to return. What is the new differential equation modeling the population of the island \(P\)?
-$BR
+Starting in the year \(2000\), \($e\) citizens of Cook island have left  every year to become mathematicians, never to return. What is the new differential equation modeling the population of the island \(P\)?
+$PAR
 \{$diffeqn->ans_rule(25)\} \(= 0\)
 $SPACE $SPACE
 \{ AnswerFormatHelp("formulas") \}

@@ -14,7 +14,6 @@ loadMacros(
   "MathObjects.pl",
   "PGchoicemacros.pl",
   "PGgraphmacros.pl",
-  "choiceUtils.pl",
   "PGcourse.pl"
 );
 
@@ -145,7 +144,6 @@ $sl->choose(4);
 BEGIN_TEXT
 Match the slope fields labeled $BBOLD A $EBOLD through $BBOLD D $EBOLD with the differential equations below.
 $PAR $imageTable1 $PAR
-$PAR
 \{$sl->print_q\}
 END_TEXT
 Context()->normalStrings;

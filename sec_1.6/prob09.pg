@@ -36,45 +36,70 @@ $pd = random(1,2,1);
 
 $func = Formula("((x-$a)^($pa))((x-$b)^($pb))((x-$c)^($pc))((x-$d)^($pd))")->reduce;
 
+
 $avg1 = ($a+$b)/2.0;
 if ($func->eval(x=>$avg1) > 0) {
 	$lim1 = Compute("$b");
+    $comp1 = "positive";
 } else {
 	$lim1 = Compute("$a");
+    $comp1 = "negative";
 }
 
 $avg2 = ($b+$c)/2.0;
 if ($func->eval(x=>$avg2) > 0) {
 	$lim2 = Compute("$c");
+    $comp2 = "positive";
 } else {
 	$lim2 = Compute("$b");
+    $comp2 = "negative";
 }
 
 $avg3 = ($c+$d)/2.0;
 if ($func->eval(x=>$avg3) > 0) {
 	$lim3 = Compute("$d");
+    $comp3 = "positive";
 } else {
 	$lim3 = Compute("$c");
+    $comp3 = "negative";
 }
 
 ##############################################################
 
 BEGIN_PGML
-A function [:x(t):] satisfies the differential equation 
+A function [:x(t):] satisfies the differential equation
 
 >>[`` \frac{dx}{dt} = [$func]. ``]<<
 
 Compute the following limits.  You can use words like "Infinity" and "DNE" if you need to.
 
 If [:x(0) = [$avg1]:], then
-[``\lim_{t\to\infty} x(t) = ``] [___________]{"$lim1"} [@ AnswerFormatHelp("numbers") @]*  
+[``\lim_{t\to\infty} x(t) = ``] [___________]{"$lim1"} [@ AnswerFormatHelp("numbers") @]*
 
 If [:x(0) = [$avg2]:], then
-[``\lim_{t\to\infty} x(t) = ``] [___________]{"$lim2"} [@ AnswerFormatHelp("numbers") @]*  
+[``\lim_{t\to\infty} x(t) = ``] [___________]{"$lim2"} [@ AnswerFormatHelp("numbers") @]*
 
 If [:x(0) = [$avg3]:], then
-[``\lim_{t\to\infty} x(t) = ``] [___________]{"$lim3"} [@ AnswerFormatHelp("numbers") @]*  
+[``\lim_{t\to\infty} x(t) = ``] [___________]{"$lim3"} [@ AnswerFormatHelp("numbers") @]*
 END_PGML
+
+##############################################################
+
+BEGIN_PGML_SOLUTION
+The critical points are [$a], [$b], [$c], and [$d].
+
+At [`x=[$avg1]`] the right hand side of the equation, [`[$func]`],
+is [$comp1].  Therefore, it is [$comp1] between [$a] and [$b],
+and so if [`x(0) = [$avg1]`] then [``\lim_{t\to\infty} x(t) = [$lim1] .``]
+
+At [`x=[$avg2]`] the right hand side of the equation
+is [$comp2].  Therefore, it is [$comp2] between [$b] and [$c],
+and so if [`x(0) = [$avg2]`] then [``\lim_{t\to\infty} x(t) = [$lim2] .``]
+
+At [`x=[$avg3]`] the right hand side of the equation
+is [$comp3].  Therefore, it is [$comp3] between [$c] and [$d],
+and so if [`x(0) = [$avg3]`] then [``\lim_{t\to\infty} x(t) = [$lim3] .``]
+END_PGML_SOLUTION
 
 ##############################################################
 

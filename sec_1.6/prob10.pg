@@ -36,9 +36,17 @@ $p3 = $c+1;
 if (random(1,2,1) == 1) {
   $limini = $a+2;
   $lim = $a;
+  $lep = $p1;
+  $comp = '<';
+  $ibeg = $a;
+  $iend = $b;
 } else {
   $limini = $b+2;
   $lim = $c;
+  $lep = $p2;
+  $comp = '>';
+  $ibeg = $b;
+  $iend = $c;
 }
 
 
@@ -57,6 +65,18 @@ Let [:x(t):] be the solution to
 [``\lim_{t\to\infty} x(t) = ``]
 [______________]{"$lim"} [@ AnswerFormatHelp("numbers") @]*  
 END_PGML
+
+##############################################################
+
+BEGIN_PGML_SOLUTION
+The initial [`x`], that is [`x(0) = [$limini]`] is in the
+interval [`([$ibeg],[$iend])`] between the critical points where
+[`f([$ibeg])=0`] and [`f([$iend])=0.`]
+Since [`f([$lep]) [$comp] 0,`] we have
+[`f(x) [$comp] 0`] in the entire interval [`([$ibeg],[$iend]).`]
+Therefore,
+>>[``\lim_{t\to\infty} x(t) = [$lim] .``]<<
+END_PGML_SOLUTION
 
 ##############################################################
 

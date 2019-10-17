@@ -13,15 +13,14 @@ loadMacros(
   "MathObjects.pl",
   "PGgraphmacros.pl",
   "PGchoicemacros.pl",
+  "PGML.pl",
   "PGcourse.pl"
 );
+
 TEXT(beginproblem());
 
 ##############################################################################
-##############################################################################
-##
-##  Create the slope field graph for y' = y^2
-##    
+
 $gr1 = init_graph(-4,-4,4,4,axes=>[0,0], size=>[500,500], grid=>[8,8], ticks=>[8,8]);
 $dy1 = sub { my ($x,$y) = @_;
 	     return $y*$y;  };
@@ -41,42 +40,61 @@ $fn1->rf_arrow_length( sub{
 ## solutions
 ##
 
-$f1 = Formula("1/(2-x)");
-$f2 = Formula("-1/(1+x)");
-$f3 = Formula("x/(1+x^2)");
-$f4 = Formula("x/(1+2*x^2)");
-$f5 = Formula("atan(x)");
-$f6 = Formula("atan(3*x)");
+@f = (
+  Formula("1/(2-x)"),
+  Formula("-1/(1+x)"),
+  Formula("5*x/(1+x^2)"),
+  Formula("-x/(1-x)"),
+  Formula("-2*atan(x)"),
+  Formula("atan(3*x)")
+);
 
-$f1tex = $f1->TeX;
-$f2tex = $f2->TeX;
-$f3tex = $f3->TeX;
-$f4tex = $f4->TeX;
-$f5tex = $f5->TeX;
-$f6tex = $f6->TeX;
+@sing = (2,-1,999,1,999,999);
+
+foreach my $i (0..5) {
+  $grans[$i] = init_graph(-4,-4,4,4,axes=>[0,0], size=>[500,500], grid=>[8,8], ticks=>[8,8]);
+  my $fn = new VectorField( $dy1, $grans[$i] );
+  $fn->dot_radius(0);
+  $fn->x_steps(20);
+  $fn->y_steps(20);
+  $fn->rf_arrow_length( sub{
+      my($dx,$dy)=@_;
+      return(0) if sqrt($dx*$dx + $dy*$dy)==0;
+      0.23*1/sqrt($dx*$dx + $dy*$dy);
+  } );
+  
+  if ($sing[$i] < 999) {
+    add_functions($grans[$i],
+                  "$f[$i] for x in [-4,$sing[$i]> using color:red and weight:4",
+                  "$f[$i] for x in <$sing[$i],4] using color:red and weight:4");
+  } else {
+    add_functions($grans[$i],
+                  "$f[$i] for x in [-4,4] using color:red and weight:4");
+  }
+}
+
+
 
 $mc = new_checkbox_multiple_choice();
-$mc->qa("Which of the following are solutions to the differential equation \(\frac{dy}{dx} = f(x,y)\) whose slope field is graphed below?", "\(y=$f1tex\)", "\(y=$f2tex\)");
-$mc->extra("\(y=$f3tex\)","\(y=$f4tex\)","\(y=$f5tex\)","\(y=$f6tex\)");
+Context()->texStrings;
+$mc->qa("Which of the following are solutions to the differential equation \(\frac{dy}{dx} = f(x,y)\) whose slope field is graphed below?", "\(y=$f[0]\)", "\(y=$f[1]\)");
+$mc->extra("\(y=$f[2]\)","\(y=$f[3]\)","\(y=$f[4]\)","\(y=$f[5]\)");
+Context()->normalStrings;
 
 ##############################################################################
 
-Context()->texStrings;
-BEGIN_TEXT
-\{ $mc->print_q() \}
+BEGIN_PGML
+[@ $mc->print_q() @]*
 
-$PAR
+>>
+[@ image( insertGraph( $gr1 ), tex_size=>250, height=>250, width=>250,
+	     extra_html_tags=>'alt="graph of a slope field"' ) @]*
+<<
 
-$BCENTER
-        \{image( insertGraph( $gr1 ), tex_size=>250, height=>250, width=>250,
-	       extra_html_tags=>'alt="graph of a slope field"' )\}
-$ECENTER
+[@ $mc->print_a() @]*
 
-\{ $mc->print_a() \}
-$BR
-$BITALIC Check all that apply. $EITALIC
-END_TEXT
-Context()->normalStrings;
+_Check all that apply.  It may be useful to use a graphing calculator or the computer to graph the functions._
+END_PGML
 
 ##############################################################################
 
@@ -85,6 +103,43 @@ install_problem_grader(~~&std_problem_grader);
 $showPartialCorrectAnswers = 0;
 
 ANS( checkbox_cmp( $mc->correct_ans() ) );
+
+##############################################################################
+
+BEGIN_PGML_SOLUTION
+To see if the functions fit the slope field we graph the functions,
+and compare with the slope field.
+
+The function [`y = [$f[0]]`] does look like a solution:
+
+[@ image( insertGraph( $grans[0] ),
+          tex_size=>250, height=>250, width=>250) @]*
+
+The function [`y = [$f[1]] `] also looks like a solution:
+
+[@ image( insertGraph( $grans[1] ),
+          tex_size=>250, height=>250, width=>250) @]*
+
+The function [`y = [$f[2]]`] is not a solution:
+
+[@ image( insertGraph( $grans[2] ),
+          tex_size=>250, height=>250, width=>250) @]*
+
+The function [`y = [$f[3]]`] is not a solution:
+
+[@ image( insertGraph( $grans[3] ),
+          tex_size=>250, height=>250, width=>250) @]*
+
+The function [`y = [$f[4]]`] is not a solution:
+
+[@ image( insertGraph( $grans[4] ),
+          tex_size=>250, height=>250, width=>250) @]*
+
+The function [`y = [$f[5]]`] is not a solution:
+
+[@ image( insertGraph( $grans[5] ),
+          tex_size=>250, height=>250, width=>250) @]*
+END_PGML_SOLUTION
 
 ##############################################################################
 
