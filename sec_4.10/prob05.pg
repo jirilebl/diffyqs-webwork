@@ -1,0 +1,98 @@
+##DESCRIPTION
+##  Solution of the Laplace equation in an annulus with constant boundary data
+##ENDDESCRIPTION
+
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection(Laplace's equation)
+## Author(Jiri Lebl)
+## Institution(Oklahoma State University)
+## Level(4)
+## TitleText2('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText2('Jiri Lebl')
+## EditionText2('5')
+## Section2('4.10')
+## Problem2('')
+## MO(1)
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'Laplace equation')
+
+###########################
+##  Initialization
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+###########################
+#  Setup
+
+Context("Numeric");
+
+$a = random(2,9,1);
+do { $b = random(2,9,1); } until ($b != $a);
+do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
+do { $d = random(2,9,1); } until (($d != $a) and ($d != $b) and ($d != $c));
+
+Context()->variables->are(r => ["Real",limits=[0.1,10]],
+                          theta => ["Real", TeX=>"\theta"]);
+
+Context()->flags->set(
+     reduceConstants => 0,
+     reduceConstantFunctions => 0,
+);
+
+$answer1 = Compute("$b + (($a-$b)/(ln($a))) * ln(r)");
+
+############################
+##  Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+We wish to solve
+\( \nabla^2 \psi = 0 \) in the region that is outside the circle of radius
+1 and inside the circle of radius \($a .\)  In terms of polar coordinates
+it is the region given by \(1 \leq r \leq $a.\)
+Suppose that the boundary condition is that \(\psi = $b\) if \(r=1\) and
+\(\psi = $c \) if \(r=$a\).
+$PAR
+To solve this problem assume that \(\psi\) does not depend on \(\theta ,\)
+that is, \(\psi\) is a function of \(r\) alone.  Write down the Laplacian
+in this case and solve.
+$PAR
+\(\psi = {} \) \{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
+END_TEXT
+Context()->normalStrings;
+
+#############################
+##  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+
+#####################
+# Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+If \(\psi\) is a function only of \(r ,\) then the Laplace equation
+is \(\psi_{rr} + \frac{1}{r} \psi_r = 0 . \)
+The general solution for this equation is \( \psi = A + B \ln r . \)
+Solving for the initial conditions we find that
+\( \psi = $answer1 . \)
+END_SOLUTION
+Context()->normalStrings;
+
+#############################
+
+COMMENT("Solution of the Laplace equation in an annulus with constant boundary data");
+
+ENDDOCUMENT();

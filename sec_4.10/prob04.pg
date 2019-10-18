@@ -25,7 +25,7 @@ TEXT(beginproblem());
 # Setup
 
 Context("Numeric");
-Context()->variables->are(r => ["Real"],
+Context()->variables->are(r => ["Real",limits=[0.1,10]],
                           theta => ["Real", TeX=>"\theta"],
                           alpha => ["Real", TeX=>"\alpha"]);
 
