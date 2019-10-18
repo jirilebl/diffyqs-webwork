@@ -40,7 +40,7 @@ do { $b = random(2,9,1); } until ($b != $a);
 do { $c = random(2,9,1); } until (($c != $a) and ($c != $b));
 do { $d = random(2,9,1); } until (($d != $a) and ($d != $b) and ($d != $c));
 
-Context()->variables->are(r => ["Real",limits=[0.1,10]],
+Context()->variables->are(r => ["Real",limits=>[0.1,10]],
                           theta => ["Real", TeX=>"\theta"]);
 
 Context()->flags->set(
@@ -56,17 +56,20 @@ $answer1 = Compute("$b + (($a-$b)/(ln($a))) * ln(r)");
 Context()->texStrings;
 BEGIN_TEXT
 We wish to solve
-\( \nabla^2 \psi = 0 \) in the region that is outside the circle of radius
-1 and inside the circle of radius \($a .\)  In terms of polar coordinates
-it is the region given by \(1 \leq r \leq $a.\)
-Suppose that the boundary condition is that \(\psi = $b\) if \(r=1\) and
-\(\psi = $c \) if \(r=$a\).
+\[
+\nabla^2 u = u_{rr} + \frac{1}{r} u_r + \frac{1}{r^2} u_{\theta\theta} = 0
+\]
+in polar coordinates for the region \(1 \leq r \leq $a.\)
+(It is the region between the circles of radius 1 and \($a.\))
+As the boundary conditions
+Suppose that \(u = $b\) if \(r=1 ,\) and
+\(u = $c \) if \(r=$a\).
 $PAR
-To solve this problem assume that \(\psi\) does not depend on \(\theta ,\)
-that is, \(\psi\) is a function of \(r\) alone.  Write down the Laplacian
+To solve this problem assume that \(u\) does not depend on \(\theta ,\)
+that is, \(u\) is a function of \(r\) alone.  Write down the Laplacian
 in this case and solve.
 $PAR
-\(\psi = {} \) \{ ans_rule(40) \}
+\(u = {} \) \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 Context()->normalStrings;
@@ -83,11 +86,12 @@ ANS( $answer1->cmp() );
 
 Context()->texStrings;
 BEGIN_SOLUTION
-If \(\psi\) is a function only of \(r ,\) then the Laplace equation
-is \(\psi_{rr} + \frac{1}{r} \psi_r = 0 . \)
-The general solution for this equation is \( \psi = A + B \ln r . \)
+If \(u\) is a function only of \(r ,\) then the Laplace equation
+is \(u_{rr} + \frac{1}{r} u_r = 0 . \)
+It is really just an ODE.
+The general solution for this equation is \( u = A + B \ln r . \)
 Solving for the initial conditions we find that
-\( \psi = $answer1 . \)
+\( u = $answer1 . \)
 END_SOLUTION
 Context()->normalStrings;
 
