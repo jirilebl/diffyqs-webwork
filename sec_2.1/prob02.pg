@@ -21,10 +21,8 @@ TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
 ##############################################################
-#
 #  Setup
-#
-#
+
 Context()->variables->{namePattern} = qr/[a-z][a-z0-9_]*'*/i;
 Context()->variables->add(A=>"Real",B=>"Real","y"=>"Real","y'"=>"Real","y''"=>"Real");
 Context()->variables->set(x=>{limits=>[-1,1]});
@@ -34,9 +32,7 @@ $general = Compute($homogeneous+$non);
 $wronskian = Formula("1");
 
 ################################################
-##
-## IVP setup
-##
+# IVP setup
 
 $y0 = Compute(random(2,9));
 $y1 = Compute(random(2,9));
@@ -46,44 +42,38 @@ $ivp = $general->substitute(A=>$a,B=>$b,x=>x);
 
 Context("Interval");
 $domain=Compute("(-pi/2,pi/2)");
+
 ##############################################################
-#
 #  Text
-#
-#
 
 Context()->texStrings;
 BEGIN_TEXT
-One of the following is a general solution of the homogeneous differential equation \(y^{\prime\prime}+y=0\)
-$BR
+One of the following is a general solution of the homogeneous differential equation \(y^{\prime\prime}+y=0\):
 \[
 \begin{aligned}
-y&=A e^{x}+B e^{-x} \\
-y&=A x+B \\
-y&=$homogeneous \\
+y&=A e^{x}+B e^{-x} , \\
+y&=A x+B , \\
+y&=$homogeneous . \\
 \end{aligned}
 \]
-and one of the following is a solution to the nonhomogeneous equation \(y^{\prime\prime}+y=\sec(x)\)
+One of the following is a solution to the nonhomogeneous equation \(y^{\prime\prime}+y=\sec(x)\):
 \[
 \begin{aligned}
-y&= x\sin(x)\\
-y&=$non \\
+y&= x\sin(x) ,\\
+y&=$non . \\
 \end{aligned}
 \]
 By superposition, the general solution of the equation \(y^{\prime\prime}+y=\sec(x)\) is
-$BR
-\(y = \) \{$general->ans_rule\}
+$PAR
+\(y = \) \{$general->ans_rule(40)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-Find the solution with
-$BR
+Find the solution satisfying the initial conditions
 \[
-\begin{aligned}
-y(0)&=$y0 \\
-y(0)^\prime&=$y1 \\
-\end{aligned}
+y(0) = $y0 , \qquad
+y^\prime(0) = $y1 .
 \]
-\(y = \)\{$ivp->ans_rule\}
+\(y = \)\{$ivp->ans_rule(40)\}
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
 

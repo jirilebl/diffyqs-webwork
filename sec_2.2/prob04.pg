@@ -39,7 +39,7 @@ Context()->texStrings;
 BEGIN_TEXT
 Solve the initial-value problem \(\displaystyle 2 y'' + 5 y' - 3 y = 0, \; y(0) = $c, \; y'(0) = $d.\)
 $PAR
-Answer:  \(y(x) = {}\) \{ ans_rule(30) \}
+\(y(x) = \) \{ ans_rule(30) \}
 \{ AnswerFormatHelp("formulas"); \}
 END_TEXT
 Context()->normalStrings;
