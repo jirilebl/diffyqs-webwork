@@ -22,8 +22,16 @@ TEXT(beginproblem());
 $showPartialCorrectAnswers = 0;
 
 Context("Numeric");
+Context()->variables->{namePattern} = qr/[a-z][a-z0-9_]*'*/i;
+Context()->variables->are(
+  "x"=>"Real",
+  "y"=>"Real",
+  "y'"=>"Real",
+  "y''"=>"Real",
+  "r"=>"Real"
+);
 
-## Choose real roots to a quadractic
+## Choose real roots to a quadratic
 
 # make sure the roots are different
 $root1 = random(-10,10);
@@ -32,30 +40,45 @@ do { $root2 = random(-10,10); } while($root1 == $root2);
 $sum_roots = $root1 + $root2;
 $prod_roots = $root1 * $root2;
 
-if ($sum_roots == 0){$linear_term = "";}
-else {$linear_term = " + " . preformat(-$sum_roots, "y'");}
-
-if ($prod_roots == 0){$constant_term = "";}
-else {$constant_term = " + " . preformat($prod_roots, "y");}
-
 $coeff = random(2,10);
+
+$eq = Compute("y'' - $sum_roots y' + $prod_roots y")->reduce;
+$eqplug = Compute("$coeff r^2 e^{rx} - $sum_roots $coeff r e^{rx} + $prod_roots $coeff e^{rx}")->reduce;
+$eqchar = Compute("r^2 - $sum_roots r + $prod_roots")->reduce;
 
 ####################################################
 
+Context()->texStrings;
 BEGIN_TEXT
-For what values of \(r\) does the function \(y = $coeff e^{rx}\) satisfy the differential equation \( y'' $linear_term $constant_term = 0\)?
+For what values of \(r\) does the function \(y = $coeff e^{rx}\)
+satisfy the differential equation
+\[
+$eq = 0 ?
+\]
 
 $PAR
 Enter the values as a comma separated list: \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
 END_TEXT
+Context()->normalStrings;
 
 ####################################################
 
 ANS(Compute("$root1, $root2")->cmp());
 
+####################################################
+
+Context()->texStrings;
+BEGIN_SOLUTION
+Compute \( y' = $coeff r e^{rx} \) and \( y'' = $coeff r^2 e^{rx} . \)
+Then plug into the equation:
+\[
+0 = $eq = $eqplug = $coeff e^{rx} \bigl( $eqchar \bigr) .
+\]
+Hence, \( $eqchar = 0 , \) and the roots are \( $root1 , $root2 .\)
+END_SOLUTION
+Context()->normalStrings;
+
+####################################################
+
 ENDDOCUMENT();
-
-
-
-
