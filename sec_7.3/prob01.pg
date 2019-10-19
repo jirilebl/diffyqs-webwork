@@ -22,10 +22,7 @@ TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
 ##############################################################
-#
 #  Setup
-#
-#
 
 Context("Numeric");
 Context()->variables->{namePattern} = qr/[a-z][a-z0-9_]*'*/i;
@@ -36,10 +33,7 @@ $diffeqn = Formula("xy''+xy'+y")->reduce;
 $singular = List(0); 
 
 ##############################################################
-#
 #  Text
-#
-#
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -59,14 +53,10 @@ END_TEXT
 Context()->normalStrings;
 
 ##############################################################
-#
 #  Answers
-#
-#
+
 ANS(Compute("1")->cmp);
 ANS(Compute("1/x")->cmp);
 ANS($singular->cmp());
-
-
 
 ENDDOCUMENT();        
