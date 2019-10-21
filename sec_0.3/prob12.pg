@@ -1,19 +1,19 @@
 ##DESCRIPTION
-## Classify a homogeneous linear ODE (check all that applies, nonrandomized equation).
+## Classify a linear PDE equation (check all that applies, nonrandomized).
 ##ENDDESCRIPTION
 
 ## DBsubject(Differential equations)
 ## DBchapter(Introductory concepts)
 ## DBsection(Classifications of differential equations)
-## Institution(Alfred University)
-## Author(Darwyn Cook)
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
 ## Level(2)
 ## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
 ## AuthorText1('Jiri Lebl')
 ## EditionText1('5')
 ## Section1('0.3')
 ## Problem1('')
-## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'classify')
+## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'classify')
 
 ########################################################################
 
@@ -33,16 +33,17 @@ TEXT(beginproblem());
 $mc = new_checkbox_multiple_choice();
 $mc -> qa (
   "Check all that apply.", 
-  "ODE",
+  "PDE",
   "linear",
-  "homogeneous"
+  "second order",
 );
 $mc -> extra(
+  "first order",
+  "third order",
   "system",
-  "autonomous",
-  "constant coefficients",
-  "PDE"
+  "ODE"
 );
+
 
 ##############################################################
 #  Text
@@ -50,7 +51,11 @@ $mc -> extra(
 BEGIN_TEXT
 Consider
 \[
-\frac{dy}{dx}=e^x y .
+\frac{\partial^2 \psi}{\partial x^2}
++
+\frac{\partial^2 \psi}{\partial y^2}
+=
+\frac{1}{x^2+y^2} .
 \]
 \{ $mc -> print_q() \}
 $BR
@@ -68,25 +73,21 @@ ANS( checkbox_cmp( $mc->correct_ans() ) );
 ##############################################################
 
 BEGIN_SOLUTION
-The differential equation involves derivatives of only one independent variable,
-\(x\), and so it is an ODE and not a PDE.  The dependent variable and its
-derivatives (the \(y\) and the \( \frac{dy}{dx} \)) only appear linearly,
-and in no other functions or powers, so it is a linear ODE.
-It is homogeneous since there is no term
-that does not depend on \(y.\)
+The equation involves partial derivatives of two
+independent variables, \(x\) and \(t ,\) so it is
+a partial differential equation, a PDE, and not an ODE.
+The highest order derivative that appears is of second
+order, so that is the order of the equation.
+The dependent variable \(\psi\) and its derivatives (the
+\(\frac{\partial^2 \psi}{\partial x^2}\) and
+\(\frac{\partial^2 \psi}{\partial y^2}\) only appear linearly
+and so the equation is linear.
 $PAR
-The coefficients in front
-of \(y\) and \(\frac{dy}{dx}\) are not constants, the coefficient of
-\(y\) is \(e^x\), and so it is not a
-constant coefficient equation.  
-It is just a single equation, so it is not a system.
-It is also not autonomous since it does
-depend on \(x,\) in particlar the \(e^x.\) 
+It is not a system as there is only one equation.
 END_SOLUTION
 
 ##############################################################
 
-
-COMMENT("Classify a homogeneous linear ODE (check all that applies, nonrandomized equation).");
+COMMENT("Classify a linear PDE equation (check all that applies, nonrandomized).");
 
 ENDDOCUMENT();

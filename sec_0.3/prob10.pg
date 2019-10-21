@@ -52,8 +52,10 @@ $popup = PopUp(["Choose","linear and homogeneous","linear and nonhomogeneous","n
 Context()->texStrings;
 BEGIN_TEXT
 Put the differential equation
-\( \displaystyle \frac{x y^{\,\prime}}{(x^{$n}+$a) y} = \cos(x) + \frac{e^{$b x}}{y} \)
-into the form \( y^{\,\prime} + p(x) y = g(x)\) and find
+\[
+\frac{x y^{\prime}}{(x^{$n}+$a) y} = \cos(x) + \frac{e^{$b x}}{y}
+\]
+into the form \( y^{\prime} + p(x) y = g(x)\) and find
 \( p(x) \) and \( g(x) \).
 $PAR
 \( p(x) = \) 
@@ -82,6 +84,33 @@ install_problem_grader(~~&std_problem_grader);
 ANS( $p->cmp() );
 ANS( $g->cmp() );
 ANS( $popup->cmp() );
+
+############################
+
+Context()->texStrings;
+BEGIN_SOLUTION
+To put
+\[
+\frac{x y^{\prime}}{(x^{$n}+$a) y} = \cos(x) + \frac{e^{$b x}}{y}
+\]
+into normal form, first clear denominators by multiplying both sides by
+\(x^{$n}+$a) y :\)
+\[
+x y^{\prime} = (x^{$n}+$a) y\cos(x) + (x^{$n}+$a) e^{$b x} .
+\]
+Now divide by \(x\) and move the term with the \(y\) to the left side
+\[
+y^{\prime} - \frac{(x^{$n}+$a)\cos(x)}{x} y = \frac{(x^{$n}+$a) e^{$b x}}{x} .
+\]
+So
+\[
+p(x) = $p , \qquad g(x) = $g .
+\]
+Anything that can be put into the form \( y^{\prime} + p(x) y = g(x)\)
+is a first order linear equation.  It is not homogeneous since
+\(g(x)\) is not the zero function.
+END_SOLUTION
+Context()->normalStrings;
 
 ############################
 

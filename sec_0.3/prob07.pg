@@ -32,7 +32,7 @@ TEXT(beginproblem());
 
 $cmc = new_checkbox_multiple_choice();
 $cmc -> qa (
-  "Check all that apply to the differential equation \(\frac{dy}{dx}-\sin^2(x)y=\cos^2(x)y+x\)", 
+  "Check all that apply.", 
   "linear",                
   "first order",
   "ODE",
@@ -53,6 +53,10 @@ $cmc -> makeLast(
 #  Text
 
 BEGIN_TEXT
+Consider
+\[
+\frac{dy}{dx}-\sin^2(x)y=\cos^2(x)y+x .
+\]
 \{ $cmc -> print_q() \}
 $PAR
 \{ $cmc -> print_a() \}
@@ -65,6 +69,23 @@ install_problem_grader(~~&std_problem_grader);
 $showPartialCorrectAnswers = 0;
 
 ANS(checkbox_cmp($cmc->correct_ans));
+
+##############################################################
+
+BEGIN_SOLUTION
+The differential equation involves derivatives of only one independent variable,
+\(t\), and so it is an ODE and not a PDE.  It is first order, as only the
+first derivative \(\frac{dy}{dx}\) appears.
+The dependent variable \(y\) and its
+derivative \(\frac{dy}{dx}\) only appear linearly,
+and in no other functions or powers, so it is a linear ODE.
+$PAR
+It is just a single equation, so it is not a system.  It is not a homogeneous
+linear equation because of the term \(x.\)
+It is also not autonomous since it does
+depend on \(x,\) in particlar the term \(x.\) 
+END_SOLUTION
+
 
 ##############################################################
 

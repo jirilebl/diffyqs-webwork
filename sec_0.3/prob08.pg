@@ -35,27 +35,27 @@ TEXT(beginproblem());
 
 Context("Numeric");
 
-##############################################################
-#  Text
-
 $a = random(3,5,1);
 do { $b = random(2,9,1); } until ($b > $a);
 
 $answer1 = Compute("$a");
 $answer2 = PopUp(["Choose","Linear","Nonlinear"],"Linear");
 
+##############################################################
+#  Text
+
 Context()->texStrings;
 BEGIN_TEXT
-Determine the order of the given differential equation and state whether the equation is linear or nonlinear.
-
-\[\displaystyle\  t^{$b}x^{($a)}-t^{3}x''+6x = 0\]
-$BR
+Determine the order of the differential equation
+\[
+t^{$b}x^{($a)}-t^{3}x''+6x = 0
+\]
+and state whether the equation is linear or nonlinear.
+$PAR
 The order of this differential equation is \{ ans_rule(10) \} 
 \{ AnswerFormatHelp("numbers") \}
-$BR
-$BR
+$PAR
 The equation is \{ $answer2->menu() \}.
-
 END_TEXT
 Context()->normalStrings;
 
@@ -67,6 +67,20 @@ $showPartialCorrectAnswers = 0;
 
 ANS( $answer1->cmp );
 ANS( $answer2->cmp );
+
+##############################################################
+#  Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+The higest order derivative that appears is \(x^{($a)}\) so the
+order of the equation is \($a.\)
+$PAR
+The equation is linear as the dependent variable \(x\) and all
+its derivatives (the \(x^{($a)}\) and \(x''\)) appear linearly,
+they only appear as first powers.
+END_SOLUTION
+Context()->normalStrings;
 
 ##############################################################
 

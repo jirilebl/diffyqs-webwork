@@ -62,6 +62,18 @@ Context()->normalStrings;
 $showPartialCorrectAnswers = 1;
 ANS( $answer->cmp );
 
+#############################
+#  Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+The dependent variable \(x\) appears possibly nonlinearly in the
+expression \(e^{(a-$a)x} .\)  The only way that this is
+going to be linear in \(x\) is if \(a=$a,\) in which case
+the right hand side of the equation will just be \(t.\)
+END_SOLUTION
+Context()->normalStrings;
+
 ##############################
 
 COMMENT("Spotting a linear equation, where linearity depends on a parameter.");

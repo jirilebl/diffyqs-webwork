@@ -1,19 +1,19 @@
 ##DESCRIPTION
-## Classify a homogeneous linear ODE (check all that applies, nonrandomized equation).
+## Classify an ODE system (check all that applies, nonrandomized).
 ##ENDDESCRIPTION
 
 ## DBsubject(Differential equations)
 ## DBchapter(Introductory concepts)
 ## DBsection(Classifications of differential equations)
-## Institution(Alfred University)
-## Author(Darwyn Cook)
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
 ## Level(2)
 ## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
 ## AuthorText1('Jiri Lebl')
 ## EditionText1('5')
 ## Section1('0.3')
 ## Problem1('')
-## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'classify')
+## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'classify')
 
 ########################################################################
 
@@ -35,14 +35,13 @@ $mc -> qa (
   "Check all that apply.", 
   "ODE",
   "linear",
-  "homogeneous"
+  "system",
 );
 $mc -> extra(
-  "system",
   "autonomous",
-  "constant coefficients",
   "PDE"
 );
+
 
 ##############################################################
 #  Text
@@ -50,7 +49,8 @@ $mc -> extra(
 BEGIN_TEXT
 Consider
 \[
-\frac{dy}{dx}=e^x y .
+\frac{dx}{dt} = 3x-2y , \qquad 
+\frac{dy}{dt} = 5x-t y .
 \]
 \{ $mc -> print_q() \}
 $BR
@@ -68,25 +68,19 @@ ANS( checkbox_cmp( $mc->correct_ans() ) );
 ##############################################################
 
 BEGIN_SOLUTION
-The differential equation involves derivatives of only one independent variable,
-\(x\), and so it is an ODE and not a PDE.  The dependent variable and its
-derivatives (the \(y\) and the \( \frac{dy}{dx} \)) only appear linearly,
-and in no other functions or powers, so it is a linear ODE.
-It is homogeneous since there is no term
-that does not depend on \(y.\)
+There are two equations, and so this is a system of equations.
+There is only one independent variables, \(t\), 
+and so it is an ODE and not a PDE.
+The dependent variables and their derivatives (the \(x,\) \(y,\) \(\frac{dx}{dt},\) and \( \frac{dy}{dx} \))
+only appear linearly,
+and in no other functions or powers, so it is linear.
 $PAR
-The coefficients in front
-of \(y\) and \(\frac{dy}{dx}\) are not constants, the coefficient of
-\(y\) is \(e^x\), and so it is not a
-constant coefficient equation.  
-It is just a single equation, so it is not a system.
 It is also not autonomous since it does
-depend on \(x,\) in particlar the \(e^x.\) 
+depend on \(t,\) in particlar the term \(ty.\)
 END_SOLUTION
 
 ##############################################################
 
-
-COMMENT("Classify a homogeneous linear ODE (check all that applies, nonrandomized equation).");
+COMMENT("Classify an ODE system (check all that applies, nonrandomized).");
 
 ENDDOCUMENT();

@@ -32,16 +32,16 @@ TEXT(beginproblem());
 
 $mc = new_checkbox_multiple_choice();
 $mc -> qa (
-"For the differential equation \(\frac{dy}{dx}=y+e^x\) check all that apply", 
-"ODE",
-"linear",
-"constant coefficients"
+  "Check all that apply.", 
+  "ODE",
+  "linear",
+  "constant coefficients"
 );
 $mc -> extra(
-"system",
-"homogeneous",
-"autonomous",
-"PDE"
+  "system",
+  "homogeneous",
+  "autonomous",
+  "PDE"
 );
 
 
@@ -49,6 +49,10 @@ $mc -> extra(
 #  Text
 
 BEGIN_TEXT
+Consider
+\[
+\frac{dy}{dx}=y+e^x .
+\]
 \{ $mc -> print_q() \}
 $BR
 \{ $mc -> print_a() \}
@@ -61,6 +65,21 @@ install_problem_grader(~~&std_problem_grader);
 $showPartialCorrectAnswers = 0;
 
 ANS( checkbox_cmp( $mc->correct_ans() ) );
+
+##############################################################
+
+BEGIN_SOLUTION
+The differential equation involves derivatives of only one independent variable,
+\(x\), and so it is an ODE and not a PDE.  The dependent variable and its
+derivatives (the \(y\) and the \( \frac{dy}{dx} \)) only appear linearly,
+and in no other functions or powers, so it is a linear ODE.  The coefficients in front
+of \(y\) and \(\frac{dy}{dx}\) are constants (they are both 1), and so it is a
+constant coefficient equation.
+$PAR
+It is just a single equation, so it is not a system.  It is not a homogeneous
+linear equation because of the \(e^x.\)  It is also not autonomous since it does
+depend on \(x,\) in particlar the term \(e^x.\) 
+END_SOLUTION
 
 ##############################################################
 
