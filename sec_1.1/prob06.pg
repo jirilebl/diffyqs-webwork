@@ -33,8 +33,6 @@ using the initial condition [: y([$a])= [$b] :].
 
 [` y(x) = `] [__________]{"-1/($a*x-1/$b-$a^2)"}{40}
 [@ AnswerFormatHelp("formulas") @]*
-
-_Your answer should be a function of [:x:]._
 END_PGML
 
 ######################################################
