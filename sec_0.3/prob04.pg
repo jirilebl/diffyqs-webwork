@@ -79,7 +79,7 @@ so that is the order of the equation.
 $PAR
 The dependent variable \(y\) and its
 derivatives do not appear linearly.  In particular, the term
-\(\left(\frac{dy}{dx}\right)^2\) means the equation is not linear.
+\(5\left(\frac{dy}{dx}\right)^2\) means the equation is not linear.
 $PAR
 It is just a single equation, so it is not a system.
 It is also not autonomous since it does
