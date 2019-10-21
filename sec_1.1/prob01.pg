@@ -82,7 +82,6 @@ $PAR
 $integral
 
 $PAR
-$BR
 
 Evaluate the integral to find \( y(x) \).
 $PAR
@@ -119,8 +118,11 @@ We need to integrate (antidifferentiate) [:x^2 + x:].
 We set up an antiderivative
 that is zero when [:x=[$a]:] and then add [$ya] to it.
 That is,
+
 >>[``y = [$ya] + \int_{[$a]}^{x} (t^2+t) \, dt.``]<<
+
 If we evaluate the integral, we find
+
 >>[::y=[$ya] + (x^3/3 + x^2/2) - ([$a]^3/3 + [$a]^2/2).::]<<
 END_PGML_SOLUTION
 

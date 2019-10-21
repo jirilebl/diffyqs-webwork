@@ -29,9 +29,11 @@ $m = random(2,10,1);
 
 BEGIN_PGML
 Solve the initial value problem
+
 >>[``
 \frac{dy}{dx} -  y = [$a] e^x + [$B] e^{[$k] x}
 ``]<<
+
 with [: y(0) = [$m] :].
 
 [` y = {} `]

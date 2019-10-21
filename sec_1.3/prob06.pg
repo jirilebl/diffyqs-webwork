@@ -29,6 +29,7 @@ Context()->variables->are(x=>['Real',limits => [$a, $a+2]]);
 
 BEGIN_PGML
 Find a function [:y:] of [:x:] such that  
+
 >>[`` [$a] yy' = x \ \mbox{ and } \ y([$a])= [$b]. ``]<<
 
 [`y ={}`] [__________]{"sqrt(x^2/$a + $b^2 - $a )"}{40}

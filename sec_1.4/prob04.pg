@@ -34,7 +34,7 @@ Find the general solution of the first-order linear differential equation
 $PAR
 \( y(x) = \) \{ans_rule(40)\}
 \{ AnswerFormatHelp("formulas") \}
-$BR
+$PAR
 $BITALIC $BBOLD Note: $EBOLD Use \( C \) for the arbitrary constant. $EITALIC
 END_TEXT
 Context()->normalStrings;
@@ -44,27 +44,29 @@ Context()->normalStrings;
 
 ANS($fp->cmp(limits => [0,4]));
 
-
 ##############################################
 
 Context()->texStrings;
 BEGIN_SOLUTION
 The equation is in standard form \( y' + p(x) y = f(x) \) with \( p(x) = -\ln{x} \) and \( f(x) = $a x^x \).  The integrating factor is
-$PAR
-\( r (x) = e^{\int - \ln x dx} = e^{x - x \ln x} = \frac{e^x}{x^x} \).
-$PAR
+\[
+r(x) = e^{\int (- \ln x)\,dx} = e^{x - x \ln x} = \frac{e^x}{x^x} . 
+\]
 When multiplied by the integrating factor, the original differential equation becomes
-$PAR
-\( x^{-x} e^x y^{'} - \left( \ln x \right) x^{-x} e^x y = $a e^x \) or \( \left( x^{-x} e^x y \right)^{'} = $a e^x \).
-$PAR
+\[
+x^{-x} e^x y^{'} - \left( \ln x \right) x^{-x} e^x y = $a e^x
+\quad \text{or} \quad \left( x^{-x} e^x y \right)^{'} = $a e^x .
+\]
 Integration on both sides now yields
-$PAR
-\(x^{-x} e^x y = $a e^x + C \).
-$PAR
+\[
+x^{-x} e^x y = $a e^x + C .
+\]
 Finally,
-$PAR
-\( y(x) = $fp \).
+\[
+y(x) = $fp .
+\]
 END_SOLUTION
+Context()->normalStrings;
 
 ENDDOCUMENT();
 

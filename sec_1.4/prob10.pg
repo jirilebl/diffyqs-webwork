@@ -29,7 +29,9 @@ $c = $b/3;
 
 BEGIN_PGML
 Find the function [:y(x):] that satisfies the differential equation 
+
 >>[`` \frac{dy}{dx} - 2 x y = [$b] x^2 e^{x^2} ``]<<
+
 and the condition [: y(0) = [$y0] :]. 
 
 [`y(x)={}`]

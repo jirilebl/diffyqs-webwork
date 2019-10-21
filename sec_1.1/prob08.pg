@@ -12,6 +12,8 @@ loadMacros(
   "PGcourse.pl"
 );
 
+########################################################
+
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
@@ -28,6 +30,8 @@ if ($x0 < 0) {
   $x0sign = -1;
   $x0abs = -$x0;
 }
+
+########################################################
 
 BEGIN_PGML
 Solve the differential equation

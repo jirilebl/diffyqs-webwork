@@ -36,7 +36,9 @@ Context()->variables->are(t=>"Real");
 
 BEGIN_PGML
 Find the function satisfying  the differential equation 
+
 >>[`` R' - [$a] R = [$b] e^{[$c] t} ``]<<
+
 and [`R(0) = [$d]`].
 
 [`R={}`]

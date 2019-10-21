@@ -75,6 +75,7 @@ interval [`([$ibeg],[$iend])`] between the critical points where
 Since [`f([$lep]) [$comp] 0,`] we have
 [`f(x) [$comp] 0`] in the entire interval [`([$ibeg],[$iend]).`]
 Therefore,
+
 >>[``\lim_{t\to\infty} x(t) = [$lim] .``]<<
 END_PGML_SOLUTION
 

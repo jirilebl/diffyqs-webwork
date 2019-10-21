@@ -58,22 +58,23 @@ ANS($ans->cmp);
 Context()->texStrings;
 BEGIN_SOLUTION
 Identify the \(p(x)\) and \(f(x)\) in \(\frac{dy}{dx} + p(x) y = f(x) \)
-$BR
-\(p(x)=$p,\;f(x)=$q\)
+\[
+p(x)=$p, \qquad f(x)=$q
+\]
 $PAR
-The integrating factor is \(e^{\int p(x) dx} = $mu\)
+The integrating factor is \(e^{\int p(x) \, dx} = $mu .\)
 $PAR
 Multiplying the differential equation by the integrating factor \($mu\) gives
-
 \[$mu\frac{dy}{dx}+$mp y=$mq\]
 integrating we get 
-\[$mu y=\int $mq\; dx= $Mq\]
+\[$mu y=\int $mq \, dx= $Mq\]
 finally solving for \(y\) gives
-\[y=$ansd\]
+\[y=$ansd .\]
 Using \(y(1)=$y\) we get \(C=$C\), giving 
-\[y=$ansD\]
+\[y=$ansD .\]
 END_SOLUTION
 Context()->normalStrings;
 
 ###################################
+
 ENDDOCUMENT();

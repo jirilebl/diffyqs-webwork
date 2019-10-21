@@ -29,17 +29,79 @@ Context()->variables->are(x=>["Real",limits=>[1,1.1]],
 
 BEGIN_PGML
 Find the general solution to the differential equation
+
 >>[`` y' + [$alpha] x^{[$alpha-1]} y = x^{[$alpha]}``]<<
 
-Use the variable [` I = \int e^{x^{[$alpha]}}\, dx `] where it occurs in your answer.
+Use the variable [` I = \int e^{x^{[$alpha]}}\, dx + C `] where it occurs in your answer.  An arbitrary constant appears in the [`I,`] so don't put
+any other arbitrary constant in the answer.
 
 [` y = {} `]
 [______]{"(x*exp(x^($alpha)) - I)/($alpha*exp(x^($alpha)))"}{50}
 [@ AnswerFormatHelp("formulas") @]*
+
+_*Hint:* You may have to do an integration by parts to find where [`I`] comes in._
 END_PGML
 
+##########################################################
+
+BEGIN_PGML_SOLUTION
+The equation is in the standard form [` y' + p(x) y = g(x) .`]
+The integrating factor is
+
+>>[``r(x) = e^{\int p(x) \, dx} =
+e^{\int [$alpha] x^{[$alpha-1]} \, dx} =
+e^{x^{[$alpha]}} . ``]<<
+
+We multiply both sides by the integrating factor
+
+>>[`` e^{x^{[$alpha]}} y' + [$alpha]x^{[$alpha-1]}  e^{x^{[$alpha]}}  y = e^{x^{[$alpha]}} x^{[$alpha]} .``]<<
+
+We integrate
+
+>>[``
+\begin{aligned}
+e^{x^{[$alpha]}} y
+& =
+\int
+e^{x^{[$alpha]}} x^{[$alpha]} \, dx + C
+\\
+& =
+\frac{1}{[$alpha]}
+\int
+\underbrace{e^{x^{[$alpha]}} [$alpha] x^{[$alpha-1]}}_{du} \underbrace{x}_{v} \, dx + C
+\\
+& =
+\frac{1}{[$alpha]}
+\left(
+\underbrace{e^{x^{[$alpha]}}}_{u} \underbrace{x}_{v}
+-\int
+\underbrace{e^{x^{[$alpha]}}}_{u} \underbrace{(1)}_{dv} \, dx
+\right)
++ C
+\\
+& =
+\frac{1}{[$alpha]}
+\left(
+x e^{x^{[$alpha]}} - I
+\right)
++ C
+=
+\frac{x e^{x^{[$alpha]}} - I}{[$alpha]}
+,
+\end{aligned}
+``]<<
+
+where we can ignore the [``+C``] since an arbitrary constant is already
+included in the [`I .`]  Solving for [`y`] we get
+
+>>[``
+y
+=
+\frac{x e^{x^{[$alpha]}} - I}{[$alpha]e^{x^{[$alpha]}}}
+.
+``]<<
+END_PGML_SOLUTION
+
+###########################################################
+
 ENDDOCUMENT();
-
-
-
-

@@ -57,6 +57,7 @@ Rewrite [``\frac{dy}{dx} = (y-1)(y+1)``]
 as [``\frac{dx}{dy} = \frac{1}{(y-1)(y+1)} .``]
 
 Now integrate (use partial fractions)
+
 >>[``x = \int \frac{1}{(y-1)(y+1)} dy + C
 =
 \frac{1}{2} \ln \left(\frac{2}{y+1}-1\right) + C .
@@ -64,6 +65,7 @@ Now integrate (use partial fractions)
 
 Solve for [:y:].  Now use the condition [:y([$a])=0:] to solve for [:C:].
 Plug this [:C:] into the answer to obtain the final answer:
+
 >>[::y(x) = [$answer] .::]<<
 END_PGML_SOLUTION
 

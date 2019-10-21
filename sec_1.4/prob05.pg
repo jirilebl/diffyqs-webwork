@@ -20,12 +20,14 @@ loadMacros(
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
-$a = random(2,9,1);
-$b = random(2,9,1);
-$A = 5*$a;
-$B = 5*$b;
-$m = random(1,9,1);
-$n = $m - (2*$b - $a );
+do {
+  $a = random(2,9,1);
+  $b = random(2,9,1);
+  $A = 5*$a;
+  $B = 5*$b;
+  $m = random(1,9,1);
+  $n = $m - (2*$b - $a );
+} while(2*$b-$a == 0 or $n == 0); 
 
 Context("Numeric");
 
@@ -33,16 +35,77 @@ Context("Numeric");
 
 BEGIN_PGML
 Solve the initial value problem
->>[``  \frac{dy}{dx} + 2y = [$A] \sin(x) + [$B] \cos(x) ``]<<
+
+>>[`` \frac{dy}{dx} + 2y = [$A] \sin(x) + [$B] \cos(x) ``]<<
+
 with [: y(0) = [$m] :].
 
 [` y = {} `]
 [________]{"(2*$a + $b )* sin(x) + (2*$b - $a )* cos(x) + $n * exp(-2* x)"}{70}
 [@ AnswerFormatHelp("formulas") @]*
 
-_*Reminder:* To find the anti-derivative of [` e^u\sin(u) `],
+_*Reminder:* To find the anti-derivative of something like [` e^u\sin(u) `],
 the trick is to do integration by parts twice._
 END_PGML
+
+##############################################
+
+BEGIN_PGML_SOLUTION
+The equation is in standard form [` y' + p(x) y = f(x) `] with [` p(x) = 2 `]
+and [` f(x) = [$A] \sin(x) + [$B] \cos(x) . `]
+The integrating factor is
+
+>>[`` r(x) = e^{\int 2 \,dx} = e^{2x}. ``]<<
+
+When multiplied by the integrating factor, the original differential equation becomes
+
+>>[``
+e^{2x} \frac{dy}{dx} + 2e^{2x}y =
+[$A] e^{2x}\sin(x) + [$B] e^{2x} \cos(x) .
+``]<<
+
+Integration on both sides (we leave this integration-by-parts computation
+to the student) now yields
+
+>>[``
+e^{2x} y =
+[$a] e^{2x}\bigl(2 \sin(x)-\cos(x)\bigr)
++ [$b] e^{2x}\bigl(\sin(x)+2\cos(x)\bigr) + C,
+``]<<
+
+or
+
+>>[``
+y =
+[$a] \bigl(2 \sin(x)-\cos(x)\bigr)
++ [$b] \bigl(\sin(x)+2\cos(x)\bigr) + C e^{-2x}
+= [$a*2+$b] \sin(x)
++ [$b*2-$a] \cos (x) + C e^{-2x}.
+``]<<
+
+To satisfy [: y(0) = [$m] :], we plug in:
+
+>>[``
+[$m] = y(0)
+= [$a*2+$b] \sin(0)
++ [$b*2-$a] \cos (0) + C e^{-2(0)}
+= [$b*2-$a] + C ,
+``]<<
+
+or
+
+>>[``
+C = [$m] - [$b*2-$a] = [$m+$a-2*$b] .
+``]<<
+
+Hence,
+
+>>[``
+y =
+  [$a*2+$b] \sin(x)
++ [$b*2-$a] \cos (x) + [$n] e^{-2x} .
+``]<<
+END_PGML_SOLUTION
 
 ##############################################
 

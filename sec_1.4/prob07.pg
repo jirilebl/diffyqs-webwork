@@ -33,6 +33,7 @@ $sgnma = $a>0 ? '-' : '+';
 
 BEGIN_PGML
 Find the general solution to the differential equation
+
 >>[``
 x^2 + [$a] x y + x \frac{dy}{dx}= 0
 ``]<<
