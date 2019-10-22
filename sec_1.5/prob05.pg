@@ -54,7 +54,7 @@ $answera2 = Formula("2 x + 2 y y'");
 Context()->texStrings;
 BEGIN_TEXT
 Solve the initial value problem
-\( \displaystyle y y^{\,\prime} + x = \sqrt{x^2+y^2} \)
+\( \displaystyle y y^{\prime} + x = \sqrt{x^2+y^2} \)
 with \( y($x0) = $y0 \).
 
 $PAR
@@ -64,12 +64,12 @@ $BR
 \{ ans_rule(20) \}
 \{ AnswerFormatHelp("formulas") \}
 $BR
-\( u^{\,\prime} = \) 
+\( u^{\prime} = \) 
 \{ ans_rule(20) \}
 \{ AnswerFormatHelp("formulas") \}
 $BR
 Enter derivatives using prime notation (e.g., 
-you would enter \( y^{\,\prime} \) for \( \frac{dy}{dx} \)).
+you would enter \( y^{\prime} \) for \( \frac{dy}{dx} \)).
 END_TEXT
 Context()->normalStrings;
 
@@ -101,7 +101,7 @@ Context()->texStrings;
 BEGIN_TEXT
 $PAR
 After the substitution above, we obtain the following linear differential 
-equation in \( x, u, u^{\,\prime} \).
+equation in \( x, u, u^{\prime} \).
 $BR
 \{ ans_rule(30) \}
 \{ AnswerFormatHelp("equations") \}

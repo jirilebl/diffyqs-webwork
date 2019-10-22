@@ -65,7 +65,7 @@ $PAR
 \{ AnswerFormatHelp("equations") \}
 $PAR
 Find the particular solution that satisfies
-\( y(0) = 1 \) and \( y^{\,\prime}(0) = 1 \).
+\( y(0) = 1 \) and \( y^{\prime}(0) = 1 \).
 $PAR
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("equations") \}

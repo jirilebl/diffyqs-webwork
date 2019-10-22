@@ -46,7 +46,7 @@ Context()->texStrings;
 BEGIN_TEXT
 The unique solution to the initial value problem
 \[
-y^{\,\prime} + y = g(x), 
+y^{\prime} + y = g(x), 
 \ \ \
 y(0) = y_0,
 \]

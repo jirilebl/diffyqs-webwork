@@ -50,7 +50,7 @@ $ab  = $a * $b;
 
 # char poly r^2(r-$a)(r-$b)
 
-$diffeq = "y^{(4)} - $apb y^{\,\prime\prime\prime} + $ab y^{\,\prime\prime} = 0"; # tex
+$diffeq = "y^{(4)} - $apb y^{\prime\prime\prime} + $ab y^{\prime\prime} = 0"; # tex
 
 $answer = Compute("y = c1 + c2 x + c3 e^($a x) + c4 e^($b x)");
 

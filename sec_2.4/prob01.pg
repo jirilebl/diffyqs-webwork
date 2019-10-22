@@ -54,7 +54,7 @@ $PAR
 Set up a differential equation that describes this 
 system.  Let \( x \) to denote the displacement, in meters,
 of the mass from its equilibrium position, and give your answer
-in terms of \( x, x^{\,\prime}, x^{\,\prime\prime} \).  
+in terms of \( x, x^{\prime}, x^{\prime\prime} \).  
 Assume that positive displacement 
 means the mass is farther from the wall than when the system
 is at equilibrium.

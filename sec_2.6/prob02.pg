@@ -56,11 +56,11 @@ Context()->texStrings;
 BEGIN_TEXT
 Consider the initial value problem
 \[
-m x^{\,\prime\prime} + c x^{\,\prime} + k x = F(t), 
+m x^{\prime\prime} + c x^{\prime} + k x = F(t), 
 \ \ \
 x(0) = 0,
 \ \ \
-x^{\,\prime}(0) = 0
+x^{\prime}(0) = 0
 \]
 modeling the motion of a damped mass-spring system
 initially at rest and subjected to an applied 

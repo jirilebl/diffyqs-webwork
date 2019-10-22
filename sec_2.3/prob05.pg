@@ -57,8 +57,8 @@ $PAR
 Find such a differential equation, assuming
 it is homogeneous and has constant coefficients.
 Enter your answer using 
-\( y, y^{\,\prime}, y^{\,\prime\prime}, 
-y^{\,\prime\prime\prime}, y^{\,\prime\prime\prime\prime} \)
+\( y, y^{\prime}, y^{\prime\prime}, 
+y^{\prime\prime\prime}, y^{\prime\prime\prime\prime} \)
 for the dependent variable and its derivatives.
 $PAR
 \{ ans_rule(60) \}

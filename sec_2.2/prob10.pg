@@ -26,9 +26,10 @@ TEXT(beginproblem());
 
 Context("Numeric");
 Context()->variables->add(
-'c1'=>"Real",'c2'=>"Real",y=>"Real",
+  'c1'=>["Real",TeX=>'c_1',limits=>[2,4]],
+  'c2'=>["Real",TeX=>'c_2',limits=>[2,4]],
+  y=>"Real"
 );
-Context()->variables->set('c1'=>{limits=>[2,4]},'c2'=>{limits=>[2,4]});
 Context()->flags->set(
     formatStudentAnswer=>'parsed',
     reduceConstants=>0,
@@ -49,9 +50,13 @@ $msa = -($s) * $a;
 # char poly (r + $s $a)^2 + $b^2
 
 if ($s==1) {
-  $diffeq = "y^{\,\prime\prime} + $a2 y^{\,\prime} + $c y = 0"; # tex
+  $diffeq = "y^{\prime\prime} + $a2 y^{\prime} + $c y = 0"; # tex
+  $chareq = "r^2 + $a2 r + $c = 0"; # tex
+  $factoredeq = "(r + $a)^2 + $b^2 = 0"; # tex
 } else {
-  $diffeq = "y^{\,\prime\prime} - $a2 y^{\,\prime} + $c y = 0"; # tex
+  $diffeq = "y^{\prime\prime} - $a2 y^{\prime} + $c y = 0"; # tex
+  $chareq = "r^2 - $a2 r + $c = 0"; # tex
+  $factoredeq = "(r - $a)^2 + $b^2 = 0"; # tex
 }
 
 
@@ -126,6 +131,22 @@ ANS( $answer->cmp( checker => sub {
 
 }));
 
+##############################
+#  Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+The characteristic equation is \( $chareq ,\)
+or \( $factoredeq . \)
+In other words we get \( r= $msa \pm $b i .\)
+We get two independent solutions, \(y=e^{$msa x}\cos( $b x) \) and \(y=e^{$msa x} \sin($b x) .\)
+$PAR
+The general solution therefore is
+\[ $answer . \]
+END_SOLUTION
+Context()->normalStrings;
+
+##############################
 
 COMMENT("Characteristic polynomial (r + s a)^2 + b^2");
 

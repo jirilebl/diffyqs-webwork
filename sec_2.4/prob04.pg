@@ -134,13 +134,13 @@ $BR
 $SPACE \{ AnswerFormatHelp("formulas") \}
 $PAR
 With what initial displacement \( y(0) \) and
-initial velocity \( x^{\,\prime}(0) \) was the system set 
+initial velocity \( x^{\prime}(0) \) was the system set 
 into motion?
 $BR
 \( x(0) = {}\) \{ ans_rule(10) \} meters
 $SPACE \{ AnswerFormatHelp("numbers") \}
 $BR
-\( x^{\,\prime}(0) = {}\) \{ ans_rule(10) \} meters / second
+\( x^{\prime}(0) = {}\) \{ ans_rule(10) \} meters / second
 $SPACE \{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;

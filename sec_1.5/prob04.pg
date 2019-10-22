@@ -41,7 +41,7 @@ $answera2 = Formula("1 + y'");
 Context()->texStrings;
 BEGIN_TEXT
 Solve the initial value problem
-\( \displaystyle y^{\,\prime} = (x+y-$a)^2 \)
+\( \displaystyle y^{\prime} = (x+y-$a)^2 \)
 with \( y(0) = 0 \).
 
 $PAR
@@ -51,12 +51,12 @@ $BR
 \{ ans_rule(20) \}
 \{ AnswerFormatHelp("formulas") \}
 $BR
-\( u^{\,\prime} = \) 
+\( u^{\prime} = \) 
 \{ ans_rule(20) \}
 \{ AnswerFormatHelp("formulas") \}
 $BR
 Enter derivatives using prime notation (e.g., 
-you would enter \( y^{\,\prime} \) for \( \frac{dy}{dx} \)).
+you would enter \( y^{\prime} \) for \( \frac{dy}{dx} \)).
 END_TEXT
 Context()->normalStrings;
 
@@ -80,7 +80,7 @@ Context()->texStrings;
 BEGIN_TEXT
 $PAR
 After the substitution above, we obtain the following differential 
-equation in \( x, u, u^{\,\prime} \).
+equation in \( x, u, u^{\prime} \).
 $BR
 \{ ans_rule(30) \}
 \{ AnswerFormatHelp("equations") \}

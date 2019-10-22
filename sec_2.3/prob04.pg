@@ -53,7 +53,7 @@ $c1 = $a*$a + $b*$b;
 
 # char poly r( (r+$a)^2 + $b^2 )
 
-$diffeq = "y^{\,\prime\prime\prime} + $c2 y^{\,\prime\prime} + $c1 y^{\,\prime} = 0"; # tex
+$diffeq = "y^{\prime\prime\prime} + $c2 y^{\prime\prime} + $c1 y^{\prime} = 0"; # tex
 
 $answer = Compute("y = c1 + c2 e^(-$a x) cos($b x) + c3 e^(-$a x) sin($b x)");
 

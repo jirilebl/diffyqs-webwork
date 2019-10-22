@@ -12,11 +12,11 @@
 DOCUMENT();
 
 loadMacros(
-"PGstandard.pl",
-"MathObjects.pl",
-"AnswerFormatHelp.pl",
-"parserPopUp.pl",
-"PGcourse.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "parserPopUp.pl",
+  "PGcourse.pl",
 );
 
 TEXT(beginproblem());
@@ -72,9 +72,11 @@ ANS( $answer3->cmp() );
 #####################
 # Solution
 
-#Context()->texStrings;
-#BEGIN_SOLUTION
-#END_SOLUTION
-#Context()->normalStrings;
+Context()->texStrings;
+BEGIN_SOLUTION
+If \(f(x) = A g(x),\) then \(A = $answer1, \) which is not constant, and hence \(f(x)\) and \(g(x)\)
+are linearly independent.
+END_SOLUTION
+Context()->normalStrings;
 
 ENDDOCUMENT();

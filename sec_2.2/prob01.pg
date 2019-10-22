@@ -75,7 +75,8 @@ Then plug into the equation:
 \[
 0 = $eq = $eqplug = $coeff e^{rx} \bigl( $eqchar \bigr) .
 \]
-Hence, \( $eqchar = 0 , \) and the roots are \( $root1 , $root2 .\)
+Hence, \( $eqchar = 0 , \) and the roots of this equation are
+\( r = $root1 , $root2 .\)
 END_SOLUTION
 Context()->normalStrings;
 

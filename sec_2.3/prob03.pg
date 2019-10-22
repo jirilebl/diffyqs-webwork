@@ -45,7 +45,7 @@ $a  = list_random(2,3,5,6,7,8);
 
 # char poly (r-1)(r^2 + $a)
 
-$diffeq = "y^{\,\prime\prime\prime} - y^{\,\prime\prime} + $a y^{\,\prime} - $a y = 0"; # tex
+$diffeq = "y^{\prime\prime\prime} - y^{\prime\prime} + $a y^{\prime} - $a y = 0"; # tex
 
 $answer = Compute("y = c1 e^x + c2 cos(sqrt($a) x) + c3 sin(sqrt($a) x)");
 

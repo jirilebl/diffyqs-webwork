@@ -27,9 +27,10 @@ TEXT(beginproblem());
 
 Context("Numeric");
 Context()->variables->add(
-'c1'=>"Real",'c2'=>"Real",y=>"Real",
+  'c1'=>["Real",TeX=>'c_1',limits=>[2,4]],
+  'c2'=>["Real",TeX=>'c_2',limits=>[2,4]],
+  y=>"Real"
 );
-Context()->variables->set('c1'=>{limits=>[2,4]},'c2'=>{limits=>[2,4]});
 parser::Assignment->Allow;
 
 $a  = random(3,7,1);
@@ -42,7 +43,9 @@ $aa = $a*$a;
 $A = $y0;
 $B = -($a)*$y0;
 
-$diffeq = "y^{\,\prime\prime} - $a2 y^{\,\prime} + $aa y = 0"; # tex
+$diffeq = "y^{\prime\prime} - $a2 y^{\prime} + $aa y = 0"; # tex
+$chareq = "r^2 - $a2 r + $aa = 0"; # tex
+$factoredeq = "(r - $a)^2 = 0"; # tex
 
 $answera = Compute("y = (c1 + c2 x) e^($a x)");
 
@@ -66,7 +69,7 @@ $PAR
 $PAR
 Find the solution that satisfies the 
 initial conditions
-\( y(0) = $y0 \) and \( y^{\,\prime}(0) = 0 \).
+\( y(0) = $y0 \) and \( y^{\prime}(0) = 0 \).
 $PAR
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("equations") \}
@@ -127,6 +130,25 @@ ANS( $answera->cmp( checker => sub {
 
 # there's a possibility of some numerical instability, so best just 
 ANS( $answerb->cmp(tolType=>"absolute", tol=>0.001) );
+
+##############################
+#  Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+The characteristic equation is \( $chareq ,\)
+or \( $factoredeq . \)
+In other words we get \( r= $a ,\) which is a doubled root.
+We get two independent solutions, \(y=e^{$a x} \) and \(y=x e^{$a x} .\)
+$PAR
+The general solution therefore is
+\[ $answera . \]
+Solving for the initial conditions we get
+\[ $answerb . \]
+END_SOLUTION
+Context()->normalStrings;
+
+##############################
 
 COMMENT("Characteristic polynomial (r - a)^2");
 

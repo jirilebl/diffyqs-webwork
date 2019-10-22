@@ -68,13 +68,14 @@ ANS( $answer1->cmp() );
 ANS( $answer2->cmp() );
 ANS( $answer3->cmp() );
 
-
 #####################
 # Solution
 
-#Context()->texStrings;
-#BEGIN_SOLUTION
-#END_SOLUTION
-#Context()->normalStrings;
+Context()->texStrings;
+BEGIN_SOLUTION
+If \(f(x) = A g(x),\) then \(A = $answer1, \) which is constant, and hence \(f(x)\) and \(g(x)\)
+are linearly dependent.
+END_SOLUTION
+Context()->normalStrings;
 
 ENDDOCUMENT();
