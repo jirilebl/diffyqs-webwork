@@ -27,9 +27,10 @@ TEXT(beginproblem());
 
 Context("Numeric");
 Context()->variables->add(
-'c1'=>"Real",'c2'=>"Real",y=>"Real",
+  'c1'=>["Real",TeX=>'c_1',limits=>[2,4]],
+  'c2'=>["Real",TeX=>'c_2',limits=>[2,4]],
+  y=>"Real"
 );
-Context()->variables->set('c1'=>{limits=>[2,4]},'c2'=>{limits=>[2,4]});
 parser::Assignment->Allow;
 
 $a = random(1,2,1);
@@ -39,9 +40,10 @@ $b = random(4,10,1);
 $bma = $b-$a;
 $ab = $a*$b;
 
-$diffeq = "y^{\,\prime\prime} + $bma y^{\,\prime} - $ab y = 0"; # tex
+$diffeq = "y^{\prime\prime} + $bma y^{\prime} - $ab y = 0"; # tex
+$chareq = "r^2 + $bma r - $ab = 0"; # tex
 
-$answer = Compute("y = c1 e^($a x) + c2 e^(-$b x)");
+$answer = Compute("y = c1 e^($a x) + c2 e^(-$b x)")->reduce;
 
 ######################
 #  Main text
@@ -110,6 +112,21 @@ ANS( $answer->cmp( checker => sub {
 
 }));
 
+##############################
+#  Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+The characteristic equation is \( $chareq \)
+or \( (r+$b)(r-$a) = 0 . \)  In other words we get \( r=$a,-$b .\)
+We get two independent solutions, \(y=e^{$a x}\) and \(y=e^{-$b x} .\)
+$PAR
+The general solution therefore is
+\[ $answer . \]
+END_SOLUTION
+Context()->normalStrings;
+
+##############################
 
 COMMENT("Characteristic polynomial (r + b)(r - a).");
 

@@ -27,9 +27,10 @@ TEXT(beginproblem());
 
 Context("Numeric");
 Context()->variables->add(
-'c1'=>"Real",'c2'=>"Real",y=>"Real",
+  'c1'=>["Real",TeX=>'c_1',limits=>[2,4]],
+  'c2'=>["Real",TeX=>'c_2',limits=>[2,4]],
+  y=>"Real"
 );
-Context()->variables->set('c1'=>{limits=>[2,4]},'c2'=>{limits=>[2,4]});
 Context()->flags->set(
     formatStudentAnswer=>'parsed',
     reduceConstants=>0,
@@ -59,13 +60,13 @@ In your answer, use \( c_1 \) and \( c_2 \) to
 denote arbitrary constants and \( x \) 
 the independent variable.  Enter \( c_1 \) as 
 ${LQ}c1${RQ} and \( c_2 \) as ${LQ}c2${RQ}.
-$BR
+$PAR
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("equations") \}
 $PAR
 Find the particular solution that satisfies
 \( y(0) = 1 \) and \( y^{\,\prime}(0) = 1 \).
-$BR
+$PAR
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("equations") \}
 END_TEXT
@@ -123,6 +124,25 @@ ANS( $answera->cmp( checker => sub {
 }));
 
 ANS( $answerb->cmp() );
+
+##############################
+#  Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+The characteristic equation is \( r^2 + $a r = 0 \)
+or \( r(r+$a) = 0 . \)  In other words we get \( r=0, -$a .\)
+We get two independent solutions, \(y=1\) and \(y=e^{-$a x} .\)
+$PAR
+The general solution therefore is
+\[ $answera . \]
+Solving for \(c_1\) and \(c_2\) to satisfy the initial conditions
+gives
+\[ $answerb .\]
+END_SOLUTION
+Context()->normalStrings;
+
+##############################
 
 COMMENT("Characteristic polynomial r(r + a).");
 

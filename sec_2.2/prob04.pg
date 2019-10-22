@@ -27,17 +27,25 @@ Context("Numeric");
 
 $a = random(2,8,2);
 $b = random(1,9,2);
+# One root is 1/2, the other is $r2
+$r2 = random(2,5,1);
 
-$c = Compute("$a-$b");
-$d = Compute("($a/2)+3*$b");
+# (2r-1)(r-r2) = 2r - (1+2r2) r + r2
+$lt = 1+2*$r2;
 
-$ans = Compute("$a*e^(x/2)-$b*e^(-3*x)");
+$y0 = Compute("$a+$b");
+$yp0 = Compute("($a/2)+$r2*$b");
+
+$ans = Compute("$a*e^(x/2)+$b*e^($r2*x)");
 
 #####################################################################
 
 Context()->texStrings;
 BEGIN_TEXT
-Solve the initial-value problem \(\displaystyle 2 y'' + 5 y' - 3 y = 0, \; y(0) = $c, \; y'(0) = $d.\)
+Solve the initial-value problem
+\[
+2 y'' - $lt y' + $r2 y = 0, \quad y(0) = $y0, \quad y'(0) = $yp0.
+\]
 $PAR
 \(y(x) = \) \{ ans_rule(30) \}
 \{ AnswerFormatHelp("formulas"); \}
@@ -47,5 +55,26 @@ Context()->normalStrings;
 #####################################################################
 
 ANS( $ans->cmp() );
+
+##############################
+#  Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+The characteristic equation is \( r^2 - $lt r + $r2 = 0 \)
+or \( (2r-1)(r-$r2) = 0 . \)  In other words we get \( r=\frac{1}{2}, $r2 .\)
+We get two independent solutions, \(y=e^{x/2}\) and \(y=e^{$r2 x} .\)
+$PAR
+The general solution therefore is
+\[ y(x) = c_1 e^{x/2} +  c_2 e^{$r2 x} . \]
+Solving for \(c_1\) and \(c_2\) to satisfy the initial conditions
+gives
+\[ y(x) = $a e^{x/2} +  $b e^{$r2 x} . \]
+END_SOLUTION
+Context()->normalStrings;
+
+##############################
+
+COMMENT("Distinct real roots");
 
 ENDDOCUMENT();
