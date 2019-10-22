@@ -22,6 +22,8 @@ $showPartialCorrectAnswers = 1;
 $a = random(2,10,1);
 $b = random(2,11,1);
 
+Context()->variables->set(x => {limits => [$a-1,$a+1]});
+
 ######################################################
 
 BEGIN_PGML
@@ -54,14 +56,14 @@ Now [: y([$a])= [$b] :], so
 
 Solving for [:C:] we find
 
->>[``C = \frac{1}{[$a*$b]}-[$a].``]<<
+>>[``C = \frac{1}{[$a*$b]}+[$a].``]<<
 
 Plugging this back into the solution we get
 
 >>[``y =
-\frac{-1}{[$a]\left(x-\left(\frac{1}{[$a*$b]}-[$a]\right)\right)}
+\frac{-1}{[$a]\left(x-\left(\frac{1}{[$a*$b]}+[$a]\right)\right)}
 =
-\frac{-1}{([$a]x-\frac{1}{[$b]}+[$a]^2)}.
+\frac{-1}{([$a]x-\frac{1}{[$b]}-[$a]^2)}.
 ``]<<
 END_PGML_SOLUTION
 
