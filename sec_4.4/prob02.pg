@@ -17,7 +17,6 @@ loadMacros(
   "AnswerFormatHelp.pl",
   "PGgraphmacros.pl",
   "answerHints.pl",
-  "unionLists.pl",
   "PGcourse.pl"
 );
 
@@ -108,12 +107,15 @@ $refreshCachedImages=1;
 $xmin = -($L+1); $xmax = $L+1;
 $ymin = -($k+1); $ymax = $k+1;
 
+$pixelwidth = 400;
+$pixelheight = 400*($k+1)/($L+1);
+
 $gr = init_graph(
           $xmin, $ymin,            # xmin, ymin
           $xmax, $ymax,            # xmax, ymax 
           'axes'=>[0,0],           # axis through origin 
           'grid'=>[2*$L+2,2*$k+2], # number of grid lines
-          'size'=>[400,400]);  # dimensions in pixels
+          'size'=>[$pixelwidth,$pixelheight]);  # dimensions in pixels
 
 add_functions($gr, 
   "$f1 for t in [0,$mid> using color:blue and weight:4",
@@ -145,24 +147,21 @@ Context()->texStrings;
 
 if ($trig eq "cosine") {
   $Coeff_entry = 
-     "${ITEM}" . 
-     "\(a_0 = \)" . ans_rule(5) . 
-     "${ITEMSEP}${ITEM}" .
-     "\(a_n = \)" . ans_rule(60);
+     "\(a_0 = \)" . ans_rule(10) . AnswerFormatHelp("numbers") .
+     "${PAR}" .
+     "\(a_n = \)" . ans_rule(60) . AnswerFormatHelp("formulas");
   $Series_formula =
      "\(\displaystyle C(t) = " .
      "\frac{a_0}{2} \, + \, \sum_{n=1}^\infty a_n\,\cos\left(\frac{n\pi}{$L}\,t\right)\)"; 
   $Series = "C";
 } else {
   $Coeff_entry = 
-     "${ITEM}" . 
-     "\(b_n = \)" . ans_rule(60); 
+     "\(b_n = \)" . ans_rule(60) . AnswerFormatHelp("formulas"); 
   $Series_formula =
      "\(\displaystyle S(t) = " .
      "\sum_{n=1}^\infty b_n\,\sin\left(\frac{n\pi}{$L}\,t\right)\)";
   $Series = "S";
 }
-
 
 Context()->normalStrings;
 
@@ -175,7 +174,7 @@ BEGIN_TEXT
 
 $SPACE $SPACE
 \{ image( insertGraph($gr), 
-width=>200,height=>200,tex_size=>500 ) \}
+width=>$pixelwidth*0.75,height=>$pixelheight*0.75,tex_size=>500 ) \}
 
 $PAR
 
@@ -185,41 +184,34 @@ Let
             $f1\quad & \text{for}\ \   0    <  t $le1 $mid, \\
             $f2\quad & \text{for}\ \ $mid $le2 t   <  $L.
          \end{cases}\)
-$PAR
-$HR
+
 $PAR
 
-\(\bullet\quad\) Compute the Fourier ${BBOLD}$trig${EBOLD} coefficients for \(f(t)\). $BR
+Consider the Fourier ${BBOLD}$trig${EBOLD} series $Series_formula.
+
+$PAR
+
+Compute the Fourier $trig coefficients for \(f(t)\).
+
+$PAR
   
-\{ BeginList('UL') \}
-
 $Coeff_entry
-\{ AnswerFormatHelp("formulas") \}
-
-\{ EndList('UL') \}
 
 $PAR
 
-\(\bullet\quad\) Give values for the Fourier ${BBOLD}$trig${EBOLD} series 
- $Series_formula.
+Give values for the Fourier $trig series $Series(t).
 
-\{ BeginList('UL') \}
-
-$ITEM 
- \(\phantom{-}$Series($x[0]) = \) \{ ans_rule(5) \}
+$PAR
+\(\phantom{-}$Series($x[0]) = \) \{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 
-$ITEMSEP
-$ITEM 
- \($Series($x[1]) = \) \{ ans_rule(5) \}
+$PAR
+\($Series($x[1]) = \) \{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 
-$ITEMSEP
-$ITEM 
- \(\phantom{-}$Series($x[2]) = \) \{ ans_rule(5) \}
+$PAR
+\(\phantom{-}$Series($x[2]) = \) \{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
-
-\{ EndList('UL') \}
 
 END_TEXT
 Context()->normalStrings;
