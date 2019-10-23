@@ -77,7 +77,7 @@ Start with step size [`h=1`] (1 step).  Compute
 
 [`y(1) \approx {}`] [_________]{"$yy1"}{10}
 [@ AnswerFormatHelp("numbers") @]*  
-[`\text{Error} \approx {}`] [_________]{"$error1"}{10}
+[`\text{Error} = {}`] [_________]{"$error1"}{10}
 [@ AnswerFormatHelp("numbers") @]*
 
 _*Note:* Remember that the error is the absolute value!_
@@ -86,27 +86,51 @@ Let us half the step size to [`h=0.5`] (2 steps).  Compute
 
 [`y(1) \approx {}`] [_________]{"$yy2"}{10}
 [@ AnswerFormatHelp("numbers") @]*  
-[`\text{Error} \approx {}`] [_________]{"$error2"}{10}
+[`\text{Error} = {}`] [_________]{"$error2"}{10}
 [@ AnswerFormatHelp("numbers") @]*
 
 The error went down by the factor:
-[`\dfrac{\text{Error}}{\text{Previous error}} \approx {}`] [_________]{"$error2/$error1"}{10}
+[`\dfrac{\text{Error}}{\text{Previous error}} = {}`] [_________]{"$error2/$error1"}{10}
 [@ AnswerFormatHelp("numbers") @]*
 
 Let us half the step size to [`h=0.25`] (4 steps).  Compute
 
 [`y(1) \approx {}`] [_________]{"$yy4"}{10}
 [@ AnswerFormatHelp("numbers") @]*  
-[`\text{Error} \approx {}`] [_________]{"$error4"}{10}
+[`\text{Error} = {}`] [_________]{"$error4"}{10}
 [@ AnswerFormatHelp("numbers") @]*
 
 The error went down by the factor:
-[`\dfrac{\text{Error}}{\text{Previous error}} \approx {}`] [_________]{"$error4/$error2"}{10}
+[`\dfrac{\text{Error}}{\text{Previous error}} = {}`] [_________]{"$error4/$error2"}{10}
 [@ AnswerFormatHelp("numbers") @]*
 
 _Euler's method is a first order method so we expect the error to go down by a factor of 0.5 each halving.  Of course, that's only very approximate, so the
 numbers you get above are not exactly 0.5._
 END_PGML
+
+######################################################
+
+BEGIN_PGML_SOLUTION
+The actual solution is [` y(1) = [$realans] `].
+
+Start with step size [`h=1`] (1 step).  We find
+[`y(1) \approx [$yy1] .`]
+The error is, therefore, [`|y(1) - [$yy1]| = [$error1] .`]
+
+With step size [`h=0.5`] (2 steps).  We find
+[`y(1) \approx [$yy2] .`]
+The error is, therefore, [`|y(1) - [$yy2]| = [$error2] .`]
+
+The error went down by the factor:
+[`\dfrac{\text{Error}}{\text{Previous error}} = [$error2/$error1] . `]
+
+With step size [`h=0.25`] (4 steps).  We find
+[`y(1) \approx [$yy4] .`]
+The error is, therefore, [`|y(1) - [$yy4]| = [$error4] .`]
+
+The error went down by the factor:
+[`\dfrac{\text{Error}}{\text{Previous error}} = [$error4/$error2] . `]
+END_PGML_SOLUTION
 
 ######################################################
 
