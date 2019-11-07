@@ -1,0 +1,119 @@
+##DESCRIPTION
+##  Method of characteristics (change to characteristic coordinates)
+##  for a linear first order PDE (transport equation)
+##ENDDESCRIPTION
+
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection(First order equations)
+## Author(Jiri Lebl)
+## Institution(Oklahoma State University)
+## Level(5)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('5')
+## Section1('1.9')
+## Problem1('')
+## MO(1)
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'transport equation', 'characteristics')
+
+########################################################################
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+###########################
+# Setup
+
+Context("Numeric");
+
+$a = random(2,9,1);
+do { $b = random(2,9,1); } until ($b != $a);
+
+Context()->variables->add(t => ["Real", limits=>[0.1,4]]);
+Context()->variables->add(xi => ["Real", TeX=>"\xi"]);
+Context()->variables->add(s => ["Real"]);
+
+Context()->flags->set(
+     reduceConstants => 0,
+     reduceConstantFunctions => 0,
+);
+
+$answer1 = Compute("x+$a t");
+$answer2 = Compute("$b cos(xi)");
+$answer3 = Compute("$b cos(x+$a t)");
+
+############################
+# Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Solve
+$BRBR
+\( \quad u_{t} - $a u_{x} = 0, \quad -\infty < x < \infty \) and \(t > 0\)
+$BRBR
+\(\quad u(x,0) = $b \cos(x) \)
+$BRBR
+First change to characteristic coordinates
+\((\xi,s)\) where \(s=t\) and
+$BRBR
+\(\xi = {} \) \{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
+$BRBR
+picked so that when \(s=t=0\) then \(\xi = x\), and that the equation becomes the ODE \(u_s = 0.\)
+$BRBR
+Solve and write \(u\) in terms of \((\xi,s):\)
+$BRBR
+\(u = {} \) \{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
+$BRBR
+Finally write \(u\) in terms of \((x,t):\)
+$BRBR
+\(u = {} \) \{ ans_rule(40) \}
+\{ AnswerFormatHelp("formulas") \}
+END_TEXT
+Context()->normalStrings;
+
+#############################
+# Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer1->cmp() );
+ANS( $answer2->cmp() );
+ANS( $answer3->cmp() );
+
+#####################
+# Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+Characteristic coordinates are given by:
+$BRBR
+\( \xi = $answer1, s = t . \)
+$BRBR
+The equation becomes the ODE:
+$BRBR
+\( u_s = 0 \) with initial condition \( u|_{s=0} = $b \cos(\xi) . \)
+$BRBR
+The solution therefore is
+$BRBR
+\( u = $answer2 , \)
+$BRBR
+or
+\( u = $answer3 . \)
+END_SOLUTION
+Context()->normalStrings;
+
+ENDDOCUMENT();
