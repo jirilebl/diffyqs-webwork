@@ -1,13 +1,13 @@
 # Notes on Diffy Qs WeBWorK Problems
 
-A set of WeBWorK problems for courses teaching a class with
-the *Notes on Diffy Qs* textbook.
-Currently these should be treated as **beta** quality.
+A set of WeBWorK problems for courses teaching a class with the
+*Notes on Diffy Qs* textbook.
 
 Coverage is Chapters 0, 1, 2, 3, 4, 6, 7, 8.  It should have enough for a
 normal ODE course which uses 0, 1, 2, 6, 7 or perhaps 0, 1, 2, 3, 8 if doing
 systems.  Chapters 4 and 8 are a little more sparse, there are a few problems
-for 5.1, but not enough to run the whole chapter.
+for 5.1, but not enough to run the whole chapter.  Also appendix A is not
+yet covered. 
 
 ## How to use?
 
