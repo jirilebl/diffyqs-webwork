@@ -64,7 +64,7 @@ $answer5 = Compute("$c sin(x e^(-$a t)) e^(-$b t)");
 
 Context()->texStrings;
 BEGIN_TEXT
-Solve the PDE
+Solve
 $BRBR
 \(u_{t} - $a x u_{x} + $b u = 0 , \quad -\infty < x < \infty, \quad t > 0\)
 $BRBR

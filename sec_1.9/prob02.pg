@@ -62,7 +62,7 @@ $answer4 = Compute("$c e^(-$b t) cos(x+$a t)");
 
 Context()->texStrings;
 BEGIN_TEXT
-Solve the PDE
+Solve
 $BRBR
 \(u_{t} - $a u_{x} + $b u = 0, \quad -\infty < x < \infty , \quad t > 0\)
 $BRBR

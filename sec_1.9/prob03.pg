@@ -65,7 +65,7 @@ $answer6 = Compute("( $d sin(x+$a t) - (($c)/($b-$a)) e^(x+$a t) ) e^(-$b t) + (
 
 Context()->texStrings;
 BEGIN_TEXT
-Solve the PDE
+Solve
 $BRBR
 \(u_{t} - $a u_{x} + $b u = $c e^x , \quad -\infty < x < \infty , \quad t > 0\)
 $BRBR
