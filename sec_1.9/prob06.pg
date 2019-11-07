@@ -55,7 +55,7 @@ Context()->texStrings;
 BEGIN_TEXT
 Given the PDE
 $BRBR
-\( u_t = - $b u_x , \qquad -\infty < x < \infty , \quad t > 0 , \)
+\( u_t = - $b u_x , \quad -\infty < x < \infty , \quad t > 0 , \)
 $BRBR
 suppose you know that for some fixed time \( t= t_0 \)
 $BRBR
@@ -68,14 +68,12 @@ $BRBR
 END_TEXT
 Context()->normalStrings;
 
-
 #############################
 ##  Answer evaluation
 
 $showPartialCorrectAnswers = 1;
 
 ANS( $answer1->cmp() );
-
 
 #####################
 # Solution

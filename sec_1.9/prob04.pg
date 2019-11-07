@@ -66,9 +66,9 @@ Context()->texStrings;
 BEGIN_TEXT
 Solve the PDE
 $BRBR
-\( \quad u_{t} - $a x u_{x} + $b u = 0 , \quad -\infty < x < \infty \) and \(t > 0\)
+\(u_{t} - $a x u_{x} + $b u = 0 , \quad -\infty < x < \infty, \quad t > 0\)
 $BRBR
-\(\quad u(x,0) = $c \sin(x) \)
+\(u(x,0) = $c \sin(x) \)
 $BRBR
 First change to characteristic coordinates
 \((\xi,s)\) where \(s=t\) and

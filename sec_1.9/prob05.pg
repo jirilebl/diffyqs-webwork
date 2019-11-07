@@ -53,9 +53,9 @@ Context()->texStrings;
 BEGIN_TEXT
 Solve
 $BRBR
-\( \quad u_t = - $b u_x , \qquad -\infty < x < \infty , \quad t > 0 \)
+\(u_t = - $b u_x , \quad -\infty < x < \infty , \quad t > 0 \)
 $BRBR
-\( \quad u(x,0) = $c \sin( $a x ) \) 
+\(u(x,0) = $c \sin( $a x ) \) 
 $BRBR
 \(u(x,t) = \) \{ ans_rule(40) \} \{ AnswerFormatHelp("formulas") \}
 END_TEXT
@@ -67,7 +67,6 @@ Context()->normalStrings;
 $showPartialCorrectAnswers = 1;
 
 ANS( $answer1->cmp() );
-
 
 #####################
 # Solution
