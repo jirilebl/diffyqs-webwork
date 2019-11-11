@@ -1,0 +1,65 @@
+# Finding the determinant of a 4x4 
+
+## Institution(METU-NCC)
+## Author(Benjamin Walter)
+## KEYWORDS('algebra', 'matrix operation', 'matrix', 'determinant')
+
+####################################################
+
+DOCUMENT();
+loadMacros(
+  "PGstandard.pl",
+  "PGchoicemacros.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl"
+);
+
+####################################################
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 0;
+
+Context('Matrix');
+
+my @B = (
+ [non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
+ [non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
+ [    0,                        0,                non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
+ [    0,                        0,                     0,                 non_zero_random(-5,5,1)]
+);
+
+my @pr = NchooseK(4,4);  @pc = NchooseK(4,4);
+
+$A = Matrix([
+ [ $B[$pr[0]][$pc[0]] , $B[$pr[0]][$pc[1]] , $B[$pr[0]][$pc[2]] , $B[$pr[0]][$pc[3]] ],
+ [ $B[$pr[1]][$pc[0]] , $B[$pr[1]][$pc[1]] , $B[$pr[1]][$pc[2]] , $B[$pr[1]][$pc[3]] ],
+ [ $B[$pr[2]][$pc[0]] , $B[$pr[2]][$pc[1]] , $B[$pr[2]][$pc[2]] , $B[$pr[2]][$pc[3]] ],
+ [ $B[$pr[3]][$pc[0]] , $B[$pr[3]][$pc[1]] , $B[$pr[3]][$pc[2]] , $B[$pr[3]][$pc[3]] ]
+]);
+
+if(random(0,1,1) == 1) {
+  $A = $A->transpose;
+}
+
+####################################################
+
+Context()->texStrings;
+BEGIN_TEXT
+Let
+\[ A = $A \]
+The determinant of \(A\) is \{ans_rule(25) \}
+\{ AnswerFormatHelp("numbers") \}
+END_TEXT
+Context()->normalStrings;
+
+####################################################
+
+ANS($A->det->cmp);
+
+####################################################
+
+COMMENT('Random permuation of random 4x4 block-triangular matrix.');
+
+ENDDOCUMENT();
+

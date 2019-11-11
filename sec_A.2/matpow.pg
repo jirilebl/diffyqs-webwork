@@ -1,0 +1,51 @@
+# Linear Algebra
+
+## Institution(Hope College)
+## Author(Paul Pearson)
+## KEYWORDS('linear algebra','matrix','multiplication')
+
+#################################################
+
+DOCUMENT();
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl"
+);
+
+#################################################
+
+TEXT(beginproblem()); 
+$showPartialCorrectAnswers = 1;
+
+Context('Matrix');
+
+$A = Matrix([
+  [non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
+  [0,non_zero_random(-5,5,1)],
+]);
+
+#################################################
+
+Context()->texStrings;
+BEGIN_TEXT
+Let 
+\[ A = $A.\]
+If possible, compute the following.  
+If an answer does not exist, enter ${LQ}DNE${RQ}.
+$PAR
+\( A^2 = \)
+\{ ans_box(3,30).$SPACE.AnswerFormatHelp('matrices') \}
+$PAR
+\( A^3 = \)
+\{ ans_box(3,30).$SPACE.AnswerFormatHelp('matrices') \}
+END_TEXT
+Context()->normalStrings;
+
+#################################################
+
+ANS( ($A * $A)->cmp() );
+ANS( ($A * $A * $A)->cmp() );
+
+ENDDOCUMENT();

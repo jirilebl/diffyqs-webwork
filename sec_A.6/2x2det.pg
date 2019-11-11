@@ -1,0 +1,48 @@
+# Finding the determinant of a 2x2 matrix
+
+## KEYWORDS('algebra', 'determinant', 'matrix')
+
+####################################
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl"
+);
+
+####################################
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 0;
+
+Context("Numeric");
+
+$a=random(-3,5,1);
+$b=random(-3,5,1);
+$c=random(-3,5,1);
+$d=random(-3,5,1);
+
+####################################
+
+BEGIN_TEXT
+Let
+\[A =
+\left[\begin{array}{rr}
+        $a & $b \\
+        $c & $d \\
+\end{array}\right]
+\]
+The determinant of \(A\) is \{ans_rule(25) \}
+\{ AnswerFormatHelp("numbers") \}
+END_TEXT
+
+####################################
+
+$ans1 = Compute("$a*$d-$b*$c");
+ANS($ans1->cmp());
+
+ENDDOCUMENT();
+
