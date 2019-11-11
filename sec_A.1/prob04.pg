@@ -1,0 +1,65 @@
+##DESCRIPTION
+## Magnitude of vectors
+##ENDDESCRIPTION
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+ "PGstandard.pl",
+ "MathObjects.pl",
+ "AnswerFormatHelp.pl",
+ "PGML.pl",
+ "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+###########################
+# Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Matrix");
+
+$v1 = non_zero_random(-9,9,1);
+$v2 = non_zero_random(-9,9,1);
+$v = Matrix("[[$v1],[$v2]]");
+$w1 = non_zero_random(-9,9,1);
+$w2 = non_zero_random(-9,9,1);
+$w = Matrix("[[$w1],[$w2]]");
+$a = random(2,9,1);
+$b = - random(2,9,1);
+
+$ans1 = $v+$w;
+$ans2 = $v-$w;
+$ans3 = $a*$v;
+$ans4 = $b*$v+$a*$w;
+
+
+############################
+# Main text
+
+BEGIN_PGML
+Suppose [`\vec{v} = \begin{bmatrix} [$v1] \\ [$v2] \end{bmatrix}`], 
+[`\vec{w} = \begin{bmatrix} [$w1] \\ [$w2] \end{bmatrix}`].   Compute
+
+[`\vec{v}+\vec{w}={}`] [____________]*{$ans1}
+[@ AnswerFormatHelp("vectors") @]*
+
+[`\vec{v}-\vec{w}={}`] [____________]*{$ans2}
+[@ AnswerFormatHelp("numbers") @]*
+
+[`[$a]\vec{v}={}`] [____________]*{$ans3}
+[@ AnswerFormatHelp("matrices") @]*
+
+[`[$b]\vec{v}+[$a]\vec{w}={}`] [____________]*{$ans4}
+[@ AnswerFormatHelp("numbers") @]*
+END_PGML
+
+ENDDOCUMENT();

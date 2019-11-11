@@ -1,0 +1,61 @@
+##DESCRIPTION
+## Magnitude of vectors
+##ENDDESCRIPTION
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+ "PGstandard.pl",
+ "MathObjects.pl",
+ "AnswerFormatHelp.pl",
+ "PGML.pl",
+ "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+###########################
+# Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+Context()->lists->set(Vector => {open => "(", close => ")"});
+
+$v1 = random(1,5,1);
+$v2 = random(1,5,1);
+$v3 = random(1,5,1);
+$w1 = non_zero_random(-5,5,1);
+$w2 = random(-5,5,1);
+$w3 = random(-5,5,1);
+$z1 = non_zero_random(-5,5,1);
+$z2 = random(-5,5,1);
+
+
+############################
+# Main text
+
+BEGIN_PGML
+If [`\vec{v} = ([$v1],[$v2],[$v3])`] in [`{\mathbb{R}}^3`], compute
+
+[`\lVert \vec{v} \rVert={}`] [____________]{"sqrt(($v1)^2+($v2)^2+($v3)^2)"}{30}
+[@ AnswerFormatHelp("numbers") @]*
+
+If [`\vec{w} = \begin{bmatrix} [$w1] \\ [$w2] \\ [$w3] \end{bmatrix}`], compute
+
+[`\lVert \vec{w} \rVert={}`] [____________]{"sqrt(($w1)^2+($w2)^2+($w3)^2)"}{30}
+[@ AnswerFormatHelp("numbers") @]*
+
+If [`\vec{z} = \begin{bmatrix} [$z1] \\ [$z2] \end{bmatrix}`] in the plane, compute
+
+[`\lVert \vec{z} \rVert={}`] [____________]{"sqrt(($z1)^2+($z2)^2)"}{30}
+[@ AnswerFormatHelp("numbers") @]*
+END_PGML
+
+ENDDOCUMENT();
