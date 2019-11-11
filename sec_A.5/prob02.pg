@@ -1,0 +1,57 @@
+##DESCRIPTION
+## Find angle
+##ENDDESCRIPTION
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+ "PGstandard.pl",
+ "MathObjects.pl",
+ "AnswerFormatHelp.pl",
+ "PGML.pl",
+ "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+###########################
+# Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+
+do {
+  $a = non_zero_random(-9,9,1);
+  do { $b = random(-9,9,1); } while ($a == $b);
+  do { $c = random(-9,9,1); } while ($c == $b or $c == $a);
+  do { $d = random(-9,9,1); } while ($d == $a or $d == $b or $d == $c);
+  do { $e = random(-9,9,1); } while ($e == $a or $e == $b or $e == $c or $e == $d);
+  do { $f = non_zero_random(-9,9,1); } while ($f == $a or $f == $b or $f == $c or $f == $d or $f == $e);
+
+  $thedot = Compute("($a)*($d) + ($b)*($e) + ($c)*($f)");
+} while ($thedot == 0);
+
+$mag1 = Compute("sqrt(($a)^2 + ($b)^2 + ($c)^2)");
+$mag2 = Compute("sqrt(($d)^2 + ($e)^2 + ($f)^2)");
+
+############################
+# Main text
+
+BEGIN_PGML
+Suppose that [`\theta`] is the angle between
+[`([$a],[$b],[$c])`] and
+[`([$d],[$e],[$f])`].  Find
+
+[`\cos \theta = {}`] [________________]{"$thedot/($mag1*$mag2)"}
+[@ AnswerFormatHelp("numbers") @]*
+END_PGML
+
+ENDDOCUMENT();
+
