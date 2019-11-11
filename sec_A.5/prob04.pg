@@ -1,0 +1,65 @@
+##DESCRIPTION
+## inner product properties
+##ENDDESCRIPTION
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+ "PGstandard.pl",
+ "MathObjects.pl",
+ "AnswerFormatHelp.pl",
+ "PGML.pl",
+ "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+###########################
+# Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Vector");
+Context()->lists->set(Vector => {open => "(", close => ")"}); # only for output
+
+$a = non_zero_random(-9,9,1);
+do { $b = random(-9,9,1); } while ($a == $b);
+do { $c = random(-9,9,1); } while ($c == $b or $c == $a);
+
+do { $d = non_zero_random(-9,9,1); } while ($d == $a or $d == $b or $d == $c);
+do { $e = non_zero_random(-9,9,1); } while ($e == $a or $e == $b or $e == $c or $e == $d);
+do { $f = non_zero_random(-9,9,1); } while ($f == $a or $f == $b or $f == $c or $f == $d or $f == $e);
+
+$v = Vector($a,$b,$c);
+$w1 = Vector(1,0,0);
+$w2 = Vector(1,1,0);
+$w3 = Vector($d,$e,$f);
+
+$p1 = (($w1 . $v) / ($v . $v)) * $v;
+$p2 = (($w2 . $v) / ($v . $v)) * $v;
+$p3 = (($w3 . $v) / ($v . $v)) * $v;
+
+############################
+# Main text
+
+BEGIN_PGML
+Given that [`\vec{v} = [$v]`], compute
+
+[`\operatorname{proj}_{\vec{v}}\bigl( [$w1] \bigr) = {} `] [________________]*{$p1}
+[@ AnswerFormatHelp("numbers") @]*
+
+[`\operatorname{proj}_{\vec{v}}\bigl( [$w2] \bigr) = {} `] [________________]*{$p2}
+[@ AnswerFormatHelp("numbers") @]*
+
+[`\operatorname{proj}_{\vec{v}}\bigl( [$w3] \bigr) = {} `] [________________]*{$p3}
+[@ AnswerFormatHelp("numbers") @]*
+END_PGML
+
+ENDDOCUMENT();
+

@@ -1,0 +1,55 @@
+##DESCRIPTION
+## inner product properties
+##ENDDESCRIPTION
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+ "PGstandard.pl",
+ "MathObjects.pl",
+ "AnswerFormatHelp.pl",
+ "PGML.pl",
+ "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+###########################
+# Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+
+$a = random(2,20,1);
+do { $b = random(2,20,1); } while ($a == $b);
+do { $c = random(2,20,1); } while ($c == $b or $c == $a);
+do { $d = random(2,20,1); } while ($d == $a or $d == $b or $d == $c);
+do { $e = random(2,20,1); } while ($e == $a or $e == $b or $e == $c or $e == $d);
+do { $f = random(2,20,1); } while ($f == $a or $f == $b or $f == $c or $f == $d or $f == $e);
+
+############################
+# Main text
+
+BEGIN_PGML
+Given that [`\langle \vec{v} , \vec{w} \rangle = [$a]`] and
+[`\langle \vec{v} , \vec{u} \rangle = [$b]`], compute
+
+[`\langle \vec{u} , [$c] \vec{v} \rangle  = {} `] [________________]{"($c)*($b)"}
+[@ AnswerFormatHelp("numbers") @]*
+
+[`\langle \vec{v} , [$d] \vec{w} + [$e] \vec{u}  \rangle  = {} `] [________________]{"($d)*($a) + ($e)*($b)"}
+[@ AnswerFormatHelp("numbers") @]*
+
+[`\langle \vec{w} + [$f] \vec{u} , \vec{v}  \rangle  = {} `] [________________]{"($a) + ($f)*($b)"}
+[@ AnswerFormatHelp("numbers") @]*
+END_PGML
+
+ENDDOCUMENT();
+
