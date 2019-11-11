@@ -22,7 +22,6 @@ loadMacros(
   "AnswerFormatHelp.pl",
   "PGML.pl",
   "parserPopUp.pl",
-  "scaffold.pl",
   "PGcourse.pl"
 );
 TEXT(beginproblem());
@@ -30,6 +29,7 @@ $refreshCachedImages = 1;
 $showPartialCorrectAnswers = 1;
 
 Context("LimitedVector-coordinate")->variables->are(x=>'Real',y=>'Real');
+Context()->lists->set(Vector => {open => "(", close => ")"});
 Context()->flags->set( ijk=>0 );
 
 # Construct graph canvas
@@ -81,27 +81,27 @@ do { $x3 = non_zero_random(-5,5,1); } until ($x3 != $x1 && $x3 != $x2);
 BEGIN_PGML
 >> [@ image(insertGraph($gr), width=>$pixels, height=>$pixels, tex_size=>900) @]* <<
 
-a. Find the coordinate vector for each vector in the figure.
+Find the coordinate vector for each vector in the figure.
 
-    + [`\vec{a}=`] [______________]{$a} [@ AnswerFormatHelp("vectors") @]*
-    + [`\vec{b}=`] [______________]{$b} [@ AnswerFormatHelp("vectors") @]*
-    + [`\vec{c}=`] [______________]{$c} [@ AnswerFormatHelp("vectors") @]*
+    + [`\vec{a}=`] [______________]*{$a} [@ AnswerFormatHelp("vectors") @]*
+    + [`\vec{b}=`] [______________]*{$b} [@ AnswerFormatHelp("vectors") @]*
+    + [`\vec{c}=`] [______________]*{$c} [@ AnswerFormatHelp("vectors") @]*
 
-b. Using geometric vector addition, draw the vector sum [` \vec{a} + \vec{b} + \vec{c} `].  Then, verify your answer using vector addition operations.
+Using geometric vector addition, draw the vector sum [` \vec{a} + \vec{b} + \vec{c} `].  Then, verify your answer using vector addition operations.
 
-    + [` \vec{a} + \vec{b} + \vec{c} = `] [___________________]{"<$Ax+$Bx+$Cx, $Ay+$By+$Cy>"} [@ AnswerFormatHelp("vectors") @]*
+    + [` \vec{a} + \vec{b} + \vec{c} = `] [___________________]*{"<$Ax+$Bx+$Cx, $Ay+$By+$Cy>"} [@ AnswerFormatHelp("vectors") @]*
 
-c. Using geometric vector addition, draw the vector sum [` 2\vec{a} + 3\vec{b} - \vec{c} `].  Then, verify your answer using vector addition and scaling operations.
+Using geometric vector addition, draw the vector sum [` 2\vec{a} + 3\vec{b} - \vec{c} `].  Then, verify your answer using vector addition and scaling operations.
 
-    + [` 2\vec{a} + 3\vec{b} - \vec{c} = `] [___________________]{"<2*$Ax+3*$Bx-$Cx, 2*$Ay+3*$By-$Cy>"} [@ AnswerFormatHelp("vectors") @]*
+    + [` 2\vec{a} + 3\vec{b} - \vec{c} = `] [___________________]*{"<2*$Ax+3*$Bx-$Cx, 2*$Ay+3*$By-$Cy>"} [@ AnswerFormatHelp("vectors") @]*
 
-d. Find the vector sum [` x_1 \vec{a} + x_2 \vec{b} + x_3 \vec{c} `] when [`x_1 = [$x1] `], [`x_2 = [$x2] `] and [`x_3 = [$x3] `].  You should be able to do this both geometrically and algebraically.
+Find the vector sum [` x_1 \vec{a} + x_2 \vec{b} + x_3 \vec{c} `] when [`x_1 = [$x1] `], [`x_2 = [$x2] `] and [`x_3 = [$x3] `].  You should be able to do this both geometrically and algebraically.
 
-    + [` x_1 \vec{a} + x_2\vec{b} + x_3 \vec{c} = `] [___________________]{"<$x1*$Ax+$x2*$Bx+$x3*$Cx, $x1*$Ay+$x2*$By+$x3*$Cy>"} [@ AnswerFormatHelp("vectors") @]*
+    + [` x_1 \vec{a} + x_2\vec{b} + x_3 \vec{c} = `] [___________________]*{"<$x1*$Ax+$x2*$Bx+$x3*$Cx, $x1*$Ay+$x2*$By+$x3*$Cy>"} [@ AnswerFormatHelp("vectors") @]*
 
-e. Find a vector [` \vec{d} `] such that [` \vec{a} + \vec{c} + \vec{d} = \vec{0} `].  You should be able to do this both geometrically and algebraically.
+Find a vector [` \vec{d} `] such that [` \vec{a} + \vec{c} + \vec{d} = \vec{0} `].  You should be able to do this both geometrically and algebraically.
 
-    + [` \vec{d} = `] [___________________]{"<-($Ax+$Cx), -($Ay+$Cy)>"} [@ AnswerFormatHelp("vectors") @]*
+    + [` \vec{d} = `] [___________________]*{"<-($Ax+$Cx), -($Ay+$Cy)>"} [@ AnswerFormatHelp("vectors") @]*
 
 END_PGML
 
