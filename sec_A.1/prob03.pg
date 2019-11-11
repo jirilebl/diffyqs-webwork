@@ -26,7 +26,6 @@ TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
 Context("Numeric");
-Context()->lists->set(Vector => {open => "(", close => ")"});
 
 $v1 = random(1,5,1);
 $v2 = random(1,5,1);

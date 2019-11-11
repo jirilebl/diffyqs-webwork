@@ -1,0 +1,47 @@
+##DESCRIPTION
+## in terms of standard basis
+##ENDDESCRIPTION
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+ "PGstandard.pl",
+ "MathObjects.pl",
+ "AnswerFormatHelp.pl",
+ "PGML.pl",
+ "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+###########################
+# Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+
+$v1 = random(1,5,1);
+$v2 = random(6,9,1);
+$v3 = random(-9,9,1);
+
+############################
+# Main text
+
+BEGIN_PGML
+Suppose [`\vec{v} = \begin{bmatrix} [$v1] \\ [$v2] \\ [$v3] \end{bmatrix}`].
+Find [`\vec{v}`] as a linear combination of the standard basis vectors.
+
+[`\vec{v} = {}`] [_______]{"$v1"} [`\vec{e}_1 + {}`]
+[_______]{"$v2"} [`\vec{e}_2 + {}`]
+[_______]{"$v3"} [`\vec{e}_3 . \qquad`]
+[@ AnswerFormatHelp("numbers") @]*
+END_PGML
+
+ENDDOCUMENT();

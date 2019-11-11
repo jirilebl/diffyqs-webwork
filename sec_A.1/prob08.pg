@@ -1,0 +1,67 @@
+##DESCRIPTION
+## in terms of standard basis
+##ENDDESCRIPTION
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+ "PGstandard.pl",
+ "MathObjects.pl",
+ "AnswerFormatHelp.pl",
+ "PGML.pl",
+ "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+###########################
+# Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Matrix");
+
+do {
+  $a = random(-9,9,1);
+  do { $b = random(-9,9,1); } while ($a == $b);
+  do { $c = random(-9,9,1); } while ($c == $b or $c == $a);
+  do { $d = random(-9,9,1); } while ($d == $a or $d == $b or $d == $c);
+} while ($a*$d == $b*$c);
+
+$p1 = random(2,9,1);
+$p2 = random(2,9,1);
+
+$mat = Matrix("[[$a,$b],[$c,$d]]");
+
+############################
+# Main text
+
+BEGIN_PGML
+Suppose a linear mapping [`F \colon {\mathbb{R}}^2 \to {\mathbb{R}}^2`]
+takes [`(1,0)`] to [`([$a],[$c])`] and it
+takes [`(0,1)`] to [`([$b],[$d])`].
+
+What is the matrix representing the mapping:
+
+[_______]*{$mat}
+[@ AnswerFormatHelp("numbers") @]*
+
+Compute:
+
+[`F(1,1) = \bigl(`] [______]{"$a+$b"} [`,`] [______]{"$c+$d"} [`\bigr) \quad`]
+[@ AnswerFormatHelp("numbers") @]*
+
+[`F([$p1],0) = \bigl(`] [______]{"$p1*$a"} [`,`] [______]{"$p1*$c"} [`\bigr) \quad`]
+[@ AnswerFormatHelp("numbers") @]*
+
+[`F(0,[$p2]) = \bigl(`] [______]{"$p2*$b"} [`,`] [______]{"$p2*$d"} [`\bigr) \quad`]
+[@ AnswerFormatHelp("numbers") @]*
+END_PGML
+
+ENDDOCUMENT();

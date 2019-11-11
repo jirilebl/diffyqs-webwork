@@ -19,6 +19,7 @@ DOCUMENT();        # This should be the first executable line in the problem.
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGmatrixmacros.pl",
   "PGcourse.pl"
 );
@@ -43,25 +44,23 @@ $R = Matrix( [ [$a11, $a12, $a13], [0,$a22,$a23], [0,0,$a33] ] );
 $A = $L*$R;
 $inv = $A->inverse();
 
-
 ############################################
+
 Context()->texStrings;
 BEGIN_TEXT
-
 Find the inverse of the matrix
-$PAR
 \[
 A = $A.
 \]
-$PAR
+$BR
 The inverse is
-$PAR $BCENTER
-\(A^{-1} = \) \{ $inv ->ans_array\}
-$ECENTER
-
+$BRBR
+\(A^{-1} = \) \{ $inv->ans_array \}
 END_TEXT
+Context()->normalStrings;
+
+############################################
 
 ANS($inv->cmp);
-
 
 ENDDOCUMENT();        

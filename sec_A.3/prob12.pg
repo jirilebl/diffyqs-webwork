@@ -5,6 +5,7 @@
 ## DBsubject(Linear algebra)
 ## DBchapter(Matrices)
 ## DBsection(Inverses)
+## Author(Unknown and Rick Lynch)
 ## Institution(TCNJ)
 ## Level(2)
 ## KEYWORDS('matrix' 'inverse')
@@ -108,42 +109,33 @@ $n9 = (abs($a33) == 1) ? "" : abs($a33);
 ###########################################################################
 Context()->texStrings;
 BEGIN_TEXT
-(a) Find the inverse of the matrix
-$PAR
+Find the inverse of the matrix
 \[
-A = \left[
-\begin{array}{rrr}
+A = 
+\begin{bmatrix}
 $a11 & $a12 & $a13\\
 $a21 & $a22 & $a23\\
 $a31 & $a32 & $a33
-\end{array}
-\right]
+\end{bmatrix}
 \]
+\(A^{-1}={}\)
+\{ answer_matrix(3,3,5) ) \} 
+
 $PAR
-$BCENTER
-\{ mbox( '\(A^{-1}=\)', answer_matrix(3,3,5) ) \} 
-$ECENTER
-$PAR
-$BR
-(b) Use the answer from part (a) to solve the linear system
-$PAR
+Use the answer above to solve the linear system
 \[
-\left\{'\{'\} 
 \begin{array}{rcrcrcr}
    $n1 x_1 & $pm1 &  $n2 x_2 & $pm2 & $n3 x_3 & = & $b1 \cr
 $n4 x_1 & $pm3 & $n5 x_2 & $pm4 & $n6 x_3 & = & $b2 \cr 
   $n7 x_1 & $pm5 &   $n8 x_2  & $pm6 & $n9 x_3 & = & $b3  
 \end{array} 
-\right.
 \]
 $PAR
-$BCENTER
 \{ mbox('\(\left[
 \begin{array}{r}
 x_1 \\ x_2 \\ x_3
 \end{array}
 \right]\)', '\(\quad =\)', answer_matrix(3,1,10) ) \}
-$ECENTER
 END_TEXT
 Context()->normalStrings;
 
@@ -169,9 +161,9 @@ ANS num_cmp(ra_flatten_matrix($A*$B));
 $c1 = $ans11*$b1 + $ans12*$b2 + $ans13*$b3;
 $c2 = $ans21*$b1 + $ans22*$b2 + $ans23*$b3;
 $c3 = $ans31*$b1 + $ans32*$b2 + $ans33*$b3;
+
 Context()->texStrings;
 BEGIN_SOLUTION
-$PAR $BBOLD SOLUTION: $EBOLD
 (a) The idea here is to use the algorithm for finding the inverse of a (nonsingular) matrix. The algorithm says to run the Gauss-Jordan reduction in order to find the RRE of the following augmented matrix:
 $PAR
 \[ \left[
@@ -193,29 +185,25 @@ $PAR
 \right] \]
 $PAR
 Since the matrix to the left of the vertical bar in the RRE form is precisely the identity matrix, we conclude that the orignal matrix \(A\) is nonsingular with
-$PAR
-\[ A^{-1} = \left[
-\begin{array}{rrr}
+\[ A^{-1} = 
+\begin{bmatrix}
 $ans11 & $ans12 & $ans13 \cr
 $ans21 & $ans22 & $ans23 \cr
 $ans31 & $ans32 & $ans33 
-\end{array} 
-\right] \]
+\end{bmatrix} \]
 $PAR
 (b) The idea is to write the linear system as
-$PAR
 \[
 Ax = \left[ \begin{array}{r} $b1 \\ $b2 \\ $b3 \end{array} \right]
 \]
-$PAR
 In part (a), we have seen that \(A\) is nonsingular, and so we get that the unique solution is
 \[
-x = A^{-1} \left[ \begin{array}{r} $b1 \\ $b2 \\ $b3 \end{array} \right] = \left[ \begin{array}{r} $c1 \\ $c2 \\ $c3 \end{array} \right]
+x = A^{-1}
+\begin{bmatrix} $b1 \\ $b2 \\ $b3 \end{bmatrix} =
+\begin{bmatrix} $c1 \\ $c2 \\ $c3 \end{bmatrix}
 \]
 END_SOLUTION
 Context()->normalStrings;
 
-COMMENT('Edited and updated in 2012/2013 by Rick Lynch @ Mizzou. Originally taken from NPL.
-$BR
-Desc: Find the inverse of a matrix and use it to solve a system.');
+COMMENT('Find the inverse of a matrix and use it to solve a system.');
 ENDDOCUMENT();

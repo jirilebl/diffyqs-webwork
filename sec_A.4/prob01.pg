@@ -1,0 +1,52 @@
+##DESCRIPTION
+## rank/nullity
+##ENDDESCRIPTION
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+ "PGstandard.pl",
+ "MathObjects.pl",
+ "AnswerFormatHelp.pl",
+ "PGML.pl",
+ "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+###########################
+# Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+
+$n = random(8,20,1);
+$r = random(2,7,1);
+
+############################
+# Main text
+
+BEGIN_PGML
+If an [$n] by [$n] matrix [`A`] has rank [$r], then
+
+The nullity of [`A`] is [_______]{"$n-$r"}
+[@ AnswerFormatHelp("numbers") @]*
+
+The number of linearly independent columns of [`A`] is [_______]{"$r"}
+[@ AnswerFormatHelp("numbers") @]*
+
+The number of linearly independent rows of [`A`] is [_______]{"$r"}
+[@ AnswerFormatHelp("numbers") @]*
+
+The number of zero rows in the reduced row echelon form of [`A`] is [_______]{"$n-$r"}
+[@ AnswerFormatHelp("numbers") @]*
+END_PGML
+
+ENDDOCUMENT();
