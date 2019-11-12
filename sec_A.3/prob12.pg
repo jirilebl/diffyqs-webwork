@@ -30,9 +30,7 @@ $showPartialCorrectAnswers = 1;
 ###########################################################################
 # setup contexts and variables 
 ###########################################################################
-Context("Numeric");
-$A = new MatrixReal1(3,3);
-$B = new MatrixReal1(3,1);
+Context("Matrix");
 
 do {
   $a11 = non_zero_random(-5,5,1);
@@ -68,23 +66,19 @@ $ans31 = ($a21 * $a32 - $a22 * $a31);
 $ans32 = - ($a11 * $a32 - $a12 * $a31);
 $ans33 = ($a11 * $a22 - $a12 * $a21);
 
-$A->assign(1,1,$ans11);
-$A->assign(1,2,$ans12);
-$A->assign(1,3,$ans13);
-$A->assign(2,1,$ans21);
-$A->assign(2,2,$ans22);
-$A->assign(2,3,$ans23);
-$A->assign(3,1,$ans31);
-$A->assign(3,2,$ans32);
-$A->assign(3,3,$ans33);
+$Ainv = Matrix([[$ans11, $ans12, $ans13],
+                [$ans21, $ans22, $ans23],
+                [$ans31, $ans32, $ans33]]);
 
 $b1 = random(-5,5,1);
 $b2 = non_zero_random(-5,5,1);
 $b3 = non_zero_random(-5,5,1);
 
-$B->assign(1,1,$b1);
-$B->assign(2,1,$b2);
-$B->assign(3,1,$b3);
+$B = Matrix([[$b1],
+             [$b2],
+             [$b3]]);
+             
+$x = $Ainv*$B;
 
 $pm1 = ($a12 < 0) ? "-" : "+";
 $pm2 = ($a13 < 0) ? "-" : "+";
@@ -119,7 +113,7 @@ $a31 & $a32 & $a33
 \end{bmatrix}
 \]
 \(A^{-1}={}\)
-\{ answer_matrix(3,3,5) ) \} 
+\{ $Ainv->ans_array(15) \} 
 
 $PAR
 Use the answer above to solve the linear system
@@ -131,11 +125,10 @@ $n4 x_1 & $pm3 & $n5 x_2 & $pm4 & $n6 x_3 & = & $b2 \cr
 \end{array} 
 \]
 $PAR
-\{ mbox('\(\left[
-\begin{array}{r}
+\(\begin{bmatrix}
 x_1 \\ x_2 \\ x_3
-\end{array}
-\right]\)', '\(\quad =\)', answer_matrix(3,1,10) ) \}
+\end{bmatrix}
+= {} \) \{ $x->ans_array(15) \}
 END_TEXT
 Context()->normalStrings;
 
@@ -143,17 +136,8 @@ Context()->normalStrings;
 ###########################################################################
 # check the answer  
 ###########################################################################
-ANS(num_cmp($ans11));
-ANS(num_cmp($ans12));
-ANS(num_cmp($ans13));
-ANS(num_cmp($ans21));
-ANS(num_cmp($ans22));
-ANS(num_cmp($ans23));
-ANS(num_cmp($ans31));
-ANS(num_cmp($ans32));
-ANS(num_cmp($ans33));
-ANS num_cmp(ra_flatten_matrix($A*$B));
-
+ANS($Ainv->cmp());
+ANS($x->cmp());
 
 ###########################################################################
 # solution

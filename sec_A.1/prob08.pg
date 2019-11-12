@@ -35,7 +35,7 @@ do {
 } while ($a*$d == $b*$c);
 
 $p1 = random(2,9,1);
-$p2 = random(2,9,1);
+do { $p2 = random(2,9,1); } while($p1 == $p2);
 
 $mat = Matrix("[[$a,$b],[$c,$d]]");
 
