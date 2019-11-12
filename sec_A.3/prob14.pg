@@ -108,7 +108,7 @@ $BRBR
 \{ $multians->ans_rule(5) \} \( $a[2] = \)
 \( $ZT \).
 $BRBR
-\{ AnswerFormatHelp("numbers");
+\{ AnswerFormatHelp("numbers"); \}
 END_TEXT
 Context()->normalStrings;
 
