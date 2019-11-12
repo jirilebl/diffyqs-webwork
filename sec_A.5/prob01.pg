@@ -27,11 +27,11 @@ $showPartialCorrectAnswers = 1;
 
 Context("Numeric");
 
-$a = random(-9,9,1);
-do { $b = random(-9,9,1); } while ($a == $b);
+$a = non_zero_random(-9,9,1);
+do { $b = non_zero_random(-9,9,1); } while ($a == $b);
 do { $c = non_zero_random(-9,9,1); } while ($c == $b or $c == $a);
-do { $d = random(-9,9,1); } while ($d == $a or $d == $b or $d == $c);
-do { $e = random(-9,9,1); } while ($e == $a or $e == $b or $e == $c or $e == $d);
+do { $d = non_zero_random(-9,9,1); } while ($d == $a or $d == $b or $d == $c);
+do { $e = non_zero_random(-9,9,1); } while ($e == $a or $e == $b or $e == $c or $e == $d);
 
 ############################
 # Main text

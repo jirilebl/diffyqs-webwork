@@ -80,7 +80,9 @@ Let
 Now we wish to construct a basis for the kernel of [`A`].
 First find the reduced row echelon form of [`A`].
 
-The reduced row echelon form of [`A`] is [_______]*{$A}
+The reduced row echelon form of [`A`] is
+
+[_______]*{$A}
 [@ AnswerFormatHelp("numbers") @]*
 
 You will find that the nullity of [`A`] is 2, so there

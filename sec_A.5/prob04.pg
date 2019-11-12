@@ -51,13 +51,13 @@ $p3 = (($w3 . $v) / ($v . $v)) * $v;
 BEGIN_PGML
 Given that [`\vec{v} = [$v]`], compute
 
-[`\operatorname{proj}_{\vec{v}}\bigl( [$w1] \bigr) = {} `] [________________]*{$p1}
+[`\operatorname{proj}_{\vec{v}}\bigl( [$w1] \bigr) = {} `] [___________]*{$p1}
 [@ AnswerFormatHelp("numbers") @]*
 
-[`\operatorname{proj}_{\vec{v}}\bigl( [$w2] \bigr) = {} `] [________________]*{$p2}
+[`\operatorname{proj}_{\vec{v}}\bigl( [$w2] \bigr) = {} `] [___________]*{$p2}
 [@ AnswerFormatHelp("numbers") @]*
 
-[`\operatorname{proj}_{\vec{v}}\bigl( [$w3] \bigr) = {} `] [________________]*{$p3}
+[`\operatorname{proj}_{\vec{v}}\bigl( [$w3] \bigr) = {} `] [___________]*{$p3}
 [@ AnswerFormatHelp("numbers") @]*
 END_PGML
 
