@@ -1,0 +1,105 @@
+##DESCRIPTION
+## Rank nullity
+##ENDDESCRIPTION
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## KEYWORDS('linear algebra','matrix','echelon')
+
+###########################################
+
+DOCUMENT();        
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl"
+  "PGcourse.pl"
+);
+
+
+###########################################
+
+TEXT(beginproblem());
+
+$showPartialCorrectAnswers = 1;
+
+Context('Matrix');
+
+  $a = non_zero_random(-5,5,1);
+  $b = non_zero_random(-5,5,1);
+  $c = non_zero_random(-5,5,1);
+  $d = non_zero_random(-5,5,1);
+
+  do {
+    $k = non_zero_random(-4,4,1);
+    $l = non_zero_random(-4,4,1);
+    $m = non_zero_random(-4,4,1);
+    $n = non_zero_random(-4,4,1);
+    $p = non_zero_random(-4,4,1);
+    $q = non_zero_random(-4,4,1);
+    $r = non_zero_random(-4,4,1);
+    $s = non_zero_random(-4,4,1);
+    $t = non_zero_random(-4,4,1);
+  
+    $P = Matrix([[$k,$l,$m],[$n,$p,$q],[$r,$s,$t]]);
+  } until ( ($P->det) != 0 ); 
+
+  $case = random(1,5,1);
+
+  if ($case == 1) {
+    $rref = Matrix([[1,$a,0,$c],
+		    [0,0,1,$d],
+		    [0,0,0,0]]);
+    $rk = 2;
+  } elsif ($case == 2) {
+    $rref = Matrix([[1,$a,$b,0],
+		    [0,0,0,1],
+		    [0,0,0,0]]);
+    $rk = 2;
+  } elsif ($case == 3) {
+    $rref = Matrix([[1,0,$a,$c],
+		    [0,1,$b,$d],
+		    [0,0,0,0]]);
+    $rk = 2;
+  } elsif ($case == 4) {
+    $rref = Matrix([[1,$a,$b,$c],
+		    [0,0,0,0],
+		    [0,0,0,0]]);
+    $rk = 1;
+  } else { # if ($case == 5) {
+    $rref = Matrix([[1,0,0,$a],
+		    [0,1,0,$b],
+		    [0,0,1,$c]]);
+    $rk = 3;
+  }
+  
+  $A = $P*$rref;
+
+###########################################
+
+BEGIN_PGML
+Let
+
+>>[`` A= $A. ``]<<
+
+The reduced row echelon form of [`A`] is [_______]*{$A}
+[@ AnswerFormatHelp("numbers") @]*
+
+The rank of [`A`] is [_______]{"$rk"}
+[@ AnswerFormatHelp("numbers") @]*
+
+The dimension of the columnspace of [`A`] is [_______]{"$rk"}
+[@ AnswerFormatHelp("numbers") @]*
+
+The dimension of the rowspace of [`A`] is [_______]{"$rk"}
+[@ AnswerFormatHelp("numbers") @]*
+
+The nullity of [`A`] is [_______]{"3-$rk"}
+[@ AnswerFormatHelp("numbers") @]*
+END_PGML
+
+###########################################
+
+ENDDOCUMENT();

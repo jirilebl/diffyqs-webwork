@@ -1,0 +1,107 @@
+##DESCRIPTION
+## Linearly independent columns
+##ENDDESCRIPTION
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## KEYWORDS('linear algebra','matrix','echelon')
+
+###########################################
+
+DOCUMENT();        
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl"
+);
+
+
+###########################################
+
+TEXT(beginproblem());
+
+$showPartialCorrectAnswers = 1;
+
+Context('Matrix');
+
+do {
+  $a = non_zero_random(-5,5,1);
+  $b = non_zero_random(-5,5,1);
+  $c = non_zero_random(-5,5,1);
+  $d = non_zero_random(-5,5,1);
+
+  do {
+    $k = non_zero_random(-4,4,1);
+    $l = non_zero_random(-4,4,1);
+    $m = non_zero_random(-4,4,1);
+    $n = non_zero_random(-4,4,1);
+    $p = non_zero_random(-4,4,1);
+    $q = non_zero_random(-4,4,1);
+    $r = non_zero_random(-4,4,1);
+    $s = non_zero_random(-4,4,1);
+    $t = non_zero_random(-4,4,1);
+  
+    $P = Matrix([[$k,$l,$m],[$n,$p,$q],[$r,$s,$t]]);
+  } until ( ($P->det) != 0 ); 
+
+  $case = random(1,3,1);
+
+  if ($case == 1) {
+    $rref = Matrix([[1,$a,0,$c],
+		    [0,0,1,$d],
+		    [0,0,0,0]]);
+  } elsif ($case == 2) {
+    $rref = Matrix([[1,$a,$b,0],
+		    [0,0,0,1],
+		    [0,0,0,0]]);
+  } else { # if ($case == 3) {
+    $rref = Matrix([[1,0,$a,$c],
+		    [0,1,$b,$d],
+		    [0,0,0,0]]);
+  }
+  
+  $A = $P*$rref;
+} while ($A->column(1) == $A->column(2) or
+         $A->column(1) == $A->column(3) or
+         $A->column(1) == $A->column(4) or
+         $A->column(2) == $A->column(3) or
+         $A->column(2) == $A->column(4) or
+         $A->column(3) == $A->column(4));
+
+if ($case == 1) {
+  $ans1 = $A->column(1);
+  $ans2 = $A->column(3);
+} elsif ($case == 2) {
+  $ans1 = $A->column(1);
+  $ans2 = $A->column(4);
+} else { # if ($case == 3) {
+  $ans1 = $A->column(1);
+  $ans2 = $A->column(2);
+}
+
+###########################################
+
+Context()->texStrings;
+BEGIN_TEXT
+Find the pivot columns (columns with pivots) of
+\[ A= $A,\]
+which finds a linearly indendent set of columns.  Hint: There are 2.
+$BRBR
+First (from the left) pivot column:
+\{ $ans2->ans_array() \} 
+\{ AnswerFormatHelp("numbers") \}
+$BRBR
+Second pivot column:
+\{ $ans2->ans_array() \} 
+\{ AnswerFormatHelp("numbers") \}
+END_TEXT
+Context()->normalStrings;
+
+###########################################
+
+ANS( $ans1->cmp() );
+ANS( $ans2->cmp() );
+
+ENDDOCUMENT();
