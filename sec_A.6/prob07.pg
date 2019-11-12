@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## zero row/column determinant
+## Determinant with zero row/column
 ##ENDDESCRIPTION
 
 ## Institution(Oklahoma State University)
@@ -11,11 +11,11 @@
 DOCUMENT();
 
 loadMacros(
- "PGstandard.pl",
- "MathObjects.pl",
- "AnswerFormatHelp.pl",
- "PGML.pl",
- "PGcourse.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
+  "PGcourse.pl",
 );
 
 TEXT(beginproblem());
@@ -47,10 +47,10 @@ BEGIN_PGML
 Compute the determinant of
 
 >>[``
-A = $A 
+A = [$A]
 ``]<<
 
-determinant of [`A`]:
+Determinant of [`A`]:
 [_________]{"0"} 
 [@ AnswerFormatHelp("numbers") @]*
 END_PGML
