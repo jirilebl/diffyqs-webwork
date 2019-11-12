@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## determinant based on area
+## Determinant of a product
 ##ENDDESCRIPTION
 
 ## Institution(Oklahoma State University)
@@ -11,11 +11,11 @@
 DOCUMENT();
 
 loadMacros(
- "PGstandard.pl",
- "MathObjects.pl",
- "AnswerFormatHelp.pl",
- "PGML.pl",
- "PGcourse.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
+  "PGcourse.pl",
 );
 
 TEXT(beginproblem());
@@ -34,10 +34,10 @@ $A = Matrix([[$a,random(-9,9,1),random(-9,9,1),random(-9,9,1)],
              [0,$b,random(-9,9,1),random(-9,9,1)],
              [0,0,1,random(-9,9,1)],
              [0,0,0,1]]);
-$B = Matrix([[1,0,0,0]
+$B = Matrix([[1,0,0,0],
              [random(-9,9,1),1,0,0],
              [random(-9,9,1),random(-9,9,1),1,0],
-             [random(-9,9,1),random(-9,9,1),random(-9,9,1),1],
+             [random(-9,9,1),random(-9,9,1),random(-9,9,1),1]]);
 
 ############################
 # Main text
@@ -46,8 +46,8 @@ BEGIN_PGML
 Let
 
 >>[``
-A = $A , \qquad
-B = $B .
+A = [$A] , \qquad
+B = [$B] .
 ``]<<
 
 Compute determinant of [`BA`] without actually computing [`BA`]:

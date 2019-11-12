@@ -1,4 +1,6 @@
-# Finding the determinant of a 4x4 
+##DESCRIPTION
+## Finding the determinant of a 4x4 
+##ENDDESCRIPTION
 
 ## Institution(METU-NCC)
 ## Author(Benjamin Walter)
@@ -7,6 +9,7 @@
 ####################################################
 
 DOCUMENT();
+
 loadMacros(
   "PGstandard.pl",
   "PGchoicemacros.pl",
