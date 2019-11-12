@@ -6,7 +6,6 @@
 ## DBsubject(Linear algebra)
 ## DBchapter(Inner products)
 ## DBsection(Gram-Schmidt process)
-## Date(09/01/2017)
 ## Institution(Winona State University)
 ## Author(Christopher Phan)
 ## Level(3)
@@ -25,11 +24,14 @@
 ## Initialization
 
 DOCUMENT();
+
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
+
 TEXT(beginproblem());
 
 #######################
@@ -65,32 +67,53 @@ for($iter = 0; $iter < 3; $iter++){
 #######################
 ## Main text
 
+Context()->texStrings;
 BEGIN_TEXT
-
 Let
-\[\mathbf{v}_1 = \{$v[0]->TeX\}, \mathbf{v}_2 = \{$v[1]->TeX\}, \text{ and } \mathbf{v}_3 = \{$v[2]->TeX\}.\]
+\[
+\vec{v}_1 = $v[0],
+\vec{v}_2 = $v[1],
+\text{ and } \vec{v}_3 = $v[2]
+.
+\]
 
-Use the Gram-Schmidt procedure to produce an orthogonal set with the same span. (Hint: If you have unlimited submissions, it might be useful to submit to check your answer for each vector \(\mathbf{u}_j\) before continuing.) The \(\mathbf{u}_j\) must be given in the same order as provided by the standard procedure.$PAR
+Use the Gram-Schmidt procedure to produce an orthogonal set with the same span. The \(\vec{w}_j\) must be given in the same order as provided by the standard procedure.
 
-\(\mathbf{u}_1 = \) \{$u[0]->ans_array(20)\}$PAR
+$PAR
 
-\(\langle \mathbf{u}_1, \mathbf{v}_2 \rangle = \) \{ans_rule(20)\} $PAR
+\(\vec{w}_1 = \) \{$u[0]->ans_array(20)\}
+\{ AnswerFormatHelp("numbers"); \}
+$PAR
 
-\(\langle \mathbf{u}_1, \mathbf{u}_1 \rangle = \) \{ans_rule(20)\} $PAR
+\(\langle \vec{w}_1, \vec{v}_2 \rangle = \) \{ans_rule(20)\}
+\{ AnswerFormatHelp("numbers"); \}
+$PAR
 
-\(\mathbf{u}_2 = \) \{$u[1]->ans_array(20)\}$PAR
+\(\langle \vec{w}_1, \vec{w}_1 \rangle = \) \{ans_rule(20)\}
+\{ AnswerFormatHelp("numbers"); \}
+$PAR
 
-\(\langle \mathbf{u}_1, \mathbf{v}_3 \rangle = \) \{ans_rule(20)\} $PAR
+\(\vec{w}_2 = \) \{$u[1]->ans_array(20)\}
+\{ AnswerFormatHelp("numbers"); \}
+$PAR
 
-\(\langle \mathbf{u}_2, \mathbf{v}_3 \rangle = \) \{ans_rule(20)\} $PAR
+\(\langle \vec{w}_1, \vec{v}_3 \rangle = \) \{ans_rule(20)\}
+\{ AnswerFormatHelp("numbers"); \}
+$PAR
 
-\(\langle \mathbf{u}_2, \mathbf{u}_2 \rangle = \) \{ans_rule(20)\} $PAR
+\(\langle \vec{w}_2, \vec{v}_3 \rangle = \) \{ans_rule(20)\}
+\{ AnswerFormatHelp("numbers"); \}
+$PAR
 
-\(\mathbf{u}_3 = \) \{$u[2]->ans_array(20)\}$PAR
+\(\langle \vec{w}_2, \vec{w}_2 \rangle = \) \{ans_rule(20)\}
+\{ AnswerFormatHelp("numbers"); \}
+$PAR
 
+\(\vec{w}_3 = \) \{$u[2]->ans_array(20)\}
+\{ AnswerFormatHelp("numbers"); \}
 END_TEXT
-
 Context()->normalStrings;
+
 #######################
 ## Answer evaluation
 

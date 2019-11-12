@@ -1,22 +1,14 @@
-## DESCRIPTION
-## Linear Algebra
-## ENDDESCRIPTION
-
-## Tagged by cmd6a 5/3/06
+##DESCRIPTION
+## Orthonormal basis of the row space
+##ENDDESCRIPTION
 
 ## DBsubject(Linear algebra)
 ## DBchapter(Inner products)
 ## DBsection(Gram-Schmidt process)
-## Date(July 2013)
 ## Institution(Rochester and Hope College)
 ## Author(Paul Pearson)
 ## Level(2)
 ## MO(1)
-## TitleText1('Linear Algebra with Applications')
-## AuthorText1('Jeffrey Holt')
-## EditionText1('1')
-## Section1('8.2')
-## Problem1('')
 ## KEYWORDS('linear algebra','matrix','basis','dot product','inner product','orthonormal','image')
 
 DOCUMENT();
@@ -24,6 +16,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
   "MatrixCheckers.pl",
   "PGcourse.pl"
@@ -73,22 +66,24 @@ $multians = MultiAnswer($basis1, $basis2)->with(
   checker => ~~&orthonormal_basis_checker_rows,
 );
 
+#######################################################
 
 Context()->texStrings;
 BEGIN_TEXT
 Let \[ A = $A. \]
 Find an orthonormal basis of the row space of \(A\).
-$BR
-$BR
-$BCENTER
+$BRBR
 \(\big\lbrace\) 
 \{ $multians->ans_array(10) \}, 
 \{ $multians->ans_array(10) \} 
 \(\big\rbrace.\)
-$ECENTER
+$SPACE $SPACE
+\{ AnswerFormatHelp("numbers"); \}
 END_TEXT
 Context()->normalStrings;
 
+#######################################################
+
 ANS($multians->cmp);
-;
+
 ENDDOCUMENT();

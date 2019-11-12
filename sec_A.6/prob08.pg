@@ -40,6 +40,8 @@ $A = Matrix([[1,$a],
 ############################
 # Main text
 
+Context("Numeric");
+
 BEGIN_PGML
 Suppose determinant of [`B`] is [$d].
 Compute the determinant of the product

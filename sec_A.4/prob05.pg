@@ -15,6 +15,7 @@ loadMacros(
   "PGstandard.pl",
   "parserPopUp.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGML.pl",
   "PGcourse.pl"
 );

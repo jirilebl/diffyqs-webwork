@@ -15,6 +15,7 @@ loadMacros(
   "PGstandard.pl",
   "parserPopUp.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGML.pl",
   "PGcourse.pl"
 );
@@ -67,7 +68,7 @@ $mult2 = PopUp(
 
 $subspace = PopUp(
   ["?","Yes","No"],
-  "No",
+  "Yes",
 );
 
 
@@ -94,7 +95,7 @@ If we add any two vectors in [`S`], will we get a vector in [`S`]
 [`[$e] ([$a],[$b],[$b]) = \bigl( `] [_____] [`,`]  [_____] [`,`]  [_____] [`\bigr)`]  
 [@ AnswerFormatHelp("numbers") @]*
 
-Is [`[$e] ([$a],[$b],[$b]) in [`S`]?
+Is [`[$e] ([$a],[$b],[$b])`] in [`S`]?
 [@ $mult->menu() @]*
 
 If we multiply any vector in [`S`] by a scalar, will we get a vector in [`S`]

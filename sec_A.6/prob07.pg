@@ -43,6 +43,8 @@ if ($case == 1) {
 ############################
 # Main text
 
+Context("Numeric");
+
 BEGIN_PGML
 Compute the determinant of
 

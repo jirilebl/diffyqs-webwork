@@ -15,6 +15,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "PGchoicemacros.pl",
   "PGgraphmacros.pl",
   "PGmatrixmacros.pl",
@@ -58,13 +59,14 @@ $multians1 = MultiAnswer($basis1, $basis2)->with(
 
 Context()->texStrings;
 BEGIN_TEXT
-Find bases for the column space, the row space, and the null space of matrix A. You should verify that the Rank-Nullity Theorem holds. 
-$BR
+Find bases for the column space, the row space, and the null space of matrix A.
+$BRBR
 
 \(A = $A\)
 
 $BR
-\{ mbox( 'Basis for the column space of A = \( \Bigg\lbrace\)', $multians1->ans_array, ', ', $multians1->ans_array, '\( \Bigg\rbrace\)'  ) \}
+Basis for the column space of \(A =  \Bigg\lbrace\) \{ $multians1->ans_array \} \(,\) \{ $multians1->ans_array \} \( \Bigg\rbrace\)
+\{ AnswerFormatHelp("numbers") \}
 
 $BR
 END_TEXT
@@ -87,7 +89,8 @@ $multians2 = MultiAnswer($basis3, $basis4)->with(
 Context()->texStrings;
 BEGIN_TEXT
 
-\{ mbox( 'Basis for the row space of A = \( \Bigg\lbrace\)', $multians2->ans_array, ', ', $multians2->ans_array, '\( \Bigg\rbrace\)'  ) \}
+Basis for the row space of \(A = \Bigg\lbrace\) \{ $multians2->ans_array \} \(,\) \{ $multians2->ans_array \} \( \Bigg\rbrace\)
+\{ AnswerFormatHelp("numbers") \}
 
 $BR
 END_TEXT
@@ -96,10 +99,10 @@ Context()->normalStrings;
 ANS($multians2->cmp);
 
 ###################
-$ans2 = -$b23/$b22;
-$ans1 = -$a13 + $a12*$b23/$b22;
+$ans2 = $b23/$b22;
+$ans1 = $a13 - $a12*$b23/$b22;
 
-$basis5=Matrix([ [$ans1], [$ans2], [1] ]);
+$basis5=Matrix([ [$ans1], [$ans2], [-1] ]);
 
 $multians3 = MultiAnswer($basis5)->with(
   singleResult => 1,
@@ -112,7 +115,8 @@ $multians3 = MultiAnswer($basis5)->with(
 Context()->texStrings;
 BEGIN_TEXT
 
-\{ mbox( 'Basis for the null space of A = \( \Bigg\lbrace\)', $multians3->ans_array, '\( \Bigg\rbrace\)'  ) \}
+Basis for the null space of \(A = \Bigg\lbrace\) \{ $multians3->ans_array \} \( \Bigg\rbrace\)
+\{ AnswerFormatHelp("numbers") \}
 
 END_TEXT
 Context()->normalStrings;
@@ -124,15 +128,15 @@ ANS($multians3->cmp);
 Context()->texStrings;
 BEGIN_SOLUTION
 A basis for the column space, determined from the pivot columns 1 and 2, is
-$BR
+$BRBR
  \(\left$LBRACE \begin{bmatrix} $a11 \\ $a21 \\ $a31 \end{bmatrix} , \begin{bmatrix} $a12 \\ $a22 \\ $a32 \end{bmatrix} \right$RBRACE \)
 $PAR
 A basis  for the row space is determined from the nonzero rows of the echelon form, \(\left$LBRACE \begin{bmatrix} 1 & $a12 & $a13 \end{bmatrix} , \begin{bmatrix} 0 & $b22 & $b23 \end{bmatrix} \right$RBRACE \)
 $PAR
-Solve \( A{\bf x} = {\bf 0}\), to obtain \({\bf x} = s\begin{bmatrix} $ans1 \\ $ans2 \\ 1 \end{bmatrix} \), and so the nullspace has basis
+Solve \( A\vec{x} = \vec{0}\), we find a single free variable and a single linearly independent vector
+\(\begin{bmatrix} $ans1 \\ $ans2 \\ -1 \end{bmatrix} \), and so the nullspace has basis
 $PAR
-\( \left$LBRACE \begin{bmatrix} $ans1 \\ $ans2 \\ 1 \end{bmatrix} \right $RBRACE \)
-
+\( \left$LBRACE \begin{bmatrix} $ans1 \\ $ans2 \\ -1 \end{bmatrix} \right $RBRACE \)
 END_SOLUTION
 Context()->normalStrings;
 

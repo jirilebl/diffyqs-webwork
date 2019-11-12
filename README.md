@@ -6,7 +6,8 @@ A set of WeBWorK problems for courses teaching a class with the
 Coverage is Chapters 0, 1, 2, 3, 4, 6, 7, 8, and appendix A.  It should have
 enough for a normal ODE course which uses 0, 1, 2, 6, 7 or perhaps 0, 1, 2, 3,
 8 (and maybe A) if doing systems.  Chapters 4, and 8, are a little more sparse.
-There are a few problems for 5.1, but not enough to run the whole chapter.
+Section 6.5 has only one problem so far.  There are a few problems for 5.1, but
+not enough to run the whole chapter.
 
 ## How to use?
 

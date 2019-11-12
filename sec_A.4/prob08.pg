@@ -2,8 +2,6 @@
 ## Row space, column space, nullspace
 ##ENDDESCRIPTION
 
-## Tagged by reb 06/3/13
-
 ## DBsubject(Linear algebra)
 ## DBchapter(Euclidean spaces)
 ## DBsection(Row, column, and null spaces)
@@ -19,6 +17,7 @@ loadMacros(
   "MathObjects.pl",
   "parserMultiAnswer.pl",
   "MatrixCheckers.pl",
+  "AnswerFormatHelp.pl",
   "PGML.pl",
   "PGcourse.pl"
 );
@@ -65,17 +64,13 @@ Find bases for the column space, the row space, and the null space of the matrix
 
 [```A = [$A]```]
 
-You should verify that the Rank-Nullity Theorem holds. 
-
-Basis for the column space of [``A = \Bigg\lbrace``][_____]*{$multians1},
-[_____]*{$multians1}[``\Bigg\rbrace``]
-
-
+Basis for the column space of
+[``A = \Bigg\lbrace``][_____]*{$multians1}, [_____]*{$multians1}[``\Bigg\rbrace``]
+[@ AnswerFormatHelp("numbers"); @]*
 END_PGML
 
-#ANS($multians1->cmp);
-
 ####################
+
 $basis3=Matrix($a11, $a12, $a13, $a14);
 $basis4=Matrix(0, $b22, $b23, $b24 );
 
@@ -91,22 +86,20 @@ BEGIN_PGML
 
 Basis for the row space of [``A =
 \Bigg\lbrace``][____]*{$multians2},[____]*{$multians2} [`` \Bigg\rbrace``]
-
+[@ AnswerFormatHelp("numbers"); @]*
 
 END_PGML
 
-#ANS($multians2->cmp);
-
 ######################
 
-$ans1 = 1 +$a12*$b23/$b22;
-$ans2 = -$b23/$b22;
-$ans3 = 1;
+$ans1 = -1 -$a12*$b23/$b22;
+$ans2 = $b23/$b22;
+$ans3 = -1;
 $ans4 = 0;
-$ans5 = -1+ $a12*$b24/$b22;
-$ans6 = -$b24/$b22;
+$ans5 = 1- $a12*$b24/$b22;
+$ans6 = $b24/$b22;
 $ans7 = 0;
-$ans8 = 1;
+$ans8 = -1;
 
 $basis5=Matrix([ [$ans1], [$ans2], [$ans3], [$ans4] ]);
 $basis6=Matrix([ [$ans5], [$ans6], [$ans7], [$ans8] ]);
@@ -123,16 +116,18 @@ BEGIN_PGML
 
 Basis for the null space of [``A = \Bigg\{ ``][____]*{$multians3},
 [____]*{$multians3}[``\Bigg\}``]
+[@ AnswerFormatHelp("numbers"); @]*
 
 END_PGML
 
 ###############################
 
 BEGIN_PGML_SOLUTION
-The echelon form for [``A``] is
+The echelon (echelon form is enough) for [``A``] is
 
-[``\begin{bmatrix} [$a11] & [$a12] & [$a13] & [$a14] \\ 0 & [$b22] &
-[$b23] & [$b24] \\ 0 & 0 & 0 & 0  \end{bmatrix} ``]
+[``\begin{bmatrix} [$a11] & [$a12] & [$a13] & [$a14] \\
+0 & [$b22] & [$b23] & [$b24] \\
+0 & 0 & 0 & 0  \end{bmatrix} ``]
 
 A basis for the column space, determined from the pivot columns 1 and 2, is
 
@@ -145,14 +140,15 @@ form:
 [``\left[$LBRACE] \begin{bmatrix} 1 & [$a12] & [$a13] & [$a14] \end{bmatrix} ,
 \begin{bmatrix} 0 & [$b22] & [$b23] & [$b24] \end{bmatrix} \right[$RBRACE] ``]
 
-Solve [`` A{\bf x} = {\bf 0}``], to obtain [``{\bf x} = s_1
-\begin{bmatrix} [$ans1] \\ [$ans2] \\ [$ans3] \\ [$ans4] \end{bmatrix} \right] +
-s_2 \begin{bmatrix} [$ans5] \\ [$ans6] \\ [$ans7] \\ [$ans8] \end{bmatrix}
-\right] ``], so the nullspace has basis
+To find the nullspace we solve [`` A\vec{x} = \vec{0}``], to obtain two linearly
+independent vectors
+[``\begin{bmatrix} [$ans1] \\ [$ans2] \\ [$ans3] \\ [$ans4] \end{bmatrix}``]
+and [``\begin{bmatrix} [$ans5] \\ [$ans6] \\ [$ans7] \\ [$ans8] \end{bmatrix}``],
+so the nullspace has basis
 
 [`` \left[$LBRACE] \begin{bmatrix} [$ans1] \\ [$ans2] \\ [$ans3] \\
-[$ans4]  \end{bmatrix} \right] , \begin{bmatrix} [$ans5]\\ [$ans6] \\
-[$ans7] \\ [$ans8] \end{bmatrix} \right]\right [$RBRACE] ``]
+[$ans4]  \end{bmatrix} , \begin{bmatrix} [$ans5]\\ [$ans6] \\
+[$ans7] \\ [$ans8] \end{bmatrix}  \right[$RBRACE] ``]
 
 END_PGML_SOLUTION
 

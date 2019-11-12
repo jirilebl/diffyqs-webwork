@@ -42,6 +42,8 @@ $B = Matrix([[1,0,0,0],
 ############################
 # Main text
 
+Context("Numeric");
+
 BEGIN_PGML
 Let
 

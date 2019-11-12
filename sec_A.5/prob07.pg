@@ -1,22 +1,14 @@
 ## DESCRIPTION
-## Linear Algebra
+## Finding an orthonormal basis of column space and kernel
 ## ENDDESCRIPTION
-
-## Tagged by cmd6a 5/3/06
 
 ## DBsubject(Linear algebra)
 ## DBchapter(Inner products)
 ## DBsection(Gram-Schmidt process)
-## Date(July 2013)
 ## Institution(Rochester and Hope College)
 ## Author(Paul Pearson)
 ## Level(3)
 ## MO(1)
-## TitleText1('Linear Algebra with Applications')
-## AuthorText1('Jeffrey Holt')
-## EditionText1('1')
-## Section1('8.2')
-## Problem1('')
 ## KEYWORDS('linear algebra','matrix','basis','dot product','inner product','orthonormal','image')
 
 DOCUMENT();
@@ -24,11 +16,13 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "AnswerFormatHelp.pl",
   "parserMultiAnswer.pl",
   "MatrixCheckers.pl",
   "PGchoicemacros.pl",
   "PGcourse.pl"
 );
+
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
@@ -109,31 +103,36 @@ $multians2 = MultiAnswer($basis3, $basis4)->with(
   checker => ~~&orthonormal_basis_checker_columns,
 );
 
+#########################################
 
 Context()->texStrings;
 BEGIN_TEXT
 Let \[ A = $A. \]
-Find orthonormal bases of the kernel and image of \(A\).
-$BR
-$BR
+Find orthonormal bases of the kernel and columnspace of \(A\).
+$BRBR
 Basis of the kernel:
 $BR
 \(\Bigg\lbrace\) 
 \{ $multians1->ans_array(15) \}, 
 \{ $multians1->ans_array(15) \} 
 \(\Bigg\rbrace.\)
-$BR
-$BR
-Basis of the image:
+$SPACE $SPACE
+\{ AnswerFormatHelp("numbers"); \}
+$BRBR
+Basis of the columnspace:
 $BR
 \(\Bigg\lbrace\) 
 \{ $multians2->ans_array(15) \}, 
 \{ $multians2->ans_array(15) \} 
 \(\Bigg\rbrace.\)
+$SPACE $SPACE
+\{ AnswerFormatHelp("numbers"); \}
 END_TEXT
 Context()->normalStrings;
 
+###########################################
+
 ANS($multians1->cmp);
 ANS($multians2->cmp);
-;
+
 ENDDOCUMENT();
