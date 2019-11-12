@@ -1,0 +1,82 @@
+##DESCRIPTION
+## Subspace check
+##ENDDESCRIPTION
+
+## DBsubject(Linear algebra)
+## DBchapter(Euclidean spaces)
+## DBsection(Subspaces)
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## Level(3)
+## KEYWORDS('linear algebra','vector space','subspace')
+
+DOCUMENT();
+loadMacros(
+  "PGstandard.pl",
+  "parserPopUp.pl",
+  "MathObjects.pl",
+  "PGML.pl",
+  "PGcourse.pl"
+);
+
+TEXT(beginproblem());
+
+Context("Numeric");
+Context()->variables->are(b=>"Real");
+
+$c = random(3,9,1);
+
+$add = PopUp(
+  ["?","Yes","No"],
+  "No",
+);
+
+$mult = PopUp(
+  ["?","Yes","No"],
+  "No",
+);
+
+$subspace = PopUp(
+  ["?","Yes","No"],
+  "No",
+);
+
+
+#################################3
+
+BEGIN_PGML
+Suppose [`A`] is an [`n \times n`] martix, and [`\vec{b} \neq \vec{0}`] an [`n`]-vector.
+Let [`S`] be the set of vectors [`\vec{x}`] that satisfy
+[`A\vec{x} = \vec{b}`].
+
+Suppose [`\vec{v}`] and [`\vec{w}`] are in [`S`]
+
+First suppose [`\vec{x} = \vec{v}+\vec{w}`], then (write "b" for [`\vec{b}`])
+
+[`A\vec{x} = `][_____]
+[@ AnswerFormatHelp("formulas") @]*
+
+Is [`\vec{x}`] in [`S`]? [@ $add->menu() @]*
+
+Now suppose [`\vec{x} = [$c]\vec{v}`], then
+
+[`A\vec{x} = `][_____]
+[@ AnswerFormatHelp("formulas") @]*
+
+Is [`\vec{x}`] in [`S`]?  [@ $mult->menu() @]*
+
+So with that, 
+Is [`S`] a subspace?  [@ $subspace->menu() @]*
+END_PGML
+
+#################################3
+
+ANS(Compute("b+b")->cmp());
+ANS($add->cmp());
+
+ANS(Compute("$c*b")->cmp());
+ANS($mult->cmp());
+
+ANS($subspace->cmp());
+
+ENDDOCUMENT();

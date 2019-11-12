@@ -1,0 +1,123 @@
+##DESCRIPTION
+## Subspace check
+##ENDDESCRIPTION
+
+## DBsubject(Linear algebra)
+## DBchapter(Euclidean spaces)
+## DBsection(Subspaces)
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## Level(3)
+## KEYWORDS('linear algebra','vector space','subspace')
+
+DOCUMENT();
+loadMacros(
+  "PGstandard.pl",
+  "parserPopUp.pl",
+  "MathObjects.pl",
+  "PGML.pl",
+  "PGcourse.pl"
+);
+
+TEXT(beginproblem());
+
+Context("Numeric");
+
+do {
+  $a = random(1,9,1);
+  $b = random(1,9,1);
+  $c = random(1,9,1);
+  $d = random(1,9,1);
+  $e = random(1,9,1);
+} while ($a == $b or
+         $a == $c or
+         $a == $d or
+         $a == $e or
+         $b == $c or
+         $b == $d or
+         $b == $e or
+         $c == $d or
+         $c == $e or
+         $d == $e);
+
+$vwinS = PopUp(
+  ["?","Yes","No"],
+  "Yes",
+);
+
+$sum = PopUp(
+  ["?","Yes","No"],
+  "Yes",
+);
+
+$sum2 = PopUp(
+  ["?","Yes","No"],
+  "Yes",
+);
+
+$mult = PopUp(
+  ["?","Yes","No"],
+  "Yes",
+);
+
+$mult2 = PopUp(
+  ["?","Yes","No"],
+  "Yes",
+);
+
+$subspace = PopUp(
+  ["?","Yes","No"],
+  "No",
+);
+
+
+#################################3
+
+BEGIN_PGML
+Let [`S`] be the set of vectors [`\vec{x} = (x_1,x_2,x_3)`] in [`{\mathbb{R}}^3`]
+such that [`x_2=x_3`].
+
+Let us do some tests.
+
+Are [`([$a],[$b],[$b])`] and [`([$c],[$d],[$d])`] in [`S`]?
+[@ $vwinS->menu() @]*
+
+[`([$a],[$b],[$b]) + ([$c],[$d],[$d]) = \bigl( `] [_____] [`,`]  [_____] [`,`]  [_____] [`\bigr)`]  
+[@ AnswerFormatHelp("numbers") @]*
+
+Is [`([$a],[$b],[$b]) + ([$c],[$d],[$d])`] in [`S`]?
+[@ $sum->menu() @]*
+
+If we add any two vectors in [`S`], will we get a vector in [`S`]
+[@ $sum2->menu() @]*
+
+[`[$e] ([$a],[$b],[$b]) = \bigl( `] [_____] [`,`]  [_____] [`,`]  [_____] [`\bigr)`]  
+[@ AnswerFormatHelp("numbers") @]*
+
+Is [`[$e] ([$a],[$b],[$b]) in [`S`]?
+[@ $mult->menu() @]*
+
+If we multiply any vector in [`S`] by a scalar, will we get a vector in [`S`]
+[@ $mult2->menu() @]*
+
+Is [`S`] a subspace?  [@ $subspace->menu() @]*
+END_PGML
+
+#################################3
+
+ANS($vwinS->cmp());
+ANS(Compute("$a+$c")->cmp());
+ANS(Compute("$b+$d")->cmp());
+ANS(Compute("$b+$d")->cmp());
+ANS($sum->cmp());
+ANS($sum2->cmp());
+
+ANS(Compute("$e*$a")->cmp());
+ANS(Compute("$e*$b")->cmp());
+ANS(Compute("$e*$b")->cmp());
+ANS($mult->cmp());
+ANS($mult2->cmp());
+
+ANS($subspace->cmp());
+
+ENDDOCUMENT();
