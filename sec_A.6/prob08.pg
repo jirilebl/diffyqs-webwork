@@ -1,0 +1,55 @@
+##DESCRIPTION
+## determinant of product
+##ENDDESCRIPTION
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+ "PGstandard.pl",
+ "MathObjects.pl",
+ "AnswerFormatHelp.pl",
+ "PGML.pl",
+ "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+###########################
+# Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Matrix");
+
+do {
+  $a = non_zero_random(-9,9,1);
+  do { $b = non_zero_random(-9,9,1); } while ($a == $b);
+  do { $c = non_zero_random(-9,9,1); } while ($c == $b or $c == $a);
+  do { $d = non_zero_random(-9,9,1); } while ($d == $a or $d == $b or $d == $c);
+} while ($b==$a*$c);
+
+$A = Matrix([[1,$a],
+             [$c,$b]);
+
+############################
+# Main text
+
+BEGIN_PGML
+Suppose determinant of [`B`] is [$d].
+Compute the determinant of the product
+
+>>[``
+$A B
+``]<<
+
+Determinant: [_________]{"(($b)-($a)*($c))*($d)"} 
+[@ AnswerFormatHelp("numbers") @]*
+END_PGML
+
+ENDDOCUMENT();

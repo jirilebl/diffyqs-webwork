@@ -1,0 +1,53 @@
+##DESCRIPTION
+## determinant of product
+##ENDDESCRIPTION
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+ "PGstandard.pl",
+ "MathObjects.pl",
+ "AnswerFormatHelp.pl",
+ "PGML.pl",
+ "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+###########################
+# Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Matrix");
+Context()->variables->are(x=>'Real');
+
+$a = non_zero_random(-9,9,1);
+do { $b = non_zero_random(-9,9,1); } while ($a == $b);
+do { $c = non_zero_random(-9,9,1); } while ($c == $b or $c == $a);
+
+############################
+# Main text
+
+BEGIN_PGML
+The determinant of
+
+>>[``
+\begin{bmatrix}
+[$c] & 0 & 0 \\
+0 & x & ([$a]-x) \\
+0 & [$b] & x
+\end{bmatrix}
+``]<<
+
+is: [_________]{"($c)*(x^2-($a-x)*($b))"} 
+[@ AnswerFormatHelp("formulas") @]*
+END_PGML
+
+ENDDOCUMENT();

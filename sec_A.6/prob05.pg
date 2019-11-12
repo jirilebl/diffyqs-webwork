@@ -1,0 +1,45 @@
+##DESCRIPTION
+## determinant based on area
+##ENDDESCRIPTION
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+ "PGstandard.pl",
+ "MathObjects.pl",
+ "AnswerFormatHelp.pl",
+ "PGML.pl",
+ "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+###########################
+# Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+
+$a = random(2,15,1);
+do { $b = random(2,15,1); } while ($a == $b);
+
+############################
+# Main text
+
+BEGIN_PGML
+Suppose a mapping [`F \colon {\mathbb{R}}^2 \to {\mathbb{R}}^2`] takes a
+square of area [$a] to a rhombus of area [$b].
+
+What is the absolute value of the determinant of the associated matrix?
+[_________]{"($b)/($a)"} 
+[@ AnswerFormatHelp("numbers") @]*
+END_PGML
+
+ENDDOCUMENT();

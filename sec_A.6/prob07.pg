@@ -1,0 +1,58 @@
+##DESCRIPTION
+## zero row/column determinant
+##ENDDESCRIPTION
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+ "PGstandard.pl",
+ "MathObjects.pl",
+ "AnswerFormatHelp.pl",
+ "PGML.pl",
+ "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+###########################
+# Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Matrix");
+
+$case = random(1,2,1);
+if ($case == 1) {
+  $A = Matrix([[random(-9,9,1),random(-9,9,1),0,random(-9,9,1)],
+               [random(-9,9,1),random(-9,9,1),0,random(-9,9,1)],
+               [random(-9,9,1),random(-9,9,1),0,random(-9,9,1)],
+               [random(-9,9,1),random(-9,9,1),0,random(-9,9,1)]]);
+} else {
+  $A = Matrix([[random(-9,9,1),random(-9,9,1),random(-9,9,1),random(-9,9,1)],
+               [random(-9,9,1),random(-9,9,1),random(-9,9,1),random(-9,9,1)],
+               [0,0,0,0],
+               [random(-9,9,1),random(-9,9,1),random(-9,9,1),random(-9,9,1)]]);
+}
+
+############################
+# Main text
+
+BEGIN_PGML
+Compute the determinant of
+
+>>[``
+A = $A 
+``]<<
+
+determinant of [`A`]:
+[_________]{"0"} 
+[@ AnswerFormatHelp("numbers") @]*
+END_PGML
+
+ENDDOCUMENT();

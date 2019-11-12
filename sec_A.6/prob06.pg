@@ -1,0 +1,58 @@
+##DESCRIPTION
+## determinant based on area
+##ENDDESCRIPTION
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+ "PGstandard.pl",
+ "MathObjects.pl",
+ "AnswerFormatHelp.pl",
+ "PGML.pl",
+ "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+
+###########################
+# Setup
+
+$showPartialCorrectAnswers = 1;
+
+Context("Matrix");
+
+$a = random(2,15,1);
+do { $b = random(2,15,1); } while ($a == $b);
+
+$A = Matrix([[$a,random(-9,9,1),random(-9,9,1),random(-9,9,1)],
+             [0,$b,random(-9,9,1),random(-9,9,1)],
+             [0,0,1,random(-9,9,1)],
+             [0,0,0,1]]);
+$B = Matrix([[1,0,0,0]
+             [random(-9,9,1),1,0,0],
+             [random(-9,9,1),random(-9,9,1),1,0],
+             [random(-9,9,1),random(-9,9,1),random(-9,9,1),1],
+
+############################
+# Main text
+
+BEGIN_PGML
+Let
+
+>>[``
+A = $A , \qquad
+B = $B .
+``]<<
+
+Compute determinant of [`BA`] without actually computing [`BA`]:
+[_________]{"($a)*($b)"} 
+[@ AnswerFormatHelp("numbers") @]*
+END_PGML
+
+ENDDOCUMENT();

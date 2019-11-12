@@ -29,11 +29,12 @@ $d=random(-3,5,1);
 
 BEGIN_TEXT
 Let
-\[A =
-\left[\begin{array}{rr}
-        $a & $b \\
-        $c & $d \\
-\end{array}\right]
+\[
+A =
+\begin{bmatrix}
+$a & $b \\
+$c & $d \\
+\end{bmatrix}
 \]
 The determinant of \(A\) is \{ans_rule(25) \}
 \{ AnswerFormatHelp("numbers") \}
