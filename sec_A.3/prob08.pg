@@ -19,7 +19,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "contextFraction.pl",
-  "PGunion.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 

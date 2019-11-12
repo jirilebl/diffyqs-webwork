@@ -37,15 +37,15 @@ $a3 = random(2,9,1);
 # Main text
 
 BEGIN_PGML
-If magnitude of [`\vec{x}`] is [$mag], then what are the magnitudes
+If magnitude of [`\vec{x}`] is [$mag1], then what are the magnitudes
 
-[`\lVert [$a1] \vec{x} \rVert={}`] [____________]{"$a1*$mag1"}{30}
+[`\lVert [$a1] \vec{x} \rVert={}`] [________]{"$a1*$mag1"}
 [@ AnswerFormatHelp("numbers") @]*
 
-[`\lVert [$a2] \vec{x} \rVert={}`] [____________]{"$a2*$mag1"}{30}
+[`\lVert [$a2] \vec{x} \rVert={}`] [________]{"$a2*$mag1"}
 [@ AnswerFormatHelp("numbers") @]*
 
-[`\lVert -[$a3] \vec{x} \rVert={}`] [____________]{"$a3*$mag1"}{30}
+[`\lVert -[$a3] \vec{x} \rVert={}`] [________]{"$a3*$mag1"}
 [@ AnswerFormatHelp("numbers") @]*
 
 END_PGML

@@ -48,7 +48,7 @@ The unit vector in the direction of [`\vec{v}`]:
 [____________]*{$uv}
 [@ AnswerFormatHelp("numbers") @]*
 
-The unit vector in the direction of [`\vec{2}`]:
+The unit vector in the direction of [`\vec{w}`]:
 [____________]*{$uw}
 [@ AnswerFormatHelp("numbers") @]*
 END_PGML

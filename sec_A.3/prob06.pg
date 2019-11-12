@@ -16,7 +16,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
-  "parserMultiAnswer.pl",
+  "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
 $showPartialCorrectAnswers = 1;
