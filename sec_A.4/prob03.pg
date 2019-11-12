@@ -14,7 +14,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGML.pl"
+  "PGML.pl",
   "PGcourse.pl"
 );
 
@@ -75,7 +75,7 @@ Context('Matrix');
 BEGIN_PGML
 Let
 
->>[`` A= $A. ``]<<
+>>[`` A= [$A]. ``]<<
 
 Now we wish to construct a basis for the kernel of [`A`].
 First find the reduced row echelon form of [`A`].

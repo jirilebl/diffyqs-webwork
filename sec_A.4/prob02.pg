@@ -14,7 +14,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGML.pl"
+  "PGML.pl",
   "PGcourse.pl"
 );
 
@@ -82,7 +82,7 @@ Context('Matrix');
 BEGIN_PGML
 Let
 
->>[`` A= $A. ``]<<
+>>[`` A= [$A]. ``]<<
 
 The reduced row echelon form of [`A`] is [_______]*{$A}
 [@ AnswerFormatHelp("numbers") @]*

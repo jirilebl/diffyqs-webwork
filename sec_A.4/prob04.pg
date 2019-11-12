@@ -1,0 +1,79 @@
+##DESCRIPTION
+## Finding rank 1 matrix
+##ENDDESCRIPTION
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## KEYWORDS('linear algebra','matrix','echelon')
+
+###########################################
+
+DOCUMENT();        
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
+  "PGcourse.pl"
+);
+
+
+###########################################
+
+TEXT(beginproblem());
+
+$showPartialCorrectAnswers = 1;
+
+Context('Matrix');
+Context()->variables->are(a22=>['Real',TeX=>'a_{22}'],
+			  a23=>['Real',TeX=>'a_{23}'],
+			  a32=>['Real',TeX=>'a_{32}'],
+			  a33=>['Real',TeX=>'a_{33}']);
+
+do {
+  $a = non_zero_random(-9,9,1);
+  $b = non_zero_random(-9,9,1);
+  $c = non_zero_random(-9,9,1);
+  $d = non_zero_random(-9,9,1);
+  $e = non_zero_random(-9,9,1);
+} while($d == $a or $a == $e or $d == $e or $b == $c or $a == $b or $a == $c);
+
+$A = Compute("[[$a,$b,$c],[$d,a22,a23],[$e,a32,a33]]");
+
+$a22 = $b*$d/$a;
+$a32 = $b*$e/$a;
+$a23 = $c*$d/$a;
+$a33 = $c*$e/$a;
+
+###########################################
+
+BEGIN_PGML
+Consider
+
+>>[`` A = [$A]. ``]<<
+
+If nullity of [`A`] is 2, then rank of [`A`] is [_______]{"1"}
+[@ AnswerFormatHelp("numbers") @]*
+
+So the number of linearly independent rows is [_______]{"1"}
+[@ AnswerFormatHelp("numbers") @]*
+
+Therefore,
+
+[`a_{22} = {}`] [________]{"$a22"}
+[@ AnswerFormatHelp("numbers") @]*
+
+[`a_{23} = {}`] [________]{"$a23"}
+[@ AnswerFormatHelp("numbers") @]*
+
+[`a_{32} = {}`] [________]{"$a32"}
+[@ AnswerFormatHelp("numbers") @]*
+
+[`a_{33} = {}`] [________]{"$a33"}
+[@ AnswerFormatHelp("numbers") @]*
+END_PGML
+
+###########################################
+
+ENDDOCUMENT();
