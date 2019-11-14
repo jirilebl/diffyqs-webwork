@@ -49,27 +49,27 @@ BEGIN_TEXT
 Let
 \(A= \{ display_matrix_mm([[1, $a12, $a13], [0, 1, $a23], [0, 0, 0]]) \}\)  
 $PAR
-Is the matrix \(A\) in echelon form? \{ $popup1->menu \}
+Is the matrix \(A\) in row echelon form? \{ $popup1->menu \}
 $PAR
-Is the matrix \(A\) in reduced echelon form? \{ $popup2->menu \}
+Is the matrix \(A\) in reduced row echelon form? \{ $popup2->menu \}
 
 $PAR
 
 Let
 \(B= \{ display_matrix_mm([[1, 0, $a13], [0, 1, $a23], [0, 0, 0]]) \}\)  
 $PAR
-Is the matrix \(B\) in echelon form? \{ $popup3->menu \}
+Is the matrix \(B\) in row echelon form? \{ $popup3->menu \}
 $PAR
-Is the matrix \(B\) in reduced echelon form? \{ $popup4->menu \}
+Is the matrix \(B\) in reduced row echelon form? \{ $popup4->menu \}
 
 $PAR
 
 Let
 \(C= \{ display_matrix_mm([[1, 0, $a13], [$a12, 1, $a23], [0, 0, 0]]) \}\)  
 $PAR
-Is the matrix \(C\) in echelon form? \{ $popup5->menu \}
+Is the matrix \(C\) in row echelon form? \{ $popup5->menu \}
 $PAR
-Is the matrix \(C\) in reduced echelon form? \{ $popup6->menu \}
+Is the matrix \(C\) in reduced row echelon form? \{ $popup6->menu \}
 END_TEXT
 
 ###########################################

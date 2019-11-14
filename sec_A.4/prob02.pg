@@ -86,7 +86,7 @@ Let
 
 The reduced row echelon form of [`A`] is
 
-[_______]*{$A}
+[_______]*{$rref}
 [@ AnswerFormatHelp("numbers") @]*
 
 The rank of [`A`] is [_______]{"$rk"}

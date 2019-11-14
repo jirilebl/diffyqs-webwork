@@ -82,7 +82,7 @@ First find the reduced row echelon form of [`A`].
 
 The reduced row echelon form of [`A`] is
 
-[_______]*{$A}
+[_______]*{$rref}
 [@ AnswerFormatHelp("numbers") @]*
 
 You will find that the nullity of [`A`] is 2, so there

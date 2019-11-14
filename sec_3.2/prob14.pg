@@ -57,7 +57,7 @@ $A = $P*$answer;
 Context()->texStrings;
 BEGIN_TEXT
 Reduce the matrix \[ A= $A\]
-to reduced row-echelon form. 
+to reduced row echelon form. 
 $PAR
 \{ $answer->ans_array() \} 
 \{ AnswerFormatHelp("matrices") \}

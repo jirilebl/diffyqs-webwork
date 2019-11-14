@@ -1,6 +1,6 @@
-# DESCRIPTION
-# Find the inverse of a matrix and use it to solve a system.
-# ENDDESCRIPTION
+##DESCRIPTION
+## Find the inverse of a matrix and use it to solve a system.
+##ENDDESCRIPTION
 
 ## DBsubject(Linear algebra)
 ## DBchapter(Matrices)
@@ -8,8 +8,7 @@
 ## Author(Unknown and Rick Lynch)
 ## Institution(TCNJ)
 ## Level(2)
-## KEYWORDS('matrix' 'inverse')
-## Tagged by tda2d
+## KEYWORDS('matrix', 'inverse')
 
 
 ###########################################################################
@@ -148,8 +147,7 @@ $c3 = $ans31*$b1 + $ans32*$b2 + $ans33*$b3;
 
 Context()->texStrings;
 BEGIN_SOLUTION
-(a) The idea here is to use the algorithm for finding the inverse of a (nonsingular) matrix. The algorithm says to run the Gauss-Jordan reduction in order to find the RRE of the following augmented matrix:
-$PAR
+The idea here is to use the algorithm for finding the inverse of a (nonsingular) matrix. The algorithm says to find the reduced row echelon form of the following augmented matrix:
 \[ \left[
 \begin{array}{rrr|rrr}
 $a11 & $a12 & $a13 & 1 & 0 & 0  \cr
@@ -157,9 +155,7 @@ $a21 & $a22 & $a23 & 0 & 1 & 0  \cr
 $a31 & $a32 & $a33 & 0 & 0 & 1  
 \end{array} 
 \right] \]
-$PAR
-Performing the necessary elementary row operations, we get the RRE form:
-$PAR
+Performing the necessary elementary row operations, we get the reduced row echelon form:
 \[ \left[
 \begin{array}{rrr|rrr}
 1 & 0 & 0 & $ans11 & $ans12 & $ans13  \cr
@@ -167,8 +163,7 @@ $PAR
 0 & 0 & 1 & $ans31 & $ans32 & $ans33  
 \end{array} 
 \right] \]
-$PAR
-Since the matrix to the left of the vertical bar in the RRE form is precisely the identity matrix, we conclude that the orignal matrix \(A\) is nonsingular with
+Since the matrix to the left of the vertical bar in the reduced row echelon form is precisely the identity matrix, we conclude that the orignal matrix \(A\) is nonsingular with
 \[ A^{-1} = 
 \begin{bmatrix}
 $ans11 & $ans12 & $ans13 \cr
@@ -176,13 +171,13 @@ $ans21 & $ans22 & $ans23 \cr
 $ans31 & $ans32 & $ans33 
 \end{bmatrix} \]
 $PAR
-(b) The idea is to write the linear system as
+To solve the system we write it as
 \[
-Ax = \left[ \begin{array}{r} $b1 \\ $b2 \\ $b3 \end{array} \right]
+A\vec{x} = \begin{bmatrix} $b1 \\ $b2 \\ $b3 \end{bmatrix}
 \]
-In part (a), we have seen that \(A\) is nonsingular, and so we get that the unique solution is
+We have seen that \(A\) is nonsingular, and so we get that the unique solution is
 \[
-x = A^{-1}
+\vec{x} = A^{-1}
 \begin{bmatrix} $b1 \\ $b2 \\ $b3 \end{bmatrix} =
 \begin{bmatrix} $c1 \\ $c2 \\ $c3 \end{bmatrix}
 \]

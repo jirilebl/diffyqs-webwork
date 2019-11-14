@@ -90,7 +90,7 @@ Find the pivot columns (columns with pivots) of
 which finds a linearly indendent set of columns.  Hint: There are 2.
 $BRBR
 First (from the left) pivot column:
-\{ $ans2->ans_array() \} 
+\{ $ans1->ans_array() \} 
 \{ AnswerFormatHelp("numbers") \}
 $BRBR
 Second pivot column:

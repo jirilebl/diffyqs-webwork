@@ -30,6 +30,7 @@ $showPartialCorrectAnswers = 1;
 
 Context("LimitedVector-coordinate")->variables->are(x=>'Real',y=>'Real');
 Context()->lists->set(Vector => {open => "(", close => ")"}); # only for output
+Context()->parens->set("(" => {type => "Vector", close => ")"});
 Context()->flags->set( ijk=>0 );
 
 # Construct graph canvas

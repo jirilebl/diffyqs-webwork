@@ -29,7 +29,7 @@ TEXT(beginproblem());
 #############################################
 
 Context('Fraction-NoDecimals')->variables->are('x'=>'Real','y'=>'Real','z'=>'Real');
-Context()->noreduce('(-x)-y');
+Context()->noreduce('(-x)-y','(-x)+y');
 
 do {
   $a = Fraction(non_zero_random(-5,5,1));

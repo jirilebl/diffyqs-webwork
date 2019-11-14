@@ -16,7 +16,7 @@ loadMacros(
 ################################################
 
 TEXT(beginproblem());
-$showPartialCorrectAnswers = 1;
+$showPartialCorrectAnswers = 0;
 
 $a11=random(-5,5,1);
 $a12=random(-5,5,1);
@@ -31,27 +31,51 @@ $b21=random(-5,5,1);
 $b22=random(-5,5,1);
 $b23=random(-5,5,1);
 
-$popup = PopUp(["Choose","Yes","No"],"No");
+$c11=random(-5,5,1);
+$c12=random(-5,5,1);
+$c21=random(-5,5,1);
+$c22=random(-5,5,1);
+
+
+$ABpopup = PopUp(["Choose","Yes","No"],"No");
+$ACpopup = PopUp(["Choose","Yes","No"],"No");
+$CBpopup = PopUp(["Choose","Yes","No"],"Yes");
+$CApopup = PopUp(["Choose","Yes","No"],"Yes");
+
 
 ################################################
 
 BEGIN_TEXT
-Given the matrices
+Let
 \[
-B=\left[\begin{array}{rrr}
+A=\begin{bmatrix}
         $a11 & $a12 & $a13\\
         $a21 & $a22 & $a23\\
-\end{array}\right],\qquad
-C=\left[\begin{array}{rrr}
+\end{bmatrix},\qquad
+B=\begin{bmatrix}
         $b11 & $b12 & $b13\\
         $b21 & $b22 & $b23\\
-\end{array}\right],
+\end{bmatrix},\qquad
+C=\begin{bmatrix}
+        $c11 & $c12 \\
+        $c21 & $c22
+\end{bmatrix}.
 \]
-can the operation \(BC\) be performed? $SPACE \{ $popup->menu(); \} 
+$PAR
+Can the operation \(AB\) be performed? $SPACE \{ $ABpopup->menu(); \} 
+$PAR
+Can the operation \(AC\) be performed? $SPACE \{ $ACpopup->menu(); \} 
+$PAR
+Can the operation \(CB\) be performed? $SPACE \{ $CBpopup->menu(); \} 
+$PAR
+Can the operation \(CA\) be performed? $SPACE \{ $CApopup->menu(); \} 
 END_TEXT
 
 ################################################
 
-ANS($popup->cmp());
+ANS($ABpopup->cmp());
+ANS($ACpopup->cmp());
+ANS($CBpopup->cmp());
+ANS($CApopup->cmp());
 
 ENDDOCUMENT();
