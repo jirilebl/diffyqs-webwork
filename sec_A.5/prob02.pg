@@ -49,7 +49,7 @@ Suppose that [`\theta`] is the angle between
 [`([$a],[$b],[$c])`] and
 [`([$d],[$e],[$f])`].  Find
 
-[`\cos \theta = {}`] [________________]{"$thedot/($mag1*$mag2)"}
+[`\cos \theta = {}`] [_____________________________]{"$thedot/($mag1*$mag2)"}
 [@ AnswerFormatHelp("numbers") @]*
 END_PGML
 

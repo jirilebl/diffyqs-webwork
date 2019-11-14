@@ -50,7 +50,7 @@ Compute the determinant of the product
 [$A] B
 ``]<<
 
-Determinant: [_________]{"(($b)-($a)*($c))*($d)"} 
+Determinant: [______________]{"(($b)-($a)*($c))*($d)"} 
 [@ AnswerFormatHelp("numbers") @]*
 END_PGML
 

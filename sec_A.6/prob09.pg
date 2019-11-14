@@ -46,7 +46,7 @@ The determinant of
 \end{bmatrix}
 ``]<<
 
-is: [_________]{"($c)*(x^2-($a-x)*($b))"} 
+is: [_______________]{"($c)*(x^2-($a-x)*($b))"} 
 [@ AnswerFormatHelp("formulas") @]*
 END_PGML
 
