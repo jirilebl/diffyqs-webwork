@@ -47,7 +47,7 @@ $b = random(100,200,1);
 #
 
 BEGIN_PGML
-Waterlevel in a long thin channel also follows the wave equation with waves propagating along the channel.
+Water level in a long thin channel also follows the wave equation with waves propagating along the channel.
 Suppose the equation for a particular channel is
 
 >>[`` u_{tt} = [$asq] u_{xx} ``]<<
