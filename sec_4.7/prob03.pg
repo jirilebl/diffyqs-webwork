@@ -1,9 +1,21 @@
-# Wave equation series solution
+##DESCRIPTION
+## Wave equation series solution
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection(Wave equation)
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
-## KEYWORDS('PDE', 'wave', 'equation')
-#
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('4.7')
+## Problem1('')
+## MO(1)
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'wave equation')
+
 ########################################################################
 
 DOCUMENT();      

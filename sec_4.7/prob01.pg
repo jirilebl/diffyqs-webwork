@@ -1,7 +1,19 @@
-# Set up a guitar string wave equation problem
+##DESCRIPTION
+## Set up a guitar string wave equation problem
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection(Wave equation)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## Level(2)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('4.7')
+## Problem1('')
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'wave equation')
 
 ########################################################################
 

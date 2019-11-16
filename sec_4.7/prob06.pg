@@ -1,10 +1,21 @@
-# Questions on how frequency of oscillation transforms in the wave equation
-# based on length and tension.
+##DESCRIPTION
+## Questions on how frequency of oscillation transforms in the wave equation
+## based on length and tension.
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection(Wave equation)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## Level(5)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('4.7')
+## Problem1('')
+## MO(1)
 ## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'wave equation')
-
 
 ########################################################################
 
@@ -14,10 +25,10 @@
 DOCUMENT();
 
 loadMacros(
-"PGstandard.pl",
-"MathObjects.pl",
-"AnswerFormatHelp.pl",
-"PGcourse.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl",
 );
 
 TEXT(beginproblem());

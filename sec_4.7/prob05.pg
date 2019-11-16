@@ -1,9 +1,20 @@
-# Solve wave equation on entire real line by guessing a special form
+##DESCRIPTION
+## Solve wave equation on entire real line by guessing a special form
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection(Wave equation)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('4.7')
+## Problem1('')
+## MO(1)
 ## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'wave equation')
-
 
 ########################################################################
 
@@ -13,10 +24,10 @@
 DOCUMENT();
 
 loadMacros(
-"PGstandard.pl",
-"MathObjects.pl",
-"AnswerFormatHelp.pl",
-"PGcourse.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl",
 );
 
 TEXT(beginproblem());
