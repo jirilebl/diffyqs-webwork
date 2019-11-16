@@ -1,7 +1,19 @@
-# Solve wave equation using d'Alembert
+##DESCRIPTION
+## Solve wave equation using d'Alembert, on real line
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection(Wave equation)
 ## Author(Jiri Lebl)
 ## Institution(Oklahoma State University)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('4.8')
+## Problem1('')
+## MO(1)
 ## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'wave equation', 'dAlembert')
 
 ########################################################################
@@ -12,20 +24,18 @@
 DOCUMENT();
 
 loadMacros(
-"PGstandard.pl",
-"MathObjects.pl",
-"AnswerFormatHelp.pl",
-"PGcourse.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl",
 );
 
 TEXT(beginproblem());
-
 
 ###########################
 #  Setup
 
 Context("Numeric");
-
 
 $a = random(2,9,1);
 $asq=$a*$a;
