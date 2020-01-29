@@ -25,9 +25,15 @@ $k = random(4,6,1);
 $x0 = non_zero_random(-6,6,1);
 $x0abs = $x0;
 $x0sign = 1;
+$anssign = 1;
+$anssignstr = "";
 if ($x0 < 0) {
   $x0sign = -1;
   $x0abs = -$x0;
+  if ((-1)**($k-1) == 1) {
+    $anssignstr = "-";
+    $anssign = -1;
+  }
 }
 
 # Make sure the range is something sane
@@ -51,8 +57,10 @@ and find the particular solution satisfying the initial condition
 
 >>[`` x(0) = \frac{[$x0sign]}{[$x0abs]}. ``]<<
 
-[` x(t) = {} `] [_________]{"((-$k+1)*$a*t+($x0)^($k-1))^(-1/($k-1))"}{40}
+[` x(t) = {} `] [_________]{"($anssign)*((-$k+1)*$a*t+($x0)^($k-1))^(-1/($k-1))"}{40}
 [@ AnswerFormatHelp("formulas") @]*
+
+_*Hint:* When solving for [:x:], if you need to take a root, make sure you use the correct sign._
 END_PGML
 
 ######################################################
@@ -80,17 +88,18 @@ Therefore,
 \frac{1}{[$a](1-[$k])}x^{1-[$k]}
 - \frac{1}{[$a](1-[$k])}{\left(\frac{[$x0sign]}{[$x0abs]}\right)}^{1-[$k]}.``]<<
 
-Let us solve for [`x:`]
+Let us solve for [`x.`]  (Make sure to take the correct sign for even
+roots depending on the sign of [`x(0)`].)
 
 >>[``x =
-{\left( [$a](1-[$k])t + {\left(\frac{[$x0sign]}{[$x0abs]}\right)}^{1-[$k]} \right)}^{\frac{1}{1-[$k]}}.
+[$anssignstr]{\left( [$a](1-[$k])t + {\left(\frac{[$x0sign]}{[$x0abs]}\right)}^{1-[$k]} \right)}^{\frac{1}{1-[$k]}}.
 ``]<<
 
 We can simplify:
 
 >>[``
 x =
-\frac{1}{
+\frac{[$anssign]}{
 {\left( [$a*(1-$k)]t + [$x0**($k-1)] \right)}^{1/[$k-1]}}
 .
 ``]<<
