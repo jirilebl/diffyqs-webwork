@@ -60,3 +60,8 @@ likely to break things for a little bit so there is the ...
 be merged into *master*.  This branch will get merged onto *master* very often,
 usually the moment everything is tested and fixed up on the WeBWorK machine.
 So most of the time the two branches should be identical.
+
+## Acknowledgements
+
+Thanks to Edfinity for pestering me to motivate me to put these together and
+to Andras Balogh for using the exercises and reporting errors.
