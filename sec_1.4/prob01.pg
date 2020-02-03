@@ -17,6 +17,12 @@ loadMacros(
 ####################################################
 
 TEXT(beginproblem());
+
+Context("Numeric");
+
+Context()->variables->set(x=>{limits=>[0.1,5]});
+Context()->variables->add(C=>'Real');
+
 ##axy'+by=x^{-p}
 $a = Real(random(2,4,1));
 $m = Real(non_zero_random(1,5,1));
@@ -37,11 +43,9 @@ $apm = $a*$pm;
 #Context()->flags->set(reduceConstants=>0);
 $C = $y1+1/$apm;
 
-Context("Numeric");
-
-Context()->variables->add(C=>'Real');
-
+# see also the answer checker below
 $ans1 = Formula("(x^{-$p} / {-$apm}) + (C * x^($m))")->reduce();
+
 $ans2 = Formula("(x^{-$p} / {-$apm}) + ($C * x^($m))")->reduce();
 
 ####################################################
@@ -71,7 +75,38 @@ Context()->normalStrings;
 
 ####################################################
 
-ANS($alpha->cmp, $ans1->cmp, $ans2->cmp);
+ANS($alpha->cmp);
+
+ANS($ans1->cmp( checker => sub {
+    my ($correct, $student, $self) = @_;
+
+    my $context = Context()->copy; 
+    $context->flags->set(no_parameters=>0);
+    $context->variables->add('C0'=>'Parameter');
+    $context->variables->add('C1'=>'Parameter');
+    my $c0 = Formula($context,'C0');
+    my $c1 = Formula($context,'C1');
+    
+    my $context2 = Context()->copy; 
+    $context2->flags->set(no_parameters=>0);
+    $context2->variables->add('C0'=>'Parameter');
+    my $cc0 = Formula($context2,'C0');
+    
+    $student2 = Formula($context2,$student);
+    $student = Formula($context,$student);
+ 
+    $correct = Formula($context,"(x^{-$p} / {-$apm}) + ((($c0)*C+($c1)) * x^($m))");
+    
+    $nongeneral = Formula($context2,"(x^{-$p} / {-$apm}) + (($cc0) * x^($m))");
+    
+    if ($nongeneral == $student2) {
+        Value->Error("Your answer is not the most general solution");
+    }
+    
+    return $correct == $student;
+}));
+
+ANS($ans2->cmp);
 
 ####################################################
 

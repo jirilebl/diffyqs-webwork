@@ -12,7 +12,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "parserFormulaUpToConstant.pl",
+  #"parserFormulaUpToConstant.pl",
   "PGcourse.pl"
 );
 
@@ -22,7 +22,7 @@ TEXT(beginproblem());
 # Show which answers are correct and which ones are incorrect
 $showPartialCorrectAnswers = 1;
 
-Context()->variables->are("x"=>"Real","y"=>"Real",C=>"Real");
+Context()->variables->are("x"=>"Real","y"=>"Real","C"=>"Real");
 
 ##############################################################
 #
@@ -38,10 +38,12 @@ $integratingfactor = Compute("e^($a*x^2/2)");
 $integratingfactornew = Compute("e^(-$a*x^2/2)");
 
 $newleft = Compute("e^($a*x^2/2)*y");
-$newright = Compute("x^$n");
+$newright = Compute("x^($n)");
 $integrateleft = $newleft;
-$integrateright = FormulaUpToConstant("x^($n+1)/($n+1)");
-$solution = Compute("(x^($n+1)/($n+1)+C)e^(-$a*x^2/2)");
+$integrateright = Compute("x^($n+1)/($n+1)");
+
+# See also the answer checker below
+$solution = Compute("(x^($n+1)/($n+1)+C)e^(-($a)*x^2/2)");
 
 ##############################################################
 
@@ -60,9 +62,11 @@ $PAR
 Integrating both sides we get the algebraic equation
 $PAR
 \{$integrateleft->ans_rule(30)\}\({}={}\)\{$integrateright->ans_rule(30)\}
+\({}+C\)
+$BR
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-Solving for \(y\), the solution to the differential equation is
+Solving for \(y\), the general solution to the differential equation is
 $PAR
 \( y = {}\) \{$solution->ans_rule(50)\}
 \{ AnswerFormatHelp("formulas") \}
@@ -77,8 +81,34 @@ ANS($integratingfactor->cmp());
 ANS($newleft->cmp());
 ANS($newright->cmp());
 ANS($integrateleft->cmp());
-ANS($integrateright->cmp());
-ANS($solution->cmp());
+ANS($integrateright->cmp(upToConstant=>1));
+ANS($solution->cmp( checker => sub {
+    my ($correct, $student, $self) = @_;
+
+    my $context = Context()->copy; 
+    $context->flags->set(no_parameters=>0);
+    $context->variables->add('C0'=>'Parameter');
+    $context->variables->add('C1'=>'Parameter');
+    my $c0 = Formula($context,'C0');
+    my $c1 = Formula($context,'C1');
+    
+    my $context2 = Context()->copy; 
+    $context2->flags->set(no_parameters=>0);
+    $context2->variables->add('C0'=>'Parameter');
+    my $cc0 = Formula($context2,'C0');
+    
+    $student2 = Formula($context2,$student);
+    $student = Formula($context,$student);
+ 
+    $correct = Formula($context,"(x^($n+1)/($n+1)+($c0)*C+$c1)e^(-($a)*x^2/2)");
+    $nongeneral = Formula($context2,"(x^($n+1)/($n+1)+($cc0))e^(-($a)*x^2/2)");
+ 
+    if ($nongeneral == $student2) {
+        Value->Error("Your answer is not the most general solution");
+    }
+    
+    return $correct == $student;
+}));
 
 ##############################################################
 
