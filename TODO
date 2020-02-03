@@ -4,3 +4,5 @@
 * ??? Add simple foxes and hares exercise in addition to the ones there
 * In 8.1 add an exercise in 3D?
 * Exercise 1 in 5.1 demands crazy precision, that should be fixed
+
+* Make "arbitrary constants" be better checked throughout, especially in places where the student could come up with some more crazy expression.  See 1.4 problem 1 and 2 for affine versions.
