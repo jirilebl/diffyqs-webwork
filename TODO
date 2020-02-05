@@ -1,8 +1,21 @@
 * Add more Chapter 5 problems (only a couple in 5.1 are there now)
+
 * Add 6.5 (PDE with Laplace) problems (only one is there now)
+
 * More solutions, especially in the early sections
+
 * ??? Add simple foxes and hares exercise in addition to the ones there
+
 * In 8.1 add an exercise in 3D?
+
 * Exercise 1 in 5.1 demands crazy precision, that should be fixed
 
-* Make "arbitrary constants" be better checked throughout, especially in places where the student could come up with some more crazy expression.  See 1.4 problem 1 and 2 for affine versions.
+* Make "arbitrary constants" be better checked throughout, especially in places
+  where the student could come up with some more crazy expression.  See 1.4
+  problem 1, 2, 4, 7 for affine versions.
+
+* 1.4 #2: Should accept any multiple of the integrating factor and then should
+  evaluate the rest of the problem with this in mind.  Also if taken a
+  different antiderivative, that's the one that should be checked for in the
+  final answer.  Basically allow alternatives but also check that they are
+  consistent with one another.
