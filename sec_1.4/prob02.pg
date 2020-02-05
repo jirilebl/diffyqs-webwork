@@ -12,7 +12,6 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  #"parserFormulaUpToConstant.pl",
   "PGcourse.pl"
 );
 
@@ -33,6 +32,7 @@ Context()->variables->are("x"=>"Real","y"=>"Real","C"=>"Real");
 $a = Compute(random(2,9));
 $n = Compute(random(2,8));
 
+# See also the answer checker below
 $integratingfactor = Compute("e^($a*x^2/2)");
 
 $integratingfactornew = Compute("e^(-$a*x^2/2)");
@@ -70,14 +70,35 @@ Solving for \(y\), the general solution to the differential equation is
 $PAR
 \( y = {}\) \{$solution->ans_rule(50)\}
 \{ AnswerFormatHelp("formulas") \}
-$BR
+$PAR
 $BITALIC $BBOLD Note:$EBOLD Use \(C\) as the constant. $EITALIC
 END_TEXT
 Context()->normalStrings;
 
 ##############################################################
 
-ANS($integratingfactor->cmp());
+ANS($integratingfactor->cmp( checker => sub {
+    my ($correct, $student, $self) = @_;
+
+    if ($student == Compute("0")) {
+        return 0;
+    }
+    
+    if ($student == $correct) {
+        return 1;
+    }
+
+    my $context = Context()->copy; 
+    $context->flags->set(no_parameters=>0);
+    $context->variables->add('C0'=>'Parameter');
+    my $c0 = Formula($context,'C0');
+    
+    if (Formula($context,"($c0)*e^($a*x^2/2)") == Formula($context,$student)) {
+        Value->Error("Take the simplest form of the integrating factor for this problem, that is, let r(x)=e^($a x^2/2)");
+    }
+
+    return 0;
+}));
 ANS($newleft->cmp());
 ANS($newright->cmp());
 ANS($integrateleft->cmp());

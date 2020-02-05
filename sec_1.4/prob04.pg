@@ -21,9 +21,11 @@ $a = Real(random(2,10,1));
 
 Context("Numeric");
 
+Context()->variables->set(x=>{limits=>[0.1,4]});
 Context()->variables->add(C=>'Real');
 
-$fp = Compute("($a x^x) + C * (x^x) * (e^(-x))");
+# see also in the answer checker below
+$solution = Compute("($a x^x) + C * (x^x) * (e^(-x))");
 
 ##############################################
 
@@ -41,8 +43,33 @@ Context()->normalStrings;
 
 ##############################################
 
+ANS($solution->cmp( checker => sub {
+    my ($correct, $student, $self) = @_;
 
-ANS($fp->cmp(limits => [0,4]));
+    my $context = Context()->copy; 
+    $context->flags->set(no_parameters=>0);
+    $context->variables->add('C0'=>'Parameter');
+    $context->variables->add('C1'=>'Parameter');
+    my $c0 = Formula($context,'C0');
+    my $c1 = Formula($context,'C1');
+    
+    my $context2 = Context()->copy; 
+    $context2->flags->set(no_parameters=>0);
+    $context2->variables->add('C0'=>'Parameter');
+    my $cc0 = Formula($context2,'C0');
+    
+    $student2 = Formula($context2,$student);
+    $student = Formula($context,$student);
+ 
+    $correct = Formula($context,"($a x^x) + (($c0)*C+($c1)) * (x^x) * (e^(-x))");
+    $nongeneral = Formula($context2,"($a x^x) + ($cc0) * (x^x) * (e^(-x))");
+ 
+    if ($nongeneral == $student2) {
+        Value->Error("Your answer is not the most general solution");
+    }
+    
+    return $correct == $student;
+}));
 
 ##############################################
 
@@ -63,7 +90,7 @@ x^{-x} e^x y = $a e^x + C .
 \]
 Finally,
 \[
-y(x) = $fp .
+y(x) = $solution .
 \]
 END_SOLUTION
 Context()->normalStrings;
