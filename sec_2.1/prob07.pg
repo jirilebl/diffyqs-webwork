@@ -67,12 +67,12 @@ Enter two linearly independent solutions of the form above:
 
 $PAR
 \( y_1 = \) 
-\{ ans_rule(20); \}
+\{ NAMED_ANS_RULE(Y1,20); \}
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
 \( y_2 = \) 
-\{ ans_rule(20); \}
+\{ NAMED_ANS_RULE(Y2,20); \}
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
@@ -93,7 +93,7 @@ Context()->normalStrings;
 #
 
 ANS( $answerrs->cmp() );
-UNORDERED_ANS( $sol1->cmp(), $sol2->cmp() );
+UNORDERED_NAMED_ANS( Y1=>$sol1->cmp(), Y2=>$sol2->cmp() );
 ANS( $soli->cmp() );
 
 ##############################################################
