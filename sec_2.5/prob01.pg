@@ -45,7 +45,7 @@ differential equation:
 
 \[ y'' + $twok y' + $ksq y = $c \sin(x) \]
 
-\( y(x) = \) \{ans_rule(30)\} \( + C_{1} \) \{ans_rule(20)\} \( + C_{2} \) \{ans_rule(20)\}
+\( y(x) = \) \{ans_rule(25)\} \( + C_{1} \) \{ans_rule(15)\} \( + C_{2} \) \{ans_rule(15)\}
 $BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT

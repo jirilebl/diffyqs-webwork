@@ -22,8 +22,10 @@ $showPartialCorrectAnswers = 1;
 
 Context("Numeric");
 
-$k1 = random(2,4,1);
-$k2 = random(2,4,1);
+do {
+  $k1 = random(2,4,1);
+  $k2 = random(2,4,1);
+} while ($k1 == $k2);
 $c = ($k1+1)*($k2+1)*random(1,5,1);
 
 $bb = $k1+$k2;
@@ -44,7 +46,7 @@ differential equation:
 
 \[ y'' - $bb y' + $cc y = $c e^{-x} \]
 
-\( y(x) = \) \{ans_rule(30)\} \( + C_{1} \) \{ans_rule(20)\} \( + C_{2} \) \{ans_rule(20)\}
+\( y(x) = \) \{ans_rule(25)\} \( + C_{1} \) \{ans_rule(15)\} \( + C_{2} \) \{ans_rule(15)\}
 $BR
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
@@ -63,7 +65,7 @@ BEGIN_SOLUTION
 The characteristic equation is \(r^2- $bb r + $cc = (r-$k1)(r-$k2) = 0 \), so the
 associated homogeneous solution is
 \[
-y_c = C_1 e^{$k1 x} + C_2 x e^{$k2 x} .
+y_c = C_1 e^{$k1 x} + C_2 e^{$k2 x} .
 \]
 To find a particular solution we try
 \[
