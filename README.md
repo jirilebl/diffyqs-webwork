@@ -64,4 +64,4 @@ So most of the time the two branches should be identical.
 ## Acknowledgements
 
 Thanks to Edfinity for pestering me to motivate me to put these together and
-to Andras Balogh for using the exercises and reporting errors.
+to Andras Balogh and Jan Hlavacek for reporting and fixing errors.
