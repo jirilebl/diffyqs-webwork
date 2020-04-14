@@ -43,12 +43,12 @@ $a12 = Formula("$b t");
 $a21 = Formula("$c");
 $a22 = Formula("$d tan(t)");
 
-$A = Matrix([[$a11,$a12],[$a21,$a22]]);
+$A = Matrix([[$a11,-$a12],[$a21,$a22]]);
 
 $f1 = Formula("$c sin(t)");
 $f2 = Formula("$a cos(t)");
 
-$f = Matrix([[$f1],[$f2]]);
+$f = Matrix([[$f1],[-$f2]]);
 
 $x = Formula("x");
 $y = Formula("y");
