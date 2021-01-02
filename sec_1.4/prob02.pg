@@ -56,7 +56,7 @@ $PAR
 $PAR
 After multiplying both sides by the integrating factor and "unapplying" the product rule we get the new differential equation:
 $PAR
-\(\dfrac{dy}{dx}\Bigl[\) \{$newleft->ans_rule(27)\} \(\Bigr] = {}\) \{$newright->ans_rule(27)\}
+\(\dfrac{d}{dx}\Bigl[\) \{$newleft->ans_rule(27)\} \(\Bigr] = {}\) \{$newright->ans_rule(27)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR 
 Integrating both sides we get the algebraic equation
@@ -145,7 +145,7 @@ r(x) = e^{\int p(x)\,dx} = e^{\int $a x \, dx} = $integratingfactor .
 \]
 After multiplying both sides by the integrating factor and "unapplying" the product rule we get the new differential equation:
 \[
-\frac{dy}{dx}\Bigl[ $integratingfactor y \Bigr] =
+\frac{d}{dx}\Bigl[ $integratingfactor y \Bigr] =
 x^{$n} .
 \]
 Integrating both sides we get the algebraic equation
