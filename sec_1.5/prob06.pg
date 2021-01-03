@@ -21,7 +21,8 @@ TEXT(beginproblem());
 
 Context("Numeric");
 Context()->variables->are(
-  x=>"Real"
+  x=>"Real",
+  y=>"Real",
 );
 
 $a = random(2,3,1);
@@ -29,7 +30,8 @@ $b = random(1,9,1);
 $c = random(1,5,1);
 $d = random(1,9,1);
 
-$answer = Compute("(1/($c^($a)))*((($a-1)*$d+$b*$c)*x^($a)-($b*$c^($a))*x)/($a-1)")->reduce;
+$answer = Compute("(1/($c^($a)))*((($a-1)*$d+$b*$c)*x^($a)-($b*$c^($a))*x)/($a-1)");
+$func = Compute("$a y + $b x")->reduce;
 
 #############################
 
@@ -37,7 +39,7 @@ Context()->texStrings;
 BEGIN_TEXT
 Solve the initial value problem
 \[
-x y' = $a y +  $b x ,
+x y' = $func ,
 \qquad y($c) = $d .
 \]
 
