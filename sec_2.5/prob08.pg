@@ -1,0 +1,64 @@
+# Reverse undetermined coefficients
+
+# Institution(Oklahoma State University)
+# Author(Jiri Lebl)
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
+  "PGcourse.pl"
+);
+
+##############################################################
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+
+$a = random(2,10,1);
+$b = random(2,10,1);
+$c = random(2,10,1);
+$d = random(2,10,1);
+
+$ans = Compute("$a*x^2+(2*$a*$d+$b)*x+($b*$d+$c+2*$a)")->reduce;
+
+##############################################################
+
+BEGIN_PGML
+Find a polynomial [:P(x):], so that
+
+>>[``y = [$a] x^2 + [$b] x + [$c]``]<<
+
+solves
+
+>>[``y''+[$d] y'+ y = P(x) . ``]<<
+
+[:P(x) = :] [___________]{"$ans"}{50} [@ AnswerFormatHelp("formulas") @]*  
+
+END_PGML
+
+##############################################################
+
+BEGIN_PGML_SOLUTION
+Plug the purported solution [`y = [$a] x^2 + [$b] x + [$c]`] into the left hand side
+to find that
+
+>>[``y''+[$d] y'+ y = 2 \cdot [$a] + [$d] ( 2 \cdot [$a] x + [$b] ) + [$a] x^2 + [$b] x + [$c] = [$ans] . ``]<<
+
+So
+
+>>[``P(x) = [$ans] . ``]<<
+END_PGML_SOLUTION
+
+##############################################################
+
+COMMENT('Reverse undetermined coefficients');
+
+ENDDOCUMENT();
