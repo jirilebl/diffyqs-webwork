@@ -38,6 +38,7 @@ I've cleaned off the OPL tags as they are no longer needed, and some of them
 were downright confusing and many were just wrong, especially after the edits,
 and they just made editing a bit more of a pain.  I've left the authorship
 information where it was present to see who the original author was.
+I'm slowly adding back full consistent OPL tags, but it's a slow process.
 
 ## Miscellanea
 
