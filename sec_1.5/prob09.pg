@@ -1,0 +1,44 @@
+# Substitution, homogeneous
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## KEYWORDS('differential', 'equation', 'homogeneous', 'substitution')
+
+#############################################################
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
+  "PGcourse.pl"
+);
+
+#############################################################
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+
+$a = random(2,9,1);
+$b = random(2,9,1);
+
+#############################################################
+
+BEGIN_PGML
+Solve the following initial value problem 
+
+>>[`` y' = \frac{[$a] x^2 + 2y^2}{xy} , \qquad y(1)=[$b] . ``]<<
+
+[` y = {}`] [_________]{"x*sqrt(($b^2+$a)*x^2-$a)"}{50}
+[@ AnswerFormatHelp("formulas") @]*
+
+_*Hint:* The equation is homogeneous, you just have to put it into the right form._
+END_PGML
+
+#############################################################
+
+ENDDOCUMENT();
