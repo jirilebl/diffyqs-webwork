@@ -76,7 +76,7 @@ in kilometers after one minute (60 seconds) is
 \[
 $d0 + \int_0^{60} ($a t^2 + $b) \, dt
 =
-$d0 + \frac{$a (60)^3}{3} + $b(60) .
+$d0 + \frac{$a (60)^3}{3} + $b(60) = $answer .
 \]
 END_SOLUTION
 

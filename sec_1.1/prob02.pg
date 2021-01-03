@@ -42,14 +42,12 @@ TEXT(beginproblem());
 
 Context()->texStrings;
 BEGIN_TEXT
-
 Find the general solution of the differential equation
-\( \displaystyle {dy\over dx}=x^{$r} + $b \)
+\[ \displaystyle {dy\over dx}=x^{$r} + $b . \]
 
 $PAR
 \(y(x) = {}\) \{ ans_rule(35) \}
 \{ AnswerFormatHelp("formulas") \}
-
 END_TEXT
 Context()->normalStrings;
 
