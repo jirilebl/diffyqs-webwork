@@ -29,7 +29,7 @@ $b = random(2,9,1);
 #############################################################
 
 BEGIN_PGML
-Solve the following initial value problem 
+Solve the initial value problem 
 
 >>[`` y' = \frac{[$a] x + y^2}{2y} , \qquad y(0)=[$b] . ``]<<
 

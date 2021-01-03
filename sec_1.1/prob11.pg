@@ -69,7 +69,7 @@ What is the formula for the neight of the ball at any time [:t:]?
 At what time will the cannonball return to earth?  That is, when will
 the height be 0 again?
 
-[_________]{"$a/4.9"}{30}
+[_________]{"$a/4.9"}{30} seconds
 [@ AnswerFormatHelp("numbers") @]*
 END_PGML
 
