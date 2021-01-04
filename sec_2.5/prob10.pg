@@ -1,0 +1,45 @@
+# Nonhomogeneous initial value problem, any method
+
+# Institution(Oklahoma State University)
+# Author(Jiri Lebl)
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
+  "PGcourse.pl"
+);
+
+##############################################################
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+
+$a = random(2,10,1);
+$b = random(2,10,1);
+$c = random(2,10,1);
+
+$ans = Compute("((2*$a*x-1)*e^($a*x))/(4*$a^2)+(($c+$a*$b)*e^($a*x))/(2*$a)+((-2*$a*$c+2*$a^2*$b+1)*e^(-$a*x))/(4*$a^2)");
+
+##############################################################
+
+BEGIN_PGML
+Solve the following initial value problem
+
+>>[``y''- [$a*$a] y = e^{[$a] x} , \qquad y(0) = [$b], \qquad y'(0) = [$c] ``]<<
+
+[:y = :] [___________]{"$ans"}{50} [@ AnswerFormatHelp("formulas") @]*
+END_PGML
+
+##############################################################
+
+COMMENT('Nonhomogeneous initial value problem, any method.');
+
+ENDDOCUMENT();
