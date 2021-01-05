@@ -1,0 +1,75 @@
+# Reduction of order initial value problem
+
+# Institution(Oklahoma State University)
+# Author(Jiri Lebl)
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
+  "PGcourse.pl"
+);
+
+##############################################################
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+
+$a = random(2,10,1);
+$b = random(2,10,1);
+$c = random(2,10,1);
+
+##############################################################
+
+BEGIN_PGML
+Consider the equation
+
+>>[``(1-[$a] x^2) y''+[$a*2] x y' - [$a*2] y = 0 .``]<<
+
+Suppose that you somehow guessed that [`y=x`] is a solution.  Use the reduction of order method
+to find a second linearly independent solution,
+and solve the initial value problem with
+
+>>[`` y(0) = [$b] , \qquad y'(0) = [$c] ``]<<
+
+[`y = `] [___________]{"$c*x + $b*(1+$a*x^2)"}{50} [@ AnswerFormatHelp("formulas") @]*  
+END_PGML
+
+##############################################################
+
+BEGIN_PGML_SOLUTION
+First write the equation in the standard form
+
+>>[`` y''+\frac{[$a*2] x}{1-[$a] x^2} y' + \frac{-[$a*2]}{1-[$a] x^2} y = 0 .``]<<
+
+We know [`y_1 = x`] is one solution, so reduction of order says that
+a second one is given by
+
+>>[`` y_2 = y_1
+\int \frac{e^{-\int p(x) dx}}{y_1^2} \, dx
+= x
+\int \frac{e^{-\int \frac{[$a*2] x}{1-[$a] x^2} dx}}{x^2} \,dx
+= -1-[$a] x^2 . ``]<<
+
+So our general solution is
+
+>>[`` y = C_1 x + C_2 (1+[$a] x^2) ``]<<
+
+Then [`[$b] = y(0) = C_2 , `] and [`y'(x) = C_1 + C_2 [$a*2] x`], so [`[$c] = y'(0) = C_1 .`]
+In other words,
+
+>>[`` y = [$c] x + [$b] (1+[$a] x^2) . ``]<<
+END_PGML_SOLUTION
+
+##############################################################
+
+COMMENT('Reduction of order initial value problem');
+
+ENDDOCUMENT();

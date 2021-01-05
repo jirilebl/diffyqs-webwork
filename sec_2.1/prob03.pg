@@ -50,13 +50,13 @@ and
 \( y = x e^{x} \) is a solution to
 \( y'' + f(x) y' + g(x) y = e^x . \)
 $PAR
-Find the solution to
+Find a solution to
 \( y'' + f(x) y' + g(x) y = $c e^x . \)
 $PAR
 \( y = {} \) \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-Now find the solution to
+Now find a solution to
 \( y'' + f(x) y' + g(x) y = $b \sin($a x) + $c e^x . \)
 $PAR
 \( y = {} \) \{ ans_rule(40) \}
