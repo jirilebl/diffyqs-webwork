@@ -42,7 +42,7 @@ equation.
 If [`u`] is a harmonic function, then
 [`-u_y \, dx + u_x \, dy = 0`] is an exact equation (you should verify this).
 By solving this exact equation,
-there exists (at least locally)
+one finds
 the so-called _harmonic conjugate_ function
 [`v(x,y)`] such that [`v_x = -u_y`] and [`v_y = u_x .`]
 
