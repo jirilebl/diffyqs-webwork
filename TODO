@@ -1,3 +1,9 @@
+* Reasonable goal is to have at least 10 relevant reasonably distinct
+  problems per hour of estimated lecture.  Still not quite there yet,
+  so more work needed.
+
+* Add more distinct word problems in 2.4 and 2.6
+
 * Add more Chapter 5 problems (only a couple in 5.1 are there now)
 
 * Add 6.5 (PDE with Laplace) problems (only one is there now)
@@ -13,6 +19,10 @@
 * Make "arbitrary constants" be better checked throughout, especially in places
   where the student could come up with some more crazy expression.  See 1.4
   problem 1, 2, 4, 7 for affine versions.
+
+* In 2.2, there are a few problems that require specific forms.  Should use the
+  smarter checking procedure from the other problems (check for two linearly
+  independent solutions).
 
 * 1.4 #2: Should accept any multiple of the integrating factor and then should
   evaluate the rest of the problem with this in mind.  Also if taken a
