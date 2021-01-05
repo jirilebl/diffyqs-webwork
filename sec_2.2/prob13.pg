@@ -1,0 +1,83 @@
+# Constant coefficient idea still works in first order
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## KEYWORDS('linear','constant','coefficient')
+
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl"
+);
+
+TEXT(beginproblem());
+
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#  Setup
+
+Context("Numeric");
+Context()->variables->{namePattern} = qr/[a-z][a-z0-9_]*'*/i;
+Context()->variables->are("r"=>"Real","x"=>"Real","y"=>"Real","y'"=>"Real");
+Context()->variables->set("y'" => {TeX => '\frac{dy}{dx}'});
+
+$b = Compute(non_zero_random(-9,9));
+$diffeqn = Formula("y'+($b)*y")->reduce;
+$aux = Formula("r+($b)")->reduce;
+
+$f = Formula("e^(-$b*x)");
+
+$root = -$b;
+
+$y0 = Compute(non_zero_random(-9,9));
+
+$soln = Formula("$y0*$f");
+
+##############################################################
+
+Context()->texStrings;
+BEGIN_TEXT
+The same idea that works for second order constant coefficient equations would work for first order too.
+$PAR
+The differential equation \($diffeqn = 0\) has characteristic equation 
+$PAR
+\{$aux->ans_rule(30)\} \(=0\)
+$SPACE \{ AnswerFormatHelp("formulas") \}
+$PAR
+ with the root \{$root->ans_rule(30)\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+Therefore a solution is
+$BR
+\{$f->ans_rule(40)\}
+\{ AnswerFormatHelp("formulas") \}
+$BR
+$BITALIC $BBOLD Note: $EBOLD It should be the one that has value of 1 at \(x=0\) as usual.$EITALIC
+
+$PAR
+Use these to solve the initial value problem
+\[$diffeqn = 0, \qquad y(0) = $y0 \]
+$PAR
+\(y(x) = {} \)\{$soln->ans_rule(50)\}
+\{ AnswerFormatHelp("formulas") \}
+END_TEXT
+Context()->normalStrings;
+
+##############################################################
+#
+#  Answers 
+#
+#
+ANS($aux->cmp());
+ANS($root->cmp());
+ANS($f->cmp);
+ANS($soln->cmp);
+
+ENDDOCUMENT();

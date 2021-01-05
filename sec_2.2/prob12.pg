@@ -35,7 +35,7 @@ Context()->variables->set("y'" => {TeX => '\frac{dy}{dx}'},"y''" => {TeX => '\fr
 
 $b = Compute(non_zero_random(-9,9));
 $c = Compute(non_zero_random(-9,9));
-if ($b == $c){$c++};
+if ($b == $c) { $c++; }
 $diffeqn = Formula("y''+($b+$c)*y'+$b*$c*y")->reduce;
 $rhs = Formula("0");
 $aux = Formula("r^2+($b+$c)*r+$b*$c")->reduce;
@@ -59,17 +59,17 @@ BEGIN_TEXT
 The differential equation \($diffeqn = $rhs\) has characteristic equation 
 $PAR
 \{$aux->ans_rule(30)\} \(=0\)
-$SPACE \{ AnswerFormatHelp("numbers") \}
+$SPACE \{ AnswerFormatHelp("formulas") \}
 $PAR
  with roots \{$roots->ans_rule(30)\}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-Therefore there are two fundamental solutions
+Therefore there are two linearly independent solutions
 $BR
 \{$fundamental->ans_rule(40)\}
 \{ AnswerFormatHelp("formulas") \}
 $BR
-$BITALIC $BBOLD Note: $EBOLD Enter the solutions as a comma separated list.$EITALIC
+$BITALIC $BBOLD Note: $EBOLD Enter the solutions as a comma separated list (they should be those usual exponential ones as in the book).$EITALIC
 
 $PAR
 Use these to solve the initial value problem

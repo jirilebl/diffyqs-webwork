@@ -1,0 +1,89 @@
+# Constructing an equation out of solutions
+
+# Institution(Oklahoma State University)
+# Author(Jiri Lebl)
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
+  "PGcourse.pl"
+);
+
+##############################################################
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+Context()->variables->{namePattern} = qr/[a-z][a-z0-9_]*'*/i;
+Context()->variables->are("r"=>"Real","x"=>"Real","y"=>"Real","y'"=>"Real","y''"=>"Real","i"=>"Real");
+
+$b = Compute(non_zero_random(-9,9));
+$c = Compute(non_zero_random(-9,9));
+if ($b == $c) { $c++; }
+$de1a = Formula("($b+$c)")->reduce;
+$de1b = Formula("($b*$c)")->reduce;
+$sol11 = Formula("e^(-$b*x)")->reduce;
+$sol12 = Formula("e^(-$c*x)")->reduce;
+$de1f1 = Formula("(r+$b)")->reduce;
+$de1f2 = Formula("(r+$c)")->reduce;
+$de1char = Formula("r^2+($de1a)*r+($de1b)")->reduce;
+$de1eq = Formula("y''+($de1a)*y'+($de1b)*y")->reduce;
+
+$d = Compute(non_zero_random(-9,9));
+$e = Compute(non_zero_random(-9,9));
+if ($d == $e) { $e++; }
+$de2a = Formula("(-2*$d)")->reduce;
+$de2b = Formula("($d^2+$e^2)")->reduce;
+$sol21 = Formula("e^($d*x)*cos($e*x)");
+$sol22 = Formula("e^($d*x)*sin($e*x)");
+$de2f1 = Formula("(r-($d+$e*i))")->reduce;
+$de2f2 = Formula("(r-($d-$e*i))")->reduce;
+$de2char = Formula("r^2+($de2a)*r+($de2b)")->reduce;
+$de2eq = Formula("y''+($de2a)*y'+($de2b)*y")->reduce;
+
+##############################################################
+
+BEGIN_PGML
+Construct an equation that has solutions [`y=[$sol11]`] and [`y=[$sol12]:`]
+
+[`y''+ `] [___________]{"$de1a"} [` y' + `] [___________]{"$de1b"} [` = 0 `]  
+[@ AnswerFormatHelp("numbers") @]*
+
+Now construct an equation that has solutions [`y=[$sol21]`] and [`y=[$sol22]:`]
+
+[`y''+ `] [___________]{"$de2a"} [` y' + `] [___________]{"$de2b"} [` = 0 `]  
+[@ AnswerFormatHelp("numbers") @]*
+END_PGML
+
+##############################################################
+
+BEGIN_PGML_SOLUTION
+The first equation should have the characteristic equation
+
+>>[` ([$de1f1])([$de1f2]) = [$de1char] = 0 . `]<<
+
+So the differential equation should be
+
+>>[` [$de1eq] = 0 . `]<<
+
+The second equation should have the characteristic equation
+
+>>[` ([$de2f1])([$de2f2]) = [$de2char] = 0 . `]<<
+
+So the differential equation should be
+
+>>[` [$de2eq] = 0 . `]<<
+END_PGML_SOLUTION
+
+##############################################################
+
+COMMENT('Constructing an equation out of solutions');
+
+ENDDOCUMENT();
