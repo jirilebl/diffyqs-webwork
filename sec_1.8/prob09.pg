@@ -1,0 +1,87 @@
+# Application of exact equations to harmonic functions, finding harmonic conjugates
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## KEYWORDS('differential equations', 'harmonic function', 'harmonic conjugate', 'exact')
+
+##############################################
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
+  "PGcourse.pl"
+);
+
+##############################################
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+Context('Numeric');
+Context()->variables->add(y=>'Real');
+
+$a = random(2,9,1);
+$b = random(2,9,1);
+$c = random(2,9,1);
+
+$ans1 = Formula("($a/2)*(x^2+y^2)");
+$ans2 = Formula("$b*(e^x)*sin(y)");
+$ans3 = Formula("$c*(3*x^2*y-y^3)");
+
+##############################################
+
+BEGIN_PGML
+A function [`u(x,y)`] is said to be a _harmonic function_ if
+[`u_{xx} + u_{yy} = 0 .`]  That is, [`u`] is a solution of the Laplace
+equation.
+
+If [`u`] is a harmonic function, then
+[`-u_y \, dx + u_x \, dy = 0`] is an exact equation (you should verify this).
+By solving this exact equation,
+there exists (at least locally)
+the so-called _harmonic conjugate_ function
+[`v(x,y)`] such that [`v_x = -u_y`] and [`v_y = u_x .`]
+
+If [` u = [$a] xy `] (a harmonic function), then the corresponding exact equation for [`v`]
+is  
+[________]{"-$a*x"}{15}
+[` dx + `]
+[________]{"$a*y"}{15}
+[` dy = 0 `]  
+and a harmonic conjugate of [`u`] is  
+[` v = {} `]
+[________]{$ans1->cmp(upToConstant=>1)}{40}  
+[@ AnswerFormatHelp("formulas") @]*
+
+If [` u = [$b] e^x \cos y `] (a harmonic function), then the corresponding exact equation for [`v`]
+is  
+[________]{"$b*e^x*sin(y)"}{15}
+[` dx + `]
+[________]{"$b*e^x*cos(y)"}{15}
+[` dy = 0 `]  
+and a harmonic conjugate of [`u`] is  
+[` v = {} `]
+[________]{$ans2->cmp(upToConstant=>1)}{40}  
+[@ AnswerFormatHelp("formulas") @]*
+
+If [` u = [$c] x^3 - [$c*3] xy^2 `] (a harmonic function), then the corresponding exact equation for [`v`]
+is  
+[________]{"$c*6*x*y"}{15}
+[` dx + `]
+[________]{"$c*3*x^2-$c*3*y^2"}{15}
+[` dy = 0 `]  
+and a harmonic conjugate of [`u`] is  
+[` v = {} `]
+[________]{$ans3->cmp(upToConstant=>1)}{40}  
+[@ AnswerFormatHelp("formulas") @]*
+END_PGML
+
+##############################################
+
+COMMENT('Application of exact equations to harmonic functions, finding harmonic conjugates');
+
+ENDDOCUMENT();
