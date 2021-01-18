@@ -1,8 +1,20 @@
-# Choose a solution given a slope field
+##DESCRIPTION
+## Choose a solution given a slope field
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Direction fields)
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
-## KEYWORDS('differential equations', 'direction field', 'solution curve')
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('differential equations', 'direction field', 'slope field')
 
 ##############################################################################
 

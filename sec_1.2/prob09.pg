@@ -1,9 +1,20 @@
-# Simple properties of slope fields
+##DESCRIPTION
+## Simple properties of slope fields
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Direction fields)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
-## KEYWORDS('differential equations','first order','slope fields','direction fields')
-
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('differential equations', 'direction field', 'slope field')
 
 ##############################
 #  Initialization

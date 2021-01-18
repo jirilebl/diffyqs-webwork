@@ -1,8 +1,20 @@
-# Match equations to slope fields
+##DESCRIPTION
+## Match equations to slope fields
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Direction fields)
 ## Institution(University of Michigan)
 ## Author(Gavin LaRose)
-## KEYWORDS('calculus', 'integral', 'differential equations', 'slope', 'direction field')
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('differential equations', 'direction field', 'slope field')
 
 #####################################################################
 
@@ -132,4 +144,3 @@ Context()->normalStrings;
 COMMENT("Match equations to slope fields.");
 
 ENDDOCUMENT();
-
