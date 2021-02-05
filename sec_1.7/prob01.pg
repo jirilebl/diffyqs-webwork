@@ -40,6 +40,8 @@ $ou->qa("Is the estimated solution an over or under estimate for " .
 $ou->extra("over");
 $ou->makeLast("under");
 
+$ouest = "under";
+
 # generate the euler solutions
 @yEul = ( $y0 );
 @yEulr = ( $y0 );
@@ -135,8 +137,6 @@ for ( my $i=1; $i<6; $i++ ) {
     add_functions($gr2, "$yEul[$i-1] + ($m)*(x - $xl) " .
 		  "for x in [$xl,$xr] using color:red and weight:2");
 }
-
-$ouest = ( $k > 0 ) ? "under" : "over";
 
 ######################################################
 
