@@ -41,7 +41,7 @@ $p = $a;
 
 BEGIN_PGML
 A [$mass] kg mass is attached to the end of a spring with
-spring constant [$k$] N/m.  There is a damper which is tuned 
+spring constant [$k] N/m.  There is a damper which is tuned 
 so that the damping is exactly critical.  The mass is pulled [$initx] meters from rest
 position and let go (initial velocity is zero).
 
