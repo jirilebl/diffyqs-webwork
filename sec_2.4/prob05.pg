@@ -12,7 +12,7 @@ loadMacros(
   "PGchoicemacros.pl",
   "PGcourse.pl"
 );
- 
+
 #######################################################
 
 TEXT(beginproblem());
@@ -30,7 +30,6 @@ $c = random( $c0 - 5, $c0-1);
 ##########################################################
 
 BEGIN_TEXT
-
 A spring with a $m-kg mass and a damping constant $c can be held stretched
 $x0 meters beyond its natural length by a force of $F0 newtons.  Suppose
 the spring is stretched \{2*$x0\} meters beyond its natural length and
@@ -67,7 +66,7 @@ $PAR
 \{ AnswerFormatHelp("numbers") \}
 END_TEXT
 
-###########################################################3
+#######################################################
 
 $r_real = -$c/(2*$m);
 $r_imag = sqrt(-$c*$c + 4*$k*$m)/(2*$m);
@@ -87,7 +86,4 @@ ANS(Compute("$c2")->cmp());
 
 # ANS(fun_cmp("exp($r_real*t) * ($c1*cos($r_imag * t) +  $c2*sin($r_imag*t))", vars=>['t']));
 ENDDOCUMENT();
-
-
-
 

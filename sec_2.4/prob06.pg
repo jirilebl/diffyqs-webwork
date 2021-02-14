@@ -1,5 +1,5 @@
 ## Institution(Dartmouth)
-## KEYWORDS('Hooke's Law' 'position' 'overdampening')
+## KEYWORDS('Hooke's Law', 'position', 'overdampening')
 
 #######################################################
 
@@ -14,7 +14,7 @@ loadMacros(
 );
 
 #######################################################
- 
+
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
@@ -27,10 +27,9 @@ $F0 = $k * $x0;
 $c0 = int(sqrt(4*$k*$m))+2;
 $c = random( $c0, $c0 + 5);
 
+##########################################################
 
-#######################################################
-
-BEGIN_TEXT 
+BEGIN_TEXT
 A spring with a $m-kg mass and a damping constant $c can be held stretched
 $x0 meters beyond its natural length by a force of $F0 newtons.  Suppose
 the spring is stretched \{2*$x0\} meters beyond its natural length and

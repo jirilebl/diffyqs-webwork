@@ -46,8 +46,8 @@ BEGIN_TEXT
 Suppose a spring with spring constant \( $k \ \mathrm{N/m} \)
 is horizontal and has one end attached to a wall and the 
 other end attached to a \( $m \ \mathrm{kg} \) mass.  Suppose 
-that the friction of the mass with the floor (i.e., the damping
-constant) is 
+that the friction of the mass with the floor
+(i.e., the damping constant) is 
 \( $c \ \mathrm{N \cdot s / m} \).  
 
 $PAR
@@ -102,7 +102,7 @@ Find the general solution to your
 differential equation from the previous part.  
 Use \( c_1 \) and \( c_2 \) to denote arbitrary
 constants.  Use \( t \) for independent variable 
-to represent the time elapsed in seconds. Enter
+to represent the time elapsed in seconds.  Enter
 \( c_1 \) as ${LQ}c1${RQ} and
 \( c_2 \) as ${LQ}c2${RQ}.  Your answer should
 be an equation of the form \( x = ? \).
@@ -125,7 +125,7 @@ $SPACE \{ AnswerFormatHelp("numbers") \}
 END_TEXT
 Context()->normalStrings;
 
-ANS( $answer->cmp( # tolerance=>0.1, tolType=>'absolute', 
+ANS( $answer->cmp( # tolerance=>0.1, tolType=>'absolute',
   checker => sub {
 
     my ( $correct, $student, $answerHash ) = @_;

@@ -50,8 +50,8 @@ BEGIN_TEXT
 Suppose a spring with spring constant \( $k \ \mathrm{N/m} \)
 is horizontal and has one end attached to a wall and the 
 other end attached to a \( $m \ \mathrm{kg} \) mass.  Suppose 
-that the friction of the mass with the floor (i.e., the 
-damping constant) is 
+that the friction of the mass with the floor
+(i.e., the damping constant) is 
 \( $c \ \mathrm{N \cdot s / m} \).  
 
 $PAR
@@ -104,9 +104,10 @@ Use \( c_1 \) and \( c_2 \) to denote arbitrary
 constants.  Use \( t \) for independent variable 
 to represent the time elapsed in seconds.  Enter
 \( c_1 \) as ${LQ}c1${RQ} and
-\( c_2 \) as ${LQ}c2${RQ}.
+\( c_2 \) as ${LQ}c2${RQ}.  Your answer should
+be an equation of the form \( x = ? \).
 $PAR
-\{ ans_rule(40) \}
+\{ ans_rule(60) \}
 \{ AnswerFormatHelp("equations") \}
 
 $PAR

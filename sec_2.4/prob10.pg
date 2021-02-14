@@ -1,0 +1,76 @@
+## Mass spring application
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## KEYWORDS('ODE', 'second order', 'differential', 'equation', 'mass spring', 'application')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
+  "PGcourse.pl"
+);
+
+##############################################################
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+
+#Context()->variables->are(t=>'Real');
+
+$mass = random(1.5,5,0.5);
+do { $iv = random(1.5,5,0.5); } until ($iv != $mass);
+do { $maxd = random(1.5,5,0.5); } until (($iv != $maxd) and ($mass != $maxd));
+
+##############################################################
+
+BEGIN_PGML
+A mass of [$mass] kilograms is on a spring with spring constant [:k:]
+newtons per meter with no damping.
+Suppose the system is at rest and at time [`t = 0`] the mass is kicked
+and starts traveling at [$iv] meters per second.
+How large does [:k:] have to be to so that the mass does not go further
+than [$maxd] meters from the rest position?  Put down the best lower bound for
+[:k:] that will work.
+
+[`k \geq `] [____________]{"$iv^2 $mass/($maxd^2)"}{20}
+[@ AnswerFormatHelp("numbers") @]*
+END_PGML
+
+##############################################################
+
+BEGIN_PGML_SOLUTION
+As initial position is 0, the solution
+must be
+[`x = B \sin(\omega_0 t),`] 
+where
+[`\omega_0 = \sqrt{\frac{k}{[$mass]}}.`]
+Solving we find that initial velocity is [`\omega_0 B = [$iv].`]
+So
+
+>>[``
+B = \frac{[$iv]}{\omega_0} = [$iv] \sqrt{\frac{[$mass]}{k}} .
+``]<<
+
+The [:B:] (being positive) is the amplitude.
+We must have
+
+>>[``
+[$iv] \sqrt{\frac{[$mass]}{k}} = B \leq [$maxd] .
+``]<<
+
+Therefore,
+
+>>[``
+k \geq [$iv]^2 \frac{[$mass]}{[$maxd]^2} .
+``]<<
+END_PGML_SOLUTION
+
+ENDDOCUMENT();
