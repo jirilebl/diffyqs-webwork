@@ -72,8 +72,13 @@ $T = Real("4*($x2-$x1)"); # period
 $f = Compute("1 / $T"); # frequency
 $omega = Compute("2 pi / $T"); # angular freq.
 $gamma = Compute("2 pi $x2 / $T"); # phase shift
-$y = Compute("$y2/100 cos($omega t - $gamma)");
-$y_cm = Compute("$y2 cos($omega t - $gamma)");
+#$y = Compute("$y2/100 cos($omega t - $gamma)");
+#$y_cm = Compute("$y2 cos($omega t - $gamma)");
+#apparently plugging in the $omega and $gamma here will introduce
+#a roundoff error and in some rare cases,
+#correct answers might be marked as wrong
+$y = Compute("$y2/100 cos((2 pi / $T) t - (2 pi $x2 / $T))");
+$y_cm = Compute("$y2 cos((2 pi / $T) t - (2 pi $x2 / $T))");
 $y0 = $y->eval(t=>0);
 $yp0 = $y->D('t')->eval(t=>0);
 
