@@ -1,8 +1,20 @@
-# Separable equation
+##DESCRIPTION
+## Separable equation initial value problem, easy integration
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Separable)
 ## Institution(W.H.Freeman)
 ## Author(Christopher Sira)
-## KEYWORDS('calculus', 'differential equations', 'separation of variables')
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'separable', 'initial value problem')
 
 ############################################################
 
@@ -35,9 +47,9 @@ BEGIN_TEXT
 Solve
 \[ \frac{dy}{dx} = y\tan{x}, \] 
 using separation of variables 
-given the inital condition \( y(0) = $c  \).
+given the inital condition \( y(0) = $c . \)
 Assume the function is defined
-for \(-\frac{\pi}{2}<x<\frac{\pi}{2}\).
+for \(-\frac{\pi}{2}<x<\frac{\pi}{2} .\)
 
 $PAR
 \( y = {} \) \{ans_rule()\} 
@@ -53,7 +65,7 @@ ANS($fp->cmp);
 
 Context()->texStrings;
 BEGIN_SOLUTION
-Separate the equation into one side containing \(y\) and \(dy\), and one containing \(x\) and \(dx\).  Then integrate both sides separately.
+Separate the equation into one side containing \(y\) and \(dy,\) and one containing \(x\) and \(dx.\)  Then integrate both sides separately.
 $PAR
 \( \frac{dy}{dx} = y\tan{x} \)
 $PAR
@@ -67,10 +79,14 @@ $PAR
 $PAR
 The initial condition \( y(0) = $c  \) yields
 $PAR
-\( $c = A \sec(0) = A  \), thus
+\( $c = A \sec(0) = A , \) thus
 $PAR
-\( y = $fp\).
+\( y = $fp .\)
 END_SOLUTION
 Context()->normalStrings;
+
+############################################################
+
+COMMENT("Separable equation initial value problem, easy integration");
 
 ENDDOCUMENT();

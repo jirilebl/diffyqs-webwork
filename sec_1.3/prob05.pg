@@ -1,6 +1,18 @@
-# Separable Differential Equation
+##DESCRIPTION
+## Separable equation initial value problem
+##ENDDESCRIPTION
 
-## KEYWORDS('differential equation', 'separable')
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Separable)
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'separable', 'initial value problem')
 
 ############################################################
 
@@ -36,12 +48,14 @@ Solve the separable differential equation for [`u`]
 \frac{du}{dt} = e^{[$b] u + [$a] t}.
 ``]<<
 
-Use the following initial condition: [: u(0) = - [$d] :].
+Use the following initial condition: [: u(0) = - [$d] . :]
 
 [`u ={}`] [__________]{"-ln(e^($d*$b) + ($b/$a) - ($b/$a) e^($a t))/$b"}{40}
 [@ AnswerFormatHelp("formulas") @]*
 END_PGML
 
 ############################################################
+
+COMMENT("Separable equation initial value problem");
 
 ENDDOCUMENT();

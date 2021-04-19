@@ -1,12 +1,24 @@
-# Solving separable equation
+##DESCRIPTION
+## Separable equation initial value problem, guided solution
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Separable)
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
-## KEYWORDS('differential', 'equation', 'separable', 'solution', 'initial', 'value')
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'separable', 'initial value problem')
 
 ############################################################################
 
-DOCUMENT();        # This should be the first executable line in the problem.
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
@@ -78,7 +90,7 @@ $BR
 \(y = \) \{$gensolnneg->ans_rule(40)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-$BITALIC $BBOLD Note: $EBOLD You must simplify all arbitrary constants down to one constant \(k\). $EITALIC
+$BITALIC $BBOLD Note: $EBOLD You must simplify all arbitrary constants down to one constant \(k.\) $EITALIC
 $PAR
 Find the particular solution satisfying the initial condition 
 \[ y($x0) = $y0. \]
@@ -106,5 +118,7 @@ ANS($gensolnneg->cmp()->withPostFilter(AnswerHints(
 ANS($soln->cmp());
 
 ############################################################################
+
+COMMENT("Separable equation initial value problem, guided solution");
 
 ENDDOCUMENT();

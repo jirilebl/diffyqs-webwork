@@ -1,8 +1,20 @@
-# Separable equation
+##DESCRIPTION
+## Separable equation initial value problem, trigonometric substitution for integration
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Separable)
 ## Institution(W.H.Freeman)
 ## Author(Christopher Sira)
-## KEYWORDS('calculus', 'differential equations', 'separation of variables')
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'separable', 'initial value problem')
 
 #########################################################
 
@@ -36,7 +48,7 @@ $fp = Formula("$b * tan( ($b / $a) * arctan( t / $a ) + $C )")->reduce();
 
 Context()->texStrings;
 BEGIN_TEXT
-Solve \( ( t^2 + $a_sqr )\,\frac{dx}{dt} = ( x^2 + $b_sqr ) \), using separation of variables, given the inital condition \( x(0) = $b  \).
+Solve \( ( t^2 + $a_sqr )\,\frac{dx}{dt} = ( x^2 + $b_sqr ) , \) using separation of variables, given the inital condition \( x(0) = $b . \)
 $PAR
 \( x = {} \) \{ans_rule()\}
 \{ AnswerFormatHelp("formulas") \}
@@ -51,7 +63,7 @@ ANS($fp->cmp);
 
 Context()->texStrings;
 BEGIN_SOLUTION
-Separate the equation into one side containing \(x\) and \(dx\), and one containing \(t\) and \(dt\).  Then integrate both sides separately.
+Separate the equation into one side containing \(x\) and \(dx,\) and one containing \(t\) and \(dt.\)  Then integrate both sides separately.
 $PAR
 \( ( t^2 + $a_sqr )\,\frac{dx}{dt} = ( x^2 + $b_sqr ) \)
 $PAR
@@ -61,19 +73,23 @@ $PAR
 $PAR
 Integrate using trigonometric substitution.
 $PAR
-\( \frac{1}{$b}\arctan{(\frac{x}{$b})} = \frac{1}{$a}\arctan{(\frac{t}{$a})} + C \). The initial condition \( x(0) = $b  \) yields
+\( \frac{1}{$b}\arctan{(\frac{x}{$b})} = \frac{1}{$a}\arctan{(\frac{t}{$a})} + C . \) The initial condition \( x(0) = $b  \) yields
 $PAR
-\( \frac{1}{$b}\arctan(1) = \frac{1}{$a}\arctan{(0)} + C \). So, 
-\( \frac{1}{$b}\frac{\pi}{4} = C \). Hence,
+\( \frac{1}{$b}\arctan(1) = \frac{1}{$a}\arctan{(0)} + C . \) So, 
+\( \frac{1}{$b}\frac{\pi}{4} = C .\) Hence,
 $PAR
 \( \frac{1}{$b}\arctan{(\frac{x}{$b})} = \frac{1}{$a}\arctan{(\frac{t}{$a})} + \frac{\pi}{$b4} \)
 $PAR
 \(\arctan{(\frac{x}{$b})} = \frac{$b}{$a}\arctan{(\frac{t}{$a})} + \frac{\pi}{4} \)
 $PAR
-\(\frac{x}{$b} = \tan\left(\frac{$b}{$a}\arctan{(\frac{t}{$a})} + \frac{\pi}{4} \right)\).  Thus, 
+\(\frac{x}{$b} = \tan\left(\frac{$b}{$a}\arctan{(\frac{t}{$a})} + \frac{\pi}{4} \right) .\)  Thus, 
 $PAR
-\( x = $b \tan\left(\frac{$b}{$a}\arctan{(\frac{t}{$a})} + \frac{\pi}{4} \right)\).
+\( x = $b \tan\left(\frac{$b}{$a}\arctan{(\frac{t}{$a})} + \frac{\pi}{4} \right) .\)
 END_SOLUTION
 Context()->normalStrings;
+
+#########################################################
+
+COMMENT("Separable equation initial value problem, trigonometric substitution for integration");
 
 ENDDOCUMENT();
