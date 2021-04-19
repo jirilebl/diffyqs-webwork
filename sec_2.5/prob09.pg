@@ -32,7 +32,7 @@ $rhs = Compute("$a*x^3+$b*x^2+($c+2*$a)*x+$b")->reduce;
 ##############################################################
 
 BEGIN_PGML
-Undetermined coefficients can be sometimes used to guess a solution
+Undetermined coefficients can sometimes be used to guess a solution
 to other equations than constant coefficients.
 Find a polynomial [:y(x):] that solves
 
@@ -45,22 +45,22 @@ END_PGML
 ##############################################################
 
 BEGIN_PGML_SOLUTION
-We note that if we plug in a polynomial of degree 2 to the left hand side
-we get a polynomial of degree 3 on the right hand side because we multiplied [:y:] by [:x:].
-So we try a polynomial of degree 2 (if you try a higher degree polynomial 
-nothing terrible will happen).
+Note that if we plug in a polynomial of degree 2 to the left hand side,
+we get a polynomial of degree 3 on the right hand side because we multiplied [`y`] by [`x.`]
+So we try a polynomial of degree 2 (if you try a higher degree polynomial,
+nothing terrible will happen and you will still get the same answer).
 
 So try [`y=a x^2 + b x + c .`]  We find
 
 >>[``y'+ x y = a x^3+ b x^2+(c+2 a)x+b .``]<<
 
-Thus [`a=[$a]`], [`b=[$b]`], and [`c+2a = [$c+2*$a]`], so [`c=[$c]`].  Thus we 
+Thus [`a=[$a],`] [`b=[$b],`] and [`c+2a = [$c+2*$a],`] so [`c=[$c].`]  Thus we 
 have the polynomial solution
 
 >>[``y=[$ans] .``]<<
 
 _*Note:* By the way, not every right hand side will allow a polynomial solution.
-For example, [`y'+xy=1`] (or even just [`y'+xy=0`]) does not have a polynomial solution.
+For example, [`y'+xy=1`] (or even [`y'+xy=0`]) does not have a polynomial solution.
 However, these can be solved by so-called power series methods, which are
 just generalized undetermined coefficients._
 END_PGML_SOLUTION
