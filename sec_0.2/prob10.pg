@@ -89,7 +89,7 @@ $PAR
 $BITALIC Remark: $EITALIC
 Perhaps it is worth noting that the above computation only works
 for \(x > 0 .\)  When \(r\) is not an integer it may not make sense to
-talk about powers \(x^r.\)  In our specific example, both values of \(r\)
+talk about powers \(x^r\) if \(x < 0.\)  In our specific example, both values of \(r\)
 are integers.  This means that the solution works for all \(x.\)  If one of
 the values of \(r\) was not an integer, such as \(\frac{1}{2}\) or \(\pi\)
 then \(x^r\) may not be defined for \(x \leq 0 .\)
