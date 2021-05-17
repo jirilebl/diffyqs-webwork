@@ -26,6 +26,7 @@ loadMacros(
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
   "parserAssignment.pl",
+  "parserOneOf.pl",
   "PGcourse.pl"
 );
 
@@ -52,11 +53,12 @@ $f   = Formula("C1 cosh(k x) + C2 sinh(k x)");
 $fx  = $f->D('x');
 $fxx = $f->D('x','x');
 $fk = $f->substitute(k=>$k);
+$fk_alt = $f->substitute(k=>-1*$k);
 
 $answer[0] = $fx;
 $answer[1] = $fxx;
 $answer[2] = Formula("k^2 y");
-$answer[3] = Formula("y=$fk");
+$answer[3] = OneOf(Formula("y=$fk"),Formula("y=$fk_alt"));
 
 #############################
 #  Main text
