@@ -48,9 +48,9 @@ $answer = List(Real("-$a"),Real("-$b"));
 
 Context()->texStrings;
 BEGIN_TEXT
-Consider \(x^{2}y''+$c1 xy'+$c0 y=0 \).
+Consider \(x^{2}y''+$c1 xy'+$c0 y=0 . \)
 $PAR
-Find all values of \( r \) such that \( y = x^{r} \) satisfies the differential equation for \(x>0\).
+Find all values of \( r \) such that \( y = x^{r} \) satisfies the differential equation for \(x>0.\)
 $PAR
 \( r = {} \) 
 \{ ans_rule(20); \}
@@ -87,12 +87,15 @@ The only way this will be zero is if \(r(r-1) + $c1 r + $c0 = 0,\) or in other w
 \( r = -$a \) or \(r = -$b .\)
 $PAR
 $BITALIC Remark: $EITALIC
-Perhaps it is worth noting that the above computation only works
+Perhaps it is worth noting that the above computation only works well
 for \(x > 0 .\)  When \(r\) is not an integer it may not make sense to
-talk about powers \(x^r\) if \(x < 0.\)  In our specific example, both values of \(r\)
-are integers.  This means that the solution works for all \(x.\)  If one of
-the values of \(r\) was not an integer, such as \(\frac{1}{2}\) or \(\pi\)
-then \(x^r\) may not be defined for \(x \leq 0 .\)
+talk about powers \(x^r\) if \(x < 0.\)  If \(r\) is negative,
+then \(x^r\) is not defined at \(x=0.\)
+In our specific example, both values of \(r\)
+are negative integers.  This means that the solution works for all \(x \not= 0.\)  If one of
+the values of \(r\) was not an integer, such as \(\frac{1}{2}\) or \(\pi,\)
+then \(x^r\) may not be defined for \(x < 0 .\)
+On the other hand if \(r\) was a positive integer, the solution would be defined for all \(x.\)
 END_SOLUTION
 Context()->normalStrings;
 
