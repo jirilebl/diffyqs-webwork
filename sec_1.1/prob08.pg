@@ -42,6 +42,10 @@ $x0 = non_zero_random(-6,6,1);
 $x0abs = $x0;
 $x0sign = 1;
 $anssign = 1;
+$oddroot = 1;
+if ((-1)**($k-1) == 1) {
+  $oddroot = 0;
+}
 $anssignstr = "";
 if ($x0 < 0) {
   $x0sign = -1;
@@ -53,14 +57,44 @@ if ($x0 < 0) {
 }
 
 # Make sure the range is something sane
-$tmin =  (0.01 - ($x0**($k-1))) / ($a*(1-$k));
-$tmax =  (2 - ($x0**($k-1))) / ($a*(1-$k));
+$tmin1 =  (0.01 - ($x0**($k-1))) / ($a*(1-$k));
+$tmax1 =  (2 - ($x0**($k-1))) / ($a*(1-$k));
 
-if ($tmax > $tmin) {
-  Context()->variables->are(t=>['Real',limits=>[$tmin,$tmax]]);
-} else {
-  Context()->variables->are(t=>['Real',limits=>[$tmax,$tmin]]);
+# Alternate range for odd roots since students may have done something
+# like -(-foo)^(1/3)
+$tmin2 =  (-0.01 - ($x0**($k-1))) / ($a*(1-$k));
+$tmax2 =  (-2 - ($x0**($k-1))) / ($a*(1-$k));
+
+if ($tmin1 > $tmax1) {
+  $tmp = $tmax1;
+  $tmax1 = $tmin1;
+  $tmin1 = $tmp;
 }
+
+if ($tmin2 > $tmax2) {
+  $tmp = $tmax2;
+  $tmax2 = $tmin2;
+  $tmin2 = $tmp;
+}
+
+Context()->variables->are(t=>['Real']);
+Context()->variables->set(t=>{limits=>[$tmin2,$tmax2]});
+$WLcontext = Context()->copy;
+Context()->variables->set(t=>{limits=>[$tmin1,$tmax1]});
+$DEFcontext = Context();
+
+$a1 = "($anssign)*((-$k+1)*$a*t+($x0)^($k-1))^(-1/($k-1))";
+$a2 = "-($anssign)*(-((-$k+1)*$a*t+($x0)^($k-1)))^(-1/($k-1))";
+$ans = Compute("$a1");
+$cmp = $ans->cmp( checker=>sub {
+  my ( $correct, $student, $ansHash ) = @_;
+  if ($oddroot) {
+    if (Formula($WLcontext,"$a2") == Formula($WLcontext,"$student")) {
+      return 1;
+    }
+  }
+  return Formula($DEFcontext,"$a1") == Formula($DEFcontext,"$student");
+} );
 
 ########################################################
 
@@ -73,7 +107,7 @@ and find the particular solution satisfying the initial condition
 
 >>[`` x(0) = \frac{[$x0sign]}{[$x0abs]}. ``]<<
 
-[` x(t) = {} `] [_________]{"($anssign)*((-$k+1)*$a*t+($x0)^($k-1))^(-1/($k-1))"}{40}
+[` x(t) = {} `] [_________]{$cmp}{40}
 [@ AnswerFormatHelp("formulas") @]*
 
 _*Hint:* When solving for [:x:], if you need to take a root, make sure you use the correct sign._
