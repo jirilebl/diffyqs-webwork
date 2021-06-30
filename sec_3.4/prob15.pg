@@ -43,16 +43,21 @@ $evec11 = Complex("$a1+$b1 i");  $evec21 = Complex("$a1-$b1 i");
 
 Context("Complex-Matrix");
 
-my $A = Matrix([$evec10, $evec20], [$evec11, $evec21]) *
+# dealing with det separately improves numerical accuracy
+# this is not the determinant of A, this is the determinant
+# of the matrices with the eigenvalues divided by i since we want it to
+# be real for the answer checkers
+# (the thing in the parentheses is always purely imaginary)
+$det = (-i)*($evec10*$evec21 - $evec20*$evec11);
+
+$A = (-i)*Matrix([$evec10, $evec20], [$evec11, $evec21]) *
         Matrix([$lambda1, 0], [0, $lambda2]) *
         Matrix([$evec21, -$evec20], [-$evec11, $evec10]);
 
-# dealing with det separately improves numerical accuracy
-my $det = $evec10*$evec21 - $evec20*$evec11;
+# the matrix A is really $A/$det, this will turn out to be real
 
-my $A11 = Re($A->element(1,1)); my $A12 = Re($A->element(1,2));
-my $A21 = Re($A->element(2,1)); my $A22 = Re($A->element(2,2));
-
+$A11 = $A->element(1,1); $A12 = $A->element(1,2);
+$A21 = $A->element(2,1); $A22 = $A->element(2,2);
 
 Context("Numeric");
 Context()->variables->are(
@@ -129,22 +134,19 @@ $multiansB = MultiAnswer($sol10, $sol20, $sol11, $sol21)->with(
   singleResult => 1,
   allowBlankAnswers => 0,
   checkTypes => 1,
-  format =>  "<table border='0'><tr>
-    <td> \( \biggl\lbrack \)</td>
-    <td><table border='0' cellspacing='10'>
-           <tr><td> %s $SPACE </td><td> $SPACE %s</td></tr>
-           <tr><td> %s $SPACE </td><td> $SPACE %s</td></tr></table></td>
-    <td> \(\biggr\rbrack\ \biggl\lbrack\)</td>
-    <td><table border='0' cellspacing='10'><tr><td> \(c_1\) </td></tr>
-                                           <tr><td> \(c_2\) </td></table></td>
-    <td> \(\biggr\rbrack\) </td>
-   </tr></table>",
-  tex_format => "\left\lbrack\begin{array}{rr} 
-                      %s & %s \\ %s & %s 
-                 \end{array}\right\rbrack \  
-                 \left\lbrack\begin{array}{r} 
+  format =>  "\(\displaystyle
+                 \begin{bmatrix} 
+                      \text{%s} & \text{%s} \\ \text{%s} & \text{%s} 
+                 \end{bmatrix}
+                 \begin{bmatrix}
                       c_1 \\ c_2 
-                 \end{array}\right\rbrack",
+                 \end{bmatrix}\)",
+  tex_format => "\begin{bmatrix} 
+                      %s & %s \\ %s & %s 
+                 \end{bmatrix}
+                 \begin{bmatrix}
+                      c_1 \\ c_2 
+                 \end{bmatrix}",
 
   checker => sub {
       my ( $correct, $student, $answerHash ) = @_;
@@ -159,7 +161,8 @@ $multiansB = MultiAnswer($sol10, $sol20, $sol11, $sol21)->with(
           $score[0] = 1;
         } else {
           Value::Error("First fundamental solution is incorrect!");
-        } if ((($s[1] != 0) || ($s[3] != 0)) && 
+        }
+        if ((($s[1] != 0) || ($s[3] != 0)) && 
             (Formula("$A11*$s[1] + $A12*$s[3]") == Formula("$det*$s[1]")->D('t')) &&
             (Formula("$A21*$s[1] + $A22*$s[3]") == Formula("$det*$s[3]")->D('t')) &&
             ($s[1]*$s[2] != $s[0]*$s[3]) ) {
