@@ -1,10 +1,20 @@
-# Systems of ODEs: introduction to systems of ODEs
-# Distinct real eigenvalues
+##DESCRIPTION
+## Turning a system into a second order constant coefficient equation and solving that
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Reduction to first order systems)
 ## Institution(Fort Lewis College, Oklahoma State University)
 ## Author(Paul Pearson, Jiri Lebl)
-## KEYWORDS('differential equations','systems of ODEs')
-
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('3.1')
+## Problem1('')
+## Level(3)
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation')
 
 ##############################
 #  Initialization
@@ -116,7 +126,10 @@ y = \frac{$y0a}{$apb} e^{-$at} + \frac{$y0b}{$apb} e^{$b t} .
 END_SOLUTION
 Context()->normalStrings;
 
-COMMENT("Turning a system into a second order constant coefficient equation and solving that."); 
+######################
+
+COMMENT("Turning a system into a second order constant coefficient equation and solving that");
+
+######################
 
 ENDDOCUMENT();
-

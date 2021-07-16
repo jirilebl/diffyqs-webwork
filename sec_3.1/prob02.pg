@@ -1,5 +1,5 @@
 ##DESCRIPTION
-##  Convert an equation into first order system
+## Convert an equation into first order system
 ##ENDDESCRIPTION
 
 ## DBsubject(Differential equations)
@@ -7,12 +7,13 @@
 ## DBsection(Reduction to first order systems)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
-## Level(3)
 ## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
 ## AuthorText1('Jiri Lebl')
 ## EditionText1('6')
 ## Section1('3.1')
 ## Problem1('')
+## Level(3)
+## MO(1)
 ## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation')
 
 ########################################################################
@@ -96,5 +97,11 @@ For the second equation, substitute \( x'' = y' \) and \( x' = y\) into
 \( y' = \sin($a t) y + $b t x \).
 END_SOLUTION
 Context()->normalStrings;
+
+######################
+
+COMMENT("Convert an equation into first order system");
+
+######################
 
 ENDDOCUMENT();

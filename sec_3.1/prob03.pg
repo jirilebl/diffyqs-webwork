@@ -1,10 +1,20 @@
-# Systems of ODEs: introduction to systems of ODEs
-# Nonhomogeneous systems
+##DESCRIPTION
+## Solve a simple nonhomogeneous system, can be solved one equation at a time
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Nonhomogeneous systems)
 ## Institution(Fort Lewis College, Oklahoma State University)
 ## Author(Paul Pearson, Jiri Lebl)
-## KEYWORDS('differential equations','systems of ODEs')
-
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('3.1')
+## Problem1('')
+## Level(3)
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation')
 
 ##############################
 #  Initialization
@@ -99,7 +109,10 @@ x = $x
 END_SOLUTION
 Context()->normalStrings;
 
-COMMENT("The equation for y is independent: solve for y and then solve for x");
+######################
+
+COMMENT("Solve a simple nonhomogeneous system, can be solved one equation at a time");
+
+######################
 
 ENDDOCUMENT();
-
