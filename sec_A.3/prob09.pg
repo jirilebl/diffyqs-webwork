@@ -1,5 +1,6 @@
 ##DESCRIPTION
-## lcao tagged and PAID on 3-22-2004
+## Invertibility of a matrix with a parameter
+##ENDDESCRIPTION
 
 ## DBsubject(Linear algebra)
 ## DBchapter(Matrices)
@@ -7,20 +8,16 @@
 ## Date(July 2013)
 ## Institution(Rochester and Hope College)
 ## Author(Paul Pearson)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.3')
+## Problem1('')
 ## Level(3)
 ## MO(1)
-## TitleText1('Elementary Linear Algebra')
-## AuthorText1('Larson, Edwards, Falvo')
-## EditionText1('5')
-## Section1('2.3')
-## Problem1('5')
-## TitleText2('Linear Algebra with Applications')
-## AuthorText2('Jeffrey Holt')
-## EditionText2('1')
-## Section2('3.3')
-## Problem2('')
-## KEYWORDS('matrix', 'invertible')
-##ENDDESCRIPTION
+## KEYWORDS('algebra', 'matrix', 'invertible')
+
+#############################################
 
 DOCUMENT() ;        
 
@@ -35,6 +32,8 @@ $showPartialCorrectAnswers = 1 ;
 
 TEXT(beginproblem());
 
+#############################################
+
 Context('Matrix')->variables->are(k=>'Real');
 
 $a = non_zero_random(2,8,2);
@@ -46,6 +45,8 @@ $A = Matrix([[$a, $b], [$c, 'k']]);
 
 $answer = Compute("$b*$c/$a");
 
+#############################################
+
 Context()->texStrings;
 BEGIN_TEXT
 The matrix \( $A \) is invertible if and only if \(k\ne\) \{ ans_rule(5)\}
@@ -54,5 +55,9 @@ END_TEXT
 Context()->normalStrings;
 
 ANS( $answer->cmp() );
+
+#############################################
+
+COMMENT('Invertibility of a matrix with a parameter');
 
 ENDDOCUMENT();

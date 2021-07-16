@@ -1,8 +1,20 @@
-# Find reduced row echelon form, solve systems of linear equations
+##DESCRIPTION
+## Find reduced row echelon form, solve systems of linear equations
+##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Matrices)
+## DBsection(Echelon form)
 ## Institution(Hope College)
 ## Author(Paul Pearson)
-## KEYWORDS('Algebra' 'Linear Equations' 'Matrix' 'Matrices')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.3')
+## Problem1('')
+## Level(2)
+## MO(1)
+## KEYWORDS('algebra', 'linear equations', 'system of equations', 'matrix', 'echelon form')
 
 ###########################################
 
@@ -78,7 +90,7 @@ $expr[2] = Formula("$a[2][1] x1 + $a[2][2] x2")->reduce;
 
 Context()->texStrings;
 BEGIN_TEXT
-Find the reduced row echelon form of the matrix \( M \).
+Find the reduced row echelon form of the matrix \( M .\)
 Your answers must be fractions (decimals are not allowed).
 \[ M = $M. \]
 $PAR
@@ -114,6 +126,10 @@ ANS( $Mreduced->cmp() );
 ANS($x[1]->cmp);
 ANS($x[2]->cmp);
 
+###########################################
+
 COMMENT('Answer is always unique.  The vector x always has some entries that are rational but not integral.');
+
+###########################################
 
 ENDDOCUMENT();

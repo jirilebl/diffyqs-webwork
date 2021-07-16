@@ -1,8 +1,20 @@
-# reduced row echelon form
+##DESCRIPTION
+## Find the reduced row echelon form
+##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Matrices)
+## DBsection(Echelon form)
 ## Institution(Rochester and Hope College)
 ## Author(Paul Pearson)
-## KEYWORDS('linear algebra','matrix','echelon')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.3')
+## Problem1('')
+## Level(2)
+## MO(1)
+## KEYWORDS('algebra', 'matrix', 'echelon form')
 
 ###########################################
 
@@ -14,7 +26,6 @@ loadMacros(
   "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
-
 
 ###########################################
 
@@ -67,5 +78,11 @@ Context()->normalStrings;
 ###########################################
 
 ANS( $answer->cmp() );
+
+###########################################
+
+COMMENT('Find the reduced row echelon form');
+
+###########################################
 
 ENDDOCUMENT();

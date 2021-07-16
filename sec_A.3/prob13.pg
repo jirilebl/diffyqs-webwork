@@ -1,10 +1,20 @@
 ##DESCRIPTION
-## Linearly independent columns
+## Find linearly independent columns
 ##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Matrices)
+## DBsection(Echelon form)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
-## KEYWORDS('linear algebra','matrix','echelon')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.3')
+## Problem1('')
+## Level(3)
+## MO(1)
+## KEYWORDS('algebra', 'matrix', 'echelon form')
 
 ###########################################
 
@@ -103,5 +113,9 @@ Context()->normalStrings;
 
 ANS( $ans1->cmp() );
 ANS( $ans2->cmp() );
+
+###########################################
+
+COMMENT('Find linearly independent columns');
 
 ENDDOCUMENT();

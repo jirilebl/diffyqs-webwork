@@ -1,8 +1,20 @@
-# System of 2 equations without matrix notation for  warmup
+##DESCRIPTION
+## System of 2 linear equations, no matrix notation, always unique solution
+##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Systems of linear equations)
+## DBsection(Systems with 2 variables)
 ## Institution(Hope College)
 ## Author(Paul Pearson)
-## KEYWORDS('algebra', 'linear equations')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.3')
+## Problem1('')
+## Level(3)
+## MO(1)
+## KEYWORDS('algebra', 'linear equations', 'system of equations')
 
 ########################################################3
 
@@ -73,7 +85,10 @@ Context()->normalStrings;
 ANS($x->cmp);
 ANS($y->cmp);
 
-COMMENT('Always unique solution.');
+########################################################
+
+COMMENT('System of 2 linear equations, no matrix notation, always unique solution');
+
+########################################################
 
 ENDDOCUMENT();
-

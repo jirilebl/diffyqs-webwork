@@ -1,20 +1,26 @@
 ##DESCRIPTION
-##  Matrix Operations
+## Compute the inverse of a matrix
 ##ENDDESCRIPTION
-
  
-## Author1('David Covert')
-## Author2('Jason Aubrey')
 ## DBsubject(Linear algebra)
 ## DBchapter(Matrices)
 ## DBsection(Inverses)
 ## Date(Spring 2012)
+## Author1(David Covert)
+## Author2(Jason Aubrey)
 ## Institution(University of Missouri)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.3')
+## Problem1('')
 ## Level(2)
-## KEYWORDS('linear algebra', 'matrix inverse')
+## MO(1)
+## KEYWORDS('algebra', 'matrix', 'matrix inverse')
 
+############################################
 
-DOCUMENT();        # This should be the first executable line in the problem.
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
@@ -26,6 +32,8 @@ loadMacros(
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
+
+############################################
 
 Context("Numeric");
 $a11 = non_zero_random(-3,3,1);
@@ -63,4 +71,8 @@ Context()->normalStrings;
 
 ANS($inv->cmp);
 
-ENDDOCUMENT();        
+############################################
+
+COMMENT('Compute the inverse of a matrix');
+
+ENDDOCUMENT();

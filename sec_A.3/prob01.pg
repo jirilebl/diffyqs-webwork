@@ -1,7 +1,18 @@
-# Echelon Form of a Matrix
+##DESCRIPTION
+## Checking if matrix is in echelon form
+##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Matrices)
+## DBsection(Echelon form)
 ## Institution(Rochester)
-## KEYWORDS('Matrix', 'Echelon')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.3')
+## Problem1('')
+## Level(2)
+## KEYWORDS('algebra', 'matrix', 'echelon form')
 
 ###########################################
 
@@ -81,5 +92,10 @@ ANS($popup4->cmp);
 ANS($popup5->cmp);
 ANS($popup6->cmp);
 
+###########################################
+
+COMMENT('Checking if matrix is in echelon form');
+
+###########################################
 
 ENDDOCUMENT();

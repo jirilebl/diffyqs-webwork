@@ -1,7 +1,6 @@
-## DESCRIPTION
-## Systems of Linear Equations
-## ENDDESCRIPTION
-
+##DESCRIPTION
+## System of 2 linear equations, no matrix notation, always infinitely many solutions
+##ENDDESCRIPTION
 
 ## DBsubject(Linear algebra)
 ## DBchapter(Systems of linear equations)
@@ -9,8 +8,14 @@
 ## Date(July 2013)
 ## Institution(Hope College)
 ## Author(Paul Pearson)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.3')
+## Problem1('')
 ## Level(2)
-## KEYWORDS('Algebra' 'Linear Equations' 'Matrix' 'Matrices')
+## MO(1)
+## KEYWORDS('algebra', 'linear equations', 'system of equations')
 
 DOCUMENT();
 loadMacros(
@@ -87,5 +92,5 @@ Context()->normalStrings;
 
 ANS($multians->cmp);
 
-COMMENT('Always infinitely many solutions.');
+COMMENT('System of 2 linear equations, no matrix notation, always infinitely many solutions');
 ENDDOCUMENT();
