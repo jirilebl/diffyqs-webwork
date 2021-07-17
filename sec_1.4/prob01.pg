@@ -1,8 +1,20 @@
-# Integrating factor
+##DESCRIPTION
+## Integrating factor, initial value problem, solutions are in terms of powers of x
+##ENDDESCRIPTION
 
-## Institution(The College of Idaho)
-## Author(LA Danielson)
-## KEYWORDS('calculus', 'differential equations', 'linear equation', 'first order')
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Integrating factor)
+## Institution(The College of Idaho, Oklahoma State University)
+## Author(LA Danielson, Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.4')
+## Problem1('')
+## Level(3)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'integrating factor', 'initial value problem')
 
 ####################################################
 
@@ -159,5 +171,8 @@ Context()->normalStrings;
 
 ####################################################
 
-ENDDOCUMENT();
+COMMENT("Integrating factor, initial value problem, solutions are in terms of powers of x");
 
+####################################################
+
+ENDDOCUMENT();

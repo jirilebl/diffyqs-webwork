@@ -1,10 +1,20 @@
-# First order ODEs: linear ODEs and the integrating factor
+##DESCRIPTION
+## First order linear, but work backwards from solution
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Linear)
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
-## KEYWORDS('differential equations','first order','integrating factor')
-
-
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.4')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'initial value problem')
 
 ##############################
 #  Initialization
@@ -19,7 +29,6 @@ loadMacros(
 );
 
 TEXT(beginproblem());
-
 
 #############################
 #  Setup 
@@ -37,7 +46,6 @@ $y0= $y->eval(x=>"0");
 $yp= $y->D('x');
 
 $g = $y + $yp;
-
 
 #############################
 #  Main text 
@@ -63,7 +71,6 @@ $PAR
 END_TEXT
 Context()->normalStrings;
 
-
 ##############################
 #  Answer evaluation 
 
@@ -71,5 +78,11 @@ $showPartialCorrectAnswers = 1;
 
 ANS( $y0->cmp() );
 ANS( $g->cmp() );
+
+##############################
+
+COMMENT("First order linear, but work backwards from solution");
+
+##############################
 
 ENDDOCUMENT();

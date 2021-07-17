@@ -1,7 +1,20 @@
-# An easy differential equation, linear, of first order with an exponential right hand side.
+##DESCRIPTION
+## Integrating factor, initial value problem, easy integration, different variable
+##ENDDESCRIPTION
 
-## Institution(Rochester)
-## KEYWORDS('differential equation' 'linear')
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Integrating factor)
+## Institution(Rochester, Oklahoma State University)
+## Author(Michael Gage, Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.4')
+## Problem1('')
+## Level(3)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'integrating factor', 'initial value problem')
 
 ##############################################################
 
@@ -45,5 +58,11 @@ and [`R(0) = [$d]`].
 [______]{"$b1*exp($c*t) + $f*exp($a*t)"}{50}
 [@ AnswerFormatHelp("formulas") @]*
 END_PGML
+
+##############################################################
+
+COMMENT("Integrating factor, initial value problem, easy integration, different variable");
+
+##############################################################
 
 ENDDOCUMENT();

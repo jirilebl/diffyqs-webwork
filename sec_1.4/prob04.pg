@@ -1,12 +1,25 @@
-# Integrating factor
+##DESCRIPTION
+## Integrating factor, general solution only
+##ENDDESCRIPTION
 
-## Institution(W.H.Freeman)
-## Author(Christopher Sira)
-## KEYWORDS('calculus', 'differential equations', 'linear equation', 'first order')
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Integrating factor)
+## Institution(W.H.Freeman, Oklahoma State University)
+## Author(Christopher Sira, Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.4')
+## Problem1('')
+## Level(3)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'integrating factor')
 
 ##############################################
 
 DOCUMENT();
+
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
@@ -94,6 +107,12 @@ y(x) = $solution .
 \]
 END_SOLUTION
 Context()->normalStrings;
+
+##############################################
+
+COMMENT("Integrating factor, general solution only");
+
+##############################################
 
 ENDDOCUMENT();
 

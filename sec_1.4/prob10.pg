@@ -1,6 +1,20 @@
-# First-order linear differential equation
+##DESCRIPTION
+## Integrating factor, initial value problem, easy integration
+##ENDDESCRIPTION
 
-## Institution(ASU)
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Integrating factor)
+## Institution(ASU, Oklahoma State University)
+## Author(Unknown, Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.4')
+## Problem1('')
+## Level(3)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'integrating factor', 'initial value problem')
 
 ##############################################################
 
@@ -39,5 +53,10 @@ and the condition [: y(0) = [$y0] :].
 [@ AnswerFormatHelp("formulas") @]*
 END_PGML
 
-ENDDOCUMENT();
+##############################################################
 
+COMMENT("Integrating factor, initial value problem, easy integration");
+
+##############################################################
+
+ENDDOCUMENT();

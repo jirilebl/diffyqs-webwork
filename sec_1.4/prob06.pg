@@ -1,6 +1,20 @@
-# First-order linear differential equation
+##DESCRIPTION
+## Integrating factor, initial value problem
+##ENDDESCRIPTION
 
-## Institution(ASU)
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Integrating factor)
+## Institution(ASU, Oklahoma State University)
+## Author(Unknown, Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.4')
+## Problem1('')
+## Level(3)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'integrating factor', 'initial value problem')
 
 ##############################################
 
@@ -40,6 +54,10 @@ with [: y(0) = [$m] :].
 [________]{"($m - $b )* exp(x) + $a * x * exp(x) + $b * exp($k * x)"}{70}
 [@ AnswerFormatHelp("formulas") @]*
 END_PGML
+
+##############################################
+
+COMMENT("Integrating factor, initial value problem");
 
 ##############################################
 

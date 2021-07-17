@@ -1,10 +1,20 @@
-# First order ODEs: linear ODEs and the integrating factor
-# Applications - mixing problems
+##DESCRIPTION
+## Integrating factor, initial value problem, word problem - mixing, work backwards from solution
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Applications - mixing problems)
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
-## KEYWORDS('differential equations','first order','integrating factor')
-
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.4')
+## Problem1('')
+## Level(5)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'integrating factor', 'initial value problem')
 
 ##############################
 #  Initialization
@@ -20,7 +30,6 @@ loadMacros(
 );
 
 TEXT(beginproblem());
-
 
 #############################
 #  Setup 
@@ -40,7 +49,6 @@ $cp= $c->D('t');
 $y0 = Compute("$v / $a");
 
 $c_in = Compute("(1-$v /($b*$f)  )*e^(-t/$b)/$a");
-
 
 #############################
 #  Main text 
@@ -79,7 +87,6 @@ $SPACE $SPACE
 END_TEXT
 Context()->normalStrings;
 
-
 ##############################
 #  Answer evaluation 
 
@@ -87,5 +94,11 @@ $showPartialCorrectAnswers = 1;
 
 ANS( $y0->cmp() );
 ANS( $c_in->cmp() );
+
+##############################
+
+COMMENT("Integrating factor, initial value problem, word problem - mixing, work backwards from solution");
+
+##############################
 
 ENDDOCUMENT();

@@ -1,13 +1,24 @@
-# Integrating factor
+##DESCRIPTION
+## Integrating factor, initial value problem
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Integrating factor)
 ## Institution(John Wiley & Sons)
 ## Author(Brian Burns)
-## KEYWORDS('calculus', 'differential equations', 'linear equation', 'first order')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.4')
+## Problem1('')
+## Level(3)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'integrating factor', 'initial value problem')
 
 ##############################################################
 
-
-DOCUMENT();        # This should be the first executable line in the problem.
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
@@ -20,6 +31,7 @@ TEXT(beginproblem());
 
 ###################################
 # Setup
+
 Context()->variables->add(C=>'Real');
 $a=random(4,10,2);$y=random(-8,8,1);
 $p=Formula("-2*x")->reduce;
@@ -36,8 +48,10 @@ $C=Compute("$y+$a/2");
 
 $ansD=Formula("-($a/2)+$C*$Mu")->reduce;
 $ans=Compute("$ansD");
+
 ###################################
 # Main text
+
 Context()->texStrings;
 BEGIN_TEXT
 Solve the initial value problem
@@ -55,6 +69,8 @@ Context()->normalStrings;
 ANS($ans->cmp);
 
 ###################################
+# Solution
+
 Context()->texStrings;
 BEGIN_SOLUTION
 Identify the \(p(x)\) and \(f(x)\) in \(\frac{dy}{dx} + p(x) y = f(x) \)
@@ -74,6 +90,10 @@ Using \(y(1)=$y\) we get \(C=$C\), giving
 \[y=$ansD .\]
 END_SOLUTION
 Context()->normalStrings;
+
+###################################
+
+COMMENT("Integrating factor, initial value problem");
 
 ###################################
 

@@ -1,10 +1,20 @@
-# First order ODEs: linear ODEs and the integrating factor
-# Applications - mixing problems
+##DESCRIPTION
+## Integrating factor, initial value problem, word problem - mixing
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Applications - mixing problems)
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
-## KEYWORDS('differential equations','first order','integrating factor')
-
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.4')
+## Problem1('')
+## Level(5)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'integrating factor', 'initial value problem')
 
 ##############################
 #  Initialization
@@ -20,7 +30,6 @@ loadMacros(
 
 TEXT(beginproblem());
 
-
 #############################
 #  Setup 
 
@@ -34,7 +43,6 @@ Context()->variables->are(
 $f = random(2,6,1);   # flowrate (in g/L)
 $v = random(10,40,5); # volume (in L)
 
-
 $answera = Compute("c * $f - (x / $v) * ($f)");
 
 $answerb = Compute("c * $v (1 - e^(-$f t / $v) )");
@@ -43,7 +51,6 @@ $t1 = random(10,40,5); # time t_1 in the future
 $x1 = random(20,25,5); # amount (in g) at time t_1 in the future
 
 $answerc = Compute("$x1 / ($v * ( 1 - e^(-$f * $t1 / $v) ) )"); # concentration of incoming brine (in g/L)
-
 
 #############################
 #  Main text 
@@ -81,7 +88,6 @@ grams
 $SPACE $SPACE
 \{ AnswerFormatHelp("formulas") \}
 
-
 $PAR
 In $t1 minutes there are $x1 grams 
 of salt in the fish tank.  What is the concentration
@@ -95,7 +101,6 @@ $SPACE $SPACE
 END_TEXT
 Context()->normalStrings;
 
-
 ##############################
 #  Answer evaluation 
 
@@ -104,5 +109,11 @@ $showPartialCorrectAnswers = 1;
 ANS( $answera->cmp() );
 ANS( $answerb->cmp() );
 ANS( $answerc->cmp() );
+
+##############################
+
+COMMENT("Integrating factor, initial value problem, word problem - mixing");
+
+##############################
 
 ENDDOCUMENT();
