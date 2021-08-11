@@ -1,8 +1,20 @@
-# Substitution, homogeneous
+##DESCRIPTION
+## Substitution, homogeneous, IVP
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Substitutions)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
-## KEYWORDS('differential', 'equation', 'homogeneous', 'substitution')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.5')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'substitution', 'homogeneous', 'initial value problem')
 
 #############################################################
 
@@ -38,6 +50,10 @@ Solve the initial value problem
 
 _*Hint:* The equation is homogeneous, you just have to put it into the right form._
 END_PGML
+
+#############################################################
+
+COMMENT("Substitution, homogeneous, IVP");
 
 #############################################################
 

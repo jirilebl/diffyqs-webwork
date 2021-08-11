@@ -1,9 +1,20 @@
-# First order ODEs: substitution
+##DESCRIPTION
+## Substitution, sum of squares, details of work, IVP
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Substitutions)
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
-## KEYWORDS('differential equations','first order','substitution')
-
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.5')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'substitution', 'initial value problem')
 
 ##############################
 #  Initialization
@@ -50,6 +61,7 @@ $answera1 = Formula("x^2 + y^2");
 
 $answera2 = Formula("2 x + 2 y y'");
 
+##############################
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -72,6 +84,8 @@ Enter derivatives using prime notation (e.g.,
 you would enter \( y^{\prime} \) for \( \frac{dy}{dx} \)).
 END_TEXT
 Context()->normalStrings;
+
+##############################
 
 ANS( $answera1->cmp() );
 ANS( $answera2->cmp() );
@@ -96,6 +110,8 @@ $answerb = ImplicitEquation("u' = 2 sqrt(u)",solutions=>[
      [9,6,-0.324],
      [7,2*sqrt(7),0.321],
   ]);
+
+##############################
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -123,6 +139,8 @@ parser::Assignment->Allow;
 
 $answerc = Compute("y = $s sqrt($d2 x + $dd)")->reduce()->with(limits=>[0,1]);
 
+##############################
+
 Context()->texStrings;
 BEGIN_TEXT
 $PAR
@@ -134,6 +152,14 @@ $BR
 END_TEXT
 Context()->normalStrings;
 
+##############################
+
 ANS( $answerc->cmp() );
+
+##############################
+
+COMMENT("Substitution, sum of squares, details of work, IVP");
+
+##############################
 
 ENDDOCUMENT();

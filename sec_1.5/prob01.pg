@@ -1,6 +1,20 @@
-# Substitution, Bernoulli
+##DESCRIPTION
+## Substitution, Bernoulli, tutorial, IVP
+##ENDDESCRIPTION
 
-## KEYWORDS('differential', 'equation', 'bernoulli', 'linear', 'substitution')
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Substitutions)
+## Institution(Unknown, Oklahoma State University)
+## Author(Unknown, Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.5')
+## Problem1('')
+## Level(3)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'substitution', 'bernoulli', 'initial value problem')
 
 #############################################################
 
@@ -27,6 +41,7 @@ Context()->variables->are(x=>"Real",y=>"Real");
 
 #############################################################
 
+Context()->texStrings;
 BEGIN_TEXT
 
 A Bernoulli differential equation is one of the form 
@@ -80,6 +95,7 @@ $SPACE $SPACE
 \{ AnswerFormatHelp("formulas") \}
 
 END_TEXT
+Context()->normalStrings;
 
 #############################################################
 
@@ -97,5 +113,10 @@ ANS(Compute("$a*x*ln(x)+x/$y1")->cmp());
 
 ANS(Compute("1/($a*x*ln(x)+x/$y1)")->cmp());
 
-ENDDOCUMENT();
+#############################################################
 
+COMMENT("Substitution, Bernoulli, tutorial, IVP");
+
+####################################################
+
+ENDDOCUMENT();

@@ -1,8 +1,20 @@
-# First order ODEs: substitution
+##DESCRIPTION
+## Substitution, square, details of work, IVP
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Substitutions)
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
-## KEYWORDS('differential equations','first order','substitution')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.5')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'substitution', 'initial value problem')
 
 
 ##############################
@@ -43,6 +55,8 @@ $answera2 = Formula("sqrt(u)")->with(limits=>[1,2]);
 $answera3 = Compute("(1/2) u^(-1/2) u'")->with(limits=>[1,2]);
 $answera3bogus = Compute("(1/2) u^(-1/2)")->with(limits=>[1,2]);
 
+##############################
+
 Context()->texStrings;
 BEGIN_TEXT
 Solve the initial value problem
@@ -71,6 +85,8 @@ you would enter \( y^{\prime} \) for \( \frac{dy}{dx} \)).
 END_TEXT
 Context()->normalStrings;
 
+##############################
+
 ANS( $answera1->cmp() );
 ANS( $answera2->cmp() );
 ANS( $answera3->cmp() 
@@ -97,6 +113,8 @@ x=>"Real",u=>"Real","u'"=>"Real"
 
 $answerb = ImplicitEquation("u' - u = $a x - $a");
 
+##############################
+
 Context()->texStrings;
 BEGIN_TEXT
 $PAR
@@ -108,6 +126,8 @@ $BR
 \{ AnswerFormatHelp("equations") \}
 END_TEXT
 Context()->normalStrings;
+
+##############################
 
 ANS( $answerb->cmp() );
 
@@ -135,6 +155,14 @@ $BR
 END_TEXT
 Context()->normalStrings;
 
+##############################
+
 ANS( $answerc->cmp() );
+
+##############################
+
+COMMENT("Substitution, square, details of work, IVP");
+
+##############################
 
 ENDDOCUMENT();

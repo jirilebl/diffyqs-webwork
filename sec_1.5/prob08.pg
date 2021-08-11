@@ -1,8 +1,20 @@
-# Substitution, power
+##DESCRIPTION
+## Substitution, power, IVP
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Substitutions)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
-## KEYWORDS('differential', 'equation', 'substitution')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.5')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'substitution', 'initial value problem')
 
 #############################################################
 
@@ -38,6 +50,10 @@ Solve the initial value problem
 
 _*Hint:* Perhaps clear the denominator first._
 END_PGML
+
+#############################################################
+
+COMMENT("Substitution, power, IVP");
 
 #############################################################
 
