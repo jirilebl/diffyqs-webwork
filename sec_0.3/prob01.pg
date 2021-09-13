@@ -48,10 +48,10 @@ $answer2 = PopUp(["Choose","Linear","Nonlinear"],"Linear");
 Context()->texStrings;
 BEGIN_TEXT
 Determine the order of the given differential equation and state whether
-the equation is linear or nonlinear.
-\[\frac{d^{$b}x}{dt^{$b}}+\frac{d^{3}x}{dt^{3}}+\frac{d^{2}x}{dt^{2}}+\frac{dx}{dt}+x = $a\]
+the equation is linear or nonlinear:
+\[\frac{d^{$b}x}{dt^{$b}}+\frac{d^{3}x}{dt^{3}}+\frac{d^{2}x}{dt^{2}}+\frac{dx}{dt}+x = $a .\]
 $BR
-The order of this differential equation is \{ ans_rule(10) \}
+The order of this differential equation is \{ ans_rule(10) \}.
 \{ AnswerFormatHelp("numbers") \}
 $PAR
 The equation is \{ $answer2->menu() \}.
