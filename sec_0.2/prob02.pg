@@ -40,17 +40,17 @@ TEXT(beginproblem());
 
 Context()->texStrings;
 BEGIN_TEXT
-For what positive value of \(k\) does the function \(y = \sin(kt) \) satisfy the differential equation \( y'' + \{$k*$k\}y = 0\)? 
+For what positive value of \(k\) does the function \(y = \sin(kt) \) satisfy the differential equation \( y'' + \{$k*$k\}y = 0\text{?}\) 
 $PAR
 \{ ans_rule(20); \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-For what negative value of \(k\) does the function \(y = \sin(kt) \) satisfy the differential equation \( y'' + \{$k*$k\}y = 0\)? 
+For what negative value of \(k\) does the function \(y = \sin(kt) \) satisfy the differential equation \( y'' + \{$k*$k\}y = 0\text{?}\) 
 $PAR
 \{ ans_rule(20); \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-Similarly, for which positive value of \(k\) does the function \(y = \cos(kt) \) satisfy the differential equation \( y'' + \{$k*$k\}y = 0\)? 
+Similarly, for which positive value of \(k\) does the function \(y = \cos(kt) \) satisfy the differential equation \( y'' + \{$k*$k\}y = 0\text{?}\) 
 $PAR
 \{ ans_rule(20); \}
 \{ AnswerFormatHelp("numbers") \}
@@ -72,20 +72,20 @@ ANS($ans3->cmp());
 Context()->texStrings;
 BEGIN_SOLUTION
 Let
-\(y = \sin(kt) . \)  Then \(y' = k \cos(kt)\) and \( y'' = -k^2 \sin(kt) . \)
+\(y = \sin(kt) \text{.} \)  Then \(y' = k \cos(kt)\) and \( y'' = -k^2 \sin(kt) \text{.} \)
 So if we plug this into the left hand side of the equation we get
-\[ y'' + \{$k*$k\} y = -k^2 \sin(kt) + \{ $k*$k \} \sin(kt) = (-k^2 + \{$k*$k\}) \sin(kt) . \]
-For this to be equal to zero we must have that \( -k^2 + \{$k*$k\} = 0 , \)
+\[ y'' + \{$k*$k\} y = -k^2 \sin(kt) + \{ $k*$k \} \sin(kt) = (-k^2 + \{$k*$k\}) \sin(kt) \text{.} \]
+For this to be equal to zero we must have that \( -k^2 + \{$k*$k\} = 0 \text{,} \)
 or in other words that 
-\(k= \pm \sqrt{ \{$k*$k\} } . \)
-So either \( k = $k \) or \( k = -$k .\)
+\(k= \pm \sqrt{ \{$k*$k\} } \text{.} \)
+So either \( k = $k \) or \( k = -$k \text{.}\)
 $PAR
 Let
-\(y = \cos(kt) .\)  Then \(y' = -k \sin(kt)\) and \( y'' = -k^2 \cos(kt) .\)
+\(y = \cos(kt) \text{.}\)  Then \(y' = -k \sin(kt)\) and \( y'' = -k^2 \cos(kt) \text{.}\)
 If we plug this into the left hand side of the equation we get
-\[ y'' + \{$k*$k\} y = -k^2 \cos(kt) + \{ $k*$k \} \cos(kt) = (-k^2 + \{$k*$k\}) \cos(kt) . \]
-For this to be equal to zero we must have that \( -k^2 + \{$k*$k\} = 0 . \)  We now want just the positive value of \(k\) so
-\(k= \sqrt{ \{$k*$k\} } = $k . \)
+\[ y'' + \{$k*$k\} y = -k^2 \cos(kt) + \{ $k*$k \} \cos(kt) = (-k^2 + \{$k*$k\}) \cos(kt) \text{.} \]
+For this to be equal to zero we must have that \( -k^2 + \{$k*$k\} = 0 \text{.} \)  We now want just the positive value of \(k\) so
+\(k= \sqrt{ \{$k*$k\} } = $k \text{.} \)
 END_SOLUTION
 Context()->normalStrings;
 

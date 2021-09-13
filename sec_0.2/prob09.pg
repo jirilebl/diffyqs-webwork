@@ -44,7 +44,7 @@ $answer = List(Real("-$a"));
 
 Context()->texStrings;
 BEGIN_TEXT
-Consider \(y'+$a y=0\).
+Consider \(y'+$a y=0 \text{.}\)
 $PAR
 Find all values of \( r \) such that \( y = e^{rx} \) satisfies the differential equation.
 $PAR

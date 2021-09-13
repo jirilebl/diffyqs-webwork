@@ -67,10 +67,11 @@ Show that \( y = $y \) is a solution to
 \right)^2
 =
 1 - y^2
-\).
+\text{.}
+\)
 $PAR
 To do so, compute each side of the equation in terms of the
-the independent variable \( t \).
+the independent variable \( t \text{.} \)
 $BR
 $BITALIC
 Be sure you can justify your answer. $EITALIC

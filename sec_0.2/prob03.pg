@@ -119,15 +119,15 @@ $PAR
 \( \displaystyle \frac{d^2y}{dx^2} = $fxx \)
 
 $PAR
-Notice that the second derivative is \( k^2 \) times \(y,\) that is, 
+Notice that the second derivative is \( k^2 \) times \(y \text{,}\) that is, 
 $PAR
 \( \displaystyle \frac{d^2y}{dx^2} = k^2 \bigl($f\bigr) = k^2 y \)
 
 $PAR
-As \($k^2 = $kk\),
+As \($k^2 = $kk \text{,}\)
 the general solution to
 \( \displaystyle \frac{d^2y}{dx^2} = $kk y \) is the above \(y\) with
-\(k = $k\), that is,
+\(k = $k \text{,}\) that is,
 $PAR
 \( y = $fk \)
 END_SOLUTION

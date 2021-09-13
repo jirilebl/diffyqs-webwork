@@ -52,14 +52,14 @@ $ans2 = Formula("(ln(x)+$c2)/x");
 
 Context()->texStrings;
 BEGIN_TEXT
-Verify that every member of the family of functions \(\displaystyle y = \frac{\ln x + C}{x}\) is a solution of the differential equation \(x^2 y' + x y =1.\)
+Verify that every member of the family of functions \(\displaystyle y = \frac{\ln x + C}{x}\) is a solution of the differential equation \(x^2 y' + x y =1 \text{.}\)
 $PAR
-Find a solution of the differential equation that satisfies the initial condition \( y($a)= $b.\)
+Find a solution of the differential equation that satisfies the initial condition \( y($a)= $b \text{.}\)
 $PAR
 \(y(x) = \) \{ans_rule(30); \}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-Find a solution of the differential equation that satisfies the initial condition \( y($b)= $a.\)
+Find a solution of the differential equation that satisfies the initial condition \( y($b)= $a \text{.}\)
 $PAR
 \(y(x) = \) \{ans_rule(30); \} 
 \{ AnswerFormatHelp("formulas") \}

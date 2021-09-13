@@ -145,23 +145,23 @@ ANS( $answer[6]->cmp() );
 
 Context()->texStrings;
 BEGIN_SOLUTION
-As \(x = $x ,\) then
-\( x' = $k $x ,\)
-\(x'' = $k^2 $x ,\) and
-\(x''' = $k^3 $x . \)
+As \(x = $x \text{,}\) then
+\( x' = $k $x \text{,}\)
+\(x'' = $k^2 $x \text{,}\) and
+\(x''' = $k^3 $x \text{.} \)
 So the terms are:
-\[x''' = $answer[0] , \]
-\[- $k3 x'' = $answer[1] , \]
-\[$kk3 x' = $answer[2] , \]
-\[-$kkk x = $answer[3] . \]
-When we add those terms together we get \(0\), and hence the differential equation we get is
-\[x''' - $k3 x'' + $kk3 x' - $kkk x = 0 .\]
-The right hand side \(0\) is precisely what we get when we plug in \(x=$x,\)
+\[x''' = $answer[0] \text{,} \]
+\[- $k3 x'' = $answer[1] \text{,} \]
+\[$kk3 x' = $answer[2] \text{,} \]
+\[-$kkk x = $answer[3] \text{.} \]
+When we add those terms together we get \(0\text{,}\) and hence the differential equation we get is
+\[x''' - $k3 x'' + $kk3 x' - $kkk x = 0 \text{.}\]
+The right hand side \(0\) is precisely what we get when we plug in \(x=$x\text{,}\)
 and so \(x = $x\) is a solution to the equation.
 $PAR
 On the other hand when we plug in \(x = e^x\) to the left hand side we get
-\[ x''' - $k3 x'' + $kk3 x' - $kkk x = e^x - $k3 e^x + $kk3 e^x - $kkk e^x = (1-$k3+$kk3-$kkk) e^x \not= 0 .\]
-Since the left hand side is not zero when we plug in \(x = e^x,\)
+\[ x''' - $k3 x'' + $kk3 x' - $kkk x = e^x - $k3 e^x + $kk3 e^x - $kkk e^x = (1-$k3+$kk3-$kkk) e^x \not= 0 \text{.}\]
+Since the left hand side is not zero when we plug in \(x = e^x\text{,}\)
 then this is not a solution to the differential equation.
 END_SOLUTION
 Context()->normalStrings;

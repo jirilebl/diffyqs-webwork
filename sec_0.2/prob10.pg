@@ -48,9 +48,9 @@ $answer = List(Real("-$a"),Real("-$b"));
 
 Context()->texStrings;
 BEGIN_TEXT
-Consider \(x^{2}y''+$c1 xy'+$c0 y=0 . \)
+Consider \(x^{2}y''+$c1 xy'+$c0 y=0 \text{.} \)
 $PAR
-Find all values of \( r \) such that \( y = x^{r} \) satisfies the differential equation for \(x>0.\)
+Find all values of \( r \) such that \( y = x^{r} \) satisfies the differential equation for \(x>0 \text{.}\)
 $PAR
 \( r = {} \) 
 \{ ans_rule(20); \}
@@ -73,29 +73,29 @@ ANS( $answer->cmp() );
 
 Context()->texStrings;
 BEGIN_SOLUTION
-If \( y = x^r , \) then \( y' = r x^{r-1} \)
-and \( y'' = r(r-1)x^{r-2} . \)
+If \( y = x^r \text{,} \) then \( y' = r x^{r-1} \)
+and \( y'' = r(r-1)x^{r-2} \text{.} \)
 So
 \[
 x^{2}y''+$c1 xy'+$c0 y
 =
 x^2 r(r-1) x^{r-2} + $c1 x r x^{r-1} + $c0 x^r
 =
-x^r \bigl( r(r-1) + $c1 r + $c0 \bigr) .
+x^r \bigl( r(r-1) + $c1 r + $c0 \bigr) \text{.}
 \]
 The only way this will be zero is if \(r(r-1) + $c1 r + $c0 = 0,\) or in other words if
-\( r = -$a \) or \(r = -$b .\)
+\( r = -$a \) or \(r = -$b \text{.}\)
 $PAR
 $BITALIC Remark: $EITALIC
 Perhaps it is worth noting that the above computation only works well
-for \(x > 0 .\)  When \(r\) is not an integer it may not make sense to
-talk about powers \(x^r\) if \(x < 0.\)  If \(r\) is negative,
-then \(x^r\) is not defined at \(x=0.\)
+for \(x > 0 \text{.}\)  When \(r\) is not an integer it may not make sense to
+talk about powers \(x^r\) if \(x < 0\text{.}\)  If \(r\) is negative,
+then \(x^r\) is not defined at \(x=0\text{.}\)
 In our specific example, both values of \(r\)
-are negative integers.  This means that the solution works for all \(x \not= 0.\)  If one of
-the values of \(r\) was not an integer, such as \(\frac{1}{2}\) or \(\pi,\)
-then \(x^r\) may not be defined for \(x < 0 .\)
-On the other hand if \(r\) was a positive integer, the solution would be defined for all \(x.\)
+are negative integers.  This means that the solution works for all \(x \not= 0\text{.}\)  If one of
+the values of \(r\) was not an integer, such as \(\frac{1}{2}\) or \(\pi\text{,}\)
+then \(x^r\) may not be defined for \(x < 0 \text{.}\)
+On the other hand if \(r\) was a positive integer, the solution would be defined for all \(x\text{.}\)
 END_SOLUTION
 Context()->normalStrings;
 

@@ -39,7 +39,7 @@ Solve this problem by educated guessing.
 $PAR 
 Suppose \(f\) is the function that satisifes
 \[{\bigl(f'(x)\bigr)}^2 = 4 f(x) \] 
-for all \(x\) in its domain and \(f(0) = 0\).
+for all \(x\) in its domain and \(f(0) = 0\text{.}\)
 Then 
 $PAR
 \(f(x) = {} \) \{ ans_rule(30) \}
@@ -47,7 +47,7 @@ $PAR
 $PAR
 $BITALIC $BBOLD Hint: $EBOLD What simple function that you know becomes
 a something like a square root of itself when you differentiate it.
-Another way to see the equation is \(f'(x) = 2 \sqrt{f(x)}.\) $EITALIC
+Another way to see the equation is \(f'(x) = 2 \sqrt{f(x)}\text{.}\) $EITALIC
 END_TEXT
 Context()->normalStrings;
 
@@ -61,10 +61,10 @@ ANS($ans->cmp());
 Context()->texStrings;
 BEGIN_SOLUTION
 After a bit of thought, perhaps you think that \(f(x) = x^2\) sort of
-looks like a square root when you differentiate it: \(f'(x) = 2 x.\)
+looks like a square root when you differentiate it: \(f'(x) = 2 x\text{.}\)
 And if we try it, it works:
 \[
-{\bigl(f'(x)\bigr)}^2 = (2x)^2 = 4 x^2 = 4 f(x) .
+{\bigl(f'(x)\bigr)}^2 = (2x)^2 = 4 x^2 = 4 f(x) \text{.}
 \]
 END_SOLUTION
 Context()->normalStrings;

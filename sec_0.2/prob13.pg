@@ -48,8 +48,8 @@ $answer = Formula("$A0 * e^($k t)");
 Context()->texStrings;
 BEGIN_TEXT
 Find a solution to 
-\( \displaystyle \frac{dA}{dt} = $k A , \) where
-\( A(0) = $A0 .\)
+\( \displaystyle \frac{dA}{dt} = $k A \text{,} \) where
+\( A(0) = $A0 \text{.}\)
 $PAR
 \( A(t) = \)
 \{ ans_rule(30); \}
@@ -70,14 +70,14 @@ ANS( $answer->cmp() );
 Context()->texStrings;
 BEGIN_SOLUTION
 The equation is the exponential growth equation.  Its solution
-is, therefore, \(A(t) = C e^{$k t} .\)
-To make \(A(0) = $A0 \) we plug in \(t=0.\)  That is,
+is, therefore, \(A(t) = C e^{$k t} \text{.}\)
+To make \(A(0) = $A0 \) we plug in \(t=0\text{.}\)  That is,
 \[
-$A0 = A(0) = C e^{$k \cdot 0} = C .
+$A0 = A(0) = C e^{$k \cdot 0} = C \text{.}
 \]
-So \(C = $A0 ,\) and so the solution is
+So \(C = $A0 \text{,}\) and so the solution is
 \[
-A(t) = $answer .
+A(t) = $answer \text{.}
 \]
 END_SOLUTION
 Context()->normalStrings;

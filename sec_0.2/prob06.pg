@@ -50,14 +50,14 @@ $ans = Compute("$m *(e^($k *t)) + $n *(e^($l *t))");
 Context()->texStrings;
 BEGIN_TEXT
 The solution of a certain differential equation is of the form 
-\[ x(t) = A \exp($k t) + B \exp($l t), \] 
+\[ x(t) = A \exp($k t) + B \exp($l t) \text{,} \] 
 where \(A\) and \(B\) are constants. 
 $PAR 
 The solution has initial conditions 
-\( x(0) = $c \) and \(  x'(0) = $d  .\)  
+\( x(0) = $c \) and \(  x'(0) = $d  \text{.}\)  
 $PAR
 Find the solution by using the initial 
-conditions to get linear equations for \(A\) and \(B\).
+conditions to get linear equations for \(A\) and \(B\text{.}\)
 $PAR
 \( x(t)= {} \) \{ans_rule(40); \} 
 \{ AnswerFormatHelp("formulas") \}
@@ -72,17 +72,17 @@ ANS($ans->cmp());
 
 Context()->texStrings;
 BEGIN_SOLUTION
-First, as \(x(0) = $c,\) we have
-\[ 0 = x(0) = A \exp($k \cdot 0) + B \exp($l \cdot 0) = A+B .\]
+First, as \(x(0) = $c\text{,}\) we have
+\[ 0 = x(0) = A \exp($k \cdot 0) + B \exp($l \cdot 0) = A+B \text{.}\]
 
 Next, let us find
-\[ x'(t) = $k A \exp($k t) + $l B \exp($l t) . \]
-As \(x'(0) = $c,\) we have
-\[ 0 = x(0) = $k A \exp($k \cdot 0) + $l B \exp($l \cdot 0) = $k A+$l B .\]
-Solving \(A+B = 0 \) and \($k A + $l B = 0\) for \(A\) and \(B,\) we find
-\[ A = $m , \qquad B = $n . \]
+\[ x'(t) = $k A \exp($k t) + $l B \exp($l t) \text{.} \]
+As \(x'(0) = $c \text{,}\) we have
+\[ 0 = x(0) = $k A \exp($k \cdot 0) + $l B \exp($l \cdot 0) = $k A+$l B \text{.}\]
+Solving \(A+B = 0 \) and \($k A + $l B = 0\) for \(A\) and \(B\text{,}\) we find
+\[ A = $m \text{,} \qquad B = $n \text{.} \]
 Therefore, the solution satisfying the initial conditions as
-\[ x(t) = $m \exp($k t) + $n \exp($l t) . \]
+\[ x(t) = $m \exp($k t) + $n \exp($l t) \text{.} \]
 END_SOLUTION
 Context()->normalStrings;
 

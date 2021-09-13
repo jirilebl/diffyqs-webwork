@@ -53,7 +53,7 @@ Context()->texStrings;
 BEGIN_TEXT
 The differential equation
 \[y^{\prime\prime} = 0\]
-has one of the following two parameter families as its general solution
+has one of the following two parameter families as its general solution:
 \[
 \begin{aligned}
 y&=C_1e^x+C_2e^{-x}\\
@@ -62,7 +62,7 @@ y&=C_1\tan(x)+C_2\sec(x)\\
 y&=C_1+C_2x\\
 \end{aligned}
 \]
-Find the solution such that \(y(0) = $y0\) and \(y^\prime(0)=$dy0\)
+Find the solution such that \(y(0) = $y0\) and \(y^\prime(0)=$dy0 \text{.}\)
 $PAR
 \(y(x) = \) \{$soln->ans_rule(30)\}
 \{ AnswerFormatHelp("formulas") \}

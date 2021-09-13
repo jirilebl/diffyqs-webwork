@@ -64,7 +64,7 @@ if ($case == 1) {
 
 $cmc = new_checkbox_multiple_choice();
 
-$cmc -> qa ("Which of the following functions are solutions of the differential equation \( y'' + $a y' + $b y = 0 \)?", 
+$cmc -> qa ("Which of the following functions are solutions of the differential equation \( y'' + $a y' + $b y = 0 \text{?}\)", 
 	    $yes[0], $yes[1], $yes[2]);
 
 $cmc-> extra ($no[0], $no[1], $no[2], $no[3]);

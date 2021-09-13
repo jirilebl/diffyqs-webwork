@@ -64,7 +64,7 @@ $ml->choose(5);
 
 BEGIN_TEXT
 Match the following differential equations with their solutions.
-The symbols \(A\), \(B\), \(C\) in the solutions stand for arbitrary constants.
+The symbols \(A\text{,}\) \(B\text{,}\) \(C\) in the solutions stand for arbitrary constants.
 $PAR
 \{ ColumnMatchTable($ml) \}
 END_TEXT
