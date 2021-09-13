@@ -69,7 +69,7 @@ ANS( checkbox_cmp( $mc->correct_ans() ) );
 
 BEGIN_SOLUTION
 The differential equation involves derivatives of only one independent variable,
-\(x\), and so it is an ODE and not a PDE.  The dependent variable and its
+\(x,\) and so it is an ODE and not a PDE.  The dependent variable and its
 derivatives (the \(y\) and the \( \frac{dy}{dx} \)) only appear linearly,
 and in no other functions or powers, so it is a linear ODE.
 It is homogeneous since there is no term

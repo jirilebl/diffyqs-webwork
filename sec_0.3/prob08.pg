@@ -48,11 +48,11 @@ Context()->texStrings;
 BEGIN_TEXT
 Determine the order of the differential equation
 \[
-t^{$b}x^{($a)}-t^{3}x''+6x = 0
+t^{$b}x^{($a)}-t^{3}x''+6x = 0 ,
 \]
 and state whether the equation is linear or nonlinear.
 $PAR
-The order of this differential equation is \{ ans_rule(10) \} 
+The order of this differential equation is \{ ans_rule(10) \} .
 \{ AnswerFormatHelp("numbers") \}
 $PAR
 The equation is \{ $answer2->menu() \}.

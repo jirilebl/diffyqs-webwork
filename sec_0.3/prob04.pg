@@ -73,7 +73,7 @@ ANS(checkbox_cmp($cmc->correct_ans));
 
 BEGIN_SOLUTION
 The differential equation involves derivatives of only one independent variable,
-\(x\), and so it is an ODE and not a PDE.  The highest derivative
+\(x,\) and so it is an ODE and not a PDE.  The highest derivative
 that appears, the \(\frac{d^3y}{dx^3}\) is of third order,
 so that is the order of the equation.
 $PAR

@@ -56,7 +56,7 @@ Put the differential equation
 \frac{x y^{\prime}}{(x^{$n}+$a) y} = \cos(x) + \frac{e^{$b x}}{y}
 \]
 into the form \( y^{\prime} + p(x) y = g(x)\) and find
-\( p(x) \) and \( g(x) \).
+\( p(x) \) and \( g(x) . \)
 $PAR
 \( p(x) = \) 
 \{ ans_rule(30) \}

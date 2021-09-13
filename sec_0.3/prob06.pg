@@ -122,7 +122,7 @@ $eqn8order = Compute("2");
 
 Context()->texStrings;
 BEGIN_TEXT
-Answer the following questions.  In the following the dot above a letter means time derivative, that is, derivative with respect to \(t\), a common notation in physics and engineering.
+Answer the following questions.  In the following the dot above a letter means time derivative, that is, derivative with respect to \(t,\) a common notation in physics and engineering.
 $PAR
 \{ BeginTable(center=>0).
       Row(['\((1-x)y^{\prime\prime}-4xy^\prime+5y=\cos(x)\)'," is a ",pop_up_list([$blank->string,$linear->string,$non->string]),pop_up_list([$blank->string,$ode->string,$pde->string]),  " differential equation with order ", ans_rule(7)],separation=>1).

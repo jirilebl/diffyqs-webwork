@@ -72,7 +72,7 @@ ANS( $answer2->cmp );
 
 Context()->texStrings;
 BEGIN_SOLUTION
-As there is a derivative \(\frac{d^{$b}x}{dt^{$b}}\) of order \($b\),
+As there is a derivative \(\frac{d^{$b}x}{dt^{$b}}\) of order \($b,\)
 and this is the highest order that appears, that is the order of this equation.
 $PAR
 As each derivative of \(x\) or \(x\) itself appears linearly, that is, it

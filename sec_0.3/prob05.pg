@@ -73,12 +73,12 @@ ANS(checkbox_cmp($cmc->correct_ans));
 
 BEGIN_SOLUTION
 The differential equation involves derivatives of only one independent variable,
-\(t\), and so it is an ODE and not a PDE.  It is second order, as the
+\(t,\) and so it is an ODE and not a PDE.  It is second order, as the
 second derivative \(P''\) is the highest order derivative that appears.
 The dependent variable \(P\) and its
 derivatives (the \(P'\) and the \( P'' \)) only appear linearly,
 and in no other functions or powers, so it is a linear ODE.  The coefficients in front
-of \(P''\) and \(P'\) are constants (\(1\) and \(-4\)), and so it is a
+of \(P''\) and \(P'\) are constants (\(1\) and \(-4,\)) and so it is a
 constant coefficient equation.
 $PAR
 It is just a single equation, so it is not a system.  It is not a homogeneous
