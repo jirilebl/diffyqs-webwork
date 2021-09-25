@@ -1,6 +1,20 @@
-# Equilibrium points and phase lines
+##DESCRIPTION
+## Find equilibrium points and identify direction of movement in between
+##ENDDESCRIPTION
 
-## KEYWORDS('differential', 'equation', 'constant', 'solution')
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Equilibrium points and phase lines)
+## Institution(Unknown, Oklahoma State University)
+## Author(Unknown, Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.6')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'autonomous', 'equilibria')
 
 ##############################################################
 
@@ -46,5 +60,7 @@ For what values of [:x:] is [:x:] increasing?
 END_PGML
 
 ##############################################################
+
+COMMENT("Find equilibrium points and identify direction of movement in between");
 
 ENDDOCUMENT();

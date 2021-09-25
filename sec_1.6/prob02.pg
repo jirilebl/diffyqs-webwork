@@ -1,8 +1,20 @@
-# Modify autonomous logistic equation for a word problem based on 
-# population leaving
+##DESCRIPTION
+## Modify autonomous logistic equation for a word problem based on population leaving
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Equilibrium points and phase lines)
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.6')
+## Problem1('')
+## Level(5)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'autonomous', 'population', 'carrying capacity', 'equilibria')
 
 
 ########################################################################
@@ -30,26 +42,25 @@ Context()->variables->{namePattern} = qr/[a-z][a-z0-9_]*'*/i;
 Context()->variables->are("t"=>"Real","P"=>"Real","P'"=>"Real","P''"=>"Real","P'''"=>"Real");
 
 ##############################################################
-#
 #  Setup
-#
-#
+
 $r = Compute(random(2,4));
 $C = Compute(random(5000,10000,500));
 $e = Compute(random(4,9));
 $diffeqn = Formula("P'-$r*($C-P)+$e");
 
 ##############################################################
-#
 #  Text
-#
-#
 
 Context()->texStrings;
 BEGIN_TEXT
-The population of Cook island has always been modeled by a logistic equation \(P^\prime=k(M-P)\) with growth rate \(k=$r\) and carrying capacity \(M=$C\) with time t in years. 
+The population of Cook island has always been modeled by a logistic equation
+\(P^\prime=k(M-P)\) with growth rate \(k=$r\) and carrying capacity \(M=$C\)
+with time t in years. 
 $PAR
-Starting in the year \(2000\), \($e\) citizens of Cook island have left  every year to become mathematicians, never to return. What is the new differential equation modeling the population of the island \(P\)?
+Starting in the year \(2000,\) \($e\) citizens of Cook island have left every
+year to become mathematicians, never to return. What is the new differential
+equation modeling the population of the island \(P?\)
 $PAR
 \{$diffeqn->ans_rule(25)\} \(= 0\)
 $SPACE $SPACE
@@ -58,10 +69,7 @@ END_TEXT
 Context()->normalStrings;
 
 ##############################################################
-#
 #  Answers
-#
-#
 
 ANS($diffeqn->cmp(checker=>sub {
                 my ( $correct, $student, $self ) = @_;
@@ -76,5 +84,6 @@ ANS($diffeqn->cmp(checker=>sub {
 # relative tolerance --3.1412 is incorrect but 3.1413 is correct
 # default tolerance is .01 or one percent.
 
+COMMENT("Modify autonomous logistic equation for a word problem based on population leaving");
 
 ENDDOCUMENT();        

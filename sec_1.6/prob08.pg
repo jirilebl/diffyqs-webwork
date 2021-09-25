@@ -1,8 +1,20 @@
-# Equilibrium points and phase lines
+##DESCRIPTION
+## Find the long term behavior of a solution by finding and classifying the equilibria of an equation
+##ENDDESCRIPTION
 
-## Institution(W.H.Freeman)
-## Author(Christopher Sira)
-## KEYWORDS('calculus', 'differential equations', 'logistic equation', 'population growth', 'exponential growth', 's-curve', 'sigmoid')
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Equilibrium points and phase lines)
+## Institution(W.H.Freeman, Oklahoma State University)
+## Author(Christopher Sira, Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.6')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'autonomous', 'equilibria', 'long term behavior')
 
 #################################################################
 
@@ -46,12 +58,12 @@ ANS(Compute("$A")->cmp);
 
 Context()->texStrings;
 BEGIN_SOLUTION
-The two equilibria (critical points) are \(x=0\) and \(x=$A\).
+The two equilibria (critical points) are \(x=0\) and \(x=$A .\)
 $PAR
 Write the right hand side of the equation as
 \[ F(x) = \frac{1}{$A} x \left(1 - \frac{x}{$A}\right) . \]
 Take the initial value of \(x\) as \( x_0 = x(0) = $init .\)
-Then, \( F(x_0) = \frac{1}{$A}($init)\left(1 - \frac{$init}{$A}\right) < 0 \),
+Then, \( F(x_0) = \frac{1}{$A}($init)\left(1 - \frac{$init}{$A}\right) < 0 , \)
 so \( x(t) \) is strictly decreasing and goes towards the equilibrium at $A.  Therefore,
 \[ \lim_{t \to \infty} x(t) = $A . \]
 END_SOLUTION
@@ -59,5 +71,6 @@ Context()->normalStrings;
 
 #################################################################
 
-ENDDOCUMENT();
+COMMENT("Find the long term behavior of a solution by finding and classifying the equilibria of an equation");
 
+ENDDOCUMENT();
