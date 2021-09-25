@@ -34,7 +34,6 @@ TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
 Context("Numeric");
-Context()->strings->add("DNE"=>{},"Infinity"=>{});
 
 $a = Real(random(-5,0,1));
 $b = Real(random($a+3,$a+7,1));
