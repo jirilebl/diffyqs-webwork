@@ -1,8 +1,20 @@
-# Euler's method, consider the error
+##DESCRIPTION
+## Euler's method, consider the error
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Numerical methods)
+## DBsection(Euler)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
-## KEYWORDS('differential equations', 'Euler's method', 'numerical calculation')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.7')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'numerical calculation', 'Eulers method', 'error bound')
 
 ######################################################
 
@@ -133,6 +145,8 @@ The error went down by the factor:
 END_PGML_SOLUTION
 
 ######################################################
+
+COMMENT("Euler's method, consider the error");
 
 ENDDOCUMENT();
 

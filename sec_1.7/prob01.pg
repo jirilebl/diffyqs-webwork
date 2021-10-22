@@ -1,10 +1,22 @@
-# Euler's method, fill in table, compare to real solution
+##DESCRIPTION
+## Euler's method, fill in table, compare to real solution
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Numerical methods)
+## DBsection(Euler)
 ## Institution(University of Michigan)
 ## Author(Gavin LaRose)
-## KEYWORDS('differential equations', 'Euler's method', 'numerical calculation')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.7')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'numerical calculation', 'Eulers method')
 
-######################################################
+#####################################################################
 
 DOCUMENT();
 loadMacros(
@@ -16,7 +28,7 @@ loadMacros(
   "PGcourse.pl"
 );
 
-######################################################
+#####################################################################
  
 Context("Numeric");
 
@@ -50,7 +62,7 @@ for ( my $i=1; $i<=5; $i++ ) {
     $yEulr[$i] = round($yEul[$i-1]*1000)/1000;
 }
 
-######################################################
+#####################################################################
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -90,13 +102,13 @@ with \( y(0) = $y0 \).
 END_TEXT
 Context()->normalStrings;
 
-######################################################
+#####################################################################
 
 foreach ( @yEul[1..5] ) { ANS( Compute($_)->cmp() ); }
 # ANS( num_cmp( [ @yEul[1..5] ] ) );
 ANS( radio_cmp( $ou->correct_ans() ) );
 
-######################################################
+#####################################################################
 
 # make a graph of the solution and Euler solutions
 # what is the scale?  ymax = ( y0, if k < 0 ), or ( y0 e^(k), else )
@@ -138,7 +150,7 @@ for ( my $i=1; $i<6; $i++ ) {
 		  "for x in [$xl,$xr] using color:red and weight:2");
 }
 
-######################################################
+#####################################################################
 
 Context()->texStrings;
 BEGIN_SOLUTION
@@ -188,5 +200,9 @@ is an $ouest estimate for the actual solution.
 
 END_SOLUTION
 Context()->normalStrings;
+
+#####################################################################
+
+COMMENT("Euler's method, fill in table, compare to real solution");
 
 ENDDOCUMENT();
