@@ -62,7 +62,14 @@ be merged into *master*.  This branch will get merged onto *master* very often,
 usually the moment everything is tested and fixed up on the WeBWorK machine.
 So most of the time the two branches should be identical.
 
+## Contributing
+
+Let me know if you have any fixes, or new problems, or suggestions.
+You can also just make pull requests (best against *develop* branch),
+see CONTRIBUTING.md for more information.
+
 ## Acknowledgements
 
 Thanks to Edfinity for pestering me to motivate me to put these together and
-to Andras Balogh and Jan Hlavacek for reporting and fixing errors.
+to Andras Balogh, Jan Hlavacek, and Jonathan Duncan for reporting and fixing
+errors.
