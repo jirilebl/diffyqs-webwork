@@ -1,8 +1,20 @@
-# Euler's method, compute a few points
+##DESCRIPTION
+## Euler's method, compute a few points
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Numerical methods)
+## DBsection(Euler)
 ## Institution(University of Minnesota, Oklahoma State University)
 ## Author(Justin Sukiennik, Jiri Lebl)
-## KEYWORDS('differential equations', 'Euler's method', 'numerical calculation')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.7')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'numerical calculation', 'Eulers method')
 
 #####################################################################
 
@@ -90,5 +102,9 @@ $SPACE
 \( y_5 = $ans4+$step($a-\{4*$step\} \cdot $ans4) = $ans5 \)
 END_SOLUTION
 Context()->normalStrings;
+
+#####################################################################
+
+COMMENT("Euler's method, compute a few points");
 
 ENDDOCUMENT();
