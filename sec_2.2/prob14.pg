@@ -40,7 +40,7 @@ $d = Compute(non_zero_random(-9,9));
 $e = Compute(non_zero_random(-9,9));
 if ($d == $e) { $e++; }
 $de2a = Formula("(-2*$d)")->reduce;
-$de2b = Formula("($d^2+$e^2)")->reduce;
+$de2b = Formula("(($d)^2+($e)^2)")->reduce;
 $sol21 = Formula("e^($d*x)*cos($e*x)");
 $sol22 = Formula("e^($d*x)*sin($e*x)");
 $de2f1 = Formula("(r-($d+$e*i))")->reduce;
