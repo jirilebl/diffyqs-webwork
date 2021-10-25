@@ -42,10 +42,10 @@ $b = random(2,9,1);
 
 BEGIN_PGML
 Consider the equation
-[```[$a*4] ([$a*2] x^2-y) \, dx + \left(\frac{2y}{x} - [$a*2]x\right) \, dy = 0 . ```]
+[```[$a*4] ([$a] x^2-y) \, dx + \left(\frac{2y}{x} - [$a*2]x\right) \, dy = 0 . ```]
 
-Find an integrating factor [`u(x)`] (so a function of [`x`] alone.)  Use the simplest
-version, the one where [`u(1)=1 .`]
+Find an integrating factor [`u(x)`] (so a function of [`x`] alone).
+Use the simplest version: the one where [`u(1)=1 .`]
 
 [`u(x) = {}`][_______]{"x"}{30}
 [@ AnswerFormatHelp("formulas") @]*

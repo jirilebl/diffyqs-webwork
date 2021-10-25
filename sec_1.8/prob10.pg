@@ -48,19 +48,19 @@ Find the integrating factor for the following equations making them into
 exact equations.  Always use the simplest form of the integrating factor you can find
 not multiplied by any constants.
 
-Equation: [``\frac{1}{y}\, dx + [$a]y \, dy = 0``] 
+Equation: [``\frac{1}{y}\, dx + [$a]y \, dy = 0``]  
 Integrating factor: [________]{"y"}{30}
 [@ AnswerFormatHelp("formulas") @]*
 
-Equation: [``dx - e^{-[$b]x-[$c]y} \, dy = 0``] 
+Equation: [``dx - e^{-[$b]x-[$c]y} \, dy = 0``]  
 Integrating factor: [________]{"e^($b*x)"}{30}
 [@ AnswerFormatHelp("formulas") @]*
 
-Equation: [``\bigl( \frac{\cos(x)}{y^2} + \frac{$c}{y} \bigr) \, dx + \frac{$c x}{y^2} \, dy = 0``] 
+Equation: [``\bigl( \frac{\cos(x)}{y^2} + \frac{[$c]}{y} \bigr) \, dx + \frac{[$c] x}{y^2} \, dy = 0``]  
 Integrating factor: [________]{"y^2"}{30}
 [@ AnswerFormatHelp("formulas") @]*
 
-Equation: [``\bigl( 2y + \frac{y^2}{x} \bigr) \, dx + ( 2y+x )\, dy = 0``] 
+Equation: [``\bigl( 2y + \frac{y^2}{x} \bigr) \, dx + ( 2y+x )\, dy = 0``]  
 Integrating factor: [________]{"x"}{30}
 [@ AnswerFormatHelp("formulas") @]*
 END_PGML
