@@ -59,7 +59,7 @@ Context()->texStrings;
 BEGIN_TEXT
 Solve the following differential equation: 
 $PAR
-\(($dx)dx+($dy)dy=0\).
+\(($dx)\,dx+($dy)\,dy=0\).
 $PAR
 \{ ans_rule(30) \} 
 \({}={}\)
