@@ -56,11 +56,11 @@ Equation: [``dx - e^{-[$b]x-[$c]y} \, dy = 0``]
 Integrating factor: [________]{"e^($b*x)"}{30}
 [@ AnswerFormatHelp("formulas") @]*
 
-Equation: [``\bigl( \frac{\cos(x)}{y^2} + \frac{[$c]}{y} \bigr) \, dx + \frac{[$c] x}{y^2} \, dy = 0``]  
+Equation: [``\left( \frac{\cos(x)}{y^2} + \frac{[$c]}{y} \right) \, dx + \frac{[$c] x}{y^2} \, dy = 0``]  
 Integrating factor: [________]{"y^2"}{30}
 [@ AnswerFormatHelp("formulas") @]*
 
-Equation: [``\bigl( 2y + \frac{y^2}{x} \bigr) \, dx + ( 2y+x )\, dy = 0``]  
+Equation: [``\left( 2y + \frac{y^2}{x} \right) \, dx + ( 2y+x )\, dy = 0``]  
 Integrating factor: [________]{"x"}{30}
 [@ AnswerFormatHelp("formulas") @]*
 END_PGML
