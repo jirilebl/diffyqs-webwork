@@ -1,7 +1,20 @@
-# Implicit solve exact differential equation
+##DESCRIPTION
+## Solve a differential equation implicitly by finding an integrating factor, but only the equation is given
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Exact)
 ## Institution(Rochester)
-## KEYWORDS('differential equation', 'exact')
+## Author(Unknown)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.8')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'exact equations', 'implicit solution', 'integrating factor')
 
 ###################################################
 
@@ -72,5 +85,8 @@ ANS(Compute("e^( ${a}x )(y   + x/$a - 1/($a)^2 )")->cmp(checker => ~~&lcc,
 #          FEQ(" e^( ${a}x )(y   + x/$a - 1/($a)^2 ) "), initial_t=>0,initial_y=>2/($a)**2,tol => .1)    
 #);     
 
-ENDDOCUMENT();
+###################################################
 
+COMMENT("Solve a differential equation implicitly by finding an integrating factor, but only the equation is given");
+
+ENDDOCUMENT();

@@ -1,52 +1,65 @@
-# Exact differential equation, integrating factor, with initial value
+##DESCRIPTION
+## Explicitly solving exact equation with initial value, using exact equation and an integrating factor
+##ENDDESCRIPTION
 
-## Institution(ASU)
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Exact)
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.8')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'exact equations', 'integrating factor', 'initial value problem')
 
-########################################
+##############################################
 
 DOCUMENT();
+
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
+  "PGML.pl",
   "PGcourse.pl"
 );
 
-########################################
+##############################################
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
-Context("Numeric");
-Context()->variables->are(x=>'Real');
+Context('Numeric');
 
-$k = random(2,7,1);
-$p = random(2,9,1);
-$r = 1/((1 + $k)*$p);
-$m = random(5,20,1);
+$a = random(2,9,1);
+$b = random(2,9,1);
 
-$a = $m - $r;
+##############################################
 
-########################################
+BEGIN_PGML
+Consider the equation
+[```[$a*4] ([$a*2] x^2-y) \, dx + \left(\frac{2y}{x} - [$a*2]x\right) \, dy = 0 . ```]
 
-Context()->texStrings;
-BEGIN_TEXT
-Solve the initial value problem
-\[ $p \left( \sin(x) \frac{dy}{dx} + \cos (x) y \right) = \cos(x)\sin^{$k}(x), \]
-for \(0 < x < \pi \) and \( y(\pi / 2) = $m. \)
-$PAR
-Find the integrating factor, \( u(x) = \) \{ans_rule(20) \}
-$SPACE \{ AnswerFormatHelp("formulas") \}
-$PAR
-Then find \(y(x) = \) \{ans_rule(50) \}
-$SPACE \{ AnswerFormatHelp("formulas") \}
-END_TEXT
-Context()->normalStrings;
+Find an integrating factor [`u(x)`] (so a function of [`x`] alone.)  Use the simplest
+version, the one where [`u(1)=1 .`]
 
-########################################
+[`u(x) = {}`][_______]{"x"}{30}
+[@ AnswerFormatHelp("formulas") @]*
 
+Now once you have an integrating factor, you can solve the equation as an exact equation.
+An explicit solution can be found, that is, one of the form [`y=y(x) .`] 
+Find an explicit solution that solves [`y(1)=[$b].`]
 
-ANS(Compute("sin(x)")->cmp());
-ANS(Compute("$a/sin(x) + $r * ((sin(x))**$k )")->cmp());
+[`y(x) = {}`][_______]{"$a*x^2-$a+$b"}{30}
+[@ AnswerFormatHelp("formulas") @]*
+END_PGML
 
-ENDDOCUMENT();    
+##############################################
+
+COMMENT("Explicitly solving exact equation with initial value, using exact equation and an integrating factor");
+
+ENDDOCUMENT();

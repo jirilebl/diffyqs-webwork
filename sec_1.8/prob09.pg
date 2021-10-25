@@ -1,8 +1,20 @@
-# Application of exact equations to harmonic functions, finding harmonic conjugates
+##DESCRIPTION
+## Application of exact equations to harmonic functions, finding harmonic conjugates
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Exact)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
-## KEYWORDS('differential equations', 'harmonic function', 'harmonic conjugate', 'exact')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.8')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'exact equations', 'harmonic function', 'harmonic conjugate')
 
 ##############################################
 

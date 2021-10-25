@@ -1,0 +1,72 @@
+##DESCRIPTION
+## Find several simple integrating factors
+##ENDDESCRIPTION
+
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Exact)
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.8')
+## Problem1('102')
+## Level(4)
+## MO(1)
+## KEYWORDS('differential equations', 'first order', 'exact equations', 'integrating factor')
+
+##############################################
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
+  "PGcourse.pl"
+);
+
+##############################################
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+Context('Numeric');
+Context()->variables->add(y=>'Real');
+
+$a = random(2,9,1);
+$b = random(2,9,1);
+$c = random(2,9,1);
+$d = random(2,9,1);
+
+##############################################
+
+BEGIN_PGML
+Find the integrating factor for the following equations making them into
+exact equations.  Always use the simplest form of the integrating factor you can find
+not multiplied by any constants.
+
+Equation: [``\frac{1}{y}\, dx + [$a]y \, dy = 0``] 
+Integrating factor: [________]{"y"}{30}
+[@ AnswerFormatHelp("formulas") @]*
+
+Equation: [``dx - e^{-[$b]x-[$c]y} \, dy = 0``] 
+Integrating factor: [________]{"e^($b*x)"}{30}
+[@ AnswerFormatHelp("formulas") @]*
+
+Equation: [``\bigl( \frac{\cos(x)}{y^2} + \frac{$c}{y} \bigr) \, dx + \frac{$c x}{y^2} \, dy = 0``] 
+Integrating factor: [________]{"y^2"}{30}
+[@ AnswerFormatHelp("formulas") @]*
+
+Equation: [``\bigl( 2y + \frac{y^2}{x} \bigr) \, dx + ( 2y+x )\, dy = 0``] 
+Integrating factor: [________]{"x"}{30}
+[@ AnswerFormatHelp("formulas") @]*
+END_PGML
+
+##############################################
+
+COMMENT("Find several simple integrating factors");
+
+ENDDOCUMENT();
