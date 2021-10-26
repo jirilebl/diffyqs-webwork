@@ -38,6 +38,8 @@ Context('Numeric');
 $a = random(2,9,1);
 $b = random(2,9,1);
 
+$ans1 = Formula("x");
+
 ##############################################
 
 BEGIN_PGML
@@ -45,9 +47,19 @@ Consider the equation
 [```[$a*4] ([$a] x^2-y) \, dx + \left(\frac{2y}{x} - [$a*2]x\right) \, dy = 0 . ```]
 
 Find an integrating factor [`u(x)`] (so a function of [`x`] alone).
-Use the simplest version: the one where [`u(1)=1 .`]
 
-[`u(x) = {}`][_______]{"x"}{30}
+[`u(x) = {}`][_______]{$ans1->cmp(checker => sub {
+      my ( $correct, $student, $self ) = @_;
+      my $context = Context()->copy;
+      return 0 if $student == 0;
+      $context->flags->set(no_parameters=>0);
+      $context->variables->add('C0'=>'Parameter');
+      my $c0 = Formula($context,'C0');
+      $student = Formula($context,$student);
+      $correct = Formula($context,"$c0 * $ans1");
+      return $correct == $student;
+    }
+)}{30}
 [@ AnswerFormatHelp("formulas") @]*
 
 Now once you have an integrating factor, you can solve the equation as an exact equation.

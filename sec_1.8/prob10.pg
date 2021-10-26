@@ -41,27 +41,75 @@ $b = random(2,9,1);
 $c = random(2,9,1);
 $d = random(2,9,1);
 
+$ans1 = Formula("y");
+$ans2 = Formula("e^($b*x)");
+$ans3 = Formula("y^2");
+$ans4 = Formula("x");
+
 ##############################################
 
 BEGIN_PGML
-Find the integrating factor for the following equations making them into
-exact equations.  Always use the simplest form of the integrating factor you can find
-not multiplied by any constants.
+Find the integrating factor for the following equations that make them into
+exact equations.
 
 Equation: [``\frac{1}{y}\, dx + [$a]y \, dy = 0``]  
-Integrating factor: [________]{"y"}{30}
+Integrating factor: [________]{$ans1->cmp(checker => sub {
+      my ( $correct, $student, $self ) = @_;
+      my $context = Context()->copy;
+      return 0 if $student == 0;
+      $context->flags->set(no_parameters=>0);
+      $context->variables->add('C0'=>'Parameter');
+      my $c0 = Formula($context,'C0');
+      $student = Formula($context,$student);
+      $correct = Formula($context,"$c0 * $ans1");
+      return $correct == $student;
+    }
+)}{30}
 [@ AnswerFormatHelp("formulas") @]*
 
 Equation: [``dx - e^{-[$b]x-[$c]y} \, dy = 0``]  
-Integrating factor: [________]{"e^($b*x)"}{30}
+Integrating factor: [________]{$ans2->cmp(checker => sub {
+      my ( $correct, $student, $self ) = @_;
+      my $context = Context()->copy;
+      return 0 if $student == 0;
+      $context->flags->set(no_parameters=>0);
+      $context->variables->add('C0'=>'Parameter');
+      my $c0 = Formula($context,'C0');
+      $student = Formula($context,$student);
+      $correct = Formula($context,"$c0 * $ans2");
+      return $correct == $student;
+    }
+)}{30}
 [@ AnswerFormatHelp("formulas") @]*
 
 Equation: [``\left( \frac{\cos(x)}{y^2} + \frac{[$c]}{y} \right) \, dx + \frac{[$c] x}{y^2} \, dy = 0``]  
-Integrating factor: [________]{"y^2"}{30}
+Integrating factor: [________]{$ans3->cmp(checker => sub {
+      my ( $correct, $student, $self ) = @_;
+      my $context = Context()->copy;
+      return 0 if $student == 0;
+      $context->flags->set(no_parameters=>0);
+      $context->variables->add('C0'=>'Parameter');
+      my $c0 = Formula($context,'C0');
+      $student = Formula($context,$student);
+      $correct = Formula($context,"$c0 * $ans3");
+      return $correct == $student;
+    }
+)}{30}
 [@ AnswerFormatHelp("formulas") @]*
 
 Equation: [``\left( 2y + \frac{y^2}{x} \right) \, dx + ( 2y+x )\, dy = 0``]  
-Integrating factor: [________]{"x"}{30}
+Integrating factor: [________]{$ans4->cmp(checker => sub {
+      my ( $correct, $student, $self ) = @_;
+      my $context = Context()->copy;
+      return 0 if $student == 0;
+      $context->flags->set(no_parameters=>0);
+      $context->variables->add('C0'=>'Parameter');
+      my $c0 = Formula($context,'C0');
+      $student = Formula($context,$student);
+      $correct = Formula($context,"$c0 * $ans4");
+      return $correct == $student;
+    }
+)}{30}
 [@ AnswerFormatHelp("formulas") @]*
 END_PGML
 
