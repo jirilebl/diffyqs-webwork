@@ -1,9 +1,20 @@
 ##DESCRIPTION
-## in terms of standard basis
+## Find the matrix for a mapping based on where it takes standard basis and evalute at a few of points
 ##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Linear transformations)
+## DBsection(Associated matrices)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.1')
+## Problem1('')
+## Level(3)
+## MO(1)
+## KEYWORDS('vectors', 'vector operations', 'linear transformation', 'matrix')
 
 ###########################
 # Initialization
@@ -63,5 +74,30 @@ Compute:
 [`F(0,[$p2]) = \bigl(`] [______]{"$p2*$b"} [`,`] [______]{"$p2*$d"} [`\bigr) \quad`]
 [@ AnswerFormatHelp("numbers") @]*
 END_PGML
+
+############################
+# Solution
+
+BEGIN_PGML_SOLUTION
+As [`F`] takes the standard basis vector [`\vec{e}_1 = (1,0)`] to
+[`([$a],[$c]) ,`] the first column is [`\begin{bmatrix} [$a] \\ [$c] \end{bmatrix} .`]
+Similarly, as [`F`] takes the standard basis vector [`\vec{e}_2 = (0,1)`] to
+[`([$b],[$d]) ,`] the second column is [`\begin{bmatrix} [$b] \\ [$d] \end{bmatrix} .`]
+So the matrix is
+[```\begin{bmatrix} [$a] & [$b] \\ [$c] & [$d] \end{bmatrix} .```]
+
+The vector [`F(1,1)`] is the first vector [`([$a],[$c])`] plus the second vector
+[`([$b],[$d]),`] so [`F(1,1)=([$a+$b],[$c+d]).`]
+
+The vector [`F([$p1],0)`] is [`[$p1]`] times the first vector [`([$a],[$c]) ,`]
+so [`F([$p1],0)=([$p1*$a],[$p1*$c]).`]
+
+The vector [`F(0,[$p2])`] is [`[$p2]`] times the second vector [`([$a],[$c]) ,`]
+so [`F(0,[$p2])=([$p2*$b],[$p2*$d]).`]
+END_PGML_SOLUTION
+
+###########################
+
+COMMENT("Find the matrix for a mapping based on where it takes standard basis and evalute at a few of points");
 
 ENDDOCUMENT();

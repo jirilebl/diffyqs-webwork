@@ -1,9 +1,20 @@
 ##DESCRIPTION
-## Magnitude of vectors
+## Computing the magnitude of vectors
 ##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Vector geometry)
+## DBsection(Dot product, length, and unit vectors)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.1')
+## Problem1('')
+## Level(2)
+## MO(1)
+## KEYWORDS('vectors','vector operations','vector magnitude')
 
 ###########################
 # Initialization
@@ -56,5 +67,9 @@ If [`\vec{z} = \begin{bmatrix} [$z1] \\ [$z2] \end{bmatrix}`] in the plane, comp
 [`\lVert \vec{z} \rVert={}`] [____________]{"sqrt(($z1)^2+($z2)^2)"}{30}
 [@ AnswerFormatHelp("numbers") @]*
 END_PGML
+
+###########################
+
+COMMENT("Computing the magnitude of vectors");
 
 ENDDOCUMENT();
