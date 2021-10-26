@@ -83,8 +83,8 @@ As [`F`] takes the standard basis vector [`\vec{e}_1 = (1,0)`] to
 [`([$a],[$c]) ,`] the first column is [`\begin{bmatrix} [$a] \\ [$c] \end{bmatrix} .`]
 Similarly, as [`F`] takes the standard basis vector [`\vec{e}_2 = (0,1)`] to
 [`([$b],[$d]) ,`] the second column is [`\begin{bmatrix} [$b] \\ [$d] \end{bmatrix} .`]
-So the matrix is
-[```\begin{bmatrix} [$a] & [$b] \\ [$c] & [$d] \end{bmatrix} .```]
+So the matrix representing the mapping is
+[``\begin{bmatrix} [$a] & [$b] \\ [$c] & [$d] \end{bmatrix} .``]
 
 The vector [`F(1,1)`] is the first vector [`([$a],[$c])`] plus the second vector
 [`([$b],[$d]),`] so [`F(1,1)=([$a+$b],[$c+d]).`]
@@ -92,7 +92,7 @@ The vector [`F(1,1)`] is the first vector [`([$a],[$c])`] plus the second vector
 The vector [`F([$p1],0)`] is [`[$p1]`] times the first vector [`([$a],[$c]) ,`]
 so [`F([$p1],0)=([$p1*$a],[$p1*$c]).`]
 
-The vector [`F(0,[$p2])`] is [`[$p2]`] times the second vector [`([$a],[$c]) ,`]
+The vector [`F(0,[$p2])`] is [`[$p2]`] times the second vector [`([$b],[$d]) ,`]
 so [`F(0,[$p2])=([$p2*$b],[$p2*$d]).`]
 END_PGML_SOLUTION
 
