@@ -112,7 +112,6 @@ $Nx = Compute("$d+$c*e^x*cos(y)");
 
 ANS($My->cmp());
 ANS($Nx->cmp());
-ANS($Fxy->cmp(upToConstant=>1,showTypeWarnings=>0));
 if ($z==3 or $d==$a-$ka) {
   #not exact
   ANS($Fxy->cmp());
