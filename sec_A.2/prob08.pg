@@ -1,25 +1,24 @@
 ##DESCRIPTION
-## Compute the inverse of a 2x2 matrix
+## Compute the square and third power of a 2x2 matrix
 ##ENDDESCRIPTION
 
 ## DBsubject(Linear algebra)
 ## DBchapter(Matrices)
-## DBsection(Inverses)
-## Institution(Rochester and Hope College)
+## DBsection(Matrix algebra)
+## Institution(Hope College)
 ## Author(Paul Pearson)
 ## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
 ## AuthorText1('Jiri Lebl')
 ## EditionText1('6')
 ## Section1('A.2')
 ## Problem1('')
-## Level(3)
+## Level(2)
 ## MO(1)
-## KEYWORDS('matrix', 'inverse')
+## KEYWORDS('matrix', 'matrix product')
 
 #################################################
 
-DOCUMENT();        
-
+DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
@@ -29,46 +28,40 @@ loadMacros(
 
 #################################################
 
-TEXT(beginproblem());
-
+TEXT(beginproblem()); 
 $showPartialCorrectAnswers = 1;
 
 Context('Matrix');
 
-do { 
-  $A = Matrix([
-    [random(-6,6,1),random(-6,6,1)],
-    [random(-6,6,1),random(-6,6,1)],
-  ]);
-} until ( ($A->det()) != 0);
-
-$I = Matrix([[1,0],[0,1]]);
-
-$answer = $A->inverse();
+$A = Matrix([
+  [non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
+  [0,non_zero_random(-5,5,1)],
+]);
 
 #################################################
 
 Context()->texStrings;
 BEGIN_TEXT
-Find a \( 2 \times 2 \) matrix such that 
+Let 
+\[ A = $A.\]
+If possible, compute the following.  
+If an answer does not exist, enter ${LQ}DNE${RQ}.
 $PAR
-\( $A \) \{ $answer->ans_array() \} \( = $I\).
-$SPACE $SPACE
-\{ AnswerFormatHelp("matrices") \}
+\( A^2 = \)
+\{ ans_box(3,30).$SPACE.AnswerFormatHelp('matrices') \}
+$PAR
+\( A^3 = \)
+\{ ans_box(3,30).$SPACE.AnswerFormatHelp('matrices') \}
 END_TEXT
 Context()->normalStrings;
 
 #################################################
 
-ANS( $answer->cmp(checker => sub {
-      my ( $correct, $student, $self ) = @_;
-      $stu = Matrix($student);
-      return $A * $stu == $I;
-    }
-) );
+ANS( ($A * $A)->cmp() );
+ANS( ($A * $A * $A)->cmp() );
 
 #################################################
 
-COMMENT("Compute the inverse of a 2x2 matrix");
+COMMENT("Compute the square and third power of a 2x2 matrix");
 
 ENDDOCUMENT();

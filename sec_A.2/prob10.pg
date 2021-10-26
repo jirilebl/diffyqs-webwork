@@ -1,11 +1,11 @@
 ##DESCRIPTION
-## Compute the inverse of a 2x2 matrix
+## Compute the inverse of a diagonal matrix
 ##ENDDESCRIPTION
 
 ## DBsubject(Linear algebra)
 ## DBchapter(Matrices)
 ## DBsection(Inverses)
-## Institution(Rochester and Hope College)
+## Institution(TCNJ and Hope College)
 ## Author(Paul Pearson)
 ## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
 ## AuthorText1('Jiri Lebl')
@@ -14,11 +14,11 @@
 ## Problem1('')
 ## Level(3)
 ## MO(1)
-## KEYWORDS('matrix', 'inverse')
+## KEYWORDS('matrix', 'diagonal matrix', 'inverse')
 
-#################################################
+#############################################
 
-DOCUMENT();        
+DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
@@ -27,48 +27,47 @@ loadMacros(
   "PGcourse.pl"
 );
 
-#################################################
+#############################################
 
 TEXT(beginproblem());
-
 $showPartialCorrectAnswers = 1;
 
 Context('Matrix');
 
-do { 
-  $A = Matrix([
-    [random(-6,6,1),random(-6,6,1)],
-    [random(-6,6,1),random(-6,6,1)],
-  ]);
-} until ( ($A->det()) != 0);
+do {
+  $a11 = random(-1,1,2) * random(2,9,1);
+  $a22 = random(-1,1,2) * random(2,9,1);
+  $a33 = random(-1,1,2) * random(2,9,1);
+} until ($a11 != $a22 and $a11 != $a33 and $a22 != $a33);
 
-$I = Matrix([[1,0],[0,1]]);
+$a12 = 0;
+$a13 = 0;
+$a21 = 0;
+$a23 = 0;
+$a31 = 0;
+$a32 = 0;
 
-$answer = $A->inverse();
+$A = Matrix([[$a11, $a12, $a13], [$a21, $a22, $a23], [$a31, $a32, $a33]]);
 
-#################################################
+$Ainv = $A->inverse;
+
+#############################################
 
 Context()->texStrings;
 BEGIN_TEXT
-Find a \( 2 \times 2 \) matrix such that 
+If \( A = $A \), 
+then 
 $PAR
-\( $A \) \{ $answer->ans_array() \} \( = $I\).
-$SPACE $SPACE
+\( A^{-1} = \) \{ $Ainv->ans_array(15) \}
 \{ AnswerFormatHelp("matrices") \}
 END_TEXT
-Context()->normalStrings;
 
-#################################################
+#############################################
 
-ANS( $answer->cmp(checker => sub {
-      my ( $correct, $student, $self ) = @_;
-      $stu = Matrix($student);
-      return $A * $stu == $I;
-    }
-) );
+ANS($Ainv->cmp);
 
-#################################################
+#############################################
 
-COMMENT("Compute the inverse of a 2x2 matrix");
+COMMENT("Compute the inverse of a diagonal matrix");
 
 ENDDOCUMENT();
