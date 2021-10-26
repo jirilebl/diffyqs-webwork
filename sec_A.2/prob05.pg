@@ -1,8 +1,6 @@
-## DESCRIPTION
-## Linear Algebra
-## ENDDESCRIPTION
-
-## Tagged by cmd6a 5/3/06
+##DESCRIPTION
+## Checking associativity of matrix addition
+##ENDDESCRIPTION
 
 ## DBsubject(Linear algebra)
 ## DBchapter(Matrices)
@@ -10,13 +8,16 @@
 ## Date(July 2013)
 ## Institution(Hope College)
 ## Author(Paul Pearson)
-## Level(2)
-## TitleText1('Linear Algebra with Applications')
-## AuthorText1('Jeffrey Holt')
-## EditionText1('1')
-## Section1('3.2')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.2')
 ## Problem1('')
-## KEYWORDS('linear algebra','matrix','multiplication')
+## Level(2)
+## MO(1)
+## KEYWORDS('matrix', 'matrix addition', 'associativity')
+
+################################################
 
 DOCUMENT();
 loadMacros(
@@ -33,24 +34,26 @@ Context('Matrix');
 
 do {
 
-$A = Matrix([
-[non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
-[non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
-]);
+  $A = Matrix([
+    [non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
+    [non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
+  ]);
 
-$B = Matrix([
-[non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
-[non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
-]);
+  $B = Matrix([
+    [non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
+    [non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
+  ]);
 
-$C = Matrix([
-[non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
-[non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
-]);
+  $C = Matrix([
+    [non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
+    [non_zero_random(-5,5,1),non_zero_random(-5,5,1),non_zero_random(-5,5,1)],
+  ]);
 
 } until ( $A!= $B and $A != $C and $B != $C );
 
 $popup = PopUp(['Choose','True','False'],'True');
+
+################################################
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -75,12 +78,14 @@ $BR
 END_TEXT
 Context()->normalStrings;
 
+################################################
+
 install_problem_grader(~~&std_problem_grader);
 
 ANS( ($A + $B + $C)->cmp() );
 ANS( ($B + $A + $C)->cmp() );
 ANS( $popup->cmp );
 
-
+################################################
 
 ENDDOCUMENT();

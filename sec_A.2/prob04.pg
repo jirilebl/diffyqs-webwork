@@ -1,8 +1,20 @@
-# Linear Algebra
+##DESCRIPTION
+## Checking that matrix product is not commutative
+##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Matrices)
+## DBsection(Matrix algebra)
 ## Institution(Rochester and Hope College)
 ## Author(Paul Pearson)
-## KEYWORDS('linear algebra','matrix')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.2')
+## Problem1('')
+## Level(2)
+## MO(1)
+## KEYWORDS('matrix', 'matrix product', 'commutativity')
 
 #################################################
 
@@ -64,5 +76,8 @@ ANS( $AB->cmp() );
 ANS( $BA->cmp() );
 ANS( $popup->cmp() );
 
-ENDDOCUMENT();        
+#################################################
 
+COMMENT("Checking that matrix product is not commutative");
+
+ENDDOCUMENT();
