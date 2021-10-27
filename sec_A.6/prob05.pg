@@ -1,9 +1,20 @@
 ##DESCRIPTION
-## Determinant based on area
+## Determinant based on area of image of a linear map
 ##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Determinants)
+## DBsection(Properties)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.6')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('matrix', 'determinant', 'linear transformation', 'area')
 
 ###########################
 # Initialization
@@ -41,5 +52,9 @@ What is the absolute value of the determinant of the associated matrix?
 [_________]{"($b)/($a)"} 
 [@ AnswerFormatHelp("numbers") @]*
 END_PGML
+
+############################
+
+COMMENT("Determinant based on area of image of a linear map");
 
 ENDDOCUMENT();

@@ -2,7 +2,19 @@
 ## Finding the determinant of a 2x2 matrix
 ##ENDDESCRIPTION
 
-## KEYWORDS('algebra', 'determinant', 'matrix')
+## DBsubject(Linear algebra)
+## DBchapter(Determinants)
+## DBsection(Computing determinants)
+## Institution(Unknown)
+## Author(Unknown)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.6')
+## Problem1('')
+## Level(2)
+## MO(1)
+## KEYWORDS('matrix', 'determinant')
 
 ####################################
 
@@ -47,5 +59,6 @@ END_TEXT
 $ans1 = Compute("$a*$d-$b*$c");
 ANS($ans1->cmp());
 
-ENDDOCUMENT();
+COMMENT("Finding the determinant of a 2x2 matrix");
 
+ENDDOCUMENT();

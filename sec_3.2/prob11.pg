@@ -1,12 +1,25 @@
-# Finding the determinant of a 4x4 
+##DESCRIPTION
+## Determinant of a random permuation of random 4x4 block-triangular matrix
+##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Determinants)
+## DBsection(Computing determinants)
 ## Institution(METU-NCC)
 ## Author(Benjamin Walter)
-## KEYWORDS('algebra', 'matrix operation', 'matrix', 'determinant')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('3.2')
+## Problem1('')
+## Level(2)
+## MO(1)
+## KEYWORDS('matrix', 'determinant')
 
 ####################################################
 
 DOCUMENT();
+
 loadMacros(
   "PGstandard.pl",
   "PGchoicemacros.pl",
@@ -59,7 +72,6 @@ ANS($A->det->cmp);
 
 ####################################################
 
-COMMENT('Random permuation of random 4x4 block-triangular matrix.');
+COMMENT("Determinant of a random permuation of random 4x4 block-triangular matrix");
 
 ENDDOCUMENT();
-

@@ -1,8 +1,20 @@
-# Linear Algebra
+##DESCRIPTION
+## Compute the square and third power of a 2x2 matrix
+##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Matrices)
+## DBsection(Matrix algebra)
 ## Institution(Hope College)
 ## Author(Paul Pearson)
-## KEYWORDS('linear algebra','matrix','multiplication')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('3.2')
+## Problem1('')
+## Level(2)
+## MO(1)
+## KEYWORDS('matrix', 'matrix product')
 
 #################################################
 
@@ -47,5 +59,9 @@ Context()->normalStrings;
 
 ANS( ($A * $A)->cmp() );
 ANS( ($A * $A * $A)->cmp() );
+
+#################################################
+
+COMMENT("Compute the square and third power of a 2x2 matrix");
 
 ENDDOCUMENT();

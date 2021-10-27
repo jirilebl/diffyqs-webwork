@@ -1,9 +1,20 @@
 ##DESCRIPTION
-## Determinant of a product
+## Determinant of a product knowing only the determinant of one of the matrices
 ##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Determinants)
+## DBsection(Properties)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.6')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('matrix', 'determinant')
 
 ###########################
 # Initialization
@@ -53,5 +64,9 @@ Compute the determinant of the product
 Determinant: [______________]{"(($b)-($a)*($c))*($d)"} 
 [@ AnswerFormatHelp("numbers") @]*
 END_PGML
+
+############################
+
+COMMENT("Determinant of a product knowing only the determinant of one of the matrices");
 
 ENDDOCUMENT();

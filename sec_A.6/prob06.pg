@@ -2,8 +2,19 @@
 ## Determinant of a product
 ##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Determinants)
+## DBsection(Properties)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.6')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('matrix', 'determinant')
 
 ###########################
 # Initialization
@@ -56,5 +67,9 @@ Compute determinant of [`BA`] without actually computing [`BA`]:
 [_________]{"($a)*($b)"} 
 [@ AnswerFormatHelp("numbers") @]*
 END_PGML
+
+############################
+
+COMMENT("Determinant of a product");
 
 ENDDOCUMENT();

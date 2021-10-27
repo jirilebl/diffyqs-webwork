@@ -1,6 +1,20 @@
-# Finding the determinant of a 2x2 matrix
+##DESCRIPTION
+## Finding the determinant of a 2x2 matrix
+##ENDDESCRIPTION
 
-## KEYWORDS('algebra', 'determinant', 'matrix')
+## DBsubject(Linear algebra)
+## DBchapter(Determinants)
+## DBsection(Computing determinants)
+## Institution(Unknown)
+## Author(Unknown)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('3.2')
+## Problem1('')
+## Level(2)
+## MO(1)
+## KEYWORDS('matrix', 'determinant')
 
 ####################################
 
@@ -16,7 +30,7 @@ loadMacros(
 ####################################
 
 TEXT(beginproblem());
-$showPartialCorrectAnswers = 0;
+$showPartialCorrectAnswers = 1;
 
 Context("Numeric");
 
@@ -29,11 +43,12 @@ $d=random(-3,5,1);
 
 BEGIN_TEXT
 Let
-\[A =
-\left[\begin{array}{rr}
-        $a & $b \\
-        $c & $d \\
-\end{array}\right]
+\[
+A =
+\begin{bmatrix}
+$a & $b \\
+$c & $d \\
+\end{bmatrix}
 \]
 The determinant of \(A\) is \{ans_rule(25) \}
 \{ AnswerFormatHelp("numbers") \}
@@ -44,5 +59,6 @@ END_TEXT
 $ans1 = Compute("$a*$d-$b*$c");
 ANS($ans1->cmp());
 
-ENDDOCUMENT();
+COMMENT("Finding the determinant of a 2x2 matrix");
 
+ENDDOCUMENT();

@@ -1,10 +1,20 @@
 ##DESCRIPTION
-## Algebra problem:  Systems of equations and inequalities
+## Finding the determinant of a 3x3 matrix and asking about invertibility
 ##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Determinants)
+## DBsection(Properties)
 ## Institution(Hope College)
 ## Author(Paul Pearson)
-## KEYWORDS('algebra', 'matrix operation', 'matrix')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.6')
+## Problem1('')
+## Level(3)
+## MO(1)
+## KEYWORDS('matrix', 'determinant')
 
 ####################################
 
@@ -62,5 +72,8 @@ Context()->normalStrings;
 ANS($ans1->cmp);
 ANS($pop->cmp);
 
-ENDDOCUMENT();
+####################################
 
+COMMENT("Finding the determinant of a 3x3 matrix and asking about invertibility");
+
+ENDDOCUMENT();
