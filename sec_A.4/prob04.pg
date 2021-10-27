@@ -1,10 +1,20 @@
 ##DESCRIPTION
-## Finding rank 1 matrix
+## Fill in entries to make a matrix rank 1
 ##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Matrices)
+## DBsection(Rank)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
-## KEYWORDS('linear algebra','matrix','echelon')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.4')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('matrix', 'rank')
 
 ###########################################
 
@@ -75,5 +85,7 @@ Therefore,
 END_PGML
 
 ###########################################
+
+COMMENT("Fill in entries to make a matrix rank 1");
 
 ENDDOCUMENT();

@@ -1,10 +1,20 @@
 ##DESCRIPTION
-## Computing the kernel
+## Compute the kernel based on the reduced row echelon form
 ##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Euclidean spaces)
+## DBsection(Row, column, and null spaces)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
-## KEYWORDS('linear algebra','matrix','echelon')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.4')
+## Problem1('')
+## Level(3)
+## MO(1)
+## KEYWORDS('matrix', 'kernel', 'row echelon form')
 
 ###########################################
 
@@ -108,5 +118,7 @@ The two vectors span the kernel of [`A`].
 END_PGML
 
 ###########################################
+
+COMMENT("Computing the kernel based on the reduced row echelon form");
 
 ENDDOCUMENT();

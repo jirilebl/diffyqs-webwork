@@ -1,8 +1,20 @@
-# Compute inverse of diagonal matrix
+##DESCRIPTION
+## Compute the inverse of a diagonal matrix
+##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Matrices)
+## DBsection(Inverses)
 ## Institution(TCNJ and Hope College)
 ## Author(Paul Pearson)
-## KEYWORDS('matrix' 'inverse')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('3.2')
+## Problem1('')
+## Level(3)
+## MO(1)
+## KEYWORDS('matrix', 'diagonal matrix', 'inverse')
 
 #############################################
 
@@ -54,6 +66,8 @@ END_TEXT
 
 ANS($Ainv->cmp);
 
-COMMENT('Matrix is always diagonal.');
+#############################################
+
+COMMENT("Compute the inverse of a diagonal matrix");
 
 ENDDOCUMENT();

@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Questions about row/column/null spaces and bases
+## Questions about row/column/null spaces and bases based on a rank 2 matrix
 ##ENDDESCRIPTION
 
 ## DBsubject(Linear algebra)
@@ -7,11 +7,18 @@
 ## DBsection(Row, column, and null spaces)
 ## Institution(Hope College)
 ## Author(Paul Pearson)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.4')
+## Problem1('')
 ## Level(3)
 ## MO(1)
+## KEYWORDS('matrix', 'row space', 'column space', 'nullspace', 'bases')
+
+#####################################
 
 DOCUMENT();
-
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
@@ -88,6 +95,8 @@ $w2 = WordCompletion(['1','2','3','4','R','R^2','R^3','R^4'],'R^4');
 $x1 = Vector(-1*$a, -1*$c, 1, 0);
 $x2 = Vector(-1*$b, -1*$d, 0, 1);
 
+#####################################
+
 BEGIN_PGML
 Suppose [` \vec{a}_1 `], [` \vec{a}_2 `], [` \vec{a}_3 `], and [` \vec{a}_4 `] are column vectors in [` \mathbb{R}^3 `], 
 [` A = [\vec{a}_1 \mid \vec{a}_2 \mid \vec{a}_3 \mid \vec{a}_4 ] `] is a matrix, and
@@ -119,7 +128,8 @@ Find a basis for the null space of of [` A `].  Enter your answer as a comma sep
 [@ AnswerFormatHelp("vectors") @]*
 END_PGML
 
+#####################################
 
-COMMENT('Always rank 2');
+COMMENT("Questions about row/column/null spaces and bases based on a rank 2 matrix");
 
 ENDDOCUMENT();

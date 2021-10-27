@@ -1,13 +1,24 @@
-# Determine the values of h that makes the linear system consistent.
+##DESCRIPTION
+## Determine the values of h that makes the linear system consistent
+##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Systems of linear equations)
+## DBsection(Systems with 2 variables)
 ## Institution(University of Missouri-Columbia)
 ## Author(Rick Lynch)
-## KEYWORDS('linear equations', 'system', 'systems')
-
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('3.2')
+## Problem1('')
+## Level(2)
+## MO(1)
+## KEYWORDS('linear equations', 'system of equations')
 
 ###########################################################################
 # initialization 
-###########################################################################
+
 DOCUMENT();
 loadMacros(
   "PGstandard.pl",
@@ -26,7 +37,7 @@ install_problem_grader(~~&std_problem_grader);
 
 ###########################################################################
 # setup contexts and variables 
-###########################################################################
+
 Context("Matrix");
 do {
   $t1 = random(2,5)*random(-1,1,2);
@@ -57,10 +68,9 @@ $f2 = Fraction($b[1],$a[1][0]);
 $h = Fraction($a[0][0]*$f2);
 $pop = PopUp(["select","equals","does not equal", "is greater than", "is less than"], "equals");
 
-
 ###########################################################################
 # state the problem 
-###########################################################################
+
 Context()->texStrings;
 BEGIN_TEXT
 For what value(s) of \(h\) is the following linear system consistent?
@@ -70,27 +80,34 @@ The system is consistent if \(h\) \{$pop->menu()\} \{ans_rule(15)\}
 END_TEXT
 Context()->normalStrings;
 
-
 ###########################################################################
 # check the answer  
-###########################################################################
+
 ANS($pop->cmp());
 ANS($h->cmp(studentsMustReduceFractions=>1));
 
-
 ###########################################################################
 # solution
-###########################################################################
-Context()->texStrings;
+
 $f1 = Fraction(-$a[1][1],$a[1][0]);
 $f2 = Fraction($b[1],$a[1][0]);
 $f3 = Fraction($a[0][0]*$f2);
 $eq2 = nicestring([$a[1][0],$a[1][1]],["x_1","x_2"])."= $b[1]";
+
+Context()->texStrings;
 BEGIN_SOLUTION
-From the the second equation, \($eq2\), we obtain \(x_1 =  $f1 x_2 + $f2\). Substitute into equation 1, \($a[0][0] \left($f1 x_2 + $f2\right) + $a[0][1] x_2 = h\Rightarrow $f3 = h\). The system is consistent provided \(h = $f3\).
+From the the second equation, \($eq2\), we obtain \(x_1 =  $f1 x_2 + $f2 .\)
+$BRBR
+Substitute into the first equation, \($a[0][0] \left($f1 x_2 + $f2\right) + $a[0][1] x_2 = h\Rightarrow $f3 = h.\)
+$BRBR
+The system is consistent provided \(h = $f3 .\)
 END_SOLUTION
 Context()->normalStrings;
 
-COMMENT('Determine the values of h that makes the linear system consistent.');
+###########################################################################
+
+COMMENT('Determine the values of h that makes the linear system consistent');
+
+###########################################################################
 
 ENDDOCUMENT();

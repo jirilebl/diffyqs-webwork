@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Row space, column space, nullspace
+## Compute row space, column space, nullspace of a matrix
 ##ENDDESCRIPTION
 
 ## DBsubject(Linear algebra)
@@ -7,8 +7,16 @@
 ## DBsection(Row, column, and null spaces)
 ## Institution(Howard University)
 ## Author(Richard Bayne)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.4')
+## Problem1('')
 ## Level(4)
-## KEYWORDS('linear algebra', 'subspaces', 'basis', 'nullity')
+## MO(1)
+## KEYWORDS('matrix', 'row space', 'column space', 'nullspace', 'bases')
+
+###############################
 
 DOCUMENT();
 
@@ -151,5 +159,9 @@ so the nullspace has basis
 [$ans7] \\ [$ans8] \end{bmatrix}  \right[$RBRACE] ``]
 
 END_PGML_SOLUTION
+
+###############################
+
+COMMENT("Compute row space, column space, nullspace of a matrix");
 
 ENDDOCUMENT();

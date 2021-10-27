@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Subspace check
+## Check that the set of solutions Ax=b for nonzero b is not a subspace
 ##ENDDESCRIPTION
 
 ## DBsubject(Linear algebra)
@@ -7,8 +7,16 @@
 ## DBsection(Subspaces)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.4')
+## Problem1('')
 ## Level(3)
-## KEYWORDS('linear algebra','vector space','subspace')
+## MO(1)
+## KEYWORDS('matrix', 'vector space', 'subspace')
+
+#################################
 
 DOCUMENT();
 loadMacros(
@@ -43,7 +51,7 @@ $subspace = PopUp(
 );
 
 
-#################################3
+#################################
 
 BEGIN_PGML
 Suppose [`A`] is an [`n \times n`] martix, and [`\vec{b} \neq \vec{0}`] an [`n`]-vector.
@@ -70,7 +78,7 @@ So with that,
 Is [`S`] a subspace?  [@ $subspace->menu() @]*
 END_PGML
 
-#################################3
+#################################
 
 ANS(Compute("b+b")->cmp());
 ANS($add->cmp());
@@ -79,5 +87,9 @@ ANS(Compute("$c*b")->cmp());
 ANS($mult->cmp());
 
 ANS($subspace->cmp());
+
+#################################
+
+COMMENT("Check that the set of solutions Ax=b for nonzero b is not a subspace");
 
 ENDDOCUMENT();

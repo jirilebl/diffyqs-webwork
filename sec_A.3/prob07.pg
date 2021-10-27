@@ -15,7 +15,9 @@
 ## Problem1('')
 ## Level(2)
 ## MO(1)
-## KEYWORDS('algebra', 'linear equations', 'system of equations')
+## KEYWORDS('linear equations', 'system of equations')
+
+########################################################
 
 DOCUMENT();
 loadMacros(
@@ -66,6 +68,8 @@ $multians = MultiAnswer($x, $y)->with(
   }
 );
 
+########################################################
+
 Context()->texStrings;
 BEGIN_TEXT
 Solve the linear system
@@ -90,7 +94,12 @@ $EITALIC
 END_TEXT
 Context()->normalStrings;
 
+########################################################
+
 ANS($multians->cmp);
 
+########################################################
+
 COMMENT('System of 2 linear equations, no matrix notation, always infinitely many solutions');
+
 ENDDOCUMENT();

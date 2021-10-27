@@ -1,9 +1,20 @@
 ##DESCRIPTION
-## rank/nullity
+## Rank/nullity questions relating to number of linearly independent rows / columns
 ##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Matrices)
+## DBsection(Matrix algebra)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.4')
+## Problem1('')
+## Level(2)
+## MO(1)
+## KEYWORDS('matrix', 'rank', 'nullity', 'row echelon form')
 
 ###########################
 # Initialization
@@ -48,5 +59,9 @@ The number of linearly independent rows of [`A`] is [_______]{"$r"}
 The number of zero rows in the reduced row echelon form of [`A`] is [_______]{"$n-$r"}
 [@ AnswerFormatHelp("numbers") @]*
 END_PGML
+
+############################
+
+COMMENT("Rank/nullity questions relating to number of linearly independent rows / columns");
 
 ENDDOCUMENT();

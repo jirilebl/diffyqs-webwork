@@ -14,9 +14,9 @@
 ## Problem1('')
 ## Level(3)
 ## MO(1)
-## KEYWORDS('algebra', 'linear equations', 'system of equations')
+## KEYWORDS('linear equations', 'system of equations')
 
-########################################################3
+########################################################
 
 DOCUMENT();
 loadMacros(
@@ -26,7 +26,7 @@ loadMacros(
   "PGcourse.pl"
 );
 
-########################################################3
+########################################################
 
 TEXT(beginproblem());
 

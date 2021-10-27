@@ -1,8 +1,19 @@
-# Systems of Linear Equations
+##DESCRIPTION
+## Performing certain row operations to put matrix into row echelon form then solve the system using back substitution
+##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Matrices)
+## DBsection(Echelon form)
 ## Institution(Hope College)
 ## Author(Paul Pearson)
-## KEYWORDS('Algebra' 'Linear Equations' 'Matrix' 'Matrices')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('3.2')
+## Problem1('')
+## Level(2)
+## KEYWORDS('matrix', 'echelon form')
 
 ####################################################
 
@@ -97,6 +108,8 @@ ANS( $A[0]->cmp() );
 
 ANS($x->cmp);
 
-COMMENT('Solving the system of equations involves back subsitution');
+####################################################
+
+COMMENT("Performing certain row operations to put matrix into row echelon form then solve the system using back substitution");
 
 ENDDOCUMENT();

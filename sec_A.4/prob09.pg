@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Row space, column space, nullspace
+## Compute row space, column space, nullspace of a matrix
 ##ENDDESCRIPTION
 
 ## DBsubject(Linear algebra)
@@ -7,8 +7,16 @@
 ## DBsection(Row, column, and null spaces)
 ## Institution(Howard University)
 ## Author(Richard Bayne)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.4')
+## Problem1('')
 ## Level(4)
-## KEYWORDS('linear algebra', 'subspaces', 'basis', 'nullity')
+## MO(1)
+## KEYWORDS('matrix', 'row space', 'column space', 'nullspace', 'bases')
+
+###############################
 
 DOCUMENT();
 
@@ -59,10 +67,10 @@ $multians1 = MultiAnswer($basis1, $basis2)->with(
 
 Context()->texStrings;
 BEGIN_TEXT
-Find bases for the column space, the row space, and the null space of matrix A.
-$BRBR
+Find bases for the column space, the row space, and the null space of the matrix
+$BR
 
-\(A = $A\)
+\[A = $A\]
 
 $BR
 Basis for the column space of \(A =  \Bigg\lbrace\) \{ $multians1->ans_array \} \(,\) \{ $multians1->ans_array \} \( \Bigg\rbrace\)
@@ -139,5 +147,9 @@ $PAR
 \( \left$LBRACE \begin{bmatrix} $ans1 \\ $ans2 \\ -1 \end{bmatrix} \right $RBRACE \)
 END_SOLUTION
 Context()->normalStrings;
+
+######################
+
+COMMENT("Compute row space, column space, nullspace of a matrix");
 
 ENDDOCUMENT();

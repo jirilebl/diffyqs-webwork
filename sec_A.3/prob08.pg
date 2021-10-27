@@ -15,7 +15,7 @@
 ## Problem1('')
 ## Level(2)
 ## MO(1)
-## KEYWORDS('algebra', 'linear equations', 'system of equations')
+## KEYWORDS('linear equations', 'system of equations')
 
 #############################################
 
@@ -85,6 +85,8 @@ Context()->normalStrings;
 ANS($x->cmp);
 ANS($y->cmp);
 ANS($z->cmp);
+
+#############################################
 
 COMMENT('System of 3 linear equations, no matrix notation, unique integral answer');
 

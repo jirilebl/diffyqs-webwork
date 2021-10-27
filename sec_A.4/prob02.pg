@@ -1,10 +1,20 @@
 ##DESCRIPTION
-## Rank nullity
+## Compute reduced row echelon form and answer questions about rank/nullity based on that
 ##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Matrices)
+## DBsection(Echelon form)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
-## KEYWORDS('linear algebra','matrix','echelon')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.4')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('matrix', 'rank', 'nullity', 'row echelon form')
 
 ###########################################
 
@@ -103,5 +113,7 @@ The nullity of [`A`] is [_______]{"3-$rk"}
 END_PGML
 
 ###########################################
+
+COMMENT("Compute reduced row echelon form and answer questions about rank/nullity based on that");
 
 ENDDOCUMENT();

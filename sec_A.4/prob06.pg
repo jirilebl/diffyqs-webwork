@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Subspace check
+## Check that the set vectors defined by a homogeneous equation is a subspace
 ##ENDDESCRIPTION
 
 ## DBsubject(Linear algebra)
@@ -7,8 +7,16 @@
 ## DBsection(Subspaces)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.4')
+## Problem1('')
 ## Level(3)
-## KEYWORDS('linear algebra','vector space','subspace')
+## MO(1)
+## KEYWORDS('vector space', 'subspace')
+
+#################################
 
 DOCUMENT();
 loadMacros(
@@ -71,8 +79,7 @@ $subspace = PopUp(
   "Yes",
 );
 
-
-#################################3
+#################################
 
 BEGIN_PGML
 Let [`S`] be the set of vectors [`\vec{x} = (x_1,x_2,x_3)`] in [`{\mathbb{R}}^3`]
@@ -104,7 +111,7 @@ If we multiply any vector in [`S`] by a scalar, will we get a vector in [`S`]
 Is [`S`] a subspace?  [@ $subspace->menu() @]*
 END_PGML
 
-#################################3
+#################################
 
 ANS($vwinS->cmp());
 ANS(Compute("$a+$c")->cmp());
@@ -120,5 +127,9 @@ ANS($mult->cmp());
 ANS($mult2->cmp());
 
 ANS($subspace->cmp());
+
+#################################
+
+COMMENT("Check that the set vectors defined by a homogeneous equation is a subspace");
 
 ENDDOCUMENT();
