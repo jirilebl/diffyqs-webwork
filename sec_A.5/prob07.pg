@@ -1,5 +1,5 @@
 ## DESCRIPTION
-## Finding an orthonormal basis of column space and kernel
+## Finding an orthonormal basis of column space and kernel of a 4x4 matrix
 ## ENDDESCRIPTION
 
 ## DBsubject(Linear algebra)
@@ -7,9 +7,16 @@
 ## DBsection(Gram-Schmidt process)
 ## Institution(Rochester and Hope College)
 ## Author(Paul Pearson)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.5')
+## Problem1('')
 ## Level(3)
 ## MO(1)
-## KEYWORDS('linear algebra','matrix','basis','dot product','inner product','orthonormal','image')
+## KEYWORDS('inner product', 'dot product', 'orthonormal, 'matrix image', 'matrix kernel', 'column space', 'Gram-Schmidt', 'basis')
+
+############################
 
 DOCUMENT();
 
@@ -103,12 +110,12 @@ $multians2 = MultiAnswer($basis3, $basis4)->with(
   checker => ~~&orthonormal_basis_checker_columns,
 );
 
-#########################################
+############################
 
 Context()->texStrings;
 BEGIN_TEXT
 Let \[ A = $A. \]
-Find orthonormal bases of the kernel and columnspace of \(A\).
+Find orthonormal bases of the kernel and column space of \(A\).
 $BRBR
 Basis of the kernel:
 $BR
@@ -119,7 +126,7 @@ $BR
 $SPACE $SPACE
 \{ AnswerFormatHelp("numbers"); \}
 $BRBR
-Basis of the columnspace:
+Basis of the column space:
 $BR
 \(\Bigg\lbrace\) 
 \{ $multians2->ans_array(15) \}, 
@@ -130,9 +137,13 @@ $SPACE $SPACE
 END_TEXT
 Context()->normalStrings;
 
-###########################################
+############################
 
 ANS($multians1->cmp);
 ANS($multians2->cmp);
+
+############################
+
+COMMENT("Finding an orthonormal basis of column space and kernel of a 4x4 matrix");
 
 ENDDOCUMENT();

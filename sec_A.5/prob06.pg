@@ -1,16 +1,20 @@
-## DESCRIPTION
-## A problem about Gram-Schmidt (real vectors)
-## ENDDESCRIPTION
-
+##DESCRIPTION
+## Apply the Gram-Schmidt procedure
+##ENDDESCRIPTION
 
 ## DBsubject(Linear algebra)
 ## DBchapter(Inner products)
 ## DBsection(Gram-Schmidt process)
 ## Institution(Winona State University)
 ## Author(Christopher Phan)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.5')
+## Problem1('')
 ## Level(3)
 ## MO(1)
-## KEYWORDS('Gram-Schmidt', 'inner product')
+## KEYWORDS('inner product', 'dot product', 'Gram-Schmidt')
 
 ############################################################################
 ## Copyright (C) 2017 Christopher Phan, Ph.D.
@@ -128,5 +132,9 @@ ANS( $numer[1]->cmp() ); # <u1, v3>
 ANS( $numer[2]->cmp() ); # <u2, v3>
 ANS( $denom[1]->cmp() ); # <u2, u2>
 ANS( $u[2]->cmp() ); # u3
+
+############################
+
+COMMENT("Apply the Gram-Schmidt procedure");
 
 ENDDOCUMENT();

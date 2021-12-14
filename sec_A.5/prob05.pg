@@ -1,6 +1,6 @@
-## DESCRIPTION
-## Projection onto a subspace
-## ENDDESCRIPTION
+##DESCRIPTION
+## Compute orthogonal projection of vectors onto a subspace
+##ENDDESCRIPTION
 
 ## DBsubject(Linear algebra)
 ## DBchapter(Inner products)
@@ -8,8 +8,14 @@
 ## Date(July 2013)
 ## Institution(Rochester and Hope College)
 ## Author(Paul Pearson)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.5')
+## Problem1('')
 ## Level(2)
 ## MO(1)
+## KEYWORDS('inner product', 'dot product', 'orthogonal projection')
 
 DOCUMENT();
 
@@ -85,5 +91,9 @@ END_TEXT
 Context()->normalStrings;
 
 ANS($P->cmp);
+
+############################
+
+COMMENT("Compute orthogonal projection of vectors onto a subspace");
 
 ENDDOCUMENT();

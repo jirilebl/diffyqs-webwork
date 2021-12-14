@@ -1,9 +1,20 @@
 ##DESCRIPTION
-## inner product properties
+## Compute with inner products using (bi)linearity
 ##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Inner products)
+## DBsection(Computing with dot products)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('A.5')
+## Problem1('')
+## Level(2)
+## MO(1)
+## KEYWORDS('inner product', 'dot product', 'linearity', 'bilinearity')
 
 ###########################
 # Initialization
@@ -51,5 +62,8 @@ Given that [`\langle \vec{v} , \vec{w} \rangle = [$a]`] and
 [@ AnswerFormatHelp("numbers") @]*
 END_PGML
 
-ENDDOCUMENT();
+############################
 
+COMMENT("Compute with inner products using (bi)linearity");
+
+ENDDOCUMENT();
