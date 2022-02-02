@@ -37,7 +37,7 @@ Context("Numeric");
 
 $a = random(-0.9,-0.1,.1);
 $minusa = -$a;
-$denom = random(2,6,1); 
+$denom = random(3,6,1); 
 if ($denom==5) { $denom = random(2,4,1); } 
 $y0 = $PI/$denom;
 $c = sin($y0);
