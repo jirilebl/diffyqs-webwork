@@ -27,14 +27,18 @@ $showPartialCorrectAnswers = 1;
 
 Context("Matrix");
 
-$a = random(2,10,1);
+$a = random(1.1,4.1,0.2);
 
 $ans1 = Compute("y");
 $ans2 = Compute("$a*(1-x^2)*y-x");
 
 $jac = Compute("[[0,1],[-$a*2*x*y-1,$a*(1-x^2)]]");
 
-$popup = PopUp(["?", "saddle", "source", "sink", "spiral sink", "spiral source", "center"], "spiral source");
+if ($a >= 2.0) {
+  $popup = PopUp(["?", "saddle", "source", "sink", "spiral sink", "spiral source", "center"], "source");
+} else {
+  $popup = PopUp(["?", "saddle", "source", "sink", "spiral sink", "spiral source", "center"], "spiral source");
+}
 
 ###########################
 # Main text
