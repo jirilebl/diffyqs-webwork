@@ -1,0 +1,61 @@
+# Classify the Van der Pol oscillator critical point
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation', 'nonlinear', 'Poincare-Bendixson')
+
+########################################################################
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "parserPopUp.pl",
+  "PGcourse.pl",
+);
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 0;
+
+###########################
+# Setup
+
+$popup1 = PopUp(["?", "yes", "no", "sometimes"], "yes");
+$popup2 = PopUp(["?", "yes", "no", "sometimes"], "no");
+$popup3 = PopUp(["?", "closed trajectory", "limit cycle", "asymptomatically stable", "conservation of energy", "simply connected"], "limit cycle");
+$popup4 = PopUp(["?", "region with no holes", "bounded region", "region has only one piece"], "region with no holes");
+
+###########################
+# Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Here are some reading questions for section 8.4 in Notes on Diffy Qs.
+$PAR
+Does the Poincaré-Bendixson theorem apply to solutions of the
+Van der Pol equation?
+\{ $popup1->menu() \}
+$PAR
+Does the Poincaré-Bendixson theorem apply if a solution tends to infinity?
+\{ $popup2->menu() \}
+$PAR
+A closed trajectory that at least one solution spirals into or out of is
+called a:
+\{ $popup3->menu() \}
+$PAR
+A simply connected region is
+\{ $popup4->menu() \}
+END_TEXT
+Context()->normalStrings;
+
+###########################
+# Answer evaluation
+
+ANS($popup1->cmp);
+ANS($popup2->cmp);
+ANS($popup3->cmp);
+ANS($popup4->cmp);
+
+ENDDOCUMENT();

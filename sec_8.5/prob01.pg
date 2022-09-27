@@ -1,0 +1,75 @@
+# Classify the Van der Pol oscillator critical point
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation', 'nonlinear', 'Chaos')
+
+########################################################################
+
+###########################
+# Initialization
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "parserPopUp.pl",
+  "PGcourse.pl",
+);
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 0;
+
+###########################
+# Setup
+
+$popup1 = PopUp(["?",
+                 "just does random things",
+                 "is very sensitive to initial conditions",
+                 "is hard to solve"],
+                "is very sensitive to initial conditions");
+$popup2 = PopUp(["?",
+                 "random points in the plane",
+                 "the solution of the system on an interval of time",
+                 "the state of the system at a discrete sequence of points"],
+                "the state of the system at a discrete sequence of points");
+$popup3 = PopUp(["?",
+                 "a set of points the Poincaré section tends to",
+                 "the initial conditions that give you periodic solutions",
+                 "exctly the set of points in the Poincaré section"],
+                "a set of points the Poincaré section tends to");
+$popup4 = PopUp(["?",
+                 "the solution will tend to be close to points on the attractor after some time",
+                 "only points on the attractor are solutions",
+                 "solutions will avoid being on the attractor"],
+                "the solution will tend to be close to points on the attractor after some time");
+
+###########################
+# Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Here are some reading questions for section 8.5 in Notes on Diffy Qs.
+$PAR
+A chaotic system is one that
+\{ $popup1->menu() \}
+$PAR
+A Poincaré section of the Duffing equation is
+\{ $popup2->menu() \}
+$PAR
+An attractor for the Duffing equation is
+\{ $popup3->menu() \}
+$PAR
+If we find an attractor set for a chaotic system, then
+\{ $popup4->menu() \}
+END_TEXT
+Context()->normalStrings;
+
+###########################
+# Answer evaluation
+
+ANS($popup1->cmp);
+ANS($popup2->cmp);
+ANS($popup3->cmp);
+ANS($popup4->cmp);
+
+ENDDOCUMENT();
