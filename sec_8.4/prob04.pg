@@ -25,7 +25,7 @@ $showPartialCorrectAnswers = 0;
 $popup1 = PopUp(["?", "yes", "no", "sometimes"], "yes");
 $popup2 = PopUp(["?", "yes", "no", "sometimes"], "no");
 $popup3 = PopUp(["?", "closed trajectory", "limit cycle", "asymptomatically stable", "conservation of energy", "simply connected"], "limit cycle");
-$popup4 = PopUp(["?", "region with no holes", "bounded region", "region has only one piece"], "region with no holes");
+$popup4 = PopUp(["?", "bounded region", "region has only one piece", "region with no holes"], "region with no holes");
 
 ###########################
 # Main text

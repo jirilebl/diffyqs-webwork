@@ -38,8 +38,8 @@ $popup3 = PopUp(["?",
                  "exctly the set of points in the Poincaré section"],
                 "a set of points the Poincaré section tends to");
 $popup4 = PopUp(["?",
-                 "the solution will tend to be close to points on the attractor after some time",
                  "only points on the attractor are solutions",
+                 "the solution will tend to be close to points on the attractor after some time",
                  "solutions will avoid being on the attractor"],
                 "the solution will tend to be close to points on the attractor after some time");
 
