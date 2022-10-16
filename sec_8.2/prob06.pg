@@ -88,7 +88,7 @@ ANS($popup->cmp());
 Context()->texStrings;
 BEGIN_SOLUTION
 Solutions are \( x(t) = $solx \), \( y(t) = $soly \).
-Based on this we see that as \(t\) starts at 0 and grows
+Based on this, we see that as \(t\) starts at 0 and grows,
 the solutions will tend to infinity.  Therefore the behavior is a source.
 $PAR
 Notice that only a small range of time \(t \) is allowed before
