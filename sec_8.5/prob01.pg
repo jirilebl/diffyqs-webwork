@@ -1,7 +1,18 @@
-# Classify the Van der Pol oscillator critical point
+##DESCRIPTION
+## Multiple choice questions about Chaos, reading questions for 8.5 in Notes on Diffy Qs
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Nonlinear systems)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## Level(2)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('8.5')
+## Problem1('')
 ## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation', 'nonlinear', 'Chaos')
 
 ########################################################################
@@ -67,9 +78,15 @@ Context()->normalStrings;
 ###########################
 # Answer evaluation
 
+install_problem_grader(~~&std_problem_grader);
+
 ANS($popup1->cmp);
 ANS($popup2->cmp);
 ANS($popup3->cmp);
 ANS($popup4->cmp);
+
+###########################
+
+COMMENT("Multiple choice questions about Chaos, reading questions for 8.5 in Notes on Diffy Qs");
 
 ENDDOCUMENT();

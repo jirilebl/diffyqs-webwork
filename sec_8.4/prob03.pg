@@ -1,7 +1,18 @@
-# Classify the Van der Pol oscillator critical point
+##DESCRIPTION
+## Classify the Van der Pol oscillator critical point
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Nonlinear systems)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('8.4')
+## Problem1('')
 ## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation', 'nonlinear', 'critical point', 'Jacobian matrix', 'Van der Pol')
 
 ########################################################################
@@ -79,5 +90,9 @@ ANS($ans2->cmp);
 ANS($jac->cmp);
 
 ANS($popup->cmp);
+
+###########################
+
+COMMENT("Classify the Van der Pol oscillator critical point");
 
 ENDDOCUMENT();

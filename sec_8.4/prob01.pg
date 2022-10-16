@@ -1,7 +1,18 @@
-# Using Bendixson-Dulac theorem to show nonexistence of closed trajectories.
+##DESCRIPTION
+## Using Bendixson-Dulac theorem to show nonexistence of closed trajectories.
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Nonlinear systems)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('8.4')
+## Problem1('')
 ## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'Bendixson-Dulac', 'closed trajectory')
 
 ########################################################################
@@ -143,5 +154,9 @@ ANS($sol3->cmp);
 ANS($mc3->cmp);
 ANS($sol4->cmp);
 ANS($mc4->cmp);
+
+###########################
+
+COMMENT("Using Bendixson-Dulac theorem to show nonexistence of closed trajectories.");
 
 ENDDOCUMENT();
