@@ -45,7 +45,7 @@ $b = random(2,10,1);
 $c = random(2,10,1);
 $d = random(2,10,1);
 
-$system1 = "x' = y-$a x^3, y'=x-y-$b y^3";
+$system1 = "x' = y-$a x^3, \quad y'=x-y-$b y^3";
 $sol1 = Compute("-3*$a*x^2-1-3*$b*y^2")->reduce;
 $mc1 = PopUp(
  	[	"?",
@@ -56,7 +56,7 @@ $mc1 = PopUp(
 		"Theorem does not apply, problem: there are leprechauns in the equation",
       		"None of the above" ],
 	"Theorem applies, sign negative, region simply connected" );
-$system2 = "x' = \frac{$a x}{\sqrt{x^2+y^2}}, y'=\frac{$a y}{\sqrt{x^2+y^2}}";
+$system2 = "x' = \frac{$a x}{\sqrt{x^2+y^2}}, \quad y'=\frac{$a y}{\sqrt{x^2+y^2}}";
 $sol2 = Compute("$a / (sqrt(x^2+y^2))")->reduce;
 $mc2 = PopUp(
  	[	"?",
@@ -67,7 +67,7 @@ $mc2 = PopUp(
 		"Theorem does not apply, problem: eels in the hovercraft",
       		"None of the above" ],
 	"Theorem does not apply, problem: region not simply connected" );
-$system3 = "x' = y, y' = $c(1-x^2)y - $a x";
+$system3 = "x' = y, \quad y' = $c(1-x^2)y - $a x";
 $sol3 = Compute("$c(1-x^2)")->reduce;
 $mc3 = PopUp(
  	[	"?",
@@ -78,7 +78,7 @@ $mc3 = PopUp(
 		"Theorem does not apply, problem: 42",
       		"None of the above" ],
 	"Theorem does not apply, problem: both positive and negative signs" );
-$system4 = "x' = $c e^x - $d \cos(y), y'=$a e^y - $b \sin(x)";
+$system4 = "x' = $c e^x - $d \cos(y), \quad y'=$a e^y - $b \sin(x)";
 $sol4 = Compute("$c e^x + $a e^y")->reduce;
 $mc4 = PopUp(
  	[	"?",
