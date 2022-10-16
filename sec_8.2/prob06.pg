@@ -1,7 +1,18 @@
-# A degenerate critical point that can nonetheless be classified
+##DESCRIPTION
+## A degenerate critical point that can nonetheless be classified
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Nonlinear systems)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('8.2')
+## Problem1('')
 ## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation', 'nonlinear', 'critical point')
 
 ########################################################################
@@ -86,5 +97,9 @@ the solution blows up.  The solution only exists if we have both
 \( t < \frac{1}{$d b} \).
 END_SOLUTION
 Context()->normalStrings;
+
+#####################
+
+COMMENT("A degenerate critical point that can nonetheless be classified");
 
 ENDDOCUMENT();

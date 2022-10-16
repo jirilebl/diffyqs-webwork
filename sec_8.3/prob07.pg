@@ -1,7 +1,19 @@
-# Find a particular trajectory for a pendulum and find maximum angle
+##DESCRIPTION
+## Find a particular trajectory for a pendulum and find maximum angle
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Nonlinear systems)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## Level(5)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('8.3')
+## Problem1('')
+## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation', 'nonlinear', 'pendulum equation')
 
 
 ########################################################################
@@ -56,5 +68,7 @@ Now find the maximum angule that the pendulum attains given these initial condit
 END_PGML
 
 ########################################################################
+
+COMMENT("Find a particular trajectory for a pendulum and find maximum angle");
 
 ENDDOCUMENT();

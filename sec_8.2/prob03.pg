@@ -1,7 +1,18 @@
-# Find critical points, linearize, and classify for a nonlinear system of ODE
+##DESCRIPTION
+## Find critical points, linearize, and classify for a nonlinear system of ODE
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Nonlinear systems)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('8.2')
+## Problem1('')
 ## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation', 'nonlinear', 'Jacobian matrix', 'linearization', 'stability', 'critical point')
 
 ########################################################################
@@ -88,5 +99,9 @@ ANS($ycritcoord->cmp());
 ANS($lin->cmp());
 
 ANS($popup->cmp());
+
+###########################
+
+COMMENT("Find critical points, linearize, and classify for a nonlinear system of ODE");
 
 ENDDOCUMENT();

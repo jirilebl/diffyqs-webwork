@@ -1,7 +1,18 @@
-# Find critical points of a nonlinear system of ODE, where there is a whole curve of critical points
+##DESCRIPTION
+## Find critical points of a nonlinear system of ODE, where there is a whole curve of critical points
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Nonlinear systems)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('8.1')
+## Problem1('')
 ## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation', 'nonlinear', 'critical point')
 
 ########################################################################
@@ -54,5 +65,9 @@ Context()->normalStrings;
 # Answer evaluation
 
 ANS($sol->cmp);
+
+###########################
+
+COMMENT("Find critical points of a nonlinear system of ODE, where there is a whole curve of critical points");
 
 ENDDOCUMENT();

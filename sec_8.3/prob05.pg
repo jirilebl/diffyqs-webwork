@@ -1,6 +1,19 @@
+##DESCRIPTION
+## Predator-prey equation application
+##ENDDESCRIPTION
+
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Nonlinear systems)
 ## Institution(University of Michigan)
 ## Author(Gavin LaRose)
-## KEYWORDS('calculus','differential equations', 'systems')
+## Level(5)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('8.3')
+## Problem1('')
+## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation', 'nonlinear', 'Predator-Prey', 'Lotka-Volterra')
 
 ##############################################
 
@@ -251,5 +264,7 @@ keep the populations moving in a cycle around the equilibrium.
 
 END_SOLUTION
 Context()->normalStrings;
+
+COMMENT("Predator-prey equation application");
 
 ENDDOCUMENT();

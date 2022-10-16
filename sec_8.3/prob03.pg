@@ -1,9 +1,21 @@
-# Find equilibrium solutions of a modified predator-prey system
+##DESCRIPTION
+## Find equilibrium solutions of a modified predator-prey system
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Nonlinear systems)
 ## Institution(Berkeley)
 ## Author(Paul Vojta)
-## KEYWORDS('differential equations','first order','predator-prey','Lotka-Volterra')
+## Level(5)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('8.3')
+## Problem1('')
+## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation', 'nonlinear', 'Predator-Prey', 'Lotka-Volterra')
 
+##############################################
 
 DOCUMENT();
 
@@ -71,5 +83,9 @@ Context()->normalStrings;
 $showPartialCorrectAnswers = 1;
 
 ANS( $ans1->cmp() );
+
+##############################################
+
+COMMENT("Find equilibrium solutions of a modified predator-prey system");
 
 ENDDOCUMENT();

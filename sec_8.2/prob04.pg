@@ -1,7 +1,18 @@
-# Finding and classifying critical points of a conservative system
+##DESCRIPTION
+## Finding and classifying critical points of a conservative system
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Nonlinear systems)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('8.2')
+## Problem1('')
 ## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'conservative system', 'critical point')
 
 ########################################################################
@@ -93,5 +104,9 @@ ANS($jac->cmp());
 
 ANS($popup1->cmp());
 ANS($popup2->cmp());
+
+#####################
+
+COMMENT("Finding and classifying critical points of a conservative system");
 
 ENDDOCUMENT();

@@ -1,7 +1,18 @@
-# Find linearization
+##DESCRIPTION
+## Find the linearization of a system of ODE at a given point
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Nonlinear systems)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('8.1')
+## Problem1('')
 ## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation', 'nonlinear', 'linearization', 'Jacobian matrix', 'critical point')
 
 ########################################################################
@@ -90,5 +101,9 @@ Context()->normalStrings;
 # Answer evaluation
 
 ANS($mat->cmp);
+
+###########################
+
+COMMENT("Find the linearization of a system of ODE at a given point");
 
 ENDDOCUMENT();

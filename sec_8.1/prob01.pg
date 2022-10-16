@@ -1,7 +1,18 @@
-# Finding the Jacobian matrix for a nonlinear system of differential equations
+##DESCRIPTION
+## Finding the Jacobian matrix for a nonlinear system of differential equations
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Nonlinear systems)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('8.1')
+## Problem1('')
 ## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation', 'nonlinear', 'Jacobian matrix')
 
 ########################################################################
@@ -54,5 +65,9 @@ Context()->normalStrings;
 # Answer evaluation
 
 ANS($jac->cmp);
+
+###########################
+
+COMMENT("Finding the Jacobian matrix for a nonlinear system of differential equations");
 
 ENDDOCUMENT();

@@ -1,7 +1,18 @@
-# Pick among several nonlinear system phase plane vector fields
+##DESCRIPTION
+## Pick among several nonlinear system phase plane vector fields
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Nonlinear systems)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('8.1')
+## Problem1('')
 ## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation', 'nonlinear', 'phase plane', 'vector field')
 
 # this was derived from a similar problem by Paul Pearson, but it's mostly different now
@@ -158,5 +169,9 @@ install_problem_grader(~~&std_problem_grader);
 $showPartialCorrectAnswers = 0;
 
 ANS(str_cmp($ml->ra_correct_ans));
+
+############################
+
+COMMENT("Pick among several nonlinear system phase plane vector fields");
 
 ENDDOCUMENT();
