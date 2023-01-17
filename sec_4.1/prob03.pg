@@ -115,7 +115,7 @@ BEGIN_TEXT
 In this problem we find the eigenfunctions and eigenvalues of the differential equation
 \[\frac{d^2y}{dx^2} + \lambda y = 0\]
 on the interval \(0\leq x \leq a\), where \(a>0\),  with boundary values
-\[y(0) = 0\hskip {20pt} y(a) = 0.\]
+\[y(0) = 0\hskip 20pt y(a) = 0.\]
 $PAR 
 For the general solution of the differential equation in the following cases use A and B for your constants, for example \(y = A\cos (x) + B\sin(x)\). For the variable \(\lambda\) type the word lambda, otherwise treat it as you would any other variable.
 $PAR
