@@ -144,7 +144,7 @@ In this problem we find the eigenfunctions and eigenvalues of the differential e
 \[\frac{d^2y}{dx^2} + \lambda y = 0\]
 with boundary conditions
 \[
-y(0)+y^\prime(0) = 0 \hskip {20pt}
+y(0)+y^\prime(0) = 0 \hskip 20pt
 y ($L) = 0
 \]
 For the general solution of the differential equation in the following cases use A and B for your constants, for example \(y = A\cos (x) + B\sin(x)\). For the variable \(\lambda\) type the word lambda, otherwise treat it as you would any other variable.
