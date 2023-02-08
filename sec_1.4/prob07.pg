@@ -42,7 +42,7 @@ if ($a < 0) {
 			      C=>["Real",limits=>[0,10]]);
 } else {
     #the coefficient in the exponent will be negative on the general solution
-    Context()->variables->are(x=>["Real",limits=>[-4,-0.1]]
+    Context()->variables->are(x=>["Real",limits=>[-4,-0.1]],
 			      C=>["Real",limits=>[0,10]]);
 }
 
