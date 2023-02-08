@@ -74,7 +74,9 @@ $cmp2 = Compute("C e^($ma x) $sgnma x/$aa + 1/$aa^2")->cmp( checker => sub {
     my $c1 = Formula($context,'C1');
     
     my $context2 = Context()->copy; 
-    $context2->flags->set(no_parameters=>0);
+    $context2->flags->set(no_parameters=>0,
+                          tolerance => 0.00001,
+                          tolType => "relative");
     $context2->variables->add('C0'=>'Parameter');
     my $cc0 = Formula($context2,'C0');
     
