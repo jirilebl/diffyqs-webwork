@@ -32,8 +32,8 @@ TEXT(beginproblem());
 
 Context("Numeric");
 
-Context()->variables->set(x=>{limits=>[0.1,5]});
-Context()->variables->add(C=>'Real');
+Context()->variables->are(x=>["Real",limits=>[0.1,5]],
+                          C=>["Real",limits=>[0,10]]);
 
 ##axy'+by=x^{-p}
 $a = Real(random(2,4,1));

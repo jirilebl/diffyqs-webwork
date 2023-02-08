@@ -36,7 +36,15 @@ $showPartialCorrectAnswers = 1;
 do { $a= non_zero_random(-5,5,1); } until (($a != 1) and ($a != -1));
 
 Context("Numeric");
-Context()->variables->are(x=>["Real",limits=>[0.1,4]],C=>"Real");
+if ($a < 0) {
+    #the coefficient in the exponent will be positive on the general solution
+    Context()->variables->are(x=>["Real",limits=>[0.1,4]]
+			      C=>["Real",limits=>[0,10]]);
+} else {
+    #the coefficient in the exponent will be negative on the general solution
+    Context()->variables->are(x=>["Real",limits=>[-4,-0.1]]
+			      C=>["Real",limits=>[0,10]]);
+}
 
 $b = -1/$a;
 $ma = -$a;

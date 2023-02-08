@@ -33,7 +33,7 @@ TEXT(beginproblem());
 # Show which answers are correct and which ones are incorrect
 $showPartialCorrectAnswers = 1;
 
-Context()->variables->are("x"=>"Real","y"=>"Real","C"=>"Real");
+Context()->variables->are("x"=>"Real","y"=>"Real","C"=>["Real",limits=>[0,10]]);
 
 ##############################################################
 #
