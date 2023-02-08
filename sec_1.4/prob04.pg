@@ -34,8 +34,8 @@ $a = Real(random(2,10,1));
 
 Context("Numeric");
 
-Context()->variables->set(x=>["Real",limits=>[0.1,4]]);
-Context()->variables->add(C=>["Real",limits=>[0,10]]);
+Context()->variables->are(x=>["Real",limits=>[0.1,4]],
+                          C=>["Real",limits=>[0,10]]);
 
 # see also in the answer checker below
 $solution = Compute("($a x^x) + C * (x^x) * (e^(-x))");
