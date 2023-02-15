@@ -39,16 +39,11 @@ Context()->variables->are(
   t=>"Real",
   Deltat=>["Real",TeX=>'\Delta t'],
 );
-if (Context()->flags->get(num_points) < 50) {
-  Context()->flags->set(num_points => 50);
-}
-if (Context()->flags->get(granularity) < 10000) {
-  Context()->flags->set(granularity => 10000);
-}
-Context()->flags->set(tolType => "relative");
-if (Context()->flags->get(tolerance) > 0.00001) {
-  Context()->flags->set(tolerance => 0.00001);
-}
+Context()->flags->set(num_points => 50,
+		      granularity => 10000,
+		      tolType => "relative",
+                      tolerance => 0.00001,
+                      reduceConstants => 0);
 
 $f = random(2,6,1);   # flowrate (in g/L)
 $v = random(10,40,5); # volume (in L)
@@ -121,7 +116,8 @@ $showPartialCorrectAnswers = 1;
 
 ANS( $answera->cmp() );
 ANS( $answerb->cmp() );
-ANS( $answerc->cmp() );
+# evaluate this last bit with a bit more leway
+ANS( $answerc->cmp(tolerance => 0.001) );
 
 ##############################
 

@@ -45,16 +45,11 @@ if ($a < 0) {
     Context()->variables->are(x=>["Real",limits=>[-4,-0.01]],
 			      C=>["Real",limits=>[0,10]]);
 }
-if (Context()->flags->get(num_points) < 50) {
-  Context()->flags->set(num_points => 50);
-}
-if (Context()->flags->get(granularity) < 10000) {
-  Context()->flags->set(granularity => 10000);
-}
-Context()->flags->set(tolType => "relative");
-if (Context()->flags->get(tolerance) > 0.00001) {
-  Context()->flags->set(tolerance => 0.00001);
-}
+Context()->flags->set(num_points => 50,
+		      granularity => 10000,
+		      tolType => "relative",
+                      tolerance => 0.00001,
+                      reduceConstants => 0);
 
 $b = -1/$a;
 $ma = -$a;
