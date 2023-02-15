@@ -33,6 +33,19 @@ TEXT(beginproblem());
 # Setup
 
 Context()->variables->add(C=>'Real');
+
+if (Context()->flags->get(num_points) < 50) {
+  Context()->flags->set(num_points => 50);
+}
+if (Context()->flags->get(granularity) < 10000) {
+  Context()->flags->set(granularity => 10000);
+}
+Context()->flags->set(tolType => "relative");
+if (Context()->flags->get(tolerance) > 0.00001) {
+  Context()->flags->set(tolerance => 0.00001);
+}
+
+
 $a=random(4,10,2);$y=random(-8,8,1);
 $p=Formula("-2*x")->reduce;
 $q=Formula("$a*x")->reduce;

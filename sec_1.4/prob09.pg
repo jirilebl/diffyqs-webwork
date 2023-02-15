@@ -32,6 +32,19 @@ loadMacros(
 	
 TEXT(beginproblem());
 
+Context("Numeric");
+Context()->variables->are(t=>"Real");
+if (Context()->flags->get(num_points) < 50) {
+  Context()->flags->set(num_points => 50);
+}
+if (Context()->flags->get(granularity) < 10000) {
+  Context()->flags->set(granularity => 10000);
+}
+Context()->flags->set(tolType => "relative");
+if (Context()->flags->get(tolerance) > 0.00001) {
+  Context()->flags->set(tolerance => 0.00001);
+}
+
 do {
   $a = random(2,5,1);
   $c1 = random(1,3,1);
@@ -41,9 +54,6 @@ do {
   $d = random(-6,6,1);
   $f= $d - $b1;
 } until ($f != 0);
-
-Context("Numeric");
-Context()->variables->are(t=>"Real");
 
 ##############################################################
 

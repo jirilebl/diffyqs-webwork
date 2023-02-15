@@ -33,6 +33,16 @@ loadMacros(
 TEXT(beginproblem());
 
 Context("Numeric");
+if (Context()->flags->get(num_points) < 50) {
+  Context()->flags->set(num_points => 50);
+}
+if (Context()->flags->get(granularity) < 10000) {
+  Context()->flags->set(granularity => 10000);
+}
+Context()->flags->set(tolType => "relative");
+if (Context()->flags->get(tolerance) > 0.00001) {
+  Context()->flags->set(tolerance => 0.00001);
+}
 
 $b = non_zero_random(-15,15,3);
 $y0 = non_zero_random(-5,5,1);

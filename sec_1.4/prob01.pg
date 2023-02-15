@@ -32,8 +32,19 @@ TEXT(beginproblem());
 
 Context("Numeric");
 
-Context()->variables->are(x=>["Real",limits=>[0.1,5]],
+Context()->variables->are(x=>["Real",limits=>[0.01,2]],
                           C=>["Real",limits=>[0,10]]);
+
+if (Context()->flags->get(num_points) < 50) {
+  Context()->flags->set(num_points => 50);
+}
+if (Context()->flags->get(granularity) < 10000) {
+  Context()->flags->set(granularity => 10000);
+}
+Context()->flags->set(tolType => "relative");
+if (Context()->flags->get(tolerance) > 0.00001) {
+  Context()->flags->set(tolerance => 0.00001);
+}
 
 ##axy'+by=x^{-p}
 $a = Real(random(2,4,1));
@@ -118,9 +129,7 @@ ANS($ans1->cmp( checker => sub {
     my $c1 = Formula($context,'C1');
     
     my $context2 = Context()->copy; 
-    $context2->flags->set(no_parameters=>0,
-                          tolerance => 0.00001,
-                          tolType => "relative");
+    $context2->flags->set(no_parameters=>0);
     $context2->variables->add('C0'=>'Parameter');
     my $cc0 = Formula($context2,'C0');
     

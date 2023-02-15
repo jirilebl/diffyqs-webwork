@@ -36,6 +36,16 @@ TEXT(beginproblem());
 
 Context("Numeric")->variables->are(t=>"Real");
 Context()->variables->set(t=>{limits=>[-100,100]});
+if (Context()->flags->get(num_points) < 50) {
+  Context()->flags->set(num_points => 50);
+}
+if (Context()->flags->get(granularity) < 10000) {
+  Context()->flags->set(granularity => 10000);
+}
+Context()->flags->set(tolType => "relative");
+if (Context()->flags->get(tolerance) > 0.00001) {
+  Context()->flags->set(tolerance => 0.00001);
+}
 
 $a = random(20,90,10);
 $b = 10 * $a;

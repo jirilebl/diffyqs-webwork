@@ -38,12 +38,22 @@ do { $a= non_zero_random(-5,5,1); } until (($a != 1) and ($a != -1));
 Context("Numeric");
 if ($a < 0) {
     #the coefficient in the exponent will be positive on the general solution
-    Context()->variables->are(x=>["Real",limits=>[0.1,4]],
+    Context()->variables->are(x=>["Real",limits=>[0.01,4]],
 			      C=>["Real",limits=>[0,10]]);
 } else {
     #the coefficient in the exponent will be negative on the general solution
-    Context()->variables->are(x=>["Real",limits=>[-4,-0.1]],
+    Context()->variables->are(x=>["Real",limits=>[-4,-0.01]],
 			      C=>["Real",limits=>[0,10]]);
+}
+if (Context()->flags->get(num_points) < 50) {
+  Context()->flags->set(num_points => 50);
+}
+if (Context()->flags->get(granularity) < 10000) {
+  Context()->flags->set(granularity => 10000);
+}
+Context()->flags->set(tolType => "relative");
+if (Context()->flags->get(tolerance) > 0.00001) {
+  Context()->flags->set(tolerance => 0.00001);
 }
 
 $b = -1/$a;
@@ -82,9 +92,7 @@ $cmp2 = Compute("C e^($ma x) $sgnma x/$aa + 1/$aa^2")->cmp( checker => sub {
     my $c1 = Formula($context,'C1');
     
     my $context2 = Context()->copy; 
-    $context2->flags->set(no_parameters=>0,
-                          tolerance => 0.00001,
-                          tolType => "relative");
+    $context2->flags->set(no_parameters=>0);
     $context2->variables->add('C0'=>'Parameter');
     my $cc0 = Formula($context2,'C0');
     
