@@ -46,6 +46,8 @@ if (Context()->flags->get(tolerance) > 0.00001) {
   Context()->flags->set(tolerance => 0.00001);
 }
 
+Context()->flags->set(reduceConstants=>0);
+
 ##axy'+by=x^{-p}
 $a = Real(random(2,4,1));
 $m = Real(non_zero_random(1,5,1));
@@ -62,8 +64,7 @@ $pm1 = $p+$m+1;
 $pm = $p+$m;
 $apm = $a*$pm;
 
-#Context()->flags->set(reduceConstants=>0);
-$C = $y1+1/$apm;
+$C = Formula("$y1+1/$apm");
 
 # see also the answer checker below
 $rx = Formula("x^{-$m}")->reduce();
@@ -172,11 +173,11 @@ $PAR
 Finally, let's find the particular solution.
 If \( y(1) = $y1 \), we find
 $PAR
-\( $y1 = \frac{1}{-$apm} + C \) so \( C = $y1 + \frac{1}{$apm} = $C\).
+\( $y1 = \frac{1}{-$apm} + C \) so \( C = $y1 + \frac{1}{$apm} \).
 $PAR
 The solution, therefore, is
 $PAR
-\( y = \frac{1}{-$apm} x^{-$p} + \left($y1 + \frac{1}{$apm}\right) x^{$m} = $ans2 \).
+\( y = \frac{1}{-$apm} x^{-$p} + \left($y1 + \frac{1}{$apm}\right) x^{$m} \).
 END_SOLUTION
 Context()->normalStrings;
 
