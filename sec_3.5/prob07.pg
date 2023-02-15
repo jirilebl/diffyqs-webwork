@@ -91,10 +91,10 @@ Context()->normalStrings;
 
 ##########################################
 
-ANS($smallEigVal->cmp(tolerance => 0.1));
-ANS($smallEigVal_vector->cmp(tolerance => 0.1, parallel=>1));
-ANS($largeEigVal->cmp(tolerance => 0.1));
-ANS($largeEigVal_vector->cmp(tolerance => 0.1, parallel=>1));
+ANS($smallEigVal->cmp());
+ANS($smallEigVal_vector->cmp(parallel=>1));
+ANS($largeEigVal->cmp());
+ANS($largeEigVal_vector->cmp(parallel=>1));
 
 ##########################################
 
