@@ -67,12 +67,12 @@ $apm = $a*$pm;
 $C = Formula("$y1+1/$apm");
 
 # see also the answer checker below
-$rx = Formula("x^{-$m}")->reduce();
+$rx = Formula("x^{-$m}");
 
 # see also the answer checker below
-$ans1 = Formula("(x^{-$p} / {-$apm}) + (C * x^($m))")->reduce();
+$ans1 = Formula("(x^{-$p} / {-$apm}) + (C * x^($m))");
 
-$ans2 = Formula("(x^{-$p} / {-$apm}) + ($C * x^($m))")->reduce();
+$ans2 = Formula("(x^{-$p} / {-$apm}) + ($C * x^($m))");
 
 ####################################################
 
