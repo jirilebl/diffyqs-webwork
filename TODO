@@ -1,6 +1,6 @@
-* The tolerance setup and num_points thing from 1.4 should be used everywhere,
-  but be careful where the tolerance is already being set to something.  But
-  also be careful.  Students like to plug things into calculators and round off
+* The kind of tolerance setup and num_points thing from 1.4 should be used
+  in most places, but be careful where the tolerance is already being set.
+  Also, students like to plug things into calculators and round off.
 
 * Reasonable goal is to have at least 10 relevant reasonably distinct
   problems per hour of estimated lecture.  Still not quite there yet,
