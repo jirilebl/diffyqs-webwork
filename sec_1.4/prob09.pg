@@ -33,6 +33,7 @@ loadMacros(
 TEXT(beginproblem());
 
 Context("Numeric");
+Context()->variables->are(t=>"Real");
 Context()->flags->set(num_points => 50,
 		      granularity => 10000,
 		      tolType => "relative",
