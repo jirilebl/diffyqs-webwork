@@ -30,6 +30,13 @@ install_weighted_grader();
 
 Context("Numeric");
 Context()->variables->are(t=>"Real");
+Context()->variables->set(t=>{limits=>[-1,0]});
+Context()->flags->set(
+  num_points => 50,
+  granularity => 10000
+  reduceConstants => 0,
+  reduceConstantFunctions => 0,
+);
 
 $m = 2;
 $c = 8;
@@ -40,13 +47,13 @@ $w = 8;
 
 $F = Formula("$a e^(-t)")->reduce();
 
-$c1 = Compute("-$a/74");
-$c2 = Compute("($a/74 + 2*$c1)/6");
-$c3 = Compute("$a/74");
+$c1 = Formula("-$a/74");
+$c2 = Formula("-$a/444");
+$c3 = Formula("$a/74");
 
-$y = Compute("$c1 e^(-2t) cos(6t) + $c2 e^(-2t) sin(6t) + $c3 e^(-t)");
+$y = Formula("$c1 e^(-2t) cos(6t) + $c2 e^(-2t) sin(6t) + $c3 e^(-t)");
 
-$yinfinity = Compute("0");
+$yinfinity = Formula("0");
 
 #############################
 
