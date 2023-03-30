@@ -33,7 +33,7 @@ Context()->variables->are(t=>"Real");
 Context()->variables->set(t=>{limits=>[-1,0]});
 Context()->flags->set(
   num_points => 50,
-  granularity => 10000
+  granularity => 10000,
   reduceConstants => 0,
   reduceConstantFunctions => 0,
 );
