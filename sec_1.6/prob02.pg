@@ -38,8 +38,18 @@ $showPartialCorrectAnswers = 1;
 
 Context("Numeric");
 
+Context()->flags->set(num_points => 50,
+		      granularity => 10000,
+		      tolType => "relative",
+		      tolerance => 0.00001,
+		      reduceConstants => 0);
+
 Context()->variables->{namePattern} = qr/[a-z][a-z0-9_]*'*/i;
-Context()->variables->are("t"=>"Real","P"=>"Real","P'"=>"Real","P''"=>"Real","P'''"=>"Real");
+Context()->variables->are("t"=>["Real",limits=>[100,301]],
+                          "P"=>["Real",limits=>[4000,6001]],
+                          "P'"=>["Real",limits=>[5000,9001]],
+                          "P''"=>["Real",limits=>[4000,6001]],
+                          "P'''"=>["Real",limits=>[4000,6001]]);
 
 ##############################################################
 #  Setup
@@ -47,7 +57,7 @@ Context()->variables->are("t"=>"Real","P"=>"Real","P'"=>"Real","P''"=>"Real","P'
 $r = Compute(random(2,4));
 $C = Compute(random(5000,10000,500));
 $e = Compute(random(4,9));
-$diffeqn = Formula("P'-$r*($C-P)+$e");
+$rhs = Formula("$r*($C-P)-$e");
 
 ##############################################################
 #  Text
@@ -56,13 +66,13 @@ Context()->texStrings;
 BEGIN_TEXT
 The population of Cook island has always been modeled by a logistic equation
 \(P^\prime=k(M-P)\) with growth rate \(k=$r\) and carrying capacity \(M=$C\)
-with time t in years. 
+with time \(t\) in years. 
 $PAR
 Starting in the year \(2000,\) \($e\) citizens of Cook island have left every
 year to become mathematicians, never to return. What is the new differential
 equation modeling the population of the island \(P?\)
 $PAR
-\{$diffeqn->ans_rule(25)\} \(= 0\)
+\(P^\prime={}\) \{$rhs->ans_rule(25)\}
 $SPACE $SPACE
 \{ AnswerFormatHelp("formulas") \}
 END_TEXT
@@ -71,18 +81,7 @@ Context()->normalStrings;
 ##############################################################
 #  Answers
 
-ANS($diffeqn->cmp(checker=>sub {
-                my ( $correct, $student, $self ) = @_;
-                my $context = Context()->copy;
-                $context->flags->set(no_parameters=>0);
-                $context->variables->add('c0'=>'Parameter');
-                my $c0 = Formula($context,'c0');
-                $student = Formula($context,$student);
-                $correct = Formula($context,"$c0(P'-$r*($C-P)+$e)");
-                $zero = Formula($context,"0");
-                return (($correct == $student)&&($student!=$zero));}));
-# relative tolerance --3.1412 is incorrect but 3.1413 is correct
-# default tolerance is .01 or one percent.
+ANS($rhs->cmp());
 
 COMMENT("Modify autonomous logistic equation for a word problem based on population leaving");
 
