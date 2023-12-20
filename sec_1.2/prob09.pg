@@ -106,6 +106,10 @@ $PAR
 If \(f(x,y)\) $q[2], then in the slope field diagram \{ $ans[2]->menu() \}.
 $PAR
 If \(f(x,y)\) $q[3], then in the slope field diagram \{ $ans[3]->menu() \}.
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/slopefields_section.html", "Section 1.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

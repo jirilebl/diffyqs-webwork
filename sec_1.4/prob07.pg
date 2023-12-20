@@ -129,6 +129,9 @@ Now, find the general solution:
 [@ AnswerFormatHelp("formulas") @]*
 
 _*Note:* Use [:C:] as the unknown constant._
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/intfactor_section.html", "Section 1.4 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ##############################################

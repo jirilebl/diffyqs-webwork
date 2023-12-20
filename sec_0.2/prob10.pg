@@ -58,6 +58,10 @@ $PAR
 $BR
 $BITALIC If there is more than
 one correct answer, enter your answers as a comma separated list. $EITALIC
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/introde_section.html", "Section 0.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

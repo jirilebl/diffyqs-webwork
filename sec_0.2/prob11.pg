@@ -48,6 +48,10 @@ $PAR
 $BITALIC $BBOLD Hint: $EBOLD What simple function that you know becomes
 a something like a square root of itself when you differentiate it.
 Another way to see the equation is \(f'(x) = 2 \sqrt{f(x)}\text{.}\) $EITALIC
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/introde_section.html", "Section 0.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

@@ -48,6 +48,10 @@ Find the general solution of the differential equation
 $PAR
 \(y(x) = {}\) \{ ans_rule(35) \}
 \{ AnswerFormatHelp("formulas") \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/integralsols_section.html", "Section 1.1 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

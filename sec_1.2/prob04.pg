@@ -157,6 +157,10 @@ BEGIN_TEXT
 Match the slope fields labeled $BBOLD A $EBOLD through $BBOLD D $EBOLD with the differential equations below.
 $PAR $imageTable1 $PAR
 \{$sl->print_q\}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/slopefields_section.html", "Section 1.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

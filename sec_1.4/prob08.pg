@@ -63,6 +63,9 @@ any other arbitrary constant in the answer.
 [@ AnswerFormatHelp("formulas") @]*
 
 _*Hint:* You may have to do an integration by parts to find where [`I`] comes in.  In particular you know how to antidifferentiate [`e^{x^{[$alpha]}}x^{[$alpha-1]}.`]_
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/intfactor_section.html", "Section 1.4 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ##########################################################

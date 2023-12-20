@@ -60,6 +60,9 @@ with [: y(0) = [$m] :].
 [` y = {} `]
 [________]{"($m - $b )* exp(x) + $a * x * exp(x) + $b * exp($k * x)"}{70}
 [@ AnswerFormatHelp("formulas") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/intfactor_section.html", "Section 1.4 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ##############################################

@@ -81,6 +81,10 @@ The above slope field is that for which one
 of these?
 $BR
 \( y' = \) \{ ans_rule(15) \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/slopefields_section.html", "Section 1.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

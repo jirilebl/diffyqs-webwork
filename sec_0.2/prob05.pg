@@ -67,6 +67,10 @@ Match the following differential equations with their solutions.
 The symbols \(A\text{,}\) \(B\text{,}\) \(C\) in the solutions stand for arbitrary constants.
 $PAR
 \{ ColumnMatchTable($ml) \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/introde_section.html", "Section 0.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 
 ################################################################################

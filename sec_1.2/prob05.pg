@@ -106,6 +106,9 @@ BEGIN_PGML
 [@ $mc->print_a() @]*
 
 _Check all that apply.  It may be useful to use a graphing calculator or the computer to graph the functions._
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/slopefields_section.html", "Section 1.2 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ##############################################################################

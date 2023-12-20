@@ -59,6 +59,10 @@ Consider
 \{ $cmc -> print_q() \}
 $PAR
 \{ $cmc -> print_a() \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/classification_section.html", "Section 0.3 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 
 ##############################################################

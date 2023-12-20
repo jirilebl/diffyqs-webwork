@@ -83,7 +83,10 @@ $BCENTER
 	       extra_html_tags=>'alt="graph of a slope field"' )\}
 $ECENTER
 \{ $mc->print_a() \}
-
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/slopefields_section.html", "Section 1.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

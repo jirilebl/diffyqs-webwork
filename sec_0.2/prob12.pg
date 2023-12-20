@@ -75,6 +75,10 @@ BEGIN_TEXT
 \{ $cmc -> print_q \}
 $BR
 \{ $cmc -> print_a \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/introde_section.html", "Section 0.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 
 #####################################################

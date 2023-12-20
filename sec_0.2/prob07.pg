@@ -63,6 +63,10 @@ Find a solution of the differential equation that satisfies the initial conditio
 $PAR
 \(y(x) = \) \{ans_rule(30); \} 
 \{ AnswerFormatHelp("formulas") \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/introde_section.html", "Section 0.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

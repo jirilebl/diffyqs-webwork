@@ -70,6 +70,10 @@ $SPACE $SPACE
 $PAR
 [1]: ${BITALIC}The New York Times$EITALIC, October 18, 1988.
 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/separable_section.html", "Section 1.3 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

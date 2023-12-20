@@ -46,6 +46,9 @@ Find a function [:y:] of [:x:] such that
 
 [`y ={}`] [__________]{"sqrt(x^2/$a + $b^2 - $a )"}{40}
 [@ AnswerFormatHelp("formulas") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/separable_section.html", "Section 1.3 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ############################################################

@@ -57,6 +57,10 @@ $PAR
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 $BITALIC $BBOLD Note: $EBOLD Use \( C \) for the arbitrary constant. $EITALIC
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/intfactor_section.html", "Section 1.4 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

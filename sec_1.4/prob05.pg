@@ -65,6 +65,9 @@ with [: y(0) = [$m] :].
 
 _*Reminder:* To find the anti-derivative of something like [` e^u\sin(u) `],
 the trick is to do integration by parts twice._
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/intfactor_section.html", "Section 1.4 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ##############################################

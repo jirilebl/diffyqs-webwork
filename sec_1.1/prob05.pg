@@ -63,6 +63,9 @@ and find the particular solution satisfying the initial condition
 
 [`y(x) = {}`] [_________]{"arcsin($a*x + $c)"}{40}
 [@ AnswerFormatHelp("formulas") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/integralsols_section.html", "Section 1.1 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ######################################################

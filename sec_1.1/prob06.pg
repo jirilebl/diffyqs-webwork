@@ -49,6 +49,9 @@ using the initial condition [: y([$a])= [$b] :].
 
 [` y(x) = `] [__________]{"-1/($a*x-1/$b-$a^2)"}{40}
 [@ AnswerFormatHelp("formulas") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/integralsols_section.html", "Section 1.1 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ######################################################

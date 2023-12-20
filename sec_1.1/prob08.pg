@@ -111,6 +111,9 @@ and find the particular solution satisfying the initial condition
 [@ AnswerFormatHelp("formulas") @]*
 
 _*Hint:* When solving for [:x:], if you need to take a root, make sure you use the correct sign._
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/integralsols_section.html", "Section 1.1 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ######################################################

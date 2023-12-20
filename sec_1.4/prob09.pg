@@ -62,6 +62,9 @@ and [`R(0) = [$d]`].
 [`R={}`]
 [______]{"$b1*exp($c*t) + $f*exp($a*t)"}{50}
 [@ AnswerFormatHelp("formulas") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/intfactor_section.html", "Section 1.4 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ##############################################################

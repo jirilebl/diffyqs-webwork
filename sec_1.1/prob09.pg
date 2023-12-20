@@ -56,6 +56,9 @@ Find the general solution of the differential equation
 [@ AnswerFormatHelp("formulas") @]*
 
 _Don't forget the "[`+C`]"._
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/integralsols_section.html", "Section 1.1 of Notes on Diffy Qs") @]*_
 END_PGML
 
 #############################################################
