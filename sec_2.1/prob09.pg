@@ -53,6 +53,9 @@ and solve the initial value problem with
 >>[`` y(0) = [$b] , \qquad y'(0) = [$c] ``]<<
 
 [`y = `] [___________]{"$c*x + $b*(1+$a*x^2)"}{50} [@ AnswerFormatHelp("formulas") @]*  
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/solinear_section.html", "Section 2.1 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ##############################################################
@@ -79,9 +82,6 @@ Then [`[$b] = y(0) = C_2 , `] and [`y'(x) = C_1 + C_2 [$a*2] x`], so [`[$c] = y'
 In other words,
 
 >>[`` y = [$c] x + [$b] (1+[$a] x^2) . ``]<<
-
-_*Book:*
-[@ htmlLink("https://www.jirka.org/diffyqs/html/solinear_section.html", "Section 2.1 of Notes on Diffy Qs") @]*_
 END_PGML_SOLUTION
 
 ##############################################################
