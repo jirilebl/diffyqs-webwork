@@ -83,10 +83,6 @@ the point \( (x,y) = ($sa,1) . \)
 $PAR
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("equations") \}
-$PAR
-$BITALIC $BBOLD Book: $EBOLD
-\{ htmlLink("https://www.jirka.org/diffyqs/html/separable_section.html", "Section 1.3 of Notes on Diffy Qs") \}
-$EITALIC
 END_TEXT
 Context()->normalStrings;
 
@@ -137,6 +133,10 @@ $PAR
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("equations") \}
 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/separable_section.html", "Section 1.3 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 
