@@ -1,7 +1,19 @@
-# Linear independence of two functions 
+##DESCRIPTION
+## Linear independence of two functions
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection(First order equations)
 ## Author(Jiri Lebl)
 ## Institution(Oklahoma State University)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.1')
+## Problem1('')
+## MO(1)
 ## KEYWORDS('ODE', 'differential', 'equation', 'linear independence')
 
 ########################################################################
@@ -55,6 +67,10 @@ $PAR
 Is \( A \) constant? \{ $answer2->menu() \}
 $PAR
 Are \( f(x) \) and \(g(x)\) linearly independent? \{ $answer3->menu() \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/solinear_section.html", "Section 2.1 of Notes on Diffy Qs") \}
 END_TEXT
 Context()->normalStrings;
 
@@ -78,5 +94,9 @@ If \(f(x) = A g(x),\) then \(A = $answer1, \) which is not constant, and hence \
 are linearly independent.
 END_SOLUTION
 Context()->normalStrings;
+
+#####################
+
+COMMENT("Linear independence of two functions");
 
 ENDDOCUMENT();

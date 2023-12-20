@@ -1,7 +1,19 @@
-# Superposition principle
+##DESCRIPTION
+## Superposition principle
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection(First order equations)
 ## Author(Darwyn Cook)
-## KEYWORDS('superposition')
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.1')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'differential', 'equation', 'superposition')
 
 ########################################################################
 
@@ -75,6 +87,10 @@ y^\prime(0) = $y1 .
 \]
 \(y = \)\{$ivp->ans_rule(40)\}
 \{ AnswerFormatHelp("formulas") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/solinear_section.html", "Section 2.1 of Notes on Diffy Qs") \}
 END_TEXT
 
 Context()->normalStrings;
@@ -87,6 +103,10 @@ Context()->normalStrings;
 
 ANS($general->cmp);
 ANS($ivp->cmp);
+
+############################
+
+COMMENT("Superposition principle");
 
 ENDDOCUMENT();        
      

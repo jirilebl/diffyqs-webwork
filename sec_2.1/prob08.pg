@@ -1,7 +1,20 @@
-# Understanding linearly dependent functions
+##DESCRIPTION
+## Understanding linearly dependent functions
+##ENDDESCRIPTION
 
-# Institution(Oklahoma State University)
-# Author(Jiri Lebl)
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection(First order equations)
+## Author(Jiri Lebl)
+## Institution(Oklahoma State University)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.1')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'differential', 'equation', 'linear independence')
 
 ##############################################################
 
@@ -63,6 +76,9 @@ The two functions [:f(x):] and [:g(x):] are linearly dependent.  Fill in the mis
 [:f([$xd]) = [$fd]:]
 
 [:g([$xd]) = :] [___________]{"$gd"} [@ AnswerFormatHelp("numbers") @]*  
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/solinear_section.html", "Section 2.1 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ##############################################################
@@ -87,5 +103,6 @@ END_PGML_SOLUTION
 
 ##############################################################
 
+COMMENT("Understanding linearly dependent functions");
 
 ENDDOCUMENT();

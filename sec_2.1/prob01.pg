@@ -1,8 +1,21 @@
-# Guessing affine solution to simple nonhomogeneous ODE 
+##DESCRIPTION
+## Guessing affine solution to simple nonhomogeneous ODE 
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection(First order equations)
 ## Author(Jiri Lebl)
 ## Institution(Oklahoma State University)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.1')
+## Problem1('')
+## MO(1)
 ## KEYWORDS('ODE', 'differential', 'equation')
+
 
 ########################################################################
 
@@ -12,10 +25,10 @@
 DOCUMENT();
 
 loadMacros(
-"PGstandard.pl",
-"MathObjects.pl",
-"AnswerFormatHelp.pl",
-"PGcourse.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl",
 );
 
 TEXT(beginproblem());
@@ -56,6 +69,10 @@ Guess an (affine) linear solution to
 $PAR
 \( y = {} \) \{ ans_rule(20) \}
 \{ AnswerFormatHelp("formulas") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/solinear_section.html", "Section 2.1 of Notes on Diffy Qs") \}
 END_TEXT
 Context()->normalStrings;
 
@@ -88,5 +105,8 @@ We find
 END_SOLUTION
 Context()->normalStrings;
 
-ENDDOCUMENT();
+############################
 
+COMMENT("Guessing affine solution to simple nonhomogeneous ODE");
+
+ENDDOCUMENT();

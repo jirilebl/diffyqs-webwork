@@ -138,4 +138,8 @@ Or in terms of \((x,t):\)
 END_SOLUTION
 Context()->normalStrings;
 
+############################
+
+COMMENT("Method of characteristics (change to characteristic coordinates) for a linear first order PDE");
+
 ENDDOCUMENT();

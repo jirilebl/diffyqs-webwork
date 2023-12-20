@@ -1,7 +1,20 @@
-# Reduction of order initial value problem
+##DESCRIPTION
+## Reduction of order initial value problem
+##ENDDESCRIPTION
 
-# Institution(Oklahoma State University)
-# Author(Jiri Lebl)
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection(First order equations)
+## Author(Jiri Lebl)
+## Institution(Oklahoma State University)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.1')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'differential', 'equation', 'reduction of order')
 
 ##############################################################
 
@@ -66,6 +79,9 @@ Then [`[$b] = y(0) = C_2 , `] and [`y'(x) = C_1 + C_2 [$a*2] x`], so [`[$c] = y'
 In other words,
 
 >>[`` y = [$c] x + [$b] (1+[$a] x^2) . ``]<<
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/solinear_section.html", "Section 2.1 of Notes on Diffy Qs") @]*_
 END_PGML_SOLUTION
 
 ##############################################################

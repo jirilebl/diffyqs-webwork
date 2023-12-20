@@ -1,8 +1,20 @@
-# Find all solutions of a certain form, then the general solution, then a particular one
+##DESCRIPTION
+## Find all solutions of a certain form, then the general solution, then a particular one
+##ENDDESCRIPTION
 
-## Institution(Miami Univ. Ohio, Hope College, Oklahoma State University)
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection(First order equations)
 ## Author(Anna Ghazaryan, Fuli Zhang, Paul Pearson, Jiri Lebl)
-## KEYWORDS('differential equations')
+## Institution(Miami Univ. Ohio, Hope College, Oklahoma State University)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.1')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'differential', 'equation', 'general solution', 'particular solution')
 
 ########################################################################
 
@@ -83,6 +95,9 @@ $PAR
 \{ ans_rule(50); \}
 \{ AnswerFormatHelp("formulas") \}
 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/solinear_section.html", "Section 2.1 of Notes on Diffy Qs") \}
 END_TEXT
 Context()->normalStrings;
 

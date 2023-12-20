@@ -84,4 +84,8 @@ $BRBR
 END_SOLUTION
 Context()->normalStrings;
 
+############################
+
+COMMENT("Solve transport equation (convection problem)");
+
 ENDDOCUMENT();

@@ -1,6 +1,6 @@
 ##DESCRIPTION
-##  Method of characteristics (change to characteristic coordinates)
-##  for a linear first order PDE (transport equation)
+## Method of characteristics (change to characteristic coordinates)
+## for a linear first order PDE (transport equation)
 ##ENDDESCRIPTION
 
 ## DBsubject(Differential equations)
@@ -119,5 +119,9 @@ or
 \( u = $answer3 . \)
 END_SOLUTION
 Context()->normalStrings;
+
+############################
+
+COMMENT("Method of characteristics (change to characteristic coordinates) for a linear first order PDE (transport equation)");
 
 ENDDOCUMENT();
