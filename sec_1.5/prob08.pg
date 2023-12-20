@@ -49,6 +49,9 @@ Solve the initial value problem
 [@ AnswerFormatHelp("formulas") @]*
 
 _*Hint:* Perhaps clear the denominator first._
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/substitution_section.html", "Section 1.5 of Notes on Diffy Qs") @]*_
 END_PGML
 
 #############################################################

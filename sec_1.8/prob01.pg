@@ -64,6 +64,10 @@ $PAR
 \{ $answer[4]->menu() \} $SPACE
 \(\displaystyle \left(2y-\frac{1}{x}+\cos(3x) \right)\frac{dy}{dx}+\frac{y}{x^{2}}-4x^{3}+3y\sin(3x)=0\).
 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/exact_section.html", "Section 1.8 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

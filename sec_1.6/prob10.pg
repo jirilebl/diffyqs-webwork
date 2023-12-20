@@ -75,6 +75,9 @@ Let [:x(t):] be the solution to
 
 [``\lim_{t\to\infty} x(t) = ``]
 [______________]{"$lim"} [@ AnswerFormatHelp("numbers") @]*  
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/auteq_section.html", "Section 1.6 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ##############################################################

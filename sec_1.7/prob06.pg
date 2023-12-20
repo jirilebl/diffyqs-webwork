@@ -95,6 +95,9 @@ Estimate
 Estimate
 [` y([$twostep]) \approx {} `] [_________]{"$y2"}{10}
 [@ AnswerFormatHelp("numbers") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/numer_section.html", "Section 1.7 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ######################################################

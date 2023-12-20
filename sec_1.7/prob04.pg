@@ -65,6 +65,11 @@ Use Euler's Method with five steps to approximate \(y($b)\) to at least two deci
 
 $PAR
 \(y($b)\approx {}\) \{ans_rule(20) \} \{ AnswerFormatHelp("numbers") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/numer_section.html", "Section 1.7 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

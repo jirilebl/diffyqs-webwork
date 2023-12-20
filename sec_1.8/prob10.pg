@@ -111,6 +111,9 @@ Integrating factor: [________]{$ans4->cmp(checker => sub {
     }
 )}{30}
 [@ AnswerFormatHelp("formulas") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/exact_section.html", "Section 1.8 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ##############################################

@@ -90,6 +90,9 @@ and a harmonic conjugate of [`u`] is
 [` v = {} `]
 [________]{$ans3->cmp(upToConstant=>1)}{40}  
 [@ AnswerFormatHelp("formulas") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/exact_section.html", "Section 1.8 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ##############################################

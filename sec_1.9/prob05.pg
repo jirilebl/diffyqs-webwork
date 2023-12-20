@@ -58,6 +58,10 @@ $BRBR
 \(u(x,0) = $c \sin( $a x ) \) 
 $BRBR
 \(u(x,t) = \) \{ ans_rule(40) \} \{ AnswerFormatHelp("formulas") \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/fopde_section.html", "Section 1.9 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

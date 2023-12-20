@@ -57,6 +57,9 @@ For what values of [:x:] is [:x:] increasing?
 
 [____________]{"$neg"} [` {} < x < {} `] [____________]{"$pos"}
 [@ AnswerFormatHelp("numbers") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/auteq_section.html", "Section 1.6 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ##############################################################

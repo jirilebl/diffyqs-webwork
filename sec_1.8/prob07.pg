@@ -68,6 +68,9 @@ Find an explicit solution that solves [`y(1)=[$b].`]
 
 [`y(x) = {}`][_______]{"$a*x^2-$a+$b"}{30}
 [@ AnswerFormatHelp("formulas") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/exact_section.html", "Section 1.8 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ##############################################

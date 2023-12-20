@@ -97,6 +97,10 @@ If the equation is not exact, enter ${LQ}not exact${RQ}.
 $PAR
 \(F(x,y) = \) \{ ans_rule(30) \}
 \{AnswerFormatHelp("formulas") \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/exact_section.html", "Section 1.8 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

@@ -118,6 +118,9 @@ The error went down by the factor:
 
 _Euler's method is a first order method so we expect the error to go down by a factor of 0.5 each halving.  Of course, that's only very approximate, so the
 numbers you get above are not exactly 0.5._
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/numer_section.html", "Section 1.7 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ######################################################

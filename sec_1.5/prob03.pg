@@ -152,6 +152,11 @@ problem is described by the following equation in \( x, y \).
 $BR
 \{ ans_rule(20) \}
 \{ AnswerFormatHelp("equations") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/substitution_section.html", "Section 1.5 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

@@ -99,6 +99,10 @@ $PAR
 Check that \( y = $y0d e^{$k x} \) is a solution to \( y' = $kd y \)
 with \( y(0) = $y0 \).
 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/numer_section.html", "Section 1.7 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

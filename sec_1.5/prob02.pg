@@ -60,6 +60,9 @@ and find the solution that satisfies [:y(1)=[$y1]:].
 
 [` y(x) = {}`] [_________]{"1/($a*x*ln(x)+x/$y1)"}{50}
 [@ AnswerFormatHelp("formulas") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/substitution_section.html", "Section 1.5 of Notes on Diffy Qs") @]*_
 END_PGML
 
 #############################################################

@@ -97,6 +97,10 @@ Finally write \(u\) in terms of \((x,t):\)
 $BRBR
 \(u = {} \) \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/fopde_section.html", "Section 1.9 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 
