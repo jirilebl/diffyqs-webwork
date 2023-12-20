@@ -118,6 +118,11 @@ $PAR
 \{$multipart4->ans_rule(10)\}
 \(+C_2\)\{$multipart4->ans_rule(10)\}\(+\)\{ans_rule(30)\}
 \{ AnswerFormatHelp("formulas") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_nonhom.html", "Section 2.5 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

@@ -54,6 +54,8 @@ solution when the we are at practical resonance:
 [` C(\omega) = `] [___________]{"$F/($mass*sqrt( (2*$omega*$p)^2 + ($omega0^2-$omega^2)^2 ))"}{60}
 [@ AnswerFormatHelp("numbers") @]*
 
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/forcedo_section.html", "Section 2.6 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ##############################################################

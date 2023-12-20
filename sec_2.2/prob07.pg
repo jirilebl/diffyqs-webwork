@@ -37,6 +37,11 @@ $PAR
 \(\displaystyle \frac{$c}{\frac{1}{$d}}\ =\) \{ans_rule(5)\} \(+\) \{ans_rule(5)\} \(i\).
 $SPACE
 \{ AnswerFormatHelp("numbers") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_ccsol.html", "Section 2.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 
 #########################################################

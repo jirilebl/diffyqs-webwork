@@ -46,6 +46,8 @@ What is the resonance part of the solution (without the complementary solution):
 [` y_p = `] [___________]{"($F/(2*$mass*$omega))*t*sin($omega*t)"}{60}
 [@ AnswerFormatHelp("formulas") @]*
 
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/forcedo_section.html", "Section 2.6 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ##############################################################

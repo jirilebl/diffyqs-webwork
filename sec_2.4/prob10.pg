@@ -42,6 +42,9 @@ than [$maxd] meters from the rest position?  Put down the best lower bound for
 
 [`k \geq `] [____________]{"$iv^2 $mass/($maxd^2)"}{20}
 [@ AnswerFormatHelp("numbers") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/sec_mv.html", "Section 2.4 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ##############################################################

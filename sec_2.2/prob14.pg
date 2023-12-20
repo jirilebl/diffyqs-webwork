@@ -60,6 +60,9 @@ Now construct an equation that has solutions [`y=[$sol21]`] and [`y=[$sol22]:`]
 
 [`y''+ `] [___________]{"$de2a"} [` y' + `] [___________]{"$de2b"} [` = 0 `]  
 [@ AnswerFormatHelp("numbers") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/sec_ccsol.html", "Section 2.2 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ##############################################################

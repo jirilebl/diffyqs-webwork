@@ -49,6 +49,11 @@ Solve the initial-value problem
 $PAR
 \(y(x) = \) \{ ans_rule(30) \}
 \{ AnswerFormatHelp("formulas"); \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_ccsol.html", "Section 2.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

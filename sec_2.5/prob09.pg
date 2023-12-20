@@ -40,6 +40,8 @@ Find a polynomial [:y(x):] that solves
 
 [:y = :] [___________]{"$ans"}{50} [@ AnswerFormatHelp("formulas") @]*  
 
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/sec_nonhom.html", "Section 2.5 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ##############################################################

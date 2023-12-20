@@ -56,6 +56,11 @@ BEGIN_TEXT
 Match the third order linear equations with their fundamental solution sets.
 $PAR
 \{ ColumnMatchTable($ml) \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_hol.html", "Section 2.3 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 
 ##############################################

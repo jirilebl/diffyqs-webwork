@@ -118,6 +118,11 @@ Enter the solution as an equation \(y=?\).
 $PAR
 \{ ans_rule(60) \}
 \{ AnswerFormatHelp("equations") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_hol.html", "Section 2.3 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

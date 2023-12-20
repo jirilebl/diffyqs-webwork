@@ -73,6 +73,11 @@ initial conditions
 $PAR
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("equations") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_ccsol.html", "Section 2.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

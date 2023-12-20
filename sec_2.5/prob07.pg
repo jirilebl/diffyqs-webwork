@@ -49,6 +49,11 @@ Find a particular solution to
 $PAR
 \(y_{\text p} = \) \{ ans_rule(60) \}
 \{ AnswerFormatHelp("formulas") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_nonhom.html", "Section 2.5 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

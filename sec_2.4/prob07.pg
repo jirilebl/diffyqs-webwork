@@ -95,6 +95,10 @@ $BR
 \( Q(t) = \) \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_mv.html", "Section 2.4 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

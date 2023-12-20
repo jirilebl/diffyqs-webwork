@@ -83,6 +83,11 @@ Use these to solve the initial value problem
 $BR
 \(y(x) = \)\{$soln->ans_rule(60)\}
 \{ AnswerFormatHelp("formulas") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_hol.html", "Section 2.3 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

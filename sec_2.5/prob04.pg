@@ -97,6 +97,11 @@ Match the following guess solutions \(y_p\) for the $BITALIC method of undetermi
 "$BBOLD D. $EBOLD \(\displaystyle  y_p(x) = (Ax + B)\cos $a x + (Cx+D)\sin $a x \), $PAR".
 "$BBOLD E. $EBOLD \(\displaystyle  y_p(x) = A x e^{$a x}\), $PAR".
 "$BBOLD F. $EBOLD \(\displaystyle  y_p(x) = e^{3x}(A \cos $a x + B \sin $a x)\)"); \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_nonhom.html", "Section 2.5 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

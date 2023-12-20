@@ -116,13 +116,21 @@ $PAR
 $PAR
 $BITALIC You can enter your answers in any order. $EITALIC
 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_hol.html", "Section 2.3 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
+
+##################################
 
 $showPartialCorrectAnswer=1;
 
 for(my $i=0; $i<9; $i++) {
   ANS( Formula("$soln[$i]")->cmp(checker => $ansSplice) ); 
 }
+
+##################################
 
 ENDDOCUMENT();

@@ -85,11 +85,13 @@ ANS( $answer1->cmp() );
 Context()->texStrings;
 BEGIN_SOLUTION
 The equation is the transport equation so the solution is of the form \(f(x-$b t)\),
-where \(f(x) = u(x,0) .\)  So we guess what \(f\) has to be so that if we plug in \(t=t_0\)
+where \(f(x) = u(x,0) .\)  So we extrapolate what \(f\) has to be so that if we plug in \(t=t_0\)
 we get \( $c \sin($a x).\)
 So 
 $BRBR
 \( u(x,0) = $answer1 . \)
+$BRBR
+That is because if we replace \(x\) with \(x-4t_0\) in \($answer,\) we get \($c \sin($a x) .\)
 END_SOLUTION
 Context()->normalStrings;
 

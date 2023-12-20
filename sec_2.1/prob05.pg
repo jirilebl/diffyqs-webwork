@@ -71,6 +71,7 @@ Are \( f(x) \) and \(g(x)\) linearly independent? \{ $answer3->menu() \}
 $PAR
 $BITALIC $BBOLD Book: $EBOLD
 \{ htmlLink("https://www.jirka.org/diffyqs/html/solinear_section.html", "Section 2.1 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

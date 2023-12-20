@@ -48,6 +48,11 @@ differential equation:
 \( y(x) = \) \{ans_rule(25)\} \( + C_{1} \) \{ans_rule(15)\} \( + C_{2} \) \{ans_rule(15)\}
 $BR
 \{ AnswerFormatHelp("formulas") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_nonhom.html", "Section 2.5 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

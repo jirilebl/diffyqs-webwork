@@ -147,6 +147,11 @@ $SPACE \{ AnswerFormatHelp("numbers") \}
 $BR
 \( x^{\prime}(0) = {}\) \{ ans_rule(10) \} meters / second
 $SPACE \{ AnswerFormatHelp("numbers") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_mv.html", "Section 2.4 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 
