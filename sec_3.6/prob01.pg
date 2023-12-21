@@ -74,6 +74,11 @@ $PAR
 \(\omega_2 = \)
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("numbers") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sol_section.html", "Section 3.6 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 
@@ -98,11 +103,6 @@ are \( $eig1 \) and \( $eig2 \).
 $PAR
 The natural frequencies are the square roots of the negatives of the eigenvalues, so
 \( $answer1 \) and \( $answer2 \).
-
-$PAR
-$BITALIC $BBOLD Book: $EBOLD
-\{ htmlLink("https://www.jirka.org/diffyqs/html/sol_section.html", "Section 3.6 of Notes on Diffy Qs") \}
-$EITALIC
 END_SOLUTION
 Context()->normalStrings;
 
