@@ -1,6 +1,6 @@
-* Add book links to all problems
-
 * Tag all problems
+
+* Make sure all problems have reasonable/descriptive "COMMENT"s
 
 * The kind of tolerance setup and num_points thing from 1.4 should be used
   in most places, but be careful where the tolerance is already being set.
