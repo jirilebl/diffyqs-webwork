@@ -113,7 +113,12 @@ $showHint = 2;
 BEGIN_TEXT
 $PAR
 $BITALIC If you don't get this in $showHint tries, you can get a hint. $EITALIC
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/bvp_section.html", "Section 4.1 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
+
 BEGIN_HINT
 
 When computing eigenvalues, the following two formulas may be useful:
@@ -123,11 +128,6 @@ $SPACE $SPACE
 $PAR
 $SPACE $SPACE
 \(\cos(\theta) = 0\) when \(\displaystyle \theta = \frac{(2n+1)\pi}{2}\).
-
-$PAR
-$BITALIC $BBOLD Book: $EBOLD
-\{ htmlLink("https://www.jirka.org/diffyqs/html/bvp_section.html", "Section 4.1 of Notes on Diffy Qs") \}
-$EITALIC
 END_HINT
 
 Context()->normalStrings;
