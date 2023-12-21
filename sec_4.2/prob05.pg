@@ -47,10 +47,10 @@ BEGIN_TEXT
 Fourier coefficients
 $PAR
 \{begintable(2)\}
-\{row( '\( {\rm a}_0 =$a0\)',  '\(\)' )\}
-\{row( '\( {\rm a}_1 =$a1\)',  '\({\rm b}_1 = $b1\)' )\}
-\{row( '\( {\rm a}_2 =$a2\)',  '\({\rm b}_2 = $b2\)' )\}
-\{row( '\( {\rm a}_3 =$a3\)',  '\({\rm b}_3 = $b3\)' )\}
+\{row( '\( \quad {\rm a}_0 =$a0 \quad\)',  '\(\)' )\}
+\{row( '\( \quad {\rm a}_1 =$a1 \quad\)',  '\({\rm b}_1 = $b1 \quad\)' )\}
+\{row( '\( \quad {\rm a}_2 =$a2 \quad\)',  '\({\rm b}_2 = $b2 \quad\)' )\}
+\{row( '\( \quad {\rm a}_3 =$a3 \quad\)',  '\({\rm b}_3 = $b3 \quad\)' )\}
 \{endtable()\}
 END_TEXT
 Context()->normalStrings;
