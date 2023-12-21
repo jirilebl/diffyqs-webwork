@@ -76,11 +76,11 @@ and \(c\) is an arbitrary constant.
 $PAR
 Choose your answer so that \( a_m = 1 \).
 $PAR
-$BITALIC${BBOLD}Note:$EBOLD Because the coefficient of \( y'' \) is zero when \( x=0 \),
+$BITALIC${BBOLD}Note:$EBOLD Because the coefficient of \( y'' \) is zero when \( x=0 , \)
 you will not find two linearly independent solutions of the differential
-equation defined near \( x=0 \).  In fact, by looking at the differential
+equation defined near \( x=0 . \)  In fact, by looking at the differential
 equation, you can see that any solution defined on an open interval containing
-\( x=0 \) must have \( y(0)=0 \).$EITALIC
+\( x=0 \) must have \( y(0)=0 . \)$EITALIC
 
 $PAR
 $BITALIC $BBOLD Book: $EBOLD
