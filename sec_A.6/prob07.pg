@@ -66,6 +66,9 @@ A = [$A]
 Determinant of [`A`]:
 [_________]{"0"} 
 [@ AnswerFormatHelp("numbers") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/det_section.html", "Section A.6 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ############################

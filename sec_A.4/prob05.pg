@@ -76,6 +76,9 @@ Is [`\vec{x}`] in [`S`]?  [@ $mult->menu() @]*
 
 So with that, 
 Is [`S`] a subspace?  [@ $subspace->menu() @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/subspaces_section.html", "Section A.4 of Notes on Diffy Qs") @]*_
 END_PGML
 
 #################################

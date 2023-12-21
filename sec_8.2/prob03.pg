@@ -86,6 +86,10 @@ $lin->ans_array(10);
 $PAR
 The behavior is
 \{ $popup->menu() \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/nlinstability_section.html", "Section 8.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

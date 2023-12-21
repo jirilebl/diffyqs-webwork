@@ -159,6 +159,10 @@ $PAR
 \( \Big) \cdot e^{$eval2 t} \left\lbrack \begin{array}{r} $evect2[0] \\ $evect2[1] \end{array} \right\rbrack. \)
 $SPACE \{ AnswerFormatHelp("numbers") \}
 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/linsystems_section.html", "Section 3.3 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

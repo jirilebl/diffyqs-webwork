@@ -62,6 +62,9 @@ At what time will Bob standing at position [`x=[$b]`] see the wave?
 
 [`t={}`] [________]{"$b/$a"}
 [@ AnswerFormatHelp("numbers") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/dalemb_section.html", "Section 4.8 of Notes on Diffy Qs") @]*_
 END_PGML
 
 #####################

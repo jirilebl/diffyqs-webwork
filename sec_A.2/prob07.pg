@@ -67,6 +67,10 @@ $PAR
 $PAR
 \{ $popup->menu \} True or False: \( A + B = B + A \) for every pair of matrices 
 \( A \) and \( B \) of the same size.
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/matalg_section.html", "Section A.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

@@ -106,6 +106,10 @@ $BRBR
 Second pivot column:
 \{ $ans2->ans_array() \} 
 \{ AnswerFormatHelp("numbers") \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/elim_section.html", "Section A.3 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

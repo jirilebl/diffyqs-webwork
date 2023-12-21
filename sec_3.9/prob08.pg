@@ -211,6 +211,10 @@ $PAR
 \( a_2 = \) \{ ans_rule(5) \}
 \{ AnswerFormatHelp("numbers") \}
 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/nonhomogsys_section.html", "Section 3.9 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

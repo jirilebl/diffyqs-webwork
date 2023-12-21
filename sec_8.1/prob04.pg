@@ -157,6 +157,10 @@ $ECENTER
 indent => 0, separation => 30, valign => "TOP"
 )
 \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/linearization_section.html", "Section 8.1 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

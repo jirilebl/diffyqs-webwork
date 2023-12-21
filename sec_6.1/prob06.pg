@@ -85,6 +85,11 @@ $PAR
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 $BITALIC $BBOLD Note: $EBOLD Enter everything in terms of \(s\) $EITALIC
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/laplace_section.html", "Section 6.1 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

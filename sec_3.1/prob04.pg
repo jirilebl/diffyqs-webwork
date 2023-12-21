@@ -82,6 +82,11 @@ $PAR
 \( y(t) = \) 
 \{ ans_rule(50) \}
 \{ AnswerFormatHelp("formulas") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_introtosys.html", "Section 3.1 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

@@ -86,6 +86,11 @@ For what values of \( s \) does the Laplace transform exist?
 $PAR
 \{ ans_rule(30) \}
 \{ AnswerFormatHelp("inequalities") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/laplace_section.html", "Section 6.1 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

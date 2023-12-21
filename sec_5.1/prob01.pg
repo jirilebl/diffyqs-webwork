@@ -444,6 +444,10 @@ $BR
 \{$figeigen\}
 $BR
 List the functions, ordered by their eigenvalues in increasing order, by their color - green, red, blue, black: \{ans_rule\}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/slproblems_section.html", "Section 5.1 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

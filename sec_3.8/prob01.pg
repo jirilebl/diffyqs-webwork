@@ -54,6 +54,11 @@ $PAR
 \( e^A = \)
 \{ $matrix_exp->ans_array(20) \}
 \{ AnswerFormatHelp("matrices") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_matexp.html", "Section 3.8 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

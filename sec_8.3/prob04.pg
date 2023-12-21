@@ -90,6 +90,10 @@ $PAR
 Wolves \( = \) \{ ans_rule(20) \}
 \{ AnswerFormatHelp("numbers") \}
 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/nlinapps_section.html", "Section 8.3 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

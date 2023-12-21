@@ -63,6 +63,10 @@ Suppose that \(\psi\) does not depend on \(y\).
 $PAR
 \(\psi = {} \) \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/dirich_section.html", "Section 4.9 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

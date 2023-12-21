@@ -124,6 +124,10 @@ $PAR
 $SPACE $SPACE
 \(\cos(\theta) = 0\) when \(\displaystyle \theta = \frac{(2n+1)\pi}{2}\).
 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/bvp_section.html", "Section 4.1 of Notes on Diffy Qs") \}
+$EITALIC
 END_HINT
 
 Context()->normalStrings;

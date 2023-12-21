@@ -133,6 +133,11 @@ Where does the Laplace transform you found exist?  In other words, what is the d
 $PAR
 \{ ans_rule(30) \}
 \{ AnswerFormatHelp("inequalities") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/laplace_section.html", "Section 6.1 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

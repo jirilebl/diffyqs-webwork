@@ -94,6 +94,11 @@ $BR
 $BR
 \(F_{\text{even}}(-$conepointfive) = {} \) \{ ans_rule(20) \}
 \{ AnswerFormatHelp("numbers") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_scs.html", "Section 4.4 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

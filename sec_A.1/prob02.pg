@@ -134,6 +134,9 @@ Write the vector [`\vec{b}`] in terms of the other vectors.
 Write the vector [`\vec{a}`] in terms of the other vectors.
 
 [`\vec{a} = `] [______________________]{$ans3}
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/vecsandmaps_section.html", "Section A.1 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ########################################

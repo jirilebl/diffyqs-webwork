@@ -54,6 +54,9 @@ Find the [`s`] that makes the vectors
 
 [`s = {}`] [_______]{"(-($a)*($d)-($b)*($e))/($c)"}
 [@ AnswerFormatHelp("numbers") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/innerproduct_section.html", "Section A.5 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ############################

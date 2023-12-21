@@ -62,6 +62,9 @@ The unit vector in the direction of [`\vec{v}`]:
 The unit vector in the direction of [`\vec{w}`]:
 [____________]*{$uw}
 [@ AnswerFormatHelp("numbers") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/vecsandmaps_section.html", "Section A.1 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ############################

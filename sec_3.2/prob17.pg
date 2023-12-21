@@ -77,6 +77,11 @@ For what value(s) of \(h\) is the following linear system consistent?
 \[ $dS \]
 The system is consistent if \(h\) \{$pop->menu()\} \{ans_rule(15)\}
 \{ AnswerFormatHelp("numbers") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_matrix.html", "Section 3.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

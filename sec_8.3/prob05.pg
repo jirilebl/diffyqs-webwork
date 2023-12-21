@@ -187,6 +187,10 @@ $PAR
 Notice what your conclusions about these four regions say about how
 the populations change with time.
 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/nlinapps_section.html", "Section 8.3 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

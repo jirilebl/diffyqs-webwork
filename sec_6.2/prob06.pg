@@ -85,7 +85,12 @@ $PAR
 \( \displaystyle F(s) = {\mathcal L}\left\lbrace f(t) \right\rbrace = \)
 \{ ans_rule(60) \}
 \{ AnswerFormatHelp("formulas") \}
- END_TEXT
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/transformsofders_section.html", "Section 6.2 of Notes on Diffy Qs") \}
+$EITALIC
+END_TEXT
 Context()->normalStrings;
 
 

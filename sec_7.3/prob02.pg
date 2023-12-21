@@ -62,6 +62,10 @@ $BR
 \(x = \) \{$singular->ans_rule\}
 \{ AnswerFormatHelp("numbers") \}
 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/frobenius_section.html", "Section 7.3 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

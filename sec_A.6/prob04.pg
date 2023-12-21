@@ -67,6 +67,10 @@ Give your answer as a comma-separated list.
 $PAR
 Values of \(a\): \{ans_rule(20)\}
 \{ AnswerFormatHelp("numbers") \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/det_section.html", "Section A.6 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

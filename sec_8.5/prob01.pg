@@ -72,6 +72,10 @@ An attractor for the Duffing equation is
 $PAR
 If we find an attractor set for a chaotic system, then
 \{ $popup4->menu() \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_chaos.html", "Section 8.5 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

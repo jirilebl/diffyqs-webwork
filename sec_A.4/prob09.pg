@@ -126,6 +126,10 @@ BEGIN_TEXT
 Basis for the null space of \(A = \Bigg\lbrace\) \{ $multians3->ans_array \} \( \Bigg\rbrace\)
 \{ AnswerFormatHelp("numbers") \}
 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/subspaces_section.html", "Section A.4 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

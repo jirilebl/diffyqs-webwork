@@ -63,6 +63,10 @@ Use the d'Alembert solution (notice that something above is odd and periodic):
 $PAR
 \(u(x,t) = {} \) \{ ans_rule(50) \}
 \{ AnswerFormatHelp("numbers") \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/dalemb_section.html", "Section 4.8 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

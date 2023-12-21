@@ -48,6 +48,10 @@ BEGIN_TEXT
 \{ $mc -> print_q() \}
 $BR
 \{ $mc -> print_a() \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/heateq_section.html", "Section 4.6 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 
 

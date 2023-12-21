@@ -63,6 +63,11 @@ $PAR
                   \{ ans_rule(5) \} \( e^{-(4\pi)^2t} \sin(4 \pi x) \)
 $BR
 \{ AnswerFormatHelp("numbers") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/heateq_section.html", "Section 4.6 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

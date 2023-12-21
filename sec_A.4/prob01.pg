@@ -58,6 +58,9 @@ The number of linearly independent rows of [`A`] is [_______]{"$r"}
 
 The number of zero rows in the reduced row echelon form of [`A`] is [_______]{"$n-$r"}
 [@ AnswerFormatHelp("numbers") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/subspaces_section.html", "Section A.4 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ############################

@@ -136,6 +136,8 @@ In general, will the pendulum swing back and forth for such a [`\mu`]?
 As time goes to infinity what will happen for such a [`\mu`]?
 [@ $popupsmss->menu() @]*
 
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/nlinapps_section.html", "Section 8.3 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ########################################################################

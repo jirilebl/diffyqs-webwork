@@ -66,6 +66,9 @@ If [`\vec{z} = \begin{bmatrix} [$z1] \\ [$z2] \end{bmatrix}`] in the plane, comp
 
 [`\lVert \vec{z} \rVert={}`] [____________]{"sqrt(($z1)^2+($z2)^2)"}{30}
 [@ AnswerFormatHelp("numbers") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/vecsandmaps_section.html", "Section A.1 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ###########################

@@ -87,6 +87,10 @@ onto the subspace \(W\) of \( {\mathbb R}^4 \) spanned by
 $BRBR
 \( {\rm proj}_W(\vec{v})= \) \{ $P->ans_array(15) \}
 \{ AnswerFormatHelp("numbers"); \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/innerproduct_section.html", "Section A.5 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

@@ -51,6 +51,10 @@ Context()->texStrings;
 BEGIN_TEXT
 The matrix \( $A \) is invertible if and only if \(k\ne\) \{ ans_rule(5)\}
 \{ AnswerFormatHelp("numbers") \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/elim_section.html", "Section A.3 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

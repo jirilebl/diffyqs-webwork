@@ -61,6 +61,10 @@ u(1,y) = 0. \)
 $PAR
 \(u(x,y) = {} \) \{ ans_rule(60) \}
 \{ AnswerFormatHelp("formulas") \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/dirich_section.html", "Section 4.9 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

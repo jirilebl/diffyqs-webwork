@@ -115,6 +115,10 @@ $PAR
 
 \(\vec{w}_3 = \) \{$u[2]->ans_array(20)\}
 \{ AnswerFormatHelp("numbers"); \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/innerproduct_section.html", "Section A.5 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

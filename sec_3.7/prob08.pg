@@ -44,6 +44,11 @@ Solve
 $PAR 
 \( x_2(t) = \) \{ans_rule(50)\}
 \{ AnswerFormatHelp("formulas") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_multeigen.html", "Section 3.7 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

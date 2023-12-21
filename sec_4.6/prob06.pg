@@ -533,6 +533,10 @@ $PAR
 $SPACE $SPACE
 Remember that \(\sin(n\pi) = 0\).
 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/heateq_section.html", "Section 4.6 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 
 

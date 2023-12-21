@@ -59,6 +59,8 @@ If magnitude of [`\vec{x}`] is [$mag1], then what are the magnitudes
 [`\lVert -[$a3] \vec{x} \rVert={}`] [________]{"$a3*$mag1"}
 [@ AnswerFormatHelp("numbers") @]*
 
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/vecsandmaps_section.html", "Section A.1 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ###########################

@@ -311,6 +311,10 @@ $PAR
 $BITALIC Just remember that if you change \({\vec{v}}\), you must
 also change \({\vec{w}}\) for its fundamental solution! $EITALIC
 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_multeigen.html", "Section 3.7 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

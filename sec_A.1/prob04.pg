@@ -71,6 +71,9 @@ Suppose [`\vec{v} = \begin{bmatrix} [$v1] \\ [$v2] \end{bmatrix}`],
 
 [`[$b]\vec{v}+[$a]\vec{w}={}`] [____________]*{$ans4}
 [@ AnswerFormatHelp("numbers") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/vecsandmaps_section.html", "Section A.1 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ###########################

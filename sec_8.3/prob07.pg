@@ -65,6 +65,8 @@ Now find the maximum angule that the pendulum attains given these initial condit
 [`\theta_{\text{max}} = `] [_________________________________]{"arccos( - ($L/(2*9.8)) ($omega0)^2 + cos($theta0))"}
 [@ AnswerFormatHelp("numbers") @]*
 
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/nlinapps_section.html", "Section 8.3 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ########################################################################

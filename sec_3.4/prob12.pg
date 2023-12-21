@@ -149,6 +149,11 @@ AnswerFormatHelp("numbers").$BR.AnswerFormatHelp("matrices")
 allowbreaks=>'yes'
 ) 
 \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/eigenmethod_section.html", "Section 3.4 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

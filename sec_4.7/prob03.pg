@@ -110,6 +110,10 @@ $PAR
 \{ AnswerFormatHelp("formulas") \}
 $SPACE
 \{ AnswerFormatHelp("numbers") \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/we_section.html", "Section 4.7 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 
@@ -136,5 +140,8 @@ ANS(Compute("$L/2")->cmp() );
 ANS(Compute("$L")->cmp() );
 ANS($Cn->cmp); 
 
+############################
+
+COMMENT("Wave equation series solution");
 
 ENDDOCUMENT();        

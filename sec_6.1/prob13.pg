@@ -21,7 +21,7 @@ TEXT(beginproblem());
 
 
 #############################
-#  Setup1
+#  Setup
 
 Context("Numeric");
 Context()->variables->are(
@@ -45,7 +45,7 @@ $popup2 = PopUp(
 );
 
 #############################
-#  Main text1
+#  Main text
 
 Context()->texStrings;
 
@@ -65,13 +65,17 @@ Is \( f(t) \) exponentially bounded on \( 0\leq t < \infty \)?
 $PAR
 Does the Laplace transform of \( f(t) \) exist (on some domain, i.e., for some values of \(s\))?
 \{ $popup2-> menu() \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/laplace_section.html", "Section 6.1 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 
 Context()->normalStrings;
 
 
 ##############################
-#  Answer evaluation1
+#  Answer evaluation
 
 install_problem_grader(~~&std_problem_grader);
 

@@ -109,6 +109,9 @@ If we multiply any vector in [`S`] by a scalar, will we get a vector in [`S`]
 [@ $mult2->menu() @]*
 
 Is [`S`] a subspace?  [@ $subspace->menu() @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/subspaces_section.html", "Section A.4 of Notes on Diffy Qs") @]*_
 END_PGML
 
 #################################

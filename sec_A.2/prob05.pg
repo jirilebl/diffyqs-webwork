@@ -75,6 +75,10 @@ $BR
 $BR
 \{ $popup->menu \} True or False: \( (A + B) + C = A + (B + C) \) for any three matrices 
 \( A \), \( B \) and \( C \) of the same size.
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/matalg_section.html", "Section A.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

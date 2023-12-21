@@ -70,6 +70,11 @@ $SPACE
 $PAR
 \( \displaystyle \phantom{(f \ast g)(t)} = \) \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/convolution_section.html", "Section 6.3 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

@@ -228,9 +228,14 @@ indent => 0, separation => 30, valign => "TOP"
 \}
 
 $PAR
-$BBOLD Note:$EBOLD To solve this problem, you only need to compute eigenvalues.  
+$BITALIC $BBOLD Note:$EBOLD To solve this problem, you only need to compute eigenvalues.  
 In fact, it is enough to just compute whether the eigenvalues are real or complex
-and positive or negative.
+and positive or negative. $EITALIC
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_twodimaut.html", "Section 3.5 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

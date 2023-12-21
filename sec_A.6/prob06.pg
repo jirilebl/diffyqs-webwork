@@ -66,6 +66,9 @@ B = [$B] .
 Compute determinant of [`BA`] without actually computing [`BA`]:
 [_________]{"($a)*($b)"} 
 [@ AnswerFormatHelp("numbers") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/det_section.html", "Section A.6 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ############################

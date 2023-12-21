@@ -110,6 +110,9 @@ The dimension of the rowspace of [`A`] is [_______]{"$rk"}
 
 The nullity of [`A`] is [_______]{"3-$rk"}
 [@ AnswerFormatHelp("numbers") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/subspaces_section.html", "Section A.4 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ###########################################

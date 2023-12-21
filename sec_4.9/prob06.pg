@@ -61,6 +61,10 @@ $PAR
 Think about it before jumping headlong into a long computation, the answer is
 really simple if you think about what it would mean if it was the steady state
 temperature on a square plate with the sides held at constant temperature $a.
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/dirich_section.html", "Section 4.9 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

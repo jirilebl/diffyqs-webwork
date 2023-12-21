@@ -32,7 +32,7 @@ $a = non_zero_random(-7,7,1);
 $P = Matrix ([[$P11,$P12],[$P21,$P22]]);
 
 ######################
-#  Main text
+#  Main text 1
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -57,15 +57,17 @@ $SPACE
 END_TEXT
 Context()->normalStrings;
 
-
 ######################
-#  Answer evaluation
+#  Answer evaluation 1
 
 $showPartialCorrectAnswers = 1;
 
 ANS( $P->cmp() );
 
 $eigenvals = List( Compute("$a + $a i"), Compute("$a - $a i") );
+
+######################
+#  Main text 2
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -75,10 +77,20 @@ and enter them as a comma separated list.
 $PAR
 \{ ans_rule(20) \}
 \{ AnswerFormatHelp("numbers") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/eigenmethod_section.html", "Section 3.4 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 
+######################
+#  Answer evaluation 1
+
 ANS( $eigenvals->cmp() );
+
+######################
 
 COMMENT("Distinct complex eigenvalues a +/- ai.");
 

@@ -52,6 +52,10 @@ $c & $d \\
 \]
 The determinant of \(A\) is \{ans_rule(25) \}
 \{ AnswerFormatHelp("numbers") \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/det_section.html", "Section A.6 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 
 ####################################

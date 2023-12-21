@@ -58,6 +58,10 @@ Find the steady periodic solution to \(x'' + $bsq \, x = F(t)\).
 $PAR
 \( x(t) = {} \) \{ ans_rule(50) \}
 \{ AnswerFormatHelp("formulas") \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/appoffourier_section.html", "Section 4.5 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

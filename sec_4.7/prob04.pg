@@ -62,6 +62,10 @@ Initial conditions: \( \quad u(x,0) = $b \sin( 2 \pi x) , \qquad u_t(x,0) = $c \
 $PAR
 \(u(x,t) = {} \) \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/we_section.html", "Section 4.7 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 
@@ -91,5 +95,9 @@ $PAR
 \( \displaystyle u(x,t) = $answer1 \)
 END_SOLUTION
 Context()->normalStrings;
+
+############################
+
+COMMENT("Simple solution of the wave equation on a finite vibrating string (using Fourier series)");
 
 ENDDOCUMENT();

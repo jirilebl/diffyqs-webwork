@@ -82,6 +82,8 @@ Now find the maximum angular velocity of the pendulum given these initial condit
 Does the pendulum swing back and forth or keep rotating around its axis?
 [@ $popup->menu() @]*
 
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/nlinapps_section.html", "Section 8.3 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ########################################################################

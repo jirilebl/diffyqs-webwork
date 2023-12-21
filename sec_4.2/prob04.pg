@@ -75,6 +75,10 @@ $PAR
 $PAR
 \(f($t5) = {}\) \{ ans_rule(30); \}
 \{ AnswerFormatHelp("numbers") \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/ts_section.html", "Section 4.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

@@ -296,6 +296,10 @@ $BR
 $BR
 (3e.) List the eigenfunctions in increasing order of their eigenvalues by their color - green, red, blue, black: \{ans_rule(35)\}
 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/bvp_section.html", "Section 4.1 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 
 Context()->normalStrings;

@@ -49,6 +49,10 @@ $BR
 \( b_7 = \)  \{ans_rule(15)\}
 \{ AnswerFormatHelp("numbers") \}
 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/seriessols_section.html", "Section 7.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

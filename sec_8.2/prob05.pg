@@ -67,6 +67,10 @@ Take the conservative equation \( x'' + $func = 0 \).
 $PAR
 How many critical points does the equation have:
 \{ ans_rule(5) \} \{ AnswerFormatHelp("numbers") \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/nlinstability_section.html", "Section 8.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

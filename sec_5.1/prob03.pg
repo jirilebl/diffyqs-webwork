@@ -517,6 +517,10 @@ $BR $BR $SPACE $SPACE
 \(\hskip 16pt =\) \{ans_rule(40)\} 
 
 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/slproblems_section.html", "Section 5.1 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 
 

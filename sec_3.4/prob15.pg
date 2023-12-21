@@ -341,8 +341,10 @@ $BITALIC $BBOLD Note:$EBOLD If you are feeling adventurous you could use other
 eigenvectors like \(4\,{\vec{v}_1}\) or
 \(-3\,{\vec{v}_2}\).$EITALIC
 
-
-  
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/eigenmethod_section.html", "Section 3.4 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

@@ -82,6 +82,9 @@ Therefore,
 
 [`a_{33} = {}`] [________]{"$a33"}
 [@ AnswerFormatHelp("numbers") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/subspaces_section.html", "Section A.4 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ###########################################

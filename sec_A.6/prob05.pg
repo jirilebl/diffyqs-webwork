@@ -51,6 +51,9 @@ square of area [$a] to a rhombus of area [$b].
 What is the absolute value of the determinant of the associated matrix?
 [_________]{"($b)/($a)"} 
 [@ AnswerFormatHelp("numbers") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/det_section.html", "Section A.6 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ############################

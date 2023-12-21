@@ -52,6 +52,10 @@ $PAR
 $PAR
 \( A^3 = \)
 \{ ans_box(3,30).$SPACE.AnswerFormatHelp('matrices') \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/matalg_section.html", "Section A.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

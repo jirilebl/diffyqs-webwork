@@ -93,6 +93,11 @@ $BITALIC $BBOLD Note: $EBOLD Use prime notation for derivatives and write
 \( x \) and \( x' \), etc., instead of 
 \( x(t) \), \( x'(t) \), or \( \frac{dx}{dt} \).
 $EITALIC
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/linsystems_section.html", "Section 3.3 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

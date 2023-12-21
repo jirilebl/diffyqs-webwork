@@ -71,6 +71,11 @@ $PAR
 \{ ans_rule(5) \} \( y + \)
 \{ ans_rule(5) \} 
 $SPACE \{ AnswerFormatHelp("numbers") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_introtosys.html", "Section 3.1 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

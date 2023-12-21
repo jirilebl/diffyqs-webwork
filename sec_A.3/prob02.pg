@@ -72,6 +72,10 @@ to reduced row echelon form.
 $PAR
 \{ $answer->ans_array() \} 
 \{ AnswerFormatHelp("matrices") \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/elim_section.html", "Section A.3 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

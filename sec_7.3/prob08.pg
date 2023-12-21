@@ -44,6 +44,11 @@ $PAR
 $PAR
 \( a_k = \)  \{ans_rule(20)\}, \( \,k = 1, 2, 3, \ldots \)
 $SPACE \{ AnswerFormatHelp("formulas") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/frobenius_section.html", "Section 7.3 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 
 Context()->normalStrings;

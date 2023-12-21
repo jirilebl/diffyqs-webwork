@@ -63,6 +63,9 @@ Compute the determinant of the product
 
 Determinant: [______________]{"(($b)-($a)*($c))*($d)"} 
 [@ AnswerFormatHelp("numbers") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/det_section.html", "Section A.6 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ############################

@@ -53,6 +53,9 @@ Find [`\vec{v}`] as a linear combination of the standard basis vectors.
 [_______]{"$v2"} [`\vec{e}_2 + {}`]
 [_______]{"$v3"} [`\vec{e}_3 . \qquad`]
 [@ AnswerFormatHelp("numbers") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/vecsandmaps_section.html", "Section A.1 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ############################

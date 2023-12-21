@@ -115,6 +115,9 @@ to the second non-pivot column.
 [@ AnswerFormatHelp("numbers") @]*
 
 The two vectors span the kernel of [`A`].
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/subspaces_section.html", "Section A.4 of Notes on Diffy Qs") @]*_
 END_PGML
 
 ###########################################

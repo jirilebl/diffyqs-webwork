@@ -60,6 +60,11 @@ then
 $PAR
 \( A^{-1} = \) \{ $Ainv->ans_array(15) \}
 \{ AnswerFormatHelp("matrices") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_matrix.html", "Section 3.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 
 #############################################

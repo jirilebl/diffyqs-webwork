@@ -67,6 +67,13 @@ TEXT(
 &OL(@answers[@slice[@shuffle]])
 );
 
+BEGIN_TEXT
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/powerseries_section.html", "Section 7.1 of Notes on Diffy Qs") \}
+$EITALIC
+END_TEXT
+
 #############################################################
 
 ANS(str_cmp([@ALPHABET[&invert(@shuffle)]], filters=>["remove_whitespace","ignore_order","ignore_case"]));

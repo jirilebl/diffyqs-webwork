@@ -78,6 +78,10 @@ $PAR
 $PAR
 There is a critical point at the origin.  The behavior is
 \{ $popup->menu() \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/limitcycles_section.html", "Section 8.4 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

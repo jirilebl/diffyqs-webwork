@@ -98,6 +98,11 @@ $a2[2][1] x_1 + $a2[2][2] x_2 & = $a2[2][3]
 \]
 \( \vec{x} = \) \{ $x->ans_array(10) \}
 \{ AnswerFormatHelp("matrices") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_matrix.html", "Section 3.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

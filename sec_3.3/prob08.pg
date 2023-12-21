@@ -92,6 +92,10 @@ know how to do it, but you can get the other answers quickly by process of elimi
 multiplying out one row element.
 $EITALIC
 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/linsystems_section.html", "Section 3.3 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 
 #########################################################

@@ -74,6 +74,10 @@ The solution then is
 $BRBR
 \( w(x,t) = {} \) \{ ans_rule(60) \} 
 \{ AnswerFormatHelp("formulas") \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/laplacepde_section.html", "Section 6.5 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 Context()->normalStrings;
 

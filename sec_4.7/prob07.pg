@@ -61,6 +61,10 @@ Which multiples of the fundamental frequency \(\frac{\pi a}{L}\)
 end up in the general solution given the additional condition above.
 $PAR
 \{ $mult->buttons() \}
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/we_section.html", "Section 4.7 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 
 ########################################################################
@@ -71,5 +75,9 @@ $showPartialCorrectAnswers = 0;
 
 ANS($cond->cmp());
 ANS($mult->cmp());
+
+############################
+
+COMMENT("Guitar string held at the middle");
 
 ENDDOCUMENT();        

@@ -83,6 +83,10 @@ $PAR
 Can the operation \(CB\) be performed? $SPACE \{ $CBpopup->menu(); \} 
 $PAR
 Can the operation \(CA\) be performed? $SPACE \{ $CApopup->menu(); \} 
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/matalg_section.html", "Section A.2 of Notes on Diffy Qs") \}
+$EITALIC
 END_TEXT
 
 ################################################
