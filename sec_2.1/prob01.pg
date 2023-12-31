@@ -3,8 +3,8 @@
 ##ENDDESCRIPTION
 
 ## DBsubject(Differential equations)
-## DBchapter(Partial differential equations)
-## DBsection(First order equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Existence and uniqueness)
 ## Author(Jiri Lebl)
 ## Institution(Oklahoma State University)
 ## Level(4)
@@ -14,7 +14,7 @@
 ## Section1('2.1')
 ## Problem1('')
 ## MO(1)
-## KEYWORDS('ODE', 'differential', 'equation')
+## KEYWORDS('ODE', 'differential equation', 'nonhomogeneous')
 
 
 ########################################################################

@@ -1,6 +1,17 @@
-# Complex Numbers
+##DESCRIPTION
+## Arithmetic of complex numbers
+##ENDDESCRIPTION
 
-## KEYWORDS('complex', 'imaginary','algebra', 'complex number')
+## DBsubject(Complex analysis)
+## DBchapter(Arithmetic)
+## DBsection(Multiple operations)
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.2')
+## Problem1('')
+## KEYWORDS('algebra', 'complex number')
 
 #########################################################
 
@@ -29,7 +40,6 @@ $d = new Complex( non_zero_random( -5, 5, 1), 1 );
 #########################################################
 
 BEGIN_TEXT
-
 Write the following numbers in \( a\ +\ bi \) form:
 $PAR
 \( \displaystyle \left( \frac{$a}{$b\ -\ ($c)} \right)^2\ =\) \{ans_rule(10)\} \(+\) \{ans_rule(10)\} \(i\),
@@ -55,5 +65,8 @@ ANS(num_cmp( (($a**2)/(($b-$c))**2) -> Im ));
 ANS(num_cmp( ( ($i**2 )*(($d)**2)) -> Re ));
 ANS(num_cmp( ( ($i**2 )*(($d)**2)) -> Im ));
 
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+##############################
 
+COMMENT("Arithmetic of complex numbers");
+
+ENDDOCUMENT();        # This should be the last executable line in the problem.

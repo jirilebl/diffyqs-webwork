@@ -1,6 +1,18 @@
-# Complex Numbers
+##DESCRIPTION
+## Arithmetic of complex numbers
+##ENDDESCRIPTION
 
-## KEYWORDS('Complex','algebra', 'complex number')
+## DBsubject(Complex analysis)
+## DBchapter(Arithmetic)
+## DBsection(Multiple operations)
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('algebra', 'complex number')
 
 DOCUMENT();
 
@@ -54,6 +66,10 @@ ANS(num_cmp( $b -> Re ));
 ANS(num_cmp( $b -> Im ));
 ANS(num_cmp( ($c*$d) -> Re ));
 ANS(num_cmp( ($c*$d) -> Im ));
+
+############################
+
+COMMENT("Arithmetic of complex numbers");
 
 ENDDOCUMENT();        # This should be the last executable line in the problem.
 

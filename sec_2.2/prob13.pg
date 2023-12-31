@@ -1,8 +1,20 @@
-# Constant coefficient idea still works in first order
+##DESCRIPTION
+## Constant coefficient idea still works in first order
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Linear, constant coefficients, homogeneous)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
-## KEYWORDS('linear','constant','coefficient')
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'linear', 'differential equation', 'first order', 'homogeneous', 'constant coefficients')
 
 
 ########################################################################
@@ -46,7 +58,11 @@ Context()->texStrings;
 BEGIN_TEXT
 The same idea that works for second order constant coefficient equations would work for first order too.
 $PAR
-The differential equation \($diffeqn = 0\) has characteristic equation 
+The differential equation
+\[
+$diffeqn = 0
+\]
+has characteristic equation 
 $PAR
 \{$aux->ans_rule(30)\} \(=0\)
 $SPACE \{ AnswerFormatHelp("formulas") \}
@@ -84,5 +100,9 @@ ANS($aux->cmp());
 ANS($root->cmp());
 ANS($f->cmp);
 ANS($soln->cmp);
+
+############################
+
+COMMENT("Constant coefficient idea still works in first order");
 
 ENDDOCUMENT();

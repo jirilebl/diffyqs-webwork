@@ -1,15 +1,29 @@
-# Linear, constant coefficients, homogeneous (distinct real roots)
+##DESCRIPTION
+## Distinct real roots, general solution
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Linear, constant coefficients, homogeneous (distinct real roots))
 ## Institution(Dartmouth)
-## KEYWORDS('homogeneous' 'differential equation')
+## Author(Unknown, Jiri Lebl)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'linear', 'differential equation', 'second order', 'homogeneous', 'constant coefficients')
 
 #############################################################################
 
 DOCUMENT();
 loadMacros(
   "PGstandard.pl",
-  "MathObjects.pl", # doesn't really use it, we should convert it
+  "MathObjects.pl",
   "AnswerFormatHelp.pl",
+  "unorderedAnswer.pl",
   "PGchoicemacros.pl",
   "PGcourse.pl"
 );
@@ -18,19 +32,7 @@ loadMacros(
 
 TEXT(beginproblem());
  
-##Hack around evaluation problem
-sub calleval {
-   my ($ans_evaluator,$student_answer) = @_;
-   my $rh_ans_hash = "";
-   if  ( ref($ans_evaluator) eq 'AnswerEvaluator' ) { # new style
-            $rh_ans_hash = $ans_evaluator->evaluate($student_answer);
-   } elsif (ref($ans_evaluator) eq  'CODE' )     { #old style
-            $rh_ans_hash = &$ans_evaluator($student_answer);
-   } else {
-            warn "There is a problem using the answer evaluator";
-   }
-   return $rh_ans_hash;
-} 
+Context("Numeric");
 
 ## Do NOT show partial correct answers
 $showPartialCorrectAnswers = 0;
@@ -39,14 +41,14 @@ $root1 = non_zero_random(-10,10);
 $root2 = $root1 + random(1,5);
 ## If $root2 is zero, then $root1 < 0
 if ($root2 == 0) {$root2 = random(1,10);}
-$function1 = "exp($root1*x)";
-$function2 = "exp($root2*x)";
+$function1 = Compute("exp($root1*x)");
+$function2 = Compute("exp($root2*x)");
 
 #############################################################################
 
 
+Context()->texStrings;
 BEGIN_TEXT
-$BR
 Find the general solution to the homogeneous differential equation
 \[
     \frac{d^2y}{dx^2} - \{$root1 + $root2\}\frac{dy}{dx} + \{$root1 * $root2\}y = 0
@@ -55,15 +57,14 @@ $BR
 The solution has the form
 \[y = C_1 f_1(x) + C_2 f_2(x)\] 
 with
-\(f_1(x) = \) \{NAMED_ANS_RULE(first_fcn,40)\}
+\(f_1(x) = \) \{ans_rule(40)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-and \(f_2(x) =\) \{NAMED_ANS_RULE(second_fcn,40)\}
+and \(f_2(x) =\) \{ans_rule(40)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 
-Left to your own devices, you will probably write down the correct
-answers, but in case you want to quibble, enter your answers so that
+Enter your answers so that
 \(f_1, f_2\) are normalized with their value at \(x = 0\) equal to
 1.
 
@@ -72,30 +73,30 @@ $BITALIC $BBOLD Book: $EBOLD
 \{ htmlLink("https://www.jirka.org/diffyqs/html/sec_ccsol.html", "Section 2.2 of Notes on Diffy Qs") \}
 $EITALIC
 END_TEXT
+Context()->normalStrings;
 
 ##########################################################
 
-($ans_eval1) = num_cmp(exp($root1)); ## Value of $function1 at x = 1
-$firstAnswer = $inputs_ref->{first_fcn};  ## Grab the first answer entered by student
-$firstAnswer = '' unless defined($firstAnswer);  ## Make sure it is defined
-$firstAnswer =~ s/x/(1)/g;  ## Globally substitute (1) for x in $firstAnswer
-$rh_ans_hash = &calleval($ans_eval1,$firstAnswer);  ## Check first answer against given
+UNORDERED_ANS($function1->cmp(), $function2->cmp());
 
+##############################
+#  Solution
 
+Context()->texStrings;
+BEGIN_SOLUTION
+The characteristic equation is
+\( r^2 - \{$root1 + $root2\} r + \{$root1 * $root2\} = 0 . \)
+Its roots are \($root1\) and \($root2 . \)
+Two linearly independent solutions are
+\(f_1(x)=e^{$root1 x} \) and \(f_2(x) = e^{$root2 x} .\)
+If we plug in \(x=0\) we find that \(f_1(0)=f_2(0)=1,\)
+so these are the two functions we are, indeed, looking for.
+END_SOLUTION
+Context()->normalStrings;
 
-if ( $rh_ans_hash->{score} == 1 ) 
-{
-    NAMED_ANS(first_fcn, fun_cmp($function1) );
-    NAMED_ANS(second_fcn, fun_cmp($function2) );
-}
-else
-{
-    NAMED_ANS(first_fcn, fun_cmp($function2) );
-    NAMED_ANS(second_fcn, fun_cmp($function1) );
-}
+############################
+
+COMMENT("Distinct real roots, general solution");
 
 ENDDOCUMENT();
-
-
-
 

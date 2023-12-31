@@ -1,9 +1,21 @@
-# Higher order ODEs: constant coefficient second order homogeneous linear ODEs
-# Linear, constant coefficients, homogeneous (complex roots)
+##DESCRIPTION
+## Characteristic polynomial (r + s a)^2 + b^2, general solution
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Linear, constant coefficients, homogeneous (distinct real roots))
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
-## KEYWORDS('differential equations','second order linear ODE','constant coefficients')
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'linear', 'differential equation', 'second order', 'homogeneous', 'constant coefficients')
+
 
 ##############################
 #  Initialization
@@ -68,7 +80,10 @@ $answer = Compute("y = c1 e^($msa x) cos($b x) + c2 e^($msa x) sin($b x)");
 
 Context()->texStrings;
 BEGIN_TEXT
-Find the general solution to \( $diffeq \).
+Find the general solution to
+\[
+$diffeq .
+\]
 Give your answer as \( y = ?  \).
 In your answer, use \( c_1 \) and \( c_2 \) to 
 denote arbitrary constants and \( x \) 
@@ -153,6 +168,6 @@ Context()->normalStrings;
 
 ##############################
 
-COMMENT("Characteristic polynomial (r + s a)^2 + b^2");
+COMMENT("Characteristic polynomial (r + s a)^2 + b^2, general solution");
 
 ENDDOCUMENT();

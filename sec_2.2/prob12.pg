@@ -1,8 +1,20 @@
-# Solve constant coefficient equation with auxiliary equations
+##DESCRIPTION
+## Distinct real roots, find characteristic polynomial, its roots, and solve an IVP
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Linear, constant coefficients, homogeneous (distinct real roots))
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
-## KEYWORDS('linear' 'constant' 'coefficient')
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'linear', 'differential equation', 'second order', 'homogeneous', 'constant coefficients')
 
 
 ########################################################################
@@ -21,6 +33,7 @@ TEXT(beginproblem());
 
 # Show which answers are correct and which ones are incorrect
 $showPartialCorrectAnswers = 1;
+
 ##############################################################
 #
 #  Setup
@@ -56,7 +69,11 @@ $soln = Formula("($y0*$b+$y1)/(-$c+$b)*exp(-$c*x)-($y1+$c*$y0)/(-$c+$b)*exp(-$b*
 
 Context()->texStrings;
 BEGIN_TEXT
-The differential equation \($diffeqn = $rhs\) has characteristic equation 
+The differential equation
+\[
+$diffeqn = $rhs
+\]
+has characteristic equation 
 $PAR
 \{$aux->ans_rule(30)\} \(=0\)
 $SPACE \{ AnswerFormatHelp("formulas") \}
@@ -73,7 +90,7 @@ $BITALIC $BBOLD Note: $EBOLD Enter the solutions as a comma separated list (they
 
 $PAR
 Use these to solve the initial value problem
-\[$diffeqn = $rhs, \qquad y(0) = $y0, \qquad \frac{dy}{dx}(0) = $y1\]
+\[$diffeqn = $rhs, \qquad y(0) = $y0, \qquad \frac{dy}{dx}(0) = $y1 .\]
 $PAR
 \(y(x) = {} \)\{$soln->ans_rule(50)\}
 \{ AnswerFormatHelp("formulas") \}
@@ -94,5 +111,9 @@ ANS($aux->cmp());
 ANS($roots->cmp());
 ANS($fundamental->cmp);
 ANS($soln->cmp);
+
+############################
+
+COMMENT("Distinct real roots, find characteristic polynomial, its roots, and solve an IVP");
 
 ENDDOCUMENT();
