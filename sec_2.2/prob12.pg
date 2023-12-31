@@ -46,9 +46,11 @@ Context()->variables->are("r"=>"Real","x"=>"Real","y"=>"Real","y'"=>"Real","y''"
 Context()->variables->set("y'" => {TeX => '\frac{dy}{dx}'},"y''" => {TeX => '\frac{d^2y}{dx^2}'});
 
 
-$b = Compute(non_zero_random(-9,9));
-$c = Compute(non_zero_random(-9,9));
-if ($b == $c) { $c++; }
+do {
+  $b = Compute(non_zero_random(-7,7));
+  $c = Compute(non_zero_random(-7,7));
+} while ($b == $c or $b+$c==0);
+
 $diffeqn = Formula("y''+($b+$c)*y'+$b*$c*y")->reduce;
 $rhs = Formula("0");
 $aux = Formula("r^2+($b+$c)*r+$b*$c")->reduce;

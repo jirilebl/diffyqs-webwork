@@ -40,7 +40,7 @@ Context()->variables->{namePattern} = qr/[a-z][a-z0-9_]*'*/i;
 Context()->variables->are("r"=>"Real","x"=>"Real","y"=>"Real","y'"=>"Real");
 Context()->variables->set("y'" => {TeX => '\frac{dy}{dx}'});
 
-$b = Compute(non_zero_random(-9,9));
+$b = Compute(non_zero_random(-7,7));
 $diffeqn = Formula("y'+($b)*y")->reduce;
 $aux = Formula("r+($b)")->reduce;
 
