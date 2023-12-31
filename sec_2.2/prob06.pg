@@ -40,7 +40,7 @@ $showPartialCorrectAnswers = 0;
 do {
   $root1 = non_zero_random(-6,6);
   $root2 = non_zero_random(-6,6);
-} while ($root1 >= $root2 or $root1 == 1 or $root2 == 1 or $root1+root2 == 1);
+} while ($root1 >= $root2 or $root1 == 1 or $root2 == 1 or $root1+root2 == 1 or $root1+$root2 == 0);
 
 $function1 = Compute("exp($root1*x)");
 $function2 = Compute("exp($root2*x)");
