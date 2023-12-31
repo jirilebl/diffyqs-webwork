@@ -104,4 +104,8 @@ The solution then is
 END_SOLUTION
 Context()->normalStrings;
 
+#############################
+
+COMMENT("Solving heat equation with Laplace transform");
+
 ENDDOCUMENT();
