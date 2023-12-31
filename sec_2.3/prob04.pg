@@ -1,10 +1,20 @@
-# Higher order ODEs: constant coefficient higher order homogeneous linear ODEs
-# Linear, constant coefficients, homogeneous (complex roots)
+##DESCRIPTION
+## Third order ODE with characteristic polynomial r( (r+a)^2 + b^2 ), general solution
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Linear, constant coefficients, homogeneous (complex roots))
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
-## KEYWORDS('differential equations','third order linear ODE','constant coefficients')
-
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'linear', 'differential equation', 'third order', 'homogeneous', 'constant coefficients')
 
 ##############################
 #  Initialization
@@ -63,7 +73,10 @@ $answer = Compute("y = c1 + c2 e^(-$a x) cos($b x) + c3 e^(-$a x) sin($b x)");
 
 Context()->texStrings;
 BEGIN_TEXT
-Find the general solution to \( $diffeq \).
+Find the general solution to
+\[
+$diffeq .
+\]
 In your answer, use \( c_1, c_2 \) and \( c_3 \) to 
 denote arbitrary constants and \( x \) 
 the independent variable.  Enter the solution as an equation \(y = ?\).
@@ -145,7 +158,8 @@ ANS( $answer->cmp( checker => sub {
 
 }));
 
+################################################
 
-COMMENT("Characteristic polynomial r( (r+a)^2 + b^2 ).");
+COMMENT("Third order ODE with characteristic polynomial r( (r+a)^2 + b^2 ), general solution");
 
 ENDDOCUMENT();

@@ -1,9 +1,20 @@
-# Higher order ODEs: constant coefficient higher order homogeneous linear ODEs
-# Linear, constant coefficients, homogeneous (complex roots)
+##DESCRIPTION
+## Find 4th order ODE given a solution
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Linear, constant coefficients, homogeneous (complex roots))
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
-## KEYWORDS('differential equations','fourth order linear ODE','constant coefficients')
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'linear', 'differential equation', 'fourth order', 'homogeneous', 'constant coefficients')
 
 
 ##############################
@@ -59,8 +70,10 @@ $diffeq = ImplicitEquation("y'''' - $c3 y''' + $c2 y'' - $c1 y' + $c0 y = 0");
 Context()->texStrings;
 BEGIN_TEXT
 Suppose that a fourth order differential equation 
-has a solution \( y = $term \).
-$PAR
+has a solution
+\[
+y = $term .
+\]
 Find such a differential equation, assuming
 it is homogeneous and has constant coefficients.
 $PAR
@@ -230,5 +243,9 @@ ANS( $answer->cmp( # tolType=>'absolute', tolerance=>0.001,
 
 
 }));
+
+########################################################
+
+COMMENT("Find 4th order ODE given a solution");
 
 ENDDOCUMENT();

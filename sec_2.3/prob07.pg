@@ -1,9 +1,20 @@
-# Higher order ODEs: constant coefficient higher order homogeneous linear ODEs
-# Linear independence
+##DESCRIPTION
+## Check linear independence of 3 functions
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Linear independence)
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
-## KEYWORDS('differential equations','linear independence')
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('linear independence')
 
 
 ##############################
@@ -80,5 +91,9 @@ Context()->normalStrings;
 $showPartialCorrectAnswers = 1;
 
 ANS( $multians->cmp() );
+
+########################
+
+COMMENT("Check linear independence of 3 functions");
 
 ENDDOCUMENT();

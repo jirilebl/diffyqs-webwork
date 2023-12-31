@@ -1,7 +1,19 @@
-# Linear, constant coefficients, homogeneous
+##DESCRIPTION
+## Match equations with solution sets
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Linear, constant coefficients, homogeneous)
 ## Institution(Rochester)
-## KEYWORDS('differential equation' 'higher order' 'third')
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'linear', 'differential equation', 'third order', 'homogeneous', 'constant coefficients')
 
 ##############################################
 
@@ -66,6 +78,9 @@ END_TEXT
 ##############################################
 
 ANS(str_cmp( $ml->ra_correct_ans )   ) ;
+
+##############################################
+COMMENT("Match equations with solution sets");
 
 ENDDOCUMENT();
 

@@ -1,10 +1,20 @@
-# Higher order ODEs: constant coefficient higher order homogeneous linear ODEs
-# Linear, constant coefficients, homogeneous (repeated roots)
+##DESCRIPTION
+## Find ODE for characteristic polynomial (r - a)^2 (r - b)^2, then solve
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Linear, constant coefficients, homogeneous (repeated roots))
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
-## KEYWORDS('differential equations','fourth order linear ODE','constant coefficients')
-
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'linear', 'differential equation', 'fourth order', 'homogeneous', 'constant coefficients')
 
 ##############################
 #  Initialization
@@ -52,8 +62,10 @@ $diffeq = ImplicitEquation("y'''' - $c3 y''' + $c2 y'' - $c1 y' + $c0 y = 0");
 Context()->texStrings;
 BEGIN_TEXT
 Suppose that the characteristic equation for a 
-differential equation is \( $charpoly = 0\).
-$PAR
+differential equation is
+\[
+$charpoly = 0 .
+\]
 Find such a differential equation, assuming
 it is homogeneous and has constant coefficients.
 Enter your answer using 
@@ -231,8 +243,9 @@ ANS( $answer->cmp( #tolType=>'absolute', tolerance=>0.1,
 
 }));
 
+########################################################
 
-COMMENT("Characteristic polynomial (r - a)^2 (r - b)^2.");
+COMMENT("Find ODE for characteristic polynomial (r - a)^2 (r - b)^2, then solve");
 
 ENDDOCUMENT();
 

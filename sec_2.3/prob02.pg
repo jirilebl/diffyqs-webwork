@@ -1,8 +1,20 @@
-# Differential Equations.
-# Linear, constant coefficients, homogeneous
+##DESCRIPTION
+## Find linearly independent solutions for a ninth order ODE
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Linear, constant coefficients, homogeneous)
 ## Institution(METU-NCC)
 ## Author(Benjamin Walter)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'linear', 'differential equation', 'homogeneous', 'constant coefficients')
 
 
 ##################################
@@ -82,7 +94,9 @@ Context()->texStrings;
 BEGIN_TEXT
 A 9th order, linear, homogeneous, constant coefficient differential equation has 
 a characteristic equation which factors as follows.
-\[ $charEqn = 0 \]
+\[
+$charEqn = 0
+\]
 Write the nine fundamental solutions to the differential equation.
 $PAR
 \{ mbox( [
@@ -132,5 +146,7 @@ for(my $i=0; $i<9; $i++) {
 }
 
 ##################################
+
+COMMENT("Find linearly independent solutions for a ninth order ODE");
 
 ENDDOCUMENT();

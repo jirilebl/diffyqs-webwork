@@ -15,7 +15,7 @@
 ## MO(1)
 ## KEYWORDS('ODE', 'linear', 'differential equation', 'second order', 'homogeneous', 'constant coefficients')
 
-################################################3
+################################################
 
 DOCUMENT();
 
@@ -26,7 +26,7 @@ loadMacros(
   "PGcourse.pl"
 );
  
-################################################3
+################################################
 
 TEXT(beginproblem());
 
