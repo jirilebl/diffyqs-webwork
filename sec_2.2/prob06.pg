@@ -38,9 +38,13 @@ Context("Numeric");
 $showPartialCorrectAnswers = 0;
 
 $root1 = non_zero_random(-10,10);
+# 1 looks funny
+if ($root1 == 1) {$root1 = 2;}
 $root2 = $root1 + random(1,5);
 ## If $root2 is zero, then $root1 < 0
-if ($root2 == 0) {$root2 = random(1,10);}
+if ($root2 == 0) {$root2 = random(2,10);}
+# 1 looks funny
+if ($root2 == 1) {$root2 = 2;}
 $function1 = Compute("exp($root1*x)");
 $function2 = Compute("exp($root2*x)");
 
