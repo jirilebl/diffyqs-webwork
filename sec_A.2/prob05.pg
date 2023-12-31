@@ -92,4 +92,6 @@ ANS( $popup->cmp );
 
 ################################################
 
+COMMENT("Checking associativity of matrix addition");
+
 ENDDOCUMENT();

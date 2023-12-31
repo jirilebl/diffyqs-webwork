@@ -104,5 +104,9 @@ ANS(Real(0)->cmp());
 ANS($r->cmp());
 ANS($w->cmp());
 
+########################################################################
+
+COMMENT("Predator-prey equation application");
+
 ENDDOCUMENT();
 
