@@ -73,7 +73,8 @@ $PAR
 y' + $a y =
 \sum_{k=0}^\infty \bigl( \)
 \{ $lhscoeff1->ans_rule \} \(a_{k+1} + {}\)
-\{ $lhscoeff2->ans_rule \} \(a_k \bigr) \, x^k\) .
+\{ $lhscoeff2->ans_rule \} \(a_k \bigr) \, x^k\)
+$SPACE
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 Now find, as a series,
@@ -83,36 +84,37 @@ $PAR
 \frac{$b}{1-x}
 =
 \sum_{k=0}^\infty \)
-\{ $rhscoeff->ans_rule \} \(x^k\) .
+\{ $rhscoeff->ans_rule \} \(x^k\)
+$SPACE
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 Now find the recurrence relation:
 $PAR
-\( a_{k+1} = \) \{ $r1->ans_rule \} \(a_{k} + {} \) \{ $r2->ans_rule \} .
+\( a_{k+1} = \) \{ $r1->ans_rule \} \(a_{k} + {} \) \{ $r2->ans_rule \}
 $SPACE
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 Now find
 $PAR
-\( a_{0} = \) \{ $a0->ans_rule \} .
+\( a_{0} = \) \{ $a0->ans_rule \}
 $SPACE
 \{ AnswerFormatHelp("numbers") \}
 $PAR
 And using this, find
 $PAR
-\( a_{1} = \) \{ $a1->ans_rule \} .
+\( a_{1} = \) \{ $a1->ans_rule \}
 $SPACE
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-\( a_{2} = \) \{ $a2->ans_rule \} .
+\( a_{2} = \) \{ $a2->ans_rule \}
 $SPACE
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-\( a_{3} = \) \{ $a3->ans_rule \} .
+\( a_{3} = \) \{ $a3->ans_rule \}
 $SPACE
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-\( a_{4} = \) \{ $a4->ans_rule \} .
+\( a_{4} = \) \{ $a4->ans_rule \}
 $SPACE
 \{ AnswerFormatHelp("numbers") \}
 

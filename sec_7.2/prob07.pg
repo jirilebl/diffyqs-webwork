@@ -63,13 +63,13 @@ is a solution of the differential equation
 then its coefficients \(a_k\) satisfy the following recurrence relation.
 For \( k \geq 0\),
 $PAR
-\( a_{k+2} = \) \{ $r1->ans_rule \} \(a_{k+1} + \) \{ $r2->ans_rule \} \(a_k\) .
+\( a_{k+2} = \) \{ $r1->ans_rule \} \(a_{k+1} + \) \{ $r2->ans_rule \} \(a_k\)
 $SPACE
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 We also have 
 $PAR
-\( a_{1} = \) \{ $r0->ans_rule \} \(a_{0}\) .
+\( a_{1} = \) \{ $r0->ans_rule \} \(a_{0}\)
 $SPACE
 \{ AnswerFormatHelp("numbers") \}
 $PAR
