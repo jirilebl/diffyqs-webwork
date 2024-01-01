@@ -43,10 +43,10 @@ $r1 = Compute("-$a/(k+1)")->reduce;
 $r2 = Compute("$b/(k+1)")->reduce;
 
 $a0 = Compute("$y0")->reduce;
-$a1 = Compute("(-$a*a0+$b)/(1)")->reduce;
-$a2 = Compute("(-$a*a1+$b)/(2)")->reduce;
-$a3 = Compute("(-$a*a2+$b)/(3)")->reduce;
-$a4 = Compute("(-$a*a3+$b)/(4)")->reduce;
+$a1 = Compute("(-$a*$a0+$b)/(1)")->reduce;
+$a2 = Compute("(-$a*$a1+$b)/(2)")->reduce;
+$a3 = Compute("(-$a*$a2+$b)/(3)")->reduce;
+$a4 = Compute("(-$a*$a3+$b)/(4)")->reduce;
 
 ##############################################################
 
