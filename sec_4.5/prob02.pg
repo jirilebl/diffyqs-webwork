@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Finding steady state periodic solution
+## Finding steady state periodic solution, given initial data as Fourier series
 ##ENDDESCRIPTION
 
 ## DBsubject(Differential equations)
@@ -53,8 +53,8 @@ $answer3 = Compute("$a * exp(-n) / ($b-n^2)");
 
 Context()->texStrings;
 BEGIN_TEXT
-Let \(F(t) = \sum_{n=1}^\infty $a e^{-n} \sin(n t)\).
-Find the steady periodic solution to \(x'' + $b\, x = F(t)\).
+Let \(F(t) = \sum_{n=1}^\infty $a e^{-n} \sin(n t) .\)
+Find the steady periodic solution to \(x'' + $b\, x = F(t) .\)
 $PAR
 \( x(t) = {} \)
  \{ ans_rule(10) \}
@@ -90,5 +90,9 @@ ANS( $answer3->cmp() );
 #BEGIN_SOLUTION
 #END_SOLUTION
 #Context()->normalStrings;
+
+#####################
+
+COMMENT("Finding steady state periodic solution, given initial data as Fourier series");
 
 ENDDOCUMENT();

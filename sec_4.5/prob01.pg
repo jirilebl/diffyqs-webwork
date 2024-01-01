@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Finding steady state periodic solution
+## Finding steady state periodic solution, given initial data as trig polynomial
 ##ENDDESCRIPTION
 
 ## DBsubject(Differential equations)
@@ -53,8 +53,8 @@ $answer1 = Compute("($a/(sqrt(2)-($b^2)*(pi^2)))*sin($b*pi*t) + ($c/(sqrt(2)-($d
 
 Context()->texStrings;
 BEGIN_TEXT
-Let \(F(t) = $a \sin($b\pi t) + $c \cos($d \pi t)\).
-Find the steady periodic solution to \(x'' + \sqrt{2}\, x = F(t)\).
+Let \(F(t) = $a \sin($b\pi t) + $c \cos($d \pi t) .\)
+Find the steady periodic solution to \(x'' + \sqrt{2}\, x = F(t) .\)
 $PAR
 \( x(t) = {} \) \{ ans_rule(50) \}
 \{ AnswerFormatHelp("formulas") \}
@@ -80,5 +80,9 @@ ANS( $answer1->cmp() );
 #BEGIN_SOLUTION
 #END_SOLUTION
 #Context()->normalStrings;
+
+#####################
+
+COMMENT("Finding steady state periodic solution, given initial data as trig polynomial");
 
 ENDDOCUMENT();
