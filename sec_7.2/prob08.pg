@@ -39,6 +39,10 @@ $a = random(2,5,1);
 $b = random(2,5,1);
 $y0 = random(2,8,1);
 
+$lhscoeff1 = Compute("(k+1)")->reduce;
+$lhscoeff2 = Compute("$a")->reduce;
+$rhscoeff = Compute("$b")->reduce;
+
 $r1 = Compute("-$a/(k+1)")->reduce;
 $r2 = Compute("$b/(k+1)")->reduce;
 
@@ -67,8 +71,9 @@ $PAR
 \(
 \displaystyle
 y' + $a y =
-\sum_{k=0}^\infty \)
-\{ $lhscoeff->ans_rule \} \(x^k\) .
+\sum_{k=0}^\infty \bigl( \)
+\{ $lhscoeff1->ans_rule \} \(a_{k+1} + {}\)
+\{ $lhscoeff2->ans_rule \} \(a_k \bigr) \, x^k\) .
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 Now find, as a series,
@@ -122,7 +127,8 @@ Context()->normalStrings;
 
 $showPartialCorrectAnswers = 1;
 
-ANS( $lhscoeff->cmp );
+ANS( $lhscoeff1->cmp );
+ANS( $lhscoeff2->cmp );
 ANS( $rhscoeff->cmp );
 ANS( $r1->cmp );
 ANS( $r2->cmp );
