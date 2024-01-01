@@ -42,7 +42,8 @@ $y0 = random(2,8,1);
 $r1 = Compute("-$a/(k+1)")->reduce;
 $r2 = Compute("$b/(k+1)")->reduce;
 
-$a1 = Compute("(-$a*y0+$b)/(1)")->reduce;
+$a0 = Compute("$y0")->reduce;
+$a1 = Compute("(-$a*a0+$b)/(1)")->reduce;
 $a2 = Compute("(-$a*a1+$b)/(2)")->reduce;
 $a3 = Compute("(-$a*a2+$b)/(3)")->reduce;
 $a4 = Compute("(-$a*a3+$b)/(4)")->reduce;
@@ -88,7 +89,7 @@ $SPACE
 $PAR
 Now find
 $PAR
-\( a_{0} = \) \{ $y0->ans_rule \} .
+\( a_{0} = \) \{ $a0->ans_rule \} .
 $SPACE
 \{ AnswerFormatHelp("numbers") \}
 $PAR
@@ -126,7 +127,7 @@ ANS( $rhscoeff->cmp );
 ANS( $r1->cmp );
 ANS( $r2->cmp );
 
-ANS( $y0->cmp );
+ANS( $a0->cmp );
 ANS( $a1->cmp );
 ANS( $a2->cmp );
 ANS( $a3->cmp );
