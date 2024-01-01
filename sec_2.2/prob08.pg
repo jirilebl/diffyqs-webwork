@@ -19,7 +19,6 @@ DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "MathObjects.pl", # doesn't really use it, we should convert it
   "AnswerFormatHelp.pl",
   "PGchoicemacros.pl",
   "PGcomplexmacros.pl",

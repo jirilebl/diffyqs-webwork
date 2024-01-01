@@ -11,14 +11,12 @@
 ## EditionText1('6')
 ## Section1('2.2')
 ## Problem1('')
-## MO(1)
 ## KEYWORDS('algebra', 'complex number')
 
 DOCUMENT();
 
 loadMacros(
   "PGstandard.pl",
-  "MathObjects.pl", # doesn't really use it, we should convert it
   "AnswerFormatHelp.pl",
   "PGchoicemacros.pl",
   "PGcomplexmacros.pl",

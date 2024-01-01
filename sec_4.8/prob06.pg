@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Wave equation propagation speed
+## Wave equation propagation speed, test intuitive reasoning
 ##ENDDESCRIPTION
 
 ## DBsubject(Differential equations)
@@ -55,7 +55,8 @@ Suppose the equation for a particular channel is
 where as usual [`x`] is the position along the channel and [`t`] is time (let us not worry about the units).
 Suppose the channel is very very long so that we don't have to worry about its ends.
 
-At time [`t=0`] the water is completely quiet with no waves at all, when suddenly a large boulder 
+At time [`t=0`] the water is completely still with no waves at all,
+when suddenly a large boulder 
 falls into the channel and makes a wave at the position [`x=0.`]
 
 At what time will Bob standing at position [`x=[$b]`] see the wave?
@@ -79,5 +80,9 @@ at [`x=[$b]`] it must be that [`[$b]-[$a]t = 0`] (Bob only sees the [`A`] wave, 
 is moving in the opposite direction and Bob will never see it).
 That is, Bob sees the wave at [`t = \frac{[$b]}{[$a]}.`]
 END_PGML_SOLUTION
+
+#####################
+
+COMMENT("Wave equation propagation speed, test intuitive reasoning");
 
 ENDDOCUMENT();

@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Solve wave equation using d'Alembert, on real line
+## Solve wave equation using d'Alembert, on the real line, initial velocity given
 ##ENDDESCRIPTION
 
 ## DBsubject(Differential equations)
@@ -101,5 +101,9 @@ Thus
 \( u(x,t) = \frac{$b}{2\cdot $a}\bigl(\sin(x+$a t)-\sin(x-$a t)\bigr) . \)
 END_SOLUTION
 Context()->normalStrings;
+
+#####################
+
+COMMENT("Solve wave equation using d'Alembert, on the real line, initial velocity given");
 
 ENDDOCUMENT();

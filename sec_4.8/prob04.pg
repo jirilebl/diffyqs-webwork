@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Solve wave equation using d'Alembert, on real line
+## Solve wave equation using d'Alembert, on real line, find constants in solution
 ##ENDDESCRIPTION
 
 ## DBsubject(Differential equations)
@@ -96,5 +96,9 @@ The derivative of \(u\) in \(t\) is
 \( A = B = \frac{$b}{2} \).
 END_SOLUTION
 Context()->normalStrings;
+
+#####################
+
+COMMENT("Solve wave equation using d'Alembert, on real line, find constants in solution");
 
 ENDDOCUMENT();

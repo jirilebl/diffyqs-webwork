@@ -37,8 +37,6 @@ TEXT(beginproblem());
 #############################
 #  Setup 1
 
-SRAND($psvn);
-
 $a = random(2,5,1);
 do { $b = random(-1,1,2)*random(2,9,1); } until ($b != $a);
 

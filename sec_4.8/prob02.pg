@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Solve wave equation using d'Alembert, on real line
+## Solve wave equation using d'Alembert, on the real line, initial position given
 ##ENDDESCRIPTION
 
 ## DBsubject(Differential equations)
@@ -99,5 +99,9 @@ So \(B'(x) = A'(x).\)  So if we take \(A(x) = B(x) = \frac{1}{2} f(x),\)
 we will have a solution.
 END_SOLUTION
 Context()->normalStrings;
+
+#####################
+
+COMMENT("Solve wave equation using d'Alembert, on the real line, initial position given");
 
 ENDDOCUMENT();

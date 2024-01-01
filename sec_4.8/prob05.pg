@@ -94,4 +94,8 @@ $c \sin^{$ex}\bigl(\frac{\pi}{$b} (x-$a t)\bigr) .
 END_SOLUTION
 Context()->normalStrings;
 
+#####################
+
+COMMENT("Wave equation on a finite vibrating string, using d'Alembert");
+
 ENDDOCUMENT();

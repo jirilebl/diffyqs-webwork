@@ -22,9 +22,6 @@ loadMacros(
 
 TEXT(beginproblem());
 
-SRAND($psvn);
-
-
 #####################################
 #  Setup
 

@@ -133,4 +133,8 @@ $PAR
 END_SOLUTION
 Context()->normalStrings;
 
+#####################
+
+COMMENT("Wave equation on a finite vibrating string, computing specific values using d'Alembert");
+
 ENDDOCUMENT();
