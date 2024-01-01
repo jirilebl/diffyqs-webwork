@@ -88,7 +88,8 @@ $PAR
 $SPACE
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-Now find the recurrence relation:
+Letting the two series equal,
+find the recurrence relation:
 $PAR
 \( a_{k+1} = \) \{ $r1->ans_rule \} \(a_{k} + {} \) \{ $r2->ans_rule \}
 $SPACE
