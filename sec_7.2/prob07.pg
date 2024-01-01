@@ -110,4 +110,8 @@ ANS( $a2->cmp );
 ANS( $a3->cmp );
 ANS( $a4->cmp );
 
+##############################################################
+
+COMMENT("Find the recurrence relations and a solution to first order equation");
+
 ENDDOCUMENT();

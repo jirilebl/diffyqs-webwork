@@ -1,68 +1,79 @@
-# Solve differential equation via series
+##DESCRIPTION
+## Solve a linear second order ODE IVP via power series: give first 7 coefficients
+##ENDDESCRIPTION
 
-## Institution(Berkeley)
-## Author(Paul Vojta)
-## KEYWORDS('differential equation', 'second order', 'homogeneous', 'series solution')
+## DBsubject(Differential equations)
+## DBchapter(Series solutions)
+## DBsection(Ordinary point)
+## Institution(CSUN)
+## Author(David Protas)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('7.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'power series', 'series solution')
 
-##############################################################
+##########################################################
 
 DOCUMENT();
-
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGpolynomialmacros.pl",
   "PGcourse.pl"
 );
 
-TEXT(beginproblem());
+##########################################################
 
-##############################################################
-#
-#  Setup
-#
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
 
 Context("Numeric");
 
-Context()->variables->are(n => 'Real');
+$a = random(1, 5);
+$b = random(1, 4);
+$c = random(2, 12);
 
-$n1 = random(5, 10);
-$n2 = random($n1 + 1, 20);
-
-@testpts = [[1], [2], [3], [4], [$n1], [$n2]];
-
-do {
-  $a = random(1, 5);
-  ($b, $anstop, $ansbot) = @{ list_random(
-    [6, '(n+1)', ''],
-    [8, '(n+1)(n+2)', 2],
-    [10, '(n+1)(n+2)(n+3)', 6] )};
-  $c = $b - 2;
-}
-until $c != 0;
-
-$prettyc = $c < 0 ? $c : "+$c";
-
-$feven = Formula("$anstop/($ansbot($a)^n)")->with(test_points => @testpts);
-$fodd = Formula("0")->with(test_points => @testpts);
-
-##############################################################
-#
-#  Text
-#
+##########################################################
 
 Context()->texStrings;
 BEGIN_TEXT
-
-Use power series to solve the initial-value problem
-\[ (x^2-$a)y'' + $b xy' $prettyc y = 0 \;, \qquad
-  y(0) = 1\;, \qquad y'(0) = 0\;. \]
+Consider the initial value problem
+\[
+($a + x^2)y'' + $b y = 0, \qquad y(0) = 0, \qquad y'(0) = $c .
+\]
+If the solution is
+\[
+y = \sum_{k=0}^\infty a_k x^k ,
+\]
+enter the following coefficients:
 $PAR
-  \( \displaystyle y = \sum_{n=0}^\infty \) \{$feven->ans_rule\} \(x^{2n}\)
-  \( \displaystyle + \sum_{n=0}^\infty \) \{$fodd->ans_rule\} \(x^{2n+1}\) .
-$SPACE
-\{ AnswerFormatHelp("formulas") \}
+\( a_0 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( a_1 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( a_2 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( a_3 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( a_4 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( a_5 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( a_6 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( a_7 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
 
 $PAR
 $BITALIC $BBOLD Book: $EBOLD
@@ -71,17 +82,19 @@ $EITALIC
 END_TEXT
 Context()->normalStrings;
 
-##############################################################
-#
-#  Answers
-#
-#
+##########################################################
 
-$showPartialCorrectAnswers = 1;
+ANS(Compute("0")->cmp());
+ANS(Compute("$c")->cmp());
+ANS(Compute("0")->cmp());
+ANS(Compute("-$b*$c/(6*$a)")->cmp());
+ANS(Compute("0")->cmp());
+ANS(Compute("$b($b+6)*$c/(6*20*$a^2)")->cmp());
+ANS(Compute("0")->cmp());
+ANS(Compute("-$b*($b+6)*($b+20)*$c/(6*20*42*$a^3)")->cmp());
 
-ANS( $feven->cmp );
-ANS( $fodd->cmp );
+##########################################################
 
-
+COMMENT("Solve a linear second order ODE IVP via power series: give first 7 coefficients");
 
 ENDDOCUMENT();

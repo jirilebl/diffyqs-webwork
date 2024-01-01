@@ -1,8 +1,20 @@
-# Power series solution of a differential equation
+##DESCRIPTION
+## Particular solutions to a second order ODE IVP via power series: give several coefficients
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Series solutions)
+## DBsection(Ordinary point)
 ## Institution(CSUN)
 ## Author(David Protas)
-## KEYWORDS('power series solution')
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('7.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'power series', 'series solution')
 
 ##########################################################
 
@@ -62,5 +74,9 @@ ANS(Compute("-$a/6")->cmp());
 ANS(Compute("$a^2/180")->cmp());
 ANS(Compute("-$a/12")->cmp());
 ANS(Compute("$a^2/504")->cmp());
+
+##########################################################
+
+COMMENT("Particular solutions to a second order ODE IVP via power series: give several coefficients");
 
 ENDDOCUMENT();

@@ -1,0 +1,139 @@
+##DESCRIPTION
+## Solve first order nonhomogeneous problem with power series
+##ENDDESCRIPTION
+
+## DBsubject(Differential equations)
+## DBchapter(Series solutions)
+## DBsection(Ordinary point)
+## Author(Jiri Lebl)
+## Institution(Oklahoma State University)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('7.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'power series', 'series solution', 'recurrence', 'nonhomogeneous')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl"
+);
+
+##############################################################
+
+TEXT(beginproblem());
+
+Context("Numeric");
+
+Context()->variables->are(k => 'Real');
+
+$a = random(2,5,1);
+$b = random(2,5,1);
+$y0 = random(2,8,1);
+
+$r1 = Compute("-$a/(k+1)")->reduce;
+$r2 = Compute("$b/(k+1)")->reduce;
+
+$a1 = Compute("(-$a*y0+$b)/(1)")->reduce;
+$a2 = Compute("(-$a*a1+$b)/(2)")->reduce;
+$a3 = Compute("(-$a*a2+$b)/(3)")->reduce;
+$a4 = Compute("(-$a*a3+$b)/(4)")->reduce;
+
+##############################################################
+
+Context()->texStrings;
+BEGIN_TEXT
+Power series can also be used to solve nonhomgeneous equations.  For simplicity, we stick with a first order constant coefficient equation.
+$PAR
+Suppose we wish to solve
+\[
+y' + $a y = \frac{$b}{1-x}, \qquad y(0) = $y0 ,
+\]
+as a power series
+\[
+y = \sum_{k=0}^\infty a_k x^k .
+\]
+Find, as a series,
+$PAR
+\(
+\displaystyle
+y' + $a y =
+\sum_{k=0}^\infty \)
+\{ $lhscoeff->ans_rule \} \(x^k\) .
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+Now find, as a series,
+$PAR
+\(
+\displaystyle
+\frac{$b}{1-x}
+=
+\sum_{k=0}^\infty \)
+\{ $rhscoeff->ans_rule \} \(x^k\) .
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+Now find the recurrence relation:
+$PAR
+\( a_{k+1} = \) \{ $r1->ans_rule \} \(a_{k} + {} \) \{ $r2->ans_rule \} .
+$SPACE
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+Now find
+$PAR
+\( a_{0} = \) \{ $y0->ans_rule \} .
+$SPACE
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+And using this, find
+$PAR
+\( a_{1} = \) \{ $a1->ans_rule \} .
+$SPACE
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( a_{2} = \) \{ $a2->ans_rule \} .
+$SPACE
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( a_{3} = \) \{ $a3->ans_rule \} .
+$SPACE
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( a_{4} = \) \{ $a4->ans_rule \} .
+$SPACE
+\{ AnswerFormatHelp("numbers") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/seriessols_section.html", "Section 7.2 of Notes on Diffy Qs") \}
+$EITALIC
+END_TEXT
+Context()->normalStrings;
+
+##############################################################
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $lhscoeff->cmp );
+ANS( $rhscoeff->cmp );
+ANS( $r1->cmp );
+ANS( $r2->cmp );
+
+ANS( $y0->cmp );
+ANS( $a1->cmp );
+ANS( $a2->cmp );
+ANS( $a3->cmp );
+ANS( $a4->cmp );
+
+##############################################################
+
+COMMENT("Solve first order nonhomogeneous problem with power series");
+
+ENDDOCUMENT();
