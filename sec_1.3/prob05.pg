@@ -67,18 +67,23 @@ First note that
 and
 [`\frac{1}{e^{[$b] u}} = e^{-[$b] u} . `]
 Hence we can write the equation as
+
 >>[``
 e^{-[$b] u} \frac{du}{dt}= e^{[$a] t} .
 ``]<<
+
 If we integrate, we find
+
 >>[``
 \frac{-1}{[$b]} e^{-[$b] u} = \frac{1}{[$a]} e^{[$a] t} +C .
 ``]<<
+
 To solve for [`C ,`]  plug in [`t=0`] and [`u=-[$d] .`]  That is,
 [`\frac{-1}{[$b]} e^{([$b])([$d])} = \frac{1}{[$a]} +C , `]
 or in other words
 [`C = \frac{-e^{([$b])([$d])}}{[$b]}  - \frac{1}{[$a]} . `]
 Now solve for [`u ,`]
+
 >>[``
 e^{-[$b] u} = \frac{-[$b]}{[$a]} e^{[$a] t} - \frac{1}{[$b]} C ,
 ``]<<
@@ -93,11 +98,22 @@ u =
 \frac{-1}{[$b]}
 \ln \left\lvert \frac{-[$b]}{[$a]} e^{[$a] t} - \frac{1}{[$b]} C \right\rvert .
 ``]<<
+
 Now plug in the [`C`] we found:
+
 >>[``
 u =
 \frac{-1}{[$b]}
 \ln \left\lvert \frac{-[$b]}{[$a]} e^{[$a] t} + e^{([$b])([$d])} + \frac{[$b]}{[$a]} \right\rvert .
+``]<<
+
+When [`t=0 ,`] the expression inside the absolute values is
+positive and so we could, if we wanted to, just remove them:
+
+>>[``
+u =
+\frac{-1}{[$b]}
+\ln \left(\frac{-[$b]}{[$a]} e^{[$a] t} + e^{([$b])([$d])} + \frac{[$b]}{[$a]} \right) .
 ``]<<
 END_PGML_SOLUTION
 

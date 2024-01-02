@@ -109,7 +109,7 @@ and so \(k = \frac{1}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr) \approx $k .\)
 So after \(t\) hours there are
 \[
 $initial e^{
-\frac{t}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr)
+\frac{t}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr)}
 \approx
 $initial e^{ $k \, t }
 \]
@@ -120,7 +120,7 @@ $PAR
 After \{$t1 + 1\} hours there are
 \[
 $initial e^{
-\frac{$t11}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr)
+\frac{$t11}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr)}
 \approx
 $initial e^{ ($k) \, ($t11) }
 \]
@@ -133,7 +133,7 @@ Thus the growth rate after \{$t1 + 1\} hours is
 \[
 \left(\frac{1}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr)\right)
 ($initial)
-e^{ \frac{$t11}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr)
+e^{ \frac{$t11}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr) }
 \approx
 ($k)($initial) e^{ ($k) \, ($t11) }
 \]
@@ -143,7 +143,7 @@ Finally, the population will reach 30000 when
 \[
 30000 = 
 $initial e^{
-\frac{t}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr)
+\frac{t}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr) }
 \approx
 $initial e^{ $k \, t } .
 \]
