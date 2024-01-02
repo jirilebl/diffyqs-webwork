@@ -107,7 +107,7 @@ u =
 \ln \left\lvert \frac{-[$b]}{[$a]} e^{[$a] t} + e^{([$b])([$d])} + \frac{[$b]}{[$a]} \right\rvert .
 ``]<<
 
-When [`t=0 ,`] the expression inside the absolute values is
+When [`t=0 ,`] the expression inside the absolute value signs is
 positive and so we could, if we wanted to, just remove them:
 
 >>[``

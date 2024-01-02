@@ -93,7 +93,7 @@ Let us solve for the initial condition:
 2C = [$b]^2 -  [$a] .
 ``]<<
 
-Plugging the [`2C`] into our solution we find
+Plugging the [`2C`] into our solution, we find
 
 >>[``
 y =  \sqrt{\frac{1}{[$a]} x^2 + [$b]^2 - [$a] }.
