@@ -100,13 +100,13 @@ BEGIN_SOLUTION
 If \(x\) is the number of bacteria and \(t\) is time in hours, then
 the equation for the setup is \(x' = k x , \) which we have
 solved and whose solution is \(x=C e^{kt} . \)
-If \(x(0) = $initial \) we find that \(C = $initial . \)
-As \(x($t1)=$later\) we find
+If \(x(0) = $initial , \) we find that \(C = $initial . \)
+As \(x($t1)=$later ,\) we find
 \[
-$later = $initial e^{$t1 k} ,
+$later = $initial e^{$t1 k} .
 \]
-and so \(k = \frac{1}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr) \approx $k .\)
-So after \(t\) hours there are
+So \(k = \frac{1}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr) \approx $k .\)
+After \(t\) hours there are
 \[
 $initial e^{
 \frac{t}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr)}
