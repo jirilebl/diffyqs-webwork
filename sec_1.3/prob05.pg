@@ -5,6 +5,8 @@
 ## DBsubject(Differential equations)
 ## DBchapter(First order differential equations)
 ## DBsection(Separable)
+## Institution(Unknown, Oklahoma State University)
+## Author(Unknown, Jiri Lebl)
 ## Level(3)
 ## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
 ## AuthorText1('Jiri Lebl')
@@ -56,6 +58,46 @@ Use the following initial condition: [` u(0) = - [$d] . `]
 _*Book:*
 [@ htmlLink("https://www.jirka.org/diffyqs/html/separable_section.html", "Section 1.3 of Notes on Diffy Qs") @]*_
 END_PGML
+
+############################################################
+
+BEGIN_PGML_SOLUTION
+First note that
+[`e^{[$b] u + [$a] t}= e^{[$b] u} e^{[$a] t}']
+and
+[`\frac{1}{e^{[$b] u}} = e^{-[$b] u} . ']
+Hence we can write the equation as
+>>[``
+e^{-[$b] u} \frac{du}{dt}= e^{[$a] t} .
+``]<<
+If we integrate, we find
+>>[``
+\frac{-1}{[$b]} e^{-[$b] u} = \frac{1}{[$a]} e^{[$a] t} +C .
+``]<<
+To solve for [`C ,`]  plug in [`t=0`] and [`u=-[$d] .`]  That is,
+[`\frac{-1}{[$b]} e^{([$b])([$d])} = \frac{1}{[$a]} +C , `]
+or in other words
+[`C = \frac{-e^{([$b])([$d])}}{[$b]}  - \frac{1}{[$a]} . `]
+Now solve for [`u ,`]
+>>[``
+e^{-[$b] u} = \frac{-[$b]}{[$a]} e^{[$a] t} - \frac{1}{[$b]} C ,
+``]<<
+>>[``
+-[$b] u =
+\ln \left\lvert \frac{-[$b]}{[$a]} e^{[$a] t} - \frac{1}{[$b]} C \right\rvert ,
+``]<<
+>>[``
+u =
+\frac{-1}{[$b]}
+\ln \left\lvert \frac{-[$b]}{[$a]} e^{[$a] t} - \frac{1}{[$b]} C \right\rvert .
+``]<<
+Now plug in the [`C`] we found:
+>>[``
+u =
+\frac{-1}{[$b]}
+\ln \left\lvert \frac{-[$b]}{[$a]} e^{[$a] t} + e^{([$b])([$d])} + \frac{[$b]}{[$a]} \right\rvert .
+``]<<
+END_PGML_SOLUTION
 
 ############################################################
 
