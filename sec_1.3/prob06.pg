@@ -73,12 +73,15 @@ Let us solve for the initial condition:
 >>[``
 [$b] =  \sqrt{\frac{1}{[$a]} ([$a])^2 + 2C },
 ``]<<
+
 >>[``
 [$b] =  \sqrt{[$a] + 2C },
 ``]<<
+
 >>[``
 ([$b])^2 =  [$a] + 2C ,
 ``]<<
+
 >>[``
 ([$b])^2 -  [$a] = 2C .
 ``]<<

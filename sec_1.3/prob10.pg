@@ -105,11 +105,11 @@ As \(x($t1)=$later\) we find
 \[
 $later = $initial e^{$t1 k} ,
 \]
-and so \(k = \frac{1}{$t1}\ln\bigl(\frac{$later}{$\initial}\bigr) \approx $k .\)
+and so \(k = \frac{1}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr) \approx $k .\)
 So after \(t\) hours there are
 \[
 $initial e^{
-\frac{t}{$t1}\ln\bigl(\frac{$later}{$\initial}\bigr)
+\frac{t}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr)
 \approx
 $initial e^{ $k \, t }
 \]
@@ -120,7 +120,7 @@ $PAR
 After \{$t1 + 1\} hours there are
 \[
 $initial e^{
-\frac{$t11}{$t1}\ln\bigl(\frac{$later}{$\initial}\bigr)
+\frac{$t11}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr)
 \approx
 $initial e^{ ($k) \, ($t11) }
 \]
@@ -131,9 +131,9 @@ $PAR
 The growth rate is \(x' , \) which we know is just \(k x .\)
 Thus the growth rate after \{$t1 + 1\} hours is
 \[
-\left(\frac{1}{$t1}\ln\bigl(\frac{$later}{$\initial}\bigr)\right)
+\left(\frac{1}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr)\right)
 ($initial)
-e^{ \frac{$t11}{$t1}\ln\bigl(\frac{$later}{$\initial}\bigr)
+e^{ \frac{$t11}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr)
 \approx
 ($k)($initial) e^{ ($k) \, ($t11) }
 \]
@@ -143,7 +143,7 @@ Finally, the population will reach 30000 when
 \[
 30000 = 
 $initial e^{
-\frac{t}{$t1}\ln\bigl(\frac{$later}{$\initial}\bigr)
+\frac{t}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr)
 \approx
 $initial e^{ $k \, t } .
 \]
@@ -151,7 +151,7 @@ Solve for \(t\) to find
 \[
 t = 
 \frac{$t1 \ln \left( \frac{30000}{$initial} \right)}
-{\ln\bigl(\frac{$later}{$\initial}\bigr)}
+{\ln\bigl(\frac{$later}{$initial}\bigr)}
 \approx
 \frac{\ln \left( \frac{30000}{$initial} \right)}
 {$k}

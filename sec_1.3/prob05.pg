@@ -63,9 +63,9 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 First note that
-[`e^{[$b] u + [$a] t}= e^{[$b] u} e^{[$a] t}']
+[`e^{[$b] u + [$a] t}= e^{[$b] u} e^{[$a] t}`]
 and
-[`\frac{1}{e^{[$b] u}} = e^{-[$b] u} . ']
+[`\frac{1}{e^{[$b] u}} = e^{-[$b] u} . `]
 Hence we can write the equation as
 >>[``
 e^{-[$b] u} \frac{du}{dt}= e^{[$a] t} .
@@ -82,10 +82,12 @@ Now solve for [`u ,`]
 >>[``
 e^{-[$b] u} = \frac{-[$b]}{[$a]} e^{[$a] t} - \frac{1}{[$b]} C ,
 ``]<<
+
 >>[``
 -[$b] u =
 \ln \left\lvert \frac{-[$b]}{[$a]} e^{[$a] t} - \frac{1}{[$b]} C \right\rvert ,
 ``]<<
+
 >>[``
 u =
 \frac{-1}{[$b]}
