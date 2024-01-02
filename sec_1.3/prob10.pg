@@ -122,7 +122,9 @@ After \{$t1 + 1\} hours there are
 $initial e^{
 \frac{$t11}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr)}
 \approx
-$initial e^{ ($k) \, ($t11) }
+$initial e^{ \{ $t11*$k \} }
+\approx
+\{ $initial*exp($t11*$k) \}
 \]
 bacteria.
 
@@ -135,7 +137,7 @@ Thus the growth rate after \{$t1 + 1\} hours is
 ($initial)
 e^{ \frac{$t11}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr) }
 \approx
-($k)($initial) e^{ ($k) \, ($t11) }
+\{ $k*$initial*exp($t11*$k) \}
 \]
 
 $PAR
@@ -147,7 +149,7 @@ $initial e^{
 \approx
 $initial e^{ $k \, t } .
 \]
-Solve for \(t\) to find
+Solve for \(t\) to find that the population will reach 30000 in
 \[
 t = 
 \frac{$t1 \ln \left( \frac{30000}{$initial} \right)}
