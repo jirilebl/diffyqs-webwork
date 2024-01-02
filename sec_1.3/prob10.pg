@@ -137,7 +137,7 @@ Thus the growth rate after \{$t1 + 1\} hours is
 ($initial)
 e^{ \frac{$t11}{$t1}\ln\bigl(\frac{$later}{$initial}\bigr) }
 \approx
-\{ $k*$initial*exp($t11*$k) \}
+\{ $k*$initial*exp($t11*$k) \} .
 \]
 
 $PAR
