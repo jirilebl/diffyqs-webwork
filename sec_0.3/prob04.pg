@@ -88,7 +88,7 @@ $PAR
 It is just a single equation, so it is not a system.
 It is also not autonomous since it does
 depend on \(x,\) in particlar the \(e^x.\)
-And it makes no sense to talk about homogeneity of the equation as it is
+It makes no sense to talk about homogeneity of the equation as it is
 not linear.
 END_SOLUTION
 

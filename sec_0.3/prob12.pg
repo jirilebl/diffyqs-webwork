@@ -84,7 +84,7 @@ The highest order derivative that appears is of second
 order, so that is the order of the equation.
 The dependent variable \(\psi\) and its derivatives (the
 \(\frac{\partial^2 \psi}{\partial x^2}\) and
-\(\frac{\partial^2 \psi}{\partial y^2}\) only appear linearly
+\(\frac{\partial^2 \psi}{\partial y^2}\)) only appear linearly
 and so the equation is linear.
 $PAR
 It is not a system as there is only one equation.

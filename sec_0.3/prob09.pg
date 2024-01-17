@@ -72,9 +72,17 @@ ANS( $answer->cmp );
 Context()->texStrings;
 BEGIN_SOLUTION
 The dependent variable \(x\) appears possibly nonlinearly in the
-expression \(e^{(a-$a)x} .\)  The only way that this is
-going to be linear in \(x\) is if \(a=$a,\) in which case
+terms
+\(($expr) x \frac{dx}{dt} \)
+and
+\(e^{(a-$a)x} .\)
+The only way that the first term is linear is if \(a=0\) or
+if \(a=0 , \) as then the term is just zero.
+The only way the second term is linear is if \(a=$a .\)
+in which case
 the right hand side of the equation will just be \(t.\)
+Therefore, the only way the equation is linear is if \(a=$a ,\) 
+when the equation is \(\frac{d^2x}{dt^2}=t . \)
 END_SOLUTION
 Context()->normalStrings;
 

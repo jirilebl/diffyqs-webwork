@@ -73,11 +73,11 @@ ANS( checkbox_cmp( $mc->correct_ans() ) );
 
 BEGIN_SOLUTION
 There are two equations, and so this is a system of equations.
-There is only one independent variables, \(t,\) 
+There is only one independent variable, \(t,\) 
 and so it is an ODE and not a PDE.
-The dependent variables and their derivatives (the \(x,\) \(y,\) \(\frac{dx}{dt},\) and \( \frac{dy}{dx} \))
-only appear linearly,
-and in no other functions or powers, so it is linear.
+The dependent variables and their derivatives (the \(x,\) \(y,\) \(\frac{dx}{dt},\) and \( \frac{dy}{dt} \))
+only appear linearly
+and in no other functions or powers, so the system is linear.
 $PAR
 It is also not autonomous since it does
 depend on \(t,\) in particlar the term \(ty.\)

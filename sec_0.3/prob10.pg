@@ -97,8 +97,8 @@ To put
 \[
 \frac{x y^{\prime}}{(x^{$n}+$a) y} = \cos(x) + \frac{e^{$b x}}{y}
 \]
-into normal form, first clear denominators by multiplying both sides by
-\(x^{$n}+$a) y :\)
+into the given form, first clear denominators by multiplying both sides by
+\( (x^{$n}+$a) y :\)
 \[
 x y^{\prime} = (x^{$n}+$a) y\cos(x) + (x^{$n}+$a) e^{$b x} .
 \]
