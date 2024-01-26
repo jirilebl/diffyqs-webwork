@@ -51,10 +51,10 @@ $answer = NumberWithUnits("$d0 + $a*(60)^3/3 + $b * 60","km");
 Context()->texStrings;
 BEGIN_TEXT
 A spaceship is traveling directly away from earth
-with speed \( $a t^2 + $b \ \mathrm{km/s} \).  At
-time \( t = 0 \ \mathrm{s} \), it is \( $d0 \ \mathrm{km} \)
+at speed \( $a t^2 + $b \ \mathrm{km/s} . \)  At
+time \( t = 0 \ \mathrm{s} , \) it is \( $d0 \ \mathrm{km} \)
 from earth.  How far is it from earth one minute
-after time \( t = 0 \ \mathrm{s}\)?  Include units in your answer.
+after time \( t = 0 \ \mathrm{s} ?\)  Include units in your answer.
 $PAR
 Distance = 
 \{ ans_rule(30) \} 
