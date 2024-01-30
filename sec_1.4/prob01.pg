@@ -168,12 +168,11 @@ $PAR
 $PAR
 Finally, let's find the particular solution.
 If \( y(1) = $y1 \), we find
-$PAR
-\( $y1 = \frac{1}{-$apm} + C \) so \( C = $y1 + \frac{1}{$apm} \).
-$PAR
+\( $y1 = \frac{1}{-$apm} + C \) so \( C = $y1 + \frac{1}{$apm} .\)
 The solution, therefore, is
-$PAR
-\( y = \frac{1}{-$apm} x^{-$p} + \left($y1 + \frac{1}{$apm}\right) x^{$m} \).
+\[
+y = \frac{1}{-$apm} x^{-$p} + \left($y1 + \frac{1}{$apm}\right) x^{$m} .
+\]
 END_SOLUTION
 Context()->normalStrings;
 

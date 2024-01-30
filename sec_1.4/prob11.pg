@@ -41,10 +41,12 @@ Context()->flags->set(num_points => 50,
                       tolerance => 0.00001,
                       reduceConstants => 0);
 
-$a = non_zero_random(2,9,1);
-$b = random(2,5,1);
-$c = non_zero_random(-9,9,1);
-$d = non_zero_random(-9,9,1);
+do {
+  $a = non_zero_random(2,9,1);
+  $b = random(2,5,1);
+  $c = non_zero_random(-9,9,1);
+  $d = non_zero_random(-9,9,1);
+} while ($a+$d == 0);
 
 $y = Formula("$a e^(-$b x) + $c x + $d")->reduce();
 $y0= $y->eval(x=>"0");
@@ -60,7 +62,7 @@ BEGIN_TEXT
 The unique solution to the initial value problem
 \[
 y^{\prime} + y = g(x), 
-\ \ \
+\quad
 y(0) = y_0,
 \]
 is \( y(x) = $y \).  Determine the constant \( y_0 \) 

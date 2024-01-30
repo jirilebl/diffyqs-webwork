@@ -70,22 +70,26 @@ ANS($fp->cmp);
 Context()->texStrings;
 BEGIN_SOLUTION
 Separate the equation into one side containing \(y\) and \(dy,\) and one containing \(x\) and \(dx.\)  Then integrate both sides separately.
-$PAR
-\( \frac{dy}{dx} = y\tan{x} \)
-$PAR
-\( \frac{1}{y}\,{dy} = \tan{x}\,{dx} \)
-$PAR
-\( \int\frac{1}{y}\,{dy} = \int\tan{x}\,{dx} \)
-$PAR
-\( \ln\left| y \right| = \ln\left| \sec(x)\right| + C \)
-$PAR
-\( y = $fp_gen\).
-$PAR
+\[
+\frac{dy}{dx} = y\tan{x}
+\]
+\[
+\frac{1}{y}\,{dy} = \tan{x}\,{dx}
+\]
+\[
+\int\frac{1}{y}\,{dy} = \int\tan{x}\,{dx}
+\]
+\[
+\ln\left| y \right| = \ln\left| \sec(x)\right| + C
+\]
+\[
+y = $fp_gen .
+\]
 The initial condition \( y(0) = $c  \) yields
-$PAR
 \( $c = A \sec(0) = A , \) thus
-$PAR
-\( y = $fp .\)
+\[
+y = $fp .
+\]
 END_SOLUTION
 Context()->normalStrings;
 

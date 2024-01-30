@@ -55,9 +55,7 @@ do {
 BEGIN_PGML
 Solve the initial value problem
 
->>[`` \frac{dy}{dx} + 2y = [$A] \sin(x) + [$B] \cos(x) ``]<<
-
-with [: y(0) = [$m] :].
+>>[`` \frac{dy}{dx} + 2y = [$A] \sin(x) + [$B] \cos(x) , \quad y(0) = [$m] .``]<<
 
 [` y = {} `]
 [________]{"(2*$a + $b )* sin(x) + (2*$b - $a )* cos(x) + $n * exp(-2* x)"}{70}

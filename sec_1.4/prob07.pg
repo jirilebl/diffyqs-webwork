@@ -112,7 +112,7 @@ BEGIN_PGML
 Find the general solution to the differential equation
 
 >>[``
-x^2 + [$a] x y + x \frac{dy}{dx}= 0
+x^2 + [$a] x y + x \frac{dy}{dx}= 0 .
 ``]<<
 
 First, put the problem into standard form.  Then find the

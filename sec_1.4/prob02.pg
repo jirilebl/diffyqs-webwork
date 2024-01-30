@@ -77,7 +77,7 @@ $PAR
 \(\dfrac{d}{dx}\Bigl[\) \{$newleft->ans_rule(27)\} \(\Bigr] = {}\) \{$newright->ans_rule(27)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR 
-Integrating both sides we get the algebraic equation
+Integrating both sides, we get the algebraic equation
 $PAR
 \{$integrateleft->ans_rule(30)\}\({}={}\)\{$integrateright->ans_rule(30)\}
 \({}+C\)

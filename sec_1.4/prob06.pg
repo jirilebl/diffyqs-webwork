@@ -52,10 +52,10 @@ BEGIN_PGML
 Solve the initial value problem
 
 >>[``
-\frac{dy}{dx} -  y = [$a] e^x + [$B] e^{[$k] x}
+\frac{dy}{dx} -  y = [$a] e^x + [$B] e^{[$k] x} ,
+\quad
+y(0) = [$m] .
 ``]<<
-
-with [: y(0) = [$m] :].
 
 [` y = {} `]
 [________]{"($m - $b )* exp(x) + $a * x * exp(x) + $b * exp($k * x)"}{70}

@@ -63,7 +63,9 @@ $ans=Compute("$ansD");
 Context()->texStrings;
 BEGIN_TEXT
 Solve the initial value problem
-\[\frac{dy}{dx}+$p y=$q,\;y(0)=$y\]
+\[
+  \frac{dy}{dx}+$p y=$q, \quad y(0)=$y .
+\]
 $PAR
 \( y={} \) \{ans_rule(40) \} 
 \{ AnswerFormatHelp("formulas") \}
@@ -93,13 +95,21 @@ $PAR
 The integrating factor is \(e^{\int p(x) \, dx} = $mu .\)
 $PAR
 Multiplying the differential equation by the integrating factor \($mu\) gives
-\[$mu\frac{dy}{dx}+$mp y=$mq\]
-integrating we get 
-\[$mu y=\int $mq \, dx= $Mq\]
-finally solving for \(y\) gives
-\[y=$ansd .\]
+\[
+  $mu\frac{dy}{dx}+$mp y=$mq .
+\]
+Integrating, we get 
+\[
+  $mu y=\int $mq \, dx= $Mq .
+\]
+Solving for \(y\) gives
+\[
+  y=$ansd .
+\]
 Using \(y(1)=$y\) we get \(C=$C\), giving 
-\[y=$ansD .\]
+\[
+  y=$ansD .
+\]
 END_SOLUTION
 Context()->normalStrings;
 

@@ -48,7 +48,7 @@ Context()->flags->set(num_points => 50,
 BEGIN_PGML
 Find the general solution to the differential equation
 
->>[`` y' + [$alpha] x^{[$alpha-1]} y = x^{[$alpha]}``]<<
+>>[`` y' + [$alpha] x^{[$alpha-1]} y = x^{[$alpha]} .``]<<
 
 It is not possible to express the answer as a closed form formula, however,
 you can express the answer in terms of a function of [`x`] and
