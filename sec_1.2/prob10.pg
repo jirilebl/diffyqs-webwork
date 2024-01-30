@@ -1,0 +1,123 @@
+##DESCRIPTION
+## Quick reasoning about where solution goes if we know the sign of the right hand side of the ODE
+##ENDDESCRIPTION
+
+## DBsubject(Differential equations)
+## DBchapter(First order differential equations)
+## DBsection(Direction fields)
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('1.2')
+## Problem1('')
+## KEYWORDS('differential equations', 'direction field', 'slope field')
+
+##############################
+#  Initialization
+
+DOCUMENT(); 
+
+loadMacros(
+  "PGstandard.pl",
+  "parserRadioButtons.pl",
+  "PGcourse.pl"
+);
+
+TEXT(beginproblem());
+
+
+#############################
+#  Setup
+
+$scenario = random(0,2,1);
+$y0 = non_zero_random(-5,5,1);
+$x1 = random(5,10,1);
+$xm1 = random(-10,-5,1);
+
+if ($scenario == 0) {
+	$aboveaxis = "positive";
+	$belowaxis = "negative";
+
+	if ($y0 > 0) {
+		$corr1 = "\(y($x1) > $y0\)";
+		$corr2 = "\(y($xm1) < $y0\)";
+	} else { 
+		$corr1 = "\(y($x1) < $y0\)";
+		$corr2 = "\(y($xm1) > $y0\)";
+	}
+} elsif ($scenario == 1) {
+	$aboveaxis = "negative";
+	$belowaxis = "positive";
+
+	if ($y0 > 0) {
+		$corr1 = "\(y($x1) < $y0\)";
+		$corr2 = "\(y($xm1) > $y0\)";
+	} else { 
+		$corr1 = "\(y($x1) > $y0\)";
+		$corr2 = "\(y($xm1) < $y0\)";
+	}
+} else {
+	$aboveaxis = "positive";
+	$belowaxis = "also positive";
+
+	$corr1 = "\(y($x1) > $y0\)";
+	$corr2 = "\(y($xm1) < $y0\)";
+}
+
+$radio1 = RadioButtons(["\(y($x1) > $y0\)",
+		        "\(y($x1) < $y0\)",
+		        "\(y($x1) = $y0\)",
+		        "\(y($x1) = 0\)",
+		        "Not enough information to say"],
+		       $corr1);
+$radio2 = RadioButtons(["\(y($xm1) > $y0\)",
+		        "\(y($xm1) < $y0\)",
+		        "\(y($xm1) = $y0\)",
+		        "\(y($xm1) = 0\)",
+		        "Not enough information to say"],
+		       $corr2);
+
+#############################
+#  Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+Consider the equation \( y^{\prime} = f(x,y) .\)
+Suppose that \(f(x,y)\) is $aboveaxis if \(y > 0 \)
+and \(f(x,y)\) is $belowaxis if \(y < 0 . \)
+Suppose \(y(x)\) is a solution that exists for all \(x\)
+and satisfies the initial condition \(y(0) = $y0 .\)
+$PAR
+What can you say about \(y($x1)\):
+$BR
+\{ $radio1->buttons \}.
+$PAR
+What can you say about \(y($xm1)\):
+$BR
+\{ $radio2->buttons \}.
+$PAR
+$BITALIC $BBOLD Hint: $EBOLD Sketch a sample slope field with the given property.
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/slopefields_section.html", "Section 1.2 of Notes on Diffy Qs") \}
+$EITALIC
+END_TEXT
+Context()->normalStrings;
+
+
+############################
+#  Answers
+
+$showPartialCorrectAnswers = 0;
+
+ANS( $radio1->cmp() );
+ANS( $radio2->cmp() );
+
+############################
+
+COMMENT("Quick reasoning about where solution goes if we know the sign of the right hand side of the ODE");
+
+ENDDOCUMENT();
