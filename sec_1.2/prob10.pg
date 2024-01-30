@@ -86,8 +86,8 @@ $radio2 = RadioButtons(["\(y($xm1) > $y0\)",
 Context()->texStrings;
 BEGIN_TEXT
 Consider the equation \( y^{\prime} = f(x,y) .\)
-Suppose that \(f(x,y)\) is $aboveaxis if \(y > 0 \)
-and \(f(x,y)\) is $belowaxis if \(y < 0 . \)
+Suppose you know that \(f(x,y)\) is $aboveaxis whenever \(y > 0 \)
+and \(f(x,y)\) is $belowaxis whenever \(y < 0 . \)
 Suppose \(y(x)\) is a solution that exists for all \(x\)
 and satisfies the initial condition \(y(0) = $y0 .\)
 $PAR
