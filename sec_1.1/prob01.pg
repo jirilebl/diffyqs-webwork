@@ -71,7 +71,7 @@ if ($displayMode eq 'TeX') {
    $integral =
    BeginTable(center=>0).
      Row([
-       "\($fname=\) ".ans_rule(4).' \(+\displaystyle\int\)',
+       "\($fname=\) ",ans_rule(4),' \(+\displaystyle\int\)',
        "\( $dummyvar = \) ".ans_rule(4).$BR.$BR."\( $dummyvar = \) ".ans_rule(4),
        ans_rule(20)],separation=>2).
    EndTable();
