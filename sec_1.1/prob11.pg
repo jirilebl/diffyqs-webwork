@@ -80,26 +80,23 @@ END_PGML
 #  Solution
 
 BEGIN_PGML_SOLUTION
-The acceleration is -9.8 (it is negative as it is downwards) so the equation is
-
->>[`` h'' = -9.8 . ``]<<
+The acceleration is [`-9.8`] (it is negative as it is downwards) so the equation is
+[``` h'' = -9.8 . ```]
 
 Integrating once gets us [`h' = -9.8 t + C_1.`]
-As the initial velocity is [`h'(0) = [$a]`], then clearly, [`C_1=[$a]`], and so
-[`h' = -9.8 t + [$a].`]
+As the initial velocity is [`h'(0) = [$a] ,`] then clearly, [`C_1=[$a] ,`]
+and so [`h' = -9.8 t + [$a].`]
 Integrating again,
-[`h = -4.9 t^2 + [$a] t + C_2.`]  The initial position is ground level, that is
+[`h = -4.9 t^2 + [$a] t + C_2.`]
+The initial position is ground level, that is
 [`h(0)=0`], so [`C_2 = 0.`]  So
+[``` h = -4.9 t^2 + [$a] t . ```]
 
->>[`` h = -4.9 t^2 + [$a] t . ``]<<
-
-The ball is at ground level when [`h=0`], that is when
+The ball is at ground level when [`h=0 ,`] that is when
 [` -4.9 t^2 + [$a] t = 0 `] or in other words
 [` (-4.9 t + [$a] ) t = 0 .`]  So the two times that the ball is
 at ground level is when [`t=0`] (when it is fired) and at
-
->>[`t=\frac{[$a]}{4.9} = [$ans] `]<<
-
+[```t=\frac{[$a]}{4.9} = [$ans] ```]
 seconds when it lands.
 END_PGML_SOLUTION
 

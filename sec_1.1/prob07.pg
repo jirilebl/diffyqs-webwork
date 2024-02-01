@@ -51,7 +51,7 @@ $answer = Compute("2 / (1 + e^(2x-$a2)) - 1");
 
 BEGIN_PGML
 Solve [`` \frac{dy}{dx} = (y-1)(y+1) ``] if the
-solution passes through the point [` (x,y) = ([$a],0) `].
+solution passes through the point [` (x,y) = ([$a],0) . `]
 
 [` y(x) = {} `]
 [_________]{$answer}{40}
@@ -71,16 +71,15 @@ Rewrite [``\frac{dy}{dx} = (y-1)(y+1)``]
 as [``\frac{dx}{dy} = \frac{1}{(y-1)(y+1)} .``]
 
 Now integrate (use partial fractions)
-
->>[``x = \int \frac{1}{(y-1)(y+1)} dy + C
+[```x = \int \frac{1}{(y-1)(y+1)} dy + C
 =
 \frac{1}{2} \ln \left(\frac{2}{y+1}-1\right) + C .
-``]<<
+```]
 
-Solve for [:y:].  Now use the condition [:y([$a])=0:] to solve for [:C:].
-Plug this [:C:] into the answer to obtain the final answer:
-
->>[::y(x) = [$answer] .::]<<
+Solve for [`y .`]
+Now use the condition [`y([$a])=0`] to solve for [`C .`]
+Plug this [`C`] into the answer to obtain the final answer:
+[```y(x) = [$answer] .```]
 END_PGML_SOLUTION
 
 ############################

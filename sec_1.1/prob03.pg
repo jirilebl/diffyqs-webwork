@@ -48,8 +48,7 @@ $answer = FormulaUpToConstant("$a (x-ln(abs(1+x)) )");
 
 BEGIN_PGML
 Find the general solution of the differential equation
-
->>[`` (1+x)y'= [$a] x. ``]<<
+[``` (1+x)y'= [$a] x. ```]
 
 [`y(x) = {}`] [____________]{$answer->cmp()}{30}
 [@ AnswerFormatHelp("formulas") @]*
@@ -65,12 +64,10 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 First write the equation as
-
->>[``y'= \frac{[$a] x}{1+x} .``]<<
+[```y'= \frac{[$a] x}{1+x} .```]
 
 Now integrate
-
->>[``y = \int \frac{[$a] x}{1+x} dx + C = [$answer] .``]<<
+[```y = \int \frac{[$a] x}{1+x} dx + C = [$answer] .```]
 END_PGML_SOLUTION
 
 #############################################################

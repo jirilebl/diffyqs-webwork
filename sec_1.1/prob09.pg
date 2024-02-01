@@ -49,8 +49,7 @@ $answer = FormulaUpToConstant("$a/2 e^(x^(2))");
 
 BEGIN_PGML
 Find the general solution of the differential equation
-
->>[`` y'= [$a] xe^{x^{2}}. ``]<<
+[``` y'= [$a] xe^{x^{2}}. ```]
 
 [` y(x) = `] [_________]{$answer->cmp()}{30}
 [@ AnswerFormatHelp("formulas") @]*
@@ -66,8 +65,7 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 We integrate (use the substitution [`u=x^2`]):
-
->>[``y = \int [$a] xe^{x^{2}}\, dx + C = [$answer] .``]<<
+[```y = \int [$a] xe^{x^{2}}\, dx + C = [$answer] .```]
 END_PGML_SOLUTION
 
 ##############################################################

@@ -110,7 +110,7 @@ and find the particular solution satisfying the initial condition
 [` x(t) = {} `] [_________]{$cmp}{40}
 [@ AnswerFormatHelp("formulas") @]*
 
-_*Hint:* When solving for [:x:], if you need to take a root, make sure you use the correct sign._
+_*Hint:* When solving for [`x ,`] if you need to take a root, make sure you use the correct sign._
 
 _*Book:*
 [@ htmlLink("https://www.jirka.org/diffyqs/html/integralsols_section.html", "Section 1.1 of Notes on Diffy Qs") @]*_
@@ -119,43 +119,39 @@ END_PGML
 ######################################################
 
 BEGIN_PGML_SOLUTION
-Since [`\frac{dx}{dt}= [$a] x^{[$k]}`]
-we have [`\frac{dt}{dx}= \frac{1}{[$a]} x^{-[$k]}`].
-We can now integrate with respect to [:x:]:
+Since [`\frac{dx}{dt}= [$a] x^{[$k]} ,`]
+we have [`\frac{dt}{dx}= \frac{1}{[$a]} x^{-[$k]} .`]
+We can now integrate with respect to [`x`]:
+[```t = \int \frac{1}{[$a]} x^{-[$k]} \, dx + C =
+\frac{1}{[$a](1-[$k])}x^{1-[$k]} + C .```]
 
->>[``t = \int \frac{1}{[$a]} x^{-[$k]} \, dx + C =
-\frac{1}{[$a](1-[$k])}x^{1-[$k]} + C .``]<<
-
-To solve for [`C`] it may be easier to use the equation
-[`t = \frac{1}{[$a](1-[$k])}x^{1-[$k]} + C .`]  At [`t=0`], [`x`] is supposed to be [`\frac{[$x0sign]}{[$x0abs]} .`]  So
-
->>[``
-0 = \frac{1}{[$a](1-[$k])}{\left(\frac{[$x0sign]}{[$x0abs]}\right)}^{1-[$k]} + C
-``]<<
-
-which is easy to solve for [`C = -\frac{1}{[$a](1-[$k])}{\left(\frac{[$x0sign]}{[$x0abs]}\right)}^{1-[$k]} .`]
+To solve for [`C ,`] it may be easier to use the equation
+[`t = \frac{1}{[$a](1-[$k])}x^{1-[$k]} + C .`]
+At [`t=0 ,`] [`x`] is supposed to be [`\frac{[$x0sign]}{[$x0abs]} .`]  So
+[```
+0 = \frac{1}{[$a](1-[$k])}{\left(\frac{[$x0sign]}{[$x0abs]}\right)}^{1-[$k]} + C ,
+```]
+which is easy to solve for
+[`C = -\frac{1}{[$a](1-[$k])}{\left(\frac{[$x0sign]}{[$x0abs]}\right)}^{1-[$k]} .`]
 
 Therefore,
-
->>[``t =
+[```t =
 \frac{1}{[$a](1-[$k])}x^{1-[$k]}
-- \frac{1}{[$a](1-[$k])}{\left(\frac{[$x0sign]}{[$x0abs]}\right)}^{1-[$k]}.``]<<
+- \frac{1}{[$a](1-[$k])}{\left(\frac{[$x0sign]}{[$x0abs]}\right)}^{1-[$k]}.```]
 
 Let us solve for [`x.`]  (Make sure to take the correct sign for even
-roots depending on the sign of [`x(0)`].)
-
->>[``x =
+roots depending on the sign of [`x(0) .`])
+[```x =
 [$anssignstr]{\left( [$a](1-[$k])t + {\left(\frac{[$x0sign]}{[$x0abs]}\right)}^{1-[$k]} \right)}^{\frac{1}{1-[$k]}}.
-``]<<
+```]
 
 We can simplify:
-
->>[``
+[```
 x =
 \frac{[$anssign]}{
 {\left( [$a*(1-$k)]t + [$x0**($k-1)] \right)}^{1/[$k-1]}}
 .
-``]<<
+```]
 END_PGML_SOLUTION
 
 ########################################################

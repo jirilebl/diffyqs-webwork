@@ -54,12 +54,9 @@ Context()->variables->are(
 
 BEGIN_PGML
 Solve the differential equation
-
->>[``\frac{dy}{dx} = \frac{[$a]}{\cos(y)} ,``]<<
-
+[```\frac{dy}{dx} = \frac{[$a]}{\cos(y)} ,```]
 and find the particular solution satisfying the initial condition
-
->>[``y(0) = \frac{\pi}{[$denom]}.``]<<
+[```y(0) = \frac{\pi}{[$denom]}.```]
 
 [`y(x) = {}`] [_________]{"arcsin($a*x + $c)"}{40}
 [@ AnswerFormatHelp("formulas") @]*
@@ -71,31 +68,22 @@ END_PGML
 ######################################################
 
 BEGIN_PGML_SOLUTION
-Since [`\frac{dy}{dx}= \frac{[$a]}{\cos(y)}`]
-we have [`\frac{dx}{dy}= \frac{-\cos(y)}{[$minusa]}`].
-We can now integrate with respect to [:y:]:
-
->>[``x = \int \frac{-\cos(y)}{[$minusa]} dy + C = \frac{-\sin(y)}{[$minusa]} + C.``]<<
-
-Solving for [:y:],
-
->>[::y = arcsin([$a](x-C)).::]<<
-
-Now [: y(0)= pi/[$denom] :], so
-
->>[::y(0) = arcsin([$a](0-C)) = pi/[$denom] .::]<<
-
-Solving for [:C:] we find
-
->>[::C = (sin(pi/[$denom]))/[$minusa] .::]<<
-
+Since [`\frac{dy}{dx}= \frac{[$a]}{\cos(y)} ,`]
+we have [`\frac{dx}{dy}= \frac{-\cos(y)}{[$minusa]} .`]
+We can now integrate with respect to [`y`]:
+[```x = \int \frac{-\cos(y)}{[$minusa]} dy + C = \frac{-\sin(y)}{[$minusa]} + C.```]
+Solving for [`y ,`]
+[```y = \arcsin\left([$a](x-C)\right).```]
+Now [` y(0)= \frac{\pi}{[$denom]} ,`] so
+[```y(0) = \arcsin\left([$a](0-C)\right) = \frac{\pi}{[$denom]} .```]
+Solving for [`C ,`] we find
+[```C = \frac{\sin\left(\frac{\pi}{[$denom]}\right)}{[$minusa]} .```]
 Plugging this back into the solution we get
-
->>[::y =
-arcsin([$a](x-(sin(pi/[$denom]))/[$minusa]))
+[```y =
+\arcsin\left([$a]\left(x-\frac{\sin\left(\frac{\pi}{[$denom]}\right)}{[$minusa]}\right)\right)
 =
-arcsin([$a]x+sin(pi/[$denom])).
-::]<<
+\arcsin\left([$a]x+\sin\left(\frac{\pi}{[$denom]}\right)\right).
+```]
 END_PGML_SOLUTION
 
 ###########################################################
