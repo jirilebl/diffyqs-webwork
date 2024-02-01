@@ -88,7 +88,12 @@ Set up a definite integral for solving
 \( \displaystyle \frac{dy}{dx} = x^2 + x \)
 when \( y($a) = $ya . \)
 $BR
-$BITALIC Use \(t\) for the variable of integration, put the constant before the integral, and don't forget the \(dt .\) $EITALIC
+$BITALIC
+Use \(t\) for the variable of integration,
+put the constant before the integral, and don't forget the \(dt .\)
+The integral should be the most obvious one, the one which evaluates
+to zero when \(x=$a .\)
+$EITALIC
 $PAR
 $integral
 
