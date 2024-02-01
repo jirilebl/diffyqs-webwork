@@ -100,12 +100,9 @@ $cmp = $ans->cmp( checker=>sub {
 
 BEGIN_PGML
 Solve the differential equation
-
->>[``\frac{dx}{dt} = [$a] x^{[$k]} ,``]<<
-
+[```\frac{dx}{dt} = [$a] x^{[$k]} ,```]
 and find the particular solution satisfying the initial condition 
-
->>[`` x(0) = \frac{[$x0sign]}{[$x0abs]}. ``]<<
+[``` x(0) = \frac{[$x0sign]}{[$x0abs]}. ```]
 
 [` x(t) = {} `] [_________]{$cmp}{40}
 [@ AnswerFormatHelp("formulas") @]*
