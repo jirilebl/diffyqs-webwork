@@ -59,12 +59,12 @@ Context()->texStrings;
 if ($displayMode eq 'TeX') {
    $integral =
    "\(\displaystyle $fname = ".
-   ans_rule(4). 
-   "+ \int_{$dummyvar = ". 
-   ans_rule(4). 
-   "}^{$dummyvar = ". 
    ans_rule(4).
-   '}'. 
+   "+ \int_{".
+   ans_rule(4).
+   "}^{".
+   ans_rule(4).
+   '}'.
    ans_rule(20).
    '\)';
   } else {
@@ -72,7 +72,7 @@ if ($displayMode eq 'TeX') {
    BeginTable(center=>0).
      Row([
        "\($fname=\) ",ans_rule(4),' \(+\displaystyle\int\)',
-       "\( $dummyvar = \) ".ans_rule(4).$BR.$BR."\( $dummyvar = \) ".ans_rule(4),
+       ans_rule(4).$BR.$BR.ans_rule(4),
        ans_rule(20)],separation=>2).
    EndTable();
 }
@@ -86,15 +86,15 @@ Context()->texStrings;
 BEGIN_TEXT
 Set up a definite integral for solving 
 \( \displaystyle \frac{dy}{dx} = x^2 + x \)
-when \( y($a) = $ya \).
+when \( y($a) = $ya . \)
 $BR
-$BITALIC Use \(t\) for the variable of integration. $EITALIC
+$BITALIC Use \(t\) for the variable of integration, put the constant before the integral, and don't forget the \(dt .\) $EITALIC
 $PAR
 $integral
 
 $PAR
 
-Evaluate the integral to find \( y(x) \).
+Evaluate the integral to find \( y(x) . \)
 $PAR
 \( $fname = \)
 \{ ans_rule(40) \}
@@ -129,16 +129,16 @@ ANS( Compute("$ya + (x^3/3 + x^2/2) - ($a^3/3 + $a^2/2)")->cmp() );
 ########################################################
 
 BEGIN_PGML_SOLUTION
-We need to integrate (antidifferentiate) [:x^2 + x:].
+We need to integrate (antidifferentiate) [`x^2 + x .`]
 We set up an antiderivative
-that is zero when [:x=[$a]:] and then add [$ya] to it.
+that is zero when [`x=[$a]`] and then add [$ya] to it.
 That is,
 
 >>[``y = [$ya] + \int_{[$a]}^{x} (t^2+t) \, dt.``]<<
 
 If we evaluate the integral, we find
 
->>[::y=[$ya] + (x^3/3 + x^2/2) - ([$a]^3/3 + [$a]^2/2).::]<<
+>>[``y=[$ya] + \left(\frac{x^3}{3} + \frac{x^2}{2}\right) - \left(\frac{[$a]^3}{3} + \frac{[$a]^2}{2}\right).``]<<
 END_PGML_SOLUTION
 
 ########################################################
