@@ -56,10 +56,9 @@ Context("Numeric");
 BEGIN_PGML
 Suppose determinant of [`B`] is [$d].
 Compute the determinant of the product
-
->>[``
+[```
 [$A] B
-``]<<
+```]
 
 Determinant: [______________]{"(($b)-($a)*($c))*($d)"} 
 [@ AnswerFormatHelp("numbers") @]*

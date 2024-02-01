@@ -43,8 +43,7 @@ Context()->variables->are(x=>['Real',limits => [$a, $a+2]]);
 
 BEGIN_PGML
 Find a function [:y:] of [:x:] such that  
-
->>[`` [$a] yy' = x \ \mbox{ and } \ y([$a])= [$b]. ``]<<
+[``` [$a] yy' = x \ \mbox{ and } \ y([$a])= [$b]. ```]
 
 [`y ={}`] [__________]{"sqrt(x^2/$a + $b^2 - $a )"}{40}
 [@ AnswerFormatHelp("formulas") @]*
@@ -57,47 +56,35 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 The equation is already separated, so just integrate:
-
->>[``
+[```
 \frac{[$a]}{2} y^2 = \frac{1}{2} x^2 + C .
-``]<<
-
+```]
 Solve for [`y`] to find:
-
->>[``
+[```
 y =  \pm \sqrt{\frac{1}{[$a]} x^2 + 2C }.
-``]<<
-
+```]
 Since [`y([$a]) = [$b] > 0 ,`] we can just take the positive
 square root:
-
->>[``
+[```
 y =  \sqrt{\frac{1}{[$a]} x^2 + 2C }.
-``]<<
-
+```]
 Let us solve for the initial condition:
-
->>[``
+[```
 [$b] =  \sqrt{\frac{1}{[$a]} [$a]^2 + 2C },
-``]<<
-
->>[``
+```]
+[```
 [$b] =  \sqrt{[$a] + 2C },
-``]<<
-
->>[``
+```]
+[```
 [$b]^2 =  [$a] + 2C ,
-``]<<
-
->>[``
+```]
+[```
 2C = [$b]^2 -  [$a] .
-``]<<
-
+```]
 Plugging the [`2C`] into our solution, we find
-
->>[``
+[```
 y =  \sqrt{\frac{1}{[$a]} x^2 + [$b]^2 - [$a] }.
-``]<<
+```]
 END_PGML_SOLUTION
 
 ############################################################

@@ -60,8 +60,7 @@ $a33 = $c*$e/$a;
 
 BEGIN_PGML
 Consider
-
->>[`` A = [$A]. ``]<<
+[``` A = [$A]. ```]
 
 If nullity of [`A`] is 2, then rank of [`A`] is [_______]{"1"}
 [@ AnswerFormatHelp("numbers") @]*

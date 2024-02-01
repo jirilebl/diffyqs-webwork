@@ -43,9 +43,7 @@ Context()->variables->are(x=>'Real',y=>'Real');
 
 BEGIN_PGML
 Find the solution to the differential equation
-
->>[`` \frac{dy}{dx} = y^2([$a] + x), ``]<<
-
+[``` \frac{dy}{dx} = y^2([$a] + x), ```]
 such that [` y=[$y0] `] when [` x=1 .`]
 
 [` y = {} `] [__________]{"2*$y0/(2 + (1-x)*(1 + 2*$a + x)*$y0)"}{40}
@@ -64,31 +62,21 @@ $constnum = 2+$ap1sq1y0;
 
 BEGIN_PGML_SOLUTION
 Separating variables gives
-
->>[``\frac{dy}{y^2} = ([$a] + x)\,dx, ``]<<
-
+[```\frac{dy}{y^2} = ([$a] + x)\,dx, ```]
 so
-
->>[`` \int \frac{dy}{y^2} = \int ([$a] + x)\,dx, ``]<<
-
+[``` \int \frac{dy}{y^2} = \int ([$a] + x)\,dx, ```]
 and
-
->>[``-\frac{1}{y} = \frac{1}{2}([$a] + x)^2 + C, ``]<<
-
+[```-\frac{1}{y} = \frac{1}{2}([$a] + x)^2 + C, ```]
 giving
-
->>[``y=-\frac{2}{([$a] + x)^2 + A}, ``]<<
-
+[```y=-\frac{2}{([$a] + x)^2 + A}, ```]
 where [`A = 2C.`]  Since [`y=[$y0]`] when [`x=1,`] we have
-
->>[``
+[```
 [$y0] = -\frac{2}{[$ap1]^2 + A},\quad \hbox{ so } \quad 
-  [$y0] A + [$ap1sq1y0] = -2, ``]<<
-
+  [$y0] A + [$ap1sq1y0] = -2,
+```]
 and [` A = \frac{-[$constnum]}{[$y0]} .`]
 Thus
-
->>[`` y = -\frac{2}{([$a] + x)^2 - \frac{[$constnum]}{[$y0]}}. ``]<<
+[``` y = -\frac{2}{([$a] + x)^2 - \frac{[$constnum]}{[$y0]}}. ```]
 END_PGML_SOLUTION
 
 ############################################################################

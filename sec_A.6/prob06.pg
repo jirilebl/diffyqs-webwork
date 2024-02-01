@@ -57,11 +57,10 @@ Context("Numeric");
 
 BEGIN_PGML
 Let
-
->>[``
+[```
 A = [$A] , \qquad
 B = [$B] .
-``]<<
+```]
 
 Compute determinant of [`BA`] without actually computing [`BA`]:
 [_________]{"($a)*($b)"} 

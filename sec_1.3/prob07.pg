@@ -41,11 +41,9 @@ Context()->variables->are(x=>['Real',limits => [1, 4]]);
 
 BEGIN_PGML
 Find the solution to the differential equation 
-
->>[``
+[```
 \frac{dy}{dx} = \frac{[$coeff] x y}{(\ln y)^{[$k]}} ,
-``]<<
-
+```]
 which passes through the point [`(x,y) = (0,e).`]
 
 Express your answer as

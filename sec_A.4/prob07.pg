@@ -98,10 +98,9 @@ $x2 = Vector(-1*$b, -1*$d, 0, 1);
 #####################################
 
 BEGIN_PGML
-Suppose [` \vec{a}_1 `], [` \vec{a}_2 `], [` \vec{a}_3 `], and [` \vec{a}_4 `] are column vectors in [` \mathbb{R}^3 `], 
+Suppose [` \vec{a}_1 ,`] [` \vec{a}_2 , `] [` \vec{a}_3 , `] and [` \vec{a}_4 `] are column vectors in [` \mathbb{R}^3 , `] 
 [` A = [\vec{a}_1 \mid \vec{a}_2 \mid \vec{a}_3 \mid \vec{a}_4 ] `] is a matrix, and
-
->> [`` \mathrm{rref}(A) = [$rrefA] ``] <<
+[``` \mathrm{rref}(A) = [$rrefA] . ```]
 
 Select all of the true statements (there may be more than one correct answer). [@ ANS( checkbox_cmp($mc->correct_ans) ); $mc->print_a; @]***
 
