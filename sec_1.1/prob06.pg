@@ -63,7 +63,7 @@ Solving for [`y ,`]
 [```y = \frac{-1}{[$a](x-C)}.```]
 Now [` y([$a])= [$b] , `] so
 [```y([$a]) = \frac{-1}{[$a]([$a]-C)} = [$b].```]
-Solving for [`C`] we find
+Solving for [`C ,`] we find
 [```C = \frac{1}{[$a*$b]}+[$a].```]
 Plugging this back into the solution we get
 [```y =
