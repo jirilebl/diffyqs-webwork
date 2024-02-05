@@ -78,22 +78,18 @@ if ($tmin2 > $tmax2) {
 }
 
 Context()->variables->are(t=>['Real']);
-Context()->variables->set(t=>{limits=>[$tmin2,$tmax2]});
-$WLcontext = Context()->copy;
 Context()->variables->set(t=>{limits=>[$tmin1,$tmax1]});
-$DEFcontext = Context();
 
-$a1 = "($anssign)*((-$k+1)*$a*t+($x0)^($k-1))^(-1/($k-1))";
-$a2 = "-($anssign)*(-((-$k+1)*$a*t+($x0)^($k-1)))^(-1/($k-1))";
-$ans = Compute("$a1");
-$cmp = $ans->cmp( checker=>sub {
+$ans1 = Formula("($anssign)*((-$k+1)*$a*t+($x0)^($k-1))^(-1/($k-1))");
+$ans2 = Formula("-($anssign)*(-((-$k+1)*$a*t+($x0)^($k-1)))^(-1/($k-1))")->with(limits=>[$tmin2,$tmax2]);
+$cmp = $ans1->cmp( checker=>sub {
   my ( $correct, $student, $ansHash ) = @_;
   if ($oddroot) {
-    if (Formula($WLcontext,"$a2") == Formula($WLcontext,"$student")) {
+    if ($ans2->with(limits=>[$tmin2,$tmax2]) == $student->with(limits=>[$tmin2,$tmax2])) {
       return 1;
     }
   }
-  return Formula($DEFcontext,"$a1") == Formula($DEFcontext,"$student");
+  return $ans1->with(limits=>[$tmin1,$tmax1]) == $student->with(limits=>[$tmin1,$tmax1]);
 } );
 
 ########################################################
