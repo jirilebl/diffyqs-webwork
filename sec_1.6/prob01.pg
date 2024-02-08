@@ -88,6 +88,30 @@ ANS(str_cmp("decreasing"));
 
 ########################################################
 
+Context()->texStrings;
+BEGIN_SOLUTION
+We rewrite the equation as
+\[
+\frac{dP}{dt} = $k P - $b P^2 = $b P ($K -  P) .
+\]
+Now the equation is in the standard form for a logistic equation and we
+see that the two equilibria are at \(0\) and \($K ,\) where
+the higher equilibrium \($K\) is the carrying capacity.
+$PAR
+When the population \(P\) is between 
+\(0\) and \($K ,\)
+we have that 
+\($b P ($K -  P) > 0 , \) so the population is increasing.
+$PAR
+When the population \(P\) is above 
+\($K ,\)
+we have that 
+\($b P ($K -  P) < 0 , \) so the population is decreasing.
+END_SOLUTION
+Context()->normalStrings;
+
+########################################################
+
 COMMENT("Autonomous equation word problem, ask simple questions including about carrying capacity (explains what that is)");
 
 ENDDOCUMENT();

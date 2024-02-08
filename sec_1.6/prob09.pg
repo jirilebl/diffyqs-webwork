@@ -78,8 +78,7 @@ if ($func->eval(x=>$avg3) > 0) {
 
 BEGIN_PGML
 A function [:x(t):] satisfies the differential equation
-
->>[`` \frac{dx}{dt} = [$func]. ``]<<
+[``` \frac{dx}{dt} = [$func]. ```]
 
 Compute the following limits.  You can use words like "Infinity" and "DNE" if you need to.
 

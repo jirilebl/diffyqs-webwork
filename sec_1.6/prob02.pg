@@ -58,6 +58,7 @@ $r = Compute(random(2,4));
 $C = Compute(random(5000,10000,500));
 $e = Compute(random(4,9));
 $rhs = Formula("$r*($C-P)-$e");
+$rhsnoe = Formula("$r*($C-P)");
 
 ##############################################################
 #  Text
@@ -86,6 +87,22 @@ Context()->normalStrings;
 #  Answers
 
 ANS($rhs->cmp());
+
+##############################################################
+#  Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+If nobody is leaving the equation is \(P'=$rhsnoe .\)
+With people leaving,
+the population satisfies the same equation except that we remove those \($e\)
+weird people per year who went off to study mathematics.
+Therefore, the rate of change of \(P\) needs to be lowered by \($e\)
+people per year.
+So we need to subtract \($e\) from \(P' .\)
+In other words, the new equation is \(P'=$rhs .\)
+END_SOLUTION
+Context()->normalStrings;
 
 COMMENT("Modify autonomous logistic equation for a word problem based on population leaving");
 

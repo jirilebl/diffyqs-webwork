@@ -45,8 +45,7 @@ $b = $pos*$neg;
 
 BEGIN_PGML
 A function [:x(t):] satisfies the differential equation 
-
->>[`` \frac{dx}{dt} = - x^4 - [$a] x^3 - [$b] x^2. ``]<<
+[``` \frac{dx}{dt} = - x^4 - [$a] x^3 - [$b] x^2. ```]
 
 What are the constant solutions of this equation?
 
@@ -61,6 +60,22 @@ For what values of [:x:] is [:x:] increasing?
 _*Book:*
 [@ htmlLink("https://www.jirka.org/diffyqs/html/auteq_section.html", "Section 1.6 of Notes on Diffy Qs") @]*_
 END_PGML
+
+##############################################################
+
+BEGIN_PGML_SOLUTION
+The polynomial [`- x^4 - [$a] x^3 - [$b] x^2`] has a root at [`0.`]
+Dividing by [`x^2 ,`] we find
+[`- x^2 - [$a] x - [$b] , `] which is quadratic
+and has roots at [`[$neg]`] and [`[$pos] .`]
+So the critical points are [`[$neg],0,[$pos] ,`]
+and so those are the constant solutions.
+
+The function [:x(t):] is increasing if [`\frac{dx}{dt}`] is positive.  By
+graphing the function [`- x^4 - [$a] x^3 - [$b] x^2`] or perhaps plugging in
+some numbers, you find that it is positive when
+[` [$neg] < x < [$pos] .`]
+END_PGML_SOLUTION
 
 ##############################################################
 

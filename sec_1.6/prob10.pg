@@ -64,14 +64,14 @@ if (random(1,2,1) == 1) {
 ##############################################################
 
 BEGIN_PGML
-Suppose [:f(x):] is a continuous function that is zero
-when [:x:] is [$a], [$b], or [$c] and nowhere else.
+Suppose [`f(x)`] is a continuous function that is zero
+when [`x`] is [`[$a],`] [`[$b],`] or [`[$c]`] and nowhere else.
 Suppose we tested the function at a few points and found that
-[:f([$p0]) < 0:], [:f([$p1]) < 0:],  [:f([$p2]) > 0:],
-and [:f([$p3]) < 0:].
+[`f([$p0]) < 0 ,`] [`f([$p1]) < 0 ,`]  [`f([$p2]) > 0 ,`]
+and [`f([$p3]) < 0 .`]
 
-Let [:x(t):] be the solution to
-[:x'=f(x):] and [:x(0) = [$limini]:].  Compute:
+Let [`x(t)`] be the solution to
+[`x'=f(x)`] and [`x(0) = [$limini] .`]  Compute:
 
 [``\lim_{t\to\infty} x(t) = ``]
 [______________]{"$lim"} [@ AnswerFormatHelp("numbers") @]*  
@@ -83,14 +83,13 @@ END_PGML
 ##############################################################
 
 BEGIN_PGML_SOLUTION
-The initial [`x`], that is [`x(0) = [$limini]`] is in the
+The initial [`x ,`] that is [`x(0) = [$limini] ,`] is in the
 interval [`([$ibeg],[$iend])`] between the critical points where
 [`f([$ibeg])=0`] and [`f([$iend])=0.`]
 Since [`f([$lep]) [$comp] 0,`] we have
 [`f(x) [$comp] 0`] in the entire interval [`([$ibeg],[$iend]).`]
 Therefore,
-
->>[``\lim_{t\to\infty} x(t) = [$lim] .``]<<
+[```\lim_{t\to\infty} x(t) = [$lim] .```]
 END_PGML_SOLUTION
 
 ##############################################################
