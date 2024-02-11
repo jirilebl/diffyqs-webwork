@@ -31,6 +31,11 @@ $showPartialCorrectAnswers = 1;
 Context("Numeric");
 Context()->variables->add(a=>"Real",A=>"Real",B=>"Real",lambda=>"Real",n=>"Real");
 Context()->variables->set(lambda => {TeX => '{\lambda}'});
+Context()->flags->set(num_points => 50,
+                      granularity => 10000,
+                      tolType => "relative",
+                      tolerance => 0.00001,
+                      reduceConstants => 0);
 Context()->strings->add(red=>{},blue=>{},green=>{},black=>{}); 
 Context()->functions->undefine("acos","acosh");
 Context()->{error}{msg}{"String constant '0' is not defined in this context"} = "Can't grade next two boundary conditions without this";

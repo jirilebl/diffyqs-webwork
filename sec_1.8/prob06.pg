@@ -40,7 +40,19 @@ $showPartialCorrectAnswers = 1;
 #  Setup
 #
 #
-Context("Numeric")->variables->add(y=>"Real");
+Context("Numeric");
+#testing near 1 is going to be most likely to not lead to issues
+#with polynomials
+Context()->variables->are(
+  "x"=>["Real",limits=>[0.6,1.6]],
+  "y"=>["Real",limits=>[0.6,1.6]]);
+
+Context()->flags->set(num_points => 50,
+                      granularity => 10000,
+                      tolType => "relative",
+                      tolerance => 0.00001,
+                      reduceConstants => 0);
+
 $a = random(3,8,1);
 $b = random(2,3,1);
 $c = random(3,5,1);

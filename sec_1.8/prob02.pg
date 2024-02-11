@@ -33,9 +33,10 @@ TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
 Context("Numeric");
+#testing near 1 is going to be most likely to not lead to issues
 Context()->variables->are(
-  "x"=>"Real",
-  "y"=>"Real");
+  "x"=>["Real",limits=>[0.6,1.6]],
+  "y"=>["Real",limits=>[0.6,1.6]]);
 Context()->strings->remove("DNE");
 Context()->strings->remove("NONE");
 Context()->strings->add(
@@ -46,6 +47,11 @@ Context()->strings->add(
   "nonexact"=>{alias=>"not exact"},
   "inexact"=>{alias=>"not exact"});
 
+Context()->flags->set(num_points => 50,
+                      granularity => 10000,
+                      tolType => "relative",
+                      tolerance => 0.00001,
+                      reduceConstants => 0);
 
 $a= non_zero_random(-4,4,1);
 $b= non_zero_random(-4,4,1);

@@ -34,7 +34,15 @@ TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
 Context('Numeric');
-Context()->variables->add(y=>'Real');
+Context()->variables->are(
+  "x"=>["Real",limits=>[0.6,1.6]],
+  "y"=>["Real",limits=>[0.6,1.6]]);
+
+Context()->flags->set(num_points => 50,
+                      granularity => 10000,
+                      tolType => "relative",
+                      tolerance => 0.00001,
+                      reduceConstants => 0);
 
 $a = random(2,9,1);
 $b = random(2,9,1);

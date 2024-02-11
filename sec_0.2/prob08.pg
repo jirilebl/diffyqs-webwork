@@ -32,12 +32,20 @@ TEXT(beginproblem());
 
 # Show which answers are correct and which ones are incorrect
 $showPartialCorrectAnswers = 1;
-Context()->variables->add(y=>"Real");
+
 ##############################################################
 #
 #  Setup
 #
 #
+Context("Numeric");
+Context()->variables->add(y=>"Real");
+Context()->flags->set(num_points => 50,
+                      granularity => 10000,
+                      tolType => "relative",
+                      tolerance => 0.00001,
+                      reduceConstants => 0);
+
 $y0 = Compute(random(1,10));
 $dy0 = Compute(random(1,10));
 
