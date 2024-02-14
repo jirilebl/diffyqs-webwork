@@ -48,7 +48,7 @@ $dx=($b-$a)/5;
   @xx1[0]=$a;
 for ($i = 0; $i< 5; $i++) {
   @xx1[$i+1]=$a+($b-$a)*($i+1)/5;
-  @fx1[$i]=$dx*sin($xx1[$i]*pi)+$xx2[$i]/$d;
+  @fx1[$i]=$dx*(sin($xx1[$i]*pi)+$xx2[$i]/$d);
   @fx2[$i]=$xx2[$i]+$fx1[$i];
   @xx2[$i+1]=$fx2[$i];
   }
