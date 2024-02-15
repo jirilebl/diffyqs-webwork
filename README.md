@@ -71,5 +71,5 @@ see CONTRIBUTING.md for more information.
 ## Acknowledgements
 
 Thanks to Edfinity for pestering me to motivate me to put these together and
-to Andras Balogh, Jan Hlavacek, and Jonathan Duncan for reporting and fixing
-errors.
+to Andras Balogh, Jan Hlavacek, Jonathan Duncan, and Arturo Portnoy for
+reporting and fixing errors.
