@@ -92,45 +92,34 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 The equation to solve is
-
->>[``
+[```
 [$mass] x'' + k x = 0, \qquad x(0) = 0, \quad x'(0) = [$speed].
-``]<<
+```]
 
 The solution is (without yet solving for [:x'(0)=[$speed]:])
-
->>[``
+[```
 x(t) = C \sin\left(\sqrt{\frac{k}{[$mass]}}t\right).
-``]<<
-
+```]
 Now [:C:] is the maximum displacement, that is, how far the spring
 compresses.  As
-
->>[``
+[```
 x'(t) = \sqrt{\frac{k}{[$mass]}} C \cos\left(\sqrt{\frac{k}{[$mass]}} t\right) ,
-``]<<
-
+```]
 we have to satisfy
-
->>[``
+[```
 [$speed] = x'(0) = \sqrt{\frac{k}{[$mass]}} C = \sqrt{\frac{k}{[$mass]}} [$compress].
-``]<<
-
+```]
 Solving for [:k:] we find [:k=[$k]:] N/m.
 
 The other parts are similar.  The idea is to now solve
-
->>[``
+[```
 m x'' + [$k] x = 0, \qquad x(0) = 0, \quad x'(0) = s,
-``]<<
-
+```]
 where [:m:] is mass and [:s:] is speed.  If [:C:] is the
 compression as before, we find the equation
-
->>[``
+[```
 s = \sqrt{\frac{[$k]}{m}} C .
-``]<<
-
+```]
 So if a [$mass2] kg railcar hits the spring it compresses
 [$compress2] m.
 

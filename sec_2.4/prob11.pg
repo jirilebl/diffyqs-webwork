@@ -1,0 +1,113 @@
+## Argue about how amplitude changes with initial conditions in mass spring system
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## KEYWORDS('ODE', 'second order', 'differential', 'equation', 'mass spring', 'application')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
+  "PGcourse.pl"
+);
+
+##############################################################
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+
+#Context()->variables->are(t=>'Real');
+
+$a = random(2,5,1);
+$b = random(2,5,1);
+$ba = $b*$a;
+
+##############################################################
+
+BEGIN_PGML
+A mass of [`m`] kilograms is on a spring with spring constant [`k`]
+and not damped, that is, the equation is [`m x''+k x = 0 .`]
+For initial conditions [`x(0)=x_0`] and [`x'(0)=x_1`] ([`x_0`] and [`x_1`] are some constants),  
+the solution is
+[```x(t) = [$a] \cos( \omega_0 t + \gamma )``]
+for the right [`\omega_0`] and [`\gamma .`]  In other words, the
+amplitude is [$a].
+
+What is the amplitude of the solution if
+we multiply the initial conditions by [$b], that is,
+if the initial conditions are instead [`x(0)=[$b] x_0`] and [`x'(0)=[$b] x_1`]?
+
+[____________]{"$ba"}{20}
+[@ AnswerFormatHelp("numbers") @]*
+
+What is the amplitude of the solution if we flip the direction in which the
+mass is moving, that is, if
+[`x(0)=x_0`] and [`x'(0)=-x_1`]?
+
+[____________]{"$a"}{20}
+[@ AnswerFormatHelp("numbers") @]*
+
+What is the amplitude of the solution if we just put the mass at the rest position
+and give it no initial velocity, that is, if
+[`x(0)=0`] and [`x'(0)=0`]?
+
+[____________]{"0"}{20}
+[@ AnswerFormatHelp("numbers") @]*
+
+_*Hint:* The amplitude is [`C = \sqrt{A^2+B^2}`] where
+[`A`] and [`B`] come from the form of the solution [`x(t) = A \cos(\omega_0 t) + B\sin(\omega_0 t) .`]
+And these constants [`A`] and [`B`] are easy to compute in terms of
+the initial conditions [`x_0`] and [`x_1 .`]
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/sec_mv.html", "Section 2.4 of Notes on Diffy Qs") @]*_
+END_PGML
+
+##############################################################
+
+BEGIN_PGML_SOLUTION
+The solution is always of the form
+[```
+x(t) = x(0) \cos(\omega_0 t) + \frac{x'(0)}{\omega_0} \sin(\omega_0 t) .
+```]
+So the amplitude is
+[```
+\sqrt{(x(0))^2 + \left(\frac{x'(0)}{\omega_0}\right)^2} .
+```]
+We have that
+[```
+\sqrt{(x_0)^2 + \left(\frac{x_1}{\omega_0}\right)^2} = [$a] .
+```]
+So
+if the initial conditions are [`x(0)=[$b] x_0`] and [`x'(0)=[$b] x_1,`] the amplitude is
+[```
+\sqrt{([$b]x_0)^2 + \left(\frac{[$b]x_1}{\omega_0}\right)^2}
+=
+[$b] \sqrt{(x_0)^2 + \left(\frac{x_1}{\omega_0}\right)^2}
+= [$b]\cdot[$a] = [$ba].
+```]
+If the initial conditions are [`x(0)=x_0`] and [`x'(0)=-x_1,`] the amplitude is
+[```
+\sqrt{(x_0)^2 + \left(\frac{-x_1}{\omega_0}\right)^2}
+=
+\sqrt{(x_0)^2 + \left(\frac{x_1}{\omega_0}\right)^2}
+=
+[$a] .
+```]
+Finally, if the initial conditions are 
+[`x(0)=0`] and [`x'(0)=0,`] we simply get the solution [`x=0,`] that is,
+the amplitude is also 0.
+END_PGML_SOLUTION
+
+##############################################################
+
+COMMENT("Argue about how amplitude changes with initial conditions in mass spring system.")
+
+ENDDOCUMENT();
