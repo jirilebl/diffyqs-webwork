@@ -108,6 +108,6 @@ END_PGML_SOLUTION
 
 ##############################################################
 
-COMMENT("Argue about how amplitude changes with initial conditions in mass spring system.")
+COMMENT("Argue about how amplitude changes with initial conditions in mass spring system.");
 
 ENDDOCUMENT();
