@@ -38,11 +38,11 @@ do { $a= non_zero_random(-5,5,1); } until (($a != 1) and ($a != -1));
 Context("Numeric");
 if ($a < 0) {
     #the coefficient in the exponent will be positive on the general solution
-    Context()->variables->are(x=>["Real",limits=>[0.01,4]],
+    Context()->variables->are(x=>["Real",limits=>[0.01,1]],
 			      C=>["Real",limits=>[0,10]]);
 } else {
     #the coefficient in the exponent will be negative on the general solution
-    Context()->variables->are(x=>["Real",limits=>[-4,-0.01]],
+    Context()->variables->are(x=>["Real",limits=>[-1,-0.01]],
 			      C=>["Real",limits=>[0,10]]);
 }
 Context()->flags->set(num_points => 50,
@@ -60,17 +60,19 @@ $sgnma = $a>0 ? '-' : '+';
 $cmp1 = Compute("e^($a x)")->cmp( checker => sub {
     my ($correct, $student, $self) = @_;
 
-    if ($student == Compute("0")) {
+    if (Compute("0") == $student) {
         return 0;
     }
 
-    my $context = Context()->copy; 
-    $context->flags->set(no_parameters=>0);
-    $context->variables->add('C0'=>'Parameter');
-    my $c0 = Formula($context,'C0');
-    
-    $student = Formula($context,$student);
-    $correct = Formula($context,"($c0)*e^($a x)");
+    if ($self->{_filter_name} ne 'produce_equivalence_message') {
+        my $context = Context()->copy; 
+        $context->flags->set(no_parameters=>0);
+        $context->variables->add('C0'=>'Parameter');
+        my $c0 = Formula($context,'C0');
+ 
+        $student = Formula($context,$student);
+        $correct = Formula($context,"($c0)*e^($a x)");
+    }
         
     return $correct == $student;
 });
@@ -79,27 +81,29 @@ $cmp1 = Compute("e^($a x)")->cmp( checker => sub {
 $cmp2 = Compute("C e^($ma x) $sgnma x/$aa + 1/$aa^2")->cmp( checker => sub {
     my ($correct, $student, $self) = @_;
 
-    my $context = Context()->copy; 
-    $context->flags->set(no_parameters=>0);
-    $context->variables->add('C0'=>'Parameter');
-    $context->variables->add('C1'=>'Parameter');
-    my $c0 = Formula($context,'C0');
-    my $c1 = Formula($context,'C1');
+    if ($self->{_filter_name} ne 'produce_equivalence_message') {
+        my $context = Context()->copy; 
+        $context->flags->set(no_parameters=>0);
+        $context->variables->add('C0'=>'Parameter');
+        $context->variables->add('C1'=>'Parameter');
+        my $c0 = Formula($context,'C0');
+        my $c1 = Formula($context,'C1');
     
-    my $context2 = Context()->copy; 
-    $context2->flags->set(no_parameters=>0);
-    $context2->variables->add('C0'=>'Parameter');
-    my $cc0 = Formula($context2,'C0');
+        my $context2 = Context()->copy; 
+        $context2->flags->set(no_parameters=>0);
+        $context2->variables->add('C0'=>'Parameter');
+        my $cc0 = Formula($context2,'C0');
     
-    $student2 = Formula($context2,$student);
-    $student = Formula($context,$student);
+        $student2 = Formula($context2,$student);
+        $student = Formula($context,$student);
  
-    $correct = Formula($context,"(($c0)*C+($c1)) * e^($ma x) $sgnma x/$aa + 1/$aa^2");
+        $correct = Formula($context,"(($c0)*C+($c1)) * e^($ma x) $sgnma x/$aa + 1/$aa^2");
     
-    $nongeneral = Formula($context2,"($cc0) * e^($ma x) $sgnma x/$aa + 1/$aa^2");
+        $nongeneral = Formula($context2,"($cc0) * e^($ma x) $sgnma x/$aa + 1/$aa^2");
     
-    if ($nongeneral == $student2) {
-        Value->Error("Your answer is not the most general solution");
+        if ($nongeneral == $student2) {
+            Value->Error("Your answer is not the most general solution");
+        }
     }
     
     return $correct == $student;

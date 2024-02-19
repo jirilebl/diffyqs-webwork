@@ -1,0 +1,95 @@
+##DESCRIPTION
+## Finding an equation out of two simple exponential solutions
+##ENDDESCRIPTION
+
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Linear, constant coefficients, homogeneous (distinct real roots))
+## Author(Jiri Lebl)
+## Institution(Oklahoma State University)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.1')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'linear', 'differential equation', 'second order', 'homogeneous', 'constant coefficients')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
+  "PGcourse.pl"
+);
+
+##############################################################
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+
+do {
+  $a = random(2,5,1);
+  $b = random(2,5,1);
+} while($a == $b);
+
+$sol1 = Compute("e^($a x)");
+$sol2 = Compute("e^($b x)");
+
+##############################################################
+
+BEGIN_PGML
+The equation [`y'' + A y' + B y = 0`] has solutions
+[`y_1=[$sol1]`] and
+[`y_2=[$sol2] ,`] and the [`A`] and the [`B`] are constants.
+Find [`A`] and [`B .`]
+
+[`A = {}`] [___________]{"-$a-$b"} [@ AnswerFormatHelp("numbers") @]*  
+
+[`B = {}`] [___________]{"$a*$b"} [@ AnswerFormatHelp("numbers") @]*  
+
+To find these numbers, best thing to do would be to plug the solutions [`y_1`]
+and [`y_2`] into the differential equation.  After you compute the derivatives
+you will notice that the exponentials can be cancelled out leaving you two
+equations for [`A`] and [`B`] that can be easily solved.
+You should check your work, by plugging the solutions into
+the equation you created.
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/solinear_section.html", "Section 2.1 of Notes on Diffy Qs") @]*_
+END_PGML
+
+##############################################################
+
+BEGIN_PGML_SOLUTION
+We plug in the solutions into the equation:
+[```
+0 = y_1'' + A y_1' + B y_1
+= [$a]^2 e^{[$a] x} + [$a] A e^{[$a] x} + B e^{[$a] x} .
+```]
+If we cancel out the [`e^{[$a]x},`] then we find the equation
+[```
+[$a]^2 + [$a] A + B = 0 .
+```]
+If we do the same procedure with [`y_2 ,`] we find
+[```
+[$b]^2 + [$b] A + B = 0 .
+```]
+Solving these two equations for [`A`] and [`B`] yields:
+[```
+A = -[$a]-[$b] , \quad B = [$a] \cdot [$b] .
+```]
+END_PGML_SOLUTION
+
+##############################################################
+
+COMMENT("Finding an equation out of two simple exponential solutions");
+
+ENDDOCUMENT();
