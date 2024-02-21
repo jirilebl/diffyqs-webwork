@@ -57,23 +57,20 @@ where
 [`\omega_0 = \sqrt{\frac{k}{[$mass]}}.`]
 Solving we find that initial velocity is [`\omega_0 B = [$iv].`]
 So
-
->>[``
+[```
 B = \frac{[$iv]}{\omega_0} = [$iv] \sqrt{\frac{[$mass]}{k}} .
-``]<<
+```]
 
 The [:B:] (being positive) is the amplitude.
 We must have
-
->>[``
+[```
 [$iv] \sqrt{\frac{[$mass]}{k}} = B \leq [$maxd] .
-``]<<
+```]
 
 Therefore,
-
->>[``
+[```
 k \geq [$iv]^2 \frac{[$mass]}{[$maxd]^2} .
-``]<<
+```]
 END_PGML_SOLUTION
 
 ENDDOCUMENT();

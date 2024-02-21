@@ -38,6 +38,7 @@ then released with zero velocity.
 $PAR
 
 In the notation of the text, what is the value \(c^2 - 4mk\)?
+$BR
 \{ans_rule(20)\} \( \text m^2\text{kg}^2/\text{sec}^2 \)
 $SPACE \{ AnswerFormatHelp("numbers") \}
 
