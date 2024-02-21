@@ -48,7 +48,7 @@ $a = random(2,9,1);
 $b = random(2,9,1);
 $c = random(2,9,1);
 
-$ans1 = Formula("($a/2)*(x^2+y^2)");
+$ans1 = Formula("($a/2)*(-x^2+y^2)");
 $ans2 = Formula("$b*(e^x)*sin(y)");
 $ans3 = Formula("$c*(3*x^2*y-y^3)");
 
