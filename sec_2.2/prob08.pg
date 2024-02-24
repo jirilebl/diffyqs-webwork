@@ -41,11 +41,11 @@ $d = new Complex( non_zero_random( -5, 5, 1), 1 );
 BEGIN_TEXT
 Write the following numbers in \( a\ +\ bi \) form:
 $PAR
-\( \displaystyle \left( \frac{$a}{$b\ -\ ($c)} \right)^2\ =\) \{ans_rule(10)\} \(+\) \{ans_rule(10)\} \(i\),
+\( \displaystyle \left( \frac{$a}{$b\ -\ ($c)} \right)^2\ =\) \{ans_rule(10)\} \(+\) \{ans_rule(10)\} \(i,\)
 $SPACE
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-\((i)^2( $d )^2\ =\) \{ans_rule(10)\} \(+\) \{ans_rule(10)\} \(i\).
+\((i)^2( $d )^2\ =\) \{ans_rule(10)\} \(+\) \{ans_rule(10)\} \(i .\)
 $SPACE
 \{ AnswerFormatHelp("numbers") \}
 
@@ -59,13 +59,13 @@ END_TEXT
 
 $i = new Complex( 0, 1);
 
-ANS(num_cmp( (($a**2)/(($b-$c))**2) -> Re ) );
+ANS(num_cmp( (($a**2)/(($b-$c))**2) -> Re ));
 ANS(num_cmp( (($a**2)/(($b-$c))**2) -> Im ));
-ANS(num_cmp( ( ($i**2 )*(($d)**2)) -> Re ));
-ANS(num_cmp( ( ($i**2 )*(($d)**2)) -> Im ));
+ANS(num_cmp( (($i**2 )*(($d)**2)) -> Re ));
+ANS(num_cmp( (($i**2 )*(($d)**2)) -> Im ));
 
 ##############################
 
 COMMENT("Arithmetic of complex numbers");
 
-ENDDOCUMENT();        # This should be the last executable line in the problem.
+ENDDOCUMENT();

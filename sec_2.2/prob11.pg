@@ -157,7 +157,7 @@ BEGIN_SOLUTION
 The characteristic equation is \( $chareq ,\)
 or \( $factoredeq . \)
 In other words we get \( r= $a ,\) which is a doubled root.
-We get two independent solutions, \(y=e^{$a x} \) and \(y=x e^{$a x} .\)
+We get two linearly independent solutions, \(y=e^{$a x} \) and \(y=x e^{$a x} .\)
 $PAR
 The general solution therefore is
 \[ $answera . \]

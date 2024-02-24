@@ -122,7 +122,7 @@ Context()->texStrings;
 BEGIN_TEXT
 Find the general solution to this 
 differential equation.  
-In your answer, use \( c_1, c_2, c_3 \) and \( c_4 \) to 
+In your answer, use \( c_1, c_2, c_3, \) and \( c_4 \) to 
 denote arbitrary constants, use \( y \) for the 
 dependent variable, and use \( x \) for
 the independent variable.  Enter 

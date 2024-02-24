@@ -138,7 +138,7 @@ Context()->texStrings;
 BEGIN_SOLUTION
 The characteristic equation is \( $chareq \)
 or \( (r+$b)(r-$a) = 0 . \)  In other words we get \( r=$a,-$b .\)
-We get two independent solutions, \(y=e^{$a x}\) and \(y=e^{-$b x} .\)
+We get two linearly independent solutions, \(y=e^{$a x}\) and \(y=e^{-$b x} .\)
 $PAR
 The general solution therefore is
 \[ $answer . \]

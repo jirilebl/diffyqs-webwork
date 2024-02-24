@@ -82,20 +82,14 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 The first equation should have the characteristic equation
-
->>[` ([$de1f1])([$de1f2]) = [$de1char] = 0 . `]<<
-
+[``` ([$de1f1])([$de1f2]) = [$de1char] = 0 . ```]
 So the differential equation should be
-
->>[` [$de1eq] = 0 . `]<<
+[``` [$de1eq] = 0 . ```]
 
 The second equation should have the characteristic equation
-
->>[` ([$de2f1])([$de2f2]) = [$de2char] = 0 . `]<<
-
+[``` ([$de2f1])([$de2f2]) = [$de2char] = 0 . ```]
 So the differential equation should be
-
->>[` [$de2eq] = 0 . `]<<
+[``` [$de2eq] = 0 . ```]
 END_PGML_SOLUTION
 
 ##############################################################

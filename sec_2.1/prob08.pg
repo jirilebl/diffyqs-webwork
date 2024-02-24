@@ -88,17 +88,13 @@ If [`f`] and [`g`] are linearly dependent,
 they are multiples of each other.  That is,
 [`g(x) = A f(x)`] for some constant [`A`].
 Then
-
->>[``[$ga] = g([$xa]) = A f([$xa]) = A ([$fa]) .``]<<
+[```[$ga] = g([$xa]) = A f([$xa]) = A ([$fa]) .```]
 
 So [`A = [$mult].`]
 Then we simply compute
-
->>[``g([$xb]) = A f([$xb]) =  [$mult] ([$fb])``]<<
-
->>[``g([$xc]) = A f([$xc]) =  [$mult] ([$fc])``]<<
-
->>[``g([$xd]) = A f([$xd]) =  [$mult] ([$fd])``]<<
+[```g([$xb]) = A f([$xb]) =  [$mult] ([$fb]) ,```]
+[```g([$xc]) = A f([$xc]) =  [$mult] ([$fc]) ,```]
+[```g([$xd]) = A f([$xd]) =  [$mult] ([$fd]) .```]
 END_PGML_SOLUTION
 
 ##############################################################

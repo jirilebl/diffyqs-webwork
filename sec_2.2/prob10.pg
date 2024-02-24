@@ -159,7 +159,7 @@ BEGIN_SOLUTION
 The characteristic equation is \( $chareq ,\)
 or \( $factoredeq . \)
 In other words we get \( r= $msa \pm $b i .\)
-We get two independent solutions, \(y=e^{$msa x}\cos( $b x) \) and \(y=e^{$msa x} \sin($b x) .\)
+We get two linearly independent solutions, \(y=e^{$msa x}\cos( $b x) \) and \(y=e^{$msa x} \sin($b x) .\)
 $PAR
 The general solution therefore is
 \[ $answer . \]

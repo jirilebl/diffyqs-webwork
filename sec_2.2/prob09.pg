@@ -149,7 +149,7 @@ BEGIN_SOLUTION
 The characteristic equation is \( $chareq ,\)
 or \( $b ( r^2 + $a^2 ) =0 . \)
 In other words we get \( r=\pm $a i .\)
-We get two independent solutions, \(y=\cos( $a x) \) and \(y=\sin($a x) .\)
+We get two linearly independent solutions, \(y=\cos( $a x) \) and \(y=\sin($a x) .\)
 $PAR
 The general solution therefore is
 \[ $answer . \]

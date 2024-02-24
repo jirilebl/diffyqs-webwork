@@ -5,8 +5,8 @@
 ## DBsubject(Differential equations)
 ## DBchapter(Higher order differential equations)
 ## DBsection(Linear, constant coefficients, homogeneous (complex roots))
-## Institution(Fort Lewis College)
-## Author(Paul Pearson)
+## Institution(Fort Lewis College, Oklahoma State University)
+## Author(Paul Pearson, Jiri Lebl)
 ## Level(4)
 ## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
 ## AuthorText1('Jiri Lebl')
@@ -64,6 +64,7 @@ $c1 = $a*$a + $b*$b;
 # char poly r( (r+$a)^2 + $b^2 )
 
 $diffeq = "y^{\prime\prime\prime} + $c2 y^{\prime\prime} + $c1 y^{\prime} = 0"; # tex
+$chareq = "r^3 + $c2 r^2 + $c1 r = 0"; # tex
 
 $answer = Compute("y = c1 + c2 e^(-$a x) cos($b x) + c3 e^(-$a x) sin($b x)");
 
@@ -77,7 +78,7 @@ Find the general solution to
 \[
 $diffeq .
 \]
-In your answer, use \( c_1, c_2 \) and \( c_3 \) to 
+In your answer, use \( c_1, c_2, \) and \( c_3 \) to 
 denote arbitrary constants and \( x \) 
 the independent variable.  Enter the solution as an equation \(y = ?\).
 $PAR
@@ -157,6 +158,23 @@ ANS( $answer->cmp( checker => sub {
  
 
 }));
+
+##############################
+#  Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+The characteristic equation is \( $chareq . \)
+We see that \(r\) divides the characteristic polynomial and so the
+characgteristic equation is
+\( r((r+$a)^2+$b^2) = 0 .\)
+The roots are therefore \(0\) and \(-$a \pm $b i. \)
+We get three linearly independent solutions, \(y=1,\) \(y=e^{-$a x} \cos($b x),\) and \(y=e^{-$a x} \sin($b x).\)
+$PAR
+The general solution therefore is
+\[ $answer . \]
+END_SOLUTION
+Context()->normalStrings;
 
 ################################################
 
