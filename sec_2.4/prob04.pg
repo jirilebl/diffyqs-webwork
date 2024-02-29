@@ -37,25 +37,25 @@ Context("Numeric")->variables->are(t=>'Real');
 #  Begin graph canvas setup
 #
 
-$htmlsize = 300;
+$htmlsize = 400;
 $texsize  = 400;
 
-$gr = init_graph(-1,-4,7,4,axes=>[0,0],size=>[$htmlsize,$htmlsize]);
+$gr = init_graph(0,-4,8,4,axes=>[0,0],size=>[$htmlsize,$htmlsize]);
 $gr->lb('reset');
-foreach my $i (1,2,3,4,5,6) {
+foreach my $i (1,2,3,4,5,6,7) {
   $gr->moveTo($i,-4);
-  $gr->lineTo($i,4,'gray');
+  $gr->lineTo($i,4,'gray',1,'dashed');
   $gr->lb( new Label( $i,-0.25, $i,'black','center','middle'));
 }
 foreach my $i (1,2,3) {
-  $gr->moveTo(-1,$i);
-  $gr->lineTo(7,$i,'gray');
-  $gr->moveTo(-1,-$i);
-  $gr->lineTo(7,-$i,'gray');
-  $gr->lb( new Label(-0.25, $i, $i,'black','right','middle'));
-  $gr->lb( new Label(-0.25,-$i,-$i,'black','right','middle'));
+  $gr->moveTo(0,$i);
+  $gr->lineTo(8,$i,'gray',1,'dashed');
+  $gr->moveTo(0,-$i);
+  $gr->lineTo(8,-$i,'gray',1,'dashed');
+  $gr->lb( new Label(0.25, $i, $i,'black','right','middle'));
+  $gr->lb( new Label(0.25,-$i,-$i,'black','right','middle'));
 }
-$gr->lb( new Label(6.5,0.2,'t','black','center','middle'));
+$gr->lb( new Label(7.5,0.2,'t','black','center','middle'));
 $gr->lb( new Label(0.2,3.75,'x','black','center','middle'));
 
 #  End graph canvas setup
@@ -89,7 +89,7 @@ if ($y2>0) {
 }
 
 $fn = new Fun ( $y_cm->perlFunction, $gr );
-$fn->domain(-1,7);
+$fn->domain(0,8);
 $fn->steps(150);
 $fn->color('blue');
 

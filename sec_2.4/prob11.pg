@@ -35,7 +35,7 @@ BEGIN_PGML
 A mass of [`m`] kilograms is on a spring with spring constant [`k`]
 and not damped, that is, the equation is [`m x''+k x = 0 .`]
 For initial conditions [`x(0)=x_0`] and [`x'(0)=x_1`]
-(here [`x_0`] and [`x_1`] are some constants),  
+(here [`x_0`] and [`x_1`] are some constants),
 the solution is
 [```x(t) = [$a] \cos( \omega_0 t + \gamma )```]
 for the right [`\omega_0`] and [`\gamma .`]  In other words, the
@@ -64,7 +64,7 @@ and give it no initial velocity, that is, if
 
 _*Hint:* The amplitude is [`C = \sqrt{A^2+B^2}`] where
 [`A`] and [`B`] come from the form of the solution [`x(t) = A \cos(\omega_0 t) + B\sin(\omega_0 t) .`]
-And these constants [`A`] and [`B`] are easy to compute in terms of
+These constants [`A`] and [`B`] are easy to compute in terms of
 the initial conditions [`x(0)`] and [`x'(0) .`]_
 
 _*Book:*
@@ -102,7 +102,7 @@ If the initial conditions are [`x(0)=x_0`] and [`x'(0)=-x_1,`] the amplitude is
 =
 [$a] .
 ```]
-Finally, if the initial conditions are 
+Finally, if the initial conditions are
 [`x(0)=0`] and [`x'(0)=0,`] we simply get the solution [`x=0,`] that is,
 the amplitude is also 0.
 END_PGML_SOLUTION
