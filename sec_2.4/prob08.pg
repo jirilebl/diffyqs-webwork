@@ -1,8 +1,20 @@
-## Mass spring application
+##DESCRIPTION
+## Application of mass-spring model to rail car bumpers
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Applications)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
-## KEYWORDS('ODE', 'second order', 'differential', 'equation', 'mass spring', 'application')
+## Level(5)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.4')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'linear', 'differential equation', 'second order', 'homogeneous', 'constant coefficients', 'mass-spring', 'mechanical vibrations')
 
 ##############################################################
 
@@ -129,5 +141,9 @@ mass for that speed.
 
 For speed [$dspeed] m/s, the maximum mass is [$masscritdouble] kg.
 END_PGML_SOLUTION
+
+##############################################################
+
+COMMENT("Application of mass-spring model to rail car bumpers");
 
 ENDDOCUMENT();

@@ -1,5 +1,20 @@
+##DESCRIPTION
+## Setting up and solving an underdamped mass-spring system from a description
+##ENDDESCRIPTION
+
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Applications)
 ## Institution(Dartmouth)
-## KEYWORDS('Hooke's Law', 'position', 'underdamping')
+## Author(Unknown)
+## Level(5)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.4')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'linear', 'differential equation', 'second order', 'homogeneous', 'constant coefficients', 'mass-spring', 'mechanical vibrations')
 
 #######################################################
 
@@ -91,5 +106,10 @@ ANS(Compute("$c2")->cmp());
 
 
 # ANS(fun_cmp("exp($r_real*t) * ($c1*cos($r_imag * t) +  $c2*sin($r_imag*t))", vars=>['t']));
+
+#######################################################
+
+COMMENT("Setting up and solving an underdamped mass-spring system from a description");
+
 ENDDOCUMENT();
 
