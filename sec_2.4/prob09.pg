@@ -41,6 +41,7 @@ Context()->variables->are(t=>'Real');
 $a = random(2,5,1);
 $b = random(2,9,1);
 $initx = random(2,9,1);
+$extra = random(2,9,1);
 
 $k = $a*$a*$b;
 $mass = $b;
@@ -48,6 +49,7 @@ $mass = $b;
 $c = 2*$a*$b;
 
 $p = $a;
+$initspeed = $p*$initx+$extra;
 
 ##############################################################
 
@@ -55,18 +57,19 @@ BEGIN_PGML
 A [$mass] kg mass is attached to the end of a spring with
 spring constant [$k] N/m.  There is a damper which is tuned 
 so that the damping is exactly critical.  The mass is pulled [$initx] meters from rest
-position and let go (initial velocity is zero).
+position and then pushed with speed [$initspeed] m/s towards the rest position and let go.
+(Assume the initial displacement is in the positive direction.)
 
 Find the position of the mass as a function of time [:t:]:
 
-[:x=:] [____________]{"$initx*e^(-$p*t)+$initx*$p*t*e^(-$p*t)"}{50}
+[:x=:] [____________]{"$initx*e^(-$p*t)-$extra*t*e^(-$p*t)"}{50}
 [@ AnswerFormatHelp("formulas") @]*
 
 The mass will go towards the rest position, it will go past the rest position,
 and then it will slowly go back towards the rest position.
 At what time does it hit the rest position:
 
-[____________]{"1/$p"}{20} seconds
+[____________]{"$initx/$extra"}{20} seconds
 [@ $SPACE @]* [@ AnswerFormatHelp("numbers") @]*
 
 _*Book:*
@@ -78,7 +81,7 @@ END_PGML
 BEGIN_PGML_SOLUTION
 The equation to solve is
 [```
-[$mass] x'' + c x' + [$k] x = 0, \qquad x(0) = [$initx], \quad x'(0) = 0.
+[$mass] x'' + c x' + [$k] x = 0, \qquad x(0) = [$initx], \quad x'(0) = -[$initspeed].
 ```]
 
 As we have critical damping, [` c= 2 \sqrt{km} = 2 \sqrt{[$mass] \cdot [$k]} = [$c] . `]
@@ -86,11 +89,11 @@ As we have critical damping, [` c= 2 \sqrt{km} = 2 \sqrt{[$mass] \cdot [$k]} = [
 The solution is
 [` x = C_1 e^{-[$p] t} + C_2 t e^{-[$p] t} .`]  Solving for the initial conditions we
 get
-[``` x = [$initx] e^{-[$p] t} + [$initx*$p] t e^{-[$p] t} .```]
+[``` x = [$initx] e^{-[$p] t} - [$extra] t e^{-[$p] t} .```]
 
-That is zero precisely when [`[$initx] = [$initx*$p] t`], or in other words,
+That is zero precisely when [`[$initx] = [$extra] t`], or in other words,
 when
-[``` t = \frac{1}{[$p]} .```]
+[``` t = \frac{[$initx]}{[$extra]} .```]
 END_PGML_SOLUTION
 
 ##############################################################

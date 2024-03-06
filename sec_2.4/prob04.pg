@@ -121,7 +121,7 @@ $PAR
 \{ image(insertGraph($gr),width=>$htmlsize,height=>$htmlsize,tex_size=>$texsize) \}
 $PAR
 Assume that the units of time are 
-seconds, and the units of displacement are centimeters.
+seconds, and the units of displacement in the graph are centimeters.
 The first \( t \)-intercept is \( ($x1,$y1) \) and the
 first $type has coordinates \( ($x2,$y2) \).
 $PAR
@@ -132,19 +132,19 @@ $BR
 $SPACE \{ AnswerFormatHelp("numbers") \}
 $PAR
 What is the frequency \( f \) in Hertz?
-What is the angular frequency \( \omega \)
+What is the angular frequency \( \omega_0 \)
 in radians / second?
 $BR
 \( f = \) \{ ans_rule(15) \} Hertz
 $SPACE \{ AnswerFormatHelp("numbers") \}
 $BR
-\( \omega = \) \{ ans_rule(15) \} radians / second
+\( \omega_0 = \) \{ ans_rule(15) \} radians / second
 $SPACE \{ AnswerFormatHelp("numbers") \}
 $PAR
-Determine the amplitude \( A \) and the 
+Determine the amplitude \( C \) and the 
 phase angle \( \gamma \) (in radians), and express 
 the displacement in the form 
-\( x(t) = A \cos(\omega t - \gamma) \), with 
+\( x(t) = C \cos(\omega_0 t - \gamma) \), with 
 \( x \) in meters.
 $BR
 \( x(t) = {}\) \{ ans_rule(30) \} meters
