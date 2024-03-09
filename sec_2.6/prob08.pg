@@ -1,4 +1,4 @@
-# Pure resonance, find the forcing frequency leading to resonance
+# Pure resonance, find the mass that leads to resonance
 
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
@@ -25,23 +25,24 @@ $showPartialCorrectAnswers = 1;
 Context("Numeric");
 Context()->variables->are(t=>"Real");
 
-$mass = random(0.3,3,0.2);
+$omega = random(1.2,2.0,0.1);
+
 $k = random(2,10,0.1);
 $F = random(2,3,0.1);
 
-$omega = Compute("sqrt($k/$mass)");
+$mass = Compute("$k/($omega^2)");
 
 ##############################################################
 
 BEGIN_PGML
-Consider the mass-spring system for mass [$mass] kg, spring constant [$k] N/m, and an oscillating force [`[$F] \cos( \omega t) `] Newtons.  That is,
+Consider the mass-spring system for mass [`m`] kg, spring constant [$k] N/m, and an oscillating force [`[$F] \cos( [$omega] t) `] Newtons.  That is,
 [```
-[$mass] x'' + [$k] x = [$F] \cos(\omega t) .
+m x'' + [$k] x = [$F] \cos([$omega] t) .
 ```]
 
-What positive angular frequency [`\omega`] leads to resonance?
+What mass [`m`] leads to resonance?
 
-[` \omega = `] [____________]{"$omega"} [@ AnswerFormatHelp("numbers") @]*
+[` m = `] [____________]{"$mass"} [@ AnswerFormatHelp("numbers") @]*
 
 What is the resonance part of the solution (without the complementary solution)?
 

@@ -1,4 +1,7 @@
-# Practical resonance
+# Practical resonance, find the forcing frequency leading to practical resonance in a damped system
+
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
 
 ## KEYWORDS('differential', 'equation', 'constant', 'solution')
 
@@ -38,18 +41,18 @@ $F = Real(random(1.1,5,0.1));
 ##############################################################
 
 BEGIN_PGML
-Consider the damped mass-spring system for mass of [$mass] kg, spring constant [$k] N/m, damping [$c] kg/s and an oscillating force [`[$F] \cos( \omega t) `] Newtons.  That is,
-
->>[``
+Consider the damped mass-spring system for mass of [$mass] kg, spring constant [$k] N/m,
+damping [$c] kg/s and an oscillating force [`[$F] \cos( \omega t) `] Newtons.  That is,
+[```
 [$mass] x'' + [$c] x' + [$k] x = [$F] \cos(\omega t) .
-``]<<
+```]
 
 What positive angular frequency [`\omega`] leads to maximum practical resonance?
 
 [` \omega = `] [____________]{"$omega"}{25} [@ AnswerFormatHelp("numbers") @]*
 
 What is the maximum displacement of the mass in the steady state
-solution when the we are at practical resonance:
+solution when the we are at practical resonance?
 
 [` C(\omega) = `] [___________]{"$F/($mass*sqrt( (2*$omega*$p)^2 + ($omega0^2-$omega^2)^2 ))"}{60}
 [@ AnswerFormatHelp("numbers") @]*
