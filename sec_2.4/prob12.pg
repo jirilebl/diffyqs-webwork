@@ -1,0 +1,103 @@
+##DESCRIPTION
+## Figure out the length of a pendulum to give a a specific frequency
+##ENDDESCRIPTION
+
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Applications)
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## Level(5)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.4')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'linear', 'differential equation', 'second order', 'homogeneous', 'constant coefficients', 'pendulum', 'mechanical vibrations')
+
+##############################################################
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
+  "PGcourse.pl"
+);
+
+##############################################################
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+
+Context()->variables->are(L=>'Real');
+
+$freq = random(0.1,2.0,0.1);
+
+##############################################################
+
+BEGIN_PGML
+A clock designer wants to have a pendulum with a specific frequency.
+Suppose the pendulum swings are small enough so that one
+can use the linearized differential equation.  First, write the expression
+for the frequency in Hertz (cycles per second) as a function of
+the length [`L`] in meters.  Assume that the acceleration
+due to gravity is 9.8 meters per second squared.
+
+Frequency as function of [`L`]
+[`=`]
+[____________]{"sqrt(9.8/L)/(2*pi)"}{20}
+Hertz.
+[`\quad`]
+[@ AnswerFormatHelp("formulas") @]*
+
+Second, suppose that the clock designer wants to have a pendulum of
+frequency
+[$freq] Hertz.  What [`L`] (in meters) will give this frequency?
+
+[`L={}`]
+[____________]{"9.8/(($freq*2*pi)^2)"}{20}
+meters.
+[`\quad`]
+[@ AnswerFormatHelp("numbers") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/sec_mv.html", "Section 2.4 of Notes on Diffy Qs") @]*_
+END_PGML
+
+##############################################################
+
+BEGIN_PGML_SOLUTION
+The linearized pendulum equation is
+[```
+\theta'' + \frac{g}{L} \theta = 0 ,
+```]
+where [`g`] is the acceleration due to gravity (meters per second squared),
+[`L`] is the length of the pendulum (meters), and [`\theta`]
+is a function of time that gives the angle (in radians) the pendulum makes with the
+vertical.
+
+Thus the angular frequency (radians per second) is
+[`\sqrt{\frac{g}{L}}=\sqrt{\frac{9.8}{L}}`]
+and the frequency (in cycles per second) is
+[```\frac{1}{2\pi}\sqrt{\frac{g}{L}}=\frac{1}{2\pi}\sqrt{\frac{9.8}{L}} .```]
+
+Setting this equal to [$freq],
+[```[$freq] = \frac{1}{2\pi} \sqrt{\frac{9.8}{L}} ,```]
+we solve for [`L`] to obtain
+[```
+L=
+\frac{9.8}{(2\pi [$freq])^2} .
+```]
+END_PGML_SOLUTION
+
+##############################################################
+
+COMMENT("Figure out the length of a pendulum to give a a specific frequency.");
+
+ENDDOCUMENT();
