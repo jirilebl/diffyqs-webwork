@@ -22,19 +22,19 @@ $showPartialCorrectAnswers = 1;
 Context("Numeric");
 
 $a = random(2,7,1);
-$b = "{1\over $a}";
+$b = "\frac{1}{$a}";
 $c = random(2,7,1);
 $d = random(2,7,1);
 
 # ser[i] = [ series, sum, sumtex, func, val ]
-@ser = ( [ "1 + $a + {$a^2\over 2!} + {$a^3\over 3!} + {$a^4\over 4!} + " .
-		"\cdots + {$a^k\over k!} + \cdots",
+@ser = ( [ "1 + $a + \frac{$a^2}{2!} + \frac{$a^3}{3!} + \frac{$a^4}{4!} + " .
+		"\cdots + \frac{$a^k}{k!} + \cdots",
 	   "e^($a)", "e^{$a}", "e^{x}", $a ], 
-	 [ "$c - {$c^3\over 3!} + {$c^5\over 5!} - {$c^7\over 7!} + " .
-		"\cdots + {(-1)^{k} $c^{2k+1}\over (2k+1)!} + \cdots",
+	 [ "$c - \frac{$c^3}{3!} + \frac{$c^5}{5!} - \frac{$c^7}{7!} + " .
+		"\cdots + \frac{(-1)^{k} $c^{2k+1}}{(2k+1)!} + \cdots",
 	   "sin($c)", "\sin($c)", "\sin(x)", $c ],
-	 [ "1 + $b + ($b)^2 + ($b)^3 + ($b)^4 + \cdots + ($b)^k + \cdots",
-	   "1/(1 - (1/$a))", "{1\over1 - {1\over $a}}", "{1\over 1-x}",
+	 [ "1 + $b + \left($b\right)^2 + \left($b\right)^3 + \left($b\right)^4 + \cdots + \left($b\right)^k + \cdots",
+	   "1/(1 - (1/$a))", "\frac{1}{1 - \frac{1}{$a}}", "\frac{1}{1-x}",
 	   "$b" ],
 );
 
@@ -90,14 +90,14 @@ Context()->texStrings;
 BEGIN_SOLUTION
 The series
 \[$s0\]
-is the series for \($f0\) with \(x\) replaced by \($x0\), so the
-series converges to \($v0\).
+is the series for \($f0\) with \(x\) replaced by \($x0 ,\) so the
+series converges to \($v0 .\)
 
 $PAR
 The series
 \[$s1\]
-is the series for \($f1\) with \(x\) replaced by \($x1\), so the
-series converges to \($v1\).
+is the series for \($f1\) with \(x\) replaced by \($x1 ,\) so the
+series converges to \($v1 .\)
 END_SOLUTION
 Context()->normalStrings;
 
