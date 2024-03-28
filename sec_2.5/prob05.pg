@@ -51,7 +51,7 @@ one solution of
 \(y = \) \{ans_rule(80)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-$BITALIC $BBOLD Note: $EBOLD The method finds a specific solution, not the general one. Do not include the complementary solution in your answer.$EITALIC
+$BITALIC $BBOLD Note: $EBOLD The method finds a particular solution, not the general one. Do not include the complementary solution in your answer.$EITALIC
 
 $PAR
 $BITALIC $BBOLD Book: $EBOLD
