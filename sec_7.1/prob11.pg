@@ -27,9 +27,9 @@ Context("Numeric");
 BEGIN_TEXT
 
 The Taylor 
-series for \( f(x) = \ln(\sec(x)) \) at \( a = 0 \)
+series for \( f(x) = \ln(\sec(x)) \) at \( x_0 = 0 \)
 is \( \displaystyle \sum_{k=0}^\infty
-a_k\, x^k. \)
+a_k\, x^k . \)
 $PAR
 Find the following coefficients.
 
