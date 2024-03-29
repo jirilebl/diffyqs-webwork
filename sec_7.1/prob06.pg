@@ -43,7 +43,7 @@ $b1 = 1/$a;
 BEGIN_TEXT
 
 The function \( f(x) = \frac{$a}{(1 + $a x)^2} \) is represented as a power series:
-\[ f(x) = \sum_{k=0}^\infty a_k x^k \]
+\[ f(x) = \sum_{k=0}^\infty a_k x^k . \]
 Find the first few coefficients in the power series:
 $PAR
 \( a_0 = \) \{ans_rule(20)\}
