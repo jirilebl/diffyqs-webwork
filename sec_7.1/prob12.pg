@@ -1,0 +1,92 @@
+##DESCRIPTION
+## Compute derivative of a power series, just first few terms
+##ENDDESCRIPTION
+
+## DBsubject(Calculus - single variable)
+## DBchapter(Infinite sequences and series)
+## DBsection(Power series)
+## Author(Jiri Lebl)
+## Institution(Oklahoma State University)
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('7.1')
+## Problem1('')
+## MO(1)
+## KEYWORDS('power series', 'derivative')
+
+#####################################################
+
+DOCUMENT();
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGML.pl",
+  "PGcourse.pl"
+);
+
+#####################################################
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+Context("Numeric");
+
+$c0 = random(2,9,1)*non_zero_random(-1,1,1);
+$c1 = random(2,9,1)*non_zero_random(-1,1,1);
+$c2 = random(2,9,1)*non_zero_random(-1,1,1);
+$c3 = random(2,9,1)*non_zero_random(-1,1,1);
+$c4 = random(2,9,1)*non_zero_random(-1,1,1);
+$c5 = random(2,9,1)*non_zero_random(-1,1,1);
+
+#####################################################
+
+BEGIN_PGML
+Suppose
+[```
+\frac{d}{dx} \left[ \sum_{n=0}^\infty c_n x^n \right] = \sum_{n=0}^\infty a_n x^n ,
+```]
+where
+[```
+c_0 = [$c0] ,
+c_1 = [$c1] ,
+c_2 = [$c2] ,
+c_3 = [$c3] ,
+c_4 = [$c4] ,
+c_5 = [$c5] .
+```]
+
+Compute:
+
+[`a_0 = `]
+[___________]{"$c1"}{15}
+[@ AnswerFormatHelp("numbers") @]*
+
+[`a_1 = `]
+[___________]{"2*$c2"}{15}
+[@ AnswerFormatHelp("numbers") @]*
+
+[`a_2 = `]
+[___________]{"3*$c3"}{15}
+[@ AnswerFormatHelp("numbers") @]*
+
+[`a_3 = `]
+[___________]{"4*$c4"}{15}
+[@ AnswerFormatHelp("numbers") @]*
+
+[`a_4 = `]
+[___________]{"5*$c5"}{15}
+[@ AnswerFormatHelp("numbers") @]*
+
+_*Book:*
+[@ htmlLink("https://www.jirka.org/diffyqs/html/powerseries_section.html", "Section 7.1 of Notes on Diffy Qs") @]*_
+END_PGML
+
+#####################################################
+
+COMMENT("Compute derivative of a power series, just first few terms");
+
+ENDDOCUMENT();
+
