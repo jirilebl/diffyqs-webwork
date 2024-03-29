@@ -1,8 +1,20 @@
-# Evaluate Taylor series by recognizing them
+##DESCRIPTION
+## Evaluate Taylor series by recognizing them
+##ENDDESCRIPTION
 
+## DBsubject(Calculus - single variable)
+## DBchapter(Infinite sequences and series)
+## DBsection(Power series)
 ## Institution(University of Michigan)
 ## Author(Gavin LaRose)
-## KEYWORDS('calculus', 'integral', 'taylor series', 'series')
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('7.1')
+## Problem1('')
+## MO(1)
+## KEYWORDS('Taylor series', 'power series')
 
 #####################################################
 
@@ -100,5 +112,9 @@ is the series for \($f1\) with \(x\) replaced by \($x1 ,\) so the
 series converges to \($v1 .\)
 END_SOLUTION
 Context()->normalStrings;
+
+#####################################################
+
+COMMENT("Evaluate Taylor series by recognizing them");
 
 ENDDOCUMENT();

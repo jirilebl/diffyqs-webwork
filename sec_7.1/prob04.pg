@@ -1,8 +1,20 @@
-# Interval of covergence for power series
+##DESCRIPTION
+## Match power series with interval of convergence
+##ENDDESCRIPTION
 
+## DBsubject(Calculus - single variable)
+## DBchapter(Infinite sequences and series)
+## DBsection(Power series)
 ## Institution(OSU)
 ## Author(Utah ww group)
-## KEYWORDS('calculus','Series', 'Power', 'Interval', 'Convergence','power series','interval of convergence')
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('7.1')
+## Problem1('')
+## MO(1)
+## KEYWORDS('power series', 'interval of convergence', 'radius of convergence')
 
 #############################################################
 
@@ -56,10 +68,8 @@ $ansStr4 =EV2(   " \( [ \frac{-1}{$b} ,\frac{1}{$b} ] \) " );
 #############################################################
 
 BEGIN_TEXT
-
 Match each of the power series with its interval of convergence.
 $PAR
-
 END_TEXT
 
 TEXT(
@@ -80,6 +90,8 @@ ANS(str_cmp([@ALPHABET[&invert(@shuffle)]], filters=>["remove_whitespace","ignor
      ##the correct answers are obtained by applying
      ##the inverse (adjoint) permutation to the captions.
 
+#########################################################
+
+COMMENT("Match power series with interval of convergence");
 
 ENDDOCUMENT();
-

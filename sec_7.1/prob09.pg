@@ -11,7 +11,7 @@
 ## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
 ## AuthorText1('Jiri Lebl')
 ## EditionText1('6')
-## Section1('7.2')
+## Section1('7.1')
 ## Problem1('')
 ## MO(1)
 ## KEYWORDS('power series', 'polynomial')
@@ -66,5 +66,7 @@ _*Book:*
 END_PGML
 
 #################################################
+
+COMMENT("Write a polynomial as a series around another point than 0");
 
 ENDDOCUMENT();

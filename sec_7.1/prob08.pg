@@ -1,7 +1,19 @@
-#  Series: power series Manipulation
+##DESCRIPTION
+## Power series multiplication, first few terms
+##ENDDESCRIPTION
 
+## DBsubject(Calculus - single variable)
+## DBchapter(Infinite sequences and series)
+## DBsection(Power series)
 ## Institution(Univeristy of Utah)
 ## Author(Utah ww group)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('7.1')
+## Problem1('')
+## MO(1)
 ## KEYWORDS('power series')
 
 #################################################
@@ -87,5 +99,9 @@ ANS(Compute($ans[0])->cmp());
 ANS(Compute($ans[1])->cmp());
 ANS(Compute($ans[2])->cmp());
 ANS(Compute($ans[3])->cmp());
+
+#################################################
+
+COMMENT("Power series multiplication, first few terms");
 
 ENDDOCUMENT();

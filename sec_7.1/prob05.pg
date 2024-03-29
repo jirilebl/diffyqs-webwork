@@ -1,6 +1,20 @@
-# Find the first few coefficients of a power series
+##DESCRIPTION
+## Finding power series for a rational function (first few terms) and find radius of convergence.
+##ENDDESCRIPTION
 
-## KEYWORDS('Power Series', 'Representation of a function as a power series')
+## DBsubject(Calculus - single variable)
+## DBchapter(Infinite sequences and series)
+## DBsection(Power series)
+## Institution(Unknown)
+## Author(Unknown)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('7.1')
+## Problem1('')
+## MO(1)
+## KEYWORDS('Taylor series', 'power series', 'radius of convergence')
 
 #################################################
 
@@ -75,5 +89,9 @@ ANS(Compute("-$a * ($b1)^3")->cmp());
 ANS(Compute("-$a * ($b1)^4")->cmp());
 ANS(Compute("-$a * ($b1)^5")->cmp());
 ANS(Compute("$b")->cmp());
+
+#################################################
+
+COMMENT("Finding power series for a rational function (first few terms) and find radius of convergence.");
 
 ENDDOCUMENT();

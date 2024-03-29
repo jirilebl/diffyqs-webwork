@@ -1,6 +1,19 @@
-# Interval of convergence of a power series
+##DESCRIPTION
+## Compute the radius of convergence of a power series
+##ENDDESCRIPTION
 
+## DBsubject(Calculus - single variable)
+## DBchapter(Infinite sequences and series)
+## DBsection(Power series)
 ## Institution(Dartmouth)
+## Author(Unknown)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('7.1')
+## Problem1('')
+## MO(1)
 ## KEYWORDS('power series', 'radius of convergence')
 
 #########################################################
@@ -43,5 +56,9 @@ END_TEXT
 #########################################################
 
 ANS(Compute('infinity')->cmp);
+
+#########################################################
+
+COMMENT("Compute the radius of convergence of a power series");
 
 ENDDOCUMENT();
