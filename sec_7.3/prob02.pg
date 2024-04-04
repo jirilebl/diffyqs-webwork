@@ -1,7 +1,7 @@
 # Classify singular points of a differential equation
 
-## Institution(Alfred University)
-## Author(Darwyn Cook)
+## Institution(Alfred University, Oklahoma State University)
+## Author(Darwyn Cook, Jiri Lebl)
 ## KEYWORDS('differential equation', 'classify', 'singular', 'regular', 'Frobenius')
 
 ########################################################################
@@ -34,7 +34,7 @@ Context()->variables->are("x"=>"Real","y"=>"Real","y'"=>"Real","y''"=>"Real");
 
 $a = random(2,9);
 $b = random(3,7);
-$diffeqn = Formula("(x^2-($a)^2)/x*y''+$b*y'+y")->reduce;
+$diffeqn = Formula("(x^2-($a)^2)/(x^2+($a)^2)*y''+$b*y'+y")->reduce;
 
 $singular = List($a,-$a); 
 
@@ -46,21 +46,16 @@ $singular = List($a,-$a);
 
 Context()->texStrings;
 BEGIN_TEXT
-Write the differential equation \($diffeqn=0\) in standard form:
+List the singular points of the differential equation \($diffeqn=0\)
 $PAR
-$BCENTER
-\(y^{\prime\prime} +\)
-\{ ans_rule(20) \}
-\( y^{\prime} +  \)
-\{ ans_rule(20) \}
-\( y = 0 \)
-$SPACE \{ AnswerFormatHelp("formulas") \}
-$ECENTER
-$BR
-List the singular points of the differential equation:
-$BR
 \(x = \) \{$singular->ans_rule\}
 \{ AnswerFormatHelp("numbers") \}
+$PAR
+Now write the equation in the form
+$BCENTER
+\(y^{\prime\prime}+\)\{ans_rule(5)\}\(y^{\prime} + \) \{ans_rule(5)\}\(y = 0\)
+$SPACE \{ AnswerFormatHelp("formulas") \}
+$ECENTER
 
 $PAR
 $BITALIC $BBOLD Book: $EBOLD
@@ -74,9 +69,9 @@ Context()->normalStrings;
 #  Answers
 #
 #
-ANS(Compute("($b*x)/(x^2-($a)^2)")->cmp);
-ANS(Compute("x/(x^2-($a)^2)")->cmp);
 ANS($singular->cmp());
+ANS(Compute("($b*(x^2+($a)^2))/(x^2-($a)^2)")->cmp);
+ANS(Compute("(x^2+($a)^2)/(x^2-($a)^2)")->cmp);
 
 
 ENDDOCUMENT();        

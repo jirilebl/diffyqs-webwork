@@ -1,7 +1,7 @@
 # Classify singular points of a differential equation
 
-## Institution(Alfred University)
-## Author(Darwyn Cook)
+## Institution(Alfred University, Oklahoma State University)
+## Author(Darwyn Cook, Jiri Lebl)
 ## KEYWORDS('differential equation', 'classify', 'singular', 'regular', 'Frobenius')
 
 ########################################################################
@@ -37,17 +37,16 @@ $singular = List(0);
 
 Context()->texStrings;
 BEGIN_TEXT
-Write the differential equation \($diffeqn=0\) in standard form:
+List the singular points of the differential equation \($diffeqn=0\)
 $PAR
+\(x = \) \{$singular->ans_rule\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+Now write the equation in the form
 $BCENTER
 \(y^{\prime\prime}+\)\{ans_rule(5)\}\(y^{\prime} + \) \{ans_rule(5)\}\(y = 0\)
 $SPACE \{ AnswerFormatHelp("formulas") \}
 $ECENTER
-$PAR
-List the singular points of the differential equation:
-$PAR
-\(x = \) \{$singular->ans_rule\}
-\{ AnswerFormatHelp("numbers") \}
 
 $PAR
 $BITALIC $BBOLD Book: $EBOLD
@@ -59,8 +58,8 @@ Context()->normalStrings;
 ##############################################################
 #  Answers
 
+ANS($singular->cmp());
 ANS(Compute("1")->cmp);
 ANS(Compute("1/x")->cmp);
-ANS($singular->cmp());
 
 ENDDOCUMENT();        
