@@ -50,9 +50,9 @@ $ans2 = Compute($b);
 
 Context()->texStrings;
 BEGIN_TEXT
-
 Find the general solution of the differential equation
-\[ x^2y'' + xy' + ($a x^2-$bb) y = 0 \;. \]
+\[ x^2y'' + xy' + ($a x^2-$bb) y = 0 \]
+in a neighborhood of the point \(x=0 .\)
 $BR
 Answer:
   \( \displaystyle y = c \sum_{k=m}^\infty a_k x^k \;, \)
