@@ -1,12 +1,12 @@
 ##DESCRIPTION
-## Solve a linear second order ODE IVP via power series: give first 7 coefficients
+## Find general solution to a linear second order ODE IVP via power series at a point other than 0: give first 6 coefficients
 ##ENDDESCRIPTION
 
 ## DBsubject(Differential equations)
 ## DBchapter(Series solutions)
 ## DBsection(Ordinary point)
-## Institution(CSUN)
-## Author(David Protas)
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
 ## Level(4)
 ## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
 ## AuthorText1('Jiri Lebl')
@@ -22,6 +22,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
+  "parserPopUp.pl",
   "AnswerFormatHelp.pl",
   "PGcourse.pl"
 );
@@ -32,24 +33,55 @@ TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
 Context("Numeric");
+Context()->variables->are(A=>"Real",B=>"Real");
 
-$a = random(1, 5);
-$b = random(2, 5);
-$c = random(2, 12);
+do {
+  $a = random(2, 8, 1);
+  $b = random(2, 8, 1);
+} while ($a == $b);
+
+$popup1 = PopUp(
+  ["?","Ordinary","Singular"],
+  "Singular",
+);
+
+$popup2 = PopUp(
+  ["?","Ordinary","Singular"],
+  "Ordinary",
+);
+
+$a0 = Compute("A");
+$a1 = Compute("B");
+$a2 = Compute("-$a*A/(2*$b)");
+$a3 = Compute("(-2*1*$a2-$a*$a1)/($b*3*2)");
+$a4 = Compute("(-3*2*$a3-$a*$a2)/($b*4*3)");
+$a5 = Compute("(-4*3*$a4-$a*$a3)/($b*5*4)");
 
 ##########################################################
 
 Context()->texStrings;
 BEGIN_TEXT
-Consider the initial value problem
+Consider the equation
 \[
-($a + x^2)y'' + $b y = 0, \qquad y(0) = 0, \qquad y'(0) = $c .
+x y'' + $a y = 0 .
 \]
-If the solution is
+Is \(x=0\) an ordinary or a singular point?
+\{ $popup1->menu() \}
+$PAR
+Is \(x=$b\) an ordinary or a singular point?
+\{ $popup2->menu() \}
+$PAR
+Now consider the initial value problem
 \[
-y = \sum_{k=0}^\infty a_k x^k ,
+x y'' + $a y = 0, \qquad y($b) = A, \qquad y'($b) = B ,
 \]
-enter the following coefficients:
+where \(A\) and \(B\) are some unknown constants.
+Try a solution of the form
+\[
+y = \sum_{k=0}^\infty a_k (x-$b)^k .
+\]
+Find the following coefficients (they should be functions of \(A\)
+and \(B\))
 $PAR
 \( a_0 = \)  \{ans_rule(15)\}
 \{ AnswerFormatHelp("numbers") \}
@@ -68,12 +100,6 @@ $PAR
 $PAR
 \( a_5 = \)  \{ans_rule(15)\}
 \{ AnswerFormatHelp("numbers") \}
-$PAR
-\( a_6 = \)  \{ans_rule(15)\}
-\{ AnswerFormatHelp("numbers") \}
-$PAR
-\( a_7 = \)  \{ans_rule(15)\}
-\{ AnswerFormatHelp("numbers") \}
 
 $PAR
 $BITALIC $BBOLD Book: $EBOLD
@@ -84,17 +110,18 @@ Context()->normalStrings;
 
 ##########################################################
 
-ANS(Compute("0")->cmp());
-ANS(Compute("$c")->cmp());
-ANS(Compute("0")->cmp());
-ANS(Compute("-$b*$c/(6*$a)")->cmp());
-ANS(Compute("0")->cmp());
-ANS(Compute("$b($b+6)*$c/(6*20*$a^2)")->cmp());
-ANS(Compute("0")->cmp());
-ANS(Compute("-$b*($b+6)*($b+20)*$c/(6*20*42*$a^3)")->cmp());
+ANS( $popup1->cmp() );
+ANS( $popup2->cmp() );
+
+ANS( $a0->cmp() );
+ANS( $a1->cmp() );
+ANS( $a2->cmp() );
+ANS( $a3->cmp() );
+ANS( $a4->cmp() );
+ANS( $a5->cmp() );
 
 ##########################################################
 
-COMMENT("Solve a linear second order ODE IVP via power series: give first 7 coefficients");
+COMMENT("Find general solution to a linear second order ODE IVP via power series at a point other than 0: give first 6 coefficients");
 
 ENDDOCUMENT();
