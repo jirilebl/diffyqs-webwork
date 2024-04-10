@@ -52,7 +52,7 @@ What positive angular frequency [`\omega`] leads to maximum practical resonance?
 [` \omega = `] [____________]{"$omega"}{25} [@ AnswerFormatHelp("numbers") @]*
 
 What is the maximum displacement of the mass in the steady state
-solution when the we are at practical resonance?
+solution when [`\omega`] corresponds to the practical resonance?
 
 [` C(\omega) = `] [___________]{"$F/($mass*sqrt( (2*$omega*$p)^2 + ($omega0^2-$omega^2)^2 ))"}{60}
 [@ AnswerFormatHelp("numbers") @]*
