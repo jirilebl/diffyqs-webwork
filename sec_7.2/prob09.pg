@@ -102,6 +102,9 @@ $PAR
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
+$BITALIC $BBOLD Hint: $EBOLD \(x = (x-$b) + $b .\)
+
+$PAR
 $BITALIC $BBOLD Book: $EBOLD
 \{ htmlLink("https://www.jirka.org/diffyqs/html/seriessols_section.html", "Section 7.2 of Notes on Diffy Qs") \}
 $EITALIC
