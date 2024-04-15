@@ -58,6 +58,8 @@ $PAR
 \{ $mc->print_q() \}
 $BR
 \{ $mc->print_a() \}
+$BR
+(By ${BITALIC}piecewise continuous${EITALIC}, we mean it may have jump discontinuities.)
 
 $PAR
 Is \( f(t) \) of exponential order on \( 0\leq t < \infty \)?
