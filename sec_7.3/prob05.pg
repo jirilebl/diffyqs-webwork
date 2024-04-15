@@ -1,4 +1,4 @@
-# Find series solution to Bessel-like differential equation
+# Find series solution to Bessel-like differential equation (students find difficult)
 
 ## Institution(Berkeley)
 ## Author(Paul Vojta)
@@ -52,8 +52,8 @@ Context()->texStrings;
 BEGIN_TEXT
 Find the general solution of the differential equation
 \[ x^2y'' + xy' + ($a x^2-$bb) y = 0 \]
-in a neighborhood of the point \(x=0 .\)
-$BR
+in an interval containing the point \(x=0\) as a power series.
+$PAR
 Answer:
   \( \displaystyle y = c \sum_{k=m}^\infty a_k x^k \;, \)
 $BR
@@ -74,7 +74,7 @@ $BR
 $SPACE$SPACE
 and \(c\) is an arbitrary constant.
 $PAR
-Choose your answer so that \( a_m = 1 \).
+Choose your answer so that \( a_m = 1 . \)
 $PAR
 $BITALIC${BBOLD}Note:$EBOLD Because the coefficient of \( y'' \) is zero when \( x=0 , \)
 you will not find two linearly independent solutions of the differential
