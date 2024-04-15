@@ -59,7 +59,7 @@ $BR
 \{ $mc->print_a() \}
 
 $PAR
-Is \( f(t) \) exponentially bounded on \( 0\leq t < \infty \)?
+Is \( f(t) \) of exponential order on \( 0\leq t < \infty \)?
 \{ $popup1-> menu() \}
 
 $PAR

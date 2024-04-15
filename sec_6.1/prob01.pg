@@ -62,7 +62,7 @@ $Fprime = $F->D('s');
 Context()->texStrings;
 BEGIN_TEXT
 Find the Laplace transform
-\( F(s) = {\mathcal L}\left\lbrace f(t) \right\rbrace \) of the function \( f(t) = $f \) defined for \( t \geq 0 \).
+\( F(s) = {\mathcal L}\left\lbrace f(t) \right\rbrace \) of the function \( f(t) = $f \) defined for \( t \geq 0 . \)
 $PAR
 \(F(s) = \) \{$F->ans_rule(50)\}
 \{ AnswerFormatHelp("formulas") \}

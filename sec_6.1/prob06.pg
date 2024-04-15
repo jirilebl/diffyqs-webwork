@@ -81,6 +81,7 @@ $PAR
 $PAR
 which gives
 $PAR
+\(\mathcal{L} \lbrace $f \rbrace = \)
 \{$Ftranslate->ans_rule(40)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR

@@ -60,11 +60,11 @@ $BR
 \{ $mc->print_a() \}
 
 $PAR
-Is \( f(t) \) exponentially bounded on \( 0\leq t < \infty \)?
+Is \( f(t) \) of exponential order on \( 0\leq t < \infty \)?
 \{ $popup1-> menu() \}
 
 $PAR
-Does the Laplace transform of \( f(t) \) exist (on some domain)?
+Does the Laplace transform of \( f(t) \) exist (on some domain, i.e., for some values of \(s\))?
 \{ $popup2-> menu() \}
 $PAR
 $BITALIC $BBOLD Book: $EBOLD
