@@ -46,8 +46,8 @@ do {
 } while ($a == $b || $b == $c || $a == $c);
 
 
-$Fs = Formula("(2*$a*$b*s+$a*($b^2+$c^2))/(s^3+2*$b*s^2+($c^2)*s)")->reduce;
-$ans = Compute("$a-$a*e^(-$b*t)*cos($c*t) + (($a*$b)/($csq))*e^(-$b*t)*sin($c*t)");
+$Fs = Compute("(2*$a*$b*s+$a*($b^2+$c^2))/(s^3+2*$b*s^2+($c^2)*s)")->reduce;
+$ans = Compute("$a-$a*e^(-$b*t)*cos($c*t) + (($a*$b)/($c^2))*e^(-$b*t)*sin($c*t)");
 
 #############################
 #  Main text
