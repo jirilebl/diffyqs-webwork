@@ -56,7 +56,7 @@ BEGIN_TEXT
 Consider the problem:
 \[
 ax'' + bx' + cx = f(t), \quad x(0) = 0, \quad x'(0) = 0, \]
-for time \( 0 < t < \infty \),
+for time \( 0 \leq t < \infty \),
 where \( a, b, c \) are constants and \( f(t) \) is a known function.
 We view this problem as a linear system, where \( f(t) \) is
 a known input and the solution \( x(t) \) is the output.
