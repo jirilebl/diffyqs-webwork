@@ -69,7 +69,7 @@ $radio1 = RadioButtons(["\(a_k = 0\) for all even \(k\)",
 		        "\(a_k = 0\) for all odd \(k\)",
 		        "\(a_k\) is not zero for any \(k\)",
 		        "None of the above"],
-		       "\(a_k = 0\) for all even \(k\)");
+		       "\(a_k = 0\) for all odd \(k\)");
 
 ##############################################################
 #
@@ -106,6 +106,7 @@ What can you say about the coefficients \(a_k\):
 $BR
 \{ $radio1->buttons \}.
 
+$PAR
 Enter the following coefficients:
 $PAR
 \( a_2 = \)  \{ans_rule(15)\}
