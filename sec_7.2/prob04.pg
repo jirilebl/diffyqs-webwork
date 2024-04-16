@@ -5,8 +5,8 @@
 ## DBsubject(Differential equations)
 ## DBchapter(Series solutions)
 ## DBsection(Ordinary point)
-## Institution(Berkeley)
-## Author(Paul Vojta)
+## Institution(Berkeley, Oklahoma State University)
+## Author(Paul Vojta, Jiri Lebl)
 ## Level(4)
 ## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
 ## AuthorText1('Jiri Lebl')
@@ -24,7 +24,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGpolynomialmacros.pl",
+  "parserRadioButtons.pl",
   "PGcourse.pl"
 );
 
@@ -37,12 +37,8 @@ TEXT(beginproblem());
 
 Context("Numeric");
 
-Context()->variables->are(n => 'Real');
-
-$n1 = random(5, 10);
-$n2 = random($n1 + 1, 20);
-
-@testpts = [[1], [2], [3], [4], [$n1], [$n2]];
+Context()->variables->are(n => 'Real',
+                          k => 'Real');
 
 do {
   $a = random(2, 5);
@@ -56,8 +52,24 @@ until $c != 0;
 
 $prettyc = $c < 0 ? $c : "+$c";
 
-$feven = Formula("$anstop/($ansbot($a)^n)")->with(test_points => @testpts);
-$fodd = Formula("0")->with(test_points => @testpts);
+$feven = Formula("$anstop/($ansbot($a)^n)");
+
+$a0 = Compute("1");
+$a1 = Compute("0");
+$a2 = $feven->eval(x=>"1");
+$a3 = Compute("0");
+$a4 = $feven->eval(x=>"2");
+$a5 = Compute("0");
+$a6 = $feven->eval(x=>"3");
+
+$rkp1 = Compute("0");
+$rk = Formula("((k-1)*k+($b)*k+$c)/(($a)*(k+1)*(k+2))");
+
+$radio1 = RadioButtons(["\(a_k = 0\) for all even \(k\)",
+		        "\(a_k = 0\) for all odd \(k\)",
+		        "\(a_k\) is not zero for any \(k\)",
+		        "None of the above"],
+		       "\(a_k = 0\) for all even \(k\)");
 
 ##############################################################
 #
@@ -68,13 +80,53 @@ Context()->texStrings;
 BEGIN_TEXT
 Use power series to solve the initial-value problem
 \[
-(x^2-$a)y'' + $b xy' $prettyc y = 0 , \qquad y(0) = 1, \qquad y'(0) = 0.
+(x^2-$a)y'' + $b xy' $prettyc y = 0 , \qquad y(0) = 1, \qquad y'(0) = 0,
 \]
+using a power series
+\[
+y=\sum_{k=0}^\infty a_k x^k .
+\]
+#$PAR
+#  \( \displaystyle y = \sum_{n=0}^\infty \) \{$feven->ans_rule\} \(x^{2n}\)
+#  \( \displaystyle + \sum_{n=0}^\infty \) \{$fodd->ans_rule\} \(x^{2n+1}\) .
+#$SPACE
+#\{ AnswerFormatHelp("formulas") \}
+The initial conditions imply that
 $PAR
-  \( \displaystyle y = \sum_{n=0}^\infty \) \{$feven->ans_rule\} \(x^{2n}\)
-  \( \displaystyle + \sum_{n=0}^\infty \) \{$fodd->ans_rule\} \(x^{2n+1}\) .
+\( a_0 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( a_1 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
+
+$PAR
+You find the recurrence relation for \(k \geq 2\):
+$PAR
+\( a_{k+2} = \)  \{ans_rule(20)\} \( a_{k+1}  + \)\{ans_rule(20)\} \( a_k \)
 $SPACE
 \{ AnswerFormatHelp("formulas") \}
+
+$PAR
+What can you say about the coefficients \(a_k\):
+$BR
+\{ $radio1->buttons \}.
+
+Enter the following coefficients:
+$PAR
+\( a_2 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( a_3 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( a_4 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( a_5 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( a_6 = \)  \{ans_rule(15)\}
+\{ AnswerFormatHelp("numbers") \}
 
 $PAR
 $BITALIC $BBOLD Book: $EBOLD
@@ -91,8 +143,16 @@ Context()->normalStrings;
 
 $showPartialCorrectAnswers = 1;
 
-ANS( $feven->cmp );
-ANS( $fodd->cmp );
+ANS( $a0->cmp );
+ANS( $a1->cmp );
+ANS( $rkp1->cmp );
+ANS( $rk->cmp );
+ANS( $radio1->cmp );
+ANS( $a2->cmp );
+ANS( $a3->cmp );
+ANS( $a4->cmp );
+ANS( $a5->cmp );
+ANS( $a6->cmp );
 
 ##############################################################
 

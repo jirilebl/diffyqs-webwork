@@ -1,10 +1,13 @@
-# Differential Equations: Laplace Transforms
+# Inverse Laplace transform
 
-## Institution(ASU)
+## Institution(Fort Lewis College)
+## KEYWORDS('Laplace transform')
 
-######################################################
 
-DOCUMENT();
+##############################
+#  Initialization
+
+DOCUMENT(); 
 
 loadMacros(
   "PGstandard.pl",
@@ -14,65 +17,56 @@ loadMacros(
   "PGcourse.pl"
 );
 
-######################################################
-
 TEXT(beginproblem());
-$showPartialCorrectAnswers = 1;
+
+
+#############################
+#  Setup
 
 Context("Numeric");
+Context()->variables->are(
+t=>"Real",
+s=>"Real"
+);
 
-Context()->variables->are(s => "Real",
-                          t => "Real");
-
-$r= random(2,4,1);
-$c = $r**2;
-$D = pi/(pi**2 - $c);
-
-# A random function for checking the expression
+# A rather random function for heaviside, but it will do.
 parserFunction("u(t)" => "1.5 * cos(e*t) + 5*pi/3 + arctan(t)");
 
-$ans1= Formula("pi*(1+exp(-s))/((s^2+pi^2)*(s^2+$c))");
-$ans2= Formula("$D*(sin($r*t)/$r-sin(pi*t)/pi + u(t-1)*(sin($r*(t-1))/$r-sin(pi*(t-1))/pi))");
-$func = "\begin{cases}
-            \sin(\pi t), & 0 \leq t < 1 \cr
-            0, & 1 \leq t 
-             \end{cases}";
+$a = random(1, 9, 1);
+do { $b = random(1, 9, 1); } until ( $b != $a );
 
-######################################################
+$Fs = Formula("e^(-$a*s)*$b/(s^2+$b^2)")->reduce;
 
+$answer = Compute("sin($b(t-$a))*u(t-$a)")->reduce;
+
+
+#############################
+#  Main text
+
+Context()->texStrings;
 BEGIN_TEXT
 
-Take the Laplace transform of the following initial value  and 
-solve for \(X(s) = \mathcal{L}$LBRACE x(t) $RBRACE \):
-\[
-x''  + {$c} x= $func, \quad x(0)=0, \quad x'(0)=0 .
-\]
-\(X(s)= \) \{ans_rule(50) \}
-\{ AnswerFormatHelp("formulas") \}
-$PAR
-$BITALIC $BBOLD Hint: $EBOLD First write the right hand side of the ODE in terms of the Heaviside function. $EITALIC
-$PAR
-Now find the inverse transform to find
-$PAR
-\(x(t) = \) \{ans_rule(50) \}
-\{ AnswerFormatHelp("formulas") \}
-$PAR
-$BITALIC Use \(u(t-a)\) for the Heaviside function shifted \(a\) units horizontaly. $EITALIC
-$PAR
-$BBOLD Note: $EBOLD
-$PAR
-\(\displaystyle \frac{\pi}{(s^2+\pi^2)(s^2+$c)} = 
-\frac{\pi}{\pi^2-$c}\left( \frac{1}{s^2+$c} - \frac{1}{s^2+\pi^2}\right)\)
+Find the inverse Laplace transform \( f(t) = {\mathcal L}^{-1} \left\lbrace F(s) \right\rbrace \) of the function \( \displaystyle F(s) = $Fs \).
 
+$PAR
+\( \displaystyle f(t) = {\mathcal L}^{-1} \left\lbrace $Fs \right\rbrace = \)
+\{ ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+$BITALIC $BBOLD Note: $EBOLD Use \(u(t)\) for the Heaviside function. $EITALIC
 $PAR
 $BITALIC $BBOLD Book: $EBOLD
 \{ htmlLink("https://www.jirka.org/diffyqs/html/transformsofders_section.html", "Section 6.2 of Notes on Diffy Qs") \}
 $EITALIC
 END_TEXT
+Context()->normalStrings;
 
-######################################################
 
-ANS($ans1->cmp());
-ANS($ans2->cmp());
+##############################
+#  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $answer->cmp() );
 
 ENDDOCUMENT();

@@ -2,7 +2,7 @@
 
 ## Institution(ASU)
 
-################################################
+######################################################
 
 DOCUMENT();
 
@@ -10,80 +10,69 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGgraphmacros.pl",
+  "parserFunction.pl",
   "PGcourse.pl"
 );
 
-################################################
+######################################################
 
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
 Context("Numeric");
-Context()->variables->are(s=>'Real');
 
-$r1 = random(-9,-6,1);
-$r2= random(1,5,1);
-$b = $r1 + $r2;
-$nb = -$b;
-$c = $r1*$r2;
-$nc=-$c;
+Context()->variables->are(s => "Real",
+                          t => "Real");
 
-$ans5 = Compute("(1-exp(-s))/(s*(1-exp(-2*s))*(s^2-$nb*s-$nc))")->reduce;
+$r= random(2,4,1);
+$c = $r**2;
+$D = pi/(pi**2 - $c);
 
-$graph3 = init_graph(-1,-3,5,3, 'axes'=>[0,0],'grid'=>[6,6]);
-$f1 = "1 for x in <0,1> using color:blue and weight:3";
-$f2 = "0 for x in <1,2> using color:blue and weight:3";
-$f3 = "1 for x in <2,3> using color:blue and weight:3";
-$f4 = "0 for x in <3,4> using color:blue and weight:3";
-$f5 = "1 for x in <4,5> using color:blue and weight:3";
-plot_functions($graph3, $f1);
-plot_functions($graph3, $f2);
-plot_functions($graph3, $f3);
-plot_functions($graph3, $f4);
-plot_functions($graph3, $f5);
-$g = image(insertGraph($graph3),width=>200,height=>200,tex_size=>800);
+# A random function for checking the expression
+parserFunction("u(t)" => "1.5 * cos(e*t) + 5*pi/3 + arctan(t)");
 
+$ans1= Formula("pi*(1+exp(-s))/((s^2+pi^2)*(s^2+$c))");
+$ans2= Formula("$D*(sin($r*t)/$r-sin(pi*t)/pi + u(t-1)*(sin($r*(t-1))/$r-sin(pi*(t-1))/pi))");
 $func = "\begin{cases}
-            1, & 0 \leq t < 1 \cr
-            0, & 1 \leq t < 2
+            \sin(\pi t), & 0 \leq t < 1 \cr
+            0, & 1 \leq t 
              \end{cases}";
 
-################################################
+######################################################
 
-Context()->texStrings;
 BEGIN_TEXT
 
-Take the Laplace transform of the following initial value problem and 
+Take the Laplace transform of the following initial value  and 
 solve for \(X(s) = \mathcal{L}$LBRACE x(t) $RBRACE \):
 \[
-x'' -{$nb} x' - {$nc} x= S(t), \quad x(0)=0, \quad x'(0)=0 ,
+x''  + {$c} x= $func, \quad x(0)=0, \quad x'(0)=0 .
 \]
-where
-\[
-S(t) = $func , \quad S(t+2) = S(t) .
-\]
-
-$PAR
 \(X(s)= \) \{ans_rule(50) \}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-Graph of  \( S(t) \) (a square wave function): 
+$BITALIC $BBOLD Hint: $EBOLD First write the right hand side of the ODE in terms of the Heaviside function. $EITALIC
 $PAR
-$BCENTER
-$g
-$ECENTER
+Now find the inverse transform to find
+$PAR
+\(x(t) = \) \{ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+$BITALIC Use \(u(t-a)\) for the Heaviside function shifted \(a\) units horizontaly. $EITALIC
+$PAR
+$BBOLD Note: $EBOLD
+$PAR
+\(\displaystyle \frac{\pi}{(s^2+\pi^2)(s^2+$c)} = 
+\frac{\pi}{\pi^2-$c}\left( \frac{1}{s^2+$c} - \frac{1}{s^2+\pi^2}\right)\)
 
 $PAR
 $BITALIC $BBOLD Book: $EBOLD
 \{ htmlLink("https://www.jirka.org/diffyqs/html/transformsofders_section.html", "Section 6.2 of Notes on Diffy Qs") \}
 $EITALIC
 END_TEXT
-Context()->normalStrings;
 
-################################################
+######################################################
 
-ANS($ans5->cmp());
+ANS($ans1->cmp());
+ANS($ans2->cmp());
 
 ENDDOCUMENT();
-

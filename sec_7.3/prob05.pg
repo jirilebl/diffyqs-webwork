@@ -1,7 +1,7 @@
-# Find series solution to Bessel-like differential equation (students find difficult)
+# Find series solution to Bessel-like differential equation
 
-## Institution(Berkeley)
-## Author(Paul Vojta)
+## Institution(Berkeley, Oklahoma State University)
+## Author(Paul Vojta, Jiri Lebl)
 ## KEYWORDS('differential equation', 'second order', 'homogeneous', 'series solution')
 
 ##############################################################
@@ -27,11 +27,6 @@ Context("Numeric");
 
 Context()->variables->are(n => 'Real');
 
-$n1 = random(6, 10);
-$n2 = random($n1 + 1, 20);
-
-@testpts = [[2], [3], [4], [5], [$n1], [$n2]];
-
 $a = random(2, 5);
 ($b, $anseven, $ansodd) = @{ list_random(
   [2, "2(-$a)^(n-1)/(2^(2n-2)(n-1)!(n+1)!)", '0'],
@@ -39,9 +34,30 @@ $a = random(2, 5);
   [4, "4!(-$a)^(n-2)/(2^(2n-4)(n-2)!(n+2)!)", '0'] )};
 $bb = $b * $b;
 
-$feven = Formula($anseven)->with(test_points => @testpts);
-$fodd = Formula($ansodd)->with(test_points => @testpts);
-$ans2 = Compute($b);
+$feven = Formula($anseven); #->with(test_points => @testpts);
+$fodd = Formula($ansodd); #->with(test_points => @testpts);
+
+$a0 = Compute("0");
+$a1 = Compute("0");
+if ($b >= 2) {
+  $a2 = $feven->eval(n => "1");
+} else {
+  $a2 = Compute("0");
+}
+if ($b >= 3) {
+  $a3 = $fodd->eval(n => "1");
+} else
+  $a3 = Compute("0");
+}
+if ($b >= 4) {
+  $a4 = $feven->eval(n => "2");
+} else
+  $a4 = Compute("0");
+}
+$a5 = $fodd->eval(n => "2");
+$a6 = $feven->eval(n => "3");
+$a7 = $fodd->eval(n => "3");
+$a8 = $feven->eval(n => "4");
 
 ##############################################################
 #
@@ -50,31 +66,43 @@ $ans2 = Compute($b);
 
 Context()->texStrings;
 BEGIN_TEXT
-Find the general solution of the differential equation
+Find a solution to the differential equation
 \[ x^2y'' + xy' + ($a x^2-$bb) y = 0 \]
-in an interval containing the point \(x=0\) as a power series.
+as a power series at the point \(x=0\) as a power series.
 $PAR
-Answer:
-  \( \displaystyle y = c \sum_{k=m}^\infty a_k x^k \;, \)
-$BR
-where (in terms of \(n\))
-$BR
-$SPACE$SPACE
-\( a_k = \) \{ ans_rule(40) \} if \( k\ge m \) and \( k=2n \) is even,
-$SPACE \{ AnswerFormatHelp("formulas") \}
-$BR
-$SPACE$SPACE
-\( a_k = \) \{ ans_rule(40) \} if \( k\ge m \) and \( k=2n+1 \) is odd,
-$SPACE \{ AnswerFormatHelp("formulas") \}
-$BR
-$SPACE$SPACE
-\( m = \) \{ ans_rule(20) \},
-$SPACE \{ AnswerFormatHelp("numbers") \}
-$BR
-$SPACE$SPACE
-and \(c\) is an arbitrary constant.
+As usual \( \displaystyle y = \sum_{k=0}^\infty a_k x^k . \)
 $PAR
-Choose your answer so that \( a_m = 1 . \)
+Make the first nonzero coefficient in this series be equal to 1.
+
+Write out the first few coefficients:
+$PAR
+\( a_{0} = \) \{ ans_rule(40) \}
+$SPACE \{ AnswerFormatHelp("formulas") \}
+$PAR
+\( a_{1} = \) \{ ans_rule(40) \}
+$SPACE \{ AnswerFormatHelp("formulas") \}
+$PAR
+\( a_{2} = \) \{ ans_rule(40) \}
+$SPACE \{ AnswerFormatHelp("formulas") \}
+$PAR
+\( a_{3} = \) \{ ans_rule(40) \}
+$SPACE \{ AnswerFormatHelp("formulas") \}
+$PAR
+\( a_{4} = \) \{ ans_rule(40) \}
+$SPACE \{ AnswerFormatHelp("formulas") \}
+$PAR
+\( a_{5} = \) \{ ans_rule(40) \}
+$SPACE \{ AnswerFormatHelp("formulas") \}
+$PAR
+\( a_{6} = \) \{ ans_rule(40) \}
+$SPACE \{ AnswerFormatHelp("formulas") \}
+$PAR
+\( a_{7} = \) \{ ans_rule(40) \}
+$SPACE \{ AnswerFormatHelp("formulas") \}
+$PAR
+\( a_{8} = \) \{ ans_rule(40) \}
+$SPACE \{ AnswerFormatHelp("formulas") \}
+
 $PAR
 $BITALIC${BBOLD}Note:$EBOLD Because the coefficient of \( y'' \) is zero when \( x=0 , \)
 you will not find two linearly independent solutions of the differential
@@ -97,10 +125,14 @@ Context()->normalStrings;
 
 $showPartialCorrectAnswers = 1;
 
-ANS( $feven->cmp );
-ANS( $fodd->cmp );
-ANS( $ans2->cmp );
-
-
+ANS( $a0->cmp );
+ANS( $a1->cmp );
+ANS( $a2->cmp );
+ANS( $a3->cmp );
+ANS( $a4->cmp );
+ANS( $a5->cmp );
+ANS( $a6->cmp );
+ANS( $a7->cmp );
+ANS( $a8->cmp );
 
 ENDDOCUMENT();

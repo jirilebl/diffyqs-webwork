@@ -1,79 +1,103 @@
-# Differential Equations: Laplace Transforms
+# Laplace transforms: system transfer functions
 
-## Institution(ASU)
+## Institution(Fort Lewis College)
+## KEYWORDS('Laplace transform')
 
-################################################
 
-DOCUMENT();
+##############################
+#  Initialization
+
+DOCUMENT(); 
 
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "AnswerFormatHelp.pl",
-  "PGgraphmacros.pl",
+  "parserFunction.pl",
   "PGcourse.pl"
 );
 
-################################################
-
 TEXT(beginproblem());
-$showPartialCorrectAnswers = 1;
 
-$r = random(2,6,1);
-$r2 = 2*$r;
-$b = random(14,19,1);
 
+#############################
+#  Setup
+
+$a = random(2,5,1);
+do { $b = random(1,4,1); } until ($b != $a);
+do { $c = random(1,9,1); } until ($c != $a);
+$d = $a*$b - 1;
 
 Context("Numeric");
+Context()->variables->are(
+t=>"Real",
+s=>"Real"
+);
 
-Context()->variables->are('s'=>["Real", limits=>[1,2]]);
+# Redefine the Heaviside function so the answer checker will take either 1 or u(t).
+parserFunction("u(t)" => "1");
 
-$answer = Compute("tanh(s/4)/(s^2*(s^2+$r2*s+$b))")->reduce;
+$ft = Compute("$c*t")->reduce;
+$yt = Compute("$a*(e^(-$b*t) - 1) + t*(e^(-$b*t) + $d)")->reduce;
+
+$Ys = Compute("$a*(1/(s+$b) - 1/s) + 1/(s+$b)^2 + $d/s^2")->reduce;
+$Fs = Compute("$c/s^2")->reduce;
+$Thetas = Compute("$Ys/$Fs")->reduce;
+
+$newyt = Compute("((1 - $a*$b)*e^(-$b*t) - $b*e^(-$b*t)*t + $d*u(t))/$c")->reduce;
 
 
-$graph3 = init_graph(-1,-2,3,2, 'axes'=>[0,0],'grid'=>[4,4]);
-$f1 = "x for x in <0,0.5> using color:blue and weight:3";
-$f2 = "1-x for x in <0.5,1> using color:blue and weight:3";
-$f3 = "x-1 for x in <1,1.5> using color:blue and weight:3";
-$f4 = "2-x for x in <1.5,2> using color:blue and weight:3";
-$f5 = "x-2 for x in <2,2.5> using color:blue and weight:3";
-$f6 = "3-x for x in <2.5,3> using color:blue and weight:3";
-plot_functions($graph3, $f1);
-plot_functions($graph3, $f2);
-plot_functions($graph3, $f3);
-plot_functions($graph3, $f4);
-plot_functions($graph3, $f5);
-plot_functions($graph3, $f6);
-$g = image(insertGraph($graph3),width=>200,height=>200,tex_size=>800);
-
-$func = "\begin{cases}
-            t, & 0 \leq t < 1/2 \cr
-            1-t, & 1/2 \leq t < 1
-             \end{cases}";
-
-################################################
+#############################
+#  Main text
 
 Context()->texStrings;
 BEGIN_TEXT
-Take the Laplace transform of the following initial value problem and 
-solve for \(X(s) = \mathcal{L}$LBRACE x(t) $RBRACE \):
+
+Consider the problem:
 \[
-x'' + {$r2} x' + {$b} x= T(t), \quad x(0)=0, \quad x'(0)=0 ,
-\]
+ax'' + bx' + cx = f(t), \quad x(0) = 0, \quad x'(0) = 0, \]
+for time \( 0 < t < \infty \),
+where \( a, b, c \) are constants and \( f(t) \) is a known function.
+We view this problem as a linear system, where \( f(t) \) is
+a known input and the solution \( x(t) \) is the output.
+Laplace transforms of the input and output functions satisfy the
+relation
+\( X(s) = H(s) F(s), \)
 where
+we call
 \[
-T(t) = $func , \quad T(t+1) = T(t) .
+H(s) = \frac{X(s)}{F(s)} = \frac{1}{as^2+bs+c}
 \]
+the system transfer function.
 
 $PAR
-\(X(s)= \) \{ans_rule(50) \}
+Suppose an input \( f(t) = $ft \), when applied to the linear system above, produces the output \( x(t) = $yt, \ t\geq 0. \) 
+
+$PAR
+Find \( X(s) = {\mathcal L}\left\lbrace x(t) \right\rbrace \) and \( F(s) = {\mathcal L}\left\lbrace f(t) \right\rbrace \).
+$PAR
+\( \displaystyle X(s) = \)
+\{ ans_rule(60) \}
 \{ AnswerFormatHelp("formulas") \}
+
 $PAR
-Graph of  \( T(t) \) (a triangular wave function):
+\( \displaystyle F(s) = \)
+\{ ans_rule(60) \}
+\{ AnswerFormatHelp("formulas") \}
+
 $PAR
-$BCENTER
-$g
-$ECENTER
+Now find the system transfer function, \( H(s) \).
+$PAR
+\( \displaystyle H(s) = \)
+\{ ans_rule(60) \}
+\{ AnswerFormatHelp("formulas") \}
+
+$PAR
+What will be the output if a Heaviside unit step input \( f(t) = u(t) \) is applied to the system?
+$PAR
+New \( \displaystyle x(t) = \)
+\{ ans_rule(60) \}
+\{ AnswerFormatHelp("formulas") \}
 
 $PAR
 $BITALIC $BBOLD Book: $EBOLD
@@ -82,9 +106,15 @@ $EITALIC
 END_TEXT
 Context()->normalStrings;
 
-################################################
 
-ANS($answer->cmp());
+##############################
+#  Answer evaluation
+
+$showPartialCorrectAnswers = 0;
+
+ANS( $Ys->cmp() );
+ANS ($Fs->cmp() );
+ANS( $Thetas->cmp() );
+ANS ($newyt->cmp() );
 
 ENDDOCUMENT();
-

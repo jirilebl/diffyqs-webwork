@@ -1,8 +1,8 @@
 # Inverse Laplace transform
 
-## Institution(Fort Lewis College)
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
 ## KEYWORDS('Laplace transform')
-
 
 ##############################
 #  Initialization
@@ -29,31 +29,42 @@ t=>"Real",
 s=>"Real"
 );
 
-# A rather random function for heaviside, but it will do.
-parserFunction("u(t)" => "1.5 * cos(e*t) + 5*pi/3 + arctan(t)");
+# A function for Heaviside even though it's not used,
+# just to not give away it's not used
+Context()->functions->add(
+  step => {
+    class => 'Parser::Legacy::Numeric',
+    perl => 'Parser::Legacy::Numeric::do_step'
+  },
+);
+parserFunction("u(t)" => "step(t)");
 
-$a = random(1, 9, 1);
-do { $b = random(1, 9, 1); } until ( $b != $a );
+do {
+  $a = random(2,9,1);
+  $b = random(2,9,1);
+  $c = random(2,5,1);
+} while ($a == $b || $b == $c || $a == $c);
 
-$Fs = Formula("e^(-$a*s)*$b/(s^2+$b^2)")->reduce;
+$csq = $c*$c;
+$tb = 2*$b;
 
-$answer = Compute("sin($b(t-$a))*u(t-$a)")->reduce;
-
+$Fs = Formula("($a*s)/(s^2+$tb*s+$csq)")
+$ans = Compute("$a*exp(-$b*t)*cos($c*t) - (($a*$b)/($csq))*sin($c*t)");
 
 #############################
 #  Main text
 
 Context()->texStrings;
 BEGIN_TEXT
-
-Find the inverse Laplace transform \( f(t) = {\mathcal L}^{-1} \left\lbrace F(s) \right\rbrace \) of the function \( \displaystyle F(s) = $Fs \).
-
+Find the inverse Laplace transform
+\( f(t) = {\mathcal L}^{-1} \left\lbrace F(s) \right\rbrace \)
+of the function \( \displaystyle F(s) = $Fs .\)
 $PAR
 \( \displaystyle f(t) = {\mathcal L}^{-1} \left\lbrace $Fs \right\rbrace = \)
-\{ ans_rule(50) \}
+\{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-$BITALIC $BBOLD Note: $EBOLD Use \(u(t)\) for the Heaviside function. $EITALIC
+$BITALIC $BBOLD Hint: $EBOLD Complete the square and use shifting property.
 $PAR
 $BITALIC $BBOLD Book: $EBOLD
 \{ htmlLink("https://www.jirka.org/diffyqs/html/laplace_section.html", "Section 6.1 of Notes on Diffy Qs") \}
@@ -61,12 +72,11 @@ $EITALIC
 END_TEXT
 Context()->normalStrings;
 
-
 ##############################
 #  Answer evaluation
 
 $showPartialCorrectAnswers = 1;
 
-ANS( $answer->cmp() );
+ANS( $as->cmp() );
 
 ENDDOCUMENT();
