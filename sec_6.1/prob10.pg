@@ -75,6 +75,6 @@ Context()->normalStrings;
 
 $showPartialCorrectAnswers = 1;
 
-ANS( $as->cmp() );
+ANS( $ans->cmp() );
 
 ENDDOCUMENT();
