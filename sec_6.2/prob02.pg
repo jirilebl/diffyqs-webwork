@@ -59,17 +59,17 @@ $PAR
 \{ans_rule(50) \} \(=0\)
 $SPACE \{ AnswerFormatHelp("formulas") \}
 $PAR
-Now solve for  \(X(s) = \) \{ans_rule(40) \} 
+Solve for  \(X(s) = \) \{ans_rule(40) \} 
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-Now write the answer in its partial fraction decomposition,  
-\(X(s) = \frac{A}{s+a}+\frac{B}{s+b}\) where \(a < b\)
+Write the answer in its partial fraction decomposition,  
+\(X(s) = \frac{A}{s+a}+\frac{B}{s+b} ,\) where \(a < b\)
 $PAR
 \(X(s) = \) \{ans_rule(30) \} \( + \)  \{ans_rule(30) \}
 $SPACE \{ AnswerFormatHelp("formulas") \}
 
 $PAR
-Now by inverting the transform, find  
+By inverting the transform, find  
 \(x(t)= \) \{ans_rule(50) \}
 \{ AnswerFormatHelp("formulas") \}
 $PAR

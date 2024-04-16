@@ -56,11 +56,11 @@ $feven = Formula("$anstop/($ansbot($a)^n)");
 
 $a0 = Compute("1");
 $a1 = Compute("0");
-$a2 = $feven->eval(x=>"1");
+$a2 = $feven->eval(n=>"1");
 $a3 = Compute("0");
-$a4 = $feven->eval(x=>"2");
+$a4 = $feven->eval(n=>"2");
 $a5 = Compute("0");
-$a6 = $feven->eval(x=>"3");
+$a6 = $feven->eval(n=>"3");
 
 $rkp1 = Compute("0");
 $rk = Formula("((k-1)*k+($b)*k+$c)/(($a)*(k+1)*(k+2))");
