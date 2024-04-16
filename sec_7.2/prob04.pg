@@ -95,7 +95,7 @@ $PAR
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-You find the recurrence relation for \(k \geq 2\):
+Find the recurrence relation for \(k \geq 2\):
 $PAR
 \( a_{k+2} = \)  \{ans_rule(20)\} \( a_{k+1}  + \)\{ans_rule(20)\} \( a_k \)
 $SPACE
