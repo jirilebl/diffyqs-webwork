@@ -86,11 +86,6 @@ using a power series
 \[
 y=\sum_{k=0}^\infty a_k x^k .
 \]
-#$PAR
-#  \( \displaystyle y = \sum_{n=0}^\infty \) \{$feven->ans_rule\} \(x^{2n}\)
-#  \( \displaystyle + \sum_{n=0}^\infty \) \{$fodd->ans_rule\} \(x^{2n+1}\) .
-#$SPACE
-#\{ AnswerFormatHelp("formulas") \}
 The initial conditions imply that
 $PAR
 \( a_0 = \)  \{ans_rule(15)\}
