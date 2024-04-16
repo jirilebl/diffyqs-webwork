@@ -48,7 +48,7 @@ do {
 $csq = $c*$c;
 $tb = 2*$b;
 
-$Fs = Formula("($a*s)/(s^2+$tb*s+$csq)")
+$Fs = Formula("($a*s)/(s^2+$tb*s+$csq)");
 $ans = Compute("$a*exp(-$b*t)*cos($c*t) - (($a*$b)/($csq))*sin($c*t)");
 
 #############################
@@ -63,8 +63,6 @@ $PAR
 \( \displaystyle f(t) = {\mathcal L}^{-1} \left\lbrace $Fs \right\rbrace = \)
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
-$PAR
-$BITALIC $BBOLD Hint: $EBOLD Complete the square and use shifting property.
 $PAR
 $BITALIC $BBOLD Book: $EBOLD
 \{ htmlLink("https://www.jirka.org/diffyqs/html/laplace_section.html", "Section 6.1 of Notes on Diffy Qs") \}
