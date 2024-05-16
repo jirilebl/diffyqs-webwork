@@ -1,7 +1,20 @@
-# Undetermined coefficients
+##DESCRIPTION
+## Find a particular solution with the right hand side a combination of exponentials and polynomials
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Undetermined coefficients)
 ## Institution(Rochester)
-## KEYWORDS('differential equation', 'second order', 'linear', 'nonhomogeneous')
+## Author(Unknown)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.5')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'linear', 'differential equation', 'second order', 'nonhomogeneous', 'constant coefficients', 'undetermined coefficients')
 
 #########################################################
 
@@ -65,6 +78,9 @@ Context()->normalStrings;
 $ans = Compute("($S) *exp($r *x) ")->reduce;
 ANS($ans->cmp());
 
+#########################################################
+
+COMMENT("Find a particular solution with the right hand side a combination of exponentials and polynomials");
 
 ENDDOCUMENT();       
 

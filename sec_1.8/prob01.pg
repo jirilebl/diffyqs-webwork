@@ -5,8 +5,8 @@
 ## DBsubject(Differential equations)
 ## DBchapter(First order differential equations)
 ## DBsection(Exact)
-## Institution(Miami University and Hope College)
-## Author(Anna Ghazaryan, Fuli Zhang, Paul Pearson)
+## Institution(Miami University, Hope College, and Oklahoma State University)
+## Author(Anna Ghazaryan, Fuli Zhang, Paul Pearson, Jiri Lebl)
 ## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
 ## AuthorText1('Jiri Lebl')
 ## EditionText1('6')
@@ -81,6 +81,80 @@ $showPartialCorrectAnswers = 0;
 foreach my $i (0..4) {
   ANS( $answer[$i]->cmp() );
 }
+
+####################################################
+#  Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+An equation \(M \, dx + N \, dy = 0\) is exact (at least on some set) if
+\(\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x} .\)  So let's compute:
+$PAR
+\[
+\frac{\partial}{\partial y}\Bigl[ x^{2}-y^{2} \Bigr] = -2y
+\quad
+\not= 
+quad
+\frac{\partial}{\partial x}\Bigl[ x^{2}-2xy \Bigr] = 2x-2y .
+\]
+So
+\(
+(x^{2}-y^{2})\,dx+(x^{2}-2xy)\,dy=0
+\) is not exact.
+$PAR
+\[
+\frac{\partial}{\partial y}\Bigl[ (x+y)^{2} \Bigr] = 2(x+y)
+\quad
+=
+quad
+\frac{\partial}{\partial x}\Bigl[ 2xy+x^{2}-1 \Bigr] = 2y+2x .
+\]
+So
+\(
+(x+y)^{2}\,dx+(2xy+x^{2}-1)\,dy=0
+\) is exact.
+$PAR
+\[
+\frac{\partial}{\partial y}\Bigl[ 2x+y \Bigr] = 1
+\quad
+\not=
+quad
+\frac{\partial}{\partial x}\Bigl[ -(x+6y) \Bigr] = -1 .
+\]
+So
+\(
+(2x+y)\,dx-(x+6y)\,dy=0
+\) is not exact.  (In this problem note the minus sign!)
+$PAR
+\[
+\frac{\partial}{\partial y}\Bigl[ \sin(y)-y\sin(x) \Bigr] = \cos(y)-\sin(x)
+\quad
+=
+quad
+\frac{\partial}{\partial x}\Bigl[ \cos(x)+x\cos(y)-y \Bigr] = -\sin(x)+\cos(y) .
+\]
+So
+\(
+(\sin(y)-y\sin(x))\,dx+(\cos(x)+x\cos(y)-y)\,dy=0
+\) is exact.
+$PAR
+\[
+\frac{\partial}{\partial y}\Bigl[ \frac{y}{x^{2}}-4x^{3}+3y\sin(3x) \Bigr] = \frac{1}{x^2}+3\sin(3x)
+\quad
+\not=
+quad
+\frac{\partial}{\partial x}\Bigl[ 2y-\frac{1}{x}+\cos(3x) \Bigr] = \frac{1}{x^2} - 3\sin(3x) .
+\]
+So
+\(\displaystyle
+\left(2y-\frac{1}{x}+\cos(3x) \right)\frac{dy}{dx}+\frac{y}{x^{2}}-4x^{3}+3y\sin(3x)=0
+\) is not exact.  (In this problem note that the equation is written as \( N \frac{dy}{dx} + M = 0 \))
+
+$PAR
+\{ $answer[4]->menu() \} $SPACE
+\(\displaystyle \left(2y-\frac{1}{x}+\cos(3x) \right)\frac{dy}{dx}+\frac{y}{x^{2}}-4x^{3}+3y\sin(3x)=0\).
+END_SOLUTION
+Context()->normalStrings;
 
 ############################
 

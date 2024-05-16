@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Checking and implicitly solving an exact equation, always exact
+## Checking and implicitly solving an exact equation, randomly exact or not exact
 ## (not exact about 1/3 of the time)
 ##ENDDESCRIPTION
 
@@ -53,10 +53,9 @@ Context()->flags->set(num_points => 50,
                       tolerance => 0.00001,
                       reduceConstants => 0);
 
-$a= non_zero_random(-4,4,1);
-$b= non_zero_random(-4,4,1);
+$a = non_zero_random(-4,4,1);
+$b = non_zero_random(-4,4,1);
 $z = random (1,4);
-$k = non_zero_random(-4,4,1);
 if    ($z==3){$c = -$b}
 else          {$c = $b}
 
@@ -65,13 +64,6 @@ $ka = non_zero_random(-4,4,1);
 if    ($ka==$a){$d = $a}
 elsif ($za==3) {$d = $a-$ka}
 else          {$d = $a}
-
-# this is exact if $b==$c
-$n = random(1,4,1);
-$n1=$n+1;
-$m = random(2,4,1);
-$m1= $m+1;
-
 
 if ($z==3) {
   $Fxy = Compute("not exact");
@@ -91,7 +83,7 @@ Context()->texStrings;
 BEGIN_TEXT
 Use the ${LQ}mixed partials${RQ} check to see if the
 following differential equation is exact.
-\[ ( $M )\,dx + ( $N )\,dy= 0 \]
+\[ ( $M )\,dx + ( $N )\,dy= 0 . \]
 This equation has the form \(M(x,y)\,dx+N(x,y)\,dy=0\).  Find:
 $PAR
 \(\dfrac{\partial M}{\partial y}(x,y)= \) \{ans_rule(30) \}

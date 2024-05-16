@@ -57,29 +57,16 @@ $a = non_zero_random(-4,4,1);
 $b = non_zero_random(-4,4,1);
 $k = non_zero_random(-4,4,1);
 
-# Always make it exact.  If you want nonexact possibility,
-# then uncomment this and comment out the line with "$c = $b;"
-#
-#$z = random (1,3);
-#if    ($k==$b){$c = $b}
-#elsif ($z==3) {$c = $b-$k}
-#else          {$c = $b}
-$c = $b;
-
-$d = non_zero_random(-4,4,1);  # this is exact if $b==$c
+$d = non_zero_random(-4,4,1);
 $n = random(1,4,1);
 $n1=$n+1;
 $m = random(2,4,1);
 $m1= $m+1;
-if ($c==$b-$k) {
-  $Fxy = Compute("not exact");
-} else {
-  $Fxy = Compute("( ${a}/$m1) x^{$m1}  +${b}x y + ( ${d}/$n1)y^${n1}");
-}
+$Fxy = Compute("( ${a}/$m1) x^{$m1}  +${b}x y + ( ${d}/$n1)y^${n1}");
 
 Context()->noreduce('(-x)-y');
 $M = Compute("${a}x^${m} + ${b}y")->reduce;
-$N = Compute("${c}x +${d}y^${n}")->reduce;
+$N = Compute("${b}x +${d}y^${n}")->reduce;
 
 ###############################################
 
@@ -115,26 +102,21 @@ Context()->normalStrings;
 ###############################################
 
 ANS(Formula("$b")->cmp());
-ANS(Formula("$c")->cmp());
-if ($c==$b-$k) {
-  #if not exact
-  ANS($Fxy->cmp());
-} else {
-  ANS(  $Fxy->cmp(checker => sub {
-      my ( $correct, $student, $self ) = @_;
-      my $context = Context()->copy;
-      return 0 if $student == 0;
-      $context->flags->set(no_parameters=>0);
-      $context->variables->add('C0'=>'Parameter');
-      my $c0 = Formula($context,'C0');
-      $context->variables->add('C1'=>'Parameter');
-      my $c1 = Formula($context,'C1');
-      $student = Formula($context,$student);
-      $correct = Formula($context,"$c0 * $Fxy + $c1");
-      return $correct == $student;
-    }
-  ) );
-}
+ANS(Formula("$b")->cmp());
+ANS(  $Fxy->cmp(checker => sub {
+    my ( $correct, $student, $self ) = @_;
+    my $context = Context()->copy;
+    return 0 if $student == 0;
+    $context->flags->set(no_parameters=>0);
+    $context->variables->add('C0'=>'Parameter');
+    my $c0 = Formula($context,'C0');
+    $context->variables->add('C1'=>'Parameter');
+    my $c1 = Formula($context,'C1');
+    $student = Formula($context,$student);
+    $correct = Formula($context,"$c0 * $Fxy + $c1");
+    return $correct == $student;
+  }
+) );
 
 ###############################################
 
