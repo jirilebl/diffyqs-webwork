@@ -53,20 +53,21 @@ Context()->flags->set(num_points => 50,
                       tolerance => 0.00001,
                       reduceConstants => 0);
 
-$a = non_zero_random(-1,1,1)*random(2,5);
-$b = non_zero_random(-1,1,1)*random(2,5);
-$c = non_zero_random(-1,1,1)*random(2,5);
+do {
+  $a = non_zero_random(-1,1,1)*random(2,5);
+  $b = non_zero_random(-1,1,1)*random(2,5);
+  $c = non_zero_random(-1,1,1)*random(2,5);
+} while ($a==$b || $a==$c || $b==$c);
 $twoc = 2*$c;
 
-$Fxy = Compute("(${a}/2) x^2y^2  + (${b})x y + ($c) y^2");
-
 Context()->noreduce('(-x)-y');
+$Fxy = Compute("(${a}/2) x^2y^2  + (${b})x y + ($c) y^2")->reduce;
 $M = Compute("${a}xy^2 + ${b}y")->reduce;
 $N = Compute("${a}x^2y +${b}x + $twoc*y")->reduce;
 $ans1 = Compute("$b+2*$a*x*y")->reduce;
 $ans2 = Compute("$b+2*$a*x*y")->reduce;
-$Mintx = Compute("(${a}/2)x^2y^2 + ${b}xy");
-$Mintxdiffy = Compute("${a}x^2y + ${b}x");
+$Mintx = Compute("(${a}/2)x^2y^2 + ${b}xy")->reduce;
+$Mintxdiffy = Compute("${a}x^2y + ${b}x")->reduce;
 
 ###############################################
 
@@ -129,13 +130,15 @@ $PAR
 The two expressions are equal, the equation is exact, so let's try to find the
 potential function \(F.\)
 $PAR
-As the derivative of \(F(x,y) in the \(x\) variable is supposed to be
+As the derivative of \(F(x,y)\) in the \(x\) variable is supposed to be
 \(M\),
 we integrate \(M\) in the \(x\) variable to get
 \[
 F(x,y) = $Mintx + A(y) .
 \]
-Next if we differentiate this \(F\) in the \(y\) variable, we should get \(N,\) that is,
+Here \(A\) is the ${LQ}constant of integration${RQ} which is a function of \(y\) (it is only constant 
+as far as \(x\) is concerned).
+Next, if we differentiate this \(F\) in the \(y\) variable, we should get \(N,\) that is,
 \[
 $N = \frac{d}{dy} F(x,y) = $Mintxdiffy + A'(y) .
 \]
