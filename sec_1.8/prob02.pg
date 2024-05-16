@@ -54,11 +54,11 @@ Context()->flags->set(num_points => 50,
                       reduceConstants => 0);
 
 do {
-  $a = non_zero_random(-1,1,1)*random(2,5);
+  $a = non_zero_random(-1,1,1)*random(2,5)*2;
   $b = non_zero_random(-1,1,1)*random(2,5);
   $c = non_zero_random(-1,1,1)*random(2,5);
-} while ($a==$b || $a==$c || $b==$c);
-$twoc = 2*$c;
+  $twoc = 2*$c;
+} while ($a==$b || $a==$c || $b==$c || $a == $twoc || $b == $twoc);
 
 Context()->noreduce('(-x)-y');
 $Fxy = Compute("(${a}/2) x^2y^2  + (${b})x y + ($c) y^2")->reduce;
@@ -136,17 +136,21 @@ we integrate \(M\) in the \(x\) variable to get
 \[
 F(x,y) = $Mintx + A(y) .
 \]
-Here \(A\) is the ${LQ}constant of integration${RQ} which is a function of \(y\) (it is only constant 
+Here \(A\) is the ${LQ}constant of integration,${RQ} which is a function of \(y\) (it is only constant 
 as far as \(x\) is concerned).
 Next, if we differentiate this \(F\) in the \(y\) variable, we should get \(N,\) that is,
 \[
-$N = \frac{d}{dy} F(x,y) = $Mintxdiffy + A'(y) .
+N = $N = \frac{d}{dy} F(x,y) = $Mintxdiffy + A'(y) .
 \]
 We solve for \(A'(y) = $twoc y. \)  We want just any old antiderivative of \(A'(y) \) so \(A(y)=$c y^2\)
-works.  We plug it into our formula for \(F\) to get:
+works (no need for a constant of integration as that would just add a constant to the potential).
+We plug \(A\) into our formula for \(F\) to get:
 \[
 F(x,y) = $Fxy .
 \]
+It is good practice to check your work at this point:
+check that the \(x\) derivative of \(F\) is \(M\) and 
+the \(y\) derivative of \(F\) is \(N.\)
 END_SOLUTION
 Context()->normalStrings;
 
