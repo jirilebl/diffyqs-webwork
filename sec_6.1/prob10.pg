@@ -1,8 +1,20 @@
-# Inverse Laplace transform
+##DESCRIPTION
+## Inverse Laplace transform by partial fractions, shifting, and linearity
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Laplace transforms)
+## DBsection(Basic transformations)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
-## KEYWORDS('Laplace transform')
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('6.1')
+## Problem1('')
+## MO(1)
+## KEYWORDS('Laplace transform', 'shifting property')
 
 ##############################
 #  Initialization
@@ -74,5 +86,9 @@ Context()->normalStrings;
 $showPartialCorrectAnswers = 1;
 
 ANS( $ans->cmp() );
+
+##############################
+
+COMMENT("Inverse Laplace transform by partial fractions, shifting, and linearity");
 
 ENDDOCUMENT();

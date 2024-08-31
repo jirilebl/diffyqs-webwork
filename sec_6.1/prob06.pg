@@ -1,6 +1,20 @@
-# Laplace transform
+##DESCRIPTION
+## Laplace transform using the (first) shifting property
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Laplace transforms)
+## DBsection(Shift functions)
+## Institution(Unknown)
 ## Author(Darwyn Cook)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('6.1')
+## Problem1('')
+## MO(1)
+## KEYWORDS('Laplace transform', 'shifting property')
 
 #####################################
 
@@ -74,7 +88,7 @@ $translate = Formula("s-$a");
 
 Context()->texStrings;
 BEGIN_TEXT
-Using the shifting property, to find the Laplace transform of \($f\) you would replace \(s\) in \($F\) with
+Using the (first) shifting property, to find the Laplace transform of \($f\) you would replace \(s\) in \($F\) with
 $PAR
 \{$translate->ans_rule(40)\}
 \{ AnswerFormatHelp("formulas") \}
@@ -98,5 +112,9 @@ Context()->normalStrings;
 
 ANS($translate->cmp());
 ANS($Ftranslate->cmp());
+
+##############################
+
+COMMENT("Laplace transform using the (first) shifting property");
 
 ENDDOCUMENT();

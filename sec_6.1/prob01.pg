@@ -1,6 +1,23 @@
-# Laplace transform using tables
+##DESCRIPTION
+## This problem takes a linear combination of two functions and asks for the
+## Laplace transform of it.  The functions are randomly chosen from a table;
+## usually you will be able to include multiple copies of this problem in
+## one assignment without a repeat question
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Laplace transforms)
+## DBsection(Basic transformations)
+## Institution(Unknown)
 ## Author(Darwyn Cook)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('6.1')
+## Problem1('')
+## MO(1)
+## KEYWORDS('Laplace transform')
 
 ########################################################
 

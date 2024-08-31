@@ -1,6 +1,19 @@
-# Laplace transforms: from definition
+##DESCRIPTION
+## Laplace transform of a piecewise function done step by step
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Laplace transforms)
+## DBsection(Basic transformations)
 ## Institution(Fort Lewis College)
+## Author(Unknown)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('6.1')
+## Problem1('')
+## MO(1)
 ## KEYWORDS('Laplace transform')
 
 
@@ -146,5 +159,9 @@ Context()->normalStrings;
 #  Answer evaluation2
 
 ANS( $answerf->cmp() );
+
+##############################
+
+COMMENT("Laplace transform of a piecewise function done step by step");
 
 ENDDOCUMENT();

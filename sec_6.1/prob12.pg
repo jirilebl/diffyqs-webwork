@@ -1,7 +1,20 @@
-# Laplace transform existence
+##DESCRIPTION
+## Checking if Laplace transform exists by checking continuity and exponential order
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Laplace transforms)
+## DBsection(Basic transformations)
 ## Institution(Fort Lewis College)
-## KEYWORDS('Laplace transform')
+## Author(Unknown)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('6.1')
+## Problem1('')
+## MO(1)
+## KEYWORDS('Laplace transform', 'exponential order')
 
 
 ##############################
@@ -89,5 +102,9 @@ $showPartialCorrectAnswers = 0;
 ANS( radio_cmp( $mc->correct_ans() ) );
 ANS( $popup1->cmp() );
 ANS( $popup2->cmp() );
+
+##############################
+
+COMMENT("Checking if Laplace transform exists by checking continuity and exponential order");
 
 ENDDOCUMENT();

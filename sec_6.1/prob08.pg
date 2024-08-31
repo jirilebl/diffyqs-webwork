@@ -1,7 +1,21 @@
-# Inverse Laplace transform
+##DESCRIPTION
+## Inverse Laplace transform by linearity, shifting property, and table
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Laplace transforms)
+## DBsection(Inverse transformations)
 ## Institution(Fort Lewis College)
-## KEYWORDS('Laplace transform')
+## Author(Unknown)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('6.1')
+## Problem1('')
+## MO(1)
+## KEYWORDS('inverse Laplace transform', 'shifting property')
+
 
 ##############################
 #  Initialization
@@ -64,5 +78,9 @@ Context()->normalStrings;
 $showPartialCorrectAnswers = 1;
 
 ANS( $answer->cmp() );
+
+#################################################
+
+COMMENT("Inverse Laplace transform by linearity, shifting property, and table");
 
 ENDDOCUMENT();

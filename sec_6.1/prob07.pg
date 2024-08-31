@@ -1,6 +1,20 @@
-# Inverse Laplace transform
+##DESCRIPTION
+## Inverse Laplace transform by linearity and table
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Laplace transforms)
+## DBsection(Inverse transformations)
 ## Institution(ASU)
+## Author(Unknown)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('6.1')
+## Problem1('')
+## MO(1)
+## KEYWORDS('inverse Laplace transform')
 
 #################################################
 
@@ -65,8 +79,49 @@ Context()->normalStrings;
 #################################################
 
 ANS($ans1->cmp());
+#
+#################################################
+
+Context()->texStrings;
+BEGIN_SOLUTION
+Write
+\[
+\frac{$a s +$b}{s^2 + $c} = 
+$a \frac{s}{s^2 + {$r}^2} +
+\frac{$b}{$r} \, \frac{$r}{s^2 + {$r}^2} .
+\]
+
+Note that
+\[
+{\mathcal L}^{-1} \left\lbrace
+\frac{s}{s^2 + {$r}^2}
+\right\rbrace
+=
+\cos($r t)
+\]
+and
+\[
+{\mathcal L}^{-1} \left\lbrace
+\frac{$r}{s^2 + {$r}^2}
+\right\rbrace
+=
+\sin($r t) .
+\]
+
+Putting that together with linearity of the inverse transform, we find
+\[
+f(t) = {\mathcal L}^{-1} \left\lbrace $Fs \right\rbrace =
+$a
+\cos($r t)
++
+\frac{$b}{$r}
+\sin($r t) .
+\]
+END_SOLUTION
+Context()->normalStrings;
 
 #################################################
 
+COMMENT("Inverse Laplace transform by linearity and table");
 
 ENDDOCUMENT();
