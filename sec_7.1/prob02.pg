@@ -5,8 +5,8 @@
 ## DBsubject(Calculus - single variable)
 ## DBchapter(Infinite sequences and series)
 ## DBsection(Power series)
-## Institution(Dartmouth)
-## Author(Unknown)
+## Institution(Dartmouth, Oklahoma State University)
+## Author(Unknown, Jiri Lebl)
 ## Level(4)
 ## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
 ## AuthorText1('Jiri Lebl')
@@ -56,6 +56,27 @@ END_TEXT
 #########################################################
 
 ANS(Real(0)->cmp);
+
+#########################################################
+
+BEGIN_SOLUTION
+Apply the ratio test:
+\[
+\frac{a_{k+1}}{a_k}
+=
+\frac{
+$scalar^{k+1} (k+1)!
+}{
+$scalar^k k!
+}
+=
+$scalar (k+1)
+.
+\]
+The limit of this expression goes to \(\infty\) and hence the 
+radius of convergence of the series is 
+zero, that is, the series converges for no \(x\) except \(x=0 .\)
+END_SOLUTION
 
 #########################################################
 

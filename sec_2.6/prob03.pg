@@ -1,8 +1,20 @@
-# Higher order ODEs: constant coefficient second order nonhomogeneous linear ODEs
+##DESCRIPTION
+## Mass-spring system with forcing, solving and then finding the long term behavior, exponential decay forcing
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Applications)
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
-## KEYWORDS('differential equations','second order linear ODE','constant coefficients','nonhomogeneous')
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('2.6')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'linear', 'differential equation', 'second order', 'nonhomogeneous', 'constant coefficients', 'mass-spring')
 
 
 ##############################
@@ -104,5 +116,9 @@ Context()->normalStrings;
 
 WEIGHTED_ANS( $y->cmp(), 95 );
 WEIGHTED_ANS( $yinfinity->cmp(), 5 );
+
+#############################
+
+COMMENT("Mass-spring system with forcing, solving and then finding the long term behavior, exponential decay forcing");
 
 ENDDOCUMENT();

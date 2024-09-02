@@ -5,8 +5,8 @@
 ## DBsubject(Calculus - single variable)
 ## DBchapter(Infinite sequences and series)
 ## DBsection(Power series)
-## Institution(Unknown)
-## Author(Unknown)
+## Institution(Unknown, Oklahoma State University)
+## Author(Unknown, Jiri Lebl)
 ## Level(4)
 ## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
 ## AuthorText1('Jiri Lebl')
@@ -44,7 +44,7 @@ $b1 = -1/($b);
 BEGIN_TEXT
 
 Suppose that
-\[\frac{$a}{($b + x)}  =
+\[\frac{$a}{$b + x}  =
  \sum_{k=0}^\infty a_k x^k . \]
 Find the following coefficients of the power series:
 
@@ -89,6 +89,58 @@ ANS(Compute("-$a * ($b1)^3")->cmp());
 ANS(Compute("-$a * ($b1)^4")->cmp());
 ANS(Compute("-$a * ($b1)^5")->cmp());
 ANS(Compute("$b")->cmp());
+
+#################################################
+
+Context()->texStrings;
+BEGIN_SOLUTION
+This is a geometric series, so rewrite
+\[
+  \frac{$a}{$b + x}  =
+  \frac{$a}{$b} \frac{1}{1 - (-x/$b)}
+=
+  \frac{$a}{$b} \sum_{k=0}^\infty {\left( \frac{-x}{$b} \right)}^k
+=
+  \sum_{k=0}^\infty {\left( \frac{(-1)^k $a}{$b^{k+1}} \right)}^k x^k
+\]
+In other words,
+\[
+a_0 = \frac{$a}{$b} ,
+\]
+\[
+a_1 = \frac{-$a}{$b^{2}} ,
+\]
+\[
+a_2 = \frac{$a}{$b^{3}} ,
+\]
+\[
+a_3 = \frac{-$a}{$b^{4}} ,
+\]
+\[
+a_4 = \frac{$a}{$b^{5}} .
+\]
+The radius of convergence is the same as that of the geomtric series involved, which converges when
+\[
+\left|
+\frac{-x}{$b}
+\right|
+< 1 ,
+\]
+which we simplify to
+\[
+\left|
+x
+\right|
+< $b .
+\]
+So the radius of convergence is \($b.\)
+$PAR
+$BITALIC $BBOLD Note: $EBOLD
+One could also compute the coefficients using the derivative formula for Taylor series,
+though that may be a bit more tedious.
+$BITALIC
+END_SOLUTION
+Context()->normalStrings;
 
 #################################################
 

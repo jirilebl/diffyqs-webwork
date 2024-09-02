@@ -5,8 +5,8 @@
 ## DBsubject(Calculus - single variable)
 ## DBchapter(Infinite sequences and series)
 ## DBsection(Power series)
-## Institution(Unknown)
-## Author(Unknown)
+## Institution(Unknown, Oklahoma State University)
+## Author(Unknown, Jiri Lebl)
 ## Level(4)
 ## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
 ## AuthorText1('Jiri Lebl')
@@ -34,7 +34,7 @@ $showPartialCorrectAnswers = 1;
 
 Context("Numeric");
 
-$a = random(1,10,1);
+$a = random(2,10,1);
 $b = random(2,10,1);
 $b1 = 1/$a;
 
@@ -42,7 +42,7 @@ $b1 = 1/$a;
 
 BEGIN_TEXT
 
-The function \( f(x) = \frac{$a}{(1 + $a x)^2} \) is represented as a power series:
+The function \( f(x) = \dfrac{$a}{(1 + $a x)^2} \) is represented as a power series:
 \[ f(x) = \sum_{k=0}^\infty a_k x^k . \]
 Find the first few coefficients in the power series:
 $PAR
@@ -92,6 +92,113 @@ ANS(Compute($ans2)->cmp());
 ANS(Compute($ans3)->cmp());
 ANS(Compute($ans4)->cmp());
 ANS(Compute($ans5)->cmp());
+
+#################################################
+
+Context()->texStrings;
+BEGIN_SOLUTION
+First write
+\[
+  \frac{$a}{(1 + $a x)^2}  =
+  $a { \left( \frac{1}{(1 - (-$a x)} \right) }^2
+\]
+Expand the geometric series under the square:
+\[
+  \frac{1}{1 - (-$a x)}
+=
+  \sum_{k=0}^\infty {\left( -$a x \right)}^k
+=
+  \sum_{k=0}^\infty (-1)^k {$a}^k x^k .
+\]
+So
+\[
+  \frac{$a}{(1 + $a x)^2}  =
+  $a { \left( \frac{1}{(1 - (-$a x)} \right) }^2
+=
+  $a
+  {\left(
+  \sum_{k=0}^\infty (-1)^k {$a}^k x^k
+  \right) }^2 .
+\]
+We work out the terms until the \(x^4\) of the product:
+\[
+\begin{aligned}
+  $a
+  {\left(
+  \sum_{k=0}^\infty (-1)^k {$a}^k x^k
+  \right) }^2 
+& =
+  $a
+  {\left(
+  1
+  - {$a} x
+  + {$a}^2 x^2
+  - {$a}^3 x^3
+  + {$a}^4 x^4
+  + \cdots
+  \right) }^2 
+\\
+& =
+  $a
+  \left(
+  1
+  - 2 ({$a}) x
+  + 3 ({$a}^2) x^2
+  - 4 ({$a}^3) x^3
+  + 5 ({$a}^4) x^4
+  + \cdots
+  \right)
+\\
+&
+=
+  $a
+  - 2 ({$a}^2) x
+  + 3 ({$a}^3) x^2
+  - 4 ({$a}^4) x^3
+  + 5 ({$a}^5) x^4
+  + \cdots
+\end{aligned}
+\]
+
+In other words,
+\[
+a_0 = $a ,
+\]
+\[
+a_1 = - 2 ({$a}^2) ,
+\]
+\[
+a_2 = 3 ({$a}^3) ,
+\]
+\[
+a_3 = - 4 ({$a}^4) ,
+\]
+\[
+a_4 = 5 ({$a}^5) .
+\]
+The radius of convergence is the same as that of the geomtric series we squared,
+which converges when
+\[
+\left|
+-$a x
+\right|
+< 1 ,
+\]
+which we simplify to
+\[
+\left|
+x
+\right|
+< \frac{1}{$a} .
+\]
+So the radius of convergence is \(\frac{1}{$a}.\)
+$PAR
+$BITALIC $BBOLD Note: $EBOLD
+One could also compute the coefficients using the derivative formula for Taylor series,
+though that may be a bit more tedious.
+$BITALIC
+END_SOLUTION
+Context()->normalStrings;
 
 #################################################
 

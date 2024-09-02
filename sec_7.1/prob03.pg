@@ -5,8 +5,8 @@
 ## DBsubject(Calculus - single variable)
 ## DBchapter(Infinite sequences and series)
 ## DBsection(Power series)
-## Institution(Dartmouth)
-## Author(Unknown)
+## Institution(Dartmouth, Oklahoma State University)
+## Author(Unknown, Jiri Lebl)
 ## Level(4)
 ## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
 ## AuthorText1('Jiri Lebl')
@@ -35,6 +35,7 @@ $showPartialCorrectAnswers = 0;
 Context('Numeric');
 
 $nthroot = random(2,9);
+$a = random(2,9);
 
 if ($nthroot == 2)
 {$rootk = "\sqrt{k}";}
@@ -45,7 +46,7 @@ else
 
 BEGIN_TEXT
 Find the radius of convergence of the power series 
-\[ \sum_{k=1}^\infty \frac{x^k}{$rootk} \]
+\[ \sum_{k=1}^\infty \frac{{$a}^k x^k}{$rootk} \]
 Your answer should be a nonnegative real number or 
 ${LQ}infinity$RQ.
 $PAR
@@ -59,7 +60,27 @@ END_TEXT
 
 #########################################################
 
-ANS(Real(1)->cmp);
+ANS(Real(1/($a))->cmp);
+
+#########################################################
+
+BEGIN_SOLUTION
+Apply the root test:
+\[
+\sqrt[k]{|a_k|}
+=
+\sqrt[k]{{$a}^k $rootk}
+=
+$a
+\sqrt[k]{$rootk}
+.
+\]
+The limit of this expression goes to \($a\) and hence the 
+radius of convergence of the series is \(\frac{1}{$a},\) 
+that is, the series converges for \(x\) between
+\(\frac{-1}{$a}\) and
+\(\frac{1}{$a}.\) 
+END_SOLUTION
 
 #########################################################
 
