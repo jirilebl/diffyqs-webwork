@@ -1,8 +1,20 @@
-# Laplace transforms: partial fractions
+##DESCRIPTION
+## Solve a first order nonhomogeneous ODE with Laplace, requires partial fractions
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Laplace transforms)
+## DBsection(Applications and solving differential equations)
 ## Institution(Fort Lewis College)
-## KEYWORDS('Laplace transform')
-
+## Author(Unknown)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('6.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('Laplace transform', 'differential equation')
 
 ##############################
 #  Initialization
@@ -106,5 +118,9 @@ ANS( $RHS->cmp() );
 
 ANS( $Ys->cmp() );
 ANS( $yt->cmp() );
+
+##############################
+
+COMMENT("Solve a first order nonhomogeneous ODE with Laplace, requires partial fractions");
 
 ENDDOCUMENT();

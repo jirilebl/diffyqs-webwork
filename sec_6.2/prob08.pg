@@ -1,7 +1,21 @@
-# Inverse Laplace transform
+##DESCRIPTION
+## Inverse Laplace transform using the step function
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Laplace transforms)
+## DBsection(Step functions)
 ## Institution(Fort Lewis College)
-## KEYWORDS('Laplace transform')
+## Author(Unknown)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('6.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('inverse Laplace transform', 'Heaviside function', 'step function')
+
 
 
 ##############################
@@ -68,5 +82,9 @@ Context()->normalStrings;
 $showPartialCorrectAnswers = 1;
 
 ANS( $answer->cmp() );
+
+##############################
+
+COMMENT("Inverse Laplace transform using the step function");
 
 ENDDOCUMENT();

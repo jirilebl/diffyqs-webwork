@@ -1,6 +1,20 @@
+##DESCRIPTION
+## Solve a second order nonhomogeneous ODE with Laplace, uses y and Y
+##ENDDESCRIPTION
+
+## DBsubject(Differential equations)
+## DBchapter(Laplace transforms)
+## DBsection(Applications and solving differential equations)
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
-## KEYWORDS('laplace', 'differential', 'equation' )
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('6.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('Laplace transform', 'differential equation')
 
 #######################################################
 
@@ -86,5 +100,9 @@ ANS($A->cmp());
 ANS($B->cmp());
 ANS($C->cmp());
 ANS($y->cmp());
+
+#######################################################
+
+COMMENT("Solve a second order nonhomogeneous ODE with Laplace, uses y and Y");
 
 ENDDOCUMENT();

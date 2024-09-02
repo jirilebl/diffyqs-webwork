@@ -1,7 +1,20 @@
-# Laplace transforms: system transfer functions
+##DESCRIPTION
+## Find the transfer function of a differential equation
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Laplace transforms)
+## DBsection(Applications and solving differential equations)
 ## Institution(Fort Lewis College)
-## KEYWORDS('Laplace transform')
+## Author(Unknown)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('6.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('Laplace transform', 'differential equation', 'transfer function')
 
 
 ##############################
@@ -116,5 +129,9 @@ ANS( $Ys->cmp() );
 ANS ($Fs->cmp() );
 ANS( $Thetas->cmp() );
 ANS ($newyt->cmp() );
+
+##############################
+
+COMMENT("Find the transfer function of a differential equation");
 
 ENDDOCUMENT();

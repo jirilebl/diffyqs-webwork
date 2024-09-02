@@ -1,6 +1,20 @@
-# Differential Equations: Laplace Transforms
+##DESCRIPTION
+## Solve a nonhomogeneous equation with piecewise RHS using the Laplace transform
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Laplace transforms)
+## DBsection(Step functions)
 ## Institution(ASU)
+## Author(Unknown)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('6.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('Laplace transform', 'Heaviside function', 'step function', 'differential equation')
 
 #########################################################
 
@@ -57,5 +71,8 @@ END_TEXT
 #########################################################
 
 ANS($ans1->cmp());
+
+#########################################################
+COMMENT("Solve a nonhomogeneous equation with piecewise RHS using the Laplace transform");
 
 ENDDOCUMENT();

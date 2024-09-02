@@ -1,4 +1,20 @@
+##DESCRIPTION
+## Given a graph, write a piecewise function using the step function
+##ENDDESCRIPTION
+
+## DBsubject(Differential equations)
+## DBchapter(Laplace transforms)
+## DBsection(Step functions)
+## Institution(Unknown)
 ## Author(Darwyn Cook)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('6.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('Heaviside function', 'step function')
 
 #####################################################################
 
@@ -74,5 +90,9 @@ Context()->normalStrings;
 #####################################################################
 
 ANS($f->cmp());
+
+#####################################################################
+
+COMMENT("Given a graph, write a piecewise function using the step function");
 
 ENDDOCUMENT();

@@ -1,6 +1,20 @@
-# Differential Equations: Laplace Transforms
+##DESCRIPTION
+## Transforming an ODE and solving for the transform of the unknown
+##ENDDESCRIPTION
 
-## Institution(ASU)
+## DBsubject(Differential equations)
+## DBchapter(Laplace transforms)
+## DBsection(Applications and solving differential equations)
+## Institution(ASU, Oklahoma State University)
+## Author(Unknown, Jiri Lebl)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('6.2')
+## Problem1('')
+## MO(1)
+## KEYWORDS('Laplace transform', 'differential equation')
 
 #######################################################
 
@@ -65,6 +79,51 @@ Context()->normalStrings;
 ANS($ans1->cmp());
 
 #######################################################
+
+Context()->texStrings;
+BEGIN_SOLUTION
+Taking the transform of the equation, we find
+\[
+\bigl(
+s^2 X - s x(0) - x'(0)
+\bigr)
+-
+{$nb}
+\bigl(
+s X - x(0)
+\bigr)
+-
+{$nc}
+X
+=
+\frac{$m}{s^2+{$m}^2} .
+\]
+Plugging in the initial condition, we obtain the equation for \(X\):
+\[
+\bigl(
+s^2 X - {$y0}s - {$y1}
+\bigr)
+-
+{$nb}
+\bigl(
+s X - {$y0}
+\bigr)
+-
+{$nc}
+X
+=
+\frac{$m}{s^2+{$m}^2} .
+\]
+We solve for \(X\) to find
+\[
+X = $ans1 .
+\]
+END_SOLUTION
+Context()->normalStrings;
+
+#######################################################
+
+COMMENT("Transforming an ODE and solving for the transform of the unknown");
 
 ENDDOCUMENT();
 
