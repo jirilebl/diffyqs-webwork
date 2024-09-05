@@ -1,7 +1,20 @@
-# Laplace transforms: delta function
+##DESCRIPTION
+## Compute antiderivative of a comination of delta functions
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Laplace transforms)
+## DBsection(Impulse functions)
 ## Institution(Fort Lewis College)
-## KEYWORDS('Laplace transform')
+## Author(Unknown)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('6.4')
+## Problem1('')
+## MO(1)
+## KEYWORDS('delta function')
 
 
 ##############################
@@ -68,5 +81,9 @@ Context()->normalStrings;
 $showPartialCorrectAnswers = 1;
 
 ANS( $answer->cmp() );
+
+##############################
+
+COMMENT("Compute antiderivative of a comination of delta functions");
 
 ENDDOCUMENT();

@@ -1,7 +1,20 @@
-# Laplace transforms: delta function
+##DESCRIPTION
+## Solve nohomogeneous ODE by finding the impulse response first and convolving
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Laplace transforms)
+## DBsection(Impulse functions)
 ## Institution(Fort Lewis College)
-## KEYWORDS('Laplace transform')
+## Author(Unknown)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('6.4')
+## Problem1('')
+## MO(1)
+## KEYWORDS('delta function', 'differential equation', 'Laplace transform', 'impulse response')
 
 
 ##############################
@@ -33,7 +46,7 @@ $a = random(2,8,1);
 $gt = Formula("e^($a*t)")->reduce;
 
 $yt = Compute("t*$gt")->reduce;
-$phit = $gt;
+$ht = $gt;
 $int = Compute("e^($a*(t-w))*e^($a*w)")->reduce;
 
 
@@ -53,16 +66,16 @@ $PAR
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
-Use Laplace transforms to determine the transfer function \( \phi(t) \) given the initial value problem \[ \phi' - $a \phi = \delta(t), \quad \quad \phi(0) = 0. \]
+Use Laplace transforms to determine the impulse response \( h(t) \) given the initial value problem \[ h' - $a h = \delta(t), \quad \quad h(0) = 0. \]
 $PAR
-\( \displaystyle \phi(t) = \)
+\( \displaystyle h(t) = \)
 \{ ans_rule(40) \}
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
-Evaluate the convolution integral \( (\phi \ast g)(t) = \int_0^t \phi(t-w)\, g(w)\ dw \), and compare the resulting function with the solution obtained by integrating factor above.
+Evaluate the convolution integral \( (h \ast g)(t) = \int_0^t h(t-w)\, g(w)\ dw \), and compare the resulting function with the solution obtained by integrating factor above.
 $PAR
-\( \displaystyle (\phi \ast g)(t) = \int_0^t \) \{ ans_rule(30) \} \( dw \ = \) \{ ans_rule(40) \}
+\( \displaystyle (h \ast g)(t) = \int_0^t \) \{ ans_rule(30) \} \( dw \ = \) \{ ans_rule(40) \}
 $BR
 \{ AnswerFormatHelp("formulas") \}
 
@@ -80,8 +93,12 @@ Context()->normalStrings;
 $showPartialCorrectAnswers = 1;
 
 ANS( $yt->cmp() );
-ANS( $phit->cmp() );
+ANS( $ht->cmp() );
 ANS( $int->cmp() );
 ANS( $yt->cmp() );
+
+##############################
+
+COMMENT("Solve nohomogeneous ODE by finding the impulse response first and convolving");
 
 ENDDOCUMENT();
