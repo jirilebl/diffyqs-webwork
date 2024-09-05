@@ -77,7 +77,7 @@ ANS( $answer1->cmp() );
 
 Context()->texStrings;
 BEGIN_SOLUTION
-The equation is the transport equation with speed \($b\) so we
+The equation is the transport equation with speed \($b,\) so we
 simply replace \(x\) with \(x-$b t\) in the initial condition:
 $BRBR
 \( u(x,t) = $answer1 \)
