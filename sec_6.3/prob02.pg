@@ -1,7 +1,20 @@
-# Laplace transforms: convolution
+##DESCRIPTION
+## Compute convolution directly and through inverse Laplace, two exponentials
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Laplace transforms)
+## DBsection(Applications and solving differential equations)
 ## Institution(Fort Lewis College)
-## KEYWORDS('Laplace transform')
+## Author(Unknown)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('6.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('convolution', 'Laplace transform')
 
 
 ##############################
@@ -50,17 +63,17 @@ $answerb = Compute("1/(1+$a)*(e^t - e^(-$a*t))");
 Context()->texStrings;
 BEGIN_TEXT
 
-For the functions \( f(t) = $ft \) and \( g(t) = $gt \), defined on \( 0\leq t < \infty \), compute \( f \ast g \) in two different ways:
+For the functions \( f(t) = $ft \) and \( g(t) = $gt ,\) defined on \( 0\leq t < \infty \), compute \( f \ast g \) in two different ways:
 
 $PAR
-By directly evaluating the integral in the definition of \( f \ast g \).
+By directly evaluating the integral in the definition of \( f \ast g .\)
 $PAR
 \( \displaystyle (f \ast g)(t) = \int_0^t \) \{ ans_rule(20) \} \( dw \ = \) \{ ans_rule(40) \}
 $BR
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
-By computing \( {\mathcal L}^{-1} \left\lbrace F(s)G(s) \right\rbrace \) where \( F(s) = {\mathcal L} \left\lbrace f(t) \right\rbrace \) and \( G(s) = {\mathcal L} \left\lbrace g(t) \right\rbrace \).
+By computing \( {\mathcal L}^{-1} \left\lbrace F(s)G(s) \right\rbrace \) where \( F(s) = {\mathcal L} \left\lbrace f(t) \right\rbrace \) and \( G(s) = {\mathcal L} \left\lbrace g(t) \right\rbrace .\)
 $PAR
 \( \displaystyle (f \ast g)(t) = {\mathcal L}^{-1} \left\lbrace F(s)G(s) \right\rbrace = {\mathcal L}^{-1} \big\lbrace \)
 \{ ans_rule(20) \} 
@@ -92,5 +105,9 @@ ANS( $int1->cmp(
 ANS( $answera->cmp() );
 ANS( $FsGs->cmp() );
 ANS( $answerb->cmp() );
+
+##############################
+
+COMMENT("Compute convolution directly and through inverse Laplace, two exponentials");
 
 ENDDOCUMENT();

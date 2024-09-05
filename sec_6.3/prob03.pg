@@ -1,7 +1,20 @@
-# Laplace transforms: convolution
+##DESCRIPTION
+## Compute convolution directly and through inverse Laplace, two step functions
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Laplace transforms)
+## DBsection(Applications and solving differential equations)
 ## Institution(Fort Lewis College)
-## KEYWORDS('Laplace transform')
+## Author(Unknown)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('6.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('convolution', 'Laplace transform')
 
 
 ##############################
@@ -34,12 +47,14 @@ w=>"Real"
 # Redefine the Heaviside function so the answer checker will work on [-1,1].
 parserFunction("u(t)" => "1.5 * cos(e*t) + 5*pi/3 + arctan(t)");
 
-$int = Compute("u(t-w)*u(w)");
-$answera = Compute("t");
+$a = random(2,9,1);
+
+$int = Compute("$a*u(t-w)*u(w)");
+$answera = Compute("$a*t");
 $Fs = Compute("1/s");
-$Gs = Compute("1/s");
+$Gs = Compute("$a/s");
 $FsGs = $Fs*$Gs;
-$answerb = Compute("t");
+$answerb = Compute("$a*t");
 
 
 #############################
@@ -48,17 +63,18 @@ $answerb = Compute("t");
 Context()->texStrings;
 BEGIN_TEXT
 
-For the functions \( f(t) = u(t) \) and \( g(t) = u(t) \) (where \(u(t)\) is the Heaviside function), defined on \( 0\leq t < \infty \), compute \( f \ast g \) in two different ways:
+For the functions \( f(t) = u(t) \) and \( g(t) = $a u(t) \) (where \(u(t)\) is the Heaviside function), defined on \( 0\leq t < \infty ,\) compute \( f \ast g \) in two different ways:
 
 $PAR
-By directly evaluating the integral in the definition of \( f \ast g \).
+By directly evaluating the integral in the definition of \( f \ast g .\)
+(In the first box, do not simplify the integrand.)
 $PAR
 \( \displaystyle (f \ast g)(t) = \int_0^t \) \{ ans_rule(20) \} \( dw \ = \) \{ ans_rule(40) \}
 $BR
 \{ AnswerFormatHelp("formulas") \}
 
 $PAR
-By computing \( {\mathcal L}^{-1} \left\lbrace F(s)G(s) \right\rbrace \) where \( F(s) = {\mathcal L} \left\lbrace f(t) \right\rbrace \) and \( G(s) = {\mathcal L} \left\lbrace g(t) \right\rbrace \).
+By computing \( {\mathcal L}^{-1} \left\lbrace F(s)G(s) \right\rbrace \) where \( F(s) = {\mathcal L} \left\lbrace f(t) \right\rbrace \) and \( G(s) = {\mathcal L} \left\lbrace g(t) \right\rbrace .\)
 $PAR
 \( \displaystyle (f \ast g)(t) = {\mathcal L}^{-1} \left\lbrace F(s)G(s) \right\rbrace = {\mathcal L}^{-1} \big\lbrace \)
 \{ ans_rule(20) \} 
@@ -84,11 +100,15 @@ $showPartialCorrectAnswers = 1;
 
 ANS( $int->cmp()
   ->withPostFilter(AnswerHints(
-  [Formula("1"), Formula("u(t-w)"), Formula("u(w)")] => "Enter the original integrand in unsimplified form"
+  [Formula("$a"), Formula("$a*u(t-w)"), Formula("$a*u(w)")] => "Enter the original integrand in unsimplified form"
 ))
 );
 ANS( $answera->cmp() );
 ANS( $FsGs->cmp() );
 ANS( $answerb->cmp() );
+
+##############################
+
+COMMENT("Compute convolution directly and through inverse Laplace, two step functions");
 
 ENDDOCUMENT();
