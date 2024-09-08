@@ -1,8 +1,20 @@
-# Classify singular points of a differential equation
+##DESCRIPTION
+## List singular points of a linear ODE, and write in normal form
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Series solutions)
+## DBsection(Singular point)
 ## Institution(Alfred University, Oklahoma State University)
 ## Author(Darwyn Cook, Jiri Lebl)
-## KEYWORDS('differential equation', 'classify', 'singular', 'regular', 'Frobenius')
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('7.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'singular point')
 
 ########################################################################
 
@@ -28,7 +40,27 @@ Context("Numeric");
 Context()->variables->{namePattern} = qr/[a-z][a-z0-9_]*'*/i;
 Context()->variables->are("x"=>"Real","y"=>"Real","y'"=>"Real","y''"=>"Real");
 
-$diffeqn = Formula("xy''+xy'+y")->reduce;
+$pr = random (1,4);
+$a = random (2,9);
+$b = random (2,9);
+
+if ($pr == 1) {
+  $diffeqn = Formula("xy''+ $a xy'+ $b y")->reduce;
+  $ansa = Compute("$a");
+  $ansb = Compute("$b/x");
+} elsif ($pr == 2) {
+  $diffeqn = Formula("xy''+ $a y'+ $b x y")->reduce;
+  $ansa = Compute("$a/x");
+  $ansb = Compute("$b");
+} elsif ($pr == 3) {
+  $diffeqn = Formula("xy''+ $a x^2 y'+ $b y")->reduce;
+  $ansa = Compute("$a*x");
+  $ansb = Compute("$b/x");
+} else {
+  $diffeqn = Formula("xy''+ $a y'+ $b x^2 y")->reduce;
+  $ansa = Compute("$a/x");
+  $ansb = Compute("$b*x");
+}
 
 $singular = List(0); 
 
@@ -59,7 +91,12 @@ Context()->normalStrings;
 #  Answers
 
 ANS($singular->cmp());
-ANS(Compute("1")->cmp);
-ANS(Compute("1/x")->cmp);
+
+ANS($ansa->cmp);
+ANS($ansb->cmp);
+
+##############################################################
+
+COMMENT("List singular points of a linear ODE, and write in normal form");
 
 ENDDOCUMENT();        

@@ -1,8 +1,20 @@
-# Classify singular points of a differential equation
+##DESCRIPTION
+## Check for singular points of a linear ODE and ask which series type would one use
+##ENDDESCRIPTION
 
-## Institution(Alfred University)
-## Author(Darwyn Cook)
-## KEYWORDS('differential equation', 'classify', 'singular' 'regular')
+## DBsubject(Differential equations)
+## DBchapter(Series solutions)
+## DBsection(Singular point)
+## Institution(Alfred University, Oklahoma State University)
+## Author(Darwyn Cook, Jiri Lebl)
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('7.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'singular point')
 
 ########################################################################
 
@@ -35,12 +47,31 @@ $op = String("ordinary point");
 $rsp = String("regular singular point");
 $isp = String("irregular singular point");
 
-Context()->strings->add("power (Taylor)"=>{},"Frobenius"=>{});
+Context()->strings->add("power (Taylor)"=>{},"Frobenius"=>{}, "neither power nor Frobenius"=>{});
 $Taylor = String("power (Taylor)");
 $Frobenius = String("Frobenius");
+$Neither = String("neither power nor Frobenius");
 
-$a = random(1,6);
-$diffeqn = Formula("(x^2-($a)^2)^2y''+(x-$a)y'+y")->reduce;
+$a = random(2,5);
+$b = random(2,6);
+$ttt = random(1,2);
+if ($ttt == 1) {
+  $diffeqn = Formula("(x^2-($a)^2)^2y''+(x-$a)y'+$b y")->reduce;
+  $ans1 = $isp;
+  $ans2 = $op;
+  $ans3 = $rsp;
+  $ansa = $Neither;
+  $ansb = $Taylor;
+  $ansc = $Frobenius;
+} else {
+  $diffeqn = Formula("(x^2-($a)^2)^2y''+(x+$a)y'+$b y")->reduce;
+  $ans1 = $rsp;
+  $ans2 = $op;
+  $ans3 = $isp;
+  $ansa = $Frobenius;
+  $ansb = $Taylor;
+  $ansc = $Neither;
+}
 
 ##############################################################
 #
@@ -58,8 +89,23 @@ $PAR
 $PAR
 \(x = $a\) is a \{ pop_up_list([$blank->string,$op->string,$rsp->string,$isp->string]) \}
 $PAR
-For this differential equation you would use a \{pop_up_list([$blank->string,$Taylor->string,$Frobenius->string]) \}
-series solution to solve around the point \(x=0\).
+To solve this differential equation
+around the point \(x = -$a ,\)
+you would use
+\{pop_up_list([$blank->string,$Taylor->string,$Frobenius->string,$Neither->string]) \}
+series.
+$PAR
+To solve this differential equation
+around the point \(x = 0 ,\)
+you would use
+\{pop_up_list([$blank->string,$Taylor->string,$Frobenius->string,$Neither->string]) \}
+series.
+$PAR
+To solve this differential equation
+around the point \(x = $a ,\)
+you would use
+\{pop_up_list([$blank->string,$Taylor->string,$Frobenius->string,$Neither->string]) \}
+series.
 
 $PAR
 $BITALIC $BBOLD Book: $EBOLD
@@ -74,9 +120,15 @@ Context()->normalStrings;
 #
 #
 
-ANS($isp->cmp());
-ANS($op->cmp());
-ANS($rsp->cmp());
-ANS($Taylor->cmp());
+ANS($ans1->cmp());
+ANS($ans2->cmp());
+ANS($ans3->cmp());
+ANS($ansa->cmp());
+ANS($ansb->cmp());
+ANS($ansc->cmp());
+
+##############################################################
+
+COMMENT("Check for singular points of a linear ODE and ask which series type would one use");
 
 ENDDOCUMENT();

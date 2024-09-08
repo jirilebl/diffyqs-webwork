@@ -1,8 +1,20 @@
-# Solutions based at a regular singular point
+##DESCRIPTION
+## Find Frobenius series solutions at a regular singular point (first few terms only)
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Series solutions)
+## DBsection(Singular point)
 ## Institution(CSUN)
 ## Author(David Protas)
-## KEYWORDS('regular singular point')
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('7.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'singular point', 'series solution', 'Frobenius', 'regular singular point')
 
 ###########################################################
 
@@ -67,5 +79,9 @@ ANS(Compute("1/2")->cmp());
 ANS(Compute("-$a")->cmp());
 ANS(Compute("($a)^2/6")->cmp());
 ANS(Compute("-($a)^3/90")->cmp());
+
+###########################################################
+
+COMMENT("Find Frobenius series solutions at a regular singular point (first few terms only)");
 
 ENDDOCUMENT();

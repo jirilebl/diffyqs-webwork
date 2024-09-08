@@ -1,8 +1,20 @@
-# Solutions based at a regular singular point
+##DESCRIPTION
+## Find a Frobenius series solution at a regular singular point (all terms)
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Series solutions)
+## DBsection(Singular point)
 ## Institution(CSUN)
 ## Author(David Protas)
-## KEYWORDS('regular singular point')
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('7.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'singular point', 'series solution', 'Frobenius', 'regular singular point')
 
 ###############################################
 
@@ -59,5 +71,9 @@ $ans = Compute("($a)^k/(k!)^2");
 
 ANS(Compute("-2")->cmp());
 ANS($ans->cmp());
+
+###############################################
+
+COMMENT("Find a Frobenius series solution at a regular singular point (all terms)");
 
 ENDDOCUMENT();

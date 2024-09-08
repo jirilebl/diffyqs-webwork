@@ -1,8 +1,20 @@
-# Find series solution to Bessel-like differential equation
+##DESCRIPTION
+## Find a power series solution to Bessel-like differential equation (first few terms only)
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Series solutions)
+## DBsection(Singular point)
 ## Institution(Berkeley, Oklahoma State University)
 ## Author(Paul Vojta, Jiri Lebl)
-## KEYWORDS('differential equation', 'second order', 'homogeneous', 'series solution')
+## Level(4)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('7.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'singular point', 'series solution')
 
 ##############################################################
 
@@ -135,5 +147,9 @@ ANS( $a5->cmp );
 ANS( $a6->cmp );
 ANS( $a7->cmp );
 ANS( $a8->cmp );
+
+##############################################################
+
+COMMENT("Find series solution to Bessel-like differential equation (first few terms only)");
 
 ENDDOCUMENT();

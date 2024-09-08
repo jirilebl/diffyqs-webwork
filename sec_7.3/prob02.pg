@@ -1,8 +1,20 @@
-# Classify singular points of a differential equation
+##DESCRIPTION
+## List singular points of a linear ODE, and write in normal form
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Series solutions)
+## DBsection(Singular point)
 ## Institution(Alfred University, Oklahoma State University)
 ## Author(Darwyn Cook, Jiri Lebl)
-## KEYWORDS('differential equation', 'classify', 'singular', 'regular', 'Frobenius')
+## Level(3)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('7.3')
+## Problem1('')
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'singular point')
 
 ########################################################################
 
@@ -73,5 +85,8 @@ ANS($singular->cmp());
 ANS(Compute("($b*(x^2+($a)^2))/(x^2-($a)^2)")->cmp);
 ANS(Compute("(x^2+($a)^2)/(x^2-($a)^2)")->cmp);
 
+##############################################################
+
+COMMENT("List singular points of a linear ODE, and write in normal form");
 
 ENDDOCUMENT();        
