@@ -115,7 +115,7 @@ BEGIN_PGML_SOLUTION
 Since [`\frac{dx}{dt}= [$a] x^{[$k]} ,`]
 we have [`\frac{dt}{dx}= \frac{1}{[$a]} x^{-[$k]} .`]
 We can now integrate with respect to [`x`]:
-[```t = \int \frac{1}{[$a]} x^{-[$k]} \, dx + C =
+[```t = \int \frac{1}{[$a]} x^{-[$k]} \, dx =
 \frac{1}{[$a](1-[$k])}x^{1-[$k]} + C .```]
 
 To solve for [`C ,`] it may be easier to use the equation

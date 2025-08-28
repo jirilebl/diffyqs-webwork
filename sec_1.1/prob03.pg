@@ -67,7 +67,7 @@ First write the equation as
 [```y'= \frac{[$a] x}{1+x} .```]
 
 Now integrate
-[```y = \int \frac{[$a] x}{1+x} dx + C = [$answer] .```]
+[```y = \int \frac{[$a] x}{1+x} dx = [$answer] .```]
 END_PGML_SOLUTION
 
 #############################################################

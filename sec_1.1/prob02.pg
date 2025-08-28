@@ -68,7 +68,7 @@ Context()->texStrings;
 BEGIN_SOLUTION
 The equation can be solved by just integrating (antidifferentiating)
 the right hand side.  That is,
-\[ y=\int (x^{$r} + $b)\,dx + C = \frac{x^{$r1}}{$r1} + $b x + C .\]
+\[ y = \int (x^{$r} + $b)\,dx = \frac{x^{$r1}}{$r1} + $b x + C .\]
 END_SOLUTION
 Context()->normalStrings;
 

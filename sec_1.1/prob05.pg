@@ -71,7 +71,7 @@ BEGIN_PGML_SOLUTION
 Since [`\frac{dy}{dx}= \frac{[$a]}{\cos(y)} ,`]
 we have [`\frac{dx}{dy}= \frac{-\cos(y)}{[$minusa]} .`]
 We can now integrate with respect to [`y`]:
-[```x = \int \frac{-\cos(y)}{[$minusa]} dy + C = \frac{-\sin(y)}{[$minusa]} + C.```]
+[```x = \int \frac{-\cos(y)}{[$minusa]} dy = \frac{-\sin(y)}{[$minusa]} + C.```]
 Solving for [`y ,`]
 [```y = \arcsin\left([$a](x-C)\right).```]
 Now [` y(0)= \frac{\pi}{[$denom]} ,`] so

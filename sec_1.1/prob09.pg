@@ -65,7 +65,7 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 We integrate (use the substitution [`u=x^2`]):
-[```y = \int [$a] xe^{x^{2}}\, dx + C = [$answer] .```]
+[```y = \int [$a] xe^{x^{2}}\, dx = [$answer] .```]
 END_PGML_SOLUTION
 
 ##############################################################

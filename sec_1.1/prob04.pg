@@ -63,7 +63,7 @@ BEGIN_PGML_SOLUTION
 Since [`\frac{dx}{dt}= \frac{[$a]}{x},`]
 we have [`\frac{dt}{dx}= \frac{x}{[$a]}.`]
 We can now integrate with respect to [:x:]:
-[```t = \int \frac{x}{[$a]} dx + C = \frac{x^2}{[$a*2]} + C.```]
+[```t = \int \frac{x}{[$a]} dx = \frac{x^2}{[$a*2]} + C.```]
 Solving for [`x ,`]
 [```x = \sqrt{[$a*2](t-C)}.```]
 Now [` x(0)= [$x0] ,`] so

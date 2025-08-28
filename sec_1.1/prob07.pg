@@ -71,7 +71,7 @@ Rewrite [``\frac{dy}{dx} = (y-1)(y+1)``]
 as [``\frac{dx}{dy} = \frac{1}{(y-1)(y+1)} .``]
 
 Now integrate (use partial fractions)
-[```x = \int \frac{1}{(y-1)(y+1)} dy + C
+[```x = \int \frac{1}{(y-1)(y+1)} dy
 =
 \frac{1}{2} \ln \left(\frac{2}{y+1}-1\right) + C .
 ```]
