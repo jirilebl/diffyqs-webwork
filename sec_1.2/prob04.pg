@@ -91,7 +91,7 @@ $fn3->x_steps(20);
 $fn3->y_steps(20);
 $fn3->rf_arrow_length( sub{
   my($dx3,$dy3)=@_;
-  return(0) if sqrt($dx3*$dx3 + $dy*$dy3)==0;
+  return(0) if sqrt($dx3*$dx3 + $dy3*$dy3)==0;
   0.23*1/sqrt($dx3*$dx3 + $dy3*$dy3);
 } );
 

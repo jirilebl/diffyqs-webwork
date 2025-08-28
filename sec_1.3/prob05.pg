@@ -79,16 +79,16 @@ or in other words
 [`C = \frac{-e^{([$b])([$d])}}{[$b]}  - \frac{1}{[$a]} . `]
 Now solve for [`u ,`]
 [```
-e^{-[$b] u} = \frac{-[$b]}{[$a]} e^{[$a] t} - \frac{1}{[$b]} C ,
+e^{-[$b] u} = \frac{-[$b]}{[$a]} e^{[$a] t} - [$b] C ,
 ```]
 [```
 -[$b] u =
-\ln \left\lvert \frac{-[$b]}{[$a]} e^{[$a] t} - \frac{1}{[$b]} C \right\rvert ,
+\ln \left\lvert \frac{-[$b]}{[$a]} e^{[$a] t} - [$b] C \right\rvert ,
 ```]
 [```
 u =
 \frac{-1}{[$b]}
-\ln \left\lvert \frac{-[$b]}{[$a]} e^{[$a] t} - \frac{1}{[$b]} C \right\rvert .
+\ln \left\lvert \frac{-[$b]}{[$a]} e^{[$a] t} - [$b] C \right\rvert .
 ```]
 Now plug in the [`C`] we found:
 [```

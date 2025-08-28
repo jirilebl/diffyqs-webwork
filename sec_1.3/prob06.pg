@@ -33,8 +33,10 @@ loadMacros(
 TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
-$a = random(2,10);
-$b = random(2,11);
+do {
+  $a = random(2,10);
+  $b = random(2,11);
+} while ($b*$b == $a);
 
 Context("Numeric");
 Context()->variables->are(x=>['Real',limits => [$a, $a+2]]);
@@ -61,29 +63,30 @@ The equation is already separated, so just integrate:
 ```]
 Solve for [`y`] to find:
 [```
-y =  \pm \sqrt{\frac{1}{[$a]} x^2 + 2C }.
+y =  \pm \sqrt{\frac{1}{[$a]} x^2 + \frac{2C}{[$a]} }.
 ```]
 Since [`y([$a]) = [$b] > 0 ,`] we can just take the positive
 square root:
 [```
-y =  \sqrt{\frac{1}{[$a]} x^2 + 2C }.
+y =  \sqrt{\frac{1}{[$a]} x^2 + \frac{2C}{[$a]} }.
 ```]
 Let us solve for the initial condition:
 [```
-[$b] =  \sqrt{\frac{1}{[$a]} [$a]^2 + 2C },
+[$b] = y([$a]) =  \sqrt{\frac{1}{[$a]} [$a]^2 + \frac{2C}{[$a]} },
 ```]
 [```
-[$b] =  \sqrt{[$a] + 2C },
+[$b] =  \sqrt{[$a] + \frac{2C}{[$a]} },
 ```]
 [```
-[$b]^2 =  [$a] + 2C ,
+[$b]^2 =  [$a] + \frac{2C}{[$a]} ,
 ```]
 [```
-2C = [$b]^2 -  [$a] .
+\frac{2C}{[$a]} = [$b]^2 -  [$a] = [$b*$b-$a] .
 ```]
-Plugging the [`2C`] into our solution, we find
+Our solution contains [`\frac{2C}{[$a]}`] and so we can just
+plug in for that expression to find
 [```
-y =  \sqrt{\frac{1}{[$a]} x^2 + [$b]^2 - [$a] }.
+y =  \sqrt{\frac{1}{[$a]} x^2 + [$b*$b-$a] }.
 ```]
 END_PGML_SOLUTION
 

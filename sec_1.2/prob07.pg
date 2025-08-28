@@ -48,7 +48,7 @@ if ( $i == 0 ){
   $answer[1] = PopUp(["Choose","continuous","not continuous"],"continuous");
   $answer[2] = PopUp(["Choose","exists","does not exist"],"exists");
   $answer[3] = PopUp(["Choose","continuous","not continuous"],"continuous");
-  $answer[4] = PopUp(["Choose","exists and is unique","does not exist"],"exists and is unique");
+  $answer[4] = PopUp(["Choose","exists and is unique","may not exist or be unique"],"exists and is unique");
 
 } else {
 
@@ -57,7 +57,7 @@ if ( $i == 0 ){
   $answer[1] = PopUp(["Choose","continuous","not continuous"],"not continuous");
   $answer[2] = PopUp(["Choose","exists","does not exist"],"does not exist");
   $answer[3] = PopUp(["Choose","continuous","not continuous"],"not continuous");
-  $answer[4] = PopUp(["Choose","exists and is unique","does not exist"],"does not exist");
+  $answer[4] = PopUp(["Choose","exists and is unique","may not exist or be unique"],"may not exist or be unique");
 
 }
 
@@ -80,9 +80,10 @@ The function \( f(x,y) \) is
 the partial derivative \( \frac{\partial f}{\partial y} \)
 \{ $answer[2]->menu() \} at \( (0,0) \) and is \{ $answer[3]->menu() \}
 at and near the point \( (0,0) \).
-So the solution to 
+So Picard's theorem says that the solution to 
 \( y' = f(x,y) \) 
-\{ $answer[4]->menu() \} near \( y(0) = 0 . \) 
+near \( y(0) = 0 \) 
+\{ $answer[4]->menu() \} .
 $PAR
 $BITALIC $BBOLD Book: $EBOLD
 \{ htmlLink("https://www.jirka.org/diffyqs/html/slopefields_section.html", "Section 1.2 of Notes on Diffy Qs") \}
