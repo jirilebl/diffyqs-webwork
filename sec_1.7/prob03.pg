@@ -83,7 +83,7 @@ ANS($ans5->cmp());
 
 Context()->texStrings;
 BEGIN_SOLUTION
-First \(x_0 = 0\), $SPACE \(y_0 = 0 \).
+First \(x_0 = 0\), $SPACE \(y_0 = $b \).
 $PAR
 \(x_1 = $step \),
 $SPACE

@@ -117,7 +117,7 @@ $BRBR
 $BRBR
 The equation becomes the ODE:
 $BRBR
-\( u_s + $answer2 = 0 \) with initial condition \( u|_{s=0} = $b \cos(\xi) . \)
+\( u_s + $answer2 = 0 \) with initial condition \( u|_{s=0} = $c \cos(\xi) . \)
 $BRBR
 The solution therefore is
 $BRBR

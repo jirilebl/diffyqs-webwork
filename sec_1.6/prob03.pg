@@ -35,26 +35,25 @@ $showPartialCorrectAnswers = 1;
 
 Context("Numeric");
 
-$neg = random(-9,-1,1);
-$pos = random(1,7,1);
-if (abs($pos + $neg) < 2) { $pos = 9; } 
-$a = - $pos - $neg;
-$b = $pos*$neg;
+$first = random(1,7,1);
+$second = $first+random(2,6,1);
+$a = - $first - $second;
+$b = $first*$second;
 
 ##############################################################
 
 BEGIN_PGML
 A function [:x(t):] satisfies the differential equation 
-[``` \frac{dx}{dt} = - x^4 - [$a] x^3 - [$b] x^2. ```]
+[``` \frac{dx}{dt} = - x^4 - [$a] x^3 - [$b] x^2 . ```]
 
 What are the constant solutions of this equation?
 
-[___________]{"$neg,0,$pos"}{50} [@ AnswerFormatHelp("numbers") @]*  
+[___________]{"0,$first,$second"}{50} [@ AnswerFormatHelp("numbers") @]*  
 _*Note:* Separate your answers by commas._
 
 For what values of [:x:] is [:x:] increasing?
 
-[____________]{"$neg"} [` {} < x < {} `] [____________]{"$pos"}
+[____________]{"$first"} [` {} < x < {} `] [____________]{"$second"}
 [@ AnswerFormatHelp("numbers") @]*
 
 _*Book:*
@@ -67,14 +66,14 @@ BEGIN_PGML_SOLUTION
 The polynomial [`- x^4 - [$a] x^3 - [$b] x^2`] has a root at [`0.`]
 Dividing by [`x^2 ,`] we find
 [`- x^2 - [$a] x - [$b] , `] which is quadratic
-and has roots at [`[$neg]`] and [`[$pos] .`]
-So the critical points are [`[$neg],0,[$pos] ,`]
+and has roots at [`[$first]`] and [`[$second] .`]
+So the critical points are [`0,[$first],[$second] ,`]
 and so those are the constant solutions.
 
 The function [:x(t):] is increasing if [`\frac{dx}{dt}`] is positive.  By
 graphing the function [`- x^4 - [$a] x^3 - [$b] x^2`] or perhaps plugging in
 some numbers, you find that it is positive when
-[` [$neg] < x < [$pos] .`]
+[` [$first] < x < [$second] .`]
 END_PGML_SOLUTION
 
 ##############################################################

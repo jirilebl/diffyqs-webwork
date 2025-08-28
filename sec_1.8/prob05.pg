@@ -109,7 +109,8 @@ $PAR
 \(N(x,y)= \) \{$multians->ans_rule(30)\}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
-The term \(M(x,y) \, dx + N(x,y) \, dy\) becomes an exact differential if the left hand side above is divided by \( y^${n1}\). Integrating that new equation, the solution of the differential equation is
+The term \(M(x,y) \, dx + N(x,y) \, dy\) becomes an exact differential if it is divided by \( y^${n1}\).
+Integrating that new equation, the solution of the differential equation is
 $BR
 \{ ans_rule(45) \} \({} = {} \) constant.
 $SPACE \{ AnswerFormatHelp("formulas") \}

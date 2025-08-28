@@ -80,7 +80,7 @@ ANS($ans4->cmp());
 
 Context()->texStrings;
 BEGIN_SOLUTION
-First \(x_0 = 0\), $SPACE \(y_0 = 0 \).
+First \(x_0 = 1\), $SPACE \(y_0 = 0 \).
 $PAR
 \(x_1 = 1.5 \),
 $SPACE
