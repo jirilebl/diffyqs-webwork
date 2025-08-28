@@ -75,12 +75,20 @@ The dependent variable \(x\) appears possibly nonlinearly in the
 terms
 \(($expr) x \frac{dx}{dt} \)
 and
-\(e^{(a-$a)x} .\)
-The only way that the first term is linear is if \(a=0\) or
-if \(a=0 , \) as then the term is just zero.
-The only way the second term is linear is if \(a=$a .\)
-in which case
-the right hand side of the equation will just be \(t.\)
+\(t e^{(a-$a)x} .\)
+The only way
+to make the term
+\(($expr) x \frac{dx}{dt} \)
+depend linearly on \(x\) is for 
+\($expr = 0\) to make the entire term vanish.
+That is, it must be that
+\(a=0\) or
+\(a=$a . \)
+The only way to make
+\(t e^{(a-$a)x} \) be linear in terms of \(x\) is to
+take
+\(a=$a ,\)
+in which case this term is just \(t.\)
 Therefore, the only way the equation is linear is if \(a=$a ,\) 
 when the equation is \(\frac{d^2x}{dt^2}=t . \)
 END_SOLUTION

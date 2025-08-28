@@ -78,7 +78,7 @@ ANS(checkbox_cmp($cmc->correct_ans));
 
 BEGIN_SOLUTION
 The differential equation involves derivatives of only one independent variable,
-\(t,\) and so it is an ODE and not a PDE.  It is first order, as only the
+\(x,\) and so it is an ODE and not a PDE.  It is first order, as only the
 first derivative \(\frac{dy}{dx}\) appears.
 The dependent variable \(y\) and its
 derivative \(\frac{dy}{dx}\) only appear linearly,

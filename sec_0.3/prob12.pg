@@ -78,7 +78,7 @@ ANS( checkbox_cmp( $mc->correct_ans() ) );
 
 BEGIN_SOLUTION
 The equation involves partial derivatives of two
-independent variables, \(x\) and \(t ,\) so it is
+independent variables, \(x\) and \(y ,\) so it is
 a partial differential equation, a PDE, and not an ODE.
 The highest order derivative that appears is of second
 order, so that is the order of the equation.
