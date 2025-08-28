@@ -52,7 +52,7 @@ $y = Formula("$a e^(-$b x) + $c x + $d")->reduce();
 $y0= $y->eval(x=>"0");
 $yp= $y->D('x');
 
-$g = $y + $yp;
+$g = $yp + $b*$y;
 
 #############################
 #  Main text 
@@ -61,12 +61,12 @@ Context()->texStrings;
 BEGIN_TEXT
 The unique solution to the initial value problem
 \[
-y^{\prime} + y = g(x), 
+y^{\prime} + $b y = g(x), 
 \quad
 y(0) = y_0,
 \]
-is \( y(x) = $y \).  Determine the constant \( y_0 \) 
-and the function \( g(x) \).
+is \( y(x) = $y .\)  Determine the constant \( y_0 \) 
+and the function \( g(x) .\)
 $PAR
 \( y_0 = \)
 \{ ans_rule(20) \}
@@ -89,6 +89,25 @@ $showPartialCorrectAnswers = 1;
 
 ANS( $y0->cmp() );
 ANS( $g->cmp() );
+#
+####################################################
+
+Context()->texStrings;
+BEGIN_SOLUTION
+To find \(y_0,\) simply plug in \(x=0\) into \($y\) to obtain
+\[
+y_0 = y(0) = $y0 .
+\]
+To find \(g(x), \) first differentiate the solution to find \(y' .\)
+\[
+y' = $yp .
+\]
+Now the equation says that
+\[
+g(x) = y' + $b y = $g .
+\]
+END_SOLUTION
+Context()->normalStrings;
 
 ##############################
 
