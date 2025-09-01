@@ -40,22 +40,33 @@ Context("Numeric");
 
 $a = random(2,9,1);
 $b = random(2,9,1);
+$c = random(2,9,1);
 
 $f = Formula("x")->reduce;
 $g = Formula("x^($a)")->reduce;
-$h = Formula("x^($b)")->reduce;
+$h = Formula("$c*x^($b)")->reduce;
 
-$multians = MultiAnswer(Real(0),Real(0),Real(0))->with(
-  singleResult => 1,
-  checker => sub {
-      my ( $correct, $student, $self ) = @_;
-      my ( $Astu, $Bstu, $Cstu ) = @{$student};
+if ($a==$b) {
+  $multians = MultiAnswer(Real(0),Real($c),Real(-1))->with(
+    singleResult => 1,
+    checker => sub {
+        my ( $correct, $student, $self ) = @_;
+        my ( $Astu, $Bstu, $Cstu ) = @{$student};
       
-      if ($a!=$b) { return ($Astu==0 && $Bstu==0 && $Cstu==0);}
-      if ($a==$b) { return ($Astu==0 && $Bstu!=0 && $Bstu == -$Cstu); }
-
-  }
-);
+        return ($Astu==0 && $Bstu!=0 && $Bstu == -$c*$Cstu);
+    }
+  );
+} else {
+  $multians = MultiAnswer(Real(0),Real(0),Real(0))->with(
+    singleResult => 1,
+    checker => sub {
+        my ( $correct, $student, $self ) = @_;
+        my ( $Astu, $Bstu, $Cstu ) = @{$student};
+      
+        return ($Astu==0 && $Bstu==0 && $Cstu==0);
+    }
+  );
+}
 
 
 ######################

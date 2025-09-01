@@ -104,6 +104,7 @@ a characteristic equation which factors as follows.
 $charEqn = 0
 \]
 Write the nine fundamental solutions to the differential equation.
+Use \( x \)  for the independent variable.
 $PAR
 \{ mbox( [
  "$SPACE \(y_1 = \)",

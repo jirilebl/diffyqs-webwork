@@ -99,7 +99,7 @@ y = $y0 e^t.
 \]
 Now plug this \(y\) into the equation for \(x\) to obtain
 \(
-x^{\prime} = $y0 e^t - x + t
+x^{\prime} = $y0 e^t - x + t ,
 \)
 or in more standard form
 \[

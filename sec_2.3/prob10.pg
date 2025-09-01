@@ -85,7 +85,7 @@ with roots \{$roots->ans_rule(30)\}
 $BR
 $BITALIC $BBOLD Note: $EBOLD Enter the roots as a comma separated list.$EITALIC
 $PAR
-Therefore there are three fundamental solutions
+Therefore there are three fundamental solutions (use \(x\) as the independent variable)
 $BR
 \{$fundamental->ans_rule(50)\}
 \{ AnswerFormatHelp("formulas") \}

@@ -63,7 +63,7 @@ Convert the second order ODE
 x'' = \sin($a t) x' + $b t x
 \]
 to a first order system of two equations.  Use \(y\) for \(x'\).  Write down
-what \(x'\) and \(y'\) are in terms of \(x\) and \(y\):
+what \(x'\) and \(y'\) are in terms of \(x,\) \(y,\) and \(t\):
 $PAR
 \( x' = \)
 \{ ans_rule(40) \}
@@ -95,11 +95,11 @@ ANS( $answer2->cmp() );
 
 Context()->texStrings;
 BEGIN_SOLUTION
-As \( x'=y \), that is the first equation.
+As \( x'=y , \) that is the first equation.
 $PAR
 For the second equation, substitute \( x'' = y' \) and \( x' = y\) into
-\( x'' = \sin($a t) x' + $b t x \) so 
-\( y' = \sin($a t) y + $b t x \).
+\( x'' = \sin($a t) x' + $b t x , \) so 
+\( y' = \sin($a t) y + $b t x . \)
 END_SOLUTION
 Context()->normalStrings;
 

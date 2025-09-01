@@ -108,9 +108,9 @@ BEGIN_SOLUTION
 If we take a derivative of the first equation, \(x'=y\),
 we find \(x''=y'\).
 Therefore, we can replace \(y\) and \(y'\) in the second equation
-by \(x'\) and \(x''\) respectively.  That is we find
+by \(x'\) and \(x''\) respectively.  We find
 \(
-x'' = $ab x + $bma x'
+x'' = $ab x + $bma x' ,
 \)
 or in more standard notation
 \(
