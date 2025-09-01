@@ -105,6 +105,46 @@ $showPartialCorrectAnswers = 1;
 
 ANS( $multians->cmp() );
 
+##############################
+#  Solution
+
+if ($a==$b) {
+  Context()->texStrings;
+  BEGIN_SOLUTION
+  The three functions are linearly dependent, in particular
+  \[
+  $c \left( $g \right) = $h .
+  \]
+  Therefore,
+  \[
+  (0) \left( $f \right) + ($c) \left( $g \right) + (-1) \left( $h \right) = 0
+  \]
+  is a nontrivial linear combination.
+  END_SOLUTION
+  Context()->normalStrings;
+} else {
+  Context()->texStrings;
+  BEGIN_SOLUTION
+  The three functions are linearly independent.
+  One way to see it is to try to write 
+  \[
+  A $f + B $g + C $h = 0 .
+  \]
+  This should hold at all \(x,\) so plug in several \(x,\) for example 1, 2, and 3:
+  \[
+  A (\{ $f->eval(x=>1)->reduce; \})  + B (\{ $g->eval(x=>1)->reduce; \}) + C (\{ $h->eval(x=>1)->reduce; \}) = 0 ,
+  \]
+  \[
+  A (\{ $f->eval(x=>2)->reduce; \})  + B (\{ $g->eval(x=>2)->reduce; \}) + C (\{ $h->eval(x=>2)->reduce; \}) = 0 ,
+  \]
+  \[
+  A (\{ $f->eval(x=>3)->reduce; \})  + B (\{ $g->eval(x=>3)->reduce; \}) + C (\{ $h->eval(x=>3)->reduce; \}) = 0 .
+  \]
+  The only solution is \(A=B=C=0 .\)
+  END_SOLUTION
+  Context()->normalStrings;
+}
+
 ########################
 
 COMMENT("Check linear independence of 3 functions");

@@ -51,7 +51,6 @@ $multians = MultiAnswer(Real(0),Real(0),Real(0))->with(
       my ( $Astu, $Bstu, $Cstu ) = @{$student};
       
       return ($Astu==0 && $Bstu==0 && $Cstu==0);
-
   }
 );
 
@@ -91,6 +90,30 @@ Context()->normalStrings;
 $showPartialCorrectAnswers = 1;
 
 ANS( $multians->cmp() );
+
+##############################
+#  Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+The three functions are linearly independent.
+One way to see it is to try to write 
+\[
+A $f + B $g + C $h = 0 .
+\]
+This should hold at all \(x,\) so plug in several \(x,\) for example 0, 1, and -1:
+\[
+A  + B 0 + C 0 = 0 ,
+\]
+\[
+A e^{$a}  + B e^{$a} + C e^{$a} = 0 ,
+\]
+\[
+A e^{-$a}  + B (-1) e^{-$a} + C e^{-$a} = 0 .
+\]
+The only solution is \(A=B=C=0 .\)
+END_SOLUTION
+Context()->normalStrings;
 
 ########################
 

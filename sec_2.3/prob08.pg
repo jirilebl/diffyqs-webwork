@@ -46,7 +46,7 @@ $f = Formula("e^($a x) + $s cos($b x)")->reduce;
 $g = Formula("e^($a x) - $s cos($b x)")->reduce;
 $h = Formula("cos($b x)")->reduce;
 
-$multians = MultiAnswer(Real(1),Real(-1),Real(2))->with(
+$multians = MultiAnswer(Real(1),Real(-1),Real(-2*$s))->with(
   singleResult => 1,
   checker => sub {
       my ( $correct, $student, $self ) = @_;
@@ -57,8 +57,6 @@ $multians = MultiAnswer(Real(1),Real(-1),Real(2))->with(
       my $stu = Formula( $Astu*$f + $Bstu*$g + $Cstu*$h )->with(test_points=>[[-1],[0],[1]]);
 
       return ($stu==Formula(0));
-
-      #if ( $stu == Formula(0) ) { return 1; } else { return 0; }
   }
 );
 
@@ -98,6 +96,23 @@ Context()->normalStrings;
 $showPartialCorrectAnswers = 1;
 
 ANS( $multians->cmp() );
+
+##############################
+#  Solution
+
+Context()->texStrings;
+BEGIN_SOLUTION
+The three functions are linearly dependent, in particular
+\[
+\left( $f \right) - \left( $g \right) = \{ 2*$s \} \left( $h \right) .
+\]
+Therefore,
+\[
+(1) \left( $f \right) + (-1) \left( $g \right) + (\{ -2*$s \}) \left( $h \right) = 0
+\]
+is a nontrivial linear combination.
+END_SOLUTION
+Context()->normalStrings;
 
 ########################
 
