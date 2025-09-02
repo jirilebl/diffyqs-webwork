@@ -45,14 +45,14 @@ $c = random( $c0, $c0 + 5);
 ##########################################################
 
 BEGIN_TEXT
-A spring with a $m-kg mass and a damping constant $c can be held stretched
+A spring with a $m-kg mass and a damping constant $c newton-seconds per meter can be held stretched
 $x0 meters beyond its natural length by a force of $F0 newtons.  Suppose
 the spring is stretched \{2*$x0\} meters beyond its natural length and
 then released with zero velocity.
 $PAR
 In the notation of the text, what is the value \(c^2 - 4mk\)?
 $BR
-\{ans_rule(20)\} \( \text m^2\text{kg}^2/\text{sec}^2 \)
+\{ans_rule(20)\}
 $SPACE \{ AnswerFormatHelp("numbers") \}
 $PAR
 Find the position of the mass, in meters, after t seconds.  Your answer

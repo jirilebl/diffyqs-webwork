@@ -83,7 +83,8 @@ $PAR
 with roots \{$roots->ans_rule(30)\}
 \{ AnswerFormatHelp("numbers") \}
 $BR
-$BITALIC $BBOLD Note: $EBOLD Enter the roots as a comma separated list.$EITALIC
+$BITALIC $BBOLD Note: $EBOLD Enter the roots as a comma separated list.  If a root is 
+repeated, only enter it once. $EITALIC
 $PAR
 Therefore there are three fundamental solutions (use \(x\) as the independent variable)
 $BR
