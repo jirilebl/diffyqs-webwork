@@ -104,7 +104,7 @@ $PAR
 Let \(C_1\) and \(C_2\) be arbitrary constants.  The general solution to the related homogeneous differential equation  
 \(y''+$a2 y =0\) is the function
 $PAR
-\(y_h(x)=C_1\ y_1(x)+C_2\ y_2(x)=C_1\) \{ans_rule(15)\} \(+C_2\)\{ans_rule(15)\}
+\(y_c(x)=C_1\ y_1(x)+C_2\ y_2(x)=C_1\) \{ans_rule(15)\} \(+C_2\)\{ans_rule(15)\}
 $SPACE \{ AnswerFormatHelp("formulas") \}
 $BR
 $BITALIC $BBOLD
