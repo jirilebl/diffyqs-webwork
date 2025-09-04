@@ -53,11 +53,11 @@ m x'' + [$k] x = [$F] \cos([$omega] t) .
 
 What mass [`m`] leads to resonance?
 
-[` m = `] [____________]{"$mass"} [@ AnswerFormatHelp("numbers") @]*
+[` m = `] [____________]{"$mass"} kg [@ AnswerFormatHelp("numbers") @]*
 
 What is the resonance part of the solution (without the complementary solution)?
 
-[` y_p = `] [___________]{"($F/(2*$mass*$omega))*t*sin($omega*t)"}{60}
+[` x_p = `] [___________]{"($F/(2*$mass*$omega))*t*sin($omega*t)"}{60}
 [@ AnswerFormatHelp("formulas") @]*
 
 _*Book:*

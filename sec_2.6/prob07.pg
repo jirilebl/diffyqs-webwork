@@ -60,7 +60,7 @@ damping [$c] kg/s and an oscillating force [`[$F] \cos( \omega t) `] Newtons.  T
 
 What positive angular frequency [`\omega`] leads to maximum practical resonance?
 
-[` \omega = `] [____________]{"$omega"}{25} [@ AnswerFormatHelp("numbers") @]*
+[` \omega = `] [____________]{"$omega"}{25} radians/sec [@ AnswerFormatHelp("numbers") @]*
 
 What is the maximum displacement of the mass in the steady state
 solution when [`\omega`] corresponds to the practical resonance?

@@ -53,11 +53,11 @@ Consider the mass-spring system for mass [$mass] kg, spring constant [$k] N/m, a
 
 What positive angular frequency [`\omega`] leads to resonance?
 
-[` \omega = `] [____________]{"$omega"} [@ AnswerFormatHelp("numbers") @]*
+[` \omega = `] [____________]{"$omega"} radians/sec [@ AnswerFormatHelp("numbers") @]*
 
 What is the resonance part of the solution (without the complementary solution)?
 
-[` y_p = `] [___________]{"($F/(2*$mass*$omega))*t*sin($omega*t)"}{60}
+[` x_p = `] [___________]{"($F/(2*$mass*$omega))*t*sin($omega*t)"}{60}
 [@ AnswerFormatHelp("formulas") @]*
 
 _*Book:*

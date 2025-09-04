@@ -82,7 +82,7 @@ x^{\prime}(0) = 0
 \]
 modeling the motion of a damped mass-spring system
 initially at rest and subjected to an applied 
-force \( F(t) \), where the unit of force is the 
+force \( F(t) ,\) where the unit of force is the 
 Newton (N).  Assume that \( m = $m \) kilograms, 
 \( c = $c \) kilograms per second, \( k = $k \) 
 Newtons per meter, and \( F(t) = $F \) Newtons.  
@@ -98,9 +98,9 @@ Determine the long-term behavior of the system (steady periodic solution).
 Is \( \displaystyle \lim_{t\to\infty} x(t) = 0 \)?
 If it is, enter zero.  If not, enter a function that
 approximates \( x(t) \) for very large positive values
-of \( t \).
+of \( t .\)
 $PAR
-For very large positive values of \( t \),
+For very large positive values of \( t ,\)
 $PAR
 \( x(t) \approx x_{sp}(t) = \)
 \{ ans_rule(50) \}

@@ -73,15 +73,15 @@ Context()->texStrings;
 BEGIN_TEXT
 A \( $m \) kilogram object suspended from the 
 end of a vertically hanging spring stretches the spring
-\( 9.8 \) centimeters.  At time \( t = 0 \), the 
+\( 9.8 \) centimeters.  At time \( t = 0 ,\) the 
 resulting mass-spring system is disturbed from its 
-rest state by the force \( F(t) = $F \).  The force
+rest state by the force \( F(t) = $F .\)  The force
 \( F(t) \) is expressed in Newtons and is positive
 in the downward direction, and time is measured in 
 seconds.
 
 $PAR
-Determine the spring constant \( k \).
+Determine the spring constant \( k .\)
 $PAR
 \( k = \) 
 \{ ans_rule(10) \}
@@ -92,13 +92,13 @@ $PAR
 $BITALIC Hint is to use earth gravity of \(9.8\) meters per second squared, and note that Newton is kg meter per second squared. $EITALIC
 
 $PAR
-Formulate the initial value problem for \( x(t) \),
+Formulate the initial value problem for \( x(t) ,\)
 where \( x(t) \) is the displacement of the object
 from its equilibrium rest state, measured positive
 in the downward direction.
 $BR
 $BITALIC Give your answer in terms of
-\( x, x^{\prime}, x^{\prime\prime}, t \). $EITALIC
+\( x, x^{\prime}, x^{\prime\prime}, t .\) $EITALIC
 $PAR
 Differential equation:
 \{ ans_rule(40) \}
@@ -145,7 +145,7 @@ $PAR
 $PAR
 Plot the solution and determine the maximum 
 displacement from equilibrium made by the object on
-the time interval \( 0 \leq t < \infty \).  If 
+the time interval \( 0 \leq t < \infty .\)  If 
 there is no such maximum, enter ${LQ}NONE${RQ}.
 $PAR
 maximum displacement = 
