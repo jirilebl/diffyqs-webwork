@@ -34,6 +34,12 @@ TEXT(beginproblem());
 $showPartialCorrectAnswers = 1;
 
 Context("Numeric");
+Context()->flags->set(num_points => 50,
+                      granularity => 10000,
+                      tolType => "relative",
+                      tolerance => 0.00001,
+                      reduceConstants => 0);
+Context()->variables->set(x=>{limits=>[-1,1]});
 
 $k = random(2,4,1);
 $c = 2*$k*$k*random(1,4,1);
@@ -43,10 +49,43 @@ $A = Compute("-$c/($k^2)")->reduce;
 $B = Compute("$c/(2*$k)")->reduce;
 
 # must be Formula since we need upToConstant=>1 to work
+# and we use upToConstant since + constant is a reasonable
+# thing one could get from undetermined coefficients here
 $ans1 = Formula("$A*x+$B*x^2")->reduce;
-# must be Formula since we need upToConstant=>1 to work
-$ans2 = Formula("1");
-$ans3 = Compute("e^(-$k*x)");
+
+# Any multiple is fine, though really that shouldn't be happening
+$ans2 = Formula('1');
+$ans2cmp = $ans2->cmp(
+    checker => sub {
+        my ($correct, $student, $ans) = @_;
+        return 0 if $student == Formula(0); # See comments.
+        if ($self->{_filter_name} ne 'produce_equivalence_message') {
+            my $context = Context()->copy;
+            $context->flags->set(no_parameters => 0);
+            $context->variables->add(C0 => 'Parameter');
+            $student = Formula($context, $student);
+            $correct = Formula($context, "C0 * $ans2");
+        }
+        return $correct == $student;
+    }
+);
+
+# Any multiple is fine, though really that shouldn't be happening
+$ans3 = Formula("e^(-$k*x)");
+$ans3cmp = $ans3->cmp(
+    checker => sub {
+        my ($correct, $student, $ans) = @_;
+        return 0 if $student == Formula(0); # See comments.
+        if ($self->{_filter_name} ne 'produce_equivalence_message') {
+            my $context = Context()->copy;
+            $context->flags->set(no_parameters => 0);
+            $context->variables->add(C0 => 'Parameter');
+            $student = Formula($context, $student);
+            $correct = Formula($context, "C0 * $ans3");
+        }
+        return $correct == $student;
+    }
+);
 
 ##############################################################
 
@@ -70,9 +109,10 @@ Context()->normalStrings;
 
 ##############################################################
 
+# In this case adding a constant to the particular is reasonable
 ANS($ans1->cmp(upToConstant=>1));
-UNORDERED_ANS($ans2->cmp(upToConstant=>1),
-              $ans3->cmp(upToConstant=>1));
+UNORDERED_ANS($ans2cmp,
+              $ans3cmp);
 
 ##############################################################
 
