@@ -1,6 +1,20 @@
+##DESCRIPTION
+## Finding eigenvalues and eigenfunctions of a boundary value problem
+##ENDDESCRIPTION
+
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Boundary value problems)
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
-## KEYWORDS('sturm', 'louiville', 'differential', 'equation')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('4.1')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'boundary value problem', 'homogeneous', 'Sturm-Louiville', 'eigenvalue', 'eigenfunction')
 
 ########################################################################
 
@@ -100,9 +114,9 @@ sub DEchecker {
 ## Part 1:
 ## Case where lambda = 0 ###
 
-$equalzero = Formula("A+B*x");
-$equalzero_boundary0 = Formula("A");
-$equalzero_boundarya = Formula("A+Ba");
+$equalzero = Formula("A*x+B");
+$equalzero_boundary0 = Formula("B");
+$equalzero_boundarya = Formula("Aa+B");
 
 $equalzero_ans = MultiAnswer($equalzero, $equalzero_boundary0, $equalzero_boundarya)->with(
   singleResult => 0,
@@ -264,13 +278,13 @@ $eigen2 = Formula("sin(2*pi*x/a)");
 $eigen3 = Formula("sin(3*pi*x/a)");
 $eigen4 = Formula("sin(4*pi*x/a)");
 
+$L = Compute(random(2,9));
+
 @Goptions = (
-  -1,-2,$L,2,                            # dimensions of graph
-  axes => [0,0], grid => [3,3],   # number of grid lines
+  -1,-2,($L+1),2,                            # dimensions of graph
+  axes => [0,0], grid => [$L+2,4],   # number of grid lines
   size => [350,350]                               # pixel dimension
 );
-
-$L = Compute(random(2,9));
 
 $plotdomain  = "x in <0,$L>";
 @color = ("black","red","green","blue");
@@ -295,7 +309,8 @@ $PAR
 $BR
 \(y_1(x)=\)\{ans_rule()\}, \(y_2(x)=\)\{ans_rule()\}, \(y_3(x)=\)\{ans_rule()\}, \(y_4(x)=\)\{ans_rule()\},
 $BR
-Here are graphs of the first four nonzero eigenfunctions on \(\lbrack 0,$L \rbrack\).
+Here are graphs of the first four nonzero eigenfunctions on \(\lbrack 0,$L \rbrack ,\)
+that is, when \(a=$L\):
 $BR
 \{$figeigen\}
 $BR
@@ -384,6 +399,11 @@ ANS($order->cmp(ordered=>1));
 ### Solution - 14%
 #WEIGHTED_ANS($eigenfunctions->cmp(ordered=>1), 7);
 #WEIGHTED_ANS($order->cmp(ordered=>1), 7);
+
+
+##############################################################
+
+COMMENT("Finding eigenvalues and eigenfunctions of a boundary value problem");
 
 ENDDOCUMENT();        
 

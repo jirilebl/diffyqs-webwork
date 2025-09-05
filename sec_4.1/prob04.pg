@@ -1,8 +1,21 @@
-# Find eigenvalues of a boundary value ODE problem
+##DESCRIPTION
+## Finding eigenvalues and eigenfunctions of a boundary value problem.
+## Randomly picks L.  Randomly takes a derivative on left or right boundary values.
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Boundary value problems)
 ## Institution(METU-NCC)
 ## Author(Benjamin Walter)
-## KEYWORDS('ODE', 'boundary value')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('4.1')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'boundary value problem', 'homogeneous', 'Sturm-Louiville', 'eigenvalue', 'eigenfunction')
 
 ########################################################################
 
@@ -54,11 +67,11 @@ $DE = Formula($DEcontext, "y'' + lambda y")->reduce;
 $L = random(1,6,1);      # length of interval
 
 if (random(0,1,1) == 1) {
-  @d = (0,     # left boundary has derivative 
+  @d = (0,     # left boundary does not have derivative 
         1);    # right boundary has derivative
 } else {
   @d = (1,     # left boundary has derivative 
-        0);    # right boundary has derivative
+        0);    # right boundary does not derivative
 }
 
 $y0 = ($d[0]==0) ? Formula($DEcontext, "y")  : 
@@ -94,13 +107,13 @@ $PAR
 
 Eigenvalues:
 $PAR
-\(\lambda_n = \)\{ ans_rule(30) \}
+\(\lambda_n = {}\)\{ ans_rule(30) \}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 
 Eigenfunctions:
 $PAR
-\( y_n = \)\{ ans_rule(30) \}
+\( y_n = {}\)\{ ans_rule(30) \}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 
@@ -139,6 +152,6 @@ Context()->normalStrings;
 ANS($lambda->cmp());
 ANS($f->cmp());
 
-COMMENT("Randomly picks L.  Randomly takes a derivative on left or right boundary values.");
+COMMENT("Finding eigenvalues and eigenfunctions of a boundary value problem.  Randomly picks L.  Randomly takes a derivative on left or right boundary values.");
 
 ENDDOCUMENT();        

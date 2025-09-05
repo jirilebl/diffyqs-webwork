@@ -1,8 +1,21 @@
-# Find eigenvalues of a boundary value ODE problem
+##DESCRIPTION
+## Finding eigenvalues and eigenfunctions of a boundary value problem.
+## Randomly picks L.  Takes a derivative on both left and right boundary values.
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Boundary value problems)
 ## Institution(METU-NCC)
 ## Author(Benjamin Walter)
-## KEYWORDS('ODE', 'boundary value')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('4.1')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'boundary value problem', 'homogeneous', 'Sturm-Louiville', 'eigenvalue', 'eigenfunction')
 
 ########################################################################
 
@@ -37,7 +50,7 @@ $DEcontext = Context()->copy;
 Context("Numeric");
 Context()->variables->are(
   "x"=>"Real",
-  "n"=>["Real",limits=>[1,6],resolution=>1]);
+  "n"=>["Real",limits=>[1,20],resolution=>1]);
 $Default = Context()->copy;
 Context()->variables->remove("x");
 $Default_nox = Context()->copy;
@@ -89,13 +102,13 @@ $PAR
 
 Eigenvalues:
 $PAR
-\(\lambda_n = \)\{ ans_rule(30) \}
+\(\lambda_n = {}\)\{ ans_rule(30) \}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 
 Eigenfunctions:
 $PAR
-\(y_n = \)\{ ans_rule(30) \}
+\( y_n = {}\)\{ ans_rule(30) \}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 
@@ -114,7 +127,6 @@ $BITALIC $BBOLD Book: $EBOLD
 $EITALIC
 END_TEXT
 
-
 BEGIN_HINT
 
 When computing eigenvalues, the following two formulas may be useful:
@@ -124,7 +136,6 @@ $SPACE $SPACE
 $PAR
 $SPACE $SPACE
 \(\cos(\theta) = 0\) when \(\displaystyle \theta = \frac{(2n+1)\pi}{2}\).
-
 END_HINT
 
 Context()->normalStrings;
@@ -136,6 +147,6 @@ Context()->normalStrings;
 ANS($lambda->cmp());
 ANS($f->cmp());
 
-COMMENT("Randomly picks L.  Takes derivatives on left and right boundary values.");
+COMMENT("Finding eigenvalues and eigenfunctions of a boundary value problem.  Randomly picks L.  Takes a derivative on both left and right boundary values.");
 
 ENDDOCUMENT();        

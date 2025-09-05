@@ -1,9 +1,21 @@
-# Whirling string application, boundary value problem, compute tension of
-# a popped out string
+##DESCRIPTION
+## Whirling string application, boundary value problem, compute tension of
+## a popped out string
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Boundary value problems)
 ## Institution(Oklahoma State University)
 ## Author(Jiri Lebl)
-## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'whirling string', 'boundary problem')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('4.1')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'whirling string', 'boundary value problem')
 
 ########################################################################
 
@@ -79,5 +91,9 @@ and solving for \(T\), we obtain
 \[ T = $sol \]
 END_SOLUTION
 Context()->normalStrings;
+
+#####################
+
+COMMENT("Whirling string application, boundary value problem, compute tension of a popped out string");
 
 ENDDOCUMENT();

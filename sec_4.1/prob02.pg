@@ -1,6 +1,20 @@
+##DESCRIPTION
+## Solve a second order homogeneous boundary value ODE problem
+##ENDDESCRIPTION
+
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Boundary value problems)
 ## Institution(METU-NCC)
 ## Author(Benjamin Walter)
-## KEYWORDS('ODE', 'boundary value')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('4.1')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'boundary value problem', 'homogeneous')
 
 ########################################################################
 
@@ -157,7 +171,9 @@ ANS($soln[$mix[0]]->cmp);
 ANS($soln[$mix[1]]->cmp);
 ANS($soln[$mix[2]]->cmp);
 
+##############
 
+COMMENT("Solve a second order homogeneous boundary value ODE problem");
 
 ENDDOCUMENT();        
 
