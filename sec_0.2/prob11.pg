@@ -38,8 +38,8 @@ BEGIN_TEXT
 Solve this problem by educated guessing.  
 $PAR 
 Suppose \(f\) is a function that satisifes
-\[{\bigl(f'(x)\bigr)}^2 = 4 f(x) \] 
-for all \(x\) in its domain, \(f(1) = 1\text{,}\) and 
+\[{\bigl(f'(x)\bigr)}^2 = 4 f(x) \quad \text{for all } x , \] 
+and also satisfies \(f(1) = 1\) and 
 \(f(-1) = 1 \text{.}\)
 Then 
 $PAR
