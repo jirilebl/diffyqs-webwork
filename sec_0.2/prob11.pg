@@ -47,7 +47,8 @@ $PAR
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 $BITALIC $BBOLD Hint: $EBOLD What simple function that you know becomes
-a something like a square root of itself when you differentiate it. $EITALIC
+twice the square root of itself when you differentiate it.
+That is, you can think of the equation as \({\bigl(\frac{1}{2} f'(x)\bigr)}^2 = f(x) \text{.} \) $EITALIC
 $PAR
 $BITALIC $BBOLD Book: $EBOLD
 \{ htmlLink("https://www.jirka.org/diffyqs/html/introde_section.html", "Section 0.2 of Notes on Diffy Qs") \}
@@ -64,8 +65,8 @@ ANS($ans->cmp());
 
 Context()->texStrings;
 BEGIN_SOLUTION
-After a bit of thought, perhaps you think that \(f(x) = x^2\) sort of
-looks like a square root when you differentiate it: \(f'(x) = 2 x\text{.}\)
+After a bit of thought, perhaps you think that \(f(x) = x^2\) becomes twice
+the square root of itself when you differentiate it: \(f'(x) = 2 x\text{.}\)
 And if we try it, it works:
 \[
 {\bigl(f'(x)\bigr)}^2 = (2x)^2 = 4 x^2 = 4 f(x) \text{.}
