@@ -1,8 +1,21 @@
-# Sturm-Liouville eigenvalue problem
+##DESCRIPTION
+## Finding eigenvalues and eigenfunctions of a Sturm-Liouville boundary value problem
+## Requires some high precision decimal answers.
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Higher order differential equations)
+## DBsection(Boundary value problems)
 ## Institution(Alfred University)
 ## Author(Darwyn Cook)
-## KEYWORDS('Sturm-Liouville', 'differential', 'equation')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('5.1')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'equation', 'boundary value problem', 'homogeneous', 'Sturm-Louiville', 'eigenvalue', 'eigenfunction')
 
 ########################################################################
 
@@ -220,7 +233,7 @@ $yM=-$ym;
 #
 @Goptions = (
   $xm,$ym,$xM,$yM,                            # dimensions of graph
-  axes => [0,0], grid => [3,3],   # number of grid lines
+  axes => [0,0], grid => [$xM-$xm,$yM-$ym],   # number of grid lines
   size => [$size[0],$size[1]]                               # pixel dimension
 );
 
@@ -359,8 +372,8 @@ $eigen4 = $eigenfunction->substitute(lambda=>$trigeigen[$L][3]);
 
 
 @Goptions = (
-  -1,$ym,$L,$yM,                            # dimensions of graph
-  axes => [0,0], grid => [3,3],   # number of grid lines
+  -1,$ym,$L+1,$yM,                            # dimensions of graph
+  axes => [0,0], grid => [$L+2,$yM-$ym],   # number of grid lines
   size => [$size[0],$size[1]]                               # pixel dimension
 );
 
@@ -473,6 +486,6 @@ ANS($order->cmp(ordered=>1));
 #WEIGHTED_ANS($eigenfunctions->cmp(ordered=>1), 28);
 #WEIGHTED_ANS($order->cmp(ordered=>1), 2);
 
-COMMENT("Requires high precision decimal answers.");
+COMMENT("Finding eigenvalues and eigenfunctions of a Sturm-Liouville boundary value problem.  Requires high precision decimal answers.");
 
 ENDDOCUMENT();        
