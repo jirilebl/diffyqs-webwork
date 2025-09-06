@@ -119,7 +119,6 @@ do {
 } until (abs($c1) > 0.00001 && abs($c1) > 0.00001);
 
 $xt = Compute("$c1*$m12*exp($r1*t)+$c2*$m12*exp($r2*t)")->reduce;
-  "VectorField2D.pl",
 $yt = Compute("$c1*($r1-$m11)*exp($r1*t)+$c2*($r2-$m11)*exp($r2*t)")->reduce;
 
 ##################################################
