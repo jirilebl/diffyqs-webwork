@@ -287,7 +287,7 @@ foreach my $i (0..3) { push( @QA, $systems[$i],  $gr[$i] ); }
 
 $ml = new_image_match_list(
   link => 1,                #  do not link to separate image
-  size => [$htmlsizse,$htmlsize],        #  image size in pixels
+  size => [$htmlsize,$htmlsize],        #  image size in pixels
   tex_size => 450,          #  tex size in precent times 10
   columns => 2,             #  number of columns
   separation => 20,         #  separation between image columns 
