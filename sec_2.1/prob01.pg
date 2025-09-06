@@ -59,13 +59,13 @@ Context()->texStrings;
 BEGIN_TEXT
 Guess an (affine) linear solution
 (affine linear is of the form \(ax+b\)) to 
-\( y'' + $a y = $b x + $c \).
+\( y'' + $a y = $b x + $c .\)
 $PAR
 \( y = {} \) \{ ans_rule(20) \}
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 Guess an (affine) linear solution to 
-\( y'' + y' + $a y = $b x + $c \).
+\( y'' + y' + $a y = $b x + $c .\)
 $PAR
 \( y = {} \) \{ ans_rule(20) \}
 \{ AnswerFormatHelp("formulas") \}
@@ -92,17 +92,17 @@ ANS( $answer2->cmp() );
 
 Context()->texStrings;
 BEGIN_SOLUTION
-If \( y = ax + b \), then \(y''=0\).
-Therefore the equation gives \( $a y = $b x + $c \).  Solving for
-\(y\) we get \( $answer1 \).
+If \( y = ax + b ,\) then \(y''=0 .\)
+Therefore the equation gives \( $a y = $b x + $c .\)  Solving for
+\(y\) we get \( $answer1 . \)
 $PAR
 In the second equation,
-gain \(y''=0\).  Plugging in \( y' = a \) and \( y = ax+b \) gives
+gain \(y''=0 .\)  Plugging in \( y' = a \) and \( y = ax+b \) gives
 \( a + $a (ax+b) = $b x + $c \) or
-\( $a ax+ $a b + a = $b x + $c \) so \( $b = $a a \) and \( $a b + a = $c \).
-In other words \( a = \frac{$b}{$a} \) and \( b = \frac{$c-$b/$a}{$a} \).
+\( $a ax+ $a b + a = $b x + $c \) so \( $b = $a a \) and \( $a b + a = $c .\)
+In other words \( a = \frac{$b}{$a} \) and \( b = \frac{$c-$b/$a}{$a} .\)
 We find
-\(y = $answer2 \).
+\(y = $answer2 . \)
 END_SOLUTION
 Context()->normalStrings;
 

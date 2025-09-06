@@ -88,7 +88,7 @@ ANS(Compute("$root1, $root2")->cmp());
 Context()->texStrings;
 BEGIN_SOLUTION
 Compute \( y' = $coeff r e^{rx} \) and \( y'' = $coeff r^2 e^{rx} . \)
-Then plug into the equation:
+Then plug these together with \(y = $coeff e^{rx}\) into the equation:
 \[
 0 = $eq = $eqplug = $coeff e^{rx} \bigl( $eqchar \bigr) .
 \]
