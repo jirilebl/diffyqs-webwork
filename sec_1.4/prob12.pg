@@ -45,7 +45,7 @@ Context()->flags->set(num_points => 50,
                       tolerance => 0.00001,
                       reduceConstants => 0);
 
-$f = random(2,6,1);   # flowrate (in g/L)
+$f = random(2,6,1);   # flowrate (in L/min)
 $v = random(10,40,5); # volume (in L)
 
 $answera = Compute("c * $f - (x / $v) * ($f)");

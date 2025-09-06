@@ -45,7 +45,7 @@ Context()->flags->set(num_points => 50,
                       tolerance => 0.00001,
                       reduceConstants => 0);
 
-$f = random(2,6,1);   # flowrate (in g/L)
+$f = random(2,6,1);   # flowrate (in L/min)
 $v = random(10,40,5); # volume (in L)
 $x0 = random(5,15,5); # initial amount (in g)
 $c = random(3,5,1);   # concentration coming (in g/L)
