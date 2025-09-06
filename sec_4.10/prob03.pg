@@ -1,8 +1,20 @@
-# Compute temperature at the center of a circle using the Poisson integral formula
+##DESCRIPTION
+## Compute temperature at the center of a circle using the Poisson integral formula
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Partial differential equations)
+## DBsection(Laplace's equation)
 ## Author(Jiri Lebl)
 ## Institution(Oklahoma State University)
-## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'Laplace equation')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('4.10')
+## Problem1('')
+## Level(4)
+## MO(1)
+## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'Laplace equation', 'Poisson kernel')
 
 ########################################################################
 
@@ -79,5 +91,9 @@ because the Poisson formula tells us that \(u\) at the origin is precisely the a
 on the boundary of the unit disc.
 END_SOLUTION
 Context()->normalStrings;
+
+#####################
+
+COMMENT("Compute temperature at the center of a circle using the Poisson integral formula");
 
 ENDDOCUMENT();

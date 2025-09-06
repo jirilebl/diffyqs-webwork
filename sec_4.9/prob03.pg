@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Simple solution of the Laplace equation given an expansion on one side of a square
+## Simple solution of the Laplace equation given an expansion on one side (left) of a square
 ##ENDDESCRIPTION
 
 ## DBsubject(Differential equations)
@@ -7,12 +7,12 @@
 ## DBsection(Laplace's equation)
 ## Author(Jiri Lebl)
 ## Institution(Oklahoma State University)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('4.9')
+## Problem1('')
 ## Level(4)
-## TitleText2('Notes on Diffy Qs: Differential Equations for Engineers')
-## AuthorText2('Jiri Lebl')
-## EditionText2('6')
-## Section2('4.9')
-## Problem2('')
 ## MO(1)
 ## KEYWORDS('PDE', 'partial', 'differential', 'equation', 'Laplace equation')
 
