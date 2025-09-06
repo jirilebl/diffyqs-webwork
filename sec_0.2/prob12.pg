@@ -58,7 +58,7 @@ if ($case == 1) {
                 @no = ("\(y(x)=e^x\)", "\(y(x)=xe^{-x}\)", "\(y(x)=-x\)", "\(y(x)=- $root2 x\)");
         } else {
                 @yes = ("\(y(x)=e^{$root1 x}\)", "\(y(x)=e^{$root2 x}\)", "\(y(x)=0\)");
-                @no = ("\(y(x)=e^{-$root x}\)", "\(y(x)=e^{x}\)", "\(y(x)=$root1 x\)", "\(y(x)=$root2 x\)");
+                @no = ("\(y(x)=e^{-$root2 x}\)", "\(y(x)=e^{x}\)", "\(y(x)=$root1 x\)", "\(y(x)=$root2 x\)");
         }
 }
 
