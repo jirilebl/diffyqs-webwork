@@ -1,7 +1,22 @@
-# Find eigenvectors given eigenvalues
+##DESCRIPTION
+## Given distinct real eigenvalues, find eigenvectors.
+##ENDDESCRIPTION
 
+## DBsubject(Linear algebra)
+## DBchapter(Eigenvalues and eigenvectors)
+## DBsection(Computing eigenvalues and eigenvectors)
 ## Institution(Oklahoma State Unversity)
 ## Author(Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('3.4')
+## Problem1('')
+## Level(3)
+## MO(1)
+## KEYWORDS('matrix', 'eigenvalues', 'eigenvectors')
+
+########################################################################
 
 ##################################
 
@@ -83,6 +98,10 @@ Context()->normalStrings;
 ANS($v1->cmp(
   checker => sub {
     my ($correct,$student,$ansHash) = @_;
+    if ($student->isZero) {
+      Value::Error("An eigenvector must be a non-zero vector.");
+      return 0;
+    }
     return ($A * $student == $lambda1 * $student ? 1 : 0);
   }
 ));
@@ -90,6 +109,10 @@ ANS($v1->cmp(
 ANS($v2->cmp(
   checker => sub {
     my ($correct,$student,$ansHash) = @_;
+    if ($student->isZero) {
+      Value::Error("An eigenvector must be a non-zero vector.");
+      return 0;
+    }
     return ($A * $student == $lambda2 * $student ? 1 : 0);
   }
 ));
