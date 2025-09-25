@@ -103,7 +103,7 @@ $disc = $c**2 - 4*$m*$k; # discriminant
 $absdisc = abs($disc);
 $den  = 2*$m;  # denominator
 
-$answer = Compute("x = e^(-$b t / $den) * ( c1 cos(sqrt($absdisc) t / $den) + c2 sin(sqrt($absdisc) t / $den) )");
+$answer = Compute("x = e^(-$c t / $den) * ( c1 cos(sqrt($absdisc) t / $den) + c2 sin(sqrt($absdisc) t / $den) )");
 
 $pop = PopUp(["?","over damped","critically damped","under damped"],"under damped");
 
