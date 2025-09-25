@@ -105,7 +105,7 @@ $den  = 2*$m;  # denominator
 
 $answer = Compute("x = e^(-$c t / $den) * ( c1 cos(sqrt($absdisc) t / $den) + c2 sin(sqrt($absdisc) t / $den) )");
 
-$pop = PopUp(["?","over damped","critically damped","under damped"],"under damped");
+$pop = PopUp(["?","overdamped","critically damped","underdamped"],"underdamped");
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -123,7 +123,7 @@ $PAR
 \{ AnswerFormatHelp("equations") \}
 
 $PAR
-Is this system under damped, over damped, 
+Is this system underdamped, overdamped, 
 or critically damped?  
 \{ $pop->menu() \}
 $PAR

@@ -105,7 +105,7 @@ parser::Assignment->Allow;
 
 $answer = Compute("x = (c1 + c2 t) e^(-$a t)");
 
-$pop = PopUp(["?","over damped","critically damped","under damped"],"critically damped");
+$pop = PopUp(["?","overdamped","critically damped","underdamped"],"critically damped");
 
 Context()->texStrings;
 BEGIN_TEXT
@@ -123,7 +123,7 @@ $PAR
 \{ AnswerFormatHelp("equations") \}
 
 $PAR
-Is this system under damped, over damped, 
+Is this system underdamped, overdamped, 
 or critically damped?  
 \{ $pop->menu() \}
 $PAR
