@@ -91,7 +91,6 @@ $evects = MultiAnswer($a11, $a21, $a12, $a22)->with(
         my ($correct, $student, $answerHash ) = @_;
         my @c = @{$correct};
         my @s = @{$student};
-	my ($stuv11, $stuv12, $stuv21, $stuv22) = @{$student};
         my $flag  = 0;
         my $flag1 = 0;
         my $flag2 = 0;
