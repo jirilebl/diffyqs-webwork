@@ -163,8 +163,11 @@ $m21 & $m22
 \end{bmatrix}
 \)
 $SPACE
-has eigenvalues \( \lambda_1 = $e1 \) and \( \lambda_2 = $e2 \). 
+has eigenvalues \( \lambda_1 = $e1 \) and \( \lambda_2 = $e2 .\) 
 Find eigenvectors corresponding to these eigenvalues.
+The vector \( {\vec{v}_1}  \) should correspond to \(\lambda_1\)
+and the vector 
+\( {\vec{v}_2}  \) should correspond to \(\lambda_2 .\)
 $PAR
 \{ 
 mbox(
@@ -189,7 +192,7 @@ y^{\prime} & = $rightside2
 \end{aligned}
 \]
 satisfying the initial conditions
-\( x(0) = $x1init \) and \( y(0) = $x2init \). 
+\( x(0) = $x1init \) and \( y(0) = $x2init . \)
 $PAR
 \( x(t) = \) \{ ans_rule(40) \} 
 \{ AnswerFormatHelp("formulas") \}

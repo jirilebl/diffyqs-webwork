@@ -133,7 +133,7 @@ ANS($x[2]->cmp);
 
 ###########################################
 
-COMMENT('Answer is always unique.  The vector x always has some entries that are rational but not integral.');
+COMMENT('Find reduced row echelon form, solve systems of linear equations.  Answer is always unique.  The vector x always has some entries that are rational but not integral.');
 
 ###########################################
 

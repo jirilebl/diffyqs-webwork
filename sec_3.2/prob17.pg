@@ -101,7 +101,7 @@ $eq2 = nicestring([$a[1][0],$a[1][1]],["x_1","x_2"])."= $b[1]";
 
 Context()->texStrings;
 BEGIN_SOLUTION
-From the the second equation, \($eq2\), we obtain \(x_1 =  $f1 x_2 + $f2 .\)
+From the second equation, \($eq2\), we obtain \(x_1 =  $f1 x_2 + $f2 .\)
 $BRBR
 Substitute into the first equation, \($a[0][0] \left($f1 x_2 + $f2\right) + $a[0][1] x_2 = h\Rightarrow $f3 = h.\)
 $BRBR
