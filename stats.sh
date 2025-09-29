@@ -1,5 +1,5 @@
 #!/bin/sh
-for n in sec_* ; do
+for n in `ls -1d sec_* | sort -V` ; do
 	printf '%-10s %2d exercises (%2d with solution, %2d untagged, %2d w/o comment, %2d w/o booklink)\n' "$n" `ls -1 $n/*.pg | wc -l` `grep -l '^BEGIN_.*SOLUTION' $n/*.pg | wc -l` `grep -L '^## TitleText1.*Notes on Diffy Qs' $n/*.pg | wc -l` `grep -L '^COMMENT(' $n/*.pg | wc -l` `grep -L 'htmlLink.*jirka.org/diffyqs/html' $n/*.pg | wc -l`
 done
 
