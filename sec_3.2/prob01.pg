@@ -68,11 +68,9 @@ $expr2 & = $y0
 $BR
 \( x = \) \{ $x->ans_rule(15) \}
 \{ AnswerFormatHelp("numbers") \}
-\{ AnswerFormatHelp("formulas") \}
 $BRBR
 \( y = \) \{ $y->ans_rule(15) \}
 \{ AnswerFormatHelp("numbers") \}
-\{ AnswerFormatHelp("formulas") \}
 $BRBR
 $BITALIC $BBOLD Note: $EBOLD If the answer is a line such as \( y = x + 1 \), enter \( x = x \) and \( y = x+1 \).
 If there is no solution, enter ${LQ}DNE${RQ} for both answers.
