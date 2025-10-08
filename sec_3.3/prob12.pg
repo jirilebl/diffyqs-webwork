@@ -37,12 +37,12 @@ do { $n = random(2,6,1); } until ($n != $a && $n != $b);
 $P11 = Formula("t^$n");   $P12 = Real("$a");
 $P21 = Formula("sin(t)"); $P22 = Formula("t");
 
-$g1 = Formula("sec(t)");
-$g2 = Real("-$b");
+$f1 = Formula("sec(t)");
+$f2 = Real("-$b");
 
 $Pt = Matrix([[$P11, $P12], [$P21, $P22]]);
 
-$gt = Matrix([[$g1], [$g2]]);
+$ft = Matrix([[$f1], [$f2]]);
 
 ######################
 #  Main text
@@ -52,13 +52,13 @@ BEGIN_TEXT
 Suppose
 \[
 \begin{aligned}
-x_1' & = $P11 x_1 + $P12 x_2 + $g1, \\
-x_2' & = $P21 x_1 + $P22 x_2 + $g2. 
+x_1' & = $P11 x_1 + $P12 x_2 + $f1, \\
+x_2' & = $P21 x_1 + $P22 x_2 + $f2. 
 \end{aligned}
 \]
 This system of linear differential equations can
-be put in the form \( \vec{x}' = P(t) \vec{x} + \vec{g}(t) \).
-Determine \( P(t) \) and \( \vec{g}(t) \).
+be put in the form \( \vec{x}' = P(t) \vec{x} + \vec{f}(t) \).
+Determine \( P(t) \) and \( \vec{f}(t) \).
 
 $PAR
 \{ mbox("\( P(t) = \)",
@@ -67,8 +67,8 @@ $PAR
 \}
 
 $PAR
-\{ mbox("\( \vec{g}(t) = \)",
-    $gt->ans_array(20),
+\{ mbox("\( \vec{f}(t) = \)",
+    $ft->ans_array(20),
     AnswerFormatHelp("formulas").$BR.AnswerFormatHelp("matrices"))
 \}
 
@@ -86,6 +86,6 @@ Context()->normalStrings;
 $showPartialCorrectAnswers = 1;
 
 WEIGHTED_ANS( $Pt->cmp(), 80 );
-WEIGHTED_ANS( $gt->cmp(), 20 );
+WEIGHTED_ANS( $ft->cmp(), 20 );
 
 ENDDOCUMENT();
