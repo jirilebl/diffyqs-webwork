@@ -1,8 +1,20 @@
-# Systems of ODEs: introduction to systems of ODEs
+##DESCRIPTION
+## Finding a constant matrix transforming a fundamental system of solutions into a fundamental matrix of solutions
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Matrix notation for systems)
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
-## KEYWORDS('differential equations','systems of ODEs')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('3.1')
+## Problem1('')
+## Level(3)
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'linear', 'system', 'equation')
 
 
 ##############################
@@ -126,5 +138,9 @@ WEIGHTED_ANS( $C->cmp(), 80 );
 WEIGHTED_ANS( $det->cmp(), 10 );
 WEIGHTED_ANS( $pop0->cmp(), 5 );
 WEIGHTED_ANS( $pop1->cmp(), 5 );
+
+######################
+
+COMMENT("Finding a constant matrix transforming a fundamental system of solutions into a fundamental matrix of solutions");
 
 ENDDOCUMENT();

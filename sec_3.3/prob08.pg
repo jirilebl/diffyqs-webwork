@@ -1,6 +1,20 @@
-# Match equations to solutions
+##DESCRIPTION
+## Match systems of ODE in matrix notation to solutions
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Matrix notation for systems)
 ## Institution(Rochester)
+## Author(Unknown)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('3.1')
+## Problem1('')
+## Level(3)
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'linear', 'system', 'equation')
 
 #########################################################
 
@@ -101,6 +115,10 @@ END_TEXT
 #########################################################
 
 ANS(str_cmp( $ml->ra_correct_ans )   );
+
+######################
+
+COMMENT("Match systems of ODE in matrix notation to solutions");
 
 ENDDOCUMENT();        
 

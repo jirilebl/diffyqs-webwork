@@ -1,8 +1,20 @@
-# Systems of ODEs: introduction to systems of ODEs
+##DESCRIPTION
+## Differentiation of matrix-valued functions
+##ENDDESCRIPTION
 
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Matrix notation for systems)
 ## Institution(Fort Lewis College)
 ## Author(Paul Pearson)
-## KEYWORDS('differential equations','systems of ODEs')
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('3.1')
+## Problem1('')
+## Level(3)
+## MO(1)
+## KEYWORDS('matrix-valued function', 'derivative')
 
 
 ##############################
@@ -128,6 +140,10 @@ WEIGHTED_ANS( $App->cmp(), 35 );
 foreach my $i (0..2) {
   WEIGHTED_ANS( $interval[$i]->cmp(), 10 );
 }
+
+######################
+
+COMMENT("Differentiation of matrix-valued functions");
 
 ENDDOCUMENT();
 
