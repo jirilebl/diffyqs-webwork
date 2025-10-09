@@ -1,0 +1,140 @@
+##DESCRIPTION
+## Stream/ponds problem: Set up a system of equations and solve (solved one equation at a time)
+##ENDDESCRIPTION
+
+## DBsubject(Differential equations)
+## DBchapter(Systems of differential equations)
+## DBsection(Nonhomogeneous systems)
+## Institution(Oklahoma State University)
+## Author(Jiri Lebl)
+## TitleText1('Notes on Diffy Qs: Differential Equations for Engineers')
+## AuthorText1('Jiri Lebl')
+## EditionText1('6')
+## Section1('3.1')
+## Problem1('')
+## Level(5)
+## MO(1)
+## KEYWORDS('ODE', 'ordinary', 'differential', 'system', 'equation')
+
+##############################
+#  Initialization
+
+DOCUMENT(); 
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl"
+);
+
+TEXT(beginproblem());
+
+
+#############################
+#  Setup
+
+Context("Numeric");
+Context()->variables->are(
+t=>"Real",
+x=>"Real",
+y=>"Real"
+);
+
+$toxicconc = random(4.1,9,0.1);
+$flowrate = random(2,4,1);
+$pond1vol = random(1000,2000,100);
+$pond2vol = $pond1vol + random(200,1000,100);
+
+$xp = Compute("$toxicconc*$flowrate - ($flowrate/$pond1vol)*x");
+$yp = Compute("($flowrate/$pond1vol)*x - ($flowrate/$pond2vol)*y");
+
+$x = Compute("$pond1vol*$toxicconc*(1 - e^(-($flowrate*t)/$pond1vol))");
+$y = Compute("($pond2vol*$toxicconc*($pond1vol*(e^(-($flowrate*t)/$pond1vol)-1) + $pond2vol*(1-e^(-($flowrate*t)/$pond2vol))))/($pond2vol - $pond1vol)");
+
+######################
+#  Main text
+
+Context()->texStrings;
+BEGIN_TEXT
+A small stream runs through two ponds.  Water in the stream flows at rate $flowrate liters per second
+(so it flows at $flowrate L/s to the first pond, then from that pond at the same rate to the second pond
+and then leaves second pond at the same rate).
+The first pond has volume $pond1vol liters and the second pond has volume $pond2vol liters.
+As the water flows into the pond it mixes the pond really well.
+At the beginning (time \(t=0\)) there is no toxic substance in either pond.  Suddenly
+the incoming water has toxic substance concentration of
+$toxicconc grams of toxic substance per liter of water.
+$PAR
+Let \(x\) denote the grams of toxic substance in the first pond
+and \(y\) the grams of toxic substance in the second pond.
+Set up the system of differential equations:
+$PAR
+\( x' = \) 
+\{ ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+\( y' = \) 
+\{ ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+Now set up the initial conditions:
+$PAR
+\( x(0) = \) 
+\{ ans_rule(10) \}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+\( y(0) = \) 
+\{ ans_rule(10) \}
+\{ AnswerFormatHelp("numbers") \}
+$PAR
+Next, note that the system can be solved by solving one equation on its own and then plugging this into the
+second equation and solving that one.  Both equations are linear.  If this is not true, then you have 
+not set up the problem correctly.
+So solve the system
+$PAR
+\( x(t) = \) 
+\{ ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
+$PAR
+\( y(t) = \) 
+\{ ans_rule(50) \}
+\{ AnswerFormatHelp("formulas") \}
+
+$PAR
+$BITALIC $BBOLD Book: $EBOLD
+\{ htmlLink("https://www.jirka.org/diffyqs/html/sec_introtosys.html", "Section 3.1 of Notes on Diffy Qs") \}
+$EITALIC
+END_TEXT
+Context()->normalStrings;
+
+
+######################
+#  Answer evaluation
+
+$showPartialCorrectAnswers = 1;
+
+ANS( $xp->cmp() );
+ANS( $yp->cmp() );
+
+ANS( Compute("0")->cmp() );
+ANS( Compute("0")->cmp() );
+
+ANS( $x->cmp() );
+ANS( $y->cmp() );
+
+######################
+#  Solution
+#
+#Context()->texStrings;
+#BEGIN_SOLUTION
+#END_SOLUTION
+#Context()->normalStrings;
+
+######################
+
+COMMENT("Stream/ponds problem: Set up a system of equations and solve (solved one equation at a time)");
+
+######################
+
+ENDDOCUMENT();
