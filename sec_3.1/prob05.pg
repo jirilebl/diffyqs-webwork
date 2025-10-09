@@ -61,13 +61,14 @@ A small stream runs through two ponds.  Water in the stream flows at rate $flowr
 (so it flows at $flowrate L/s to the first pond, then from that pond at the same rate to the second pond
 and then leaves second pond at the same rate).
 The first pond has volume $pond1vol liters and the second pond has volume $pond2vol liters.
-As the water flows into the pond it mixes the pond really well.
+As the water flows into each pond it mixes the pond really well.
 At the beginning (time \(t=0\)) there is no toxic substance in either pond.  Suddenly
 the incoming water has toxic substance concentration of
 $toxicconc grams of toxic substance per liter of water.
 $PAR
 Let \(x\) denote the grams of toxic substance in the first pond
-and \(y\) the grams of toxic substance in the second pond.
+and \(y\) the grams of toxic substance in the second pond.  Let \(t\)
+denote the time in seconds.
 Set up the system of differential equations:
 $PAR
 \( x' = \) 
