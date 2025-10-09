@@ -44,7 +44,7 @@ $b = $a->inverse();
 
 # define eigenvalues
 $e1= non_zero_random(1,3,1);
-$e2= non_zero_random($e1+1,$e2+3,1);
+$e2= non_zero_random($e1+1,$e1+3,1);
 $e = Matrix([[$e1, 0],[0, $e2]]);
 
 # matrix = A E A^-1
