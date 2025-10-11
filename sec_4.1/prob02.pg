@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Solve a second order homogeneous boundary value ODE problem
+## Solve a second order homogeneous boundary value ODE problem with three different boundary conditions
 ##ENDDESCRIPTION
 
 ## DBsubject(Differential equations)
@@ -173,7 +173,7 @@ ANS($soln[$mix[2]]->cmp);
 
 ##############
 
-COMMENT("Solve a second order homogeneous boundary value ODE problem");
+COMMENT("Solve a second order homogeneous boundary value ODE problem with three different boundary conditions.");
 
 ENDDOCUMENT();        
 
