@@ -148,7 +148,7 @@ allowbreaks=>'yes'
 ) 
 \}
 and
-\{ 
+\{
 mbox(
 [
 '\( \lambda_2 = \) ',

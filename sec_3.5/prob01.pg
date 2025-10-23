@@ -84,8 +84,8 @@ $y[3] = Formula("$c1[3] e^(2 t) + $c2[3] e^(4 t)");
 #
 #  Graph canvas setup
 #
-$htmlsize = 250;
-$texsize  = 450;
+$htmlsize = 220;
+$texsize  = 350;
 
 @gr = ();
 
@@ -145,7 +145,7 @@ foreach my $j (0..3) {
 
   }
 
-  $fig[$j]=image(insertGraph($gr[$j]),width=>250,height=>250,tex_size=>450);
+  $fig[$j]=image(insertGraph($gr[$j]),width=>$htmlsize,height=>$htmlsize,tex_size=>$texsize);
 
 } # end setting up graphs
 
@@ -179,11 +179,10 @@ $mc->makeLast("neither toward nor away");
 
 Context()->texStrings;
 BEGIN_TEXT
-\{
-ColumnTable(
-"Suppose 
-$PAR
-\[
+Suppose 
+$SPACE
+\(
+\displaystyle
 \left\lbrack
 \begin{array}{r}
 x \\
@@ -191,24 +190,29 @@ y
 \end{array}
 \right\rbrack
 = 
-c_1 e^{2t}
+c_1
 \left\lbrack
 \begin{array}{r}
 1 \\
 1
 \end{array}
 \right\rbrack
+e^{2t}
 + 
-c_2 e^{t}
+c_2
 \left\lbrack
 \begin{array}{r}
 0 \\
 1
 \end{array}
-\right\rbrack,
-\]
-$PAR
-\[
+\right\rbrack
+e^{t}
+\)
+$SPACE
+and
+$SPACE
+\(
+\displaystyle
 \left\lbrack
 \begin{array}{r}
 x(0) \\
@@ -222,26 +226,21 @@ $y0top[0] \\
 $y0bot[0]
 \end{array}
 \right\rbrack.
-\]
-$BR
-Find \( c_1 \) and \( c_2 \).
+\)
+$SPACE
+Find \( c_1 \) and \( c_2 . \)
 $PAR
-\( c_1 = \) ".ans_rule(20).AnswerFormatHelp("numbers").
-$PAR.
-"\(c_2 = \) ".ans_rule(20).AnswerFormatHelp("numbers").
-$PAR.
-"Sketch the phase plane trajectory that 
+\( c_1 = \) \{ ans_rule(20) \} \{ AnswerFormatHelp("numbers") \}
+$PAR
+\(c_2 = \) \{ ans_rule(20) \} \{ AnswerFormatHelp("numbers") \}
+$PAR
+Sketch the phase plane trajectory that 
 satisfies the given initial condition.  
-Which graph most closely resembles the graph 
-you drew? ".
-$popup->menu().
-$PAR.
-"".
-$mc->print_q().
-$BR.
-$mc->print_a()
-,
-$BCENTER.
+Which graph below most closely resembles the graph 
+you drew?
+\{ $popup->menu() \}
+$PAR
+\{
 BeginTable().
   AlignedRow([$fig[0],$fig[1]]).
   TableSpace(5,0).
@@ -250,12 +249,12 @@ BeginTable().
   AlignedRow([$fig[2],$fig[3]]).
   TableSpace(5,0).
   AlignedRow(["C","D"]).
-EndTable().
-$ECENTER
-,
-indent => 0, separation => 30, valign => "TOP"
-)
+EndTable()
 \}
+$PAR
+\{ $mc->print_q() \}
+$BR
+\{ $mc->print_a() \}
 
 $PAR
 $BITALIC $BBOLD Book: $EBOLD
