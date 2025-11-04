@@ -41,22 +41,20 @@ Context()->variables->are(
   t=>"Real"
 );
 
-$a = random(3,9,1);
-$b = $a+random(2,4,1);
-$c = random(2,9,1);
+$ft  = Formula("tan(t)");
 
 $mc = new_multiple_choice();
-$mc->qa("The function \( f(t) \) is","discontinuous but piecewise continuous on \( 0\leq t < \infty \)."); 
+$mc->qa("The function \( f(t) \) is","neither."); 
 $mc->makeLast("continuous on \( 0\leq t < \infty \).","discontinuous but piecewise continuous on \( 0\leq t < \infty \).","neither.");
 
 $popup1 = PopUp(
    ["?", "yes", "no"], 
-  "yes"
+  "no"
 );
 
 $popup2 = PopUp(
    ["?", "yes", "no"], 
-  "yes"
+  "no"
 );
 
 #############################
@@ -66,13 +64,7 @@ Context()->texStrings;
 
 BEGIN_TEXT
 
-Consider \( \displaystyle f(t) = 
-\begin{cases}
-1 & \text{if } t < $a , \\
-2 & \text{if } $a \leq t < $b , \\
-e^{$c t} & \text{if } $b \leq t .
-\end{cases}
-\)
+Consider \( f(t) = $ft \).
 
 $PAR
 \{ $mc->print_q() \}
