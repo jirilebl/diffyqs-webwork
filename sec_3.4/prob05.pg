@@ -60,10 +60,10 @@ $a = new Matrix(2,2);
 	$matrix_det = $matrix_lr->det_LR();
 
 
-$m11 = $matrix->element(1,1);
-$m12 = $matrix->element(1,2);
-$m21 = $matrix->element(2,1);
-$m22 = $matrix->element(2,2);
+$m11 = Real($matrix->element(1,1));
+$m12 = Real($matrix->element(1,2));
+$m21 = Real($matrix->element(2,1));
+$m22 = Real($matrix->element(2,2));
 
 $evects = MultiAnswer($a11, $a21, $a12, $a22)->with(
 
