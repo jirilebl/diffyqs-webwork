@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Compute antiderivative of a comination of delta functions
+## Compute antiderivative of a combination of delta functions
 ##ENDDESCRIPTION
 
 ## DBsubject(Differential equations)
@@ -84,6 +84,6 @@ ANS( $answer->cmp() );
 
 ##############################
 
-COMMENT("Compute antiderivative of a comination of delta functions");
+COMMENT("Compute antiderivative of a combination of delta functions");
 
 ENDDOCUMENT();
