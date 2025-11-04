@@ -61,7 +61,7 @@ BEGIN_TEXT
 
 Sketch the graph of the function 
 \[ k(t) = \int_0^t \left( \delta(w-$a) -\delta(w-$c) \right) dw, \quad 0\leq t < \infty. \]
-Use the graph to express \( k(t) \) in terms of shifts of the Heaviside step function \( u(t) \).
+Use the graph to express \( k(t) \) in terms of shifts of the Heaviside step function \( u(t) .\)
 $PAR
 \( \displaystyle k(t) = \)
 \{ ans_rule(30) \}
