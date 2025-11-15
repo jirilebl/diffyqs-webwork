@@ -40,7 +40,7 @@ $a = random(2,9);
 if ($nthroot == 2)
 {$rootk = "\sqrt{k}";}
 else
-{$rootk = "\root $nthroot \of k";}
+{$rootk = "\sqrt[$nthroot]{k}";}
 
 #########################################################
 
@@ -69,17 +69,29 @@ Apply the root test:
 \[
 \sqrt[k]{|a_k|}
 =
-\sqrt[k]{{$a}^k $rootk}
+\sqrt[k]{\frac{{$a}^k}{$rootk}}
 =
 $a
-\sqrt[k]{$rootk}
+\frac{1}{k^{1/($nthroot k)}}
 .
 \]
-The limit of this expression goes to \($a\) and hence the 
+The limit of this expression goes to \($a\) as
+\(k \to \infty .\)
+To see this, note that \(k^{1/($nthroot k)} = e^{\frac{1}{$nthroot k} \ln k}\) goes to 1 since \(\frac{\ln k}{$nthroot k}\) goes to 0 (use l'Hopital's rule).
+Hence the 
 radius of convergence of the series is \(\frac{1}{$a},\) 
 that is, the series converges for \(x\) between
 \(\frac{-1}{$a}\) and
 \(\frac{1}{$a}.\) 
+
+The ratio test would also work as
+\[
+\frac{|a_{k+1}|}{|a_{k}|}
+=
+$a
+\left( \frac{k+1}{k} \right)^{1/$nthroot} ,
+\]
+and this expression also goes to \($a .\)
 END_SOLUTION
 
 #########################################################
