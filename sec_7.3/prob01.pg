@@ -39,6 +39,7 @@ $showPartialCorrectAnswers = 1;
 Context("Numeric");
 Context()->variables->{namePattern} = qr/[a-z][a-z0-9_]*'*/i;
 Context()->variables->are("x"=>"Real","y"=>"Real","y'"=>"Real","y''"=>"Real");
+Context()->variables->set(x => {limits => [1, 5]});
 
 $pr = random (1,4);
 $a = random (2,9);

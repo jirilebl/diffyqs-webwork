@@ -49,7 +49,7 @@ BEGIN_TEXT
 
 Find the solution of \( $eq = 0, \,x > 0 \) of the form
 \[ y = x^r\sum_{k = 0}^{\infty} a_k x^k, \]
-where \(a_0 = 1\).
+where \(a_0 = 1 .\)
 
 $PAR
 \( r = \)  \{ans_rule(15)\} \{ AnswerFormatHelp("numbers") \}

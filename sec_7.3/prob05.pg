@@ -51,21 +51,17 @@ $fodd = Formula($ansodd); #->with(test_points => @testpts);
 
 $a0 = Compute("0");
 $a1 = Compute("0");
-if ($b >= 2) {
+if ($b == 2) {
   $a2 = $feven->eval(n => "1");
 } else {
   $a2 = Compute("0");
 }
-if ($b >= 3) {
+if ($b == 3) {
   $a3 = $fodd->eval(n => "1");
 } else {
   $a3 = Compute("0");
 }
-if ($b >= 4) {
-  $a4 = $feven->eval(n => "2");
-} else {
-  $a4 = Compute("0");
-}
+$a4 = $feven->eval(n => "2");
 $a5 = $fodd->eval(n => "2");
 $a6 = $feven->eval(n => "3");
 $a7 = $fodd->eval(n => "3");
