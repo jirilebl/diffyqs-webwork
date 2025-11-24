@@ -35,6 +35,7 @@ $showPartialCorrectAnswers = 1;
 # Setup
 
 Context("Matrix");
+Context()->variables->are(x=>"Real",y=>"Real");
 
 $a = random(2,10,1);
 $b = random(2,10,1);
