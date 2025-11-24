@@ -76,7 +76,7 @@ Context()->texStrings;
 BEGIN_TEXT
 Find a solution to the differential equation
 \[ x^2y'' + xy' + ($a x^2-$bb) y = 0 \]
-as a power series at the point \(x=0\) as a power series.
+as a power series at the point \(x=0 .\)
 $PAR
 As usual \( \displaystyle y = \sum_{k=0}^\infty a_k x^k . \)
 $PAR
