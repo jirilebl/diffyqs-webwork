@@ -34,7 +34,6 @@ $showPartialCorrectAnswers = 1;
 Context("Numeric");
 
 $a = random(1, 10);
-$abs = "$g*sqrt(($a)**2 + ($b)**2 + ($c)**2)";
 
 ##########################################################
 
