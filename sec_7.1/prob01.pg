@@ -62,7 +62,7 @@ ANS(Compute('infinity')->cmp);
 BEGIN_SOLUTION
 Apply the ratio test:
 \[
-\frac{a_{k+1}}{a_k}
+\frac{|a_{k+1}|}{|a_k|}
 =
 \frac{
 $scalar^{k+1} / (k+1)!
