@@ -61,7 +61,7 @@ assuming the acceleration due to gravity is 9.8 meters per second squared downwa
 Assume the cannonball is shot up at time [:t=0:] seconds.
 (Remember the initial speed is [$a] meters per second upwards.)
 
-What is the formula for the neight of the ball at any time [:t:]?
+What is the formula for the height of the ball at any time [:t:]?
 
 [` h = `] [_________]{"-4.9*t^2 + $a*t"}{30}
 [@ AnswerFormatHelp("formulas") @]*
