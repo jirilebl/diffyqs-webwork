@@ -89,9 +89,9 @@ $t11 = $t1+1;
 $tfinal = log(30000/$initial)/$k;
 
 ANS(Formula("$initial*exp($k*t)")->cmp() );
-ANS(Compute("$initial*exp($k*$t11)")->cmp() );
-ANS(Compute("$initial*exp($k*$t11)*$k")->cmp() );
-ANS(Compute("ln(30000/$initial)/$k")->cmp() );
+ANS(Compute("$initial*exp($k*$t11)")->cmp(tolerance=>.005, tolType=>"relative") );
+ANS(Compute("$initial*exp($k*$t11)*$k")->cmp(tolerance=>.005, tolType=>"relative") );
+ANS(Compute("ln(30000/$initial)/$k")->cmp(tolerance=>.005, tolType=>"relative") );
 
 #####################################
 
