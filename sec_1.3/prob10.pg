@@ -88,7 +88,10 @@ $k = log($later/$initial)/$t1;
 $t11 = $t1+1;
 $tfinal = log(30000/$initial)/$k;
 
-ANS(Formula("$initial*exp($k*t)")->cmp() );
+$f = Formula("$initial*exp($k*t)");
+$f->{test_points} = [[1],[3],[5],[7],[10]];
+
+ANS( $f->cmp() );
 ANS(Compute("$initial*exp($k*$t11)")->cmp() );
 ANS(Compute("$initial*exp($k*$t11)*$k")->cmp() );
 ANS(Compute("ln(30000/$initial)/$k")->cmp() );
