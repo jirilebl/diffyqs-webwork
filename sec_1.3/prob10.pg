@@ -33,7 +33,12 @@ TEXT(beginproblem());
 
 $showPartialCorrectAnswers = 1;
 
-Context("Numeric");
+# This problem is about very approximate things, students are likely to
+# round to integers even, so perhaps don't be so harsh on tolerance
+Context("Numeric")->flags->set(
+    tolerance=>0.005,
+    tolType=>"relative"
+);
 Context()->variables->are(t=>"Real");
 
 $initial= random(300,900,100);
