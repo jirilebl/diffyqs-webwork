@@ -63,7 +63,7 @@ $PAR
 How many critical points are there? \{ ans_rule(5) \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
-Take the critical point with the largest x-coordinate:
+Take the critical point with the largest x-coordinate (if there is more than one):
 $PAR
 ( \{ ans_rule(5) \} , \{ ans_rule(5) \} ) \{ AnswerFormatHelp("numbers") \}
 $PAR

@@ -62,7 +62,7 @@ Take the system \( x' = $funcx , \quad y' = $funcy \).
 $PAR
 How many critical points does the system have? \{ ans_rule(5) \} \{ AnswerFormatHelp("numbers") \}
 $PAR
-What is the critical point with the largest x-coordinate?
+What is the critical point with the largest x-coordinate (if there is more than one)?
 $PAR
 ( \{ ans_rule(5) \} , \{ ans_rule(5) \} ) \{ AnswerFormatHelp("numbers") \}
 $PAR

@@ -39,7 +39,7 @@ $showPartialCorrectAnswers = 1;
 Context("Numeric");
 
 $a = random(2,10,1);
-$b = random(2,10,1);
+do { $b = random(2,10,1); } until ($b != $a);
 
 
 $ans1 = Compute("1");
