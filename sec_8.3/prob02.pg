@@ -61,7 +61,7 @@ BEGIN_TEXT
 We model the populations of aphids and ladybugs (where \(A\) is the population of aphids and \(L\) is the population of ladybugs) with:
 \[
   \begin{aligned}
-    \frac{dA}{dt} &= $k A(1 - $oneoverM A) - $a AL \\
+    \frac{dA}{dt} &= \{ $k == 1 ? "" : $k \} A(1 - $oneoverM A) - $a AL \\
     \frac{dL}{dt} &= -$r L + $b AL
 \end{aligned}
 \]
