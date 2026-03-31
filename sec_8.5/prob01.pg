@@ -46,7 +46,7 @@ $popup2 = PopUp(["?",
 $popup3 = PopUp(["?",
                  "a set of points the Poincaré section tends to",
                  "the initial conditions that give you periodic solutions",
-                 "exctly the set of points in the Poincaré section"],
+                 "exactly the set of points in the Poincaré section"],
                 "a set of points the Poincaré section tends to");
 $popup4 = PopUp(["?",
                  "only points on the attractor are solutions",

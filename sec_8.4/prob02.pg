@@ -40,11 +40,6 @@ Context("Fraction");
 
 Context()->variables->add(y=>"Real");
 
-$a = random(2,10,1);
-$b = random(2,10,1);
-$c = random(2,10,1);
-$d = random(2,10,1);
-
 $ans = Compute("0");
 $mc = PopUp(
  	[	"?",
@@ -58,7 +53,7 @@ $mc = PopUp(
 
 Context()->texStrings;
 BEGIN_TEXT
-What is the the expression
+What is the expression
 in the (simple) Bendixson-Dulac theorem for a 
 conservative system \( x' = f, y' = g \),
 that is a system arising from a conservative
