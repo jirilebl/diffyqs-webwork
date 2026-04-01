@@ -112,7 +112,7 @@ $PAR
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 
-$BITALIC ${BBOLD}Notation:${EBOLD} Your answers should involve \(n\) and \(x\). $EITALIC
+$BITALIC ${BBOLD}Notation:${EBOLD} Your answers should involve \(n\) and \(x .\) $EITALIC
 
 END_TEXT
 
@@ -132,10 +132,10 @@ BEGIN_HINT
 When computing eigenvalues, the following two formulas may be useful:
 $PAR
 $SPACE $SPACE
-\(\sin(\theta) = 0\) when \(\displaystyle \theta = n\pi\).
+\(\sin(\theta) = 0\) when \(\displaystyle \theta = n\pi .\)
 $PAR
 $SPACE $SPACE
-\(\cos(\theta) = 0\) when \(\displaystyle \theta = \frac{(2n+1)\pi}{2}\).
+\(\cos(\theta) = 0\) when \(\displaystyle \theta = \frac{(2n+1)\pi}{2} .\)
 END_HINT
 
 Context()->normalStrings;

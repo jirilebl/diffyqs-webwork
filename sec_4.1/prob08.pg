@@ -79,14 +79,14 @@ ANS($ans->cmp);
 Context()->texStrings;
 BEGIN_SOLUTION
 The whirling string satisfies spinning at angular velocity \(\omega\) radians per second satisfies
-the equation \(T y'' + \rho \omega^2 y = 0 \) with boundary values \(y(0) = y(L) = 0 \),
+the equation \(T y'' + \rho \omega^2 y = 0 \) with boundary values \(y(0) = y(L) = 0 ,\)
 where \(T\) is tension, \(\rho\) is linear density, and \(L\) is length.
-The eigenvalues (when is the string popped out) are \( \frac{\rho \omega^2}{T} = \frac{k^2 \pi^2}{L^2} \), with solutions
-\(y(x) = C \sin( \frac{k \pi}{L} x ) \) for some constant \(C\).
+The eigenvalues (when is the string popped out) are \( \frac{\rho \omega^2}{T} = \frac{k^2 \pi^2}{L^2} , \) with solutions
+\(y(x) = C \sin( \frac{k \pi}{L} x ) \) for some constant \(C .\)
 $PAR
-\(C\) is the maximum displacement, that is \(C = $c\).
-We are using the \(k\)-the eigenvalue and \(L = $a \).  So
-\[y(x) = $c \sin( \frac{k \pi}{$a} x ) \]
+\(C\) is the maximum displacement, that is \(C = $c .\)
+We are using the \(k\)-the eigenvalue and \(L = $a .\)  So
+\[y(x) = $c \sin( \frac{k \pi}{$a} x ) . \]
 END_SOLUTION
 Context()->normalStrings;
 
