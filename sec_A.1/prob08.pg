@@ -90,7 +90,7 @@ So the matrix representing the mapping is
 [``\begin{bmatrix} [$a] & [$b] \\ [$c] & [$d] \end{bmatrix} .``]
 
 The vector [`F(1,1)`] is the first vector [`([$a],[$c])`] plus the second vector
-[`([$b],[$d]),`] so [`F(1,1)=([$a+$b],[$c+d]).`]
+[`([$b],[$d]),`] so [`F(1,1)=([$a+$b],[$c+$d]).`]
 
 The vector [`F([$p1],0)`] is [`[$p1]`] times the first vector [`([$a],[$c]) ,`]
 so [`F([$p1],0)=([$p1*$a],[$p1*$c]).`]
