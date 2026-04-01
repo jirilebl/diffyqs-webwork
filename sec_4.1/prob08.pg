@@ -85,7 +85,7 @@ The eigenvalues (when is the string popped out) are \( \frac{\rho \omega^2}{T} =
 \(y(x) = C \sin( \frac{k \pi}{L} x ) \) for some constant \(C .\)
 $PAR
 The number \(C\) is the maximum displacement, that is, \(C = $c .\)
-We are using the \(k\)-the eigenvalue and \(L = $a .\)  So
+We are using the \(k\)th eigenvalue and \(L = $a .\)  So
 \[y(x) = $c \sin( \frac{k \pi}{$a} x ) . \]
 END_SOLUTION
 Context()->normalStrings;

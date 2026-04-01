@@ -83,8 +83,8 @@ where \(T\) is tension, \(\rho\) is linear density, and \(L\) is length.
 The eigenvalues (when is the string popped out) are \( \frac{\rho \omega^2}{T} = \frac{k^2 \pi^2}{L^2} ,\) with solutions
 \(y(x) = C \sin( \frac{k \pi}{L} x ) \) for some constant \(C .\)
 $PAR
-If the string is completely popped out, that means we are looking at the first eigenvalue, that is \( k = 1 . \)
-That is \( \frac{\rho \omega^2}{T} = \frac{\pi^2}{L^2} .\)  Plugging in \(L=$a , \) \(T=$b , \) \(\rho = $c ,\)
+As the string is completely popped out, we are looking at the first eigenvalue, that is, \( k = 1 . \)
+So \( \frac{\rho \omega^2}{T} = \frac{\pi^2}{L^2} .\)  Plugging in \(L=$a , \) \(T=$b , \) \(\rho = $c ,\)
 and solving for \(\omega , \) we obtain
 \[ \omega = $sol . \]
 END_SOLUTION
