@@ -84,7 +84,7 @@ where \(T\) is tension, \(\rho\) is linear density, and \(L\) is length.
 The eigenvalues (when is the string popped out) are \( \frac{\rho \omega^2}{T} = \frac{k^2 \pi^2}{L^2} , \) with solutions
 \(y(x) = C \sin( \frac{k \pi}{L} x ) \) for some constant \(C .\)
 $PAR
-\(C\) is the maximum displacement, that is \(C = $c .\)
+The number \(C\) is the maximum displacement, that is, \(C = $c .\)
 We are using the \(k\)-the eigenvalue and \(L = $a .\)  So
 \[y(x) = $c \sin( \frac{k \pi}{$a} x ) . \]
 END_SOLUTION
