@@ -172,7 +172,7 @@ Performing the necessary elementary row operations, we get the reduced row echel
 0 & 0 & 1 & $ans31 & $ans32 & $ans33  
 \end{array} 
 \right] \]
-Since the matrix to the left of the vertical bar in the reduced row echelon form is precisely the identity matrix, we conclude that the orignal matrix \(A\) is nonsingular with
+Since the matrix to the left of the vertical bar in the reduced row echelon form is precisely the identity matrix, we conclude that the original matrix \(A\) is nonsingular with
 \[ A^{-1} = 
 \begin{bmatrix}
 $ans11 & $ans12 & $ans13 \cr

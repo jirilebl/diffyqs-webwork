@@ -1,5 +1,5 @@
 ##DESCRIPTION
-## Computee a matrix inverse where matrix entries in the answer are always integers
+## Compute a matrix inverse where matrix entries in the answer are always integers
 ##ENDDESCRIPTION
 
 ## DBsubject(Linear algebra)
@@ -67,6 +67,6 @@ Context()->normalStrings;
 
 ANS( $answer->cmp() );
 
-COMMENT('Computee a matrix inverse where matrix entries in the answer are always integers.');
+COMMENT('Compute a matrix inverse where matrix entries in the answer are always integers.');
 
 ENDDOCUMENT();

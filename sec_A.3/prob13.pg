@@ -97,7 +97,7 @@ Context()->texStrings;
 BEGIN_TEXT
 Find the pivot columns (columns with pivots) of
 \[ A= $A,\]
-which finds a linearly indendent set of columns.  Hint: There are 2.
+which finds a linearly independent set of columns.  Hint: There are 2.
 $BRBR
 First (from the left) pivot column:
 \{ $ans1->ans_array() \} 
