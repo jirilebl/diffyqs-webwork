@@ -39,9 +39,11 @@ if ( $whichL == $whichR ) { ## then the function is either at or -at
     $a0 = Compute("0");
     $an = Compute("0");
     ## and b_n are
-    $bn = Compute("-2*$C*cos(k*pi)/n");
-
-    $bn = $bn*(-1) if ( $whichL == 2 );
+    if ($whichL == 1) {
+    	$bn = Compute("2*$C*(cos(n*pi))/n");
+    } else {
+    	$bn = Compute("-2*$C*(cos(n*pi))/n");
+    }
 
     ## for the solution, we have
     $aint0 = "\frac{1}{\pi}\int_{-\pi}^{\pi}\,$ftex\,dt = 0";
@@ -56,9 +58,9 @@ if ( $whichL == $whichR ) { ## then the function is either at or -at
 
     if ( $whichL == 0 || $whichR == 0 ) {
 	## in this case we get a nonzero contribution from both a and b
-	$a0 = Compute("$C*pi/4");
+	$a0 = Compute("$C*pi/2");
 	$an = Compute("$C*(-1 + cos(n*pi))/(n^2*pi)");
-	$bn = Compute("-1*$C*cos(n*pi)/k");
+	$bn = Compute("-1*$C*cos(n*pi)/n");
 
 	## and if we have -Ct on the right, or if we're integrating Ct on
 	##    a negative domain, we multiply (some of) these by -1
@@ -74,14 +76,14 @@ if ( $whichL == $whichR ) { ## then the function is either at or -at
 
 	if ( $whichL == 0 ) {
 	    ## for the solution, we have
-	    $aint0 = "\frac{1}{\pi}\int_{0}^{\pi}\,$fRight\,dt = " . ($a0*2)->TeX;
+	    $aint0 = "\frac{1}{\pi}\int_{0}^{\pi}\,$fRight\,dt = " . $a0->TeX;
 	    $aintn = "\frac{1}{\pi}\int_{0}^{\pi}\,$fRight\,\cos(n t)\,dt = " . 
 		$an->TeX;
 	    $bintn = "\frac{1}{\pi}\int_{0}^{\pi}\,$fRight\,\sin(n t)\,dt = " . 
 		$bn->TeX;
 	} else {
 	    ## for the solution, we have
-	    $aint0 = "\frac{1}{\pi}\int_{-\pi}^{0}\,$fLeft\,dt = " . ($a0*2)->TeX;
+	    $aint0 = "\frac{1}{\pi}\int_{-\pi}^{0}\,$fLeft\,dt = " . $a0->TeX;
 	    $aintn = "\frac{1}{\pi}\int_{-\pi}^{0}\,$fLeft\,\cos(n t)\,dt = " . 
 		$an->TeX;
 	    $bintn = "\frac{1}{\pi}\int_{-\pi}^{0}\,$fLeft\,\sin(n t)\,dt = " . 
@@ -91,7 +93,7 @@ if ( $whichL == $whichR ) { ## then the function is either at or -at
     } else {
 	## we know that we go from -Ct to Ct or vice versa; the case -Ct to
 	##    Ct is
-	$a0 = Compute("$C*pi/2");
+	$a0 = Compute("$C*pi");
 	$an = Compute("2*$C*(-1 + cos(n*pi))/(n^2*pi)");
 	$bn = Compute("0");
 
@@ -104,7 +106,7 @@ if ( $whichL == $whichR ) { ## then the function is either at or -at
 	## and for the solution we have
 	$aint0 = "\frac{1}{\pi}\int_{-\pi}^0\,$fLeft\,dt + " .
 	    "\frac{1}{\pi}\int_0^{\pi}\,$fRight\,dt = " .
-	    ($a0*2)->TeX;
+	    $a0->TeX;
 	$aintn = "\frac{1}{\pi}\int_{-\pi}^0\,$fLeft\,\cos(n t)\,dt + " .
 	    "\frac{1}{\pi}\int_0^{\pi}\,$fRight\,\cos(n t)\,dt = " .
 	    $an->TeX;
@@ -113,14 +115,14 @@ if ( $whichL == $whichR ) { ## then the function is either at or -at
 	    $bn->TeX;
     }
 }
-# $a0 = $a0->reduce();
-# $an = $an->reduce();
-# $bn = $bn->reduce();
 
-# $an->{test_points} = [[1,1],[2,2],[3,3],[4,4],[5,5]];
-# $bn->{test_points} = [[1,1],[2,2],[3,3],[4,4],[5,5]];
-#$an->{test_points} = [1,2,3,4,5];
-#$bn->{test_points} = [1,2,3,4,5];
+$a0 = $a0->reduce();
+$an = $an->reduce();
+$bn = $bn->reduce();
+
+$an->{test_points} = [1,2,3,4,5,6,7,8,9,10];
+$bn->{test_points} = [1,2,3,4,5,6,7,8,9,10];
+
 
 ###################################################
 
@@ -147,7 +149,9 @@ Context()->normalStrings;
 
 ###################################################
 
-ANS($a0->cmp() );
+$a0b2 = Compute("$a0/2");
+
+ANS($a0b2->cmp() );
 ANS($an->cmp() );
 ANS($bn->cmp() );
 
@@ -163,7 +167,7 @@ and
 \[ b_n = $bintn. \]
 $PAR
 Thus,
-\[ $a0 + \sum_{n=1}^\infty \Bigl[ $an\,\cos(n t) + $bn\,\sin(n t) \Bigr]. \]
+\[ \frac{$a0}{2} + \sum_{n=1}^\infty \Bigl[ $an\,\cos(n t) + $bn\,\sin(n t) \Bigr]. \]
 
 END_SOLUTION
 Context()->normalStrings;
