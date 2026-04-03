@@ -75,7 +75,7 @@ coefficients:
 \[ a_0 = \frac{1}{\pi} \int_{-\pi}^\pi ($a + $b t + $c t^2) \, dt =
 2 \cdot $a + \frac{2 \cdot $c \cdot \pi^2}{3}, \]
 \[ a_n = \frac{1}{\pi} \int_{-\pi}^\pi ($a + $b t + $c t^2) \cos(n t) \, dt = $an, \]
-\[ a_b = \frac{1}{\pi} \int_{-\pi}^\pi ($a + $b t + $c t^2) \sin(n t) \, dt = $bn. \]
+\[ b_n = \frac{1}{\pi} \int_{-\pi}^\pi ($a + $b t + $c t^2) \sin(n t) \, dt = $bn. \]
 Integration by parts was required.
 
 END_SOLUTION

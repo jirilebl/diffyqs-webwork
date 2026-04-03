@@ -85,7 +85,7 @@ so the series still converges to a continuous function.  But after another deriv
 \frac{\pm $b n^{$a-1}}{$c n^3+$d n^{$a}}
 \]
 which goes to zero as \(\frac{1}{n}\) and we could expect a discontinuous function.  That means the \(f^{($a-2)}\)
-would have ``corners,'' that is, points where the derivative does not exit.
+would have ``corners,'' that is, points where the derivative does not exist.
 END_SOLUTION
 Context()->normalStrings;
 

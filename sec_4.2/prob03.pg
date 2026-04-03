@@ -23,29 +23,30 @@ Context()->variables->set( n=>{limits=>[1,5]} );
 
 $showPartialCorrectAnswers = 1;
 
-$whichL = random(0,2);  ## the left function is  0, t, or -t
-$whichR = random(0,2);  ## the right function is 0, t, or -t
+$whichL = random(0,2);  ## the left function is  0, Ct, or -Ct
+$whichR = random(0,2);  ## the right function is 0, Ct, or -Ct
 $whichL = random(1,2) if ( $whichL == 0 && $whichR == 0 );
-$whichL = 1;
-$whichR = 2;
+#$whichL = 1;
+#$whichR = 2;
+$C = random(2,5,0.1);
 
-@funcs = ( "0", "t", "-t" );
+@funcs = ( "0", "$C t", "- $C t" );
 
-if ( $whichL == $whichR ) { ## then the function is either t or -t
+if ( $whichL == $whichR ) { ## then the function is either at or -at
     $ftex = $funcs[$whichL];
 
     ## in this case all a_n are zero
     $a0 = Compute("0");
     $an = Compute("0");
     ## and b_n are
-    $bn = Compute("-2*cos(k*pi)/n");
+    $bn = Compute("-2*$C*cos(k*pi)/n");
 
     $bn = $bn*(-1) if ( $whichL == 2 );
 
     ## for the solution, we have
     $aint0 = "\frac{1}{\pi}\int_{-\pi}^{\pi}\,$ftex\,dt = 0";
     $aintn = "\frac{1}{\pi}\int_{-\pi}^{\pi}\,$ftex\,\cos(n t)\,dt = 0";
-    $bintn = "\frac{1}{\pi}\int_{-\pi}^}{\pi}\,$ftex\,\sin(n t)\,dt = " . 
+    $bintn = "\frac{1}{\pi}\int_{-\pi}^{\pi}\,$ftex\,\sin(n t)\,dt = " . 
 	$bn->TeX;
 
 } else {
@@ -55,11 +56,11 @@ if ( $whichL == $whichR ) { ## then the function is either t or -t
 
     if ( $whichL == 0 || $whichR == 0 ) {
 	## in this case we get a nonzero contribution from both a and b
-	$a0 = Compute("pi/4");
-	$an = Compute("(-1 + cos(n*pi))/(n^2*pi)");
-	$bn = Compute("-1*cos(n*pi)/k");
+	$a0 = Compute("$C*pi/4");
+	$an = Compute("$C*(-1 + cos(n*pi))/(n^2*pi)");
+	$bn = Compute("-1*$C*cos(n*pi)/k");
 
-	## and if we have -t on the right, or if we're integrating t on
+	## and if we have -Ct on the right, or if we're integrating Ct on
 	##    a negative domain, we multiply (some of) these by -1
 	if ( $whichR == 2 ) {
 	    $a0 = $a0*(-1);
@@ -88,13 +89,13 @@ if ( $whichL == $whichR ) { ## then the function is either t or -t
 	}
 
     } else {
-	## we know that we go from -t to t or vice versa; the case -t to
-	##    t is
-	$a0 = Compute("pi/2");
-	$an = Compute("2*(-1 + cos(n*pi))/(n^2*pi)");
+	## we know that we go from -Ct to Ct or vice versa; the case -Ct to
+	##    Ct is
+	$a0 = Compute("$C*pi/2");
+	$an = Compute("2*$C*(-1 + cos(n*pi))/(n^2*pi)");
 	$bn = Compute("0");
 
-	## then, if we went t to -t, we just have the negative of these
+	## then, if we went Ct to -Ct, we just have the negative of these
 	if ( $whichL == 1 ) {
 	    $a0 = $a0*(-1);
 	    $an = $an*(-1);
@@ -131,10 +132,8 @@ Find the Fourier series for
 extended to a \(2 \pi\)-periodic function.
 $PAR
 \(\displaystyle \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n\,\cos(n t) + b_n\,\sin(n t) = {}\)
-\{ ans_rule(10) \} \( {} + {}\)
-$BR
-$SPACE $SPACE $SPACE
-\(\displaystyle \sum_{n=1}^{\infty} \) \{ ans_rule(25) \} \(\cos(n t) + {}\)
+\{ ans_rule(10) \} \( \displaystyle {} + \sum_{n=1}^{\infty} \)
+\{ ans_rule(25) \} \(\cos(n t) + {}\)
 \{ ans_rule(25) \} \(\sin(n t)\).
 $BR
 \{ AnswerFormatHelp("formulas") \}

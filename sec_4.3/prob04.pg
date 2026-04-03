@@ -30,20 +30,18 @@ $b =11;# non_zero_random(10,18);
 $p =5;# non_zero_random(2,12);
 $p2 = Compute($p**2);
 
-$pi = Compute("pi");
-
 $a0=Compute(($a)/(4 * $p)+ ($b*($p-1))/(2 * $p));
 
-#$an=Formula("$a * ((cos( n * $pi/ $p ) - 1)*$p+ sin( n * $pi/ $p ) * n * $pi)/( n**2 * $pi**2 ) - $b * sin( n * $pi/ $p )/( n * $pi )")->reduce;
+#$an=Formula("$a * ((cos( n * pi/ $p ) - 1)*$p+ sin( n * pi / $p ) * n * pi)/( n**2 * pi**2 ) - $b * sin( n * pi / $p )/( n * pi )")->reduce;
 #$an->{test_points} = [[1],[2],[3],[4],[5],[6],[7],[8],[9],[10]];
 
-$an=Formula("($a *$p * cos( n * $pi/ $p ) +($a - $b)* n * $pi sin( n * $pi/ $p ) - $a * $p)/( n**2 * $pi**2 )")->reduce;
+$an=Formula("($a *$p * cos( n * pi / $p ) +($a - $b)* n * pi * sin( n * pi/ $p ) - $a * $p)/( n**2 * pi**2 )")->reduce;
 $an->{test_points} = [[$p/2],[$p],[3*$p/2],[5*$p/2],[3*$p],[7*$p/2],[9*$p/2],[5*$p]];
 
 #$an->{test_points} = [[$p/2],[$p],[3*$p/2],[2*$p],[5*$p/2],[3*$p],[7*$p/2],[4*$p],[9*$p/2],[5*$p]];
 
 
-$bn=Compute("$a * (sin( n * $pi/ $p ) * $p -  cos( n * $pi/ $p ) * n * $pi)/(n**2 * $pi**2 ) + $b * (cos( n * $pi/ $p ) - cos( n * $pi))/( n * $pi )");
+$bn=Compute("$a * (sin( n * pi / $p ) * $p -  cos( n * pi/ $p ) * n * pi)/(n**2 * pi**2 ) + $b * (cos( n * pi / $p ) - cos( n * pi))/( n * pi )");
 $bn->{test_points} = [[1],[2],[3],[4],[5],[6],[7],[8],[9],[10]];
 
 
