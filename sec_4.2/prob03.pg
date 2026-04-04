@@ -34,6 +34,7 @@ $minusC = (-1)*$C;
 @funcs = ( "0", "$C t", "- $C t" );
 
 if ( $whichL == $whichR ) { ## then the function is either Ct or -Ct
+    $fonlytex = $funcs[$whichL];
     $ftex = $funcs[$whichL] . " \text{ for } -\pi < t \le \pi ,";
 
     ## in this case all a_n are zero
@@ -52,9 +53,9 @@ if ( $whichL == $whichR ) { ## then the function is either Ct or -Ct
     }
 
     ## for the solution, we have
-    $aint0 = "\frac{1}{\pi}\int_{-\pi}^{\pi}\,$ftex\,dt = 0";
-    $aintn = "\frac{1}{\pi}\int_{-\pi}^{\pi}\,$ftex\,\cos(n t)\,dt = 0";
-    $bintn = "\frac{1}{\pi}\int_{-\pi}^{\pi}\,$ftex\,\sin(n t)\,dt = " . 
+    $aint0 = "\frac{1}{\pi}\int_{-\pi}^{\pi}\,$fonlytex\,dt = 0";
+    $aintn = "\frac{1}{\pi}\int_{-\pi}^{\pi}\,$fonlytex\,\cos(n t)\,dt = 0";
+    $bintn = "\frac{1}{\pi}\int_{-\pi}^{\pi}\,$fonlytex\,\sin(n t)\,dt = " . 
 	$bntex;
 
 } else {
@@ -155,13 +156,13 @@ Context()->texStrings;
 TEXT(beginproblem());
 BEGIN_TEXT
 Find the Fourier series for
-\[ f(t) = $ftex, \]
+\[ f(t) = $ftex \]
 extended to a \(2 \pi\)-periodic function.
 $PAR
 \(\displaystyle \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n\,\cos(n t) + b_n\,\sin(n t) = {}\)
 \{ ans_rule(10) \} \( \displaystyle {} + \sum_{n=1}^{\infty} \)
 \{ ans_rule(25) \} \(\cos(n t) + {}\)
-\{ ans_rule(25) \} \(\sin(n t)\).
+\{ ans_rule(25) \} \(\sin(n t) .\)
 $BR
 \{ AnswerFormatHelp("formulas") \}
 
