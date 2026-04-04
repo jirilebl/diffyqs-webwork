@@ -34,7 +34,7 @@ $minusC = (-1)*$C;
 @funcs = ( "0", "$C t", "- $C t" );
 
 if ( $whichL == $whichR ) { ## then the function is either Ct or -Ct
-    $ftex = $funcs[$whichL] . " , ~ -\pi < t \le \pi";
+    $ftex = $funcs[$whichL] . " \text{ for } -\pi < t \le \pi ,";
 
     ## in this case all a_n are zero
     $a0 = Compute("0");
@@ -60,7 +60,7 @@ if ( $whichL == $whichR ) { ## then the function is either Ct or -Ct
 } else {
     $fLeft = $funcs[$whichL];
     $fRight = $funcs[$whichR];
-    $ftex = "\begin{cases} $fLeft, & -\pi < t \le 0\cr $fRight, & 0 < t \le \pi\end{cases}";
+    $ftex = "\begin{cases} $fLeft & \text{if } -\pi < t \le 0,\cr $fRight & \text{if } 0 < t \le \pi ,\end{cases}";
 
     if ( $whichL == 0 || $whichR == 0 ) {
 	## in this case we get a nonzero contribution from both a and b
