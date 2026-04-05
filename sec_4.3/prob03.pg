@@ -1,4 +1,4 @@
-# Compute fourier seires and ask about values
+# Compute fourier series and ask about values
 
 ## Institution(Alfred University)
 ## Author(Juan Marin)
@@ -24,20 +24,17 @@ Context("Numeric");
 Context()->variables->are(n=>'Real');
 
 $a = random(2,9,1);
-#$a2 = Compute($a**2);
 
 $b = random(2,9,1);
 
 $p = random(4,12,1);
 $p2 = Compute($p**2);
 
-$a0=Compute($b);
+$a0 = Compute($b);
 
-$an=Compute("0");
-#$an->{test_points} = [[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12],[13],[14],[15],[16],[17],[18],[19],[20]];
+$an = Compute("0");
 
-
-$bn=Compute("(-2 * $a * $p * cos( n * pi ))/(n * pi)");
+$bn = Compute("(-2 * $a * $p * cos( n * pi ))/(n * pi)");
 $bn->{test_points} = [[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12],[13],[14],[15],[16],[17],[18],[19],[20]];
 
 
@@ -57,10 +54,10 @@ $fc=Compute($a * $c + $b);
 
 Context()->texStrings;
 BEGIN_TEXT
-
-If \(f\) is the Fourier series of \(g(t)=$a t + $b\) for \(-$p < t < $p\), then 
+Suppose \(f(t)\) is the Fourier series of \(g(t)=$a t + $b\) for \(-$p < t < $p .\)
+Then
 $PAR
-\(f(t)= \) \{ ans_rule(5) \} \(+\displaystyle\sum_{n=1}^{\infty} \Bigg[
+\(f(t)= \) \{ ans_rule(5) \} \({}+\displaystyle\sum_{n=1}^{\infty} \Bigg[
 \Big(\) \{ ans_rule(15) \} \(\displaystyle\Big)\cos\Big(\frac{n \pi}{$p}t\Big)
 +
 \Big(\)\{ ans_rule(15) \}\(\displaystyle\Big)\sin\Big(\frac{n \pi}{$p}t\Big)

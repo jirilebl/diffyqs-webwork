@@ -24,54 +24,54 @@ Context("Numeric");
 Context()->variables->are(n=>'Real');
 
 $a = non_zero_random(2,9);
-#$a2 = Compute($a**2);
 
 $p = non_zero_random(4,12);
 $p2 = Compute($p**2);
 
 $pi = Compute("pi");
 
-$a0=Compute((3*$a + 2*$p**2)/6);
+$a0=Compute("(3*$a + 2*$p**2)/6");
 
 $an=Compute("-2*$p**2*cos( n * $pi)/(n**2 * $pi**2)");
 $an->{test_points} = [[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12],[13],[14],[15],[16],[17],[18],[19],[20]];
 
 
-$bn=Compute("
-($a * n**2 * (cos(n * $pi) - 1) * $pi**2 - $p**2 * (2 * cos(n * $pi)- n**2 * $pi**2 - 2))/(n**3 * $pi**3)");
+$bn=Compute("($a * n**2 * (cos(n * $pi) - 1) * $pi**2 - $p**2 * (2 * cos(n * $pi)- n**2 * $pi**2 - 2))/(n**3 * $pi**3)");
 $bn->{test_points} = [[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12],[13],[14],[15],[16],[17],[18],[19],[20]];
 
-$func = "\begin{cases}
-            $a, & -$p < t < 0 \cr
-            $p2 - t^2, & 0 \leq t < $p
-             \end{cases}";
-
-$np2   = Compute("-$p/2");
+$np2 = Compute("-$p/2");
 $A   = Compute("$a");
-$p4   = Compute("$p/4");
+$p4  = Compute("$p/4");
 
 $c = non_zero_random(1,$p-1);
 
 
-$f0=Compute(($a + $p2)/2);
-$fp=Compute($a/2);
-$fc=Compute($p**2 - $c**2);
+$f0=Compute("($a + $p2)/2");
+$fp=Compute("$a/2");
+$fc=Compute("$p**2 - $c**2");
 
 ##########################################################
 
 
 Context()->texStrings;
 BEGIN_TEXT
-
-If \(f\) is the Fourier series of \(g(t)=$func\), then 
-$BR
-\(f(t)= \) \{ ans_rule(10) \} \(+\displaystyle\sum_{n=1}^{\infty} \Bigg[
-\Big(\) \{ ans_rule(20) \} \(\displaystyle\Big)\cos\Big(\frac{n \pi}{$p}t\Big)
-+ {} \)
-$BR
-\(
-\Big(\)\{ ans_rule(45) \}\(\displaystyle\Big)\sin\Big(\frac{n \pi}{$p}t\Big)
-\Bigg]\)
+Suppose \(f(t)\) is the Fourier series of
+\[
+g(t) =
+\begin{cases}
+$a & \text{if } -$p < t < 0 , \cr
+$p2 - t^2 & \text{if } 0 \leq t < $p ,
+\end{cases}
+\]
+extended periodically.  Then
+$PAR
+\(f(t)= {} \)
+\{ ans_rule(10) \}
+\({}+\displaystyle\sum_{n=1}^{\infty} \Bigg[ \Big( \)
+\{ ans_rule(20) \}
+\(\displaystyle\Big)\cos\Big(\frac{n \pi}{$p}t\Big) + \Big( \)
+\{ ans_rule(45) \}
+\(\displaystyle\Big)\sin\Big(\frac{n \pi}{$p}t\Big) \Bigg] \)
 $BR
 \{ AnswerFormatHelp("formulas") \}
 $PAR 
