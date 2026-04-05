@@ -49,7 +49,7 @@ $answer1 = Compute("$a-2");
 
 Context()->texStrings;
 BEGIN_TEXT
-Let \( \displaystyle f(t) = \sum_{n=1}^\infty \frac{$b}{$c n^3+$d n^{$a}} \cos(n t) \).
+Let \( \displaystyle f(t) = \sum_{n=1}^\infty \frac{$b}{$c n^3+$d n^{$a}} \cos(n t) . \)
 $PAR
 How many derivatives do you expect to be able to take before getting a function with "corners"?
 $PAR
@@ -75,17 +75,20 @@ ANS( $answer1->cmp() );
 
 Context()->texStrings;
 BEGIN_SOLUTION
-Each derivative multiplies the coefficient by \(\pm n\).  After \(($a-2)\) derivatives, the coefficient will be
+Each derivative multiplies the coefficient by \(\pm n.\)
+After \(($a-2)\) derivatives, the coefficient will be
 \[
 \frac{\pm $b n^{$a-2}}{$c n^3+$d n^{$a}},
 \]
-which goes to zero as \(\frac{1}{n^2}\),
-so the series still converges to a continuous function.  But after another derivative the coefficient will be
+which goes to zero as \(\frac{1}{n^2},\)
+so the series still converges to a continuous function.
+But after another derivative the coefficient will be
 \[
 \frac{\pm $b n^{$a-1}}{$c n^3+$d n^{$a}}
 \]
-which goes to zero as \(\frac{1}{n}\) and we could expect a discontinuous function.  That means the \(f^{($a-2)}\)
-would have ``corners,'' that is, points where the derivative does not exist.
+which goes to zero as \(\frac{1}{n}\) and we could expect a discontinuous function.
+That means the \(f^{($a-2)}\)
+would have "corners," that is, points where the derivative does not exist.
 END_SOLUTION
 Context()->normalStrings;
 
