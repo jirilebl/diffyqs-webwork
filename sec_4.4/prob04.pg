@@ -199,7 +199,7 @@ $Coeff_entry
 
 $PAR
 
-Give values for the Fourier $trig series $Series(t).
+Give values for the Fourier $trig series \($Series(t).\)
 
 $PAR
 \(\phantom{-}$Series($x[0]) = {}\) \{ ans_rule(10) \}
