@@ -38,10 +38,10 @@ $answer3 = Compute("0");
 Context()->texStrings;
 BEGIN_TEXT
 Take the function defined by the series
-\( f(t) = \sum_{n=1}^\infty \frac{$a}{n^5} \sin( n \pi t) \).
+\(\displaystyle f(t) = \sum_{n=1}^\infty \frac{$a}{n^5} \sin( n \pi t) . \)
 $PAR
 Find the series of the derivative
-\( f'(t) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos( n \pi t) + b_n \sin( n \pi t) \).
+\(\displaystyle f'(t) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos( n \pi t) + b_n \sin( n \pi t) . \)
 $PAR
 \( a_0 = {} \) \{ ans_rule(40) \}
 \{ AnswerFormatHelp("numbers") \}

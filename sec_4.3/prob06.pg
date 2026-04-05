@@ -43,10 +43,10 @@ $answer4 = Compute("($a)/(pi*n^6)");
 Context()->texStrings;
 BEGIN_TEXT
 Take the function defined by the series
-\( f(t) = $b + \sum_{n=1}^\infty \frac{$a}{n^5} \cos( n \pi t) \).
+\( \displaystyle f(t) = $b + \sum_{n=1}^\infty \frac{$a}{n^5} \cos( n \pi t) . \)
 $PAR
 Find the antiderivative which is in the form
-\( F(t) = Ct + \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos( n \pi t) + b_n \sin( n \pi t) \), and such that \(F(0) = $c \)
+\( \displaystyle F(t) = Ct + \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos( n \pi t) + b_n \sin( n \pi t) , \) and such that \(F(0) = $c . \)
 $PAR
 \( C = {} \) \{ ans_rule(40) \}
 \{ AnswerFormatHelp("numbers") \}
