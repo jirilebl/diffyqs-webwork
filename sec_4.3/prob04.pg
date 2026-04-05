@@ -26,8 +26,7 @@ Context()->variables->are(n=>'Real');
 $a = non_zero_random(2,9);
 $b = non_zero_random(10,18);
 
-$p = non_zero_random(2,12);
-$p2 = Compute("$p**2");
+$p = non_zero_random(4,12);
 
 $a0 = Compute("($a)/(4 * $p)+ ($b*($p-1))/(2 * $p)");
 
