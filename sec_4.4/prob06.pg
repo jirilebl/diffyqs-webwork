@@ -44,10 +44,10 @@ Context()->texStrings;
 BEGIN_TEXT
 Solve the boundary
 value problem \( \displaystyle x''(t) + $a x(t) = \sum_{n=1}^\infty \frac{$b}{n^2} \sin( n \pi t) \)
-with \( x(0) = 0 , x(1) = 0 \) .
+with \( x(0) = 0 , x(1) = 0 . \)
 $PAR
 The solution is
-\( \displaystyle x(t) = \sum_{n=1}^\infty b_n \sin (n \pi t) \)
+\( \displaystyle x(t) = \sum_{n=1}^\infty b_n \sin (n \pi t) , \)
 where
 $BR
 \( b_n = {} \) \{ ans_rule(40) \}

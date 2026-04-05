@@ -65,7 +65,7 @@ $answer8 = Real(theFeven(-$conepointfive));
 
 Context()->texStrings;
 BEGIN_TEXT
-Take the function \( f(t) = $a t^{$b}(t-$c) \) defined on \( [0,$c] \).
+Take the function \( f(t) = $a t^{$b}(t-$c) \) defined on \( [0,$c] . \)
 Let \( F_{\text{odd}} \) and \( F_{\text{even}} \) be the odd and
 the even periodic extensions.
 $PAR

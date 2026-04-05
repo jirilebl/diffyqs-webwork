@@ -147,16 +147,16 @@ Context()->texStrings;
 
 if ($trig eq "cosine") {
   $Coeff_entry = 
-     "\(a_0 = \)" . ans_rule(10) . AnswerFormatHelp("numbers") .
+     "\(a_0 = {} \)" . ans_rule(10) . AnswerFormatHelp("numbers") .
      "${PAR}" .
-     "\(a_n = \)" . ans_rule(60) . AnswerFormatHelp("formulas");
+     "\(a_n = {} \)" . ans_rule(60) . AnswerFormatHelp("formulas");
   $Series_formula =
      "\(\displaystyle C(t) = " .
      "\frac{a_0}{2} \, + \, \sum_{n=1}^\infty a_n\,\cos\left(\frac{n\pi}{$L}\,t\right)\)"; 
   $Series = "C";
 } else {
   $Coeff_entry = 
-     "\(b_n = \)" . ans_rule(60) . AnswerFormatHelp("formulas"); 
+     "\(b_n = {} \)" . ans_rule(60) . AnswerFormatHelp("formulas"); 
   $Series_formula =
      "\(\displaystyle S(t) = " .
      "\sum_{n=1}^\infty b_n\,\sin\left(\frac{n\pi}{$L}\,t\right)\)";
@@ -187,11 +187,11 @@ Let
 
 $PAR
 
-Consider the Fourier ${BBOLD}$trig${EBOLD} series $Series_formula.
+Consider the Fourier ${BBOLD}$trig${EBOLD} series \($Series_formula.\)
 
 $PAR
 
-Compute the Fourier $trig coefficients for \(f(t)\).
+Compute the Fourier $trig coefficients for \(f(t) .\)
 
 $PAR
   
@@ -199,18 +199,18 @@ $Coeff_entry
 
 $PAR
 
-Give values for the Fourier $trig series $Series(t).
+Give values for the Fourier $trig series \($Series(t).\)
 
 $PAR
-\(\phantom{-}$Series($x[0]) = \) \{ ans_rule(10) \}
+\(\phantom{-}$Series($x[0]) = {} \) \{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\($Series($x[1]) = \) \{ ans_rule(10) \}
+\($Series($x[1]) = {} \) \{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
-\(\phantom{-}$Series($x[2]) = \) \{ ans_rule(10) \}
+\(\phantom{-}$Series($x[2]) = {} \) \{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR

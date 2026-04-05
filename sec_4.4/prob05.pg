@@ -55,7 +55,7 @@ $fan=Formula("$a * $L**2/(n**2 * $pi**2)")->reduce;
 $fan->{test_points} = [[1],[3],[5],[7],[11],[13],[17],[19]];
 
 $fbn=Compute("-$L * ($a * $L + $b)/(n * $pi)");
-$bn->{test_points} = [[1],[3],[5],[7],[11],[13],[17],[19]];
+$fbn->{test_points} = [[1],[3],[5],[7],[11],[13],[17],[19]];
 
 
 $func = "\begin{cases}
@@ -102,12 +102,9 @@ $fnL    = Compute($fL);
 
 Context()->texStrings;
 BEGIN_TEXT
+Let \(g(t)=$a t^2 + $b t \) for \( 0 < t < $L . \)
 $PAR
-
-Let \(g(t)=$a t^2 + $b t \) for \( 0 < t < $L \).
-$PAR
-Let \(S(t)\) be the Fourier Sine series of \(g\).
-$PAR
+Let \(S(t)\) be the Fourier Sine series of \(g(t) .\)
 $PAR
 \(S(t)= \displaystyle\sum_{n=1}^{\infty}\Bigg[\Big(\) 
   \{ ans_rule(55) \}
@@ -116,89 +113,89 @@ $BR
 \{ AnswerFormatHelp("formulas") \}
 $PAR 
 
-What does \( S(-$L)\) equal?\(\ \ \ \  S(-$L)=\)\{ ans_rule(10) \}
+What does \( S(-$L)\) equal?\(\ \ \ \  S(-$L)={}\)\{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
 
-What does \( S(-$L3d4)\) equal?\(\ \ \ \  S(-$L3d4)=\)\{ ans_rule(10) \} 
+What does \( S(-$L3d4)\) equal?\(\ \ \ \  S(-$L3d4)={}\)\{ ans_rule(10) \} 
 \{ AnswerFormatHelp("numbers") \}
 $PAR
 
-What does \( S(0)\) equal?\(\ \ \ \  S(0)=\)\{ ans_rule(10) \}
+What does \( S(0)\) equal?\(\ \ \ \  S(0)={}\)\{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR  
 
-What does \( S($Ld2)\) equal?\(\ \ \ \  S($Ld2)=\)\{ ans_rule(10) \}
+What does \( S($Ld2)\) equal?\(\ \ \ \  S($Ld2)={}\)\{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR  
 
-What does \( S($L)\) equal?\(\ \ \ \  S($L)=\)\{ ans_rule(10) \}
+What does \( S($L)\) equal?\(\ \ \ \  S($L)={}\)\{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 
 
-$BR
-
-
 $PAR
-Let \(C(t)\) be the Fourier Cosine series of \(g\).
+Let \(C(t)\) be the Fourier Cosine series of \(g(t) .\)
 $PAR
-\(C(t)= \) \{ ans_rule(5) \} \(+ \displaystyle\sum_{n=1}^{\infty}\Bigg[
-\Big(\) \{ ans_rule(60) \}\(\displaystyle\Big)\cos\Big(\frac{n \pi}{$L}t\Big)
-\Bigg]\)
+\(C(t)={} \) \{ ans_rule(5) \}
+\({} + \displaystyle\sum_{n=1}^{\infty}\Bigg[ \Big( \)
+\{ ans_rule(60) \}
+\(\displaystyle\Big)\cos\Big(\frac{n \pi}{$L}t\Big) \Bigg] \)
 $BR
 \{ AnswerFormatHelp("formulas") \}
 $PAR
 
-What does \( C(-$L)\) equal?\(\ \ \ \  C(-$L)=\)\{ ans_rule(10) \}
+What does \( C(-$L)\) equal?\(\ \ \ \  C(-$L)={}\)\{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
 
-What does \( C(-$L3d4)\) equal?\(\ \ \ \  C(-$L3d4)=\)\{ ans_rule(10) \} 
+What does \( C(-$L3d4)\) equal?\(\ \ \ \  C(-$L3d4)={}\)\{ ans_rule(10) \} 
 \{ AnswerFormatHelp("numbers") \}
 $PAR
 
-What does \( C(0)\) equal?\(\ \ \ \  C(0)=\)\{ ans_rule(10) \}
+What does \( C(0)\) equal?\(\ \ \ \  C(0)={}\)\{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR  
 
-What does \( C($Ld2)\) equal?\(\ \ \ \  C($Ld2)=\)\{ ans_rule(10) \}
+What does \( C($Ld2)\) equal?\(\ \ \ \  C($Ld2)={}\)\{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR 
 
-What does \( C($L)\) equal?\(\ \ \ \  C($L)=\)\{ ans_rule(10) \}
+What does \( C($L)\) equal?\(\ \ \ \  C($L)={}\)\{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
 
 
-
-Let \(f(t)\) be the Fourier series of \(g\) if \(g\) is extended to\((-$L,0)\) so that \(g(t)=g(t+$L)\).
+Let \(f(t)\) be the Fourier series of \(g(t)\) if \(g(t)\) is extended to\((-$L,0)\)
+so that \(g(t)=g(t+$L) .\)
 $PAR
-\(f(t)= \) \{ ans_rule(5) \} \(+\displaystyle\sum_{n=1}^{\infty} \Bigg[
-\Big(\) \{ ans_rule(25) \} \(\displaystyle\Big)\cos\Big(\frac{2 n \pi}{$L}t\Big)
-+
-\Big(\)\{ ans_rule(25) \}\(\displaystyle\Big)\sin\Big(\frac{2 n \pi}{$L}t\Big)
-\Bigg]\)
+\(f(t)= {} \)
+\{ ans_rule(5) \}
+\({}+\displaystyle\sum_{n=1}^{\infty} \Bigg[ \Big( \)
+\{ ans_rule(25) \}
+\(\displaystyle\Big)\cos\Big(\frac{2 n \pi}{$L}t\Big) + \Big( \)
+\{ ans_rule(25) \}
+\(\displaystyle\Big)\sin\Big(\frac{2 n \pi}{$L}t\Big) \Bigg] \)
 $BR
 \{ AnswerFormatHelp("formulas") \}
 $PAR 
 
-What does \( f(-$L)\) equal?\(\ \ \ \  f(-$L)=\)\{ ans_rule(10) \}
+What does \( f(-$L)\) equal?\(\ \ \ \  f(-$L)={}\)\{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
 
-What does \( f(-$L3d4)\) equal?\(\ \ \ \  f(-$L3d4)=\)\{ ans_rule(10) \} 
+What does \( f(-$L3d4)\) equal?\(\ \ \ \  f(-$L3d4)={}\)\{ ans_rule(10) \} 
 \{ AnswerFormatHelp("numbers") \}
 $PAR 
 
-What does \( f(0)\) equal?\(\ \ \ \  f(0)=\)\{ ans_rule(10) \}
+What does \( f(0)\) equal?\(\ \ \ \  f(0)={}\)\{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR 
 
-What does \( f($Ld2)\) equal?\(\ \ \ \  f($Ld2)=\)\{ ans_rule(10) \}
+What does \( f($Ld2)\) equal?\(\ \ \ \  f($Ld2)={}\)\{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR 
 
-What does \( f($L)\) equal?\(\ \ \ \  f($L)=\)\{ ans_rule(10) \}
+What does \( f($L)\) equal?\(\ \ \ \  f($L)={}\)\{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
