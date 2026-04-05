@@ -70,23 +70,23 @@ $BR
 \{ AnswerFormatHelp("formulas") \}
 $PAR 
 
-What does \( f(-$p)\) equal?\(\ \ \ \  f(-$p)=\)\{ ans_rule(10) \}
+What does \( f(-$p)\) equal?\(\ \ \ \  f(-$p)={}\)\{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR
 
-What does \( f($np2)\) equal?\(\ \ \ \  f($np2)=\)\{ ans_rule(10) \} 
+What does \( f($np2)\) equal?\(\ \ \ \  f($np2)={}\)\{ ans_rule(10) \} 
 \{ AnswerFormatHelp("numbers") \}
 $PAR 
 
-What does \( f(0)\) equal?\(\ \ \ \  f(0)=\)\{ ans_rule(10) \}
+What does \( f(0)\) equal?\(\ \ \ \  f(0)={}\)\{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR 
 
-What does \( f($c)\) equal?\(\ \ \ \  f($c)=\)\{ ans_rule(10) \}
+What does \( f($c)\) equal?\(\ \ \ \  f($c)={}\)\{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 $PAR 
 
-What does \( f($p)\) equal?\(\ \ \ \  f($p)=\)\{ ans_rule(10) \}
+What does \( f($p)\) equal?\(\ \ \ \  f($p)={}\)\{ ans_rule(10) \}
 \{ AnswerFormatHelp("numbers") \}
 
 $PAR
